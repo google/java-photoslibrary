@@ -14,7 +14,7 @@ public final class NewMediaItemFactory {
    * @throws IllegalArgumentException Thrown if either the description or uploadToken is null or
    *     empty.
    */
-  public static final NewMediaItem createNewMediaItem(String description, String uploadToken) {
+  public static final NewMediaItem createNewMediaItem(String uploadToken, String description) {
     if (description == null || description.isEmpty()) {
       throw new IllegalArgumentException("The description cannot be null or empty.");
     }
