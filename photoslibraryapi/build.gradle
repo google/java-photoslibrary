@@ -1,0 +1,155 @@
+/*
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+buildscript {
+    repositories {
+        mavenLocal()
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java-library'
+apply plugin: 'java-library-distribution'
+apply plugin: 'maven-publish'
+
+
+description = 'Google Photos Library API Client Library for Java'
+group = 'com.google.photos.library'
+version = '0.1.0-beta'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+compileJava.options.encoding = 'UTF-8'
+javadoc.options.encoding = 'UTF-8'
+
+dependencies {
+    implementation 'com.google.api:gax:1.29.0'
+    implementation 'com.google.api:gax-grpc:1.29.0'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.5'
+    implementation 'io.grpc:grpc-stub:1.10.1'
+    implementation 'io.grpc:grpc-protobuf:1.10.1'
+    implementation 'com.google.protobuf:protobuf-java:3.5.1'
+    implementation 'com.google.api:api-common:1.6.0'
+    implementation 'com.google.api.grpc:proto-google-common-protos:1.12.0'
+    testImplementation 'com.google.api:gax-grpc:1.29.0:testlib'
+    testImplementation 'com.google.api:gax:1.29.0:testlib'
+    testImplementation 'io.grpc:grpc-netty-shaded:1.10.1'
+    testImplementation 'junit:junit:4.12'
+
+
+}
+
+task smokeTest(type: Test) {
+    filter {
+        includeTestsMatching "*SmokeTest"
+        setFailOnNoMatchingTests false
+    }
+}
+
+test {
+    exclude "**/*SmokeTest*"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+    }
+}
+
+clean {
+    delete 'all-jars'
+}
+
+jar {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                'Implementation-Version': project.version)
+    }
+}
+
+task allJars(type: Copy) {
+    dependsOn test, jar
+    into 'all-jars'
+    // Replace with `from configurations.testRuntime, jar` to include test dependencies
+    from configurations.runtime, jar
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar) {
+    from javadoc
+    classifier = 'javadoc'
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+compileJava.options.encoding = 'UTF-8'
+javadoc.options.encoding = 'UTF-8'
+
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'google-photos-library-client'
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+            pom {
+                name = "Google Photos Library API CLient Library for Java"
+                description = project.description
+                url = 'http://developers.google.com/photos'
+                scm {
+                    url = 'https://github.com/google/java-photoslibrary'
+                    connection = 'scm:git:https://github.com/google/java-photoslibrary.git'
+                }
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                organization {
+                    name = "Google"
+                    url = "http://www.google.com/"
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            def releasesRepoUrl = "$buildDir/repos/releases"
+            def snapshotsRepoUrl = "$buildDir/repos/snapshots"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+        }
+    }
+}
