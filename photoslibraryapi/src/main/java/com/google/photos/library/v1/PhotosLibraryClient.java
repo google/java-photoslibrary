@@ -35,9 +35,57 @@ import java.util.List;
 /**
  * An wrapper class of {@link InternalPhotosLibraryClient}.
  *
- * <p>Usage: PhotosLibraryClient client = PhotosLibraryClient.initialize(settings);
+ * <p>Client to interact with the Google Photos Library API. You can perform the following actions
+ * on behalf of the user:
  *
- * <p>Do not use PhotosLibraryClient.create for this wrapper.
+ * <ul>
+ *   <li>upload media items directly to their Google Photos library
+ *   <li>create albums
+ *   <li>add media items (including album enrichments) to albums
+ *   <li>list and download content from their Google Photos library
+ *   <li>filter results by media type, date range or content category
+ *   <li>create, join, and access shared albums
+ * </ul>
+ *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
+ *
+ * <pre>
+ * <code>
+ * PhotosLibrarySettings photosLibrarySettings =
+ *     PhotosLibrarySettings.newBuilder()
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * try (PhotosLibraryClient photosLibraryClient =
+ *     PhotosLibraryClient.initialize(photosLibrarySettings)) {
+ *   Album createdAlbum = photosLibraryClient.createAlbum("My Album");
+ * }
+ * </code>
+ * </pre>
+ *
+ * <p>Note: close() needs to be called on the photosLibraryClient object to clean up resources such
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
+ *
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
+ *
+ * <ol>
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
+ * </ol>
+ *
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
+ *
+ * <p>Do not use {@link PhotosLibraryClient#create()} or {@link
+ * PhotosLibraryClient#create(InternalPhotosLibrarySettings)} for this wrapper.
  */
 public final class PhotosLibraryClient extends InternalPhotosLibraryClient {
 
