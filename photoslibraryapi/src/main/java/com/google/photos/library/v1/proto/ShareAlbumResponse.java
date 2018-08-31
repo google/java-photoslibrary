@@ -3,7 +3,15 @@
 
 package com.google.photos.library.v1.proto;
 
-/** Protobuf type {@code google.photos.library.v1.ShareAlbumResponse} */
+/**
+ *
+ *
+ * <pre>
+ * Response to successfully sharing an album.
+ * </pre>
+ *
+ * Protobuf type {@code google.photos.library.v1.ShareAlbumResponse}
+ */
 public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.photos.library.v1.ShareAlbumResponse)
@@ -297,7 +305,15 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.photos.library.v1.ShareAlbumResponse} */
+  /**
+   *
+   *
+   * <pre>
+   * Response to successfully sharing an album.
+   * </pre>
+   *
+   * Protobuf type {@code google.photos.library.v1.ShareAlbumResponse}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.photos.library.v1.ShareAlbumResponse)

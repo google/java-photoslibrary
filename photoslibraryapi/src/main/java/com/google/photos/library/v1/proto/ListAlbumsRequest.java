@@ -7,9 +7,9 @@ package com.google.photos.library.v1.proto;
  *
  *
  * <pre>
- * Request to retrieve a list of albums created by the user or selected by the
- * user to 'show in Albums'. This will return the list of albums corresponding
- * to the user's 'Albums' tab in the Google Photos app.
+ * Request to retrieve the list of albums created by the user.
+ * This will return the list of albums corresponding to the user's 'Albums' tab
+ * in the Google Photos app.
  * </pre>
  *
  * Protobuf type {@code google.photos.library.v1.ListAlbumsRequest}
@@ -369,9 +369,9 @@ public final class ListAlbumsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request to retrieve a list of albums created by the user or selected by the
-   * user to 'show in Albums'. This will return the list of albums corresponding
-   * to the user's 'Albums' tab in the Google Photos app.
+   * Request to retrieve the list of albums created by the user.
+   * This will return the list of albums corresponding to the user's 'Albums' tab
+   * in the Google Photos app.
    * </pre>
    *
    * Protobuf type {@code google.photos.library.v1.ListAlbumsRequest}

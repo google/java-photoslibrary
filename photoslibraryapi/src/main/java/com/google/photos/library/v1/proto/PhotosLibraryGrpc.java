@@ -774,7 +774,7 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * List all media items in a user's Google Photos library.
+     * List all media items from a user's Google Photos library.
      * </pre>
      */
     public void listMediaItems(
@@ -1071,7 +1071,7 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * List all media items in a user's Google Photos library.
+     * List all media items from a user's Google Photos library.
      * </pre>
      */
     public void listMediaItems(
@@ -1302,7 +1302,7 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * List all media items in a user's Google Photos library.
+     * List all media items from a user's Google Photos library.
      * </pre>
      */
     public com.google.photos.library.v1.proto.ListMediaItemsResponse listMediaItems(
@@ -1505,7 +1505,7 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * List all media items in a user's Google Photos library.
+     * List all media items from a user's Google Photos library.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
