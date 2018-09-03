@@ -14,7 +14,6 @@ public interface ShareAlbumRequestOrBuilder
    * <pre>
    * Identifier of the album to be shared. This `albumId` must belong to an
    * album created by the developer.
-   * .
    * </pre>
    *
    * <code>string album_id = 1;</code>
@@ -26,7 +25,6 @@ public interface ShareAlbumRequestOrBuilder
    * <pre>
    * Identifier of the album to be shared. This `albumId` must belong to an
    * album created by the developer.
-   * .
    * </pre>
    *
    * <code>string album_id = 1;</code>

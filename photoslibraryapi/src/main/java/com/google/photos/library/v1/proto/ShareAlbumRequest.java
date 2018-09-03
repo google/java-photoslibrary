@@ -116,7 +116,6 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Identifier of the album to be shared. This `albumId` must belong to an
    * album created by the developer.
-   * .
    * </pre>
    *
    * <code>string album_id = 1;</code>
@@ -138,7 +137,6 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Identifier of the album to be shared. This `albumId` must belong to an
    * album created by the developer.
-   * .
    * </pre>
    *
    * <code>string album_id = 1;</code>
@@ -551,7 +549,6 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Identifier of the album to be shared. This `albumId` must belong to an
      * album created by the developer.
-     * .
      * </pre>
      *
      * <code>string album_id = 1;</code>
@@ -573,7 +570,6 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Identifier of the album to be shared. This `albumId` must belong to an
      * album created by the developer.
-     * .
      * </pre>
      *
      * <code>string album_id = 1;</code>
@@ -595,7 +591,6 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Identifier of the album to be shared. This `albumId` must belong to an
      * album created by the developer.
-     * .
      * </pre>
      *
      * <code>string album_id = 1;</code>
@@ -615,7 +610,6 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Identifier of the album to be shared. This `albumId` must belong to an
      * album created by the developer.
-     * .
      * </pre>
      *
      * <code>string album_id = 1;</code>
@@ -632,7 +626,6 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Identifier of the album to be shared. This `albumId` must belong to an
      * album created by the developer.
-     * .
      * </pre>
      *
      * <code>string album_id = 1;</code>

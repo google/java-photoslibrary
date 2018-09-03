@@ -523,7 +523,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all media items in a user's Google Photos library.
+   * List all media items from a user's Google Photos library.
    *
    * <p>Sample code:
    *
@@ -545,7 +545,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all media items in a user's Google Photos library.
+   * List all media items from a user's Google Photos library.
    *
    * <p>Sample code:
    *
@@ -567,7 +567,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all media items in a user's Google Photos library.
+   * List all media items from a user's Google Photos library.
    *
    * <p>Sample code:
    *
@@ -1006,7 +1006,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * </code></pre>
    *
    * @param albumId Identifier of the album to be shared. This `albumId` must belong to an album
-   *     created by the developer. .
+   *     created by the developer.
    * @param sharedAlbumOptions Options to be set when converting the album to a shared album.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

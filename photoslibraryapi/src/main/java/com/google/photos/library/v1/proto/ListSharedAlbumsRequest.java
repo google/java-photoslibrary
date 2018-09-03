@@ -7,7 +7,7 @@ package com.google.photos.library.v1.proto;
  *
  *
  * <pre>
- * Request to retrieve the user's list of shared albums This will return the
+ * Request to retrieve the user's list of shared albums. This will return the
  * list of albums corresponding to the user's 'Sharing' tab in the Google Photos
  * app.
  * </pre>
@@ -370,7 +370,7 @@ public final class ListSharedAlbumsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request to retrieve the user's list of shared albums This will return the
+   * Request to retrieve the user's list of shared albums. This will return the
    * list of albums corresponding to the user's 'Sharing' tab in the Google Photos
    * app.
    * </pre>

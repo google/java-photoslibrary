@@ -13,7 +13,7 @@ package com.google.photos.library.v1.proto;
  * specified, this call will return all media items in a user's Google Photos
  * library.
  * If filters are specified, this call will return all media items in
- * the user's library which fulfills the criteria based upon the filters.
+ * the user's library that fulfill the filter criteria.
  * Filters and album id must not both be set, as this will result in an
  * invalid request.
  * </pre>
@@ -487,7 +487,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
    * specified, this call will return all media items in a user's Google Photos
    * library.
    * If filters are specified, this call will return all media items in
-   * the user's library which fulfills the criteria based upon the filters.
+   * the user's library that fulfill the filter criteria.
    * Filters and album id must not both be set, as this will result in an
    * invalid request.
    * </pre>
