@@ -27,11 +27,13 @@ buildscript {
 apply plugin: 'java-library'
 apply plugin: 'java-library-distribution'
 apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
 
 
 description = 'Google Photos Library API Client Library for Java'
 group = 'com.google.photos.library'
-version = '0.1.0-beta'
+version = '1.0.0'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -109,7 +111,7 @@ task javadocJar(type: Jar) {
 }
 
 artifacts {
-    archives javadocJar, sourcesJar
+    archives jar, javadocJar, sourcesJar
 }
 
 compileJava.options.encoding = 'UTF-8'
@@ -147,9 +149,24 @@ publishing {
     }
     repositories {
         maven {
+            name = "buildDir"
             def releasesRepoUrl = "$buildDir/repos/releases"
             def snapshotsRepoUrl = "$buildDir/repos/snapshots"
             url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
         }
+        maven {
+            name = "sonatype"
+            def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+            def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            credentials {
+                username sonatypeUsername
+                password sonatypePassword
+            }
+        }
     }
+}
+
+signing {
+    sign publishing.publications
 }
