@@ -1,5 +1,5 @@
-# Javadoc for the Google Photos Library API Java client library
+# Javadoc Reference Documentation
 
-Javadoc reference documentation for the Google Photos Library API Java client library.
+Javadoc reference documentation for the [Google Photos Library API Java client library](https://github.com/google/java-photoslibrary).
 
 * [1.0.0](1.0.0/)
