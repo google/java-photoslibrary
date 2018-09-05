@@ -1,5 +1,6 @@
-# Intellij IDEA metadata directory
+# Intellij IDEA metadata
 .idea
+*.iml
 
 # Gradle and build directories
 .gradle

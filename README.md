@@ -2,31 +2,45 @@
 
 This repository contains the Java client library for the [Google Photos Library API](https://developers.google.com/photos).
 
-**This client library is still being incubated and will be available as a released artifact soon. 
-Right now you can clone this repository, but it is recommended to wait for the first release before 
-building with it.**
-
-## Requirements and Preparation
+## Requirements and preparation
 
 * Java 1.8+
 * Gradle build system or Maven 3.0+ recommended.
-* To use this library to connect to the Google Photos Library API, you need an
-  [OAuth 2 client ID and secret](https://developers.google.com/photos/library/guides/get-started#request-id).
-  If you use the [Google Auth Library for Java](https://github.com/google/google-auth-library-java),
-  follow the [steps below](#setting-up-your-oauth2-credentials)
-  to get started. Make sure that the OAuth client is configured as an "other type".
+* OAuth 2.0 credentials configured for your project as [described below](#set-up-your-oauth2-credentials-for-java). (Note that to run the samples, use the "*other*" client type.)
 
-## Getting started
+## Download the client library
 
-First download the library or include it in your build configuration. Then, set
-up OAuth 2.0 credentials to access the API.
-Next you can follow the [samples](samples/) to see the client library in action.
+Firstly, download the library or include it in your build configuration. Then, set up OAuth 2.0 credentials to access the API.
 
-### Clone the repository
+Next, you can follow the [samples](samples/) to see the client library in action.
 
-This method is suitable for those who want to alter or contribute to
-this library (e.g., submitting pull requests) or wish to try our examples.
-**All** files in this repository will be downloaded.
+### Option 1: Gradle dependency
+To use this library with Gradle, add the following dependency to your `build.gradle` file:
+```
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile 'com.google.photos.library:google-photos-library-client:1.0.0'
+}
+```
+
+### Option 2: Maven dependency
+To use this library with Maven, add the following to your Maven `pom.xml` file:
+```
+<dependency>
+  <groupId>com.google.photos.library</groupId>
+  <artifactId>google-photos-library-client</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+### Option 3: Download a release
+The [releases page](releases/) contains different artifacts for each library release, including jar files.
+
+### Option 4: Clone the repository
+
+Use this method if you want to alter or contribute to this library (e.g., submitting pull requests) or wish to try our samples. When you clone the repository,  **all** files in this repository will be downloaded.
 
 1. Run `git clone https://github.com/google/java-photoslibrary.git` at
    the command prompt.
@@ -35,64 +49,67 @@ this library (e.g., submitting pull requests) or wish to try our examples.
 3. Open the `build.gradle` file in your IDE or run `./gradlew assemble` at the
    command prompt to build the project. See `./gradlew tasks` to see available tasks
 
-## Basic Usage
-
-The best way to learn how to use this library is to [review the samples](samples/).
-The [developer documentation](https://developers.google.com/photos) also include
-code snippets for this client library in PHP.
-
-Once you have set up the dependencies and OAuth 2 credentials, you can access
-the API.
-Here's a short example that shows how to create a new album:
-
-```java
-// Set up the Photos Library Client that interacts with the API
-PhotosLibrarySettings settings =
-    PhotosLibrarySettings.newBuilder()
-    .setCredentialsProvider(/* TODO: Add credentials here. */)
-    .build();
-PhotosLibraryClient client = PhotosLibraryClient.initialize(settings);
-
-Album newAlbum = Album.newBuilder().setTitle("My Album").build();
-
-try {
-    // Create a new Album  with at title
-    Album createdAlbum = photosLibraryClient.createAlbum("My Album");
-    // Get some properties from the album, such as its ID and product URL
-    String id = album.getId();
-    String url = album.getProductUrl();
-} catch (ApiException e) {
-    // Error during album creation
-}
-```
-
-## Setting up your OAuth2 credentials
+## Set up your OAuth2 credentials for Java
 
 The Google Photos Library API uses [OAuth2](https://oauth.net/2/) as the
-authentication mechanism. Note that service accounts are not supported.
+authentication mechanism. Note that the Library API does not support service accounts.
 
-Follow the [get started guide in the developer documentation](https://developers.google.com/photos)
-to set up a Google developers account, enable the Google Photos Library API and
-configure OAuth 2.0 for your project.
+To complete the “Enable the API” and “Configure OAuth2.0” steps in the below procedure, refer to the [get started guide in the developer documentation](https://developers.google.com/photos/library/guides/)
 
-**Note that you must select other as the application type if you are following
-the samples in this repository.**
+Follow the below steps:
+1. Set up a Google developers project
+1. Enable the *Google Photos Library API* in your developer project
+1. Configure OAuth 2.0 credentials, including a callback URI
+1. Either download your OAuth credentials as a JSON file or note your client ID and secret.
+
+To try out the samples in this repository, select "*other*" as the application type.
 
 This client library works with the [Google Auth Library for Java](https://github.com/google/google-auth-library-java).
-Specify the `CredentialsProvider` when creating the `PhotoLibrarySettings` for
-a `PhotosLibraryClient` object.
+Specify your client OAuth configuration in the `CredentialsProvider` when creating the `PhotoLibrarySettings` for a `PhotosLibraryClient` object.
 See the file `PhotosLibraryClientFactory.java` for an example on how to create
 a new `PhotosLibraryClient` object with credentials from the Google Auth Library.
 
+## Sample usage
+
+Here's a short example that shows how to create a new album:
+
+```java
+// [START sample_usage]
+// Set up the Photos Library Client that interacts with the API
+PhotosLibrarySettings settings =
+     PhotosLibrarySettings.newBuilder()
+    .setCredentialsProvider(
+        FixedCredentialsProvider.create(/* Add credentials here. */)) 
+    .build();
+
+try (PhotosLibraryClient photosLibraryClient =
+    PhotosLibraryClient.initialize(settings)) {
+
+    // Create a new Album  with at title
+    Album createdAlbum = photosLibraryClient.createAlbum("My Album");
+
+    // Get some properties from the album, such as its ID and product URL
+    String id = album.getId();
+    String url = album.getProductUrl();
+
+} catch (ApiException e) {
+    // Error during album creation
+}
+// [END sample_usage]
+```
 
 ## Samples
 
- Three samples are included in the [samples](samples/) directory. They show how
+ A few examples are included in the [samples](samples/) directory. They show how
  to access media items, filter media, share albums and upload files.
 
-## Documentation
+The [API developer documentation](https://developers.google.com/photos) also includes
+code snippets for this client library in Java.
 
-Javadoc for this library can be found in the [gh-pages](https://github.com/google/photos-library-java-lib/tree/gh-pages) branch of this repository.
+## Reference documentation
+
+Javadoc for this library can be found in the [gh-pages](https://github.com/google/java-photoslibrary/tree/gh-pages) branch of this repository.
+You can browse it at https://google.github.io/java-photoslibrary/index.html
 
 General Google Photos Library API documentation can be found on our Google Developers
 site: https://developers.google.com/photos
@@ -101,7 +118,7 @@ site: https://developers.google.com/photos
 
 For client library specific bug reports, feature requests, and patches,
 create an issue on the [issue
-tracker](https://github.com/google/photos-library-java-lib/issues).
+tracker](https://github.com/google/java-photoslibrary/issues).
 
 See the [support page](https://developers.google.com/photos/library/support/how-to-get-help)
 for any other API questions, bug reports, or feature requests.
@@ -110,7 +127,7 @@ for any other API questions, bug reports, or feature requests.
 
 For general Google Photos Library API and client library updates and news, follow:
 
-* [Java client library release notes](TODO)
+* [Java client library release notes](releases/)
 * [Google Photos Library API release notes](https://developers.google.com/photos/library/support/release-notes)
 
 ## License
