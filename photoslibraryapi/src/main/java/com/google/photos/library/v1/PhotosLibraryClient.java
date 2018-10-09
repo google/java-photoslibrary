@@ -16,11 +16,16 @@
 
 package com.google.photos.library.v1;
 
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.base.Strings;
 import com.google.photos.library.v1.internal.InternalPhotosLibraryClient;
+import com.google.photos.library.v1.internal.InternalPhotosLibrarySettings;
 import com.google.photos.library.v1.internal.stub.PhotosLibraryStub;
 import com.google.photos.library.v1.proto.Album;
 import com.google.photos.library.v1.proto.AlbumPosition;
+import com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse;
 import com.google.photos.library.v1.proto.ListMediaItemsRequest;
 import com.google.photos.library.v1.proto.NewMediaItem;
@@ -28,8 +33,8 @@ import com.google.photos.library.v1.upload.PhotosLibraryUploadStub;
 import com.google.photos.library.v1.upload.PhotosLibraryUploadStubImpl;
 import com.google.photos.library.v1.upload.UploadMediaItemRequest;
 import com.google.photos.library.v1.upload.UploadMediaItemResponse;
+import io.grpc.Status.Code;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -123,29 +128,52 @@ public final class PhotosLibraryClient extends InternalPhotosLibraryClient {
   /* batchCreateMediaItems convenience methods */
 
   /**
-   * Calls {@link #batchCreateMediaItems} with the provided list of {@link NewMediaItem}, no album
-   * ID, and no {@link AlbumPosition}.
+   * Creates one or more media items in a user's Google Photos library.
+   *
+   * <p>The items are only added to the library and <b>not</b> to an album.
+   *
+   * @param newMediaItems List of media items to be created.
+   * @see #batchCreateMediaItems(String, List, AlbumPosition)
    */
   public final BatchCreateMediaItemsResponse batchCreateMediaItems(
       List<NewMediaItem> newMediaItems) {
-    return batchCreateMediaItemsAllowsNullable(null, newMediaItems, null);
+    if (newMediaItems == null) {
+      throw new InvalidArgumentException(
+          "Request must have a list of new media items.",
+          null /* cause */,
+          GrpcStatusCode.of(Code.INVALID_ARGUMENT),
+          false /* retryable */);
+    }
+
+    BatchCreateMediaItemsRequest request =
+        BatchCreateMediaItemsRequest.newBuilder().addAllNewMediaItems(newMediaItems).build();
+    return batchCreateMediaItems(request);
   }
 
   /**
-   * Calls {@link #batchCreateMediaItems} with the provided album ID, provided list of {@link
-   * NewMediaItem}, and no {@link AlbumPosition}.
+   * Creates one or more media items in a user's Google Photos library and adds them to an album.
+   *
+   * @param albumId Identifier of the album where the media items are added. The media items are
+   *     also added to the user's library.
+   * @param newMediaItems List of media items to be created.
+   * @see #batchCreateMediaItems(String, List, AlbumPosition)
    */
   public final BatchCreateMediaItemsResponse batchCreateMediaItems(
       String albumId, List<NewMediaItem> newMediaItems) {
-    return batchCreateMediaItemsAllowsNullable(albumId, newMediaItems, null);
-  }
+    if (Strings.isNullOrEmpty(albumId)) {
+      throw new InvalidArgumentException(
+          "Request must have an album id.",
+          null /* cause */,
+          GrpcStatusCode.of(Code.INVALID_ARGUMENT),
+          false /* retryable */);
+    }
 
-  private final BatchCreateMediaItemsResponse batchCreateMediaItemsAllowsNullable(
-      String albumId, List<NewMediaItem> newMediaItems, AlbumPosition albumPosition) {
-    albumId = albumId != null ? albumId : "";
-    newMediaItems = newMediaItems != null ? newMediaItems : new ArrayList<>();
-    albumPosition = albumPosition != null ? albumPosition : AlbumPosition.newBuilder().build();
-    return super.batchCreateMediaItems(albumId, newMediaItems, albumPosition);
+    BatchCreateMediaItemsRequest request =
+        BatchCreateMediaItemsRequest.newBuilder()
+            .setAlbumId(albumId)
+            .addAllNewMediaItems(newMediaItems)
+            .build();
+    return batchCreateMediaItems(request);
   }
 
   /**
