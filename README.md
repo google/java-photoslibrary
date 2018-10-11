@@ -21,7 +21,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    compile 'com.google.photos.library:google-photos-library-client:1.0.0'
+    compile 'com.google.photos.library:google-photos-library-client:1.0.1'
 }
 ```
 
@@ -31,7 +31,7 @@ To use this library with Maven, add the following to your Maven `pom.xml` file:
 <dependency>
   <groupId>com.google.photos.library</groupId>
   <artifactId>google-photos-library-client</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
