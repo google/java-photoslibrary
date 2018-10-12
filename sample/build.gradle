@@ -45,6 +45,9 @@ sourceSets {
     }
 }
 
+// By default, run the album demo.
+mainClassName = "com.google.photos.library.sample.demo.AlbumDemo"
+
 task runAlbum(type: JavaExec) {
     classpath sourceSets.main.runtimeClasspath
     main = "com.google.photos.library.sample.demos.AlbumDemo"
