@@ -2,6 +2,8 @@
 
 This repository contains the Java client library for the [Google Photos Library API](https://developers.google.com/photos).
 
+[![Build Status](https://travis-ci.org/google/java-photoslibrary.svg?branch=master)](https://travis-ci.org/google/java-photoslibrary)
+
 ## Requirements and preparation
 
 * Java 1.8+
