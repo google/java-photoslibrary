@@ -3,16 +3,17 @@
 
 package com.google.photos.library.v1.proto;
 
-public interface GetAlbumRequestOrBuilder
+public interface UnshareAlbumRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.photos.library.v1.GetAlbumRequest)
+    // @@protoc_insertion_point(interface_extends:google.photos.library.v1.UnshareAlbumRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Identifier of the album to be requested.
+   * Identifier of the album to be unshared. This album id must belong to an
+   * album created by the developer.
    * </pre>
    *
    * <code>string album_id = 1;</code>
@@ -22,7 +23,8 @@ public interface GetAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the album to be requested.
+   * Identifier of the album to be unshared. This album id must belong to an
+   * album created by the developer.
    * </pre>
    *
    * <code>string album_id = 1;</code>

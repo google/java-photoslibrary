@@ -21,11 +21,16 @@ import com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse;
 import com.google.photos.library.v1.proto.Album;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse;
+import com.google.photos.library.v1.proto.BatchGetMediaItemsRequest;
+import com.google.photos.library.v1.proto.BatchGetMediaItemsResponse;
 import com.google.photos.library.v1.proto.CreateAlbumRequest;
 import com.google.photos.library.v1.proto.GetAlbumRequest;
 import com.google.photos.library.v1.proto.GetMediaItemRequest;
+import com.google.photos.library.v1.proto.GetSharedAlbumRequest;
 import com.google.photos.library.v1.proto.JoinSharedAlbumRequest;
 import com.google.photos.library.v1.proto.JoinSharedAlbumResponse;
+import com.google.photos.library.v1.proto.LeaveSharedAlbumRequest;
+import com.google.photos.library.v1.proto.LeaveSharedAlbumResponse;
 import com.google.photos.library.v1.proto.ListAlbumsRequest;
 import com.google.photos.library.v1.proto.ListAlbumsResponse;
 import com.google.photos.library.v1.proto.ListMediaItemsRequest;
@@ -38,6 +43,8 @@ import com.google.photos.library.v1.proto.SearchMediaItemsRequest;
 import com.google.photos.library.v1.proto.SearchMediaItemsResponse;
 import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
+import com.google.photos.library.v1.proto.UnshareAlbumRequest;
+import com.google.photos.library.v1.proto.UnshareAlbumResponse;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -153,6 +160,22 @@ public class MockPhotosLibraryImpl extends PhotosLibraryImplBase {
   }
 
   @Override
+  public void batchGetMediaItems(
+      BatchGetMediaItemsRequest request,
+      StreamObserver<BatchGetMediaItemsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof BatchGetMediaItemsResponse) {
+      requests.add(request);
+      responseObserver.onNext((BatchGetMediaItemsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void listAlbums(
       ListAlbumsRequest request, StreamObserver<ListAlbumsResponse> responseObserver) {
     Object response = responses.remove();
@@ -169,6 +192,21 @@ public class MockPhotosLibraryImpl extends PhotosLibraryImplBase {
 
   @Override
   public void getAlbum(GetAlbumRequest request, StreamObserver<Album> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Album) {
+      requests.add(request);
+      responseObserver.onNext((Album) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getSharedAlbum(
+      GetSharedAlbumRequest request, StreamObserver<Album> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Album) {
       requests.add(request);
@@ -213,6 +251,21 @@ public class MockPhotosLibraryImpl extends PhotosLibraryImplBase {
   }
 
   @Override
+  public void leaveSharedAlbum(
+      LeaveSharedAlbumRequest request, StreamObserver<LeaveSharedAlbumResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof LeaveSharedAlbumResponse) {
+      requests.add(request);
+      responseObserver.onNext((LeaveSharedAlbumResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void shareAlbum(
       ShareAlbumRequest request, StreamObserver<ShareAlbumResponse> responseObserver) {
     Object response = responses.remove();
@@ -234,6 +287,21 @@ public class MockPhotosLibraryImpl extends PhotosLibraryImplBase {
     if (response instanceof ListSharedAlbumsResponse) {
       requests.add(request);
       responseObserver.onNext((ListSharedAlbumsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void unshareAlbum(
+      UnshareAlbumRequest request, StreamObserver<UnshareAlbumResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof UnshareAlbumResponse) {
+      requests.add(request);
+      responseObserver.onNext((UnshareAlbumResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

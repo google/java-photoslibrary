@@ -12,7 +12,7 @@ public interface GetMediaItemRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of media item to be requested.
+   * Identifier of the media item to be requested.
    * </pre>
    *
    * <code>string media_item_id = 1;</code>
@@ -22,7 +22,7 @@ public interface GetMediaItemRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of media item to be requested.
+   * Identifier of the media item to be requested.
    * </pre>
    *
    * <code>string media_item_id = 1;</code>

@@ -7,22 +7,22 @@ package com.google.photos.library.v1.proto;
  *
  *
  * <pre>
- * Request to retrieve a specific album.
+ * Request to unshare a shared album in Google Photos.
  * </pre>
  *
- * Protobuf type {@code google.photos.library.v1.GetAlbumRequest}
+ * Protobuf type {@code google.photos.library.v1.UnshareAlbumRequest}
  */
-public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV3
+public final class UnshareAlbumRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.photos.library.v1.GetAlbumRequest)
-    GetAlbumRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.photos.library.v1.UnshareAlbumRequest)
+    UnshareAlbumRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetAlbumRequest.newBuilder() to construct.
-  private GetAlbumRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UnshareAlbumRequest.newBuilder() to construct.
+  private UnshareAlbumRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetAlbumRequest() {
+  private UnshareAlbumRequest() {
     albumId_ = "";
   }
 
@@ -31,7 +31,7 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private GetAlbumRequest(
+  private UnshareAlbumRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -78,17 +78,17 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
-        .internal_static_google_photos_library_v1_GetAlbumRequest_descriptor;
+        .internal_static_google_photos_library_v1_UnshareAlbumRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
-        .internal_static_google_photos_library_v1_GetAlbumRequest_fieldAccessorTable
+        .internal_static_google_photos_library_v1_UnshareAlbumRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.photos.library.v1.proto.GetAlbumRequest.class,
-            com.google.photos.library.v1.proto.GetAlbumRequest.Builder.class);
+            com.google.photos.library.v1.proto.UnshareAlbumRequest.class,
+            com.google.photos.library.v1.proto.UnshareAlbumRequest.Builder.class);
   }
 
   public static final int ALBUM_ID_FIELD_NUMBER = 1;
@@ -97,7 +97,8 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Identifier of the album to be requested.
+   * Identifier of the album to be unshared. This album id must belong to an
+   * album created by the developer.
    * </pre>
    *
    * <code>string album_id = 1;</code>
@@ -117,7 +118,8 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Identifier of the album to be requested.
+   * Identifier of the album to be unshared. This album id must belong to an
+   * album created by the developer.
    * </pre>
    *
    * <code>string album_id = 1;</code>
@@ -173,11 +175,11 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.photos.library.v1.proto.GetAlbumRequest)) {
+    if (!(obj instanceof com.google.photos.library.v1.proto.UnshareAlbumRequest)) {
       return super.equals(obj);
     }
-    com.google.photos.library.v1.proto.GetAlbumRequest other =
-        (com.google.photos.library.v1.proto.GetAlbumRequest) obj;
+    com.google.photos.library.v1.proto.UnshareAlbumRequest other =
+        (com.google.photos.library.v1.proto.UnshareAlbumRequest) obj;
 
     boolean result = true;
     result = result && getAlbumId().equals(other.getAlbumId());
@@ -199,71 +201,71 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     return hash;
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(byte[] data)
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseDelimitedFrom(
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseDelimitedFrom(
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -280,7 +282,8 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.photos.library.v1.proto.GetAlbumRequest prototype) {
+  public static Builder newBuilder(
+      com.google.photos.library.v1.proto.UnshareAlbumRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -298,31 +301,31 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request to retrieve a specific album.
+   * Request to unshare a shared album in Google Photos.
    * </pre>
    *
-   * Protobuf type {@code google.photos.library.v1.GetAlbumRequest}
+   * Protobuf type {@code google.photos.library.v1.UnshareAlbumRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.photos.library.v1.GetAlbumRequest)
-      com.google.photos.library.v1.proto.GetAlbumRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.photos.library.v1.UnshareAlbumRequest)
+      com.google.photos.library.v1.proto.UnshareAlbumRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.photos.library.v1.proto.LibraryServiceProto
-          .internal_static_google_photos_library_v1_GetAlbumRequest_descriptor;
+          .internal_static_google_photos_library_v1_UnshareAlbumRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.photos.library.v1.proto.LibraryServiceProto
-          .internal_static_google_photos_library_v1_GetAlbumRequest_fieldAccessorTable
+          .internal_static_google_photos_library_v1_UnshareAlbumRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.photos.library.v1.proto.GetAlbumRequest.class,
-              com.google.photos.library.v1.proto.GetAlbumRequest.Builder.class);
+              com.google.photos.library.v1.proto.UnshareAlbumRequest.class,
+              com.google.photos.library.v1.proto.UnshareAlbumRequest.Builder.class);
     }
 
-    // Construct using com.google.photos.library.v1.proto.GetAlbumRequest.newBuilder()
+    // Construct using com.google.photos.library.v1.proto.UnshareAlbumRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -347,17 +350,17 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.photos.library.v1.proto.LibraryServiceProto
-          .internal_static_google_photos_library_v1_GetAlbumRequest_descriptor;
+          .internal_static_google_photos_library_v1_UnshareAlbumRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.photos.library.v1.proto.GetAlbumRequest getDefaultInstanceForType() {
-      return com.google.photos.library.v1.proto.GetAlbumRequest.getDefaultInstance();
+    public com.google.photos.library.v1.proto.UnshareAlbumRequest getDefaultInstanceForType() {
+      return com.google.photos.library.v1.proto.UnshareAlbumRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.photos.library.v1.proto.GetAlbumRequest build() {
-      com.google.photos.library.v1.proto.GetAlbumRequest result = buildPartial();
+    public com.google.photos.library.v1.proto.UnshareAlbumRequest build() {
+      com.google.photos.library.v1.proto.UnshareAlbumRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -365,9 +368,9 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     @java.lang.Override
-    public com.google.photos.library.v1.proto.GetAlbumRequest buildPartial() {
-      com.google.photos.library.v1.proto.GetAlbumRequest result =
-          new com.google.photos.library.v1.proto.GetAlbumRequest(this);
+    public com.google.photos.library.v1.proto.UnshareAlbumRequest buildPartial() {
+      com.google.photos.library.v1.proto.UnshareAlbumRequest result =
+          new com.google.photos.library.v1.proto.UnshareAlbumRequest(this);
       result.albumId_ = albumId_;
       onBuilt();
       return result;
@@ -408,16 +411,16 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.photos.library.v1.proto.GetAlbumRequest) {
-        return mergeFrom((com.google.photos.library.v1.proto.GetAlbumRequest) other);
+      if (other instanceof com.google.photos.library.v1.proto.UnshareAlbumRequest) {
+        return mergeFrom((com.google.photos.library.v1.proto.UnshareAlbumRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.photos.library.v1.proto.GetAlbumRequest other) {
-      if (other == com.google.photos.library.v1.proto.GetAlbumRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.photos.library.v1.proto.UnshareAlbumRequest other) {
+      if (other == com.google.photos.library.v1.proto.UnshareAlbumRequest.getDefaultInstance())
         return this;
       if (!other.getAlbumId().isEmpty()) {
         albumId_ = other.albumId_;
@@ -438,12 +441,12 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.GetAlbumRequest parsedMessage = null;
+      com.google.photos.library.v1.proto.UnshareAlbumRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.photos.library.v1.proto.GetAlbumRequest) e.getUnfinishedMessage();
+            (com.google.photos.library.v1.proto.UnshareAlbumRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -458,7 +461,8 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Identifier of the album to be unshared. This album id must belong to an
+     * album created by the developer.
      * </pre>
      *
      * <code>string album_id = 1;</code>
@@ -478,7 +482,8 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Identifier of the album to be unshared. This album id must belong to an
+     * album created by the developer.
      * </pre>
      *
      * <code>string album_id = 1;</code>
@@ -498,7 +503,8 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Identifier of the album to be unshared. This album id must belong to an
+     * album created by the developer.
      * </pre>
      *
      * <code>string album_id = 1;</code>
@@ -516,7 +522,8 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Identifier of the album to be unshared. This album id must belong to an
+     * album created by the developer.
      * </pre>
      *
      * <code>string album_id = 1;</code>
@@ -531,7 +538,8 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Identifier of the album to be unshared. This album id must belong to an
+     * album created by the developer.
      * </pre>
      *
      * <code>string album_id = 1;</code>
@@ -558,42 +566,42 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.photos.library.v1.GetAlbumRequest)
+    // @@protoc_insertion_point(builder_scope:google.photos.library.v1.UnshareAlbumRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.photos.library.v1.GetAlbumRequest)
-  private static final com.google.photos.library.v1.proto.GetAlbumRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.photos.library.v1.UnshareAlbumRequest)
+  private static final com.google.photos.library.v1.proto.UnshareAlbumRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.photos.library.v1.proto.GetAlbumRequest();
+    DEFAULT_INSTANCE = new com.google.photos.library.v1.proto.UnshareAlbumRequest();
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest getDefaultInstance() {
+  public static com.google.photos.library.v1.proto.UnshareAlbumRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetAlbumRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetAlbumRequest>() {
+  private static final com.google.protobuf.Parser<UnshareAlbumRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UnshareAlbumRequest>() {
         @java.lang.Override
-        public GetAlbumRequest parsePartialFrom(
+        public UnshareAlbumRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetAlbumRequest(input, extensionRegistry);
+          return new UnshareAlbumRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<GetAlbumRequest> parser() {
+  public static com.google.protobuf.Parser<UnshareAlbumRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetAlbumRequest> getParserForType() {
+  public com.google.protobuf.Parser<UnshareAlbumRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.photos.library.v1.proto.GetAlbumRequest getDefaultInstanceForType() {
+  public com.google.photos.library.v1.proto.UnshareAlbumRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

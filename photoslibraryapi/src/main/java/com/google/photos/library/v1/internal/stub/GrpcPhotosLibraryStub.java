@@ -32,11 +32,16 @@ import com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse;
 import com.google.photos.library.v1.proto.Album;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse;
+import com.google.photos.library.v1.proto.BatchGetMediaItemsRequest;
+import com.google.photos.library.v1.proto.BatchGetMediaItemsResponse;
 import com.google.photos.library.v1.proto.CreateAlbumRequest;
 import com.google.photos.library.v1.proto.GetAlbumRequest;
 import com.google.photos.library.v1.proto.GetMediaItemRequest;
+import com.google.photos.library.v1.proto.GetSharedAlbumRequest;
 import com.google.photos.library.v1.proto.JoinSharedAlbumRequest;
 import com.google.photos.library.v1.proto.JoinSharedAlbumResponse;
+import com.google.photos.library.v1.proto.LeaveSharedAlbumRequest;
+import com.google.photos.library.v1.proto.LeaveSharedAlbumResponse;
 import com.google.photos.library.v1.proto.ListAlbumsRequest;
 import com.google.photos.library.v1.proto.ListAlbumsResponse;
 import com.google.photos.library.v1.proto.ListMediaItemsRequest;
@@ -48,6 +53,8 @@ import com.google.photos.library.v1.proto.SearchMediaItemsRequest;
 import com.google.photos.library.v1.proto.SearchMediaItemsResponse;
 import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
+import com.google.photos.library.v1.proto.UnshareAlbumRequest;
+import com.google.photos.library.v1.proto.UnshareAlbumResponse;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -109,6 +116,16 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetMediaItemRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MediaItem.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
+      batchGetMediaItemsMethodDescriptor =
+          MethodDescriptor.<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.photos.library.v1.PhotosLibrary/BatchGetMediaItems")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchGetMediaItemsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchGetMediaItemsResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<ListAlbumsRequest, ListAlbumsResponse>
       listAlbumsMethodDescriptor =
           MethodDescriptor.<ListAlbumsRequest, ListAlbumsResponse>newBuilder()
@@ -124,6 +141,15 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetAlbumRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Album.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<GetSharedAlbumRequest, Album>
+      getSharedAlbumMethodDescriptor =
+          MethodDescriptor.<GetSharedAlbumRequest, Album>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.photos.library.v1.PhotosLibrary/GetSharedAlbum")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSharedAlbumRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Album.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<AddEnrichmentToAlbumRequest, AddEnrichmentToAlbumResponse>
       addEnrichmentToAlbumMethodDescriptor =
           MethodDescriptor.<AddEnrichmentToAlbumRequest, AddEnrichmentToAlbumResponse>newBuilder()
@@ -144,6 +170,16 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(JoinSharedAlbumResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
+      leaveSharedAlbumMethodDescriptor =
+          MethodDescriptor.<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.photos.library.v1.PhotosLibrary/LeaveSharedAlbum")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(LeaveSharedAlbumRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(LeaveSharedAlbumResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<ShareAlbumRequest, ShareAlbumResponse>
       shareAlbumMethodDescriptor =
           MethodDescriptor.<ShareAlbumRequest, ShareAlbumResponse>newBuilder()
@@ -162,6 +198,15 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSharedAlbumsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<UnshareAlbumRequest, UnshareAlbumResponse>
+      unshareAlbumMethodDescriptor =
+          MethodDescriptor.<UnshareAlbumRequest, UnshareAlbumResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.photos.library.v1.PhotosLibrary/UnshareAlbum")
+              .setRequestMarshaller(ProtoUtils.marshaller(UnshareAlbumRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UnshareAlbumResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -176,18 +221,24 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
   private final UnaryCallable<ListMediaItemsRequest, ListMediaItemsPagedResponse>
       listMediaItemsPagedCallable;
   private final UnaryCallable<GetMediaItemRequest, MediaItem> getMediaItemCallable;
+  private final UnaryCallable<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
+      batchGetMediaItemsCallable;
   private final UnaryCallable<ListAlbumsRequest, ListAlbumsResponse> listAlbumsCallable;
   private final UnaryCallable<ListAlbumsRequest, ListAlbumsPagedResponse> listAlbumsPagedCallable;
   private final UnaryCallable<GetAlbumRequest, Album> getAlbumCallable;
+  private final UnaryCallable<GetSharedAlbumRequest, Album> getSharedAlbumCallable;
   private final UnaryCallable<AddEnrichmentToAlbumRequest, AddEnrichmentToAlbumResponse>
       addEnrichmentToAlbumCallable;
   private final UnaryCallable<JoinSharedAlbumRequest, JoinSharedAlbumResponse>
       joinSharedAlbumCallable;
+  private final UnaryCallable<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
+      leaveSharedAlbumCallable;
   private final UnaryCallable<ShareAlbumRequest, ShareAlbumResponse> shareAlbumCallable;
   private final UnaryCallable<ListSharedAlbumsRequest, ListSharedAlbumsResponse>
       listSharedAlbumsCallable;
   private final UnaryCallable<ListSharedAlbumsRequest, ListSharedAlbumsPagedResponse>
       listSharedAlbumsPagedCallable;
+  private final UnaryCallable<UnshareAlbumRequest, UnshareAlbumResponse> unshareAlbumCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -252,6 +303,11 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
         GrpcCallSettings.<GetMediaItemRequest, MediaItem>newBuilder()
             .setMethodDescriptor(getMediaItemMethodDescriptor)
             .build();
+    GrpcCallSettings<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
+        batchGetMediaItemsTransportSettings =
+            GrpcCallSettings.<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>newBuilder()
+                .setMethodDescriptor(batchGetMediaItemsMethodDescriptor)
+                .build();
     GrpcCallSettings<ListAlbumsRequest, ListAlbumsResponse> listAlbumsTransportSettings =
         GrpcCallSettings.<ListAlbumsRequest, ListAlbumsResponse>newBuilder()
             .setMethodDescriptor(listAlbumsMethodDescriptor)
@@ -259,6 +315,10 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
     GrpcCallSettings<GetAlbumRequest, Album> getAlbumTransportSettings =
         GrpcCallSettings.<GetAlbumRequest, Album>newBuilder()
             .setMethodDescriptor(getAlbumMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetSharedAlbumRequest, Album> getSharedAlbumTransportSettings =
+        GrpcCallSettings.<GetSharedAlbumRequest, Album>newBuilder()
+            .setMethodDescriptor(getSharedAlbumMethodDescriptor)
             .build();
     GrpcCallSettings<AddEnrichmentToAlbumRequest, AddEnrichmentToAlbumResponse>
         addEnrichmentToAlbumTransportSettings =
@@ -270,6 +330,11 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
             GrpcCallSettings.<JoinSharedAlbumRequest, JoinSharedAlbumResponse>newBuilder()
                 .setMethodDescriptor(joinSharedAlbumMethodDescriptor)
                 .build();
+    GrpcCallSettings<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
+        leaveSharedAlbumTransportSettings =
+            GrpcCallSettings.<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>newBuilder()
+                .setMethodDescriptor(leaveSharedAlbumMethodDescriptor)
+                .build();
     GrpcCallSettings<ShareAlbumRequest, ShareAlbumResponse> shareAlbumTransportSettings =
         GrpcCallSettings.<ShareAlbumRequest, ShareAlbumResponse>newBuilder()
             .setMethodDescriptor(shareAlbumMethodDescriptor)
@@ -279,6 +344,10 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
             GrpcCallSettings.<ListSharedAlbumsRequest, ListSharedAlbumsResponse>newBuilder()
                 .setMethodDescriptor(listSharedAlbumsMethodDescriptor)
                 .build();
+    GrpcCallSettings<UnshareAlbumRequest, UnshareAlbumResponse> unshareAlbumTransportSettings =
+        GrpcCallSettings.<UnshareAlbumRequest, UnshareAlbumResponse>newBuilder()
+            .setMethodDescriptor(unshareAlbumMethodDescriptor)
+            .build();
 
     this.createAlbumCallable =
         callableFactory.createUnaryCallable(
@@ -303,6 +372,11 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
     this.getMediaItemCallable =
         callableFactory.createUnaryCallable(
             getMediaItemTransportSettings, settings.getMediaItemSettings(), clientContext);
+    this.batchGetMediaItemsCallable =
+        callableFactory.createUnaryCallable(
+            batchGetMediaItemsTransportSettings,
+            settings.batchGetMediaItemsSettings(),
+            clientContext);
     this.listAlbumsCallable =
         callableFactory.createUnaryCallable(
             listAlbumsTransportSettings, settings.listAlbumsSettings(), clientContext);
@@ -312,6 +386,9 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
     this.getAlbumCallable =
         callableFactory.createUnaryCallable(
             getAlbumTransportSettings, settings.getAlbumSettings(), clientContext);
+    this.getSharedAlbumCallable =
+        callableFactory.createUnaryCallable(
+            getSharedAlbumTransportSettings, settings.getSharedAlbumSettings(), clientContext);
     this.addEnrichmentToAlbumCallable =
         callableFactory.createUnaryCallable(
             addEnrichmentToAlbumTransportSettings,
@@ -320,6 +397,9 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
     this.joinSharedAlbumCallable =
         callableFactory.createUnaryCallable(
             joinSharedAlbumTransportSettings, settings.joinSharedAlbumSettings(), clientContext);
+    this.leaveSharedAlbumCallable =
+        callableFactory.createUnaryCallable(
+            leaveSharedAlbumTransportSettings, settings.leaveSharedAlbumSettings(), clientContext);
     this.shareAlbumCallable =
         callableFactory.createUnaryCallable(
             shareAlbumTransportSettings, settings.shareAlbumSettings(), clientContext);
@@ -329,6 +409,9 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
     this.listSharedAlbumsPagedCallable =
         callableFactory.createPagedCallable(
             listSharedAlbumsTransportSettings, settings.listSharedAlbumsSettings(), clientContext);
+    this.unshareAlbumCallable =
+        callableFactory.createUnaryCallable(
+            unshareAlbumTransportSettings, settings.unshareAlbumSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -365,6 +448,11 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
     return getMediaItemCallable;
   }
 
+  public UnaryCallable<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
+      batchGetMediaItemsCallable() {
+    return batchGetMediaItemsCallable;
+  }
+
   public UnaryCallable<ListAlbumsRequest, ListAlbumsPagedResponse> listAlbumsPagedCallable() {
     return listAlbumsPagedCallable;
   }
@@ -377,6 +465,10 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
     return getAlbumCallable;
   }
 
+  public UnaryCallable<GetSharedAlbumRequest, Album> getSharedAlbumCallable() {
+    return getSharedAlbumCallable;
+  }
+
   public UnaryCallable<AddEnrichmentToAlbumRequest, AddEnrichmentToAlbumResponse>
       addEnrichmentToAlbumCallable() {
     return addEnrichmentToAlbumCallable;
@@ -384,6 +476,11 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
 
   public UnaryCallable<JoinSharedAlbumRequest, JoinSharedAlbumResponse> joinSharedAlbumCallable() {
     return joinSharedAlbumCallable;
+  }
+
+  public UnaryCallable<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
+      leaveSharedAlbumCallable() {
+    return leaveSharedAlbumCallable;
   }
 
   public UnaryCallable<ShareAlbumRequest, ShareAlbumResponse> shareAlbumCallable() {
@@ -398,6 +495,10 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
   public UnaryCallable<ListSharedAlbumsRequest, ListSharedAlbumsResponse>
       listSharedAlbumsCallable() {
     return listSharedAlbumsCallable;
+  }
+
+  public UnaryCallable<UnshareAlbumRequest, UnshareAlbumResponse> unshareAlbumCallable() {
+    return unshareAlbumCallable;
   }
 
   @Override

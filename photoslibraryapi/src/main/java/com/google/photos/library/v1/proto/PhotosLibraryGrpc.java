@@ -326,6 +326,65 @@ public final class PhotosLibraryGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getBatchGetMediaItemsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.BatchGetMediaItemsRequest,
+          com.google.photos.library.v1.proto.BatchGetMediaItemsResponse>
+      METHOD_BATCH_GET_MEDIA_ITEMS = getBatchGetMediaItemsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.BatchGetMediaItemsRequest,
+          com.google.photos.library.v1.proto.BatchGetMediaItemsResponse>
+      getBatchGetMediaItemsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.BatchGetMediaItemsRequest,
+          com.google.photos.library.v1.proto.BatchGetMediaItemsResponse>
+      getBatchGetMediaItemsMethod() {
+    return getBatchGetMediaItemsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.BatchGetMediaItemsRequest,
+          com.google.photos.library.v1.proto.BatchGetMediaItemsResponse>
+      getBatchGetMediaItemsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.photos.library.v1.proto.BatchGetMediaItemsRequest,
+            com.google.photos.library.v1.proto.BatchGetMediaItemsResponse>
+        getBatchGetMediaItemsMethod;
+    if ((getBatchGetMediaItemsMethod = PhotosLibraryGrpc.getBatchGetMediaItemsMethod) == null) {
+      synchronized (PhotosLibraryGrpc.class) {
+        if ((getBatchGetMediaItemsMethod = PhotosLibraryGrpc.getBatchGetMediaItemsMethod) == null) {
+          PhotosLibraryGrpc.getBatchGetMediaItemsMethod =
+              getBatchGetMediaItemsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.photos.library.v1.proto.BatchGetMediaItemsRequest,
+                          com.google.photos.library.v1.proto.BatchGetMediaItemsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.photos.library.v1.PhotosLibrary", "BatchGetMediaItems"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.library.v1.proto.BatchGetMediaItemsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.library.v1.proto.BatchGetMediaItemsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PhotosLibraryMethodDescriptorSupplier("BatchGetMediaItems"))
+                      .build();
+        }
+      }
+    }
+    return getBatchGetMediaItemsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getListAlbumsMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.photos.library.v1.proto.ListAlbumsRequest,
@@ -438,6 +497,64 @@ public final class PhotosLibraryGrpc {
       }
     }
     return getGetAlbumMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetSharedAlbumMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.GetSharedAlbumRequest,
+          com.google.photos.library.v1.proto.Album>
+      METHOD_GET_SHARED_ALBUM = getGetSharedAlbumMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.GetSharedAlbumRequest,
+          com.google.photos.library.v1.proto.Album>
+      getGetSharedAlbumMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.GetSharedAlbumRequest,
+          com.google.photos.library.v1.proto.Album>
+      getGetSharedAlbumMethod() {
+    return getGetSharedAlbumMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.GetSharedAlbumRequest,
+          com.google.photos.library.v1.proto.Album>
+      getGetSharedAlbumMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.photos.library.v1.proto.GetSharedAlbumRequest,
+            com.google.photos.library.v1.proto.Album>
+        getGetSharedAlbumMethod;
+    if ((getGetSharedAlbumMethod = PhotosLibraryGrpc.getGetSharedAlbumMethod) == null) {
+      synchronized (PhotosLibraryGrpc.class) {
+        if ((getGetSharedAlbumMethod = PhotosLibraryGrpc.getGetSharedAlbumMethod) == null) {
+          PhotosLibraryGrpc.getGetSharedAlbumMethod =
+              getGetSharedAlbumMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.photos.library.v1.proto.GetSharedAlbumRequest,
+                          com.google.photos.library.v1.proto.Album>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.photos.library.v1.PhotosLibrary", "GetSharedAlbum"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.library.v1.proto.GetSharedAlbumRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.library.v1.proto.Album.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PhotosLibraryMethodDescriptorSupplier("GetSharedAlbum"))
+                      .build();
+        }
+      }
+    }
+    return getGetSharedAlbumMethod;
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
@@ -560,6 +677,65 @@ public final class PhotosLibraryGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getLeaveSharedAlbumMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.LeaveSharedAlbumRequest,
+          com.google.photos.library.v1.proto.LeaveSharedAlbumResponse>
+      METHOD_LEAVE_SHARED_ALBUM = getLeaveSharedAlbumMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.LeaveSharedAlbumRequest,
+          com.google.photos.library.v1.proto.LeaveSharedAlbumResponse>
+      getLeaveSharedAlbumMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.LeaveSharedAlbumRequest,
+          com.google.photos.library.v1.proto.LeaveSharedAlbumResponse>
+      getLeaveSharedAlbumMethod() {
+    return getLeaveSharedAlbumMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.LeaveSharedAlbumRequest,
+          com.google.photos.library.v1.proto.LeaveSharedAlbumResponse>
+      getLeaveSharedAlbumMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.photos.library.v1.proto.LeaveSharedAlbumRequest,
+            com.google.photos.library.v1.proto.LeaveSharedAlbumResponse>
+        getLeaveSharedAlbumMethod;
+    if ((getLeaveSharedAlbumMethod = PhotosLibraryGrpc.getLeaveSharedAlbumMethod) == null) {
+      synchronized (PhotosLibraryGrpc.class) {
+        if ((getLeaveSharedAlbumMethod = PhotosLibraryGrpc.getLeaveSharedAlbumMethod) == null) {
+          PhotosLibraryGrpc.getLeaveSharedAlbumMethod =
+              getLeaveSharedAlbumMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.photos.library.v1.proto.LeaveSharedAlbumRequest,
+                          com.google.photos.library.v1.proto.LeaveSharedAlbumResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.photos.library.v1.PhotosLibrary", "LeaveSharedAlbum"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.library.v1.proto.LeaveSharedAlbumRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.library.v1.proto.LeaveSharedAlbumResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PhotosLibraryMethodDescriptorSupplier("LeaveSharedAlbum"))
+                      .build();
+        }
+      }
+    }
+    return getLeaveSharedAlbumMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getShareAlbumMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.photos.library.v1.proto.ShareAlbumRequest,
@@ -676,6 +852,65 @@ public final class PhotosLibraryGrpc {
     return getListSharedAlbumsMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUnshareAlbumMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UnshareAlbumRequest,
+          com.google.photos.library.v1.proto.UnshareAlbumResponse>
+      METHOD_UNSHARE_ALBUM = getUnshareAlbumMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UnshareAlbumRequest,
+          com.google.photos.library.v1.proto.UnshareAlbumResponse>
+      getUnshareAlbumMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UnshareAlbumRequest,
+          com.google.photos.library.v1.proto.UnshareAlbumResponse>
+      getUnshareAlbumMethod() {
+    return getUnshareAlbumMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UnshareAlbumRequest,
+          com.google.photos.library.v1.proto.UnshareAlbumResponse>
+      getUnshareAlbumMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.photos.library.v1.proto.UnshareAlbumRequest,
+            com.google.photos.library.v1.proto.UnshareAlbumResponse>
+        getUnshareAlbumMethod;
+    if ((getUnshareAlbumMethod = PhotosLibraryGrpc.getUnshareAlbumMethod) == null) {
+      synchronized (PhotosLibraryGrpc.class) {
+        if ((getUnshareAlbumMethod = PhotosLibraryGrpc.getUnshareAlbumMethod) == null) {
+          PhotosLibraryGrpc.getUnshareAlbumMethod =
+              getUnshareAlbumMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.photos.library.v1.proto.UnshareAlbumRequest,
+                          com.google.photos.library.v1.proto.UnshareAlbumResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.photos.library.v1.PhotosLibrary", "UnshareAlbum"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.library.v1.proto.UnshareAlbumRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.library.v1.proto.UnshareAlbumResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PhotosLibraryMethodDescriptorSupplier("UnshareAlbum"))
+                      .build();
+        }
+      }
+    }
+    return getUnshareAlbumMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PhotosLibraryStub newStub(io.grpc.Channel channel) {
     return new PhotosLibraryStub(channel);
@@ -758,9 +993,9 @@ public final class PhotosLibraryGrpc {
      * If no filters are set, then all media items in the user's library are
      * returned.
      * If an album is set, all media items in the specified album are returned.
-     * If filters are specified, media items that match the filters from the user's
-     * library are listed.
-     * If you set both the album and the filters, the request results in an error.
+     * If filters are specified, media items that match the filters from the
+     * user's library are listed. If you set both the album and the filters, the
+     * request results in an error.
      * </pre>
      */
     public void searchMediaItems(
@@ -788,7 +1023,7 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Returns the media item for the specified media item `id`.
+     * Returns the media item for the specified media item identifier.
      * </pre>
      */
     public void getMediaItem(
@@ -796,6 +1031,20 @@ public final class PhotosLibraryGrpc {
         io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.MediaItem>
             responseObserver) {
       asyncUnimplementedUnaryCall(getGetMediaItemMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of media items for the specified media item identifiers.
+     * </pre>
+     */
+    public void batchGetMediaItems(
+        com.google.photos.library.v1.proto.BatchGetMediaItemsRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.BatchGetMediaItemsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getBatchGetMediaItemsMethodHelper(), responseObserver);
     }
 
     /**
@@ -817,9 +1066,8 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Returns the album based on the specified `albumId` or `shareToken`.
-     * Exactly one of `albumId` and `shareToken` must be set.
-     * The `albumId` should be the ID of an album owned by the user or a shared
+     * Returns the album based on the specified `albumId`.
+     * The `albumId` must be the ID of an album owned by the user or a shared
      * album that the user has joined.
      * </pre>
      */
@@ -827,6 +1075,19 @@ public final class PhotosLibraryGrpc {
         com.google.photos.library.v1.proto.GetAlbumRequest request,
         io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.Album> responseObserver) {
       asyncUnimplementedUnaryCall(getGetAlbumMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the album based on the specified `shareToken`.
+     * </pre>
+     */
+    public void getSharedAlbum(
+        com.google.photos.library.v1.proto.GetSharedAlbumRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.Album> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetSharedAlbumMethodHelper(), responseObserver);
     }
 
     /**
@@ -861,6 +1122,21 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
+     * Leaves a previously-joined shared album on behalf of the Google Photos
+     * user. The user must not own this album.
+     * </pre>
+     */
+    public void leaveSharedAlbum(
+        com.google.photos.library.v1.proto.LeaveSharedAlbumRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.LeaveSharedAlbumResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getLeaveSharedAlbumMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks an album as shared and accessible to other users. This action can
      * only be performed on albums which were created by the developer via the
      * API.
@@ -886,6 +1162,25 @@ public final class PhotosLibraryGrpc {
         io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.ListSharedAlbumsResponse>
             responseObserver) {
       asyncUnimplementedUnaryCall(getListSharedAlbumsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks a previously shared album as private. This means that the album is
+     * no longer shared and all the non-owners will lose access to the album. All
+     * non-owner content will be removed from the album. If a non-owner has
+     * previously added the album to their library, they will retain all photos in
+     * their library. This action can only be performed on albums which were
+     * created by the developer via the API.
+     * </pre>
+     */
+    public void unshareAlbum(
+        com.google.photos.library.v1.proto.UnshareAlbumRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.UnshareAlbumResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getUnshareAlbumMethodHelper(), responseObserver);
     }
 
     @java.lang.Override
@@ -925,6 +1220,13 @@ public final class PhotosLibraryGrpc {
                       com.google.photos.library.v1.proto.GetMediaItemRequest,
                       com.google.photos.library.v1.proto.MediaItem>(this, METHODID_GET_MEDIA_ITEM)))
           .addMethod(
+              getBatchGetMediaItemsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.photos.library.v1.proto.BatchGetMediaItemsRequest,
+                      com.google.photos.library.v1.proto.BatchGetMediaItemsResponse>(
+                      this, METHODID_BATCH_GET_MEDIA_ITEMS)))
+          .addMethod(
               getListAlbumsMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -937,6 +1239,12 @@ public final class PhotosLibraryGrpc {
                   new MethodHandlers<
                       com.google.photos.library.v1.proto.GetAlbumRequest,
                       com.google.photos.library.v1.proto.Album>(this, METHODID_GET_ALBUM)))
+          .addMethod(
+              getGetSharedAlbumMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.photos.library.v1.proto.GetSharedAlbumRequest,
+                      com.google.photos.library.v1.proto.Album>(this, METHODID_GET_SHARED_ALBUM)))
           .addMethod(
               getAddEnrichmentToAlbumMethodHelper(),
               asyncUnaryCall(
@@ -952,6 +1260,13 @@ public final class PhotosLibraryGrpc {
                       com.google.photos.library.v1.proto.JoinSharedAlbumResponse>(
                       this, METHODID_JOIN_SHARED_ALBUM)))
           .addMethod(
+              getLeaveSharedAlbumMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.photos.library.v1.proto.LeaveSharedAlbumRequest,
+                      com.google.photos.library.v1.proto.LeaveSharedAlbumResponse>(
+                      this, METHODID_LEAVE_SHARED_ALBUM)))
+          .addMethod(
               getShareAlbumMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -965,6 +1280,13 @@ public final class PhotosLibraryGrpc {
                       com.google.photos.library.v1.proto.ListSharedAlbumsRequest,
                       com.google.photos.library.v1.proto.ListSharedAlbumsResponse>(
                       this, METHODID_LIST_SHARED_ALBUMS)))
+          .addMethod(
+              getUnshareAlbumMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.photos.library.v1.proto.UnshareAlbumRequest,
+                      com.google.photos.library.v1.proto.UnshareAlbumResponse>(
+                      this, METHODID_UNSHARE_ALBUM)))
           .build();
     }
   }
@@ -1052,9 +1374,9 @@ public final class PhotosLibraryGrpc {
      * If no filters are set, then all media items in the user's library are
      * returned.
      * If an album is set, all media items in the specified album are returned.
-     * If filters are specified, media items that match the filters from the user's
-     * library are listed.
-     * If you set both the album and the filters, the request results in an error.
+     * If filters are specified, media items that match the filters from the
+     * user's library are listed. If you set both the album and the filters, the
+     * request results in an error.
      * </pre>
      */
     public void searchMediaItems(
@@ -1088,7 +1410,7 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Returns the media item for the specified media item `id`.
+     * Returns the media item for the specified media item identifier.
      * </pre>
      */
     public void getMediaItem(
@@ -1097,6 +1419,23 @@ public final class PhotosLibraryGrpc {
             responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetMediaItemMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of media items for the specified media item identifiers.
+     * </pre>
+     */
+    public void batchGetMediaItems(
+        com.google.photos.library.v1.proto.BatchGetMediaItemsRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.BatchGetMediaItemsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getBatchGetMediaItemsMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1123,9 +1462,8 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Returns the album based on the specified `albumId` or `shareToken`.
-     * Exactly one of `albumId` and `shareToken` must be set.
-     * The `albumId` should be the ID of an album owned by the user or a shared
+     * Returns the album based on the specified `albumId`.
+     * The `albumId` must be the ID of an album owned by the user or a shared
      * album that the user has joined.
      * </pre>
      */
@@ -1134,6 +1472,22 @@ public final class PhotosLibraryGrpc {
         io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.Album> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetAlbumMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the album based on the specified `shareToken`.
+     * </pre>
+     */
+    public void getSharedAlbum(
+        com.google.photos.library.v1.proto.GetSharedAlbumRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.Album> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetSharedAlbumMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1176,6 +1530,24 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
+     * Leaves a previously-joined shared album on behalf of the Google Photos
+     * user. The user must not own this album.
+     * </pre>
+     */
+    public void leaveSharedAlbum(
+        com.google.photos.library.v1.proto.LeaveSharedAlbumRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.LeaveSharedAlbumResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getLeaveSharedAlbumMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks an album as shared and accessible to other users. This action can
      * only be performed on albums which were created by the developer via the
      * API.
@@ -1205,6 +1577,28 @@ public final class PhotosLibraryGrpc {
             responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getListSharedAlbumsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks a previously shared album as private. This means that the album is
+     * no longer shared and all the non-owners will lose access to the album. All
+     * non-owner content will be removed from the album. If a non-owner has
+     * previously added the album to their library, they will retain all photos in
+     * their library. This action can only be performed on albums which were
+     * created by the developer via the API.
+     * </pre>
+     */
+    public void unshareAlbum(
+        com.google.photos.library.v1.proto.UnshareAlbumRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.UnshareAlbumResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUnshareAlbumMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1287,9 +1681,9 @@ public final class PhotosLibraryGrpc {
      * If no filters are set, then all media items in the user's library are
      * returned.
      * If an album is set, all media items in the specified album are returned.
-     * If filters are specified, media items that match the filters from the user's
-     * library are listed.
-     * If you set both the album and the filters, the request results in an error.
+     * If filters are specified, media items that match the filters from the
+     * user's library are listed. If you set both the album and the filters, the
+     * request results in an error.
      * </pre>
      */
     public com.google.photos.library.v1.proto.SearchMediaItemsResponse searchMediaItems(
@@ -1315,13 +1709,26 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Returns the media item for the specified media item `id`.
+     * Returns the media item for the specified media item identifier.
      * </pre>
      */
     public com.google.photos.library.v1.proto.MediaItem getMediaItem(
         com.google.photos.library.v1.proto.GetMediaItemRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetMediaItemMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of media items for the specified media item identifiers.
+     * </pre>
+     */
+    public com.google.photos.library.v1.proto.BatchGetMediaItemsResponse batchGetMediaItems(
+        com.google.photos.library.v1.proto.BatchGetMediaItemsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getBatchGetMediaItemsMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -1342,15 +1749,27 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Returns the album based on the specified `albumId` or `shareToken`.
-     * Exactly one of `albumId` and `shareToken` must be set.
-     * The `albumId` should be the ID of an album owned by the user or a shared
+     * Returns the album based on the specified `albumId`.
+     * The `albumId` must be the ID of an album owned by the user or a shared
      * album that the user has joined.
      * </pre>
      */
     public com.google.photos.library.v1.proto.Album getAlbum(
         com.google.photos.library.v1.proto.GetAlbumRequest request) {
       return blockingUnaryCall(getChannel(), getGetAlbumMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the album based on the specified `shareToken`.
+     * </pre>
+     */
+    public com.google.photos.library.v1.proto.Album getSharedAlbum(
+        com.google.photos.library.v1.proto.GetSharedAlbumRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetSharedAlbumMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -1383,6 +1802,20 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
+     * Leaves a previously-joined shared album on behalf of the Google Photos
+     * user. The user must not own this album.
+     * </pre>
+     */
+    public com.google.photos.library.v1.proto.LeaveSharedAlbumResponse leaveSharedAlbum(
+        com.google.photos.library.v1.proto.LeaveSharedAlbumRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getLeaveSharedAlbumMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks an album as shared and accessible to other users. This action can
      * only be performed on albums which were created by the developer via the
      * API.
@@ -1406,6 +1839,24 @@ public final class PhotosLibraryGrpc {
         com.google.photos.library.v1.proto.ListSharedAlbumsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListSharedAlbumsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks a previously shared album as private. This means that the album is
+     * no longer shared and all the non-owners will lose access to the album. All
+     * non-owner content will be removed from the album. If a non-owner has
+     * previously added the album to their library, they will retain all photos in
+     * their library. This action can only be performed on albums which were
+     * created by the developer via the API.
+     * </pre>
+     */
+    public com.google.photos.library.v1.proto.UnshareAlbumResponse unshareAlbum(
+        com.google.photos.library.v1.proto.UnshareAlbumRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUnshareAlbumMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1489,9 +1940,9 @@ public final class PhotosLibraryGrpc {
      * If no filters are set, then all media items in the user's library are
      * returned.
      * If an album is set, all media items in the specified album are returned.
-     * If filters are specified, media items that match the filters from the user's
-     * library are listed.
-     * If you set both the album and the filters, the request results in an error.
+     * If filters are specified, media items that match the filters from the
+     * user's library are listed. If you set both the album and the filters, the
+     * request results in an error.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1519,7 +1970,7 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Returns the media item for the specified media item `id`.
+     * Returns the media item for the specified media item identifier.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1527,6 +1978,20 @@ public final class PhotosLibraryGrpc {
         getMediaItem(com.google.photos.library.v1.proto.GetMediaItemRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetMediaItemMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of media items for the specified media item identifiers.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.photos.library.v1.proto.BatchGetMediaItemsResponse>
+        batchGetMediaItems(com.google.photos.library.v1.proto.BatchGetMediaItemsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getBatchGetMediaItemsMethodHelper(), getCallOptions()), request);
     }
 
     /**
@@ -1548,9 +2013,8 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Returns the album based on the specified `albumId` or `shareToken`.
-     * Exactly one of `albumId` and `shareToken` must be set.
-     * The `albumId` should be the ID of an album owned by the user or a shared
+     * Returns the album based on the specified `albumId`.
+     * The `albumId` must be the ID of an album owned by the user or a shared
      * album that the user has joined.
      * </pre>
      */
@@ -1559,6 +2023,20 @@ public final class PhotosLibraryGrpc {
         getAlbum(com.google.photos.library.v1.proto.GetAlbumRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetAlbumMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the album based on the specified `shareToken`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.photos.library.v1.proto.Album>
+        getSharedAlbum(com.google.photos.library.v1.proto.GetSharedAlbumRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetSharedAlbumMethodHelper(), getCallOptions()), request);
     }
 
     /**
@@ -1594,6 +2072,21 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
+     * Leaves a previously-joined shared album on behalf of the Google Photos
+     * user. The user must not own this album.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.photos.library.v1.proto.LeaveSharedAlbumResponse>
+        leaveSharedAlbum(com.google.photos.library.v1.proto.LeaveSharedAlbumRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getLeaveSharedAlbumMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks an album as shared and accessible to other users. This action can
      * only be performed on albums which were created by the developer via the
      * API.
@@ -1620,6 +2113,25 @@ public final class PhotosLibraryGrpc {
       return futureUnaryCall(
           getChannel().newCall(getListSharedAlbumsMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks a previously shared album as private. This means that the album is
+     * no longer shared and all the non-owners will lose access to the album. All
+     * non-owner content will be removed from the album. If a non-owner has
+     * previously added the album to their library, they will retain all photos in
+     * their library. This action can only be performed on albums which were
+     * created by the developer via the API.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.photos.library.v1.proto.UnshareAlbumResponse>
+        unshareAlbum(com.google.photos.library.v1.proto.UnshareAlbumRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUnshareAlbumMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ALBUM = 0;
@@ -1627,12 +2139,16 @@ public final class PhotosLibraryGrpc {
   private static final int METHODID_SEARCH_MEDIA_ITEMS = 2;
   private static final int METHODID_LIST_MEDIA_ITEMS = 3;
   private static final int METHODID_GET_MEDIA_ITEM = 4;
-  private static final int METHODID_LIST_ALBUMS = 5;
-  private static final int METHODID_GET_ALBUM = 6;
-  private static final int METHODID_ADD_ENRICHMENT_TO_ALBUM = 7;
-  private static final int METHODID_JOIN_SHARED_ALBUM = 8;
-  private static final int METHODID_SHARE_ALBUM = 9;
-  private static final int METHODID_LIST_SHARED_ALBUMS = 10;
+  private static final int METHODID_BATCH_GET_MEDIA_ITEMS = 5;
+  private static final int METHODID_LIST_ALBUMS = 6;
+  private static final int METHODID_GET_ALBUM = 7;
+  private static final int METHODID_GET_SHARED_ALBUM = 8;
+  private static final int METHODID_ADD_ENRICHMENT_TO_ALBUM = 9;
+  private static final int METHODID_JOIN_SHARED_ALBUM = 10;
+  private static final int METHODID_LEAVE_SHARED_ALBUM = 11;
+  private static final int METHODID_SHARE_ALBUM = 12;
+  private static final int METHODID_LIST_SHARED_ALBUMS = 13;
+  private static final int METHODID_UNSHARE_ALBUM = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1684,6 +2200,13 @@ public final class PhotosLibraryGrpc {
               (io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.MediaItem>)
                   responseObserver);
           break;
+        case METHODID_BATCH_GET_MEDIA_ITEMS:
+          serviceImpl.batchGetMediaItems(
+              (com.google.photos.library.v1.proto.BatchGetMediaItemsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.photos.library.v1.proto.BatchGetMediaItemsResponse>)
+                  responseObserver);
+          break;
         case METHODID_LIST_ALBUMS:
           serviceImpl.listAlbums(
               (com.google.photos.library.v1.proto.ListAlbumsRequest) request,
@@ -1693,6 +2216,12 @@ public final class PhotosLibraryGrpc {
         case METHODID_GET_ALBUM:
           serviceImpl.getAlbum(
               (com.google.photos.library.v1.proto.GetAlbumRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.Album>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SHARED_ALBUM:
+          serviceImpl.getSharedAlbum(
+              (com.google.photos.library.v1.proto.GetSharedAlbumRequest) request,
               (io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.Album>)
                   responseObserver);
           break;
@@ -1710,6 +2239,13 @@ public final class PhotosLibraryGrpc {
                       com.google.photos.library.v1.proto.JoinSharedAlbumResponse>)
                   responseObserver);
           break;
+        case METHODID_LEAVE_SHARED_ALBUM:
+          serviceImpl.leaveSharedAlbum(
+              (com.google.photos.library.v1.proto.LeaveSharedAlbumRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.photos.library.v1.proto.LeaveSharedAlbumResponse>)
+                  responseObserver);
+          break;
         case METHODID_SHARE_ALBUM:
           serviceImpl.shareAlbum(
               (com.google.photos.library.v1.proto.ShareAlbumRequest) request,
@@ -1721,6 +2257,12 @@ public final class PhotosLibraryGrpc {
               (com.google.photos.library.v1.proto.ListSharedAlbumsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.photos.library.v1.proto.ListSharedAlbumsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UNSHARE_ALBUM:
+          serviceImpl.unshareAlbum(
+              (com.google.photos.library.v1.proto.UnshareAlbumRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.photos.library.v1.proto.UnshareAlbumResponse>)
                   responseObserver);
           break;
         default:
@@ -1792,12 +2334,16 @@ public final class PhotosLibraryGrpc {
                       .addMethod(getSearchMediaItemsMethodHelper())
                       .addMethod(getListMediaItemsMethodHelper())
                       .addMethod(getGetMediaItemMethodHelper())
+                      .addMethod(getBatchGetMediaItemsMethodHelper())
                       .addMethod(getListAlbumsMethodHelper())
                       .addMethod(getGetAlbumMethodHelper())
+                      .addMethod(getGetSharedAlbumMethodHelper())
                       .addMethod(getAddEnrichmentToAlbumMethodHelper())
                       .addMethod(getJoinSharedAlbumMethodHelper())
+                      .addMethod(getLeaveSharedAlbumMethodHelper())
                       .addMethod(getShareAlbumMethodHelper())
                       .addMethod(getListSharedAlbumsMethodHelper())
+                      .addMethod(getUnshareAlbumMethodHelper())
                       .build();
         }
       }

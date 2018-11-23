@@ -7,23 +7,23 @@ package com.google.photos.library.v1.proto;
  *
  *
  * <pre>
- * Request to retrieve a specific album.
+ * Request to retrieve a list of media items.
  * </pre>
  *
- * Protobuf type {@code google.photos.library.v1.GetAlbumRequest}
+ * Protobuf type {@code google.photos.library.v1.BatchGetMediaItemsRequest}
  */
-public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV3
+public final class BatchGetMediaItemsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.photos.library.v1.GetAlbumRequest)
-    GetAlbumRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.photos.library.v1.BatchGetMediaItemsRequest)
+    BatchGetMediaItemsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetAlbumRequest.newBuilder() to construct.
-  private GetAlbumRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use BatchGetMediaItemsRequest.newBuilder() to construct.
+  private BatchGetMediaItemsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetAlbumRequest() {
-    albumId_ = "";
+  private BatchGetMediaItemsRequest() {
+    mediaItemIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private GetAlbumRequest(
+  private BatchGetMediaItemsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -53,8 +53,11 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
           case 10:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
-              albumId_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                mediaItemIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              mediaItemIds_.add(s);
               break;
             }
           default:
@@ -71,6 +74,9 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        mediaItemIds_ = mediaItemIds_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -78,60 +84,68 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
-        .internal_static_google_photos_library_v1_GetAlbumRequest_descriptor;
+        .internal_static_google_photos_library_v1_BatchGetMediaItemsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
-        .internal_static_google_photos_library_v1_GetAlbumRequest_fieldAccessorTable
+        .internal_static_google_photos_library_v1_BatchGetMediaItemsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.photos.library.v1.proto.GetAlbumRequest.class,
-            com.google.photos.library.v1.proto.GetAlbumRequest.Builder.class);
+            com.google.photos.library.v1.proto.BatchGetMediaItemsRequest.class,
+            com.google.photos.library.v1.proto.BatchGetMediaItemsRequest.Builder.class);
   }
 
-  public static final int ALBUM_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object albumId_;
+  public static final int MEDIA_ITEM_IDS_FIELD_NUMBER = 1;
+  private com.google.protobuf.LazyStringList mediaItemIds_;
   /**
    *
    *
    * <pre>
-   * Identifier of the album to be requested.
+   * Identifiers of the media items to be requested.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>repeated string media_item_ids = 1;</code>
    */
-  public java.lang.String getAlbumId() {
-    java.lang.Object ref = albumId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      albumId_ = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList getMediaItemIdsList() {
+    return mediaItemIds_;
   }
   /**
    *
    *
    * <pre>
-   * Identifier of the album to be requested.
+   * Identifiers of the media items to be requested.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>repeated string media_item_ids = 1;</code>
    */
-  public com.google.protobuf.ByteString getAlbumIdBytes() {
-    java.lang.Object ref = albumId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      albumId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getMediaItemIdsCount() {
+    return mediaItemIds_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Identifiers of the media items to be requested.
+   * </pre>
+   *
+   * <code>repeated string media_item_ids = 1;</code>
+   */
+  public java.lang.String getMediaItemIds(int index) {
+    return mediaItemIds_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Identifiers of the media items to be requested.
+   * </pre>
+   *
+   * <code>repeated string media_item_ids = 1;</code>
+   */
+  public com.google.protobuf.ByteString getMediaItemIdsBytes(int index) {
+    return mediaItemIds_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -148,8 +162,8 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getAlbumIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, albumId_);
+    for (int i = 0; i < mediaItemIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mediaItemIds_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -160,8 +174,13 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getAlbumIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, albumId_);
+    {
+      int dataSize = 0;
+      for (int i = 0; i < mediaItemIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(mediaItemIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getMediaItemIdsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -173,14 +192,14 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.photos.library.v1.proto.GetAlbumRequest)) {
+    if (!(obj instanceof com.google.photos.library.v1.proto.BatchGetMediaItemsRequest)) {
       return super.equals(obj);
     }
-    com.google.photos.library.v1.proto.GetAlbumRequest other =
-        (com.google.photos.library.v1.proto.GetAlbumRequest) obj;
+    com.google.photos.library.v1.proto.BatchGetMediaItemsRequest other =
+        (com.google.photos.library.v1.proto.BatchGetMediaItemsRequest) obj;
 
     boolean result = true;
-    result = result && getAlbumId().equals(other.getAlbumId());
+    result = result && getMediaItemIdsList().equals(other.getMediaItemIdsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -192,78 +211,80 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ALBUM_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getAlbumId().hashCode();
+    if (getMediaItemIdsCount() > 0) {
+      hash = (37 * hash) + MEDIA_ITEM_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getMediaItemIdsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(byte[] data)
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseDelimitedFrom(
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseDelimitedFrom(
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest parseFrom(
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -280,7 +301,8 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.photos.library.v1.proto.GetAlbumRequest prototype) {
+  public static Builder newBuilder(
+      com.google.photos.library.v1.proto.BatchGetMediaItemsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -298,31 +320,31 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request to retrieve a specific album.
+   * Request to retrieve a list of media items.
    * </pre>
    *
-   * Protobuf type {@code google.photos.library.v1.GetAlbumRequest}
+   * Protobuf type {@code google.photos.library.v1.BatchGetMediaItemsRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.photos.library.v1.GetAlbumRequest)
-      com.google.photos.library.v1.proto.GetAlbumRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.photos.library.v1.BatchGetMediaItemsRequest)
+      com.google.photos.library.v1.proto.BatchGetMediaItemsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.photos.library.v1.proto.LibraryServiceProto
-          .internal_static_google_photos_library_v1_GetAlbumRequest_descriptor;
+          .internal_static_google_photos_library_v1_BatchGetMediaItemsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.photos.library.v1.proto.LibraryServiceProto
-          .internal_static_google_photos_library_v1_GetAlbumRequest_fieldAccessorTable
+          .internal_static_google_photos_library_v1_BatchGetMediaItemsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.photos.library.v1.proto.GetAlbumRequest.class,
-              com.google.photos.library.v1.proto.GetAlbumRequest.Builder.class);
+              com.google.photos.library.v1.proto.BatchGetMediaItemsRequest.class,
+              com.google.photos.library.v1.proto.BatchGetMediaItemsRequest.Builder.class);
     }
 
-    // Construct using com.google.photos.library.v1.proto.GetAlbumRequest.newBuilder()
+    // Construct using com.google.photos.library.v1.proto.BatchGetMediaItemsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -339,25 +361,26 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      albumId_ = "";
-
+      mediaItemIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.photos.library.v1.proto.LibraryServiceProto
-          .internal_static_google_photos_library_v1_GetAlbumRequest_descriptor;
+          .internal_static_google_photos_library_v1_BatchGetMediaItemsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.photos.library.v1.proto.GetAlbumRequest getDefaultInstanceForType() {
-      return com.google.photos.library.v1.proto.GetAlbumRequest.getDefaultInstance();
+    public com.google.photos.library.v1.proto.BatchGetMediaItemsRequest
+        getDefaultInstanceForType() {
+      return com.google.photos.library.v1.proto.BatchGetMediaItemsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.photos.library.v1.proto.GetAlbumRequest build() {
-      com.google.photos.library.v1.proto.GetAlbumRequest result = buildPartial();
+    public com.google.photos.library.v1.proto.BatchGetMediaItemsRequest build() {
+      com.google.photos.library.v1.proto.BatchGetMediaItemsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -365,10 +388,15 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     @java.lang.Override
-    public com.google.photos.library.v1.proto.GetAlbumRequest buildPartial() {
-      com.google.photos.library.v1.proto.GetAlbumRequest result =
-          new com.google.photos.library.v1.proto.GetAlbumRequest(this);
-      result.albumId_ = albumId_;
+    public com.google.photos.library.v1.proto.BatchGetMediaItemsRequest buildPartial() {
+      com.google.photos.library.v1.proto.BatchGetMediaItemsRequest result =
+          new com.google.photos.library.v1.proto.BatchGetMediaItemsRequest(this);
+      int from_bitField0_ = bitField0_;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        mediaItemIds_ = mediaItemIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.mediaItemIds_ = mediaItemIds_;
       onBuilt();
       return result;
     }
@@ -408,19 +436,26 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.photos.library.v1.proto.GetAlbumRequest) {
-        return mergeFrom((com.google.photos.library.v1.proto.GetAlbumRequest) other);
+      if (other instanceof com.google.photos.library.v1.proto.BatchGetMediaItemsRequest) {
+        return mergeFrom((com.google.photos.library.v1.proto.BatchGetMediaItemsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.photos.library.v1.proto.GetAlbumRequest other) {
-      if (other == com.google.photos.library.v1.proto.GetAlbumRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.photos.library.v1.proto.BatchGetMediaItemsRequest other) {
+      if (other
+          == com.google.photos.library.v1.proto.BatchGetMediaItemsRequest.getDefaultInstance())
         return this;
-      if (!other.getAlbumId().isEmpty()) {
-        albumId_ = other.albumId_;
+      if (!other.mediaItemIds_.isEmpty()) {
+        if (mediaItemIds_.isEmpty()) {
+          mediaItemIds_ = other.mediaItemIds_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureMediaItemIdsIsMutable();
+          mediaItemIds_.addAll(other.mediaItemIds_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -438,12 +473,12 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.GetAlbumRequest parsedMessage = null;
+      com.google.photos.library.v1.proto.BatchGetMediaItemsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.photos.library.v1.proto.GetAlbumRequest) e.getUnfinishedMessage();
+            (com.google.photos.library.v1.proto.BatchGetMediaItemsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -453,62 +488,80 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private java.lang.Object albumId_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Identifier of the album to be requested.
-     * </pre>
-     *
-     * <code>string album_id = 1;</code>
-     */
-    public java.lang.String getAlbumId() {
-      java.lang.Object ref = albumId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        albumId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
+    private int bitField0_;
+
+    private com.google.protobuf.LazyStringList mediaItemIds_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureMediaItemIdsIsMutable() {
+      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        mediaItemIds_ = new com.google.protobuf.LazyStringArrayList(mediaItemIds_);
+        bitField0_ |= 0x00000001;
       }
     }
     /**
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Identifiers of the media items to be requested.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>repeated string media_item_ids = 1;</code>
      */
-    public com.google.protobuf.ByteString getAlbumIdBytes() {
-      java.lang.Object ref = albumId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        albumId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.ProtocolStringList getMediaItemIdsList() {
+      return mediaItemIds_.getUnmodifiableView();
     }
     /**
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Identifiers of the media items to be requested.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>repeated string media_item_ids = 1;</code>
      */
-    public Builder setAlbumId(java.lang.String value) {
+    public int getMediaItemIdsCount() {
+      return mediaItemIds_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifiers of the media items to be requested.
+     * </pre>
+     *
+     * <code>repeated string media_item_ids = 1;</code>
+     */
+    public java.lang.String getMediaItemIds(int index) {
+      return mediaItemIds_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifiers of the media items to be requested.
+     * </pre>
+     *
+     * <code>repeated string media_item_ids = 1;</code>
+     */
+    public com.google.protobuf.ByteString getMediaItemIdsBytes(int index) {
+      return mediaItemIds_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifiers of the media items to be requested.
+     * </pre>
+     *
+     * <code>repeated string media_item_ids = 1;</code>
+     */
+    public Builder setMediaItemIds(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-
-      albumId_ = value;
+      ensureMediaItemIdsIsMutable();
+      mediaItemIds_.set(index, value);
       onChanged();
       return this;
     }
@@ -516,14 +569,17 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Identifiers of the media items to be requested.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>repeated string media_item_ids = 1;</code>
      */
-    public Builder clearAlbumId() {
-
-      albumId_ = getDefaultInstance().getAlbumId();
+    public Builder addMediaItemIds(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureMediaItemIdsIsMutable();
+      mediaItemIds_.add(value);
       onChanged();
       return this;
     }
@@ -531,18 +587,48 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Identifiers of the media items to be requested.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>repeated string media_item_ids = 1;</code>
      */
-    public Builder setAlbumIdBytes(com.google.protobuf.ByteString value) {
+    public Builder addAllMediaItemIds(java.lang.Iterable<java.lang.String> values) {
+      ensureMediaItemIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mediaItemIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifiers of the media items to be requested.
+     * </pre>
+     *
+     * <code>repeated string media_item_ids = 1;</code>
+     */
+    public Builder clearMediaItemIds() {
+      mediaItemIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifiers of the media items to be requested.
+     * </pre>
+     *
+     * <code>repeated string media_item_ids = 1;</code>
+     */
+    public Builder addMediaItemIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
-      albumId_ = value;
+      ensureMediaItemIdsIsMutable();
+      mediaItemIds_.add(value);
       onChanged();
       return this;
     }
@@ -558,42 +644,43 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.photos.library.v1.GetAlbumRequest)
+    // @@protoc_insertion_point(builder_scope:google.photos.library.v1.BatchGetMediaItemsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.photos.library.v1.GetAlbumRequest)
-  private static final com.google.photos.library.v1.proto.GetAlbumRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.photos.library.v1.BatchGetMediaItemsRequest)
+  private static final com.google.photos.library.v1.proto.BatchGetMediaItemsRequest
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.photos.library.v1.proto.GetAlbumRequest();
+    DEFAULT_INSTANCE = new com.google.photos.library.v1.proto.BatchGetMediaItemsRequest();
   }
 
-  public static com.google.photos.library.v1.proto.GetAlbumRequest getDefaultInstance() {
+  public static com.google.photos.library.v1.proto.BatchGetMediaItemsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetAlbumRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetAlbumRequest>() {
+  private static final com.google.protobuf.Parser<BatchGetMediaItemsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<BatchGetMediaItemsRequest>() {
         @java.lang.Override
-        public GetAlbumRequest parsePartialFrom(
+        public BatchGetMediaItemsRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetAlbumRequest(input, extensionRegistry);
+          return new BatchGetMediaItemsRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<GetAlbumRequest> parser() {
+  public static com.google.protobuf.Parser<BatchGetMediaItemsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetAlbumRequest> getParserForType() {
+  public com.google.protobuf.Parser<BatchGetMediaItemsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.photos.library.v1.proto.GetAlbumRequest getDefaultInstanceForType() {
+  public com.google.photos.library.v1.proto.BatchGetMediaItemsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

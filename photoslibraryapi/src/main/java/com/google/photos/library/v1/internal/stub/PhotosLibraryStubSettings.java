@@ -51,11 +51,16 @@ import com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse;
 import com.google.photos.library.v1.proto.Album;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse;
+import com.google.photos.library.v1.proto.BatchGetMediaItemsRequest;
+import com.google.photos.library.v1.proto.BatchGetMediaItemsResponse;
 import com.google.photos.library.v1.proto.CreateAlbumRequest;
 import com.google.photos.library.v1.proto.GetAlbumRequest;
 import com.google.photos.library.v1.proto.GetMediaItemRequest;
+import com.google.photos.library.v1.proto.GetSharedAlbumRequest;
 import com.google.photos.library.v1.proto.JoinSharedAlbumRequest;
 import com.google.photos.library.v1.proto.JoinSharedAlbumResponse;
+import com.google.photos.library.v1.proto.LeaveSharedAlbumRequest;
+import com.google.photos.library.v1.proto.LeaveSharedAlbumResponse;
 import com.google.photos.library.v1.proto.ListAlbumsRequest;
 import com.google.photos.library.v1.proto.ListAlbumsResponse;
 import com.google.photos.library.v1.proto.ListMediaItemsRequest;
@@ -67,6 +72,8 @@ import com.google.photos.library.v1.proto.SearchMediaItemsRequest;
 import com.google.photos.library.v1.proto.SearchMediaItemsResponse;
 import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
+import com.google.photos.library.v1.proto.UnshareAlbumRequest;
+import com.google.photos.library.v1.proto.UnshareAlbumResponse;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -121,17 +128,23 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
           ListMediaItemsRequest, ListMediaItemsResponse, ListMediaItemsPagedResponse>
       listMediaItemsSettings;
   private final UnaryCallSettings<GetMediaItemRequest, MediaItem> getMediaItemSettings;
+  private final UnaryCallSettings<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
+      batchGetMediaItemsSettings;
   private final PagedCallSettings<ListAlbumsRequest, ListAlbumsResponse, ListAlbumsPagedResponse>
       listAlbumsSettings;
   private final UnaryCallSettings<GetAlbumRequest, Album> getAlbumSettings;
+  private final UnaryCallSettings<GetSharedAlbumRequest, Album> getSharedAlbumSettings;
   private final UnaryCallSettings<AddEnrichmentToAlbumRequest, AddEnrichmentToAlbumResponse>
       addEnrichmentToAlbumSettings;
   private final UnaryCallSettings<JoinSharedAlbumRequest, JoinSharedAlbumResponse>
       joinSharedAlbumSettings;
+  private final UnaryCallSettings<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
+      leaveSharedAlbumSettings;
   private final UnaryCallSettings<ShareAlbumRequest, ShareAlbumResponse> shareAlbumSettings;
   private final PagedCallSettings<
           ListSharedAlbumsRequest, ListSharedAlbumsResponse, ListSharedAlbumsPagedResponse>
       listSharedAlbumsSettings;
+  private final UnaryCallSettings<UnshareAlbumRequest, UnshareAlbumResponse> unshareAlbumSettings;
 
   /** Returns the object with the settings used for calls to createAlbum. */
   public UnaryCallSettings<CreateAlbumRequest, Album> createAlbumSettings() {
@@ -163,6 +176,12 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
     return getMediaItemSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchGetMediaItems. */
+  public UnaryCallSettings<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
+      batchGetMediaItemsSettings() {
+    return batchGetMediaItemsSettings;
+  }
+
   /** Returns the object with the settings used for calls to listAlbums. */
   public PagedCallSettings<ListAlbumsRequest, ListAlbumsResponse, ListAlbumsPagedResponse>
       listAlbumsSettings() {
@@ -172,6 +191,11 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
   /** Returns the object with the settings used for calls to getAlbum. */
   public UnaryCallSettings<GetAlbumRequest, Album> getAlbumSettings() {
     return getAlbumSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSharedAlbum. */
+  public UnaryCallSettings<GetSharedAlbumRequest, Album> getSharedAlbumSettings() {
+    return getSharedAlbumSettings;
   }
 
   /** Returns the object with the settings used for calls to addEnrichmentToAlbum. */
@@ -186,6 +210,12 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
     return joinSharedAlbumSettings;
   }
 
+  /** Returns the object with the settings used for calls to leaveSharedAlbum. */
+  public UnaryCallSettings<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
+      leaveSharedAlbumSettings() {
+    return leaveSharedAlbumSettings;
+  }
+
   /** Returns the object with the settings used for calls to shareAlbum. */
   public UnaryCallSettings<ShareAlbumRequest, ShareAlbumResponse> shareAlbumSettings() {
     return shareAlbumSettings;
@@ -196,6 +226,11 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
           ListSharedAlbumsRequest, ListSharedAlbumsResponse, ListSharedAlbumsPagedResponse>
       listSharedAlbumsSettings() {
     return listSharedAlbumsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to unshareAlbum. */
+  public UnaryCallSettings<UnshareAlbumRequest, UnshareAlbumResponse> unshareAlbumSettings() {
+    return unshareAlbumSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -271,12 +306,16 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
     searchMediaItemsSettings = settingsBuilder.searchMediaItemsSettings().build();
     listMediaItemsSettings = settingsBuilder.listMediaItemsSettings().build();
     getMediaItemSettings = settingsBuilder.getMediaItemSettings().build();
+    batchGetMediaItemsSettings = settingsBuilder.batchGetMediaItemsSettings().build();
     listAlbumsSettings = settingsBuilder.listAlbumsSettings().build();
     getAlbumSettings = settingsBuilder.getAlbumSettings().build();
+    getSharedAlbumSettings = settingsBuilder.getSharedAlbumSettings().build();
     addEnrichmentToAlbumSettings = settingsBuilder.addEnrichmentToAlbumSettings().build();
     joinSharedAlbumSettings = settingsBuilder.joinSharedAlbumSettings().build();
+    leaveSharedAlbumSettings = settingsBuilder.leaveSharedAlbumSettings().build();
     shareAlbumSettings = settingsBuilder.shareAlbumSettings().build();
     listSharedAlbumsSettings = settingsBuilder.listSharedAlbumsSettings().build();
+    unshareAlbumSettings = settingsBuilder.unshareAlbumSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -506,20 +545,27 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
             ListMediaItemsRequest, ListMediaItemsResponse, ListMediaItemsPagedResponse>
         listMediaItemsSettings;
     private final UnaryCallSettings.Builder<GetMediaItemRequest, MediaItem> getMediaItemSettings;
+    private final UnaryCallSettings.Builder<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
+        batchGetMediaItemsSettings;
     private final PagedCallSettings.Builder<
             ListAlbumsRequest, ListAlbumsResponse, ListAlbumsPagedResponse>
         listAlbumsSettings;
     private final UnaryCallSettings.Builder<GetAlbumRequest, Album> getAlbumSettings;
+    private final UnaryCallSettings.Builder<GetSharedAlbumRequest, Album> getSharedAlbumSettings;
     private final UnaryCallSettings.Builder<
             AddEnrichmentToAlbumRequest, AddEnrichmentToAlbumResponse>
         addEnrichmentToAlbumSettings;
     private final UnaryCallSettings.Builder<JoinSharedAlbumRequest, JoinSharedAlbumResponse>
         joinSharedAlbumSettings;
+    private final UnaryCallSettings.Builder<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
+        leaveSharedAlbumSettings;
     private final UnaryCallSettings.Builder<ShareAlbumRequest, ShareAlbumResponse>
         shareAlbumSettings;
     private final PagedCallSettings.Builder<
             ListSharedAlbumsRequest, ListSharedAlbumsResponse, ListSharedAlbumsPagedResponse>
         listSharedAlbumsSettings;
+    private final UnaryCallSettings.Builder<UnshareAlbumRequest, UnshareAlbumResponse>
+        unshareAlbumSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -574,17 +620,25 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
 
       getMediaItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      batchGetMediaItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listAlbumsSettings = PagedCallSettings.newBuilder(LIST_ALBUMS_PAGE_STR_FACT);
 
       getAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getSharedAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       addEnrichmentToAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       joinSharedAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      leaveSharedAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       shareAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listSharedAlbumsSettings = PagedCallSettings.newBuilder(LIST_SHARED_ALBUMS_PAGE_STR_FACT);
+
+      unshareAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -593,12 +647,16 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
               searchMediaItemsSettings,
               listMediaItemsSettings,
               getMediaItemSettings,
+              batchGetMediaItemsSettings,
               listAlbumsSettings,
               getAlbumSettings,
+              getSharedAlbumSettings,
               addEnrichmentToAlbumSettings,
               joinSharedAlbumSettings,
+              leaveSharedAlbumSettings,
               shareAlbumSettings,
-              listSharedAlbumsSettings);
+              listSharedAlbumsSettings,
+              unshareAlbumSettings);
 
       initDefaults(this);
     }
@@ -640,12 +698,22 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .batchGetMediaItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .listAlbumsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .getAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getSharedAlbumSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -660,12 +728,22 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .leaveSharedAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .shareAlbumSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listSharedAlbumsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .unshareAlbumSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -680,12 +758,16 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
       searchMediaItemsSettings = settings.searchMediaItemsSettings.toBuilder();
       listMediaItemsSettings = settings.listMediaItemsSettings.toBuilder();
       getMediaItemSettings = settings.getMediaItemSettings.toBuilder();
+      batchGetMediaItemsSettings = settings.batchGetMediaItemsSettings.toBuilder();
       listAlbumsSettings = settings.listAlbumsSettings.toBuilder();
       getAlbumSettings = settings.getAlbumSettings.toBuilder();
+      getSharedAlbumSettings = settings.getSharedAlbumSettings.toBuilder();
       addEnrichmentToAlbumSettings = settings.addEnrichmentToAlbumSettings.toBuilder();
       joinSharedAlbumSettings = settings.joinSharedAlbumSettings.toBuilder();
+      leaveSharedAlbumSettings = settings.leaveSharedAlbumSettings.toBuilder();
       shareAlbumSettings = settings.shareAlbumSettings.toBuilder();
       listSharedAlbumsSettings = settings.listSharedAlbumsSettings.toBuilder();
+      unshareAlbumSettings = settings.unshareAlbumSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -694,12 +776,16 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
               searchMediaItemsSettings,
               listMediaItemsSettings,
               getMediaItemSettings,
+              batchGetMediaItemsSettings,
               listAlbumsSettings,
               getAlbumSettings,
+              getSharedAlbumSettings,
               addEnrichmentToAlbumSettings,
               joinSharedAlbumSettings,
+              leaveSharedAlbumSettings,
               shareAlbumSettings,
-              listSharedAlbumsSettings);
+              listSharedAlbumsSettings,
+              unshareAlbumSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -748,6 +834,12 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
       return getMediaItemSettings;
     }
 
+    /** Returns the builder for the settings used for calls to batchGetMediaItems. */
+    public UnaryCallSettings.Builder<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
+        batchGetMediaItemsSettings() {
+      return batchGetMediaItemsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listAlbums. */
     public PagedCallSettings.Builder<ListAlbumsRequest, ListAlbumsResponse, ListAlbumsPagedResponse>
         listAlbumsSettings() {
@@ -757,6 +849,11 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
     /** Returns the builder for the settings used for calls to getAlbum. */
     public UnaryCallSettings.Builder<GetAlbumRequest, Album> getAlbumSettings() {
       return getAlbumSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSharedAlbum. */
+    public UnaryCallSettings.Builder<GetSharedAlbumRequest, Album> getSharedAlbumSettings() {
+      return getSharedAlbumSettings;
     }
 
     /** Returns the builder for the settings used for calls to addEnrichmentToAlbum. */
@@ -771,6 +868,12 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
       return joinSharedAlbumSettings;
     }
 
+    /** Returns the builder for the settings used for calls to leaveSharedAlbum. */
+    public UnaryCallSettings.Builder<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
+        leaveSharedAlbumSettings() {
+      return leaveSharedAlbumSettings;
+    }
+
     /** Returns the builder for the settings used for calls to shareAlbum. */
     public UnaryCallSettings.Builder<ShareAlbumRequest, ShareAlbumResponse> shareAlbumSettings() {
       return shareAlbumSettings;
@@ -781,6 +884,12 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
             ListSharedAlbumsRequest, ListSharedAlbumsResponse, ListSharedAlbumsPagedResponse>
         listSharedAlbumsSettings() {
       return listSharedAlbumsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to unshareAlbum. */
+    public UnaryCallSettings.Builder<UnshareAlbumRequest, UnshareAlbumResponse>
+        unshareAlbumSettings() {
+      return unshareAlbumSettings;
     }
 
     @Override

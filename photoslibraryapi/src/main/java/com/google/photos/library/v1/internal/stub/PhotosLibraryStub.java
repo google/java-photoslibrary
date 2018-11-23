@@ -28,11 +28,16 @@ import com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse;
 import com.google.photos.library.v1.proto.Album;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse;
+import com.google.photos.library.v1.proto.BatchGetMediaItemsRequest;
+import com.google.photos.library.v1.proto.BatchGetMediaItemsResponse;
 import com.google.photos.library.v1.proto.CreateAlbumRequest;
 import com.google.photos.library.v1.proto.GetAlbumRequest;
 import com.google.photos.library.v1.proto.GetMediaItemRequest;
+import com.google.photos.library.v1.proto.GetSharedAlbumRequest;
 import com.google.photos.library.v1.proto.JoinSharedAlbumRequest;
 import com.google.photos.library.v1.proto.JoinSharedAlbumResponse;
+import com.google.photos.library.v1.proto.LeaveSharedAlbumRequest;
+import com.google.photos.library.v1.proto.LeaveSharedAlbumResponse;
 import com.google.photos.library.v1.proto.ListAlbumsRequest;
 import com.google.photos.library.v1.proto.ListAlbumsResponse;
 import com.google.photos.library.v1.proto.ListMediaItemsRequest;
@@ -44,6 +49,8 @@ import com.google.photos.library.v1.proto.SearchMediaItemsRequest;
 import com.google.photos.library.v1.proto.SearchMediaItemsResponse;
 import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
+import com.google.photos.library.v1.proto.UnshareAlbumRequest;
+import com.google.photos.library.v1.proto.UnshareAlbumResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -88,6 +95,11 @@ public abstract class PhotosLibraryStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getMediaItemCallable()");
   }
 
+  public UnaryCallable<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
+      batchGetMediaItemsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchGetMediaItemsCallable()");
+  }
+
   public UnaryCallable<ListAlbumsRequest, ListAlbumsPagedResponse> listAlbumsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAlbumsPagedCallable()");
   }
@@ -100,6 +112,10 @@ public abstract class PhotosLibraryStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getAlbumCallable()");
   }
 
+  public UnaryCallable<GetSharedAlbumRequest, Album> getSharedAlbumCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSharedAlbumCallable()");
+  }
+
   public UnaryCallable<AddEnrichmentToAlbumRequest, AddEnrichmentToAlbumResponse>
       addEnrichmentToAlbumCallable() {
     throw new UnsupportedOperationException("Not implemented: addEnrichmentToAlbumCallable()");
@@ -107,6 +123,11 @@ public abstract class PhotosLibraryStub implements BackgroundResource {
 
   public UnaryCallable<JoinSharedAlbumRequest, JoinSharedAlbumResponse> joinSharedAlbumCallable() {
     throw new UnsupportedOperationException("Not implemented: joinSharedAlbumCallable()");
+  }
+
+  public UnaryCallable<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
+      leaveSharedAlbumCallable() {
+    throw new UnsupportedOperationException("Not implemented: leaveSharedAlbumCallable()");
   }
 
   public UnaryCallable<ShareAlbumRequest, ShareAlbumResponse> shareAlbumCallable() {
@@ -121,6 +142,10 @@ public abstract class PhotosLibraryStub implements BackgroundResource {
   public UnaryCallable<ListSharedAlbumsRequest, ListSharedAlbumsResponse>
       listSharedAlbumsCallable() {
     throw new UnsupportedOperationException("Not implemented: listSharedAlbumsCallable()");
+  }
+
+  public UnaryCallable<UnshareAlbumRequest, UnshareAlbumResponse> unshareAlbumCallable() {
+    throw new UnsupportedOperationException("Not implemented: unshareAlbumCallable()");
   }
 
   @Override

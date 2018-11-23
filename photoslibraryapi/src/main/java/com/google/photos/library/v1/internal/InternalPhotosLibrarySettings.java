@@ -37,11 +37,16 @@ import com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse;
 import com.google.photos.library.v1.proto.Album;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse;
+import com.google.photos.library.v1.proto.BatchGetMediaItemsRequest;
+import com.google.photos.library.v1.proto.BatchGetMediaItemsResponse;
 import com.google.photos.library.v1.proto.CreateAlbumRequest;
 import com.google.photos.library.v1.proto.GetAlbumRequest;
 import com.google.photos.library.v1.proto.GetMediaItemRequest;
+import com.google.photos.library.v1.proto.GetSharedAlbumRequest;
 import com.google.photos.library.v1.proto.JoinSharedAlbumRequest;
 import com.google.photos.library.v1.proto.JoinSharedAlbumResponse;
+import com.google.photos.library.v1.proto.LeaveSharedAlbumRequest;
+import com.google.photos.library.v1.proto.LeaveSharedAlbumResponse;
 import com.google.photos.library.v1.proto.ListAlbumsRequest;
 import com.google.photos.library.v1.proto.ListAlbumsResponse;
 import com.google.photos.library.v1.proto.ListMediaItemsRequest;
@@ -53,6 +58,8 @@ import com.google.photos.library.v1.proto.SearchMediaItemsRequest;
 import com.google.photos.library.v1.proto.SearchMediaItemsResponse;
 import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
+import com.google.photos.library.v1.proto.UnshareAlbumRequest;
+import com.google.photos.library.v1.proto.UnshareAlbumResponse;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -116,6 +123,12 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
     return ((PhotosLibraryStubSettings) getStubSettings()).getMediaItemSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchGetMediaItems. */
+  public UnaryCallSettings<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
+      batchGetMediaItemsSettings() {
+    return ((PhotosLibraryStubSettings) getStubSettings()).batchGetMediaItemsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listAlbums. */
   public PagedCallSettings<ListAlbumsRequest, ListAlbumsResponse, ListAlbumsPagedResponse>
       listAlbumsSettings() {
@@ -125,6 +138,11 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
   /** Returns the object with the settings used for calls to getAlbum. */
   public UnaryCallSettings<GetAlbumRequest, Album> getAlbumSettings() {
     return ((PhotosLibraryStubSettings) getStubSettings()).getAlbumSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSharedAlbum. */
+  public UnaryCallSettings<GetSharedAlbumRequest, Album> getSharedAlbumSettings() {
+    return ((PhotosLibraryStubSettings) getStubSettings()).getSharedAlbumSettings();
   }
 
   /** Returns the object with the settings used for calls to addEnrichmentToAlbum. */
@@ -139,6 +157,12 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
     return ((PhotosLibraryStubSettings) getStubSettings()).joinSharedAlbumSettings();
   }
 
+  /** Returns the object with the settings used for calls to leaveSharedAlbum. */
+  public UnaryCallSettings<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
+      leaveSharedAlbumSettings() {
+    return ((PhotosLibraryStubSettings) getStubSettings()).leaveSharedAlbumSettings();
+  }
+
   /** Returns the object with the settings used for calls to shareAlbum. */
   public UnaryCallSettings<ShareAlbumRequest, ShareAlbumResponse> shareAlbumSettings() {
     return ((PhotosLibraryStubSettings) getStubSettings()).shareAlbumSettings();
@@ -149,6 +173,11 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
           ListSharedAlbumsRequest, ListSharedAlbumsResponse, ListSharedAlbumsPagedResponse>
       listSharedAlbumsSettings() {
     return ((PhotosLibraryStubSettings) getStubSettings()).listSharedAlbumsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to unshareAlbum. */
+  public UnaryCallSettings<UnshareAlbumRequest, UnshareAlbumResponse> unshareAlbumSettings() {
+    return ((PhotosLibraryStubSettings) getStubSettings()).unshareAlbumSettings();
   }
 
   public static final InternalPhotosLibrarySettings create(PhotosLibraryStubSettings stub)
@@ -279,6 +308,12 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
       return getStubSettingsBuilder().getMediaItemSettings();
     }
 
+    /** Returns the builder for the settings used for calls to batchGetMediaItems. */
+    public UnaryCallSettings.Builder<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
+        batchGetMediaItemsSettings() {
+      return getStubSettingsBuilder().batchGetMediaItemsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listAlbums. */
     public PagedCallSettings.Builder<ListAlbumsRequest, ListAlbumsResponse, ListAlbumsPagedResponse>
         listAlbumsSettings() {
@@ -288,6 +323,11 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
     /** Returns the builder for the settings used for calls to getAlbum. */
     public UnaryCallSettings.Builder<GetAlbumRequest, Album> getAlbumSettings() {
       return getStubSettingsBuilder().getAlbumSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSharedAlbum. */
+    public UnaryCallSettings.Builder<GetSharedAlbumRequest, Album> getSharedAlbumSettings() {
+      return getStubSettingsBuilder().getSharedAlbumSettings();
     }
 
     /** Returns the builder for the settings used for calls to addEnrichmentToAlbum. */
@@ -302,6 +342,12 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
       return getStubSettingsBuilder().joinSharedAlbumSettings();
     }
 
+    /** Returns the builder for the settings used for calls to leaveSharedAlbum. */
+    public UnaryCallSettings.Builder<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
+        leaveSharedAlbumSettings() {
+      return getStubSettingsBuilder().leaveSharedAlbumSettings();
+    }
+
     /** Returns the builder for the settings used for calls to shareAlbum. */
     public UnaryCallSettings.Builder<ShareAlbumRequest, ShareAlbumResponse> shareAlbumSettings() {
       return getStubSettingsBuilder().shareAlbumSettings();
@@ -312,6 +358,12 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
             ListSharedAlbumsRequest, ListSharedAlbumsResponse, ListSharedAlbumsPagedResponse>
         listSharedAlbumsSettings() {
       return getStubSettingsBuilder().listSharedAlbumsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to unshareAlbum. */
+    public UnaryCallSettings.Builder<UnshareAlbumRequest, UnshareAlbumResponse>
+        unshareAlbumSettings() {
+      return getStubSettingsBuilder().unshareAlbumSettings();
     }
 
     @Override
