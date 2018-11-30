@@ -104,6 +104,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Identifiers of the media items to be requested.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be retrieved in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -116,6 +118,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Identifiers of the media items to be requested.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be retrieved in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -128,6 +132,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Identifiers of the media items to be requested.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be retrieved in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -140,6 +146,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Identifiers of the media items to be requested.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be retrieved in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -504,6 +512,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Identifiers of the media items to be requested.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be retrieved in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -516,6 +526,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Identifiers of the media items to be requested.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be retrieved in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -528,6 +540,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Identifiers of the media items to be requested.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be retrieved in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -540,6 +554,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Identifiers of the media items to be requested.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be retrieved in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -552,6 +568,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Identifiers of the media items to be requested.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be retrieved in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -570,6 +588,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Identifiers of the media items to be requested.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be retrieved in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -588,6 +608,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Identifiers of the media items to be requested.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be retrieved in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -603,6 +625,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Identifiers of the media items to be requested.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be retrieved in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -618,6 +642,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Identifiers of the media items to be requested.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be retrieved in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>

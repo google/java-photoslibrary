@@ -1038,6 +1038,7 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Returns the list of media items for the specified media item identifiers.
+     * Items are returned in the same order as the supplied identifiers.
      * </pre>
      */
     public void batchGetMediaItems(
@@ -1428,6 +1429,7 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Returns the list of media items for the specified media item identifiers.
+     * Items are returned in the same order as the supplied identifiers.
      * </pre>
      */
     public void batchGetMediaItems(
@@ -1723,6 +1725,7 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Returns the list of media items for the specified media item identifiers.
+     * Items are returned in the same order as the supplied identifiers.
      * </pre>
      */
     public com.google.photos.library.v1.proto.BatchGetMediaItemsResponse batchGetMediaItems(
@@ -1985,6 +1988,7 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Returns the list of media items for the specified media item identifiers.
+     * Items are returned in the same order as the supplied identifiers.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

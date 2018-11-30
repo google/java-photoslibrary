@@ -671,7 +671,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the list of media items for the specified media item identifiers.
+   * Returns the list of media items for the specified media item identifiers. Items are returned in
+   * the same order as the supplied identifiers.
    *
    * <p>Sample code:
    *
@@ -682,7 +683,9 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param mediaItemIds Identifiers of the media items to be requested.
+   * @param mediaItemIds Identifiers of the media items to be requested. Must not contain repeated
+   *     identifiers and cannot be empty. The maximum number of media items that can be retrieved in
+   *     one call is 50.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchGetMediaItemsResponse batchGetMediaItems(List<String> mediaItemIds) {
@@ -694,7 +697,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the list of media items for the specified media item identifiers.
+   * Returns the list of media items for the specified media item identifiers. Items are returned in
+   * the same order as the supplied identifiers.
    *
    * <p>Sample code:
    *
@@ -717,7 +721,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the list of media items for the specified media item identifiers.
+   * Returns the list of media items for the specified media item identifiers. Items are returned in
+   * the same order as the supplied identifiers.
    *
    * <p>Sample code:
    *
