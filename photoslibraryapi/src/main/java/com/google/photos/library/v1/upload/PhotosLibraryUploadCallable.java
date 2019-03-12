@@ -243,7 +243,7 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
 
     switch (response.getFirstHeader(UPLOAD_STATUS_HEADER).getValue()) {
       case UploadStatuses.ACTIVE:
-        return Integer.parseInt(response.getFirstHeader(RECEIVED_BYTE_COUNT_HEADER).getValue());
+        return Long.parseLong(response.getFirstHeader(RECEIVED_BYTE_COUNT_HEADER).getValue());
       case UploadStatuses.FINAL:
         return request.getFileSize();
       default:
