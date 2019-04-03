@@ -17,9 +17,9 @@
 package com.google.photos.library.sample.suppliers;
 
 import com.google.photos.library.v1.PhotosLibraryClient;
-import com.google.photos.library.v1.proto.MediaItem;
 import com.google.photos.library.v1.proto.SearchMediaItemsRequest;
 import com.google.photos.library.v1.proto.SearchMediaItemsResponse;
+import com.google.photos.types.proto.MediaItem;
 import java.util.Collections;
 import java.util.Optional;
 import java.util.function.Supplier;

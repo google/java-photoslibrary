@@ -64,12 +64,12 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                ranges_ = new java.util.ArrayList<com.google.photos.library.v1.proto.DateRange>();
+                ranges_ = new java.util.ArrayList<com.google.photos.types.proto.DateRange>();
                 mutable_bitField0_ |= 0x00000002;
               }
               ranges_.add(
                   input.readMessage(
-                      com.google.photos.library.v1.proto.DateRange.parser(), extensionRegistry));
+                      com.google.photos.types.proto.DateRange.parser(), extensionRegistry));
               break;
             }
           default:
@@ -181,7 +181,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RANGES_FIELD_NUMBER = 2;
-  private java.util.List<com.google.photos.library.v1.proto.DateRange> ranges_;
+  private java.util.List<com.google.photos.types.proto.DateRange> ranges_;
   /**
    *
    *
@@ -190,9 +190,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    * maximum of 5 dates ranges can be included per request.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+   * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
-  public java.util.List<com.google.photos.library.v1.proto.DateRange> getRangesList() {
+  public java.util.List<com.google.photos.types.proto.DateRange> getRangesList() {
     return ranges_;
   }
   /**
@@ -203,9 +203,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    * maximum of 5 dates ranges can be included per request.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+   * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
-  public java.util.List<? extends com.google.photos.library.v1.proto.DateRangeOrBuilder>
+  public java.util.List<? extends com.google.photos.types.proto.DateRangeOrBuilder>
       getRangesOrBuilderList() {
     return ranges_;
   }
@@ -217,7 +217,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    * maximum of 5 dates ranges can be included per request.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+   * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
   public int getRangesCount() {
     return ranges_.size();
@@ -230,9 +230,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    * maximum of 5 dates ranges can be included per request.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+   * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
-  public com.google.photos.library.v1.proto.DateRange getRanges(int index) {
+  public com.google.photos.types.proto.DateRange getRanges(int index) {
     return ranges_.get(index);
   }
   /**
@@ -243,9 +243,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    * maximum of 5 dates ranges can be included per request.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+   * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
-  public com.google.photos.library.v1.proto.DateRangeOrBuilder getRangesOrBuilder(int index) {
+  public com.google.photos.types.proto.DateRangeOrBuilder getRangesOrBuilder(int index) {
     return ranges_.get(index);
   }
 
@@ -1019,20 +1019,20 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
       return datesBuilder_;
     }
 
-    private java.util.List<com.google.photos.library.v1.proto.DateRange> ranges_ =
+    private java.util.List<com.google.photos.types.proto.DateRange> ranges_ =
         java.util.Collections.emptyList();
 
     private void ensureRangesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        ranges_ = new java.util.ArrayList<com.google.photos.library.v1.proto.DateRange>(ranges_);
+        ranges_ = new java.util.ArrayList<com.google.photos.types.proto.DateRange>(ranges_);
         bitField0_ |= 0x00000002;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.photos.library.v1.proto.DateRange,
-            com.google.photos.library.v1.proto.DateRange.Builder,
-            com.google.photos.library.v1.proto.DateRangeOrBuilder>
+            com.google.photos.types.proto.DateRange,
+            com.google.photos.types.proto.DateRange.Builder,
+            com.google.photos.types.proto.DateRangeOrBuilder>
         rangesBuilder_;
 
     /**
@@ -1043,9 +1043,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public java.util.List<com.google.photos.library.v1.proto.DateRange> getRangesList() {
+    public java.util.List<com.google.photos.types.proto.DateRange> getRangesList() {
       if (rangesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(ranges_);
       } else {
@@ -1060,7 +1060,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
     public int getRangesCount() {
       if (rangesBuilder_ == null) {
@@ -1077,9 +1077,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public com.google.photos.library.v1.proto.DateRange getRanges(int index) {
+    public com.google.photos.types.proto.DateRange getRanges(int index) {
       if (rangesBuilder_ == null) {
         return ranges_.get(index);
       } else {
@@ -1094,9 +1094,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public Builder setRanges(int index, com.google.photos.library.v1.proto.DateRange value) {
+    public Builder setRanges(int index, com.google.photos.types.proto.DateRange value) {
       if (rangesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1117,10 +1117,10 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
     public Builder setRanges(
-        int index, com.google.photos.library.v1.proto.DateRange.Builder builderForValue) {
+        int index, com.google.photos.types.proto.DateRange.Builder builderForValue) {
       if (rangesBuilder_ == null) {
         ensureRangesIsMutable();
         ranges_.set(index, builderForValue.build());
@@ -1138,9 +1138,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public Builder addRanges(com.google.photos.library.v1.proto.DateRange value) {
+    public Builder addRanges(com.google.photos.types.proto.DateRange value) {
       if (rangesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1161,9 +1161,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public Builder addRanges(int index, com.google.photos.library.v1.proto.DateRange value) {
+    public Builder addRanges(int index, com.google.photos.types.proto.DateRange value) {
       if (rangesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1184,9 +1184,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public Builder addRanges(com.google.photos.library.v1.proto.DateRange.Builder builderForValue) {
+    public Builder addRanges(com.google.photos.types.proto.DateRange.Builder builderForValue) {
       if (rangesBuilder_ == null) {
         ensureRangesIsMutable();
         ranges_.add(builderForValue.build());
@@ -1204,10 +1204,10 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
     public Builder addRanges(
-        int index, com.google.photos.library.v1.proto.DateRange.Builder builderForValue) {
+        int index, com.google.photos.types.proto.DateRange.Builder builderForValue) {
       if (rangesBuilder_ == null) {
         ensureRangesIsMutable();
         ranges_.add(index, builderForValue.build());
@@ -1225,10 +1225,10 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
     public Builder addAllRanges(
-        java.lang.Iterable<? extends com.google.photos.library.v1.proto.DateRange> values) {
+        java.lang.Iterable<? extends com.google.photos.types.proto.DateRange> values) {
       if (rangesBuilder_ == null) {
         ensureRangesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ranges_);
@@ -1246,7 +1246,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
     public Builder clearRanges() {
       if (rangesBuilder_ == null) {
@@ -1266,7 +1266,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
     public Builder removeRanges(int index) {
       if (rangesBuilder_ == null) {
@@ -1286,9 +1286,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public com.google.photos.library.v1.proto.DateRange.Builder getRangesBuilder(int index) {
+    public com.google.photos.types.proto.DateRange.Builder getRangesBuilder(int index) {
       return getRangesFieldBuilder().getBuilder(index);
     }
     /**
@@ -1299,9 +1299,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public com.google.photos.library.v1.proto.DateRangeOrBuilder getRangesOrBuilder(int index) {
+    public com.google.photos.types.proto.DateRangeOrBuilder getRangesOrBuilder(int index) {
       if (rangesBuilder_ == null) {
         return ranges_.get(index);
       } else {
@@ -1316,9 +1316,9 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public java.util.List<? extends com.google.photos.library.v1.proto.DateRangeOrBuilder>
+    public java.util.List<? extends com.google.photos.types.proto.DateRangeOrBuilder>
         getRangesOrBuilderList() {
       if (rangesBuilder_ != null) {
         return rangesBuilder_.getMessageOrBuilderList();
@@ -1334,11 +1334,11 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public com.google.photos.library.v1.proto.DateRange.Builder addRangesBuilder() {
+    public com.google.photos.types.proto.DateRange.Builder addRangesBuilder() {
       return getRangesFieldBuilder()
-          .addBuilder(com.google.photos.library.v1.proto.DateRange.getDefaultInstance());
+          .addBuilder(com.google.photos.types.proto.DateRange.getDefaultInstance());
     }
     /**
      *
@@ -1348,11 +1348,11 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public com.google.photos.library.v1.proto.DateRange.Builder addRangesBuilder(int index) {
+    public com.google.photos.types.proto.DateRange.Builder addRangesBuilder(int index) {
       return getRangesFieldBuilder()
-          .addBuilder(index, com.google.photos.library.v1.proto.DateRange.getDefaultInstance());
+          .addBuilder(index, com.google.photos.types.proto.DateRange.getDefaultInstance());
     }
     /**
      *
@@ -1362,24 +1362,23 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
      * maximum of 5 dates ranges can be included per request.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+     * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
      */
-    public java.util.List<com.google.photos.library.v1.proto.DateRange.Builder>
-        getRangesBuilderList() {
+    public java.util.List<com.google.photos.types.proto.DateRange.Builder> getRangesBuilderList() {
       return getRangesFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.photos.library.v1.proto.DateRange,
-            com.google.photos.library.v1.proto.DateRange.Builder,
-            com.google.photos.library.v1.proto.DateRangeOrBuilder>
+            com.google.photos.types.proto.DateRange,
+            com.google.photos.types.proto.DateRange.Builder,
+            com.google.photos.types.proto.DateRangeOrBuilder>
         getRangesFieldBuilder() {
       if (rangesBuilder_ == null) {
         rangesBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.photos.library.v1.proto.DateRange,
-                com.google.photos.library.v1.proto.DateRange.Builder,
-                com.google.photos.library.v1.proto.DateRangeOrBuilder>(
+                com.google.photos.types.proto.DateRange,
+                com.google.photos.types.proto.DateRange.Builder,
+                com.google.photos.types.proto.DateRangeOrBuilder>(
                 ranges_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),

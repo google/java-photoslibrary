@@ -504,7 +504,7 @@ public enum ContentCategory implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(0);
   }
 
   private static final ContentCategory[] VALUES = values();

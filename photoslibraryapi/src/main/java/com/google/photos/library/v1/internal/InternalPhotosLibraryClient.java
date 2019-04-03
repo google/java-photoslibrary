@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,16 +25,20 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.photos.library.v1.internal.stub.PhotosLibraryStub;
 import com.google.photos.library.v1.internal.stub.PhotosLibraryStubSettings;
 import com.google.photos.library.v1.proto.AddEnrichmentToAlbumRequest;
 import com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse;
-import com.google.photos.library.v1.proto.Album;
 import com.google.photos.library.v1.proto.AlbumPosition;
+import com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumRequest;
+import com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumResponse;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse;
 import com.google.photos.library.v1.proto.BatchGetMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchGetMediaItemsResponse;
+import com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest;
+import com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumResponse;
 import com.google.photos.library.v1.proto.CreateAlbumRequest;
 import com.google.photos.library.v1.proto.Filters;
 import com.google.photos.library.v1.proto.GetAlbumRequest;
@@ -50,16 +54,17 @@ import com.google.photos.library.v1.proto.ListMediaItemsRequest;
 import com.google.photos.library.v1.proto.ListMediaItemsResponse;
 import com.google.photos.library.v1.proto.ListSharedAlbumsRequest;
 import com.google.photos.library.v1.proto.ListSharedAlbumsResponse;
-import com.google.photos.library.v1.proto.MediaItem;
 import com.google.photos.library.v1.proto.NewEnrichmentItem;
 import com.google.photos.library.v1.proto.NewMediaItem;
 import com.google.photos.library.v1.proto.SearchMediaItemsRequest;
 import com.google.photos.library.v1.proto.SearchMediaItemsResponse;
 import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
-import com.google.photos.library.v1.proto.SharedAlbumOptions;
 import com.google.photos.library.v1.proto.UnshareAlbumRequest;
 import com.google.photos.library.v1.proto.UnshareAlbumResponse;
+import com.google.photos.types.proto.Album;
+import com.google.photos.types.proto.MediaItem;
+import com.google.photos.types.proto.SharedAlbumOptions;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -384,6 +389,121 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
   public final UnaryCallable<BatchCreateMediaItemsRequest, BatchCreateMediaItemsResponse>
       batchCreateMediaItemsCallable() {
     return stub.batchCreateMediaItemsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds one or more existing media items in a user's Google Photos library to an existing album.
+   *
+   * <p>This call adds the existing media items to an album, identified by its identifier. The media
+   * items to be added must be owned by the user, and created by the developer, on behalf of whom
+   * the API is acting. In case of adding media items to a shared album, the user must either be an
+   * owner of the album or a collaborator who has already joined.
+   *
+   * <p>The maximum size of the batch is 50. The API does not support partial success, i.e. the
+   * entire request fails if an invalid media item or album is specified.
+   *
+   * <p>The new items are added to the end of the album, in the order in which they are specified in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   String albumId = "";
+   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
+   *   BatchAddMediaItemsToAlbumResponse response = internalPhotosLibraryClient.batchAddMediaItemsToAlbum(albumId, mediaItemIds);
+   * }
+   * </code></pre>
+   *
+   * @param albumId Identifier of the [Album][google.photos.types.Album] that the
+   *     [MediaItem][google.photos.types.MediaItem](s) are added to.
+   * @param mediaItemIds Identifier of the [MediaItem][google.photos.types.MediaItem](s) to be
+   *     added.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchAddMediaItemsToAlbumResponse batchAddMediaItemsToAlbum(
+      String albumId, List<String> mediaItemIds) {
+
+    BatchAddMediaItemsToAlbumRequest request =
+        BatchAddMediaItemsToAlbumRequest.newBuilder()
+            .setAlbumId(albumId)
+            .addAllMediaItemIds(mediaItemIds)
+            .build();
+    return batchAddMediaItemsToAlbum(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds one or more existing media items in a user's Google Photos library to an existing album.
+   *
+   * <p>This call adds the existing media items to an album, identified by its identifier. The media
+   * items to be added must be owned by the user, and created by the developer, on behalf of whom
+   * the API is acting. In case of adding media items to a shared album, the user must either be an
+   * owner of the album or a collaborator who has already joined.
+   *
+   * <p>The maximum size of the batch is 50. The API does not support partial success, i.e. the
+   * entire request fails if an invalid media item or album is specified.
+   *
+   * <p>The new items are added to the end of the album, in the order in which they are specified in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   String albumId = "";
+   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
+   *   BatchAddMediaItemsToAlbumRequest request = BatchAddMediaItemsToAlbumRequest.newBuilder()
+   *     .setAlbumId(albumId)
+   *     .addAllMediaItemIds(mediaItemIds)
+   *     .build();
+   *   BatchAddMediaItemsToAlbumResponse response = internalPhotosLibraryClient.batchAddMediaItemsToAlbum(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchAddMediaItemsToAlbumResponse batchAddMediaItemsToAlbum(
+      BatchAddMediaItemsToAlbumRequest request) {
+    return batchAddMediaItemsToAlbumCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Adds one or more existing media items in a user's Google Photos library to an existing album.
+   *
+   * <p>This call adds the existing media items to an album, identified by its identifier. The media
+   * items to be added must be owned by the user, and created by the developer, on behalf of whom
+   * the API is acting. In case of adding media items to a shared album, the user must either be an
+   * owner of the album or a collaborator who has already joined.
+   *
+   * <p>The maximum size of the batch is 50. The API does not support partial success, i.e. the
+   * entire request fails if an invalid media item or album is specified.
+   *
+   * <p>The new items are added to the end of the album, in the order in which they are specified in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   String albumId = "";
+   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
+   *   BatchAddMediaItemsToAlbumRequest request = BatchAddMediaItemsToAlbumRequest.newBuilder()
+   *     .setAlbumId(albumId)
+   *     .addAllMediaItemIds(mediaItemIds)
+   *     .build();
+   *   ApiFuture&lt;BatchAddMediaItemsToAlbumResponse&gt; future = internalPhotosLibraryClient.batchAddMediaItemsToAlbumCallable().futureCall(request);
+   *   // Do something
+   *   BatchAddMediaItemsToAlbumResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<BatchAddMediaItemsToAlbumRequest, BatchAddMediaItemsToAlbumResponse>
+      batchAddMediaItemsToAlbumCallable() {
+    return stub.batchAddMediaItemsToAlbumCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1467,6 +1587,103 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return stub.unshareAlbumCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes one or more media items from a specified album. The media items and the album must be
+   * created by the developer via the API.
+   *
+   * <p>Invalid media item or album identifiers will result in the failure of this request and no
+   * action will be performed on the album.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   String albumId = "";
+   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
+   *   BatchRemoveMediaItemsFromAlbumResponse response = internalPhotosLibraryClient.batchRemoveMediaItemsFromAlbum(albumId, mediaItemIds);
+   * }
+   * </code></pre>
+   *
+   * @param albumId Identifier of the [Album][google.photos.library.v1.Album] that the media items
+   *     are to be removed from.
+   * @param mediaItemIds Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+   *     removed.
+   *     <p>Must not contain repeated identifiers and cannot be empty. A maximum of 50 media items
+   *     can be included per request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRemoveMediaItemsFromAlbumResponse batchRemoveMediaItemsFromAlbum(
+      String albumId, List<String> mediaItemIds) {
+
+    BatchRemoveMediaItemsFromAlbumRequest request =
+        BatchRemoveMediaItemsFromAlbumRequest.newBuilder()
+            .setAlbumId(albumId)
+            .addAllMediaItemIds(mediaItemIds)
+            .build();
+    return batchRemoveMediaItemsFromAlbum(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes one or more media items from a specified album. The media items and the album must be
+   * created by the developer via the API.
+   *
+   * <p>Invalid media item or album identifiers will result in the failure of this request and no
+   * action will be performed on the album.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   String albumId = "";
+   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
+   *   BatchRemoveMediaItemsFromAlbumRequest request = BatchRemoveMediaItemsFromAlbumRequest.newBuilder()
+   *     .setAlbumId(albumId)
+   *     .addAllMediaItemIds(mediaItemIds)
+   *     .build();
+   *   BatchRemoveMediaItemsFromAlbumResponse response = internalPhotosLibraryClient.batchRemoveMediaItemsFromAlbum(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRemoveMediaItemsFromAlbumResponse batchRemoveMediaItemsFromAlbum(
+      BatchRemoveMediaItemsFromAlbumRequest request) {
+    return batchRemoveMediaItemsFromAlbumCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Removes one or more media items from a specified album. The media items and the album must be
+   * created by the developer via the API.
+   *
+   * <p>Invalid media item or album identifiers will result in the failure of this request and no
+   * action will be performed on the album.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   String albumId = "";
+   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
+   *   BatchRemoveMediaItemsFromAlbumRequest request = BatchRemoveMediaItemsFromAlbumRequest.newBuilder()
+   *     .setAlbumId(albumId)
+   *     .addAllMediaItemIds(mediaItemIds)
+   *     .build();
+   *   ApiFuture&lt;BatchRemoveMediaItemsFromAlbumResponse&gt; future = internalPhotosLibraryClient.batchRemoveMediaItemsFromAlbumCallable().futureCall(request);
+   *   // Do something
+   *   BatchRemoveMediaItemsFromAlbumResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<
+          BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
+      batchRemoveMediaItemsFromAlbumCallable() {
+    return stub.batchRemoveMediaItemsFromAlbumCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1517,7 +1734,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
             public SearchMediaItemsPagedResponse apply(SearchMediaItemsPage input) {
               return new SearchMediaItemsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private SearchMediaItemsPagedResponse(SearchMediaItemsPage page) {
@@ -1598,7 +1816,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
             public ListMediaItemsPagedResponse apply(ListMediaItemsPage input) {
               return new ListMediaItemsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListMediaItemsPagedResponse(ListMediaItemsPage page) {
@@ -1678,7 +1897,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
             public ListAlbumsPagedResponse apply(ListAlbumsPage input) {
               return new ListAlbumsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListAlbumsPagedResponse(ListAlbumsPage page) {
@@ -1757,7 +1977,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
             public ListSharedAlbumsPagedResponse apply(ListSharedAlbumsPage input) {
               return new ListSharedAlbumsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSharedAlbumsPagedResponse(ListSharedAlbumsPage page) {

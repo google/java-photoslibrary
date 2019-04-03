@@ -54,12 +54,12 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
           case 10:
             {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                sharedAlbums_ = new java.util.ArrayList<com.google.photos.library.v1.proto.Album>();
+                sharedAlbums_ = new java.util.ArrayList<com.google.photos.types.proto.Album>();
                 mutable_bitField0_ |= 0x00000001;
               }
               sharedAlbums_.add(
                   input.readMessage(
-                      com.google.photos.library.v1.proto.Album.parser(), extensionRegistry));
+                      com.google.photos.types.proto.Album.parser(), extensionRegistry));
               break;
             }
           case 18:
@@ -108,7 +108,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int SHARED_ALBUMS_FIELD_NUMBER = 1;
-  private java.util.List<com.google.photos.library.v1.proto.Album> sharedAlbums_;
+  private java.util.List<com.google.photos.types.proto.Album> sharedAlbums_;
   /**
    *
    *
@@ -116,9 +116,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    * [Output only] List of shared albums.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+   * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
-  public java.util.List<com.google.photos.library.v1.proto.Album> getSharedAlbumsList() {
+  public java.util.List<com.google.photos.types.proto.Album> getSharedAlbumsList() {
     return sharedAlbums_;
   }
   /**
@@ -128,9 +128,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    * [Output only] List of shared albums.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+   * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
-  public java.util.List<? extends com.google.photos.library.v1.proto.AlbumOrBuilder>
+  public java.util.List<? extends com.google.photos.types.proto.AlbumOrBuilder>
       getSharedAlbumsOrBuilderList() {
     return sharedAlbums_;
   }
@@ -141,7 +141,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    * [Output only] List of shared albums.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+   * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
   public int getSharedAlbumsCount() {
     return sharedAlbums_.size();
@@ -153,9 +153,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    * [Output only] List of shared albums.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+   * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
-  public com.google.photos.library.v1.proto.Album getSharedAlbums(int index) {
+  public com.google.photos.types.proto.Album getSharedAlbums(int index) {
     return sharedAlbums_.get(index);
   }
   /**
@@ -165,9 +165,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    * [Output only] List of shared albums.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+   * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
-  public com.google.photos.library.v1.proto.AlbumOrBuilder getSharedAlbumsOrBuilder(int index) {
+  public com.google.photos.types.proto.AlbumOrBuilder getSharedAlbumsOrBuilder(int index) {
     return sharedAlbums_.get(index);
   }
 
@@ -596,21 +596,20 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
 
     private int bitField0_;
 
-    private java.util.List<com.google.photos.library.v1.proto.Album> sharedAlbums_ =
+    private java.util.List<com.google.photos.types.proto.Album> sharedAlbums_ =
         java.util.Collections.emptyList();
 
     private void ensureSharedAlbumsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        sharedAlbums_ =
-            new java.util.ArrayList<com.google.photos.library.v1.proto.Album>(sharedAlbums_);
+        sharedAlbums_ = new java.util.ArrayList<com.google.photos.types.proto.Album>(sharedAlbums_);
         bitField0_ |= 0x00000001;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.photos.library.v1.proto.Album,
-            com.google.photos.library.v1.proto.Album.Builder,
-            com.google.photos.library.v1.proto.AlbumOrBuilder>
+            com.google.photos.types.proto.Album,
+            com.google.photos.types.proto.Album.Builder,
+            com.google.photos.types.proto.AlbumOrBuilder>
         sharedAlbumsBuilder_;
 
     /**
@@ -620,9 +619,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public java.util.List<com.google.photos.library.v1.proto.Album> getSharedAlbumsList() {
+    public java.util.List<com.google.photos.types.proto.Album> getSharedAlbumsList() {
       if (sharedAlbumsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(sharedAlbums_);
       } else {
@@ -636,7 +635,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
     public int getSharedAlbumsCount() {
       if (sharedAlbumsBuilder_ == null) {
@@ -652,9 +651,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public com.google.photos.library.v1.proto.Album getSharedAlbums(int index) {
+    public com.google.photos.types.proto.Album getSharedAlbums(int index) {
       if (sharedAlbumsBuilder_ == null) {
         return sharedAlbums_.get(index);
       } else {
@@ -668,9 +667,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public Builder setSharedAlbums(int index, com.google.photos.library.v1.proto.Album value) {
+    public Builder setSharedAlbums(int index, com.google.photos.types.proto.Album value) {
       if (sharedAlbumsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -690,10 +689,10 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
     public Builder setSharedAlbums(
-        int index, com.google.photos.library.v1.proto.Album.Builder builderForValue) {
+        int index, com.google.photos.types.proto.Album.Builder builderForValue) {
       if (sharedAlbumsBuilder_ == null) {
         ensureSharedAlbumsIsMutable();
         sharedAlbums_.set(index, builderForValue.build());
@@ -710,9 +709,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public Builder addSharedAlbums(com.google.photos.library.v1.proto.Album value) {
+    public Builder addSharedAlbums(com.google.photos.types.proto.Album value) {
       if (sharedAlbumsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -732,9 +731,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public Builder addSharedAlbums(int index, com.google.photos.library.v1.proto.Album value) {
+    public Builder addSharedAlbums(int index, com.google.photos.types.proto.Album value) {
       if (sharedAlbumsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -754,10 +753,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public Builder addSharedAlbums(
-        com.google.photos.library.v1.proto.Album.Builder builderForValue) {
+    public Builder addSharedAlbums(com.google.photos.types.proto.Album.Builder builderForValue) {
       if (sharedAlbumsBuilder_ == null) {
         ensureSharedAlbumsIsMutable();
         sharedAlbums_.add(builderForValue.build());
@@ -774,10 +772,10 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
     public Builder addSharedAlbums(
-        int index, com.google.photos.library.v1.proto.Album.Builder builderForValue) {
+        int index, com.google.photos.types.proto.Album.Builder builderForValue) {
       if (sharedAlbumsBuilder_ == null) {
         ensureSharedAlbumsIsMutable();
         sharedAlbums_.add(index, builderForValue.build());
@@ -794,10 +792,10 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
     public Builder addAllSharedAlbums(
-        java.lang.Iterable<? extends com.google.photos.library.v1.proto.Album> values) {
+        java.lang.Iterable<? extends com.google.photos.types.proto.Album> values) {
       if (sharedAlbumsBuilder_ == null) {
         ensureSharedAlbumsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sharedAlbums_);
@@ -814,7 +812,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
     public Builder clearSharedAlbums() {
       if (sharedAlbumsBuilder_ == null) {
@@ -833,7 +831,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
     public Builder removeSharedAlbums(int index) {
       if (sharedAlbumsBuilder_ == null) {
@@ -852,9 +850,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public com.google.photos.library.v1.proto.Album.Builder getSharedAlbumsBuilder(int index) {
+    public com.google.photos.types.proto.Album.Builder getSharedAlbumsBuilder(int index) {
       return getSharedAlbumsFieldBuilder().getBuilder(index);
     }
     /**
@@ -864,9 +862,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public com.google.photos.library.v1.proto.AlbumOrBuilder getSharedAlbumsOrBuilder(int index) {
+    public com.google.photos.types.proto.AlbumOrBuilder getSharedAlbumsOrBuilder(int index) {
       if (sharedAlbumsBuilder_ == null) {
         return sharedAlbums_.get(index);
       } else {
@@ -880,9 +878,9 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public java.util.List<? extends com.google.photos.library.v1.proto.AlbumOrBuilder>
+    public java.util.List<? extends com.google.photos.types.proto.AlbumOrBuilder>
         getSharedAlbumsOrBuilderList() {
       if (sharedAlbumsBuilder_ != null) {
         return sharedAlbumsBuilder_.getMessageOrBuilderList();
@@ -897,11 +895,11 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public com.google.photos.library.v1.proto.Album.Builder addSharedAlbumsBuilder() {
+    public com.google.photos.types.proto.Album.Builder addSharedAlbumsBuilder() {
       return getSharedAlbumsFieldBuilder()
-          .addBuilder(com.google.photos.library.v1.proto.Album.getDefaultInstance());
+          .addBuilder(com.google.photos.types.proto.Album.getDefaultInstance());
     }
     /**
      *
@@ -910,11 +908,11 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public com.google.photos.library.v1.proto.Album.Builder addSharedAlbumsBuilder(int index) {
+    public com.google.photos.types.proto.Album.Builder addSharedAlbumsBuilder(int index) {
       return getSharedAlbumsFieldBuilder()
-          .addBuilder(index, com.google.photos.library.v1.proto.Album.getDefaultInstance());
+          .addBuilder(index, com.google.photos.types.proto.Album.getDefaultInstance());
     }
     /**
      *
@@ -923,24 +921,24 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      * [Output only] List of shared albums.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+     * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
      */
-    public java.util.List<com.google.photos.library.v1.proto.Album.Builder>
+    public java.util.List<com.google.photos.types.proto.Album.Builder>
         getSharedAlbumsBuilderList() {
       return getSharedAlbumsFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.photos.library.v1.proto.Album,
-            com.google.photos.library.v1.proto.Album.Builder,
-            com.google.photos.library.v1.proto.AlbumOrBuilder>
+            com.google.photos.types.proto.Album,
+            com.google.photos.types.proto.Album.Builder,
+            com.google.photos.types.proto.AlbumOrBuilder>
         getSharedAlbumsFieldBuilder() {
       if (sharedAlbumsBuilder_ == null) {
         sharedAlbumsBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.photos.library.v1.proto.Album,
-                com.google.photos.library.v1.proto.Album.Builder,
-                com.google.photos.library.v1.proto.AlbumOrBuilder>(
+                com.google.photos.types.proto.Album,
+                com.google.photos.types.proto.Album.Builder,
+                com.google.photos.types.proto.AlbumOrBuilder>(
                 sharedAlbums_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),

@@ -50,13 +50,13 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
             break;
           case 10:
             {
-              com.google.photos.library.v1.proto.Album.Builder subBuilder = null;
+              com.google.photos.types.proto.Album.Builder subBuilder = null;
               if (album_ != null) {
                 subBuilder = album_.toBuilder();
               }
               album_ =
                   input.readMessage(
-                      com.google.photos.library.v1.proto.Album.parser(), extensionRegistry);
+                      com.google.photos.types.proto.Album.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(album_);
                 album_ = subBuilder.buildPartial();
@@ -99,7 +99,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ALBUM_FIELD_NUMBER = 1;
-  private com.google.photos.library.v1.proto.Album album_;
+  private com.google.photos.types.proto.Album album_;
   /**
    *
    *
@@ -107,7 +107,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
    * The album to be created.
    * </pre>
    *
-   * <code>.google.photos.library.v1.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1;</code>
    */
   public boolean hasAlbum() {
     return album_ != null;
@@ -119,10 +119,10 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
    * The album to be created.
    * </pre>
    *
-   * <code>.google.photos.library.v1.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1;</code>
    */
-  public com.google.photos.library.v1.proto.Album getAlbum() {
-    return album_ == null ? com.google.photos.library.v1.proto.Album.getDefaultInstance() : album_;
+  public com.google.photos.types.proto.Album getAlbum() {
+    return album_ == null ? com.google.photos.types.proto.Album.getDefaultInstance() : album_;
   }
   /**
    *
@@ -131,9 +131,9 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
    * The album to be created.
    * </pre>
    *
-   * <code>.google.photos.library.v1.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1;</code>
    */
-  public com.google.photos.library.v1.proto.AlbumOrBuilder getAlbumOrBuilder() {
+  public com.google.photos.types.proto.AlbumOrBuilder getAlbumOrBuilder() {
     return getAlbum();
   }
 
@@ -469,11 +469,11 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.photos.library.v1.proto.Album album_ = null;
+    private com.google.photos.types.proto.Album album_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.photos.library.v1.proto.Album,
-            com.google.photos.library.v1.proto.Album.Builder,
-            com.google.photos.library.v1.proto.AlbumOrBuilder>
+            com.google.photos.types.proto.Album,
+            com.google.photos.types.proto.Album.Builder,
+            com.google.photos.types.proto.AlbumOrBuilder>
         albumBuilder_;
     /**
      *
@@ -482,7 +482,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * The album to be created.
      * </pre>
      *
-     * <code>.google.photos.library.v1.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1;</code>
      */
     public boolean hasAlbum() {
       return albumBuilder_ != null || album_ != null;
@@ -494,13 +494,11 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * The album to be created.
      * </pre>
      *
-     * <code>.google.photos.library.v1.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1;</code>
      */
-    public com.google.photos.library.v1.proto.Album getAlbum() {
+    public com.google.photos.types.proto.Album getAlbum() {
       if (albumBuilder_ == null) {
-        return album_ == null
-            ? com.google.photos.library.v1.proto.Album.getDefaultInstance()
-            : album_;
+        return album_ == null ? com.google.photos.types.proto.Album.getDefaultInstance() : album_;
       } else {
         return albumBuilder_.getMessage();
       }
@@ -512,9 +510,9 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * The album to be created.
      * </pre>
      *
-     * <code>.google.photos.library.v1.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1;</code>
      */
-    public Builder setAlbum(com.google.photos.library.v1.proto.Album value) {
+    public Builder setAlbum(com.google.photos.types.proto.Album value) {
       if (albumBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -534,9 +532,9 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * The album to be created.
      * </pre>
      *
-     * <code>.google.photos.library.v1.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1;</code>
      */
-    public Builder setAlbum(com.google.photos.library.v1.proto.Album.Builder builderForValue) {
+    public Builder setAlbum(com.google.photos.types.proto.Album.Builder builderForValue) {
       if (albumBuilder_ == null) {
         album_ = builderForValue.build();
         onChanged();
@@ -553,13 +551,13 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * The album to be created.
      * </pre>
      *
-     * <code>.google.photos.library.v1.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1;</code>
      */
-    public Builder mergeAlbum(com.google.photos.library.v1.proto.Album value) {
+    public Builder mergeAlbum(com.google.photos.types.proto.Album value) {
       if (albumBuilder_ == null) {
         if (album_ != null) {
           album_ =
-              com.google.photos.library.v1.proto.Album.newBuilder(album_)
+              com.google.photos.types.proto.Album.newBuilder(album_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -579,7 +577,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * The album to be created.
      * </pre>
      *
-     * <code>.google.photos.library.v1.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1;</code>
      */
     public Builder clearAlbum() {
       if (albumBuilder_ == null) {
@@ -599,9 +597,9 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * The album to be created.
      * </pre>
      *
-     * <code>.google.photos.library.v1.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1;</code>
      */
-    public com.google.photos.library.v1.proto.Album.Builder getAlbumBuilder() {
+    public com.google.photos.types.proto.Album.Builder getAlbumBuilder() {
 
       onChanged();
       return getAlbumFieldBuilder().getBuilder();
@@ -613,15 +611,13 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * The album to be created.
      * </pre>
      *
-     * <code>.google.photos.library.v1.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1;</code>
      */
-    public com.google.photos.library.v1.proto.AlbumOrBuilder getAlbumOrBuilder() {
+    public com.google.photos.types.proto.AlbumOrBuilder getAlbumOrBuilder() {
       if (albumBuilder_ != null) {
         return albumBuilder_.getMessageOrBuilder();
       } else {
-        return album_ == null
-            ? com.google.photos.library.v1.proto.Album.getDefaultInstance()
-            : album_;
+        return album_ == null ? com.google.photos.types.proto.Album.getDefaultInstance() : album_;
       }
     }
     /**
@@ -631,19 +627,19 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * The album to be created.
      * </pre>
      *
-     * <code>.google.photos.library.v1.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.photos.library.v1.proto.Album,
-            com.google.photos.library.v1.proto.Album.Builder,
-            com.google.photos.library.v1.proto.AlbumOrBuilder>
+            com.google.photos.types.proto.Album,
+            com.google.photos.types.proto.Album.Builder,
+            com.google.photos.types.proto.AlbumOrBuilder>
         getAlbumFieldBuilder() {
       if (albumBuilder_ == null) {
         albumBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.photos.library.v1.proto.Album,
-                com.google.photos.library.v1.proto.Album.Builder,
-                com.google.photos.library.v1.proto.AlbumOrBuilder>(
+                com.google.photos.types.proto.Album,
+                com.google.photos.types.proto.Album.Builder,
+                com.google.photos.types.proto.AlbumOrBuilder>(
                 getAlbum(), getParentForChildren(), isClean());
         album_ = null;
       }

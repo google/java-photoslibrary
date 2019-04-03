@@ -16,7 +16,7 @@
 
 package com.google.photos.library.sample.suppliers;
 
-import com.google.photos.library.v1.proto.Album;
+import com.google.photos.types.proto.Album;
 import java.util.List;
 import java.util.function.Supplier;
 

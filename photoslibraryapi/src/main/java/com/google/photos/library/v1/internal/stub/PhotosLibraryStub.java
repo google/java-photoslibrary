@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,11 +25,14 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.photos.library.v1.proto.AddEnrichmentToAlbumRequest;
 import com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse;
-import com.google.photos.library.v1.proto.Album;
+import com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumRequest;
+import com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumResponse;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse;
 import com.google.photos.library.v1.proto.BatchGetMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchGetMediaItemsResponse;
+import com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest;
+import com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumResponse;
 import com.google.photos.library.v1.proto.CreateAlbumRequest;
 import com.google.photos.library.v1.proto.GetAlbumRequest;
 import com.google.photos.library.v1.proto.GetMediaItemRequest;
@@ -44,13 +47,14 @@ import com.google.photos.library.v1.proto.ListMediaItemsRequest;
 import com.google.photos.library.v1.proto.ListMediaItemsResponse;
 import com.google.photos.library.v1.proto.ListSharedAlbumsRequest;
 import com.google.photos.library.v1.proto.ListSharedAlbumsResponse;
-import com.google.photos.library.v1.proto.MediaItem;
 import com.google.photos.library.v1.proto.SearchMediaItemsRequest;
 import com.google.photos.library.v1.proto.SearchMediaItemsResponse;
 import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
 import com.google.photos.library.v1.proto.UnshareAlbumRequest;
 import com.google.photos.library.v1.proto.UnshareAlbumResponse;
+import com.google.photos.types.proto.Album;
+import com.google.photos.types.proto.MediaItem;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -70,6 +74,11 @@ public abstract class PhotosLibraryStub implements BackgroundResource {
   public UnaryCallable<BatchCreateMediaItemsRequest, BatchCreateMediaItemsResponse>
       batchCreateMediaItemsCallable() {
     throw new UnsupportedOperationException("Not implemented: batchCreateMediaItemsCallable()");
+  }
+
+  public UnaryCallable<BatchAddMediaItemsToAlbumRequest, BatchAddMediaItemsToAlbumResponse>
+      batchAddMediaItemsToAlbumCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchAddMediaItemsToAlbumCallable()");
   }
 
   public UnaryCallable<SearchMediaItemsRequest, SearchMediaItemsPagedResponse>
@@ -146,6 +155,13 @@ public abstract class PhotosLibraryStub implements BackgroundResource {
 
   public UnaryCallable<UnshareAlbumRequest, UnshareAlbumResponse> unshareAlbumCallable() {
     throw new UnsupportedOperationException("Not implemented: unshareAlbumCallable()");
+  }
+
+  public UnaryCallable<
+          BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
+      batchRemoveMediaItemsFromAlbumCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchRemoveMediaItemsFromAlbumCallable()");
   }
 
   @Override

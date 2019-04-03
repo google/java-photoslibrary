@@ -15,9 +15,9 @@ public interface SearchMediaItemsResponseOrBuilder
    * [Output only] List of media items that match the search parameters.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+   * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
-  java.util.List<com.google.photos.library.v1.proto.MediaItem> getMediaItemsList();
+  java.util.List<com.google.photos.types.proto.MediaItem> getMediaItemsList();
   /**
    *
    *
@@ -25,9 +25,9 @@ public interface SearchMediaItemsResponseOrBuilder
    * [Output only] List of media items that match the search parameters.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+   * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
-  com.google.photos.library.v1.proto.MediaItem getMediaItems(int index);
+  com.google.photos.types.proto.MediaItem getMediaItems(int index);
   /**
    *
    *
@@ -35,7 +35,7 @@ public interface SearchMediaItemsResponseOrBuilder
    * [Output only] List of media items that match the search parameters.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+   * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
   int getMediaItemsCount();
   /**
@@ -45,9 +45,9 @@ public interface SearchMediaItemsResponseOrBuilder
    * [Output only] List of media items that match the search parameters.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+   * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
-  java.util.List<? extends com.google.photos.library.v1.proto.MediaItemOrBuilder>
+  java.util.List<? extends com.google.photos.types.proto.MediaItemOrBuilder>
       getMediaItemsOrBuilderList();
   /**
    *
@@ -56,9 +56,9 @@ public interface SearchMediaItemsResponseOrBuilder
    * [Output only] List of media items that match the search parameters.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+   * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
-  com.google.photos.library.v1.proto.MediaItemOrBuilder getMediaItemsOrBuilder(int index);
+  com.google.photos.types.proto.MediaItemOrBuilder getMediaItemsOrBuilder(int index);
 
   /**
    *

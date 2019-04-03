@@ -3,7 +3,7 @@ package com.google.photos.library.sample.components;
 import com.google.common.collect.Lists;
 import com.google.photos.library.sample.helpers.UIHelper;
 import com.google.photos.library.sample.views.AbstractCustomView;
-import com.google.photos.library.v1.proto.Album;
+import com.google.photos.types.proto.Album;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;

@@ -15,7 +15,7 @@ public interface ShareAlbumResponseOrBuilder
    * [Output only] Information about the shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+   * <code>.google.photos.types.ShareInfo share_info = 1;</code>
    */
   boolean hasShareInfo();
   /**
@@ -25,9 +25,9 @@ public interface ShareAlbumResponseOrBuilder
    * [Output only] Information about the shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+   * <code>.google.photos.types.ShareInfo share_info = 1;</code>
    */
-  com.google.photos.library.v1.proto.ShareInfo getShareInfo();
+  com.google.photos.types.proto.ShareInfo getShareInfo();
   /**
    *
    *
@@ -35,7 +35,7 @@ public interface ShareAlbumResponseOrBuilder
    * [Output only] Information about the shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+   * <code>.google.photos.types.ShareInfo share_info = 1;</code>
    */
-  com.google.photos.library.v1.proto.ShareInfoOrBuilder getShareInfoOrBuilder();
+  com.google.photos.types.proto.ShareInfoOrBuilder getShareInfoOrBuilder();
 }

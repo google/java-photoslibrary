@@ -17,9 +17,9 @@
 package com.google.photos.library.sample.suppliers;
 
 import com.google.photos.library.v1.PhotosLibraryClient;
-import com.google.photos.library.v1.proto.Album;
 import com.google.photos.library.v1.proto.ListSharedAlbumsRequest;
 import com.google.photos.library.v1.proto.ListSharedAlbumsResponse;
+import com.google.photos.types.proto.Album;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;

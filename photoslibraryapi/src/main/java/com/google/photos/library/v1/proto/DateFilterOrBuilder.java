@@ -72,9 +72,9 @@ public interface DateFilterOrBuilder
    * maximum of 5 dates ranges can be included per request.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+   * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
-  java.util.List<com.google.photos.library.v1.proto.DateRange> getRangesList();
+  java.util.List<com.google.photos.types.proto.DateRange> getRangesList();
   /**
    *
    *
@@ -83,9 +83,9 @@ public interface DateFilterOrBuilder
    * maximum of 5 dates ranges can be included per request.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+   * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
-  com.google.photos.library.v1.proto.DateRange getRanges(int index);
+  com.google.photos.types.proto.DateRange getRanges(int index);
   /**
    *
    *
@@ -94,7 +94,7 @@ public interface DateFilterOrBuilder
    * maximum of 5 dates ranges can be included per request.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+   * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
   int getRangesCount();
   /**
@@ -105,9 +105,9 @@ public interface DateFilterOrBuilder
    * maximum of 5 dates ranges can be included per request.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+   * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
-  java.util.List<? extends com.google.photos.library.v1.proto.DateRangeOrBuilder>
+  java.util.List<? extends com.google.photos.types.proto.DateRangeOrBuilder>
       getRangesOrBuilderList();
   /**
    *
@@ -117,7 +117,7 @@ public interface DateFilterOrBuilder
    * maximum of 5 dates ranges can be included per request.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.DateRange ranges = 2;</code>
+   * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
-  com.google.photos.library.v1.proto.DateRangeOrBuilder getRangesOrBuilder(int index);
+  com.google.photos.types.proto.DateRangeOrBuilder getRangesOrBuilder(int index);
 }

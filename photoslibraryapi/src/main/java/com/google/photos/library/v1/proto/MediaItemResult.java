@@ -64,13 +64,13 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
             }
           case 18:
             {
-              com.google.photos.library.v1.proto.MediaItem.Builder subBuilder = null;
+              com.google.photos.types.proto.MediaItem.Builder subBuilder = null;
               if (mediaItem_ != null) {
                 subBuilder = mediaItem_.toBuilder();
               }
               mediaItem_ =
                   input.readMessage(
-                      com.google.photos.library.v1.proto.MediaItem.parser(), extensionRegistry);
+                      com.google.photos.types.proto.MediaItem.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(mediaItem_);
                 mediaItem_ = subBuilder.buildPartial();
@@ -158,7 +158,7 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MEDIA_ITEM_FIELD_NUMBER = 2;
-  private com.google.photos.library.v1.proto.MediaItem mediaItem_;
+  private com.google.photos.types.proto.MediaItem mediaItem_;
   /**
    *
    *
@@ -167,7 +167,7 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
    * occurred and the media item was fetched successfully.
    * </pre>
    *
-   * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+   * <code>.google.photos.types.MediaItem media_item = 2;</code>
    */
   public boolean hasMediaItem() {
     return mediaItem_ != null;
@@ -180,11 +180,11 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
    * occurred and the media item was fetched successfully.
    * </pre>
    *
-   * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+   * <code>.google.photos.types.MediaItem media_item = 2;</code>
    */
-  public com.google.photos.library.v1.proto.MediaItem getMediaItem() {
+  public com.google.photos.types.proto.MediaItem getMediaItem() {
     return mediaItem_ == null
-        ? com.google.photos.library.v1.proto.MediaItem.getDefaultInstance()
+        ? com.google.photos.types.proto.MediaItem.getDefaultInstance()
         : mediaItem_;
   }
   /**
@@ -195,9 +195,9 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
    * occurred and the media item was fetched successfully.
    * </pre>
    *
-   * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+   * <code>.google.photos.types.MediaItem media_item = 2;</code>
    */
-  public com.google.photos.library.v1.proto.MediaItemOrBuilder getMediaItemOrBuilder() {
+  public com.google.photos.types.proto.MediaItemOrBuilder getMediaItemOrBuilder() {
     return getMediaItem();
   }
 
@@ -747,11 +747,11 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
       return statusBuilder_;
     }
 
-    private com.google.photos.library.v1.proto.MediaItem mediaItem_ = null;
+    private com.google.photos.types.proto.MediaItem mediaItem_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.photos.library.v1.proto.MediaItem,
-            com.google.photos.library.v1.proto.MediaItem.Builder,
-            com.google.photos.library.v1.proto.MediaItemOrBuilder>
+            com.google.photos.types.proto.MediaItem,
+            com.google.photos.types.proto.MediaItem.Builder,
+            com.google.photos.types.proto.MediaItemOrBuilder>
         mediaItemBuilder_;
     /**
      *
@@ -761,7 +761,7 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
      * occurred and the media item was fetched successfully.
      * </pre>
      *
-     * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+     * <code>.google.photos.types.MediaItem media_item = 2;</code>
      */
     public boolean hasMediaItem() {
       return mediaItemBuilder_ != null || mediaItem_ != null;
@@ -774,12 +774,12 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
      * occurred and the media item was fetched successfully.
      * </pre>
      *
-     * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+     * <code>.google.photos.types.MediaItem media_item = 2;</code>
      */
-    public com.google.photos.library.v1.proto.MediaItem getMediaItem() {
+    public com.google.photos.types.proto.MediaItem getMediaItem() {
       if (mediaItemBuilder_ == null) {
         return mediaItem_ == null
-            ? com.google.photos.library.v1.proto.MediaItem.getDefaultInstance()
+            ? com.google.photos.types.proto.MediaItem.getDefaultInstance()
             : mediaItem_;
       } else {
         return mediaItemBuilder_.getMessage();
@@ -793,9 +793,9 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
      * occurred and the media item was fetched successfully.
      * </pre>
      *
-     * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+     * <code>.google.photos.types.MediaItem media_item = 2;</code>
      */
-    public Builder setMediaItem(com.google.photos.library.v1.proto.MediaItem value) {
+    public Builder setMediaItem(com.google.photos.types.proto.MediaItem value) {
       if (mediaItemBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -816,10 +816,9 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
      * occurred and the media item was fetched successfully.
      * </pre>
      *
-     * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+     * <code>.google.photos.types.MediaItem media_item = 2;</code>
      */
-    public Builder setMediaItem(
-        com.google.photos.library.v1.proto.MediaItem.Builder builderForValue) {
+    public Builder setMediaItem(com.google.photos.types.proto.MediaItem.Builder builderForValue) {
       if (mediaItemBuilder_ == null) {
         mediaItem_ = builderForValue.build();
         onChanged();
@@ -837,13 +836,13 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
      * occurred and the media item was fetched successfully.
      * </pre>
      *
-     * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+     * <code>.google.photos.types.MediaItem media_item = 2;</code>
      */
-    public Builder mergeMediaItem(com.google.photos.library.v1.proto.MediaItem value) {
+    public Builder mergeMediaItem(com.google.photos.types.proto.MediaItem value) {
       if (mediaItemBuilder_ == null) {
         if (mediaItem_ != null) {
           mediaItem_ =
-              com.google.photos.library.v1.proto.MediaItem.newBuilder(mediaItem_)
+              com.google.photos.types.proto.MediaItem.newBuilder(mediaItem_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -864,7 +863,7 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
      * occurred and the media item was fetched successfully.
      * </pre>
      *
-     * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+     * <code>.google.photos.types.MediaItem media_item = 2;</code>
      */
     public Builder clearMediaItem() {
       if (mediaItemBuilder_ == null) {
@@ -885,9 +884,9 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
      * occurred and the media item was fetched successfully.
      * </pre>
      *
-     * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+     * <code>.google.photos.types.MediaItem media_item = 2;</code>
      */
-    public com.google.photos.library.v1.proto.MediaItem.Builder getMediaItemBuilder() {
+    public com.google.photos.types.proto.MediaItem.Builder getMediaItemBuilder() {
 
       onChanged();
       return getMediaItemFieldBuilder().getBuilder();
@@ -900,14 +899,14 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
      * occurred and the media item was fetched successfully.
      * </pre>
      *
-     * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+     * <code>.google.photos.types.MediaItem media_item = 2;</code>
      */
-    public com.google.photos.library.v1.proto.MediaItemOrBuilder getMediaItemOrBuilder() {
+    public com.google.photos.types.proto.MediaItemOrBuilder getMediaItemOrBuilder() {
       if (mediaItemBuilder_ != null) {
         return mediaItemBuilder_.getMessageOrBuilder();
       } else {
         return mediaItem_ == null
-            ? com.google.photos.library.v1.proto.MediaItem.getDefaultInstance()
+            ? com.google.photos.types.proto.MediaItem.getDefaultInstance()
             : mediaItem_;
       }
     }
@@ -919,19 +918,19 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
      * occurred and the media item was fetched successfully.
      * </pre>
      *
-     * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+     * <code>.google.photos.types.MediaItem media_item = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.photos.library.v1.proto.MediaItem,
-            com.google.photos.library.v1.proto.MediaItem.Builder,
-            com.google.photos.library.v1.proto.MediaItemOrBuilder>
+            com.google.photos.types.proto.MediaItem,
+            com.google.photos.types.proto.MediaItem.Builder,
+            com.google.photos.types.proto.MediaItemOrBuilder>
         getMediaItemFieldBuilder() {
       if (mediaItemBuilder_ == null) {
         mediaItemBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.photos.library.v1.proto.MediaItem,
-                com.google.photos.library.v1.proto.MediaItem.Builder,
-                com.google.photos.library.v1.proto.MediaItemOrBuilder>(
+                com.google.photos.types.proto.MediaItem,
+                com.google.photos.types.proto.MediaItem.Builder,
+                com.google.photos.types.proto.MediaItemOrBuilder>(
                 getMediaItem(), getParentForChildren(), isClean());
         mediaItem_ = null;
       }

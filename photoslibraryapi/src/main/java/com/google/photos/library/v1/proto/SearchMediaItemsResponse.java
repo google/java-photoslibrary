@@ -54,13 +54,12 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
           case 10:
             {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                mediaItems_ =
-                    new java.util.ArrayList<com.google.photos.library.v1.proto.MediaItem>();
+                mediaItems_ = new java.util.ArrayList<com.google.photos.types.proto.MediaItem>();
                 mutable_bitField0_ |= 0x00000001;
               }
               mediaItems_.add(
                   input.readMessage(
-                      com.google.photos.library.v1.proto.MediaItem.parser(), extensionRegistry));
+                      com.google.photos.types.proto.MediaItem.parser(), extensionRegistry));
               break;
             }
           case 18:
@@ -109,7 +108,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
 
   private int bitField0_;
   public static final int MEDIA_ITEMS_FIELD_NUMBER = 1;
-  private java.util.List<com.google.photos.library.v1.proto.MediaItem> mediaItems_;
+  private java.util.List<com.google.photos.types.proto.MediaItem> mediaItems_;
   /**
    *
    *
@@ -117,9 +116,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    * [Output only] List of media items that match the search parameters.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+   * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
-  public java.util.List<com.google.photos.library.v1.proto.MediaItem> getMediaItemsList() {
+  public java.util.List<com.google.photos.types.proto.MediaItem> getMediaItemsList() {
     return mediaItems_;
   }
   /**
@@ -129,9 +128,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    * [Output only] List of media items that match the search parameters.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+   * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
-  public java.util.List<? extends com.google.photos.library.v1.proto.MediaItemOrBuilder>
+  public java.util.List<? extends com.google.photos.types.proto.MediaItemOrBuilder>
       getMediaItemsOrBuilderList() {
     return mediaItems_;
   }
@@ -142,7 +141,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    * [Output only] List of media items that match the search parameters.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+   * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
   public int getMediaItemsCount() {
     return mediaItems_.size();
@@ -154,9 +153,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    * [Output only] List of media items that match the search parameters.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+   * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
-  public com.google.photos.library.v1.proto.MediaItem getMediaItems(int index) {
+  public com.google.photos.types.proto.MediaItem getMediaItems(int index) {
     return mediaItems_.get(index);
   }
   /**
@@ -166,9 +165,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    * [Output only] List of media items that match the search parameters.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+   * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
-  public com.google.photos.library.v1.proto.MediaItemOrBuilder getMediaItemsOrBuilder(int index) {
+  public com.google.photos.types.proto.MediaItemOrBuilder getMediaItemsOrBuilder(int index) {
     return mediaItems_.get(index);
   }
 
@@ -599,21 +598,20 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
 
     private int bitField0_;
 
-    private java.util.List<com.google.photos.library.v1.proto.MediaItem> mediaItems_ =
+    private java.util.List<com.google.photos.types.proto.MediaItem> mediaItems_ =
         java.util.Collections.emptyList();
 
     private void ensureMediaItemsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        mediaItems_ =
-            new java.util.ArrayList<com.google.photos.library.v1.proto.MediaItem>(mediaItems_);
+        mediaItems_ = new java.util.ArrayList<com.google.photos.types.proto.MediaItem>(mediaItems_);
         bitField0_ |= 0x00000001;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.photos.library.v1.proto.MediaItem,
-            com.google.photos.library.v1.proto.MediaItem.Builder,
-            com.google.photos.library.v1.proto.MediaItemOrBuilder>
+            com.google.photos.types.proto.MediaItem,
+            com.google.photos.types.proto.MediaItem.Builder,
+            com.google.photos.types.proto.MediaItemOrBuilder>
         mediaItemsBuilder_;
 
     /**
@@ -623,9 +621,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public java.util.List<com.google.photos.library.v1.proto.MediaItem> getMediaItemsList() {
+    public java.util.List<com.google.photos.types.proto.MediaItem> getMediaItemsList() {
       if (mediaItemsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(mediaItems_);
       } else {
@@ -639,7 +637,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
     public int getMediaItemsCount() {
       if (mediaItemsBuilder_ == null) {
@@ -655,9 +653,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public com.google.photos.library.v1.proto.MediaItem getMediaItems(int index) {
+    public com.google.photos.types.proto.MediaItem getMediaItems(int index) {
       if (mediaItemsBuilder_ == null) {
         return mediaItems_.get(index);
       } else {
@@ -671,9 +669,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public Builder setMediaItems(int index, com.google.photos.library.v1.proto.MediaItem value) {
+    public Builder setMediaItems(int index, com.google.photos.types.proto.MediaItem value) {
       if (mediaItemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -693,10 +691,10 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
     public Builder setMediaItems(
-        int index, com.google.photos.library.v1.proto.MediaItem.Builder builderForValue) {
+        int index, com.google.photos.types.proto.MediaItem.Builder builderForValue) {
       if (mediaItemsBuilder_ == null) {
         ensureMediaItemsIsMutable();
         mediaItems_.set(index, builderForValue.build());
@@ -713,9 +711,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public Builder addMediaItems(com.google.photos.library.v1.proto.MediaItem value) {
+    public Builder addMediaItems(com.google.photos.types.proto.MediaItem value) {
       if (mediaItemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -735,9 +733,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public Builder addMediaItems(int index, com.google.photos.library.v1.proto.MediaItem value) {
+    public Builder addMediaItems(int index, com.google.photos.types.proto.MediaItem value) {
       if (mediaItemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -757,10 +755,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public Builder addMediaItems(
-        com.google.photos.library.v1.proto.MediaItem.Builder builderForValue) {
+    public Builder addMediaItems(com.google.photos.types.proto.MediaItem.Builder builderForValue) {
       if (mediaItemsBuilder_ == null) {
         ensureMediaItemsIsMutable();
         mediaItems_.add(builderForValue.build());
@@ -777,10 +774,10 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
     public Builder addMediaItems(
-        int index, com.google.photos.library.v1.proto.MediaItem.Builder builderForValue) {
+        int index, com.google.photos.types.proto.MediaItem.Builder builderForValue) {
       if (mediaItemsBuilder_ == null) {
         ensureMediaItemsIsMutable();
         mediaItems_.add(index, builderForValue.build());
@@ -797,10 +794,10 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
     public Builder addAllMediaItems(
-        java.lang.Iterable<? extends com.google.photos.library.v1.proto.MediaItem> values) {
+        java.lang.Iterable<? extends com.google.photos.types.proto.MediaItem> values) {
       if (mediaItemsBuilder_ == null) {
         ensureMediaItemsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mediaItems_);
@@ -817,7 +814,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
     public Builder clearMediaItems() {
       if (mediaItemsBuilder_ == null) {
@@ -836,7 +833,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
     public Builder removeMediaItems(int index) {
       if (mediaItemsBuilder_ == null) {
@@ -855,9 +852,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public com.google.photos.library.v1.proto.MediaItem.Builder getMediaItemsBuilder(int index) {
+    public com.google.photos.types.proto.MediaItem.Builder getMediaItemsBuilder(int index) {
       return getMediaItemsFieldBuilder().getBuilder(index);
     }
     /**
@@ -867,9 +864,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public com.google.photos.library.v1.proto.MediaItemOrBuilder getMediaItemsOrBuilder(int index) {
+    public com.google.photos.types.proto.MediaItemOrBuilder getMediaItemsOrBuilder(int index) {
       if (mediaItemsBuilder_ == null) {
         return mediaItems_.get(index);
       } else {
@@ -883,9 +880,9 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public java.util.List<? extends com.google.photos.library.v1.proto.MediaItemOrBuilder>
+    public java.util.List<? extends com.google.photos.types.proto.MediaItemOrBuilder>
         getMediaItemsOrBuilderList() {
       if (mediaItemsBuilder_ != null) {
         return mediaItemsBuilder_.getMessageOrBuilderList();
@@ -900,11 +897,11 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public com.google.photos.library.v1.proto.MediaItem.Builder addMediaItemsBuilder() {
+    public com.google.photos.types.proto.MediaItem.Builder addMediaItemsBuilder() {
       return getMediaItemsFieldBuilder()
-          .addBuilder(com.google.photos.library.v1.proto.MediaItem.getDefaultInstance());
+          .addBuilder(com.google.photos.types.proto.MediaItem.getDefaultInstance());
     }
     /**
      *
@@ -913,11 +910,11 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public com.google.photos.library.v1.proto.MediaItem.Builder addMediaItemsBuilder(int index) {
+    public com.google.photos.types.proto.MediaItem.Builder addMediaItemsBuilder(int index) {
       return getMediaItemsFieldBuilder()
-          .addBuilder(index, com.google.photos.library.v1.proto.MediaItem.getDefaultInstance());
+          .addBuilder(index, com.google.photos.types.proto.MediaItem.getDefaultInstance());
     }
     /**
      *
@@ -926,24 +923,24 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      * [Output only] List of media items that match the search parameters.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.MediaItem media_items = 1;</code>
+     * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
      */
-    public java.util.List<com.google.photos.library.v1.proto.MediaItem.Builder>
+    public java.util.List<com.google.photos.types.proto.MediaItem.Builder>
         getMediaItemsBuilderList() {
       return getMediaItemsFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.photos.library.v1.proto.MediaItem,
-            com.google.photos.library.v1.proto.MediaItem.Builder,
-            com.google.photos.library.v1.proto.MediaItemOrBuilder>
+            com.google.photos.types.proto.MediaItem,
+            com.google.photos.types.proto.MediaItem.Builder,
+            com.google.photos.types.proto.MediaItemOrBuilder>
         getMediaItemsFieldBuilder() {
       if (mediaItemsBuilder_ == null) {
         mediaItemsBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.photos.library.v1.proto.MediaItem,
-                com.google.photos.library.v1.proto.MediaItem.Builder,
-                com.google.photos.library.v1.proto.MediaItemOrBuilder>(
+                com.google.photos.types.proto.MediaItem,
+                com.google.photos.types.proto.MediaItem.Builder,
+                com.google.photos.types.proto.MediaItemOrBuilder>(
                 mediaItems_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),

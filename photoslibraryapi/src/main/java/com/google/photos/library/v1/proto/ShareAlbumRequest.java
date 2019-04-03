@@ -59,14 +59,13 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
             }
           case 18:
             {
-              com.google.photos.library.v1.proto.SharedAlbumOptions.Builder subBuilder = null;
+              com.google.photos.types.proto.SharedAlbumOptions.Builder subBuilder = null;
               if (sharedAlbumOptions_ != null) {
                 subBuilder = sharedAlbumOptions_.toBuilder();
               }
               sharedAlbumOptions_ =
                   input.readMessage(
-                      com.google.photos.library.v1.proto.SharedAlbumOptions.parser(),
-                      extensionRegistry);
+                      com.google.photos.types.proto.SharedAlbumOptions.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(sharedAlbumOptions_);
                 sharedAlbumOptions_ = subBuilder.buildPartial();
@@ -154,7 +153,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SHARED_ALBUM_OPTIONS_FIELD_NUMBER = 2;
-  private com.google.photos.library.v1.proto.SharedAlbumOptions sharedAlbumOptions_;
+  private com.google.photos.types.proto.SharedAlbumOptions sharedAlbumOptions_;
   /**
    *
    *
@@ -162,7 +161,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    * Options to be set when converting the album to a shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+   * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
    */
   public boolean hasSharedAlbumOptions() {
     return sharedAlbumOptions_ != null;
@@ -174,11 +173,11 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    * Options to be set when converting the album to a shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+   * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
    */
-  public com.google.photos.library.v1.proto.SharedAlbumOptions getSharedAlbumOptions() {
+  public com.google.photos.types.proto.SharedAlbumOptions getSharedAlbumOptions() {
     return sharedAlbumOptions_ == null
-        ? com.google.photos.library.v1.proto.SharedAlbumOptions.getDefaultInstance()
+        ? com.google.photos.types.proto.SharedAlbumOptions.getDefaultInstance()
         : sharedAlbumOptions_;
   }
   /**
@@ -188,9 +187,9 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    * Options to be set when converting the album to a shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+   * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
    */
-  public com.google.photos.library.v1.proto.SharedAlbumOptionsOrBuilder
+  public com.google.photos.types.proto.SharedAlbumOptionsOrBuilder
       getSharedAlbumOptionsOrBuilder() {
     return getSharedAlbumOptions();
   }
@@ -641,11 +640,11 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.photos.library.v1.proto.SharedAlbumOptions sharedAlbumOptions_ = null;
+    private com.google.photos.types.proto.SharedAlbumOptions sharedAlbumOptions_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.photos.library.v1.proto.SharedAlbumOptions,
-            com.google.photos.library.v1.proto.SharedAlbumOptions.Builder,
-            com.google.photos.library.v1.proto.SharedAlbumOptionsOrBuilder>
+            com.google.photos.types.proto.SharedAlbumOptions,
+            com.google.photos.types.proto.SharedAlbumOptions.Builder,
+            com.google.photos.types.proto.SharedAlbumOptionsOrBuilder>
         sharedAlbumOptionsBuilder_;
     /**
      *
@@ -654,7 +653,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * Options to be set when converting the album to a shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+     * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
      */
     public boolean hasSharedAlbumOptions() {
       return sharedAlbumOptionsBuilder_ != null || sharedAlbumOptions_ != null;
@@ -666,12 +665,12 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * Options to be set when converting the album to a shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+     * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
      */
-    public com.google.photos.library.v1.proto.SharedAlbumOptions getSharedAlbumOptions() {
+    public com.google.photos.types.proto.SharedAlbumOptions getSharedAlbumOptions() {
       if (sharedAlbumOptionsBuilder_ == null) {
         return sharedAlbumOptions_ == null
-            ? com.google.photos.library.v1.proto.SharedAlbumOptions.getDefaultInstance()
+            ? com.google.photos.types.proto.SharedAlbumOptions.getDefaultInstance()
             : sharedAlbumOptions_;
       } else {
         return sharedAlbumOptionsBuilder_.getMessage();
@@ -684,10 +683,9 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * Options to be set when converting the album to a shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+     * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
      */
-    public Builder setSharedAlbumOptions(
-        com.google.photos.library.v1.proto.SharedAlbumOptions value) {
+    public Builder setSharedAlbumOptions(com.google.photos.types.proto.SharedAlbumOptions value) {
       if (sharedAlbumOptionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -707,10 +705,10 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * Options to be set when converting the album to a shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+     * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
      */
     public Builder setSharedAlbumOptions(
-        com.google.photos.library.v1.proto.SharedAlbumOptions.Builder builderForValue) {
+        com.google.photos.types.proto.SharedAlbumOptions.Builder builderForValue) {
       if (sharedAlbumOptionsBuilder_ == null) {
         sharedAlbumOptions_ = builderForValue.build();
         onChanged();
@@ -727,14 +725,13 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * Options to be set when converting the album to a shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+     * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
      */
-    public Builder mergeSharedAlbumOptions(
-        com.google.photos.library.v1.proto.SharedAlbumOptions value) {
+    public Builder mergeSharedAlbumOptions(com.google.photos.types.proto.SharedAlbumOptions value) {
       if (sharedAlbumOptionsBuilder_ == null) {
         if (sharedAlbumOptions_ != null) {
           sharedAlbumOptions_ =
-              com.google.photos.library.v1.proto.SharedAlbumOptions.newBuilder(sharedAlbumOptions_)
+              com.google.photos.types.proto.SharedAlbumOptions.newBuilder(sharedAlbumOptions_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -754,7 +751,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * Options to be set when converting the album to a shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+     * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
      */
     public Builder clearSharedAlbumOptions() {
       if (sharedAlbumOptionsBuilder_ == null) {
@@ -774,10 +771,9 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * Options to be set when converting the album to a shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+     * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
      */
-    public com.google.photos.library.v1.proto.SharedAlbumOptions.Builder
-        getSharedAlbumOptionsBuilder() {
+    public com.google.photos.types.proto.SharedAlbumOptions.Builder getSharedAlbumOptionsBuilder() {
 
       onChanged();
       return getSharedAlbumOptionsFieldBuilder().getBuilder();
@@ -789,15 +785,15 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * Options to be set when converting the album to a shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+     * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
      */
-    public com.google.photos.library.v1.proto.SharedAlbumOptionsOrBuilder
+    public com.google.photos.types.proto.SharedAlbumOptionsOrBuilder
         getSharedAlbumOptionsOrBuilder() {
       if (sharedAlbumOptionsBuilder_ != null) {
         return sharedAlbumOptionsBuilder_.getMessageOrBuilder();
       } else {
         return sharedAlbumOptions_ == null
-            ? com.google.photos.library.v1.proto.SharedAlbumOptions.getDefaultInstance()
+            ? com.google.photos.types.proto.SharedAlbumOptions.getDefaultInstance()
             : sharedAlbumOptions_;
       }
     }
@@ -808,19 +804,19 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * Options to be set when converting the album to a shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+     * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.photos.library.v1.proto.SharedAlbumOptions,
-            com.google.photos.library.v1.proto.SharedAlbumOptions.Builder,
-            com.google.photos.library.v1.proto.SharedAlbumOptionsOrBuilder>
+            com.google.photos.types.proto.SharedAlbumOptions,
+            com.google.photos.types.proto.SharedAlbumOptions.Builder,
+            com.google.photos.types.proto.SharedAlbumOptionsOrBuilder>
         getSharedAlbumOptionsFieldBuilder() {
       if (sharedAlbumOptionsBuilder_ == null) {
         sharedAlbumOptionsBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.photos.library.v1.proto.SharedAlbumOptions,
-                com.google.photos.library.v1.proto.SharedAlbumOptions.Builder,
-                com.google.photos.library.v1.proto.SharedAlbumOptionsOrBuilder>(
+                com.google.photos.types.proto.SharedAlbumOptions,
+                com.google.photos.types.proto.SharedAlbumOptions.Builder,
+                com.google.photos.types.proto.SharedAlbumOptionsOrBuilder>(
                 getSharedAlbumOptions(), getParentForChildren(), isClean());
         sharedAlbumOptions_ = null;
       }

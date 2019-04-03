@@ -15,9 +15,9 @@ public interface ListSharedAlbumsResponseOrBuilder
    * [Output only] List of shared albums.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+   * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
-  java.util.List<com.google.photos.library.v1.proto.Album> getSharedAlbumsList();
+  java.util.List<com.google.photos.types.proto.Album> getSharedAlbumsList();
   /**
    *
    *
@@ -25,9 +25,9 @@ public interface ListSharedAlbumsResponseOrBuilder
    * [Output only] List of shared albums.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+   * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
-  com.google.photos.library.v1.proto.Album getSharedAlbums(int index);
+  com.google.photos.types.proto.Album getSharedAlbums(int index);
   /**
    *
    *
@@ -35,7 +35,7 @@ public interface ListSharedAlbumsResponseOrBuilder
    * [Output only] List of shared albums.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+   * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
   int getSharedAlbumsCount();
   /**
@@ -45,9 +45,9 @@ public interface ListSharedAlbumsResponseOrBuilder
    * [Output only] List of shared albums.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+   * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
-  java.util.List<? extends com.google.photos.library.v1.proto.AlbumOrBuilder>
+  java.util.List<? extends com.google.photos.types.proto.AlbumOrBuilder>
       getSharedAlbumsOrBuilderList();
   /**
    *
@@ -56,9 +56,9 @@ public interface ListSharedAlbumsResponseOrBuilder
    * [Output only] List of shared albums.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album shared_albums = 1;</code>
+   * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
-  com.google.photos.library.v1.proto.AlbumOrBuilder getSharedAlbumsOrBuilder(int index);
+  com.google.photos.types.proto.AlbumOrBuilder getSharedAlbumsOrBuilder(int index);
 
   /**
    *

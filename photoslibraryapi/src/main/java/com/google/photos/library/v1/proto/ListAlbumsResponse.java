@@ -54,12 +54,12 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
           case 10:
             {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                albums_ = new java.util.ArrayList<com.google.photos.library.v1.proto.Album>();
+                albums_ = new java.util.ArrayList<com.google.photos.types.proto.Album>();
                 mutable_bitField0_ |= 0x00000001;
               }
               albums_.add(
                   input.readMessage(
-                      com.google.photos.library.v1.proto.Album.parser(), extensionRegistry));
+                      com.google.photos.types.proto.Album.parser(), extensionRegistry));
               break;
             }
           case 18:
@@ -108,7 +108,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int ALBUMS_FIELD_NUMBER = 1;
-  private java.util.List<com.google.photos.library.v1.proto.Album> albums_;
+  private java.util.List<com.google.photos.types.proto.Album> albums_;
   /**
    *
    *
@@ -117,9 +117,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    * Photos app.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+   * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
-  public java.util.List<com.google.photos.library.v1.proto.Album> getAlbumsList() {
+  public java.util.List<com.google.photos.types.proto.Album> getAlbumsList() {
     return albums_;
   }
   /**
@@ -130,9 +130,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    * Photos app.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+   * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
-  public java.util.List<? extends com.google.photos.library.v1.proto.AlbumOrBuilder>
+  public java.util.List<? extends com.google.photos.types.proto.AlbumOrBuilder>
       getAlbumsOrBuilderList() {
     return albums_;
   }
@@ -144,7 +144,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    * Photos app.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+   * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
   public int getAlbumsCount() {
     return albums_.size();
@@ -157,9 +157,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    * Photos app.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+   * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
-  public com.google.photos.library.v1.proto.Album getAlbums(int index) {
+  public com.google.photos.types.proto.Album getAlbums(int index) {
     return albums_.get(index);
   }
   /**
@@ -170,9 +170,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    * Photos app.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+   * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
-  public com.google.photos.library.v1.proto.AlbumOrBuilder getAlbumsOrBuilder(int index) {
+  public com.google.photos.types.proto.AlbumOrBuilder getAlbumsOrBuilder(int index) {
     return albums_.get(index);
   }
 
@@ -601,20 +601,20 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
 
     private int bitField0_;
 
-    private java.util.List<com.google.photos.library.v1.proto.Album> albums_ =
+    private java.util.List<com.google.photos.types.proto.Album> albums_ =
         java.util.Collections.emptyList();
 
     private void ensureAlbumsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        albums_ = new java.util.ArrayList<com.google.photos.library.v1.proto.Album>(albums_);
+        albums_ = new java.util.ArrayList<com.google.photos.types.proto.Album>(albums_);
         bitField0_ |= 0x00000001;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.photos.library.v1.proto.Album,
-            com.google.photos.library.v1.proto.Album.Builder,
-            com.google.photos.library.v1.proto.AlbumOrBuilder>
+            com.google.photos.types.proto.Album,
+            com.google.photos.types.proto.Album.Builder,
+            com.google.photos.types.proto.AlbumOrBuilder>
         albumsBuilder_;
 
     /**
@@ -625,9 +625,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public java.util.List<com.google.photos.library.v1.proto.Album> getAlbumsList() {
+    public java.util.List<com.google.photos.types.proto.Album> getAlbumsList() {
       if (albumsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(albums_);
       } else {
@@ -642,7 +642,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
     public int getAlbumsCount() {
       if (albumsBuilder_ == null) {
@@ -659,9 +659,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public com.google.photos.library.v1.proto.Album getAlbums(int index) {
+    public com.google.photos.types.proto.Album getAlbums(int index) {
       if (albumsBuilder_ == null) {
         return albums_.get(index);
       } else {
@@ -676,9 +676,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public Builder setAlbums(int index, com.google.photos.library.v1.proto.Album value) {
+    public Builder setAlbums(int index, com.google.photos.types.proto.Album value) {
       if (albumsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -699,10 +699,10 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
     public Builder setAlbums(
-        int index, com.google.photos.library.v1.proto.Album.Builder builderForValue) {
+        int index, com.google.photos.types.proto.Album.Builder builderForValue) {
       if (albumsBuilder_ == null) {
         ensureAlbumsIsMutable();
         albums_.set(index, builderForValue.build());
@@ -720,9 +720,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public Builder addAlbums(com.google.photos.library.v1.proto.Album value) {
+    public Builder addAlbums(com.google.photos.types.proto.Album value) {
       if (albumsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -743,9 +743,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public Builder addAlbums(int index, com.google.photos.library.v1.proto.Album value) {
+    public Builder addAlbums(int index, com.google.photos.types.proto.Album value) {
       if (albumsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -766,9 +766,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public Builder addAlbums(com.google.photos.library.v1.proto.Album.Builder builderForValue) {
+    public Builder addAlbums(com.google.photos.types.proto.Album.Builder builderForValue) {
       if (albumsBuilder_ == null) {
         ensureAlbumsIsMutable();
         albums_.add(builderForValue.build());
@@ -786,10 +786,10 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
     public Builder addAlbums(
-        int index, com.google.photos.library.v1.proto.Album.Builder builderForValue) {
+        int index, com.google.photos.types.proto.Album.Builder builderForValue) {
       if (albumsBuilder_ == null) {
         ensureAlbumsIsMutable();
         albums_.add(index, builderForValue.build());
@@ -807,10 +807,10 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
     public Builder addAllAlbums(
-        java.lang.Iterable<? extends com.google.photos.library.v1.proto.Album> values) {
+        java.lang.Iterable<? extends com.google.photos.types.proto.Album> values) {
       if (albumsBuilder_ == null) {
         ensureAlbumsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, albums_);
@@ -828,7 +828,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
     public Builder clearAlbums() {
       if (albumsBuilder_ == null) {
@@ -848,7 +848,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
     public Builder removeAlbums(int index) {
       if (albumsBuilder_ == null) {
@@ -868,9 +868,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public com.google.photos.library.v1.proto.Album.Builder getAlbumsBuilder(int index) {
+    public com.google.photos.types.proto.Album.Builder getAlbumsBuilder(int index) {
       return getAlbumsFieldBuilder().getBuilder(index);
     }
     /**
@@ -881,9 +881,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public com.google.photos.library.v1.proto.AlbumOrBuilder getAlbumsOrBuilder(int index) {
+    public com.google.photos.types.proto.AlbumOrBuilder getAlbumsOrBuilder(int index) {
       if (albumsBuilder_ == null) {
         return albums_.get(index);
       } else {
@@ -898,9 +898,9 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public java.util.List<? extends com.google.photos.library.v1.proto.AlbumOrBuilder>
+    public java.util.List<? extends com.google.photos.types.proto.AlbumOrBuilder>
         getAlbumsOrBuilderList() {
       if (albumsBuilder_ != null) {
         return albumsBuilder_.getMessageOrBuilderList();
@@ -916,11 +916,11 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public com.google.photos.library.v1.proto.Album.Builder addAlbumsBuilder() {
+    public com.google.photos.types.proto.Album.Builder addAlbumsBuilder() {
       return getAlbumsFieldBuilder()
-          .addBuilder(com.google.photos.library.v1.proto.Album.getDefaultInstance());
+          .addBuilder(com.google.photos.types.proto.Album.getDefaultInstance());
     }
     /**
      *
@@ -930,11 +930,11 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public com.google.photos.library.v1.proto.Album.Builder addAlbumsBuilder(int index) {
+    public com.google.photos.types.proto.Album.Builder addAlbumsBuilder(int index) {
       return getAlbumsFieldBuilder()
-          .addBuilder(index, com.google.photos.library.v1.proto.Album.getDefaultInstance());
+          .addBuilder(index, com.google.photos.types.proto.Album.getDefaultInstance());
     }
     /**
      *
@@ -944,23 +944,23 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
      * Photos app.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+     * <code>repeated .google.photos.types.Album albums = 1;</code>
      */
-    public java.util.List<com.google.photos.library.v1.proto.Album.Builder> getAlbumsBuilderList() {
+    public java.util.List<com.google.photos.types.proto.Album.Builder> getAlbumsBuilderList() {
       return getAlbumsFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.photos.library.v1.proto.Album,
-            com.google.photos.library.v1.proto.Album.Builder,
-            com.google.photos.library.v1.proto.AlbumOrBuilder>
+            com.google.photos.types.proto.Album,
+            com.google.photos.types.proto.Album.Builder,
+            com.google.photos.types.proto.AlbumOrBuilder>
         getAlbumsFieldBuilder() {
       if (albumsBuilder_ == null) {
         albumsBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.photos.library.v1.proto.Album,
-                com.google.photos.library.v1.proto.Album.Builder,
-                com.google.photos.library.v1.proto.AlbumOrBuilder>(
+                com.google.photos.types.proto.Album,
+                com.google.photos.types.proto.Album.Builder,
+                com.google.photos.types.proto.AlbumOrBuilder>(
                 albums_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,11 +34,14 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.photos.library.v1.internal.stub.PhotosLibraryStubSettings;
 import com.google.photos.library.v1.proto.AddEnrichmentToAlbumRequest;
 import com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse;
-import com.google.photos.library.v1.proto.Album;
+import com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumRequest;
+import com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumResponse;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse;
 import com.google.photos.library.v1.proto.BatchGetMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchGetMediaItemsResponse;
+import com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest;
+import com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumResponse;
 import com.google.photos.library.v1.proto.CreateAlbumRequest;
 import com.google.photos.library.v1.proto.GetAlbumRequest;
 import com.google.photos.library.v1.proto.GetMediaItemRequest;
@@ -53,13 +56,14 @@ import com.google.photos.library.v1.proto.ListMediaItemsRequest;
 import com.google.photos.library.v1.proto.ListMediaItemsResponse;
 import com.google.photos.library.v1.proto.ListSharedAlbumsRequest;
 import com.google.photos.library.v1.proto.ListSharedAlbumsResponse;
-import com.google.photos.library.v1.proto.MediaItem;
 import com.google.photos.library.v1.proto.SearchMediaItemsRequest;
 import com.google.photos.library.v1.proto.SearchMediaItemsResponse;
 import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
 import com.google.photos.library.v1.proto.UnshareAlbumRequest;
 import com.google.photos.library.v1.proto.UnshareAlbumResponse;
+import com.google.photos.types.proto.Album;
+import com.google.photos.types.proto.MediaItem;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -102,6 +106,12 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
   public UnaryCallSettings<BatchCreateMediaItemsRequest, BatchCreateMediaItemsResponse>
       batchCreateMediaItemsSettings() {
     return ((PhotosLibraryStubSettings) getStubSettings()).batchCreateMediaItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchAddMediaItemsToAlbum. */
+  public UnaryCallSettings<BatchAddMediaItemsToAlbumRequest, BatchAddMediaItemsToAlbumResponse>
+      batchAddMediaItemsToAlbumSettings() {
+    return ((PhotosLibraryStubSettings) getStubSettings()).batchAddMediaItemsToAlbumSettings();
   }
 
   /** Returns the object with the settings used for calls to searchMediaItems. */
@@ -178,6 +188,13 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
   /** Returns the object with the settings used for calls to unshareAlbum. */
   public UnaryCallSettings<UnshareAlbumRequest, UnshareAlbumResponse> unshareAlbumSettings() {
     return ((PhotosLibraryStubSettings) getStubSettings()).unshareAlbumSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchRemoveMediaItemsFromAlbum. */
+  public UnaryCallSettings<
+          BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
+      batchRemoveMediaItemsFromAlbumSettings() {
+    return ((PhotosLibraryStubSettings) getStubSettings()).batchRemoveMediaItemsFromAlbumSettings();
   }
 
   public static final InternalPhotosLibrarySettings create(PhotosLibraryStubSettings stub)
@@ -289,6 +306,13 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
       return getStubSettingsBuilder().batchCreateMediaItemsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to batchAddMediaItemsToAlbum. */
+    public UnaryCallSettings.Builder<
+            BatchAddMediaItemsToAlbumRequest, BatchAddMediaItemsToAlbumResponse>
+        batchAddMediaItemsToAlbumSettings() {
+      return getStubSettingsBuilder().batchAddMediaItemsToAlbumSettings();
+    }
+
     /** Returns the builder for the settings used for calls to searchMediaItems. */
     public PagedCallSettings.Builder<
             SearchMediaItemsRequest, SearchMediaItemsResponse, SearchMediaItemsPagedResponse>
@@ -364,6 +388,13 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
     public UnaryCallSettings.Builder<UnshareAlbumRequest, UnshareAlbumResponse>
         unshareAlbumSettings() {
       return getStubSettingsBuilder().unshareAlbumSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchRemoveMediaItemsFromAlbum. */
+    public UnaryCallSettings.Builder<
+            BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
+        batchRemoveMediaItemsFromAlbumSettings() {
+      return getStubSettingsBuilder().batchRemoveMediaItemsFromAlbumSettings();
     }
 
     @Override

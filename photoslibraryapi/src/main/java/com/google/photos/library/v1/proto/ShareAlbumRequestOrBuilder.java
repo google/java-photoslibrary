@@ -38,7 +38,7 @@ public interface ShareAlbumRequestOrBuilder
    * Options to be set when converting the album to a shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+   * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
    */
   boolean hasSharedAlbumOptions();
   /**
@@ -48,9 +48,9 @@ public interface ShareAlbumRequestOrBuilder
    * Options to be set when converting the album to a shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+   * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
    */
-  com.google.photos.library.v1.proto.SharedAlbumOptions getSharedAlbumOptions();
+  com.google.photos.types.proto.SharedAlbumOptions getSharedAlbumOptions();
   /**
    *
    *
@@ -58,7 +58,7 @@ public interface ShareAlbumRequestOrBuilder
    * Options to be set when converting the album to a shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.SharedAlbumOptions shared_album_options = 2;</code>
+   * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
    */
-  com.google.photos.library.v1.proto.SharedAlbumOptionsOrBuilder getSharedAlbumOptionsOrBuilder();
+  com.google.photos.types.proto.SharedAlbumOptionsOrBuilder getSharedAlbumOptionsOrBuilder();
 }

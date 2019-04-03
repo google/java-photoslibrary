@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,14 @@ package com.google.photos.library.v1.internal;
 import com.google.api.core.BetaApi;
 import com.google.photos.library.v1.proto.AddEnrichmentToAlbumRequest;
 import com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse;
-import com.google.photos.library.v1.proto.Album;
+import com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumRequest;
+import com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumResponse;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse;
 import com.google.photos.library.v1.proto.BatchGetMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchGetMediaItemsResponse;
+import com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest;
+import com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumResponse;
 import com.google.photos.library.v1.proto.CreateAlbumRequest;
 import com.google.photos.library.v1.proto.GetAlbumRequest;
 import com.google.photos.library.v1.proto.GetMediaItemRequest;
@@ -37,7 +40,6 @@ import com.google.photos.library.v1.proto.ListMediaItemsRequest;
 import com.google.photos.library.v1.proto.ListMediaItemsResponse;
 import com.google.photos.library.v1.proto.ListSharedAlbumsRequest;
 import com.google.photos.library.v1.proto.ListSharedAlbumsResponse;
-import com.google.photos.library.v1.proto.MediaItem;
 import com.google.photos.library.v1.proto.PhotosLibraryGrpc.PhotosLibraryImplBase;
 import com.google.photos.library.v1.proto.SearchMediaItemsRequest;
 import com.google.photos.library.v1.proto.SearchMediaItemsResponse;
@@ -45,6 +47,8 @@ import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
 import com.google.photos.library.v1.proto.UnshareAlbumRequest;
 import com.google.photos.library.v1.proto.UnshareAlbumResponse;
+import com.google.photos.types.proto.Album;
+import com.google.photos.types.proto.MediaItem;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -106,6 +110,22 @@ public class MockPhotosLibraryImpl extends PhotosLibraryImplBase {
     if (response instanceof BatchCreateMediaItemsResponse) {
       requests.add(request);
       responseObserver.onNext((BatchCreateMediaItemsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void batchAddMediaItemsToAlbum(
+      BatchAddMediaItemsToAlbumRequest request,
+      StreamObserver<BatchAddMediaItemsToAlbumResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof BatchAddMediaItemsToAlbumResponse) {
+      requests.add(request);
+      responseObserver.onNext((BatchAddMediaItemsToAlbumResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -302,6 +322,22 @@ public class MockPhotosLibraryImpl extends PhotosLibraryImplBase {
     if (response instanceof UnshareAlbumResponse) {
       requests.add(request);
       responseObserver.onNext((UnshareAlbumResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void batchRemoveMediaItemsFromAlbum(
+      BatchRemoveMediaItemsFromAlbumRequest request,
+      StreamObserver<BatchRemoveMediaItemsFromAlbumResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof BatchRemoveMediaItemsFromAlbumResponse) {
+      requests.add(request);
+      responseObserver.onNext((BatchRemoveMediaItemsFromAlbumResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

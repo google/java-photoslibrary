@@ -23,7 +23,7 @@ import com.google.photos.library.sample.components.LoadMoreButton;
 import com.google.photos.library.sample.components.ToolPanel;
 import com.google.photos.library.sample.helpers.UIHelper;
 import com.google.photos.library.sample.suppliers.AlbumsSupplier;
-import com.google.photos.library.v1.proto.Album;
+import com.google.photos.types.proto.Album;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;

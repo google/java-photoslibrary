@@ -50,13 +50,13 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
             break;
           case 10:
             {
-              com.google.photos.library.v1.proto.ShareInfo.Builder subBuilder = null;
+              com.google.photos.types.proto.ShareInfo.Builder subBuilder = null;
               if (shareInfo_ != null) {
                 subBuilder = shareInfo_.toBuilder();
               }
               shareInfo_ =
                   input.readMessage(
-                      com.google.photos.library.v1.proto.ShareInfo.parser(), extensionRegistry);
+                      com.google.photos.types.proto.ShareInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(shareInfo_);
                 shareInfo_ = subBuilder.buildPartial();
@@ -99,7 +99,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SHARE_INFO_FIELD_NUMBER = 1;
-  private com.google.photos.library.v1.proto.ShareInfo shareInfo_;
+  private com.google.photos.types.proto.ShareInfo shareInfo_;
   /**
    *
    *
@@ -107,7 +107,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
    * [Output only] Information about the shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+   * <code>.google.photos.types.ShareInfo share_info = 1;</code>
    */
   public boolean hasShareInfo() {
     return shareInfo_ != null;
@@ -119,11 +119,11 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
    * [Output only] Information about the shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+   * <code>.google.photos.types.ShareInfo share_info = 1;</code>
    */
-  public com.google.photos.library.v1.proto.ShareInfo getShareInfo() {
+  public com.google.photos.types.proto.ShareInfo getShareInfo() {
     return shareInfo_ == null
-        ? com.google.photos.library.v1.proto.ShareInfo.getDefaultInstance()
+        ? com.google.photos.types.proto.ShareInfo.getDefaultInstance()
         : shareInfo_;
   }
   /**
@@ -133,9 +133,9 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
    * [Output only] Information about the shared album.
    * </pre>
    *
-   * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+   * <code>.google.photos.types.ShareInfo share_info = 1;</code>
    */
-  public com.google.photos.library.v1.proto.ShareInfoOrBuilder getShareInfoOrBuilder() {
+  public com.google.photos.types.proto.ShareInfoOrBuilder getShareInfoOrBuilder() {
     return getShareInfo();
   }
 
@@ -471,11 +471,11 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.photos.library.v1.proto.ShareInfo shareInfo_ = null;
+    private com.google.photos.types.proto.ShareInfo shareInfo_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.photos.library.v1.proto.ShareInfo,
-            com.google.photos.library.v1.proto.ShareInfo.Builder,
-            com.google.photos.library.v1.proto.ShareInfoOrBuilder>
+            com.google.photos.types.proto.ShareInfo,
+            com.google.photos.types.proto.ShareInfo.Builder,
+            com.google.photos.types.proto.ShareInfoOrBuilder>
         shareInfoBuilder_;
     /**
      *
@@ -484,7 +484,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * [Output only] Information about the shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+     * <code>.google.photos.types.ShareInfo share_info = 1;</code>
      */
     public boolean hasShareInfo() {
       return shareInfoBuilder_ != null || shareInfo_ != null;
@@ -496,12 +496,12 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * [Output only] Information about the shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+     * <code>.google.photos.types.ShareInfo share_info = 1;</code>
      */
-    public com.google.photos.library.v1.proto.ShareInfo getShareInfo() {
+    public com.google.photos.types.proto.ShareInfo getShareInfo() {
       if (shareInfoBuilder_ == null) {
         return shareInfo_ == null
-            ? com.google.photos.library.v1.proto.ShareInfo.getDefaultInstance()
+            ? com.google.photos.types.proto.ShareInfo.getDefaultInstance()
             : shareInfo_;
       } else {
         return shareInfoBuilder_.getMessage();
@@ -514,9 +514,9 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * [Output only] Information about the shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+     * <code>.google.photos.types.ShareInfo share_info = 1;</code>
      */
-    public Builder setShareInfo(com.google.photos.library.v1.proto.ShareInfo value) {
+    public Builder setShareInfo(com.google.photos.types.proto.ShareInfo value) {
       if (shareInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -536,10 +536,9 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * [Output only] Information about the shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+     * <code>.google.photos.types.ShareInfo share_info = 1;</code>
      */
-    public Builder setShareInfo(
-        com.google.photos.library.v1.proto.ShareInfo.Builder builderForValue) {
+    public Builder setShareInfo(com.google.photos.types.proto.ShareInfo.Builder builderForValue) {
       if (shareInfoBuilder_ == null) {
         shareInfo_ = builderForValue.build();
         onChanged();
@@ -556,13 +555,13 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * [Output only] Information about the shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+     * <code>.google.photos.types.ShareInfo share_info = 1;</code>
      */
-    public Builder mergeShareInfo(com.google.photos.library.v1.proto.ShareInfo value) {
+    public Builder mergeShareInfo(com.google.photos.types.proto.ShareInfo value) {
       if (shareInfoBuilder_ == null) {
         if (shareInfo_ != null) {
           shareInfo_ =
-              com.google.photos.library.v1.proto.ShareInfo.newBuilder(shareInfo_)
+              com.google.photos.types.proto.ShareInfo.newBuilder(shareInfo_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -582,7 +581,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * [Output only] Information about the shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+     * <code>.google.photos.types.ShareInfo share_info = 1;</code>
      */
     public Builder clearShareInfo() {
       if (shareInfoBuilder_ == null) {
@@ -602,9 +601,9 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * [Output only] Information about the shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+     * <code>.google.photos.types.ShareInfo share_info = 1;</code>
      */
-    public com.google.photos.library.v1.proto.ShareInfo.Builder getShareInfoBuilder() {
+    public com.google.photos.types.proto.ShareInfo.Builder getShareInfoBuilder() {
 
       onChanged();
       return getShareInfoFieldBuilder().getBuilder();
@@ -616,14 +615,14 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * [Output only] Information about the shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+     * <code>.google.photos.types.ShareInfo share_info = 1;</code>
      */
-    public com.google.photos.library.v1.proto.ShareInfoOrBuilder getShareInfoOrBuilder() {
+    public com.google.photos.types.proto.ShareInfoOrBuilder getShareInfoOrBuilder() {
       if (shareInfoBuilder_ != null) {
         return shareInfoBuilder_.getMessageOrBuilder();
       } else {
         return shareInfo_ == null
-            ? com.google.photos.library.v1.proto.ShareInfo.getDefaultInstance()
+            ? com.google.photos.types.proto.ShareInfo.getDefaultInstance()
             : shareInfo_;
       }
     }
@@ -634,19 +633,19 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * [Output only] Information about the shared album.
      * </pre>
      *
-     * <code>.google.photos.library.v1.ShareInfo share_info = 1;</code>
+     * <code>.google.photos.types.ShareInfo share_info = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.photos.library.v1.proto.ShareInfo,
-            com.google.photos.library.v1.proto.ShareInfo.Builder,
-            com.google.photos.library.v1.proto.ShareInfoOrBuilder>
+            com.google.photos.types.proto.ShareInfo,
+            com.google.photos.types.proto.ShareInfo.Builder,
+            com.google.photos.types.proto.ShareInfoOrBuilder>
         getShareInfoFieldBuilder() {
       if (shareInfoBuilder_ == null) {
         shareInfoBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.photos.library.v1.proto.ShareInfo,
-                com.google.photos.library.v1.proto.ShareInfo.Builder,
-                com.google.photos.library.v1.proto.ShareInfoOrBuilder>(
+                com.google.photos.types.proto.ShareInfo,
+                com.google.photos.types.proto.ShareInfo.Builder,
+                com.google.photos.types.proto.ShareInfoOrBuilder>(
                 getShareInfo(), getParentForChildren(), isClean());
         shareInfo_ = null;
       }

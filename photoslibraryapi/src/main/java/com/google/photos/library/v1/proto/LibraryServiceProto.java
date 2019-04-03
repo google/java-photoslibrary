@@ -13,33 +13,17 @@ public final class LibraryServiceProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_photos_library_v1_Album_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_photos_library_v1_Album_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_photos_library_v1_MediaItem_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_photos_library_v1_MediaItem_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_photos_library_v1_ContributorInfo_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_photos_library_v1_ContributorInfo_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_photos_library_v1_MediaMetadata_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_photos_library_v1_MediaMetadata_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_photos_library_v1_Photo_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_photos_library_v1_Photo_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_photos_library_v1_Video_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_photos_library_v1_Video_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_photos_library_v1_CreateAlbumRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_photos_library_v1_CreateAlbumRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_photos_library_v1_BatchRemoveMediaItemsFromAlbumRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_photos_library_v1_BatchRemoveMediaItemsFromAlbumRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_photos_library_v1_BatchRemoveMediaItemsFromAlbumResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_photos_library_v1_BatchRemoveMediaItemsFromAlbumResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_photos_library_v1_NewMediaItem_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -64,10 +48,6 @@ public final class LibraryServiceProto {
       internal_static_google_photos_library_v1_BatchCreateMediaItemsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_photos_library_v1_BatchCreateMediaItemsResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_photos_library_v1_DateRange_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_photos_library_v1_DateRange_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_photos_library_v1_DateFilter_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -173,14 +153,6 @@ public final class LibraryServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_photos_library_v1_ShareAlbumRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_photos_library_v1_SharedAlbumOptions_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_photos_library_v1_SharedAlbumOptions_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_photos_library_v1_ShareInfo_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_photos_library_v1_ShareInfo_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_photos_library_v1_ShareAlbumResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_photos_library_v1_ShareAlbumResponse_fieldAccessorTable;
@@ -212,6 +184,14 @@ public final class LibraryServiceProto {
       internal_static_google_photos_library_v1_MediaItemResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_photos_library_v1_MediaItemResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_photos_library_v1_BatchAddMediaItemsToAlbumRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_photos_library_v1_BatchAddMediaItemsToAlbumRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_photos_library_v1_BatchAddMediaItemsToAlbumResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_photos_library_v1_BatchAddMediaItemsToAlbumResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -223,221 +203,200 @@ public final class LibraryServiceProto {
     java.lang.String[] descriptorData = {
       "\n-google/photos/library/v1/photos_librar"
           + "y.proto\022\030google.photos.library.v1\032\034googl"
-          + "e/api/annotations.proto\032\031google/protobuf"
-          + "/any.proto\032\036google/protobuf/duration.pro"
-          + "to\032\037google/protobuf/timestamp.proto\032\027goo"
-          + "gle/rpc/status.proto\032\026google/type/date.p"
-          + "roto\032\030google/type/latlng.proto\"\342\001\n\005Album"
-          + "\022\n\n\002id\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\023\n\013product_u"
-          + "rl\030\003 \001(\t\022\024\n\014is_writeable\030\004 \001(\010\0227\n\nshare_"
-          + "info\030\005 \001(\0132#.google.photos.library.v1.Sh"
-          + "areInfo\022\031\n\021media_items_count\030\006 \001(\003\022\034\n\024co"
-          + "ver_photo_base_url\030\007 \001(\t\022!\n\031cover_photo_"
-          + "media_item_id\030\010 \001(\t\"\376\001\n\tMediaItem\022\n\n\002id\030"
-          + "\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\023\n\013product_ur"
-          + "l\030\003 \001(\t\022\020\n\010base_url\030\004 \001(\t\022\021\n\tmime_type\030\005"
-          + " \001(\t\022?\n\016media_metadata\030\006 \001(\0132\'.google.ph"
-          + "otos.library.v1.MediaMetadata\022C\n\020contrib"
-          + "utor_info\030\007 \001(\0132).google.photos.library."
-          + "v1.ContributorInfo\022\020\n\010filename\030\010 \001(\t\"I\n\017"
-          + "ContributorInfo\022 \n\030profile_picture_base_"
-          + "url\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\"\321\001\n\rMedi"
-          + "aMetadata\0221\n\rcreation_time\030\001 \001(\0132\032.googl"
-          + "e.protobuf.Timestamp\022\r\n\005width\030\002 \001(\003\022\016\n\006h"
-          + "eight\030\003 \001(\003\0220\n\005photo\030\006 \001(\0132\037.google.phot"
-          + "os.library.v1.PhotoH\000\0220\n\005video\030\007 \001(\0132\037.g"
-          + "oogle.photos.library.v1.VideoH\000B\n\n\010metad"
-          + "ata\"\255\001\n\005Photo\022\023\n\013camera_make\030\001 \001(\t\022\024\n\014ca"
-          + "mera_model\030\002 \001(\t\022\024\n\014focal_length\030\003 \001(\002\022\031"
-          + "\n\021aperture_f_number\030\004 \001(\002\022\026\n\016iso_equival"
-          + "ent\030\005 \001(\005\0220\n\rexposure_time\030\006 \001(\0132\031.googl"
-          + "e.protobuf.Duration\"\200\001\n\005Video\022\023\n\013camera_"
-          + "make\030\001 \001(\t\022\024\n\014camera_model\030\002 \001(\t\022\013\n\003fps\030"
-          + "\003 \001(\001\022?\n\006status\030\004 \001(\0162/.google.photos.li"
-          + "brary.v1.VideoProcessingStatus\"D\n\022Create"
-          + "AlbumRequest\022.\n\005album\030\001 \001(\0132\037.google.pho"
-          + "tos.library.v1.Album\"\202\001\n\014NewMediaItem\022\023\n"
-          + "\013description\030\001 \001(\t\022F\n\021simple_media_item\030"
-          + "\002 \001(\0132).google.photos.library.v1.SimpleM"
-          + "ediaItemH\000B\025\n\023new_media_item_type\"\'\n\017Sim"
-          + "pleMediaItem\022\024\n\014upload_token\030\001 \001(\t\"\271\002\n\rA"
-          + "lbumPosition\022F\n\010position\030\001 \001(\01624.google."
-          + "photos.library.v1.AlbumPosition.Position"
-          + "Type\022 \n\026relative_media_item_id\030\002 \001(\tH\000\022%"
-          + "\n\033relative_enrichment_item_id\030\003 \001(\tH\000\"\205\001"
-          + "\n\014PositionType\022\035\n\031POSITION_TYPE_UNSPECIF"
-          + "IED\020\000\022\022\n\016FIRST_IN_ALBUM\020\001\022\021\n\rLAST_IN_ALB"
-          + "UM\020\002\022\024\n\020AFTER_MEDIA_ITEM\020\003\022\031\n\025AFTER_ENRI"
-          + "CHMENT_ITEM\020\004B\017\n\rrelative_item\"\207\001\n\022NewMe"
-          + "diaItemResult\022\024\n\014upload_token\030\001 \001(\t\022\"\n\006s"
-          + "tatus\030\002 \001(\0132\022.google.rpc.Status\0227\n\nmedia"
-          + "_item\030\003 \001(\0132#.google.photos.library.v1.M"
-          + "ediaItem\"\262\001\n\034BatchCreateMediaItemsReques"
-          + "t\022\020\n\010album_id\030\001 \001(\t\022?\n\017new_media_items\030\002"
-          + " \003(\0132&.google.photos.library.v1.NewMedia"
-          + "Item\022?\n\016album_position\030\004 \001(\0132\'.google.ph"
-          + "otos.library.v1.AlbumPosition\"m\n\035BatchCr"
-          + "eateMediaItemsResponse\022L\n\026new_media_item"
-          + "_results\030\001 \003(\0132,.google.photos.library.v"
-          + "1.NewMediaItemResult\"W\n\tDateRange\022%\n\nsta"
-          + "rt_date\030\001 \001(\0132\021.google.type.Date\022#\n\010end_"
-          + "date\030\002 \001(\0132\021.google.type.Date\"c\n\nDateFil"
-          + "ter\022 \n\005dates\030\001 \003(\0132\021.google.type.Date\0223\n"
-          + "\006ranges\030\002 \003(\0132#.google.photos.library.v1"
-          + ".DateRange\"\257\001\n\rContentFilter\022N\n\033included"
-          + "_content_categories\030\001 \003(\0162).google.photo"
-          + "s.library.v1.ContentCategory\022N\n\033excluded"
-          + "_content_categories\030\002 \003(\0162).google.photo"
-          + "s.library.v1.ContentCategory\"\215\001\n\017MediaTy"
-          + "peFilter\022H\n\013media_types\030\001 \003(\01623.google.p"
-          + "hotos.library.v1.MediaTypeFilter.MediaTy"
-          + "pe\"0\n\tMediaType\022\r\n\tALL_MEDIA\020\000\022\t\n\005VIDEO\020"
-          + "\001\022\t\n\005PHOTO\020\002\"\221\002\n\007Filters\0229\n\013date_filter\030"
-          + "\001 \001(\0132$.google.photos.library.v1.DateFil"
-          + "ter\022?\n\016content_filter\030\002 \001(\0132\'.google.pho"
-          + "tos.library.v1.ContentFilter\022D\n\021media_ty"
-          + "pe_filter\030\003 \001(\0132).google.photos.library."
-          + "v1.MediaTypeFilter\022\036\n\026include_archived_m"
-          + "edia\030\004 \001(\010\022$\n\034exclude_non_app_created_da"
-          + "ta\030\005 \001(\010\"\206\001\n\027SearchMediaItemsRequest\022\020\n\010"
-          + "album_id\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npag"
-          + "e_token\030\003 \001(\t\0222\n\007filters\030\004 \001(\0132!.google."
-          + "photos.library.v1.Filters\"m\n\030SearchMedia"
-          + "ItemsResponse\0228\n\013media_items\030\001 \003(\0132#.goo"
-          + "gle.photos.library.v1.MediaItem\022\027\n\017next_"
-          + "page_token\030\002 \001(\t\">\n\025ListMediaItemsReques"
-          + "t\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t"
-          + "\"k\n\026ListMediaItemsResponse\0228\n\013media_item"
-          + "s\030\001 \003(\0132#.google.photos.library.v1.Media"
-          + "Item\022\027\n\017next_page_token\030\002 \001(\t\",\n\023GetMedi"
-          + "aItemRequest\022\025\n\rmedia_item_id\030\001 \001(\t\"`\n\021L"
-          + "istAlbumsRequest\022\021\n\tpage_size\030\001 \001(\005\022\022\n\np"
-          + "age_token\030\002 \001(\t\022$\n\034exclude_non_app_creat"
-          + "ed_data\030\003 \001(\010\"^\n\022ListAlbumsResponse\022/\n\006a"
-          + "lbums\030\001 \003(\0132\037.google.photos.library.v1.A"
-          + "lbum\022\027\n\017next_page_token\030\002 \001(\t\"#\n\017GetAlbu"
-          + "mRequest\022\020\n\010album_id\030\001 \001(\t\",\n\025GetSharedA"
-          + "lbumRequest\022\023\n\013share_token\030\001 \001(\t\"\036\n\016Text"
-          + "Enrichment\022\014\n\004text\030\001 \001(\t\"F\n\010Location\022\025\n\r"
-          + "location_name\030\001 \001(\t\022#\n\006latlng\030\002 \001(\0132\023.go"
-          + "ogle.type.LatLng\"J\n\022LocationEnrichment\0224"
-          + "\n\010location\030\001 \001(\0132\".google.photos.library"
-          + ".v1.Location\"|\n\rMapEnrichment\0222\n\006origin\030"
-          + "\001 \001(\0132\".google.photos.library.v1.Locatio"
-          + "n\0227\n\013destination\030\002 \001(\0132\".google.photos.l"
-          + "ibrary.v1.Location\"\366\001\n\021NewEnrichmentItem"
-          + "\022C\n\017text_enrichment\030\001 \001(\0132(.google.photo"
-          + "s.library.v1.TextEnrichmentH\000\022K\n\023locatio"
-          + "n_enrichment\030\002 \001(\0132,.google.photos.libra"
-          + "ry.v1.LocationEnrichmentH\000\022A\n\016map_enrich"
-          + "ment\030\003 \001(\0132\'.google.photos.library.v1.Ma"
-          + "pEnrichmentH\000B\014\n\nenrichment\"\272\001\n\033AddEnric"
-          + "hmentToAlbumRequest\022\020\n\010album_id\030\001 \001(\t\022H\n"
-          + "\023new_enrichment_item\030\002 \001(\0132+.google.phot"
-          + "os.library.v1.NewEnrichmentItem\022?\n\016album"
-          + "_position\030\003 \001(\0132\'.google.photos.library."
-          + "v1.AlbumPosition\"\034\n\016EnrichmentItem\022\n\n\002id"
-          + "\030\001 \001(\t\"a\n\034AddEnrichmentToAlbumResponse\022A"
-          + "\n\017enrichment_item\030\001 \001(\0132(.google.photos."
-          + "library.v1.EnrichmentItem\"-\n\026JoinSharedA"
-          + "lbumRequest\022\023\n\013share_token\030\001 \001(\t\"I\n\027Join"
-          + "SharedAlbumResponse\022.\n\005album\030\001 \001(\0132\037.goo"
-          + "gle.photos.library.v1.Album\".\n\027LeaveShar"
-          + "edAlbumRequest\022\023\n\013share_token\030\001 \001(\t\"\032\n\030L"
-          + "eaveSharedAlbumResponse\"q\n\021ShareAlbumReq"
-          + "uest\022\020\n\010album_id\030\001 \001(\t\022J\n\024shared_album_o"
-          + "ptions\030\002 \001(\0132,.google.photos.library.v1."
-          + "SharedAlbumOptions\"F\n\022SharedAlbumOptions"
-          + "\022\030\n\020is_collaborative\030\001 \001(\010\022\026\n\016is_comment"
-          + "able\030\002 \001(\010\"\226\001\n\tShareInfo\022J\n\024shared_album"
-          + "_options\030\001 \001(\0132,.google.photos.library.v"
-          + "1.SharedAlbumOptions\022\025\n\rshareable_url\030\002 "
-          + "\001(\t\022\023\n\013share_token\030\003 \001(\t\022\021\n\tis_joined\030\004 "
-          + "\001(\010\"M\n\022ShareAlbumResponse\0227\n\nshare_info\030"
-          + "\001 \001(\0132#.google.photos.library.v1.ShareIn"
-          + "fo\"f\n\027ListSharedAlbumsRequest\022\021\n\tpage_si"
-          + "ze\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\022$\n\034exclude_"
-          + "non_app_created_data\030\003 \001(\010\"k\n\030ListShared"
-          + "AlbumsResponse\0226\n\rshared_albums\030\001 \003(\0132\037."
-          + "google.photos.library.v1.Album\022\027\n\017next_p"
-          + "age_token\030\002 \001(\t\"\'\n\023UnshareAlbumRequest\022\020"
-          + "\n\010album_id\030\001 \001(\t\"\026\n\024UnshareAlbumResponse"
-          + "\"3\n\031BatchGetMediaItemsRequest\022\026\n\016media_i"
-          + "tem_ids\030\001 \003(\t\"c\n\032BatchGetMediaItemsRespo"
-          + "nse\022E\n\022media_item_results\030\001 \003(\0132).google"
-          + ".photos.library.v1.MediaItemResult\"n\n\017Me"
-          + "diaItemResult\022\"\n\006status\030\001 \001(\0132\022.google.r"
-          + "pc.Status\0227\n\nmedia_item\030\002 \001(\0132#.google.p"
-          + "hotos.library.v1.MediaItem*O\n\025VideoProce"
-          + "ssingStatus\022\017\n\013UNSPECIFIED\020\000\022\016\n\nPROCESSI"
-          + "NG\020\001\022\t\n\005READY\020\002\022\n\n\006FAILED\020\003*\241\002\n\017ContentC"
-          + "ategory\022\010\n\004NONE\020\000\022\016\n\nLANDSCAPES\020\001\022\014\n\010REC"
-          + "EIPTS\020\002\022\016\n\nCITYSCAPES\020\003\022\r\n\tLANDMARKS\020\004\022\013"
-          + "\n\007SELFIES\020\005\022\n\n\006PEOPLE\020\006\022\010\n\004PETS\020\007\022\014\n\010WED"
-          + "DINGS\020\010\022\r\n\tBIRTHDAYS\020\t\022\r\n\tDOCUMENTS\020\n\022\n\n"
-          + "\006TRAVEL\020\013\022\013\n\007ANIMALS\020\014\022\010\n\004FOOD\020\r\022\t\n\005SPOR"
-          + "T\020\016\022\t\n\005NIGHT\020\017\022\020\n\014PERFORMANCES\020\020\022\017\n\013WHIT"
-          + "EBOARDS\020\021\022\017\n\013SCREENSHOTS\020\022\022\013\n\007UTILITY\020\0232"
-          + "\323\021\n\rPhotosLibrary\022s\n\013CreateAlbum\022,.googl"
-          + "e.photos.library.v1.CreateAlbumRequest\032\037"
-          + ".google.photos.library.v1.Album\"\025\202\323\344\223\002\017\""
-          + "\n/v1/albums:\001*\022\257\001\n\025BatchCreateMediaItems"
-          + "\0226.google.photos.library.v1.BatchCreateM"
-          + "ediaItemsRequest\0327.google.photos.library"
-          + ".v1.BatchCreateMediaItemsResponse\"%\202\323\344\223\002"
-          + "\037\"\032/v1/mediaItems:batchCreate:\001*\022\233\001\n\020Sea"
-          + "rchMediaItems\0221.google.photos.library.v1"
-          + ".SearchMediaItemsRequest\0322.google.photos"
-          + ".library.v1.SearchMediaItemsResponse\" \202\323"
-          + "\344\223\002\032\"\025/v1/mediaItems:search:\001*\022\213\001\n\016ListM"
-          + "ediaItems\022/.google.photos.library.v1.Lis"
-          + "tMediaItemsRequest\0320.google.photos.libra"
-          + "ry.v1.ListMediaItemsResponse\"\026\202\323\344\223\002\020\022\016/v"
-          + "1/mediaItems\022\214\001\n\014GetMediaItem\022-.google.p"
-          + "hotos.library.v1.GetMediaItemRequest\032#.g"
-          + "oogle.photos.library.v1.MediaItem\"(\202\323\344\223\002"
-          + "\"\022 /v1/mediaItems/{media_item_id=*}\022\240\001\n\022"
-          + "BatchGetMediaItems\0223.google.photos.libra"
-          + "ry.v1.BatchGetMediaItemsRequest\0324.google"
-          + ".photos.library.v1.BatchGetMediaItemsRes"
-          + "ponse\"\037\202\323\344\223\002\031\022\027/v1/mediaItems:batchGet\022{"
-          + "\n\nListAlbums\022+.google.photos.library.v1."
-          + "ListAlbumsRequest\032,.google.photos.librar"
-          + "y.v1.ListAlbumsResponse\"\022\202\323\344\223\002\014\022\n/v1/alb"
-          + "ums\022w\n\010GetAlbum\022).google.photos.library."
-          + "v1.GetAlbumRequest\032\037.google.photos.libra"
-          + "ry.v1.Album\"\037\202\323\344\223\002\031\022\027/v1/albums/{album_i"
-          + "d=*}\022\214\001\n\016GetSharedAlbum\022/.google.photos."
-          + "library.v1.GetSharedAlbumRequest\032\037.googl"
-          + "e.photos.library.v1.Album\"(\202\323\344\223\002\"\022 /v1/s"
-          + "haredAlbums/{share_token=*}\022\267\001\n\024AddEnric"
-          + "hmentToAlbum\0225.google.photos.library.v1."
-          + "AddEnrichmentToAlbumRequest\0326.google.pho"
-          + "tos.library.v1.AddEnrichmentToAlbumRespo"
-          + "nse\"0\202\323\344\223\002*\"%/v1/albums/{album_id=*}:add"
-          + "Enrichment:\001*\022\230\001\n\017JoinSharedAlbum\0220.goog"
-          + "le.photos.library.v1.JoinSharedAlbumRequ"
-          + "est\0321.google.photos.library.v1.JoinShare"
-          + "dAlbumResponse\" \202\323\344\223\002\032\"\025/v1/sharedAlbums"
-          + ":join:\001*\022\234\001\n\020LeaveSharedAlbum\0221.google.p"
-          + "hotos.library.v1.LeaveSharedAlbumRequest"
-          + "\0322.google.photos.library.v1.LeaveSharedA"
-          + "lbumResponse\"!\202\323\344\223\002\033\"\026/v1/sharedAlbums:l"
-          + "eave:\001*\022\221\001\n\nShareAlbum\022+.google.photos.l"
-          + "ibrary.v1.ShareAlbumRequest\032,.google.pho"
-          + "tos.library.v1.ShareAlbumResponse\"(\202\323\344\223\002"
-          + "\"\"\035/v1/albums/{album_id=*}:share:\001*\022\223\001\n\020"
-          + "ListSharedAlbums\0221.google.photos.library"
-          + ".v1.ListSharedAlbumsRequest\0322.google.pho"
-          + "tos.library.v1.ListSharedAlbumsResponse\""
-          + "\030\202\323\344\223\002\022\022\020/v1/sharedAlbums\022\231\001\n\014UnshareAlb"
-          + "um\022-.google.photos.library.v1.UnshareAlb"
-          + "umRequest\032..google.photos.library.v1.Uns"
-          + "hareAlbumResponse\"*\202\323\344\223\002$\"\037/v1/albums/{a"
-          + "lbum_id=*}:unshare:\001*B|\n\"com.google.phot"
-          + "os.library.v1.protoB\023LibraryServiceProto"
-          + "P\001Z?google.golang.org/genproto/googleapi"
-          + "s/photos/library/v1;libraryb\006proto3"
+          + "e/api/annotations.proto\032\037google/photos/t"
+          + "ypes/album.proto\032$google/photos/types/da"
+          + "te_range.proto\032$google/photos/types/medi"
+          + "a_item.proto\032\031google/protobuf/any.proto\032"
+          + "\027google/rpc/status.proto\032\026google/type/da"
+          + "te.proto\032\030google/type/latlng.proto\"?\n\022Cr"
+          + "eateAlbumRequest\022)\n\005album\030\001 \001(\0132\032.google"
+          + ".photos.types.Album\"Q\n%BatchRemoveMediaI"
+          + "temsFromAlbumRequest\022\026\n\016media_item_ids\030\001"
+          + " \003(\t\022\020\n\010album_id\030\002 \001(\t\"(\n&BatchRemoveMed"
+          + "iaItemsFromAlbumResponse\"\202\001\n\014NewMediaIte"
+          + "m\022\023\n\013description\030\001 \001(\t\022F\n\021simple_media_i"
+          + "tem\030\002 \001(\0132).google.photos.library.v1.Sim"
+          + "pleMediaItemH\000B\025\n\023new_media_item_type\"\'\n"
+          + "\017SimpleMediaItem\022\024\n\014upload_token\030\001 \001(\t\"\271"
+          + "\002\n\rAlbumPosition\022F\n\010position\030\001 \001(\01624.goo"
+          + "gle.photos.library.v1.AlbumPosition.Posi"
+          + "tionType\022 \n\026relative_media_item_id\030\002 \001(\t"
+          + "H\000\022%\n\033relative_enrichment_item_id\030\003 \001(\tH"
+          + "\000\"\205\001\n\014PositionType\022\035\n\031POSITION_TYPE_UNSP"
+          + "ECIFIED\020\000\022\022\n\016FIRST_IN_ALBUM\020\001\022\021\n\rLAST_IN"
+          + "_ALBUM\020\002\022\024\n\020AFTER_MEDIA_ITEM\020\003\022\031\n\025AFTER_"
+          + "ENRICHMENT_ITEM\020\004B\017\n\rrelative_item\"\202\001\n\022N"
+          + "ewMediaItemResult\022\024\n\014upload_token\030\001 \001(\t\022"
+          + "\"\n\006status\030\002 \001(\0132\022.google.rpc.Status\0222\n\nm"
+          + "edia_item\030\003 \001(\0132\036.google.photos.types.Me"
+          + "diaItem\"\262\001\n\034BatchCreateMediaItemsRequest"
+          + "\022\020\n\010album_id\030\001 \001(\t\022?\n\017new_media_items\030\002 "
+          + "\003(\0132&.google.photos.library.v1.NewMediaI"
+          + "tem\022?\n\016album_position\030\004 \001(\0132\'.google.pho"
+          + "tos.library.v1.AlbumPosition\"m\n\035BatchCre"
+          + "ateMediaItemsResponse\022L\n\026new_media_item_"
+          + "results\030\001 \003(\0132,.google.photos.library.v1"
+          + ".NewMediaItemResult\"^\n\nDateFilter\022 \n\005dat"
+          + "es\030\001 \003(\0132\021.google.type.Date\022.\n\006ranges\030\002 "
+          + "\003(\0132\036.google.photos.types.DateRange\"\257\001\n\r"
+          + "ContentFilter\022N\n\033included_content_catego"
+          + "ries\030\001 \003(\0162).google.photos.library.v1.Co"
+          + "ntentCategory\022N\n\033excluded_content_catego"
+          + "ries\030\002 \003(\0162).google.photos.library.v1.Co"
+          + "ntentCategory\"\215\001\n\017MediaTypeFilter\022H\n\013med"
+          + "ia_types\030\001 \003(\01623.google.photos.library.v"
+          + "1.MediaTypeFilter.MediaType\"0\n\tMediaType"
+          + "\022\r\n\tALL_MEDIA\020\000\022\t\n\005VIDEO\020\001\022\t\n\005PHOTO\020\002\"\221\002"
+          + "\n\007Filters\0229\n\013date_filter\030\001 \001(\0132$.google."
+          + "photos.library.v1.DateFilter\022?\n\016content_"
+          + "filter\030\002 \001(\0132\'.google.photos.library.v1."
+          + "ContentFilter\022D\n\021media_type_filter\030\003 \001(\013"
+          + "2).google.photos.library.v1.MediaTypeFil"
+          + "ter\022\036\n\026include_archived_media\030\004 \001(\010\022$\n\034e"
+          + "xclude_non_app_created_data\030\005 \001(\010\"\206\001\n\027Se"
+          + "archMediaItemsRequest\022\020\n\010album_id\030\001 \001(\t\022"
+          + "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\0222"
+          + "\n\007filters\030\004 \001(\0132!.google.photos.library."
+          + "v1.Filters\"h\n\030SearchMediaItemsResponse\0223"
+          + "\n\013media_items\030\001 \003(\0132\036.google.photos.type"
+          + "s.MediaItem\022\027\n\017next_page_token\030\002 \001(\t\">\n\025"
+          + "ListMediaItemsRequest\022\021\n\tpage_size\030\001 \001(\005"
+          + "\022\022\n\npage_token\030\002 \001(\t\"f\n\026ListMediaItemsRe"
+          + "sponse\0223\n\013media_items\030\001 \003(\0132\036.google.pho"
+          + "tos.types.MediaItem\022\027\n\017next_page_token\030\002"
+          + " \001(\t\",\n\023GetMediaItemRequest\022\025\n\rmedia_ite"
+          + "m_id\030\001 \001(\t\"`\n\021ListAlbumsRequest\022\021\n\tpage_"
+          + "size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\022$\n\034exclud"
+          + "e_non_app_created_data\030\003 \001(\010\"Y\n\022ListAlbu"
+          + "msResponse\022*\n\006albums\030\001 \003(\0132\032.google.phot"
+          + "os.types.Album\022\027\n\017next_page_token\030\002 \001(\t\""
+          + "#\n\017GetAlbumRequest\022\020\n\010album_id\030\001 \001(\t\",\n\025"
+          + "GetSharedAlbumRequest\022\023\n\013share_token\030\001 \001"
+          + "(\t\"\036\n\016TextEnrichment\022\014\n\004text\030\001 \001(\t\"F\n\010Lo"
+          + "cation\022\025\n\rlocation_name\030\001 \001(\t\022#\n\006latlng\030"
+          + "\002 \001(\0132\023.google.type.LatLng\"J\n\022LocationEn"
+          + "richment\0224\n\010location\030\001 \001(\0132\".google.phot"
+          + "os.library.v1.Location\"|\n\rMapEnrichment\022"
+          + "2\n\006origin\030\001 \001(\0132\".google.photos.library."
+          + "v1.Location\0227\n\013destination\030\002 \001(\0132\".googl"
+          + "e.photos.library.v1.Location\"\366\001\n\021NewEnri"
+          + "chmentItem\022C\n\017text_enrichment\030\001 \001(\0132(.go"
+          + "ogle.photos.library.v1.TextEnrichmentH\000\022"
+          + "K\n\023location_enrichment\030\002 \001(\0132,.google.ph"
+          + "otos.library.v1.LocationEnrichmentH\000\022A\n\016"
+          + "map_enrichment\030\003 \001(\0132\'.google.photos.lib"
+          + "rary.v1.MapEnrichmentH\000B\014\n\nenrichment\"\272\001"
+          + "\n\033AddEnrichmentToAlbumRequest\022\020\n\010album_i"
+          + "d\030\001 \001(\t\022H\n\023new_enrichment_item\030\002 \001(\0132+.g"
+          + "oogle.photos.library.v1.NewEnrichmentIte"
+          + "m\022?\n\016album_position\030\003 \001(\0132\'.google.photo"
+          + "s.library.v1.AlbumPosition\"\034\n\016Enrichment"
+          + "Item\022\n\n\002id\030\001 \001(\t\"a\n\034AddEnrichmentToAlbum"
+          + "Response\022A\n\017enrichment_item\030\001 \001(\0132(.goog"
+          + "le.photos.library.v1.EnrichmentItem\"-\n\026J"
+          + "oinSharedAlbumRequest\022\023\n\013share_token\030\001 \001"
+          + "(\t\"D\n\027JoinSharedAlbumResponse\022)\n\005album\030\001"
+          + " \001(\0132\032.google.photos.types.Album\".\n\027Leav"
+          + "eSharedAlbumRequest\022\023\n\013share_token\030\001 \001(\t"
+          + "\"\032\n\030LeaveSharedAlbumResponse\"l\n\021ShareAlb"
+          + "umRequest\022\020\n\010album_id\030\001 \001(\t\022E\n\024shared_al"
+          + "bum_options\030\002 \001(\0132\'.google.photos.types."
+          + "SharedAlbumOptions\"H\n\022ShareAlbumResponse"
+          + "\0222\n\nshare_info\030\001 \001(\0132\036.google.photos.typ"
+          + "es.ShareInfo\"f\n\027ListSharedAlbumsRequest\022"
+          + "\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\022$"
+          + "\n\034exclude_non_app_created_data\030\003 \001(\010\"f\n\030"
+          + "ListSharedAlbumsResponse\0221\n\rshared_album"
+          + "s\030\001 \003(\0132\032.google.photos.types.Album\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\"\'\n\023UnshareAlbumRequ"
+          + "est\022\020\n\010album_id\030\001 \001(\t\"\026\n\024UnshareAlbumRes"
+          + "ponse\"3\n\031BatchGetMediaItemsRequest\022\026\n\016me"
+          + "dia_item_ids\030\001 \003(\t\"c\n\032BatchGetMediaItems"
+          + "Response\022E\n\022media_item_results\030\001 \003(\0132).g"
+          + "oogle.photos.library.v1.MediaItemResult\""
+          + "i\n\017MediaItemResult\022\"\n\006status\030\001 \001(\0132\022.goo"
+          + "gle.rpc.Status\0222\n\nmedia_item\030\002 \001(\0132\036.goo"
+          + "gle.photos.types.MediaItem\"L\n BatchAddMe"
+          + "diaItemsToAlbumRequest\022\026\n\016media_item_ids"
+          + "\030\001 \003(\t\022\020\n\010album_id\030\002 \001(\t\"#\n!BatchAddMedi"
+          + "aItemsToAlbumResponse*\241\002\n\017ContentCategor"
+          + "y\022\010\n\004NONE\020\000\022\016\n\nLANDSCAPES\020\001\022\014\n\010RECEIPTS\020"
+          + "\002\022\016\n\nCITYSCAPES\020\003\022\r\n\tLANDMARKS\020\004\022\013\n\007SELF"
+          + "IES\020\005\022\n\n\006PEOPLE\020\006\022\010\n\004PETS\020\007\022\014\n\010WEDDINGS\020"
+          + "\010\022\r\n\tBIRTHDAYS\020\t\022\r\n\tDOCUMENTS\020\n\022\n\n\006TRAVE"
+          + "L\020\013\022\013\n\007ANIMALS\020\014\022\010\n\004FOOD\020\r\022\t\n\005SPORT\020\016\022\t\n"
+          + "\005NIGHT\020\017\022\020\n\014PERFORMANCES\020\020\022\017\n\013WHITEBOARD"
+          + "S\020\021\022\017\n\013SCREENSHOTS\020\022\022\013\n\007UTILITY\020\0232\340\024\n\rPh"
+          + "otosLibrary\022n\n\013CreateAlbum\022,.google.phot"
+          + "os.library.v1.CreateAlbumRequest\032\032.googl"
+          + "e.photos.types.Album\"\025\202\323\344\223\002\017\"\n/v1/albums"
+          + ":\001*\022\257\001\n\025BatchCreateMediaItems\0226.google.p"
+          + "hotos.library.v1.BatchCreateMediaItemsRe"
+          + "quest\0327.google.photos.library.v1.BatchCr"
+          + "eateMediaItemsResponse\"%\202\323\344\223\002\037\"\032/v1/medi"
+          + "aItems:batchCreate:\001*\022\276\001\n\031BatchAddMediaI"
+          + "temsToAlbum\022:.google.photos.library.v1.B"
+          + "atchAddMediaItemsToAlbumRequest\032;.google"
+          + ".photos.library.v1.BatchAddMediaItemsToA"
+          + "lbumResponse\"(\202\323\344\223\002\"\"\035/v1/albums:batchAd"
+          + "dMediaItems:\001*\022\233\001\n\020SearchMediaItems\0221.go"
+          + "ogle.photos.library.v1.SearchMediaItemsR"
+          + "equest\0322.google.photos.library.v1.Search"
+          + "MediaItemsResponse\" \202\323\344\223\002\032\"\025/v1/mediaIte"
+          + "ms:search:\001*\022\213\001\n\016ListMediaItems\022/.google"
+          + ".photos.library.v1.ListMediaItemsRequest"
+          + "\0320.google.photos.library.v1.ListMediaIte"
+          + "msResponse\"\026\202\323\344\223\002\020\022\016/v1/mediaItems\022\207\001\n\014G"
+          + "etMediaItem\022-.google.photos.library.v1.G"
+          + "etMediaItemRequest\032\036.google.photos.types"
+          + ".MediaItem\"(\202\323\344\223\002\"\022 /v1/mediaItems/{medi"
+          + "a_item_id=*}\022\240\001\n\022BatchGetMediaItems\0223.go"
+          + "ogle.photos.library.v1.BatchGetMediaItem"
+          + "sRequest\0324.google.photos.library.v1.Batc"
+          + "hGetMediaItemsResponse\"\037\202\323\344\223\002\031\022\027/v1/medi"
+          + "aItems:batchGet\022{\n\nListAlbums\022+.google.p"
+          + "hotos.library.v1.ListAlbumsRequest\032,.goo"
+          + "gle.photos.library.v1.ListAlbumsResponse"
+          + "\"\022\202\323\344\223\002\014\022\n/v1/albums\022r\n\010GetAlbum\022).googl"
+          + "e.photos.library.v1.GetAlbumRequest\032\032.go"
+          + "ogle.photos.types.Album\"\037\202\323\344\223\002\031\022\027/v1/alb"
+          + "ums/{album_id=*}\022\207\001\n\016GetSharedAlbum\022/.go"
+          + "ogle.photos.library.v1.GetSharedAlbumReq"
+          + "uest\032\032.google.photos.types.Album\"(\202\323\344\223\002\""
+          + "\022 /v1/sharedAlbums/{share_token=*}\022\267\001\n\024A"
+          + "ddEnrichmentToAlbum\0225.google.photos.libr"
+          + "ary.v1.AddEnrichmentToAlbumRequest\0326.goo"
+          + "gle.photos.library.v1.AddEnrichmentToAlb"
+          + "umResponse\"0\202\323\344\223\002*\"%/v1/albums/{album_id"
+          + "=*}:addEnrichment:\001*\022\230\001\n\017JoinSharedAlbum"
+          + "\0220.google.photos.library.v1.JoinSharedAl"
+          + "bumRequest\0321.google.photos.library.v1.Jo"
+          + "inSharedAlbumResponse\" \202\323\344\223\002\032\"\025/v1/share"
+          + "dAlbums:join:\001*\022\234\001\n\020LeaveSharedAlbum\0221.g"
+          + "oogle.photos.library.v1.LeaveSharedAlbum"
+          + "Request\0322.google.photos.library.v1.Leave"
+          + "SharedAlbumResponse\"!\202\323\344\223\002\033\"\026/v1/sharedA"
+          + "lbums:leave:\001*\022\221\001\n\nShareAlbum\022+.google.p"
+          + "hotos.library.v1.ShareAlbumRequest\032,.goo"
+          + "gle.photos.library.v1.ShareAlbumResponse"
+          + "\"(\202\323\344\223\002\"\"\035/v1/albums/{album_id=*}:share:"
+          + "\001*\022\223\001\n\020ListSharedAlbums\0221.google.photos."
+          + "library.v1.ListSharedAlbumsRequest\0322.goo"
+          + "gle.photos.library.v1.ListSharedAlbumsRe"
+          + "sponse\"\030\202\323\344\223\002\022\022\020/v1/sharedAlbums\022\231\001\n\014Uns"
+          + "hareAlbum\022-.google.photos.library.v1.Uns"
+          + "hareAlbumRequest\032..google.photos.library"
+          + ".v1.UnshareAlbumResponse\"*\202\323\344\223\002$\"\037/v1/al"
+          + "bums/{album_id=*}:unshare:\001*\022\335\001\n\036BatchRe"
+          + "moveMediaItemsFromAlbum\022?.google.photos."
+          + "library.v1.BatchRemoveMediaItemsFromAlbu"
+          + "mRequest\032@.google.photos.library.v1.Batc"
+          + "hRemoveMediaItemsFromAlbumResponse\"8\202\323\344\223"
+          + "\0022\"-/v1/albums/{album_id=*}:batchRemoveM"
+          + "ediaItems:\001*B|\n\"com.google.photos.librar"
+          + "y.v1.protoB\023LibraryServiceProtoP\001Z?googl"
+          + "e.golang.org/genproto/googleapis/photos/"
+          + "library/v1;libraryb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -451,91 +410,39 @@ public final class LibraryServiceProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.photos.types.proto.AlbumProto.getDescriptor(),
+          com.google.photos.types.proto.DateRangeProto.getDescriptor(),
+          com.google.photos.types.proto.MediaItemProto.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
-          com.google.protobuf.DurationProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.rpc.StatusProto.getDescriptor(),
           com.google.type.DateProto.getDescriptor(),
           com.google.type.LatLngProto.getDescriptor(),
         },
         assigner);
-    internal_static_google_photos_library_v1_Album_descriptor =
-        getDescriptor().getMessageTypes().get(0);
-    internal_static_google_photos_library_v1_Album_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_photos_library_v1_Album_descriptor,
-            new java.lang.String[] {
-              "Id",
-              "Title",
-              "ProductUrl",
-              "IsWriteable",
-              "ShareInfo",
-              "MediaItemsCount",
-              "CoverPhotoBaseUrl",
-              "CoverPhotoMediaItemId",
-            });
-    internal_static_google_photos_library_v1_MediaItem_descriptor =
-        getDescriptor().getMessageTypes().get(1);
-    internal_static_google_photos_library_v1_MediaItem_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_photos_library_v1_MediaItem_descriptor,
-            new java.lang.String[] {
-              "Id",
-              "Description",
-              "ProductUrl",
-              "BaseUrl",
-              "MimeType",
-              "MediaMetadata",
-              "ContributorInfo",
-              "Filename",
-            });
-    internal_static_google_photos_library_v1_ContributorInfo_descriptor =
-        getDescriptor().getMessageTypes().get(2);
-    internal_static_google_photos_library_v1_ContributorInfo_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_photos_library_v1_ContributorInfo_descriptor,
-            new java.lang.String[] {
-              "ProfilePictureBaseUrl", "DisplayName",
-            });
-    internal_static_google_photos_library_v1_MediaMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(3);
-    internal_static_google_photos_library_v1_MediaMetadata_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_photos_library_v1_MediaMetadata_descriptor,
-            new java.lang.String[] {
-              "CreationTime", "Width", "Height", "Photo", "Video", "Metadata",
-            });
-    internal_static_google_photos_library_v1_Photo_descriptor =
-        getDescriptor().getMessageTypes().get(4);
-    internal_static_google_photos_library_v1_Photo_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_photos_library_v1_Photo_descriptor,
-            new java.lang.String[] {
-              "CameraMake",
-              "CameraModel",
-              "FocalLength",
-              "ApertureFNumber",
-              "IsoEquivalent",
-              "ExposureTime",
-            });
-    internal_static_google_photos_library_v1_Video_descriptor =
-        getDescriptor().getMessageTypes().get(5);
-    internal_static_google_photos_library_v1_Video_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_photos_library_v1_Video_descriptor,
-            new java.lang.String[] {
-              "CameraMake", "CameraModel", "Fps", "Status",
-            });
     internal_static_google_photos_library_v1_CreateAlbumRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(0);
     internal_static_google_photos_library_v1_CreateAlbumRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_CreateAlbumRequest_descriptor,
             new java.lang.String[] {
               "Album",
             });
+    internal_static_google_photos_library_v1_BatchRemoveMediaItemsFromAlbumRequest_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_photos_library_v1_BatchRemoveMediaItemsFromAlbumRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_photos_library_v1_BatchRemoveMediaItemsFromAlbumRequest_descriptor,
+            new java.lang.String[] {
+              "MediaItemIds", "AlbumId",
+            });
+    internal_static_google_photos_library_v1_BatchRemoveMediaItemsFromAlbumResponse_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_photos_library_v1_BatchRemoveMediaItemsFromAlbumResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_photos_library_v1_BatchRemoveMediaItemsFromAlbumResponse_descriptor,
+            new java.lang.String[] {});
     internal_static_google_photos_library_v1_NewMediaItem_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_photos_library_v1_NewMediaItem_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_NewMediaItem_descriptor,
@@ -543,7 +450,7 @@ public final class LibraryServiceProto {
               "Description", "SimpleMediaItem", "NewMediaItemType",
             });
     internal_static_google_photos_library_v1_SimpleMediaItem_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_photos_library_v1_SimpleMediaItem_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_SimpleMediaItem_descriptor,
@@ -551,7 +458,7 @@ public final class LibraryServiceProto {
               "UploadToken",
             });
     internal_static_google_photos_library_v1_AlbumPosition_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_photos_library_v1_AlbumPosition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_AlbumPosition_descriptor,
@@ -559,7 +466,7 @@ public final class LibraryServiceProto {
               "Position", "RelativeMediaItemId", "RelativeEnrichmentItemId", "RelativeItem",
             });
     internal_static_google_photos_library_v1_NewMediaItemResult_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_photos_library_v1_NewMediaItemResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_NewMediaItemResult_descriptor,
@@ -567,7 +474,7 @@ public final class LibraryServiceProto {
               "UploadToken", "Status", "MediaItem",
             });
     internal_static_google_photos_library_v1_BatchCreateMediaItemsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_photos_library_v1_BatchCreateMediaItemsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_BatchCreateMediaItemsRequest_descriptor,
@@ -575,23 +482,15 @@ public final class LibraryServiceProto {
               "AlbumId", "NewMediaItems", "AlbumPosition",
             });
     internal_static_google_photos_library_v1_BatchCreateMediaItemsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_photos_library_v1_BatchCreateMediaItemsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_BatchCreateMediaItemsResponse_descriptor,
             new java.lang.String[] {
               "NewMediaItemResults",
             });
-    internal_static_google_photos_library_v1_DateRange_descriptor =
-        getDescriptor().getMessageTypes().get(13);
-    internal_static_google_photos_library_v1_DateRange_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_photos_library_v1_DateRange_descriptor,
-            new java.lang.String[] {
-              "StartDate", "EndDate",
-            });
     internal_static_google_photos_library_v1_DateFilter_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_photos_library_v1_DateFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_DateFilter_descriptor,
@@ -599,7 +498,7 @@ public final class LibraryServiceProto {
               "Dates", "Ranges",
             });
     internal_static_google_photos_library_v1_ContentFilter_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_photos_library_v1_ContentFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_ContentFilter_descriptor,
@@ -607,7 +506,7 @@ public final class LibraryServiceProto {
               "IncludedContentCategories", "ExcludedContentCategories",
             });
     internal_static_google_photos_library_v1_MediaTypeFilter_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_photos_library_v1_MediaTypeFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_MediaTypeFilter_descriptor,
@@ -615,7 +514,7 @@ public final class LibraryServiceProto {
               "MediaTypes",
             });
     internal_static_google_photos_library_v1_Filters_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_photos_library_v1_Filters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_Filters_descriptor,
@@ -627,7 +526,7 @@ public final class LibraryServiceProto {
               "ExcludeNonAppCreatedData",
             });
     internal_static_google_photos_library_v1_SearchMediaItemsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_photos_library_v1_SearchMediaItemsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_SearchMediaItemsRequest_descriptor,
@@ -635,7 +534,7 @@ public final class LibraryServiceProto {
               "AlbumId", "PageSize", "PageToken", "Filters",
             });
     internal_static_google_photos_library_v1_SearchMediaItemsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_photos_library_v1_SearchMediaItemsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_SearchMediaItemsResponse_descriptor,
@@ -643,7 +542,7 @@ public final class LibraryServiceProto {
               "MediaItems", "NextPageToken",
             });
     internal_static_google_photos_library_v1_ListMediaItemsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_photos_library_v1_ListMediaItemsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_ListMediaItemsRequest_descriptor,
@@ -651,7 +550,7 @@ public final class LibraryServiceProto {
               "PageSize", "PageToken",
             });
     internal_static_google_photos_library_v1_ListMediaItemsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_photos_library_v1_ListMediaItemsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_ListMediaItemsResponse_descriptor,
@@ -659,7 +558,7 @@ public final class LibraryServiceProto {
               "MediaItems", "NextPageToken",
             });
     internal_static_google_photos_library_v1_GetMediaItemRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_photos_library_v1_GetMediaItemRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_GetMediaItemRequest_descriptor,
@@ -667,7 +566,7 @@ public final class LibraryServiceProto {
               "MediaItemId",
             });
     internal_static_google_photos_library_v1_ListAlbumsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_photos_library_v1_ListAlbumsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_ListAlbumsRequest_descriptor,
@@ -675,7 +574,7 @@ public final class LibraryServiceProto {
               "PageSize", "PageToken", "ExcludeNonAppCreatedData",
             });
     internal_static_google_photos_library_v1_ListAlbumsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_photos_library_v1_ListAlbumsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_ListAlbumsResponse_descriptor,
@@ -683,7 +582,7 @@ public final class LibraryServiceProto {
               "Albums", "NextPageToken",
             });
     internal_static_google_photos_library_v1_GetAlbumRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_photos_library_v1_GetAlbumRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_GetAlbumRequest_descriptor,
@@ -691,7 +590,7 @@ public final class LibraryServiceProto {
               "AlbumId",
             });
     internal_static_google_photos_library_v1_GetSharedAlbumRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_photos_library_v1_GetSharedAlbumRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_GetSharedAlbumRequest_descriptor,
@@ -699,7 +598,7 @@ public final class LibraryServiceProto {
               "ShareToken",
             });
     internal_static_google_photos_library_v1_TextEnrichment_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_photos_library_v1_TextEnrichment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_TextEnrichment_descriptor,
@@ -707,7 +606,7 @@ public final class LibraryServiceProto {
               "Text",
             });
     internal_static_google_photos_library_v1_Location_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_photos_library_v1_Location_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_Location_descriptor,
@@ -715,7 +614,7 @@ public final class LibraryServiceProto {
               "LocationName", "Latlng",
             });
     internal_static_google_photos_library_v1_LocationEnrichment_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_photos_library_v1_LocationEnrichment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_LocationEnrichment_descriptor,
@@ -723,7 +622,7 @@ public final class LibraryServiceProto {
               "Location",
             });
     internal_static_google_photos_library_v1_MapEnrichment_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_photos_library_v1_MapEnrichment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_MapEnrichment_descriptor,
@@ -731,7 +630,7 @@ public final class LibraryServiceProto {
               "Origin", "Destination",
             });
     internal_static_google_photos_library_v1_NewEnrichmentItem_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_photos_library_v1_NewEnrichmentItem_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_NewEnrichmentItem_descriptor,
@@ -739,7 +638,7 @@ public final class LibraryServiceProto {
               "TextEnrichment", "LocationEnrichment", "MapEnrichment", "Enrichment",
             });
     internal_static_google_photos_library_v1_AddEnrichmentToAlbumRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_photos_library_v1_AddEnrichmentToAlbumRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_AddEnrichmentToAlbumRequest_descriptor,
@@ -747,7 +646,7 @@ public final class LibraryServiceProto {
               "AlbumId", "NewEnrichmentItem", "AlbumPosition",
             });
     internal_static_google_photos_library_v1_EnrichmentItem_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_photos_library_v1_EnrichmentItem_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_EnrichmentItem_descriptor,
@@ -755,7 +654,7 @@ public final class LibraryServiceProto {
               "Id",
             });
     internal_static_google_photos_library_v1_AddEnrichmentToAlbumResponse_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_photos_library_v1_AddEnrichmentToAlbumResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_AddEnrichmentToAlbumResponse_descriptor,
@@ -763,7 +662,7 @@ public final class LibraryServiceProto {
               "EnrichmentItem",
             });
     internal_static_google_photos_library_v1_JoinSharedAlbumRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_photos_library_v1_JoinSharedAlbumRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_JoinSharedAlbumRequest_descriptor,
@@ -771,7 +670,7 @@ public final class LibraryServiceProto {
               "ShareToken",
             });
     internal_static_google_photos_library_v1_JoinSharedAlbumResponse_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_photos_library_v1_JoinSharedAlbumResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_JoinSharedAlbumResponse_descriptor,
@@ -779,7 +678,7 @@ public final class LibraryServiceProto {
               "Album",
             });
     internal_static_google_photos_library_v1_LeaveSharedAlbumRequest_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_photos_library_v1_LeaveSharedAlbumRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_LeaveSharedAlbumRequest_descriptor,
@@ -787,37 +686,21 @@ public final class LibraryServiceProto {
               "ShareToken",
             });
     internal_static_google_photos_library_v1_LeaveSharedAlbumResponse_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_photos_library_v1_LeaveSharedAlbumResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_LeaveSharedAlbumResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_photos_library_v1_ShareAlbumRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_photos_library_v1_ShareAlbumRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_ShareAlbumRequest_descriptor,
             new java.lang.String[] {
               "AlbumId", "SharedAlbumOptions",
             });
-    internal_static_google_photos_library_v1_SharedAlbumOptions_descriptor =
-        getDescriptor().getMessageTypes().get(40);
-    internal_static_google_photos_library_v1_SharedAlbumOptions_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_photos_library_v1_SharedAlbumOptions_descriptor,
-            new java.lang.String[] {
-              "IsCollaborative", "IsCommentable",
-            });
-    internal_static_google_photos_library_v1_ShareInfo_descriptor =
-        getDescriptor().getMessageTypes().get(41);
-    internal_static_google_photos_library_v1_ShareInfo_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_photos_library_v1_ShareInfo_descriptor,
-            new java.lang.String[] {
-              "SharedAlbumOptions", "ShareableUrl", "ShareToken", "IsJoined",
-            });
     internal_static_google_photos_library_v1_ShareAlbumResponse_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_photos_library_v1_ShareAlbumResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_ShareAlbumResponse_descriptor,
@@ -825,7 +708,7 @@ public final class LibraryServiceProto {
               "ShareInfo",
             });
     internal_static_google_photos_library_v1_ListSharedAlbumsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_photos_library_v1_ListSharedAlbumsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_ListSharedAlbumsRequest_descriptor,
@@ -833,7 +716,7 @@ public final class LibraryServiceProto {
               "PageSize", "PageToken", "ExcludeNonAppCreatedData",
             });
     internal_static_google_photos_library_v1_ListSharedAlbumsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_photos_library_v1_ListSharedAlbumsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_ListSharedAlbumsResponse_descriptor,
@@ -841,7 +724,7 @@ public final class LibraryServiceProto {
               "SharedAlbums", "NextPageToken",
             });
     internal_static_google_photos_library_v1_UnshareAlbumRequest_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_photos_library_v1_UnshareAlbumRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_UnshareAlbumRequest_descriptor,
@@ -849,13 +732,13 @@ public final class LibraryServiceProto {
               "AlbumId",
             });
     internal_static_google_photos_library_v1_UnshareAlbumResponse_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_photos_library_v1_UnshareAlbumResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_UnshareAlbumResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_photos_library_v1_BatchGetMediaItemsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_photos_library_v1_BatchGetMediaItemsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_BatchGetMediaItemsRequest_descriptor,
@@ -863,7 +746,7 @@ public final class LibraryServiceProto {
               "MediaItemIds",
             });
     internal_static_google_photos_library_v1_BatchGetMediaItemsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_photos_library_v1_BatchGetMediaItemsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_BatchGetMediaItemsResponse_descriptor,
@@ -871,22 +754,37 @@ public final class LibraryServiceProto {
               "MediaItemResults",
             });
     internal_static_google_photos_library_v1_MediaItemResult_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_photos_library_v1_MediaItemResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_photos_library_v1_MediaItemResult_descriptor,
             new java.lang.String[] {
               "Status", "MediaItem",
             });
+    internal_static_google_photos_library_v1_BatchAddMediaItemsToAlbumRequest_descriptor =
+        getDescriptor().getMessageTypes().get(43);
+    internal_static_google_photos_library_v1_BatchAddMediaItemsToAlbumRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_photos_library_v1_BatchAddMediaItemsToAlbumRequest_descriptor,
+            new java.lang.String[] {
+              "MediaItemIds", "AlbumId",
+            });
+    internal_static_google_photos_library_v1_BatchAddMediaItemsToAlbumResponse_descriptor =
+        getDescriptor().getMessageTypes().get(44);
+    internal_static_google_photos_library_v1_BatchAddMediaItemsToAlbumResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_photos_library_v1_BatchAddMediaItemsToAlbumResponse_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.photos.types.proto.AlbumProto.getDescriptor();
+    com.google.photos.types.proto.DateRangeProto.getDescriptor();
+    com.google.photos.types.proto.MediaItemProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();

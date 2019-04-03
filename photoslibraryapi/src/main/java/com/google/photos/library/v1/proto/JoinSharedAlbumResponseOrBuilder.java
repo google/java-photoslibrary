@@ -15,7 +15,7 @@ public interface JoinSharedAlbumResponseOrBuilder
    * Shared album that the user has joined.
    * </pre>
    *
-   * <code>.google.photos.library.v1.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1;</code>
    */
   boolean hasAlbum();
   /**
@@ -25,9 +25,9 @@ public interface JoinSharedAlbumResponseOrBuilder
    * Shared album that the user has joined.
    * </pre>
    *
-   * <code>.google.photos.library.v1.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1;</code>
    */
-  com.google.photos.library.v1.proto.Album getAlbum();
+  com.google.photos.types.proto.Album getAlbum();
   /**
    *
    *
@@ -35,7 +35,7 @@ public interface JoinSharedAlbumResponseOrBuilder
    * Shared album that the user has joined.
    * </pre>
    *
-   * <code>.google.photos.library.v1.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1;</code>
    */
-  com.google.photos.library.v1.proto.AlbumOrBuilder getAlbumOrBuilder();
+  com.google.photos.types.proto.AlbumOrBuilder getAlbumOrBuilder();
 }

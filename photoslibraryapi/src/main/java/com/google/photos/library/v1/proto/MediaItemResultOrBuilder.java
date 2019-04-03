@@ -53,7 +53,7 @@ public interface MediaItemResultOrBuilder
    * occurred and the media item was fetched successfully.
    * </pre>
    *
-   * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+   * <code>.google.photos.types.MediaItem media_item = 2;</code>
    */
   boolean hasMediaItem();
   /**
@@ -64,9 +64,9 @@ public interface MediaItemResultOrBuilder
    * occurred and the media item was fetched successfully.
    * </pre>
    *
-   * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+   * <code>.google.photos.types.MediaItem media_item = 2;</code>
    */
-  com.google.photos.library.v1.proto.MediaItem getMediaItem();
+  com.google.photos.types.proto.MediaItem getMediaItem();
   /**
    *
    *
@@ -75,7 +75,7 @@ public interface MediaItemResultOrBuilder
    * occurred and the media item was fetched successfully.
    * </pre>
    *
-   * <code>.google.photos.library.v1.MediaItem media_item = 2;</code>
+   * <code>.google.photos.types.MediaItem media_item = 2;</code>
    */
-  com.google.photos.library.v1.proto.MediaItemOrBuilder getMediaItemOrBuilder();
+  com.google.photos.types.proto.MediaItemOrBuilder getMediaItemOrBuilder();
 }

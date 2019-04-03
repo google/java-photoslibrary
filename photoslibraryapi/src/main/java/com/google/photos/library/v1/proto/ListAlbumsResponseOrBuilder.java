@@ -16,9 +16,9 @@ public interface ListAlbumsResponseOrBuilder
    * Photos app.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+   * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
-  java.util.List<com.google.photos.library.v1.proto.Album> getAlbumsList();
+  java.util.List<com.google.photos.types.proto.Album> getAlbumsList();
   /**
    *
    *
@@ -27,9 +27,9 @@ public interface ListAlbumsResponseOrBuilder
    * Photos app.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+   * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
-  com.google.photos.library.v1.proto.Album getAlbums(int index);
+  com.google.photos.types.proto.Album getAlbums(int index);
   /**
    *
    *
@@ -38,7 +38,7 @@ public interface ListAlbumsResponseOrBuilder
    * Photos app.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+   * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
   int getAlbumsCount();
   /**
@@ -49,10 +49,9 @@ public interface ListAlbumsResponseOrBuilder
    * Photos app.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+   * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
-  java.util.List<? extends com.google.photos.library.v1.proto.AlbumOrBuilder>
-      getAlbumsOrBuilderList();
+  java.util.List<? extends com.google.photos.types.proto.AlbumOrBuilder> getAlbumsOrBuilderList();
   /**
    *
    *
@@ -61,9 +60,9 @@ public interface ListAlbumsResponseOrBuilder
    * Photos app.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.Album albums = 1;</code>
+   * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
-  com.google.photos.library.v1.proto.AlbumOrBuilder getAlbumsOrBuilder(int index);
+  com.google.photos.types.proto.AlbumOrBuilder getAlbumsOrBuilder(int index);
 
   /**
    *
