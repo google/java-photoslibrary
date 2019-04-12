@@ -14,7 +14,7 @@ This repository contains the Java client library for the [Google Photos Library 
 
 Firstly, download the library or include it in your build configuration. Then, set up OAuth 2.0 credentials to access the API.
 
-Next, you can follow the [samples](samples/) to see the client library in action.
+Next, you can follow the [samples](sample/) to see the client library in action.
 
 ### Option 1: Gradle dependency
 To use this library with Gradle, add the following dependency to your `build.gradle` file:
@@ -102,7 +102,7 @@ try (PhotosLibraryClient photosLibraryClient =
 
 ## Samples
 
- A few examples are included in the [samples](samples/) directory. They show how
+ A few examples are included in the [sample](sample/) directory. They show how
  to access media items, filter media, share albums and upload files.
 
 The [API developer documentation](https://developers.google.com/photos) also includes
