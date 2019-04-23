@@ -12,8 +12,9 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the [MediaItem][google.photos.types.MediaItem](s) to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * added.
+   * The maximum number of media items that can be added in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -23,8 +24,9 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the [MediaItem][google.photos.types.MediaItem](s) to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * added.
+   * The maximum number of media items that can be added in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -34,8 +36,9 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the [MediaItem][google.photos.types.MediaItem](s) to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * added.
+   * The maximum number of media items that can be added in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -45,8 +48,9 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the [MediaItem][google.photos.types.MediaItem](s) to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * added.
+   * The maximum number of media items that can be added in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -58,7 +62,7 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    * <pre>
    * Identifier of the [Album][google.photos.types.Album] that the
-   * [MediaItem][google.photos.types.MediaItem](s) are added to.
+   * media items are added to.
    * </pre>
    *
    * <code>string album_id = 2;</code>
@@ -69,7 +73,7 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    * <pre>
    * Identifier of the [Album][google.photos.types.Album] that the
-   * [MediaItem][google.photos.types.MediaItem](s) are added to.
+   * media items are added to.
    * </pre>
    *
    * <code>string album_id = 2;</code>

@@ -393,18 +393,18 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more existing media items in a user's Google Photos library to an existing album.
+   * Adds one or more media items in a user's Google Photos library to an album. The media items and
+   * albums must have been created by the developer via the API.
    *
-   * <p>This call adds the existing media items to an album, identified by its identifier. The media
-   * items to be added must be owned by the user, and created by the developer, on behalf of whom
-   * the API is acting. In case of adding media items to a shared album, the user must either be an
-   * owner of the album or a collaborator who has already joined.
+   * <p>Media items are added to the end of the album. If multiple media items are given, they are
+   * added in the order specified in this call.
    *
-   * <p>The maximum size of the batch is 50. The API does not support partial success, i.e. the
-   * entire request fails if an invalid media item or album is specified.
+   * <p>Only media items that are in the user's library can be added to an album. For albums that
+   * are shared, the album must either be owned by the user or the user must have joined the album
+   * as a collaborator.
    *
-   * <p>The new items are added to the end of the album, in the order in which they are specified in
-   * the request.
+   * <p>Partial success is not supported. The entire request will fail if an invalid media item or
+   * album is specified.
    *
    * <p>Sample code:
    *
@@ -416,10 +416,10 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param albumId Identifier of the [Album][google.photos.types.Album] that the
-   *     [MediaItem][google.photos.types.MediaItem](s) are added to.
-   * @param mediaItemIds Identifier of the [MediaItem][google.photos.types.MediaItem](s) to be
-   *     added.
+   * @param albumId Identifier of the [Album][google.photos.types.Album] that the media items are
+   *     added to.
+   * @param mediaItemIds Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be added.
+   *     The maximum number of media items that can be added in one call is 50.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchAddMediaItemsToAlbumResponse batchAddMediaItemsToAlbum(
@@ -435,18 +435,18 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more existing media items in a user's Google Photos library to an existing album.
+   * Adds one or more media items in a user's Google Photos library to an album. The media items and
+   * albums must have been created by the developer via the API.
    *
-   * <p>This call adds the existing media items to an album, identified by its identifier. The media
-   * items to be added must be owned by the user, and created by the developer, on behalf of whom
-   * the API is acting. In case of adding media items to a shared album, the user must either be an
-   * owner of the album or a collaborator who has already joined.
+   * <p>Media items are added to the end of the album. If multiple media items are given, they are
+   * added in the order specified in this call.
    *
-   * <p>The maximum size of the batch is 50. The API does not support partial success, i.e. the
-   * entire request fails if an invalid media item or album is specified.
+   * <p>Only media items that are in the user's library can be added to an album. For albums that
+   * are shared, the album must either be owned by the user or the user must have joined the album
+   * as a collaborator.
    *
-   * <p>The new items are added to the end of the album, in the order in which they are specified in
-   * the request.
+   * <p>Partial success is not supported. The entire request will fail if an invalid media item or
+   * album is specified.
    *
    * <p>Sample code:
    *
@@ -472,18 +472,18 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more existing media items in a user's Google Photos library to an existing album.
+   * Adds one or more media items in a user's Google Photos library to an album. The media items and
+   * albums must have been created by the developer via the API.
    *
-   * <p>This call adds the existing media items to an album, identified by its identifier. The media
-   * items to be added must be owned by the user, and created by the developer, on behalf of whom
-   * the API is acting. In case of adding media items to a shared album, the user must either be an
-   * owner of the album or a collaborator who has already joined.
+   * <p>Media items are added to the end of the album. If multiple media items are given, they are
+   * added in the order specified in this call.
    *
-   * <p>The maximum size of the batch is 50. The API does not support partial success, i.e. the
-   * entire request fails if an invalid media item or album is specified.
+   * <p>Only media items that are in the user's library can be added to an album. For albums that
+   * are shared, the album must either be owned by the user or the user must have joined the album
+   * as a collaborator.
    *
-   * <p>The new items are added to the end of the album, in the order in which they are specified in
-   * the request.
+   * <p>Partial success is not supported. The entire request will fail if an invalid media item or
+   * album is specified.
    *
    * <p>Sample code:
    *
@@ -1589,11 +1589,14 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes one or more media items from a specified album. The media items and the album must be
-   * created by the developer via the API.
+   * Removes one or more media items from a specified album. The media items and the album must have
+   * been created by the developer via the API.
    *
-   * <p>Invalid media item or album identifiers will result in the failure of this request and no
-   * action will be performed on the album.
+   * <p>For albums that are shared, this action is only supported for media items that were added to
+   * the album by this user, or for all media items if the album was created by this user.
+   *
+   * <p>Partial success is not supported. The entire request will fail and no action will be
+   * performed on the album if an invalid media item or album is specified.
    *
    * <p>Sample code:
    *
@@ -1605,12 +1608,12 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param albumId Identifier of the [Album][google.photos.library.v1.Album] that the media items
-   *     are to be removed from.
-   * @param mediaItemIds Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+   * @param albumId Identifier of the [Album][google.photos.types.Album] that the media items are to
+   *     be removed from.
+   * @param mediaItemIds Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    *     removed.
-   *     <p>Must not contain repeated identifiers and cannot be empty. A maximum of 50 media items
-   *     can be included per request.
+   *     <p>Must not contain repeated identifiers and cannot be empty. The maximum number of media
+   *     items that can be removed in one call is 50.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchRemoveMediaItemsFromAlbumResponse batchRemoveMediaItemsFromAlbum(
@@ -1626,11 +1629,14 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes one or more media items from a specified album. The media items and the album must be
-   * created by the developer via the API.
+   * Removes one or more media items from a specified album. The media items and the album must have
+   * been created by the developer via the API.
    *
-   * <p>Invalid media item or album identifiers will result in the failure of this request and no
-   * action will be performed on the album.
+   * <p>For albums that are shared, this action is only supported for media items that were added to
+   * the album by this user, or for all media items if the album was created by this user.
+   *
+   * <p>Partial success is not supported. The entire request will fail and no action will be
+   * performed on the album if an invalid media item or album is specified.
    *
    * <p>Sample code:
    *
@@ -1656,11 +1662,14 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes one or more media items from a specified album. The media items and the album must be
-   * created by the developer via the API.
+   * Removes one or more media items from a specified album. The media items and the album must have
+   * been created by the developer via the API.
    *
-   * <p>Invalid media item or album identifiers will result in the failure of this request and no
-   * action will be performed on the album.
+   * <p>For albums that are shared, this action is only supported for media items that were added to
+   * the album by this user, or for all media items if the album was created by this user.
+   *
+   * <p>Partial success is not supported. The entire request will fail and no action will be
+   * performed on the album if an invalid media item or album is specified.
    *
    * <p>Sample code:
    *

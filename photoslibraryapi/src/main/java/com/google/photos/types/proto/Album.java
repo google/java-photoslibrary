@@ -28,8 +28,6 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     id_ = "";
     title_ = "";
     productUrl_ = "";
-    isWriteable_ = false;
-    mediaItemsCount_ = 0L;
     coverPhotoBaseUrl_ = "";
     coverPhotoMediaItemId_ = "";
   }
@@ -121,7 +119,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -551,20 +549,19 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.photos.types.proto.Album other = (com.google.photos.types.proto.Album) obj;
 
-    boolean result = true;
-    result = result && getId().equals(other.getId());
-    result = result && getTitle().equals(other.getTitle());
-    result = result && getProductUrl().equals(other.getProductUrl());
-    result = result && (getIsWriteable() == other.getIsWriteable());
-    result = result && (hasShareInfo() == other.hasShareInfo());
+    if (!getId().equals(other.getId())) return false;
+    if (!getTitle().equals(other.getTitle())) return false;
+    if (!getProductUrl().equals(other.getProductUrl())) return false;
+    if (getIsWriteable() != other.getIsWriteable()) return false;
+    if (hasShareInfo() != other.hasShareInfo()) return false;
     if (hasShareInfo()) {
-      result = result && getShareInfo().equals(other.getShareInfo());
+      if (!getShareInfo().equals(other.getShareInfo())) return false;
     }
-    result = result && (getMediaItemsCount() == other.getMediaItemsCount());
-    result = result && getCoverPhotoBaseUrl().equals(other.getCoverPhotoBaseUrl());
-    result = result && getCoverPhotoMediaItemId().equals(other.getCoverPhotoMediaItemId());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getMediaItemsCount() != other.getMediaItemsCount()) return false;
+    if (!getCoverPhotoBaseUrl().equals(other.getCoverPhotoBaseUrl())) return false;
+    if (!getCoverPhotoMediaItemId().equals(other.getCoverPhotoMediaItemId())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -802,35 +799,35 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1253,7 +1250,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.photos.types.proto.ShareInfo shareInfo_ = null;
+    private com.google.photos.types.proto.ShareInfo shareInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.photos.types.proto.ShareInfo,
             com.google.photos.types.proto.ShareInfo.Builder,
@@ -1715,7 +1712,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

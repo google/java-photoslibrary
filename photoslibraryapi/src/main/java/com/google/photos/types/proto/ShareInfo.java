@@ -26,7 +26,6 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
   private ShareInfo() {
     shareableUrl_ = "";
     shareToken_ = "";
-    isJoined_ = false;
   }
 
   @java.lang.Override
@@ -90,7 +89,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -334,16 +333,15 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.photos.types.proto.ShareInfo other = (com.google.photos.types.proto.ShareInfo) obj;
 
-    boolean result = true;
-    result = result && (hasSharedAlbumOptions() == other.hasSharedAlbumOptions());
+    if (hasSharedAlbumOptions() != other.hasSharedAlbumOptions()) return false;
     if (hasSharedAlbumOptions()) {
-      result = result && getSharedAlbumOptions().equals(other.getSharedAlbumOptions());
+      if (!getSharedAlbumOptions().equals(other.getSharedAlbumOptions())) return false;
     }
-    result = result && getShareableUrl().equals(other.getShareableUrl());
-    result = result && getShareToken().equals(other.getShareToken());
-    result = result && (getIsJoined() == other.getIsJoined());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getShareableUrl().equals(other.getShareableUrl())) return false;
+    if (!getShareToken().equals(other.getShareToken())) return false;
+    if (getIsJoined() != other.getIsJoined()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -562,35 +560,35 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -648,7 +646,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.photos.types.proto.SharedAlbumOptions sharedAlbumOptions_ = null;
+    private com.google.photos.types.proto.SharedAlbumOptions sharedAlbumOptions_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.photos.types.proto.SharedAlbumOptions,
             com.google.photos.types.proto.SharedAlbumOptions.Builder,
@@ -1083,7 +1081,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

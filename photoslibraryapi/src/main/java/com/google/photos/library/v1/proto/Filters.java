@@ -24,10 +24,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private Filters() {
-    includeArchivedMedia_ = false;
-    excludeNonAppCreatedData_ = false;
-  }
+  private Filters() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -114,7 +111,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -371,23 +368,22 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     com.google.photos.library.v1.proto.Filters other =
         (com.google.photos.library.v1.proto.Filters) obj;
 
-    boolean result = true;
-    result = result && (hasDateFilter() == other.hasDateFilter());
+    if (hasDateFilter() != other.hasDateFilter()) return false;
     if (hasDateFilter()) {
-      result = result && getDateFilter().equals(other.getDateFilter());
+      if (!getDateFilter().equals(other.getDateFilter())) return false;
     }
-    result = result && (hasContentFilter() == other.hasContentFilter());
+    if (hasContentFilter() != other.hasContentFilter()) return false;
     if (hasContentFilter()) {
-      result = result && getContentFilter().equals(other.getContentFilter());
+      if (!getContentFilter().equals(other.getContentFilter())) return false;
     }
-    result = result && (hasMediaTypeFilter() == other.hasMediaTypeFilter());
+    if (hasMediaTypeFilter() != other.hasMediaTypeFilter()) return false;
     if (hasMediaTypeFilter()) {
-      result = result && getMediaTypeFilter().equals(other.getMediaTypeFilter());
+      if (!getMediaTypeFilter().equals(other.getMediaTypeFilter())) return false;
     }
-    result = result && (getIncludeArchivedMedia() == other.getIncludeArchivedMedia());
-    result = result && (getExcludeNonAppCreatedData() == other.getExcludeNonAppCreatedData());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getIncludeArchivedMedia() != other.getIncludeArchivedMedia()) return false;
+    if (getExcludeNonAppCreatedData() != other.getExcludeNonAppCreatedData()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -632,35 +628,35 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -719,7 +715,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.photos.library.v1.proto.DateFilter dateFilter_ = null;
+    private com.google.photos.library.v1.proto.DateFilter dateFilter_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.photos.library.v1.proto.DateFilter,
             com.google.photos.library.v1.proto.DateFilter.Builder,
@@ -901,7 +897,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
       return dateFilterBuilder_;
     }
 
-    private com.google.photos.library.v1.proto.ContentFilter contentFilter_ = null;
+    private com.google.photos.library.v1.proto.ContentFilter contentFilter_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.photos.library.v1.proto.ContentFilter,
             com.google.photos.library.v1.proto.ContentFilter.Builder,
@@ -1083,7 +1079,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
       return contentFilterBuilder_;
     }
 
-    private com.google.photos.library.v1.proto.MediaTypeFilter mediaTypeFilter_ = null;
+    private com.google.photos.library.v1.proto.MediaTypeFilter mediaTypeFilter_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.photos.library.v1.proto.MediaTypeFilter,
             com.google.photos.library.v1.proto.MediaTypeFilter.Builder,
@@ -1365,7 +1361,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -333,6 +333,15 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
             GrpcCallSettings
                 .<BatchAddMediaItemsToAlbumRequest, BatchAddMediaItemsToAlbumResponse>newBuilder()
                 .setMethodDescriptor(batchAddMediaItemsToAlbumMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<BatchAddMediaItemsToAlbumRequest>() {
+                      @Override
+                      public Map<String, String> extract(BatchAddMediaItemsToAlbumRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("album_id", String.valueOf(request.getAlbumId()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<SearchMediaItemsRequest, SearchMediaItemsResponse>
         searchMediaItemsTransportSettings =

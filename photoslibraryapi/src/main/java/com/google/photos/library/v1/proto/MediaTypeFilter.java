@@ -55,7 +55,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
           case 8:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mediaTypes_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -68,7 +68,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   mediaTypes_ = new java.util.ArrayList<java.lang.Integer>();
                   mutable_bitField0_ |= 0x00000001;
                 }
@@ -79,7 +79,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -91,7 +91,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         mediaTypes_ = java.util.Collections.unmodifiableList(mediaTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -421,10 +421,9 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
     com.google.photos.library.v1.proto.MediaTypeFilter other =
         (com.google.photos.library.v1.proto.MediaTypeFilter) obj;
 
-    boolean result = true;
-    result = result && mediaTypes_.equals(other.mediaTypes_);
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!mediaTypes_.equals(other.mediaTypes_)) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -615,7 +614,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
       com.google.photos.library.v1.proto.MediaTypeFilter result =
           new com.google.photos.library.v1.proto.MediaTypeFilter(this);
       int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         mediaTypes_ = java.util.Collections.unmodifiableList(mediaTypes_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
@@ -626,35 +625,35 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -715,7 +714,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
     private java.util.List<java.lang.Integer> mediaTypes_ = java.util.Collections.emptyList();
 
     private void ensureMediaTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         mediaTypes_ = new java.util.ArrayList<java.lang.Integer>(mediaTypes_);
         bitField0_ |= 0x00000001;
       }
@@ -929,7 +928,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -67,7 +67,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
           case 8:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 includedContentCategories_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -80,7 +80,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   includedContentCategories_ = new java.util.ArrayList<java.lang.Integer>();
                   mutable_bitField0_ |= 0x00000001;
                 }
@@ -92,7 +92,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
           case 16:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 excludedContentCategories_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -105,7 +105,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   excludedContentCategories_ = new java.util.ArrayList<java.lang.Integer>();
                   mutable_bitField0_ |= 0x00000002;
                 }
@@ -116,7 +116,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -128,11 +128,11 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         includedContentCategories_ =
             java.util.Collections.unmodifiableList(includedContentCategories_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         excludedContentCategories_ =
             java.util.Collections.unmodifiableList(excludedContentCategories_);
       }
@@ -436,11 +436,10 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
     com.google.photos.library.v1.proto.ContentFilter other =
         (com.google.photos.library.v1.proto.ContentFilter) obj;
 
-    boolean result = true;
-    result = result && includedContentCategories_.equals(other.includedContentCategories_);
-    result = result && excludedContentCategories_.equals(other.excludedContentCategories_);
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!includedContentCategories_.equals(other.includedContentCategories_)) return false;
+    if (!excludedContentCategories_.equals(other.excludedContentCategories_)) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -648,13 +647,13 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
       com.google.photos.library.v1.proto.ContentFilter result =
           new com.google.photos.library.v1.proto.ContentFilter(this);
       int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         includedContentCategories_ =
             java.util.Collections.unmodifiableList(includedContentCategories_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.includedContentCategories_ = includedContentCategories_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         excludedContentCategories_ =
             java.util.Collections.unmodifiableList(excludedContentCategories_);
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -666,35 +665,35 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -765,7 +764,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureIncludedContentCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         includedContentCategories_ =
             new java.util.ArrayList<java.lang.Integer>(includedContentCategories_);
         bitField0_ |= 0x00000001;
@@ -995,7 +994,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureExcludedContentCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         excludedContentCategories_ =
             new java.util.ArrayList<java.lang.Integer>(excludedContentCategories_);
         bitField0_ |= 0x00000002;
@@ -1223,7 +1222,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

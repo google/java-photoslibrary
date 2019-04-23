@@ -1112,18 +1112,16 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Adds one or more existing media items in a user's Google Photos library to
-     * an existing album.
-     * This call adds the existing media items to an album, identified by its
-     * identifier. The media items to be added must be owned by the user, and
-     * created by the developer, on behalf of whom the API is acting. In case of
-     * adding media items to a shared album, the user must either be an owner of
-     * the album or a collaborator who has already joined.
-     * The maximum size of the batch is 50. The API does not support partial
-     * success, i.e. the entire request fails if an invalid media item or album
-     * is specified.
-     * The new items are added to the end of the album, in the order in which they
-     * are specified in the request.
+     * Adds one or more media items in a user's Google Photos library to
+     * an album. The media items and albums must have been created by the
+     * developer via the API.
+     * Media items are added to the end of the album. If multiple media items are
+     * given, they are added in the order specified in this call.
+     * Only media items that are in the user's library can be added to an
+     * album. For albums that are shared, the album must either be owned by the
+     * user or the user must have joined the album as a collaborator.
+     * Partial success is not supported. The entire request will fail if an
+     * invalid media item or album is specified.
      * </pre>
      */
     public void batchAddMediaItemsToAlbum(
@@ -1337,9 +1335,13 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Removes one or more media items from a specified album. The media items and
-     * the album must be created by the developer via the API.
-     * Invalid media item or album identifiers will result in the failure of this
-     * request and no action will be performed on the album.
+     * the album must have been created by the developer via the API.
+     * For albums that are shared, this action is only supported for media items
+     * that were added to the album by this user, or for all media items if the
+     * album was created by this user.
+     * Partial success is not supported. The entire request will fail and no
+     * action will be performed on the album if an invalid media item or album is
+     * specified.
      * </pre>
      */
     public void batchRemoveMediaItemsFromAlbum(
@@ -1552,18 +1554,16 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Adds one or more existing media items in a user's Google Photos library to
-     * an existing album.
-     * This call adds the existing media items to an album, identified by its
-     * identifier. The media items to be added must be owned by the user, and
-     * created by the developer, on behalf of whom the API is acting. In case of
-     * adding media items to a shared album, the user must either be an owner of
-     * the album or a collaborator who has already joined.
-     * The maximum size of the batch is 50. The API does not support partial
-     * success, i.e. the entire request fails if an invalid media item or album
-     * is specified.
-     * The new items are added to the end of the album, in the order in which they
-     * are specified in the request.
+     * Adds one or more media items in a user's Google Photos library to
+     * an album. The media items and albums must have been created by the
+     * developer via the API.
+     * Media items are added to the end of the album. If multiple media items are
+     * given, they are added in the order specified in this call.
+     * Only media items that are in the user's library can be added to an
+     * album. For albums that are shared, the album must either be owned by the
+     * user or the user must have joined the album as a collaborator.
+     * Partial success is not supported. The entire request will fail if an
+     * invalid media item or album is specified.
      * </pre>
      */
     public void batchAddMediaItemsToAlbum(
@@ -1819,9 +1819,13 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Removes one or more media items from a specified album. The media items and
-     * the album must be created by the developer via the API.
-     * Invalid media item or album identifiers will result in the failure of this
-     * request and no action will be performed on the album.
+     * the album must have been created by the developer via the API.
+     * For albums that are shared, this action is only supported for media items
+     * that were added to the album by this user, or for all media items if the
+     * album was created by this user.
+     * Partial success is not supported. The entire request will fail and no
+     * action will be performed on the album if an invalid media item or album is
+     * specified.
      * </pre>
      */
     public void batchRemoveMediaItemsFromAlbum(
@@ -1909,18 +1913,16 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Adds one or more existing media items in a user's Google Photos library to
-     * an existing album.
-     * This call adds the existing media items to an album, identified by its
-     * identifier. The media items to be added must be owned by the user, and
-     * created by the developer, on behalf of whom the API is acting. In case of
-     * adding media items to a shared album, the user must either be an owner of
-     * the album or a collaborator who has already joined.
-     * The maximum size of the batch is 50. The API does not support partial
-     * success, i.e. the entire request fails if an invalid media item or album
-     * is specified.
-     * The new items are added to the end of the album, in the order in which they
-     * are specified in the request.
+     * Adds one or more media items in a user's Google Photos library to
+     * an album. The media items and albums must have been created by the
+     * developer via the API.
+     * Media items are added to the end of the album. If multiple media items are
+     * given, they are added in the order specified in this call.
+     * Only media items that are in the user's library can be added to an
+     * album. For albums that are shared, the album must either be owned by the
+     * user or the user must have joined the album as a collaborator.
+     * Partial success is not supported. The entire request will fail if an
+     * invalid media item or album is specified.
      * </pre>
      */
     public com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumResponse
@@ -2122,9 +2124,13 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Removes one or more media items from a specified album. The media items and
-     * the album must be created by the developer via the API.
-     * Invalid media item or album identifiers will result in the failure of this
-     * request and no action will be performed on the album.
+     * the album must have been created by the developer via the API.
+     * For albums that are shared, this action is only supported for media items
+     * that were added to the album by this user, or for all media items if the
+     * album was created by this user.
+     * Partial success is not supported. The entire request will fail and no
+     * action will be performed on the album if an invalid media item or album is
+     * specified.
      * </pre>
      */
     public com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumResponse
@@ -2210,18 +2216,16 @@ public final class PhotosLibraryGrpc {
      *
      *
      * <pre>
-     * Adds one or more existing media items in a user's Google Photos library to
-     * an existing album.
-     * This call adds the existing media items to an album, identified by its
-     * identifier. The media items to be added must be owned by the user, and
-     * created by the developer, on behalf of whom the API is acting. In case of
-     * adding media items to a shared album, the user must either be an owner of
-     * the album or a collaborator who has already joined.
-     * The maximum size of the batch is 50. The API does not support partial
-     * success, i.e. the entire request fails if an invalid media item or album
-     * is specified.
-     * The new items are added to the end of the album, in the order in which they
-     * are specified in the request.
+     * Adds one or more media items in a user's Google Photos library to
+     * an album. The media items and albums must have been created by the
+     * developer via the API.
+     * Media items are added to the end of the album. If multiple media items are
+     * given, they are added in the order specified in this call.
+     * Only media items that are in the user's library can be added to an
+     * album. For albums that are shared, the album must either be owned by the
+     * user or the user must have joined the album as a collaborator.
+     * Partial success is not supported. The entire request will fail if an
+     * invalid media item or album is specified.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2438,9 +2442,13 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Removes one or more media items from a specified album. The media items and
-     * the album must be created by the developer via the API.
-     * Invalid media item or album identifiers will result in the failure of this
-     * request and no action will be performed on the album.
+     * the album must have been created by the developer via the API.
+     * For albums that are shared, this action is only supported for media items
+     * that were added to the album by this user, or for all media items if the
+     * album was created by this user.
+     * Partial success is not supported. The entire request will fail and no
+     * action will be performed on the album if an invalid media item or album is
+     * specified.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

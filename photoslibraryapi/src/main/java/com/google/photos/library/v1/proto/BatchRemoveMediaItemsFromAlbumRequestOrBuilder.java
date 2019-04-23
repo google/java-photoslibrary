@@ -12,10 +12,10 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * removed.
-   * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-   * media items can be included per request.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be removed in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -25,10 +25,10 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * removed.
-   * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-   * media items can be included per request.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be removed in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -38,10 +38,10 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * removed.
-   * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-   * media items can be included per request.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be removed in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -51,10 +51,10 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * removed.
-   * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-   * media items can be included per request.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be removed in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -65,7 +65,7 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the [Album][google.photos.library.v1.Album] that the media
+   * Identifier of the [Album][google.photos.types.Album] that the media
    * items are to be removed from.
    * </pre>
    *
@@ -76,7 +76,7 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the [Album][google.photos.library.v1.Album] that the media
+   * Identifier of the [Album][google.photos.types.Album] that the media
    * items are to be removed from.
    * </pre>
    *

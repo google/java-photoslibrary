@@ -62,7 +62,7 @@ import com.google.photos.library.v1.proto.UnshareAlbumResponse;
 import com.google.photos.types.proto.Album;
 import com.google.photos.types.proto.MediaItem;
 import com.google.photos.types.proto.SharedAlbumOptions;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -140,7 +140,7 @@ public class InternalPhotosLibraryClientTest {
     Album actualResponse = client.createAlbum(album);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateAlbumRequest actualRequest = (CreateAlbumRequest) actualRequests.get(0);
 
@@ -182,7 +182,7 @@ public class InternalPhotosLibraryClientTest {
         client.batchCreateMediaItems(albumId, newMediaItems, albumPosition);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchCreateMediaItemsRequest actualRequest =
         (BatchCreateMediaItemsRequest) actualRequests.get(0);
@@ -228,7 +228,7 @@ public class InternalPhotosLibraryClientTest {
         client.batchAddMediaItemsToAlbum(albumId, mediaItemIds);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchAddMediaItemsToAlbumRequest actualRequest =
         (BatchAddMediaItemsToAlbumRequest) actualRequests.get(0);
@@ -279,7 +279,7 @@ public class InternalPhotosLibraryClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getMediaItemsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SearchMediaItemsRequest actualRequest = (SearchMediaItemsRequest) actualRequests.get(0);
 
@@ -327,7 +327,7 @@ public class InternalPhotosLibraryClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getMediaItemsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SearchMediaItemsRequest actualRequest = (SearchMediaItemsRequest) actualRequests.get(0);
 
@@ -379,7 +379,7 @@ public class InternalPhotosLibraryClientTest {
     MediaItem actualResponse = client.getMediaItem(mediaItemId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetMediaItemRequest actualRequest = (GetMediaItemRequest) actualRequests.get(0);
 
@@ -417,7 +417,7 @@ public class InternalPhotosLibraryClientTest {
     BatchGetMediaItemsResponse actualResponse = client.batchGetMediaItems(mediaItemIds);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchGetMediaItemsRequest actualRequest = (BatchGetMediaItemsRequest) actualRequests.get(0);
 
@@ -465,7 +465,7 @@ public class InternalPhotosLibraryClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getAlbumsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListAlbumsRequest actualRequest = (ListAlbumsRequest) actualRequests.get(0);
 
@@ -519,7 +519,7 @@ public class InternalPhotosLibraryClientTest {
     Album actualResponse = client.getAlbum(albumId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetAlbumRequest actualRequest = (GetAlbumRequest) actualRequests.get(0);
 
@@ -573,7 +573,7 @@ public class InternalPhotosLibraryClientTest {
     Album actualResponse = client.getSharedAlbum(shareToken);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetSharedAlbumRequest actualRequest = (GetSharedAlbumRequest) actualRequests.get(0);
 
@@ -615,7 +615,7 @@ public class InternalPhotosLibraryClientTest {
         client.addEnrichmentToAlbum(albumId, newEnrichmentItem, albumPosition);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AddEnrichmentToAlbumRequest actualRequest = (AddEnrichmentToAlbumRequest) actualRequests.get(0);
 
@@ -657,7 +657,7 @@ public class InternalPhotosLibraryClientTest {
     JoinSharedAlbumResponse actualResponse = client.joinSharedAlbum(shareToken);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     JoinSharedAlbumRequest actualRequest = (JoinSharedAlbumRequest) actualRequests.get(0);
 
@@ -695,7 +695,7 @@ public class InternalPhotosLibraryClientTest {
     LeaveSharedAlbumResponse actualResponse = client.leaveSharedAlbum(shareToken);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     LeaveSharedAlbumRequest actualRequest = (LeaveSharedAlbumRequest) actualRequests.get(0);
 
@@ -734,7 +734,7 @@ public class InternalPhotosLibraryClientTest {
     ShareAlbumResponse actualResponse = client.shareAlbum(albumId, sharedAlbumOptions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ShareAlbumRequest actualRequest = (ShareAlbumRequest) actualRequests.get(0);
 
@@ -785,7 +785,7 @@ public class InternalPhotosLibraryClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSharedAlbumsList().get(0), resources.get(0));
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListSharedAlbumsRequest actualRequest = (ListSharedAlbumsRequest) actualRequests.get(0);
 
@@ -823,7 +823,7 @@ public class InternalPhotosLibraryClientTest {
     UnshareAlbumResponse actualResponse = client.unshareAlbum(albumId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UnshareAlbumRequest actualRequest = (UnshareAlbumRequest) actualRequests.get(0);
 
@@ -864,7 +864,7 @@ public class InternalPhotosLibraryClientTest {
         client.batchRemoveMediaItemsFromAlbum(albumId, mediaItemIds);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockPhotosLibrary.getRequests();
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchRemoveMediaItemsFromAlbumRequest actualRequest =
         (BatchRemoveMediaItemsFromAlbumRequest) actualRequests.get(0);

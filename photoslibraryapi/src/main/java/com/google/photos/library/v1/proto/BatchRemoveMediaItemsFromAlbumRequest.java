@@ -56,7 +56,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
           case 10:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mediaItemIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -72,7 +72,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -84,7 +84,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         mediaItemIds_ = mediaItemIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -114,10 +114,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * removed.
-   * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-   * media items can be included per request.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be removed in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -129,10 +129,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * removed.
-   * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-   * media items can be included per request.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be removed in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -144,10 +144,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * removed.
-   * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-   * media items can be included per request.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be removed in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -159,10 +159,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * removed.
-   * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-   * media items can be included per request.
+   * Must not contain repeated identifiers and cannot be empty. The maximum
+   * number of media items that can be removed in one call is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
@@ -177,7 +177,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
    *
    *
    * <pre>
-   * Identifier of the [Album][google.photos.library.v1.Album] that the media
+   * Identifier of the [Album][google.photos.types.Album] that the media
    * items are to be removed from.
    * </pre>
    *
@@ -198,7 +198,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
    *
    *
    * <pre>
-   * Identifier of the [Album][google.photos.library.v1.Album] that the media
+   * Identifier of the [Album][google.photos.types.Album] that the media
    * items are to be removed from.
    * </pre>
    *
@@ -273,11 +273,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
     com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest other =
         (com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest) obj;
 
-    boolean result = true;
-    result = result && getMediaItemIdsList().equals(other.getMediaItemIdsList());
-    result = result && getAlbumId().equals(other.getAlbumId());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getMediaItemIdsList().equals(other.getMediaItemIdsList())) return false;
+    if (!getAlbumId().equals(other.getAlbumId())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -478,7 +477,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
           new com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         mediaItemIds_ = mediaItemIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
@@ -491,35 +490,35 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -590,7 +589,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMediaItemIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         mediaItemIds_ = new com.google.protobuf.LazyStringArrayList(mediaItemIds_);
         bitField0_ |= 0x00000001;
       }
@@ -599,10 +598,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+     * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
      * removed.
-     * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-     * media items can be included per request.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be removed in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -614,10 +613,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+     * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
      * removed.
-     * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-     * media items can be included per request.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be removed in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -629,10 +628,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+     * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
      * removed.
-     * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-     * media items can be included per request.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be removed in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -644,10 +643,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+     * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
      * removed.
-     * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-     * media items can be included per request.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be removed in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -659,10 +658,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+     * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
      * removed.
-     * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-     * media items can be included per request.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be removed in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -680,10 +679,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+     * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
      * removed.
-     * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-     * media items can be included per request.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be removed in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -701,10 +700,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+     * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
      * removed.
-     * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-     * media items can be included per request.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be removed in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -719,10 +718,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+     * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
      * removed.
-     * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-     * media items can be included per request.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be removed in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -737,10 +736,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifiers of the [MediaItem][google.photos.library.v1.MediaItem] to be
+     * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
      * removed.
-     * Must not contain repeated identifiers and cannot be empty. A maximum of 50
-     * media items can be included per request.
+     * Must not contain repeated identifiers and cannot be empty. The maximum
+     * number of media items that can be removed in one call is 50.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
@@ -761,7 +760,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifier of the [Album][google.photos.library.v1.Album] that the media
+     * Identifier of the [Album][google.photos.types.Album] that the media
      * items are to be removed from.
      * </pre>
      *
@@ -782,7 +781,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifier of the [Album][google.photos.library.v1.Album] that the media
+     * Identifier of the [Album][google.photos.types.Album] that the media
      * items are to be removed from.
      * </pre>
      *
@@ -803,7 +802,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifier of the [Album][google.photos.library.v1.Album] that the media
+     * Identifier of the [Album][google.photos.types.Album] that the media
      * items are to be removed from.
      * </pre>
      *
@@ -822,7 +821,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifier of the [Album][google.photos.library.v1.Album] that the media
+     * Identifier of the [Album][google.photos.types.Album] that the media
      * items are to be removed from.
      * </pre>
      *
@@ -838,7 +837,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Identifier of the [Album][google.photos.library.v1.Album] that the media
+     * Identifier of the [Album][google.photos.types.Album] that the media
      * items are to be removed from.
      * </pre>
      *
@@ -857,7 +856,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
