@@ -1,0 +1,7 @@
+com.google.photos.library.v1
+com.google.photos.library.v1.internal
+com.google.photos.library.v1.internal.stub
+com.google.photos.library.v1.proto
+com.google.photos.library.v1.upload
+com.google.photos.library.v1.util
+com.google.photos.types.proto
