@@ -12,7 +12,7 @@ public interface ListMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of media items in the user's library.
+   * Output only. List of media items in the user's library.
    * </pre>
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -22,7 +22,7 @@ public interface ListMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of media items in the user's library.
+   * Output only. List of media items in the user's library.
    * </pre>
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -32,7 +32,7 @@ public interface ListMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of media items in the user's library.
+   * Output only. List of media items in the user's library.
    * </pre>
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -42,7 +42,7 @@ public interface ListMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of media items in the user's library.
+   * Output only. List of media items in the user's library.
    * </pre>
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -53,7 +53,7 @@ public interface ListMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of media items in the user's library.
+   * Output only. List of media items in the user's library.
    * </pre>
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -64,7 +64,7 @@ public interface ListMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] Token to use to get the next set of media items. Its presence
+   * Output only. Token to use to get the next set of media items. Its presence
    * is the only reliable indicator of more media items being available in the
    * next request.
    * </pre>
@@ -76,7 +76,7 @@ public interface ListMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] Token to use to get the next set of media items. Its presence
+   * Output only. Token to use to get the next set of media items. Its presence
    * is the only reliable indicator of more media items being available in the
    * next request.
    * </pre>

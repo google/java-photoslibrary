@@ -12,7 +12,7 @@ public interface ListAlbumsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of albums shown in the Albums tab of the user's Google
+   * Output only. List of albums shown in the Albums tab of the user's Google
    * Photos app.
    * </pre>
    *
@@ -23,7 +23,7 @@ public interface ListAlbumsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of albums shown in the Albums tab of the user's Google
+   * Output only. List of albums shown in the Albums tab of the user's Google
    * Photos app.
    * </pre>
    *
@@ -34,7 +34,7 @@ public interface ListAlbumsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of albums shown in the Albums tab of the user's Google
+   * Output only. List of albums shown in the Albums tab of the user's Google
    * Photos app.
    * </pre>
    *
@@ -45,7 +45,7 @@ public interface ListAlbumsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of albums shown in the Albums tab of the user's Google
+   * Output only. List of albums shown in the Albums tab of the user's Google
    * Photos app.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface ListAlbumsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of albums shown in the Albums tab of the user's Google
+   * Output only. List of albums shown in the Albums tab of the user's Google
    * Photos app.
    * </pre>
    *
@@ -68,7 +68,7 @@ public interface ListAlbumsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] Token to use to get the next set of albums. Populated if
+   * Output only. Token to use to get the next set of albums. Populated if
    * there are more albums to retrieve for this request.
    * </pre>
    *
@@ -79,7 +79,7 @@ public interface ListAlbumsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] Token to use to get the next set of albums. Populated if
+   * Output only. Token to use to get the next set of albums. Populated if
    * there are more albums to retrieve for this request.
    * </pre>
    *

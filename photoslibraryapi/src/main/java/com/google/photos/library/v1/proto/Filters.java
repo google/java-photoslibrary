@@ -109,6 +109,22 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
               excludeNonAppCreatedData_ = input.readBool();
               break;
             }
+          case 58:
+            {
+              com.google.photos.library.v1.proto.FeatureFilter.Builder subBuilder = null;
+              if (featureFilter_ != null) {
+                subBuilder = featureFilter_.toBuilder();
+              }
+              featureFilter_ =
+                  input.readMessage(
+                      com.google.photos.library.v1.proto.FeatureFilter.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(featureFilter_);
+                featureFilter_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -266,6 +282,47 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     return getMediaTypeFilter();
   }
 
+  public static final int FEATURE_FILTER_FIELD_NUMBER = 7;
+  private com.google.photos.library.v1.proto.FeatureFilter featureFilter_;
+  /**
+   *
+   *
+   * <pre>
+   * Filters the media items based on their features.
+   * </pre>
+   *
+   * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+   */
+  public boolean hasFeatureFilter() {
+    return featureFilter_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Filters the media items based on their features.
+   * </pre>
+   *
+   * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+   */
+  public com.google.photos.library.v1.proto.FeatureFilter getFeatureFilter() {
+    return featureFilter_ == null
+        ? com.google.photos.library.v1.proto.FeatureFilter.getDefaultInstance()
+        : featureFilter_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Filters the media items based on their features.
+   * </pre>
+   *
+   * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+   */
+  public com.google.photos.library.v1.proto.FeatureFilterOrBuilder getFeatureFilterOrBuilder() {
+    return getFeatureFilter();
+  }
+
   public static final int INCLUDE_ARCHIVED_MEDIA_FIELD_NUMBER = 4;
   private boolean includeArchivedMedia_;
   /**
@@ -328,6 +385,9 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     if (excludeNonAppCreatedData_ != false) {
       output.writeBool(5, excludeNonAppCreatedData_);
     }
+    if (featureFilter_ != null) {
+      output.writeMessage(7, getFeatureFilter());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -351,6 +411,9 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     }
     if (excludeNonAppCreatedData_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, excludeNonAppCreatedData_);
+    }
+    if (featureFilter_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getFeatureFilter());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -380,6 +443,10 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     if (hasMediaTypeFilter()) {
       if (!getMediaTypeFilter().equals(other.getMediaTypeFilter())) return false;
     }
+    if (hasFeatureFilter() != other.hasFeatureFilter()) return false;
+    if (hasFeatureFilter()) {
+      if (!getFeatureFilter().equals(other.getFeatureFilter())) return false;
+    }
     if (getIncludeArchivedMedia() != other.getIncludeArchivedMedia()) return false;
     if (getExcludeNonAppCreatedData() != other.getExcludeNonAppCreatedData()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -404,6 +471,10 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     if (hasMediaTypeFilter()) {
       hash = (37 * hash) + MEDIA_TYPE_FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getMediaTypeFilter().hashCode();
+    }
+    if (hasFeatureFilter()) {
+      hash = (37 * hash) + FEATURE_FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFeatureFilter().hashCode();
     }
     hash = (37 * hash) + INCLUDE_ARCHIVED_MEDIA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeArchivedMedia());
@@ -574,6 +645,12 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
         mediaTypeFilter_ = null;
         mediaTypeFilterBuilder_ = null;
       }
+      if (featureFilterBuilder_ == null) {
+        featureFilter_ = null;
+      } else {
+        featureFilter_ = null;
+        featureFilterBuilder_ = null;
+      }
       includeArchivedMedia_ = false;
 
       excludeNonAppCreatedData_ = false;
@@ -619,6 +696,11 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
         result.mediaTypeFilter_ = mediaTypeFilter_;
       } else {
         result.mediaTypeFilter_ = mediaTypeFilterBuilder_.build();
+      }
+      if (featureFilterBuilder_ == null) {
+        result.featureFilter_ = featureFilter_;
+      } else {
+        result.featureFilter_ = featureFilterBuilder_.build();
       }
       result.includeArchivedMedia_ = includeArchivedMedia_;
       result.excludeNonAppCreatedData_ = excludeNonAppCreatedData_;
@@ -679,6 +761,9 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasMediaTypeFilter()) {
         mergeMediaTypeFilter(other.getMediaTypeFilter());
+      }
+      if (other.hasFeatureFilter()) {
+        mergeFeatureFilter(other.getFeatureFilter());
       }
       if (other.getIncludeArchivedMedia() != false) {
         setIncludeArchivedMedia(other.getIncludeArchivedMedia());
@@ -1260,6 +1345,188 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
         mediaTypeFilter_ = null;
       }
       return mediaTypeFilterBuilder_;
+    }
+
+    private com.google.photos.library.v1.proto.FeatureFilter featureFilter_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.photos.library.v1.proto.FeatureFilter,
+            com.google.photos.library.v1.proto.FeatureFilter.Builder,
+            com.google.photos.library.v1.proto.FeatureFilterOrBuilder>
+        featureFilterBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Filters the media items based on their features.
+     * </pre>
+     *
+     * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+     */
+    public boolean hasFeatureFilter() {
+      return featureFilterBuilder_ != null || featureFilter_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters the media items based on their features.
+     * </pre>
+     *
+     * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+     */
+    public com.google.photos.library.v1.proto.FeatureFilter getFeatureFilter() {
+      if (featureFilterBuilder_ == null) {
+        return featureFilter_ == null
+            ? com.google.photos.library.v1.proto.FeatureFilter.getDefaultInstance()
+            : featureFilter_;
+      } else {
+        return featureFilterBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters the media items based on their features.
+     * </pre>
+     *
+     * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+     */
+    public Builder setFeatureFilter(com.google.photos.library.v1.proto.FeatureFilter value) {
+      if (featureFilterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        featureFilter_ = value;
+        onChanged();
+      } else {
+        featureFilterBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters the media items based on their features.
+     * </pre>
+     *
+     * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+     */
+    public Builder setFeatureFilter(
+        com.google.photos.library.v1.proto.FeatureFilter.Builder builderForValue) {
+      if (featureFilterBuilder_ == null) {
+        featureFilter_ = builderForValue.build();
+        onChanged();
+      } else {
+        featureFilterBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters the media items based on their features.
+     * </pre>
+     *
+     * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+     */
+    public Builder mergeFeatureFilter(com.google.photos.library.v1.proto.FeatureFilter value) {
+      if (featureFilterBuilder_ == null) {
+        if (featureFilter_ != null) {
+          featureFilter_ =
+              com.google.photos.library.v1.proto.FeatureFilter.newBuilder(featureFilter_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          featureFilter_ = value;
+        }
+        onChanged();
+      } else {
+        featureFilterBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters the media items based on their features.
+     * </pre>
+     *
+     * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+     */
+    public Builder clearFeatureFilter() {
+      if (featureFilterBuilder_ == null) {
+        featureFilter_ = null;
+        onChanged();
+      } else {
+        featureFilter_ = null;
+        featureFilterBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters the media items based on their features.
+     * </pre>
+     *
+     * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+     */
+    public com.google.photos.library.v1.proto.FeatureFilter.Builder getFeatureFilterBuilder() {
+
+      onChanged();
+      return getFeatureFilterFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters the media items based on their features.
+     * </pre>
+     *
+     * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+     */
+    public com.google.photos.library.v1.proto.FeatureFilterOrBuilder getFeatureFilterOrBuilder() {
+      if (featureFilterBuilder_ != null) {
+        return featureFilterBuilder_.getMessageOrBuilder();
+      } else {
+        return featureFilter_ == null
+            ? com.google.photos.library.v1.proto.FeatureFilter.getDefaultInstance()
+            : featureFilter_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters the media items based on their features.
+     * </pre>
+     *
+     * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.photos.library.v1.proto.FeatureFilter,
+            com.google.photos.library.v1.proto.FeatureFilter.Builder,
+            com.google.photos.library.v1.proto.FeatureFilterOrBuilder>
+        getFeatureFilterFieldBuilder() {
+      if (featureFilterBuilder_ == null) {
+        featureFilterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.photos.library.v1.proto.FeatureFilter,
+                com.google.photos.library.v1.proto.FeatureFilter.Builder,
+                com.google.photos.library.v1.proto.FeatureFilterOrBuilder>(
+                getFeatureFilter(), getParentForChildren(), isClean());
+        featureFilter_ = null;
+      }
+      return featureFilterBuilder_;
     }
 
     private boolean includeArchivedMedia_;

@@ -113,7 +113,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] List of media items that match the search parameters.
+   * Output only. List of media items that match the search parameters.
    * </pre>
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -125,7 +125,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] List of media items that match the search parameters.
+   * Output only. List of media items that match the search parameters.
    * </pre>
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -138,7 +138,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] List of media items that match the search parameters.
+   * Output only. List of media items that match the search parameters.
    * </pre>
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -150,7 +150,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] List of media items that match the search parameters.
+   * Output only. List of media items that match the search parameters.
    * </pre>
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -162,7 +162,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] List of media items that match the search parameters.
+   * Output only. List of media items that match the search parameters.
    * </pre>
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -177,7 +177,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] Use this token to get the next set of media items. Its
+   * Output only. Use this token to get the next set of media items. Its
    * presence is the only reliable indicator of more media items being available
    * in the next request.
    * </pre>
@@ -199,7 +199,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] Use this token to get the next set of media items. Its
+   * Output only. Use this token to get the next set of media items. Its
    * presence is the only reliable indicator of more media items being available
    * in the next request.
    * </pre>
@@ -617,7 +617,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -633,7 +633,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -649,7 +649,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -665,7 +665,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -687,7 +687,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -707,7 +707,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -729,7 +729,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -751,7 +751,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -770,7 +770,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -790,7 +790,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -810,7 +810,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -829,7 +829,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -848,7 +848,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -860,7 +860,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -876,7 +876,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -893,7 +893,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -906,7 +906,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -919,7 +919,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of media items that match the search parameters.
+     * Output only. List of media items that match the search parameters.
      * </pre>
      *
      * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
@@ -951,7 +951,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] Use this token to get the next set of media items. Its
+     * Output only. Use this token to get the next set of media items. Its
      * presence is the only reliable indicator of more media items being available
      * in the next request.
      * </pre>
@@ -973,7 +973,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] Use this token to get the next set of media items. Its
+     * Output only. Use this token to get the next set of media items. Its
      * presence is the only reliable indicator of more media items being available
      * in the next request.
      * </pre>
@@ -995,7 +995,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] Use this token to get the next set of media items. Its
+     * Output only. Use this token to get the next set of media items. Its
      * presence is the only reliable indicator of more media items being available
      * in the next request.
      * </pre>
@@ -1015,7 +1015,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] Use this token to get the next set of media items. Its
+     * Output only. Use this token to get the next set of media items. Its
      * presence is the only reliable indicator of more media items being available
      * in the next request.
      * </pre>
@@ -1032,7 +1032,7 @@ public final class SearchMediaItemsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] Use this token to get the next set of media items. Its
+     * Output only. Use this token to get the next set of media items. Its
      * presence is the only reliable indicator of more media items being available
      * in the next request.
      * </pre>

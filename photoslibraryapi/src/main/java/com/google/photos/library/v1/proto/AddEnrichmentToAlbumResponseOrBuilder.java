@@ -12,7 +12,7 @@ public interface AddEnrichmentToAlbumResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] Enrichment which was added.
+   * Output only. Enrichment which was added.
    * </pre>
    *
    * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>
@@ -22,7 +22,7 @@ public interface AddEnrichmentToAlbumResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] Enrichment which was added.
+   * Output only. Enrichment which was added.
    * </pre>
    *
    * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>
@@ -32,7 +32,7 @@ public interface AddEnrichmentToAlbumResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] Enrichment which was added.
+   * Output only. Enrichment which was added.
    * </pre>
    *
    * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>

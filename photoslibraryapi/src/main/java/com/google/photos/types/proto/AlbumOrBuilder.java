@@ -147,9 +147,12 @@ public interface AlbumOrBuilder
    *
    * <pre>
    * [Output only] A URL to the cover photo's bytes. This shouldn't be used as
-   * is. Parameters should be appended to this URL before use. For example,
-   * `'=w2048-h1024'` sets the dimensions of
-   * the cover photo to have a width of 2048 px and height of 1024 px.
+   * is. Parameters should be appended to this URL before use. See the
+   * [developer
+   * documentation](https://developers.google.com/photos/library/guides/access-media-items#base-urls)
+   * for a complete list of supported parameters. For example,
+   * `'=w2048-h1024'` sets the dimensions of the cover photo to have a width of
+   * 2048 px and height of 1024 px.
    * </pre>
    *
    * <code>string cover_photo_base_url = 7;</code>
@@ -160,9 +163,12 @@ public interface AlbumOrBuilder
    *
    * <pre>
    * [Output only] A URL to the cover photo's bytes. This shouldn't be used as
-   * is. Parameters should be appended to this URL before use. For example,
-   * `'=w2048-h1024'` sets the dimensions of
-   * the cover photo to have a width of 2048 px and height of 1024 px.
+   * is. Parameters should be appended to this URL before use. See the
+   * [developer
+   * documentation](https://developers.google.com/photos/library/guides/access-media-items#base-urls)
+   * for a complete list of supported parameters. For example,
+   * `'=w2048-h1024'` sets the dimensions of the cover photo to have a width of
+   * 2048 px and height of 1024 px.
    * </pre>
    *
    * <code>string cover_photo_base_url = 7;</code>

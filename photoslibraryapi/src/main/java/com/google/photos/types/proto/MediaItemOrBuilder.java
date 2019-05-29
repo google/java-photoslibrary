@@ -81,9 +81,12 @@ public interface MediaItemOrBuilder
    *
    *
    * <pre>
-   * A URL to the media item's bytes. This shouldn't be used directly to access
-   * the media item. For example, `'=w2048-h1024'` will set the dimensions of a
-   * media item of type photo to have a width of 2048 px and height of 1024 px.
+   * A URL to the media item's bytes. This shouldn't be used as is. Parameters
+   * should be appended to this URL before use. See the [developer
+   * documentation](https://developers.google.com/photos/library/guides/access-media-items#base-urls)
+   * for a complete list of supported parameters. For example, `'=w2048-h1024'`
+   * will set the dimensions of a media item of type photo to have a width of
+   * 2048 px and height of 1024 px.
    * </pre>
    *
    * <code>string base_url = 4;</code>
@@ -93,9 +96,12 @@ public interface MediaItemOrBuilder
    *
    *
    * <pre>
-   * A URL to the media item's bytes. This shouldn't be used directly to access
-   * the media item. For example, `'=w2048-h1024'` will set the dimensions of a
-   * media item of type photo to have a width of 2048 px and height of 1024 px.
+   * A URL to the media item's bytes. This shouldn't be used as is. Parameters
+   * should be appended to this URL before use. See the [developer
+   * documentation](https://developers.google.com/photos/library/guides/access-media-items#base-urls)
+   * for a complete list of supported parameters. For example, `'=w2048-h1024'`
+   * will set the dimensions of a media item of type photo to have a width of
+   * 2048 px and height of 1024 px.
    * </pre>
    *
    * <code>string base_url = 4;</code>

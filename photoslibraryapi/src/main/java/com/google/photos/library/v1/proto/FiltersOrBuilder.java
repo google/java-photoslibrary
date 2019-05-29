@@ -105,6 +105,37 @@ public interface FiltersOrBuilder
    *
    *
    * <pre>
+   * Filters the media items based on their features.
+   * </pre>
+   *
+   * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+   */
+  boolean hasFeatureFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Filters the media items based on their features.
+   * </pre>
+   *
+   * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+   */
+  com.google.photos.library.v1.proto.FeatureFilter getFeatureFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Filters the media items based on their features.
+   * </pre>
+   *
+   * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+   */
+  com.google.photos.library.v1.proto.FeatureFilterOrBuilder getFeatureFilterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * If set, the results include media items that the user has archived.
    * Defaults to false (archived media items aren't included).
    * </pre>

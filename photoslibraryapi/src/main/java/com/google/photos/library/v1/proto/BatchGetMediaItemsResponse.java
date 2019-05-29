@@ -106,7 +106,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output only] List of media items retrieved.
+   * Output only. List of media items retrieved.
    * Note that even if the call to BatchGetMediaItems succeeds, there may have
    * been failures for some media items in the batch. These failures are
    * indicated in each
@@ -123,7 +123,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output only] List of media items retrieved.
+   * Output only. List of media items retrieved.
    * Note that even if the call to BatchGetMediaItems succeeds, there may have
    * been failures for some media items in the batch. These failures are
    * indicated in each
@@ -140,7 +140,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output only] List of media items retrieved.
+   * Output only. List of media items retrieved.
    * Note that even if the call to BatchGetMediaItems succeeds, there may have
    * been failures for some media items in the batch. These failures are
    * indicated in each
@@ -156,7 +156,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output only] List of media items retrieved.
+   * Output only. List of media items retrieved.
    * Note that even if the call to BatchGetMediaItems succeeds, there may have
    * been failures for some media items in the batch. These failures are
    * indicated in each
@@ -172,7 +172,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output only] List of media items retrieved.
+   * Output only. List of media items retrieved.
    * Note that even if the call to BatchGetMediaItems succeeds, there may have
    * been failures for some media items in the batch. These failures are
    * indicated in each
@@ -572,7 +572,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -593,7 +593,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -613,7 +613,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -633,7 +633,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -660,7 +660,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -684,7 +684,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -710,7 +710,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -737,7 +737,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -761,7 +761,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -785,7 +785,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -809,7 +809,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -832,7 +832,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -855,7 +855,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -872,7 +872,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -893,7 +893,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -914,7 +914,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -931,7 +931,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each
@@ -950,7 +950,7 @@ public final class BatchGetMediaItemsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] List of media items retrieved.
+     * Output only. List of media items retrieved.
      * Note that even if the call to BatchGetMediaItems succeeds, there may have
      * been failures for some media items in the batch. These failures are
      * indicated in each

@@ -12,7 +12,7 @@ public interface ShareAlbumResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] Information about the shared album.
+   * Output only. Information about the shared album.
    * </pre>
    *
    * <code>.google.photos.types.ShareInfo share_info = 1;</code>
@@ -22,7 +22,7 @@ public interface ShareAlbumResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] Information about the shared album.
+   * Output only. Information about the shared album.
    * </pre>
    *
    * <code>.google.photos.types.ShareInfo share_info = 1;</code>
@@ -32,7 +32,7 @@ public interface ShareAlbumResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] Information about the shared album.
+   * Output only. Information about the shared album.
    * </pre>
    *
    * <code>.google.photos.types.ShareInfo share_info = 1;</code>

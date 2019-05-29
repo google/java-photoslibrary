@@ -12,7 +12,7 @@ public interface BatchCreateMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of media items created.
+   * Output only. List of media items created.
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
@@ -23,7 +23,7 @@ public interface BatchCreateMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of media items created.
+   * Output only. List of media items created.
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
@@ -33,7 +33,7 @@ public interface BatchCreateMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of media items created.
+   * Output only. List of media items created.
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
@@ -43,7 +43,7 @@ public interface BatchCreateMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of media items created.
+   * Output only. List of media items created.
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
@@ -54,7 +54,7 @@ public interface BatchCreateMediaItemsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of media items created.
+   * Output only. List of media items created.
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>

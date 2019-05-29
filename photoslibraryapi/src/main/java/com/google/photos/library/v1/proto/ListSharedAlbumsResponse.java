@@ -113,7 +113,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] List of shared albums.
+   * Output only. List of shared albums.
    * </pre>
    *
    * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -125,7 +125,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] List of shared albums.
+   * Output only. List of shared albums.
    * </pre>
    *
    * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -138,7 +138,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] List of shared albums.
+   * Output only. List of shared albums.
    * </pre>
    *
    * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -150,7 +150,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] List of shared albums.
+   * Output only. List of shared albums.
    * </pre>
    *
    * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -162,7 +162,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] List of shared albums.
+   * Output only. List of shared albums.
    * </pre>
    *
    * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -177,7 +177,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] Token to use to get the next set of shared albums. Populated
+   * Output only. Token to use to get the next set of shared albums. Populated
    * if there are more shared albums to retrieve for this request.
    * </pre>
    *
@@ -198,7 +198,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] Token to use to get the next set of shared albums. Populated
+   * Output only. Token to use to get the next set of shared albums. Populated
    * if there are more shared albums to retrieve for this request.
    * </pre>
    *
@@ -615,7 +615,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -631,7 +631,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -647,7 +647,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -663,7 +663,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -685,7 +685,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -705,7 +705,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -727,7 +727,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -749,7 +749,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -768,7 +768,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -788,7 +788,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -808,7 +808,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -827,7 +827,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -846,7 +846,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -858,7 +858,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -874,7 +874,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -891,7 +891,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -904,7 +904,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -917,7 +917,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] List of shared albums.
+     * Output only. List of shared albums.
      * </pre>
      *
      * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
@@ -949,7 +949,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] Token to use to get the next set of shared albums. Populated
+     * Output only. Token to use to get the next set of shared albums. Populated
      * if there are more shared albums to retrieve for this request.
      * </pre>
      *
@@ -970,7 +970,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] Token to use to get the next set of shared albums. Populated
+     * Output only. Token to use to get the next set of shared albums. Populated
      * if there are more shared albums to retrieve for this request.
      * </pre>
      *
@@ -991,7 +991,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] Token to use to get the next set of shared albums. Populated
+     * Output only. Token to use to get the next set of shared albums. Populated
      * if there are more shared albums to retrieve for this request.
      * </pre>
      *
@@ -1010,7 +1010,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] Token to use to get the next set of shared albums. Populated
+     * Output only. Token to use to get the next set of shared albums. Populated
      * if there are more shared albums to retrieve for this request.
      * </pre>
      *
@@ -1026,7 +1026,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] Token to use to get the next set of shared albums. Populated
+     * Output only. Token to use to get the next set of shared albums. Populated
      * if there are more shared albums to retrieve for this request.
      * </pre>
      *

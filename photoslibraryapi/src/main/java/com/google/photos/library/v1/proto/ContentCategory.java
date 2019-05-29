@@ -215,6 +215,76 @@ public enum ContentCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UTILITY = 19;</code>
    */
   UTILITY(19),
+  /**
+   *
+   *
+   * <pre>
+   * Media items containing art.
+   * </pre>
+   *
+   * <code>ARTS = 20;</code>
+   */
+  ARTS(20),
+  /**
+   *
+   *
+   * <pre>
+   * Media items containing crafts.
+   * </pre>
+   *
+   * <code>CRAFTS = 21;</code>
+   */
+  CRAFTS(21),
+  /**
+   *
+   *
+   * <pre>
+   * Media items related to fashion.
+   * </pre>
+   *
+   * <code>FASHION = 22;</code>
+   */
+  FASHION(22),
+  /**
+   *
+   *
+   * <pre>
+   * Media items containing houses.
+   * </pre>
+   *
+   * <code>HOUSES = 23;</code>
+   */
+  HOUSES(23),
+  /**
+   *
+   *
+   * <pre>
+   * Media items containing gardens.
+   * </pre>
+   *
+   * <code>GARDENS = 24;</code>
+   */
+  GARDENS(24),
+  /**
+   *
+   *
+   * <pre>
+   * Media items containing flowers.
+   * </pre>
+   *
+   * <code>FLOWERS = 25;</code>
+   */
+  FLOWERS(25),
+  /**
+   *
+   *
+   * <pre>
+   * Media items taken of holidays.
+   * </pre>
+   *
+   * <code>HOLIDAYS = 26;</code>
+   */
+  HOLIDAYS(26),
   UNRECOGNIZED(-1),
   ;
 
@@ -420,6 +490,76 @@ public enum ContentCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UTILITY = 19;</code>
    */
   public static final int UTILITY_VALUE = 19;
+  /**
+   *
+   *
+   * <pre>
+   * Media items containing art.
+   * </pre>
+   *
+   * <code>ARTS = 20;</code>
+   */
+  public static final int ARTS_VALUE = 20;
+  /**
+   *
+   *
+   * <pre>
+   * Media items containing crafts.
+   * </pre>
+   *
+   * <code>CRAFTS = 21;</code>
+   */
+  public static final int CRAFTS_VALUE = 21;
+  /**
+   *
+   *
+   * <pre>
+   * Media items related to fashion.
+   * </pre>
+   *
+   * <code>FASHION = 22;</code>
+   */
+  public static final int FASHION_VALUE = 22;
+  /**
+   *
+   *
+   * <pre>
+   * Media items containing houses.
+   * </pre>
+   *
+   * <code>HOUSES = 23;</code>
+   */
+  public static final int HOUSES_VALUE = 23;
+  /**
+   *
+   *
+   * <pre>
+   * Media items containing gardens.
+   * </pre>
+   *
+   * <code>GARDENS = 24;</code>
+   */
+  public static final int GARDENS_VALUE = 24;
+  /**
+   *
+   *
+   * <pre>
+   * Media items containing flowers.
+   * </pre>
+   *
+   * <code>FLOWERS = 25;</code>
+   */
+  public static final int FLOWERS_VALUE = 25;
+  /**
+   *
+   *
+   * <pre>
+   * Media items taken of holidays.
+   * </pre>
+   *
+   * <code>HOLIDAYS = 26;</code>
+   */
+  public static final int HOLIDAYS_VALUE = 26;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -477,6 +617,20 @@ public enum ContentCategory implements com.google.protobuf.ProtocolMessageEnum {
         return SCREENSHOTS;
       case 19:
         return UTILITY;
+      case 20:
+        return ARTS;
+      case 21:
+        return CRAFTS;
+      case 22:
+        return FASHION;
+      case 23:
+        return HOUSES;
+      case 24:
+        return GARDENS;
+      case 25:
+        return FLOWERS;
+      case 26:
+        return HOLIDAYS;
       default:
         return null;
     }

@@ -108,7 +108,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output only] List of media items created.
+   * Output only. List of media items created.
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
@@ -121,7 +121,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output only] List of media items created.
+   * Output only. List of media items created.
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
@@ -134,7 +134,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output only] List of media items created.
+   * Output only. List of media items created.
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
@@ -146,7 +146,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output only] List of media items created.
+   * Output only. List of media items created.
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
@@ -158,7 +158,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output only] List of media items created.
+   * Output only. List of media items created.
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
@@ -556,7 +556,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -574,7 +574,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -591,7 +591,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -608,7 +608,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -632,7 +632,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -653,7 +653,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -677,7 +677,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -701,7 +701,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -722,7 +722,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -743,7 +743,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -765,7 +765,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -785,7 +785,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -805,7 +805,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -819,7 +819,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -837,7 +837,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -855,7 +855,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -870,7 +870,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
@@ -886,7 +886,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output only] List of media items created.
+     * Output only. List of media items created.
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;
