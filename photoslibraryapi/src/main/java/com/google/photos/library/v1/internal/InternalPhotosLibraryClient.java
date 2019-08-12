@@ -271,8 +271,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * href="/photos/library/guides/upload-media"&gt;Uploading media&lt;/a&gt;.
    *
    * <p>This call adds the media item to the library. If an album `id` is specified, the call adds
-   * the media item to the album too. By default, the media item will be added to the end of the
-   * library or album.
+   * the media item to the album too. Each album can contain up to 20,000 media items. By default,
+   * the media item will be added to the end of the library or album.
    *
    * <p>If an album `id` and position are both defined, the media item is added to the album at the
    * specified position.
@@ -323,8 +323,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * href="/photos/library/guides/upload-media"&gt;Uploading media&lt;/a&gt;.
    *
    * <p>This call adds the media item to the library. If an album `id` is specified, the call adds
-   * the media item to the album too. By default, the media item will be added to the end of the
-   * library or album.
+   * the media item to the album too. Each album can contain up to 20,000 media items. By default,
+   * the media item will be added to the end of the library or album.
    *
    * <p>If an album `id` and position are both defined, the media item is added to the album at the
    * specified position.
@@ -362,8 +362,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * href="/photos/library/guides/upload-media"&gt;Uploading media&lt;/a&gt;.
    *
    * <p>This call adds the media item to the library. If an album `id` is specified, the call adds
-   * the media item to the album too. By default, the media item will be added to the end of the
-   * library or album.
+   * the media item to the album too. Each album can contain up to 20,000 media items. By default,
+   * the media item will be added to the end of the library or album.
    *
    * <p>If an album `id` and position are both defined, the media item is added to the album at the
    * specified position.
@@ -398,6 +398,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Media items are added to the end of the album. If multiple media items are given, they are
    * added in the order specified in this call.
+   *
+   * <p>Each album can contain up to 20,000 media items.
    *
    * <p>Only media items that are in the user's library can be added to an album. For albums that
    * are shared, the album must either be owned by the user or the user must have joined the album
@@ -441,6 +443,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Media items are added to the end of the album. If multiple media items are given, they are
    * added in the order specified in this call.
    *
+   * <p>Each album can contain up to 20,000 media items.
+   *
    * <p>Only media items that are in the user's library can be added to an album. For albums that
    * are shared, the album must either be owned by the user or the user must have joined the album
    * as a collaborator.
@@ -477,6 +481,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Media items are added to the end of the album. If multiple media items are given, they are
    * added in the order specified in this call.
+   *
+   * <p>Each album can contain up to 20,000 media items.
    *
    * <p>Only media items that are in the user's library can be added to an album. For albums that
    * are shared, the album must either be owned by the user or the user must have joined the album

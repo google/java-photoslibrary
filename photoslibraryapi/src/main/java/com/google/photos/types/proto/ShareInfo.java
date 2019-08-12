@@ -87,6 +87,11 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
               isJoined_ = input.readBool();
               break;
             }
+          case 40:
+            {
+              isOwned_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -271,6 +276,21 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
     return isJoined_;
   }
 
+  public static final int IS_OWNED_FIELD_NUMBER = 5;
+  private boolean isOwned_;
+  /**
+   *
+   *
+   * <pre>
+   * True if the user owns the album.
+   * </pre>
+   *
+   * <code>bool is_owned = 5;</code>
+   */
+  public boolean getIsOwned() {
+    return isOwned_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -297,6 +317,9 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
     if (isJoined_ != false) {
       output.writeBool(4, isJoined_);
     }
+    if (isOwned_ != false) {
+      output.writeBool(5, isOwned_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -317,6 +340,9 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (isJoined_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, isJoined_);
+    }
+    if (isOwned_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, isOwned_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -340,6 +366,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
     if (!getShareableUrl().equals(other.getShareableUrl())) return false;
     if (!getShareToken().equals(other.getShareToken())) return false;
     if (getIsJoined() != other.getIsJoined()) return false;
+    if (getIsOwned() != other.getIsOwned()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -361,6 +388,8 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getShareToken().hashCode();
     hash = (37 * hash) + IS_JOINED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsJoined());
+    hash = (37 * hash) + IS_OWNED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsOwned());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -519,6 +548,8 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
 
       isJoined_ = false;
 
+      isOwned_ = false;
+
       return this;
     }
 
@@ -554,6 +585,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
       result.shareableUrl_ = shareableUrl_;
       result.shareToken_ = shareToken_;
       result.isJoined_ = isJoined_;
+      result.isOwned_ = isOwned_;
       onBuilt();
       return result;
     }
@@ -616,6 +648,9 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getIsJoined() != false) {
         setIsJoined(other.getIsJoined());
+      }
+      if (other.getIsOwned() != false) {
+        setIsOwned(other.getIsOwned());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1075,6 +1110,50 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder clearIsJoined() {
 
       isJoined_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean isOwned_;
+    /**
+     *
+     *
+     * <pre>
+     * True if the user owns the album.
+     * </pre>
+     *
+     * <code>bool is_owned = 5;</code>
+     */
+    public boolean getIsOwned() {
+      return isOwned_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * True if the user owns the album.
+     * </pre>
+     *
+     * <code>bool is_owned = 5;</code>
+     */
+    public Builder setIsOwned(boolean value) {
+
+      isOwned_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * True if the user owns the album.
+     * </pre>
+     *
+     * <code>bool is_owned = 5;</code>
+     */
+    public Builder clearIsOwned() {
+
+      isOwned_ = false;
       onChanged();
       return this;
     }

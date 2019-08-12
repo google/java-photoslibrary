@@ -1089,8 +1089,9 @@ public final class PhotosLibraryGrpc {
      * Step 1, uploading the raw bytes to a Google Server, see
      * &lt;a href="/photos/library/guides/upload-media"&gt;Uploading media&lt;/a&gt;.
      * This call adds the media item to the library. If an album `id` is
-     * specified, the call adds the media item to the album too. By default, the
-     * media item will be added to the end of the library or album.
+     * specified, the call adds the media item to the album too. Each album can
+     * contain up to 20,000 media items. By default, the media item will be added
+     * to the end of the library or album.
      * If an album `id` and position are both defined, the media item is
      * added to the album at the specified position.
      * If the call contains multiple media items, they're added at the specified
@@ -1117,6 +1118,7 @@ public final class PhotosLibraryGrpc {
      * developer via the API.
      * Media items are added to the end of the album. If multiple media items are
      * given, they are added in the order specified in this call.
+     * Each album can contain up to 20,000 media items.
      * Only media items that are in the user's library can be added to an
      * album. For albums that are shared, the album must either be owned by the
      * user or the user must have joined the album as a collaborator.
@@ -1528,8 +1530,9 @@ public final class PhotosLibraryGrpc {
      * Step 1, uploading the raw bytes to a Google Server, see
      * &lt;a href="/photos/library/guides/upload-media"&gt;Uploading media&lt;/a&gt;.
      * This call adds the media item to the library. If an album `id` is
-     * specified, the call adds the media item to the album too. By default, the
-     * media item will be added to the end of the library or album.
+     * specified, the call adds the media item to the album too. Each album can
+     * contain up to 20,000 media items. By default, the media item will be added
+     * to the end of the library or album.
      * If an album `id` and position are both defined, the media item is
      * added to the album at the specified position.
      * If the call contains multiple media items, they're added at the specified
@@ -1559,6 +1562,7 @@ public final class PhotosLibraryGrpc {
      * developer via the API.
      * Media items are added to the end of the album. If multiple media items are
      * given, they are added in the order specified in this call.
+     * Each album can contain up to 20,000 media items.
      * Only media items that are in the user's library can be added to an
      * album. For albums that are shared, the album must either be owned by the
      * user or the user must have joined the album as a collaborator.
@@ -1892,8 +1896,9 @@ public final class PhotosLibraryGrpc {
      * Step 1, uploading the raw bytes to a Google Server, see
      * &lt;a href="/photos/library/guides/upload-media"&gt;Uploading media&lt;/a&gt;.
      * This call adds the media item to the library. If an album `id` is
-     * specified, the call adds the media item to the album too. By default, the
-     * media item will be added to the end of the library or album.
+     * specified, the call adds the media item to the album too. Each album can
+     * contain up to 20,000 media items. By default, the media item will be added
+     * to the end of the library or album.
      * If an album `id` and position are both defined, the media item is
      * added to the album at the specified position.
      * If the call contains multiple media items, they're added at the specified
@@ -1918,6 +1923,7 @@ public final class PhotosLibraryGrpc {
      * developer via the API.
      * Media items are added to the end of the album. If multiple media items are
      * given, they are added in the order specified in this call.
+     * Each album can contain up to 20,000 media items.
      * Only media items that are in the user's library can be added to an
      * album. For albums that are shared, the album must either be owned by the
      * user or the user must have joined the album as a collaborator.
@@ -2193,8 +2199,9 @@ public final class PhotosLibraryGrpc {
      * Step 1, uploading the raw bytes to a Google Server, see
      * &lt;a href="/photos/library/guides/upload-media"&gt;Uploading media&lt;/a&gt;.
      * This call adds the media item to the library. If an album `id` is
-     * specified, the call adds the media item to the album too. By default, the
-     * media item will be added to the end of the library or album.
+     * specified, the call adds the media item to the album too. Each album can
+     * contain up to 20,000 media items. By default, the media item will be added
+     * to the end of the library or album.
      * If an album `id` and position are both defined, the media item is
      * added to the album at the specified position.
      * If the call contains multiple media items, they're added at the specified
@@ -2221,6 +2228,7 @@ public final class PhotosLibraryGrpc {
      * developer via the API.
      * Media items are added to the end of the album. If multiple media items are
      * given, they are added in the order specified in this call.
+     * Each album can contain up to 20,000 media items.
      * Only media items that are in the user's library can be added to an
      * album. For albums that are shared, the album must either be owned by the
      * user or the user must have joined the album as a collaborator.

@@ -98,4 +98,15 @@ public interface ShareInfoOrBuilder
    * <code>bool is_joined = 4;</code>
    */
   boolean getIsJoined();
+
+  /**
+   *
+   *
+   * <pre>
+   * True if the user owns the album.
+   * </pre>
+   *
+   * <code>bool is_owned = 5;</code>
+   */
+  boolean getIsOwned();
 }
