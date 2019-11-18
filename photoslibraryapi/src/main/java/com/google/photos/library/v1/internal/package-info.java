@@ -38,4 +38,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.photos.library.v1.internal;
+
+import javax.annotation.Generated;

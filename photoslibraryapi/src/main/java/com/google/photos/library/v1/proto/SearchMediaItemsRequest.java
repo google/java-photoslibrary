@@ -179,9 +179,9 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Maximum number of media items to return in the response. The default number
-   * of media items to return at a time is 25. The maximum
-   * `pageSize` is 100.
+   * Maximum number of media items to return in the response. Fewer media items
+   * might be returned than the specified number. The default `pageSize` is 25,
+   * the maximum is 100.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -773,9 +773,9 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Maximum number of media items to return in the response. The default number
-     * of media items to return at a time is 25. The maximum
-     * `pageSize` is 100.
+     * Maximum number of media items to return in the response. Fewer media items
+     * might be returned than the specified number. The default `pageSize` is 25,
+     * the maximum is 100.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -787,9 +787,9 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Maximum number of media items to return in the response. The default number
-     * of media items to return at a time is 25. The maximum
-     * `pageSize` is 100.
+     * Maximum number of media items to return in the response. Fewer media items
+     * might be returned than the specified number. The default `pageSize` is 25,
+     * the maximum is 100.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -804,9 +804,9 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Maximum number of media items to return in the response. The default number
-     * of media items to return at a time is 25. The maximum
-     * `pageSize` is 100.
+     * Maximum number of media items to return in the response. Fewer media items
+     * might be returned than the specified number. The default `pageSize` is 25,
+     * the maximum is 100.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

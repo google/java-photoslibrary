@@ -12,8 +12,9 @@ public interface ListAlbumsRequestOrBuilder
    *
    *
    * <pre>
-   * Maximum number of albums to return in the response. The default number of
-   * albums to return at a time is 20. The maximum `pageSize` is 50.
+   * Maximum number of albums to return in the response. Fewer albums might be
+   * returned than the specified number. The default `pageSize` is 20, the
+   * maximum is 50.
    * </pre>
    *
    * <code>int32 page_size = 1;</code>
