@@ -3,6 +3,7 @@ package com.google.photos.library.sample.views;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.lang.Thread.State;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -11,12 +12,17 @@ public abstract class AbstractCustomView extends JFrame {
   private static final String DEFAULT_DIALOG_BACKGROUND = "0xf8f9fa";
 
   private final LoadingView loadingView;
-  private final Thread updateThread;
+
+  private final Thread initializationThread;
+
+  private final Object updateLock = new Object();
+  private Thread updateThread = null;
+  private boolean rerunUpdate = false;
 
   public AbstractCustomView() {
     hideView();
     loadingView = LoadingView.getLoadingView();
-    updateThread = getUpdateThread();
+    initializationThread = getInitializationThread();
 
     getRootPane().setOpaque(false);
     getContentPane().setBackground(Color.decode(DEFAULT_DIALOG_BACKGROUND));
@@ -32,14 +38,24 @@ public abstract class AbstractCustomView extends JFrame {
 
   /** Initializes the view in a new thread and shows loading indicator. */
   public final void initializeView() {
-    loadingView.showView();
-    getInitializationThread().start();
+    if (initializationThread.getState() == State.NEW) {
+      loadingView.showView();
+      initializationThread.start();
+    }
   }
 
   /** Updates the view in a new thread and shows loading indicator. */
   public final void updateView() {
-    loadingView.showView();
-    updateThread.start();
+    synchronized (updateLock) {
+      if ((updateThread == null || updateThread.getState() == State.TERMINATED)
+          && initializationThread.getState() == State.TERMINATED) {
+        updateThread = getUpdateThread();
+        loadingView.showView();
+        updateThread.start();
+      } else {
+        rerunUpdate = true;
+      }
+    }
   }
 
   /** View initialization method */
@@ -49,15 +65,26 @@ public abstract class AbstractCustomView extends JFrame {
   protected abstract void update() throws Exception;
 
   private final Thread getUpdateThread() {
-    return new Thread(
-        () -> {
-          try {
-            update();
+    final Runnable updateRunnable = () -> {
+      try {
+        update();
+      } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, e.getMessage());
+      }
+    };
+    return new Thread(() -> {
+      while (true) {
+        updateRunnable.run();
+        synchronized (updateLock) {
+          if (rerunUpdate) {
+            rerunUpdate = false;
+          } else {
             loadingView.hideView();
-          } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            break;
           }
-        });
+        }
+      }
+    });
   }
 
   private final Thread getInitializationThread() {
@@ -67,8 +94,16 @@ public abstract class AbstractCustomView extends JFrame {
             moveToCenter();
             initialize();
             requestFocusInWindow();
-            loadingView.hideView();
             showView();
+            synchronized (updateLock) {
+              if (rerunUpdate) {
+                rerunUpdate = false;
+                updateThread = getUpdateThread();
+                updateThread.start();
+              } else {
+                loadingView.hideView();
+              }
+            }
           } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
           }
