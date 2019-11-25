@@ -48,6 +48,7 @@ import java.awt.FontFormatException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.net.URLConnection;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.BiConsumer;
@@ -213,7 +214,7 @@ public final class AlbumDemo {
         try {
           UploadMediaItemRequest.Builder uploadRequestBuilder = UploadMediaItemRequest.newBuilder();
           uploadRequestBuilder
-              .setFileName(mediaItemPath)
+              .setMimeType(URLConnection.guessContentTypeFromName(mediaItemPath))
               .setDataFile(new RandomAccessFile(mediaItemPath, FILE_ACCESS_MODE));
           ApiFuture<UploadMediaItemResponse> uploadResponseFuture =
               client.uploadMediaItemCallable().futureCall(uploadRequestBuilder.build());
@@ -222,7 +223,8 @@ public final class AlbumDemo {
           LoadingView.getLoadingView().showView();
 
           uploadResponseFuture.addListener(
-              getOnUploadFinished(client, photoListView, uploadResponseFuture, album),
+              getOnUploadFinished(
+                  client, photoListView, uploadResponseFuture, album, mediaItemPath),
               MoreExecutors.directExecutor());
         } catch (FileNotFoundException e) {
           LoadingView.getLoadingView().hideView();
@@ -236,7 +238,8 @@ public final class AlbumDemo {
       PhotosLibraryClient client,
       PhotoListView photoListView,
       ApiFuture<UploadMediaItemResponse> uploadResponseFuture,
-      Album album) {
+      Album album,
+      String fileName) {
     return () -> {
       try {
         UploadMediaItemResponse uploadResponse = uploadResponseFuture.get();
@@ -248,6 +251,7 @@ public final class AlbumDemo {
           createRequestBuilder
               .addNewMediaItemsBuilder()
               .getSimpleMediaItemBuilder()
+              .setFileName(fileName)
               .setUploadToken(uploadResponse.getUploadToken().get());
           client.batchCreateMediaItems(createRequestBuilder.build());
 
@@ -255,6 +259,9 @@ public final class AlbumDemo {
           LoadingView.getLoadingView().hideView();
 
           photoListView.updateView();
+        } else {
+          LoadingView.getLoadingView().hideView();
+          JOptionPane.showMessageDialog(photoListView, uploadResponse.getError());
         }
       } catch (Exception e) {
         LoadingView.getLoadingView().hideView();

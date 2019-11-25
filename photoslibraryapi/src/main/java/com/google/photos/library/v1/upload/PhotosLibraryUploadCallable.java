@@ -65,6 +65,7 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
   private static final String FILE_SIZE_HEADER = "X-Goog-Upload-Raw-Size";
   private static final String UPLOAD_PROTOCOL_HEADER = "X-Goog-Upload-Protocol";
   private static final String UPLOAD_COMMAND_HEADER = "X-Goog-Upload-Command";
+  private static final String UPLOAD_CONTENT_TYPE_HEADER = "X-Goog-Upload-Content-Type";
   private static final String UPLOAD_STATUS_HEADER = "X-Goog-Upload-Status";
   private static final String UPLOAD_URL_HEADER = "X-Goog-Upload-URL";
   private static final String UPLOAD_OFFSET_HEADER = "X-Goog-Upload-Offset";
@@ -206,8 +207,15 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
     HttpPost httpPost = createAuthenticatedPostRequest(PhotosLibrarySettings.getUploadEndpoint());
     httpPost.addHeader(UPLOAD_PROTOCOL_HEADER, UPLOAD_PROTOCOL_VALUE);
     httpPost.addHeader(UPLOAD_COMMAND_HEADER, UploadCommands.START);
-    httpPost.addHeader(FILE_NAME_HEADER, request.getFileName());
     httpPost.addHeader(FILE_SIZE_HEADER, String.valueOf(request.getFileSize()));
+
+    if (request.getMimeType().isPresent()) {
+      httpPost.addHeader(UPLOAD_CONTENT_TYPE_HEADER, request.getMimeType().get());
+    }
+
+    if (request.getFileName().isPresent()) {
+      httpPost.addHeader(FILE_NAME_HEADER, request.getFileName().get());
+    }
 
     CloseableHttpClient httpClient = HttpClientBuilder.create().build();
     HttpResponse response = httpClient.execute(httpPost);

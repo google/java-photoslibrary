@@ -28,4 +28,35 @@ public interface SimpleMediaItemOrBuilder
    * <code>string upload_token = 1;</code>
    */
   com.google.protobuf.ByteString getUploadTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * File name with extension of the media item. This is shown to the user in
+   * Google Photos. The file name specified during the &lt;a
+   * href="https://developers.google.com/photos/library/guides/upload-media"&gt;byte
+   * upload process&lt;/a&gt; is ignored if this field is set. The file name,
+   * including the file extension, shouldn't be more than 255 characters. This
+   * is an optional field.
+   * </pre>
+   *
+   * <code>string file_name = 2;</code>
+   */
+  java.lang.String getFileName();
+  /**
+   *
+   *
+   * <pre>
+   * File name with extension of the media item. This is shown to the user in
+   * Google Photos. The file name specified during the &lt;a
+   * href="https://developers.google.com/photos/library/guides/upload-media"&gt;byte
+   * upload process&lt;/a&gt; is ignored if this field is set. The file name,
+   * including the file extension, shouldn't be more than 255 characters. This
+   * is an optional field.
+   * </pre>
+   *
+   * <code>string file_name = 2;</code>
+   */
+  com.google.protobuf.ByteString getFileNameBytes();
 }

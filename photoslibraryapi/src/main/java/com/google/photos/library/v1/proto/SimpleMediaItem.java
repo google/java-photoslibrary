@@ -24,6 +24,7 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
 
   private SimpleMediaItem() {
     uploadToken_ = "";
+    fileName_ = "";
   }
 
   @java.lang.Override
@@ -55,6 +56,13 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
               java.lang.String s = input.readStringRequireUtf8();
 
               uploadToken_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fileName_ = s;
               break;
             }
           default:
@@ -134,6 +142,59 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int FILE_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object fileName_;
+  /**
+   *
+   *
+   * <pre>
+   * File name with extension of the media item. This is shown to the user in
+   * Google Photos. The file name specified during the &lt;a
+   * href="https://developers.google.com/photos/library/guides/upload-media"&gt;byte
+   * upload process&lt;/a&gt; is ignored if this field is set. The file name,
+   * including the file extension, shouldn't be more than 255 characters. This
+   * is an optional field.
+   * </pre>
+   *
+   * <code>string file_name = 2;</code>
+   */
+  public java.lang.String getFileName() {
+    java.lang.Object ref = fileName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fileName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * File name with extension of the media item. This is shown to the user in
+   * Google Photos. The file name specified during the &lt;a
+   * href="https://developers.google.com/photos/library/guides/upload-media"&gt;byte
+   * upload process&lt;/a&gt; is ignored if this field is set. The file name,
+   * including the file extension, shouldn't be more than 255 characters. This
+   * is an optional field.
+   * </pre>
+   *
+   * <code>string file_name = 2;</code>
+   */
+  public com.google.protobuf.ByteString getFileNameBytes() {
+    java.lang.Object ref = fileName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      fileName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -151,6 +212,9 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
     if (!getUploadTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uploadToken_);
     }
+    if (!getFileNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fileName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -162,6 +226,9 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
     size = 0;
     if (!getUploadTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uploadToken_);
+    }
+    if (!getFileNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fileName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -180,6 +247,7 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
         (com.google.photos.library.v1.proto.SimpleMediaItem) obj;
 
     if (!getUploadToken().equals(other.getUploadToken())) return false;
+    if (!getFileName().equals(other.getFileName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -193,6 +261,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + UPLOAD_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getUploadToken().hashCode();
+    hash = (37 * hash) + FILE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getFileName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -340,6 +410,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
       super.clear();
       uploadToken_ = "";
 
+      fileName_ = "";
+
       return this;
     }
 
@@ -368,6 +440,7 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
       com.google.photos.library.v1.proto.SimpleMediaItem result =
           new com.google.photos.library.v1.proto.SimpleMediaItem(this);
       result.uploadToken_ = uploadToken_;
+      result.fileName_ = fileName_;
       onBuilt();
       return result;
     }
@@ -420,6 +493,10 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getUploadToken().isEmpty()) {
         uploadToken_ = other.uploadToken_;
+        onChanged();
+      }
+      if (!other.getFileName().isEmpty()) {
+        fileName_ = other.fileName_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -542,6 +619,125 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       uploadToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object fileName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * File name with extension of the media item. This is shown to the user in
+     * Google Photos. The file name specified during the &lt;a
+     * href="https://developers.google.com/photos/library/guides/upload-media"&gt;byte
+     * upload process&lt;/a&gt; is ignored if this field is set. The file name,
+     * including the file extension, shouldn't be more than 255 characters. This
+     * is an optional field.
+     * </pre>
+     *
+     * <code>string file_name = 2;</code>
+     */
+    public java.lang.String getFileName() {
+      java.lang.Object ref = fileName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fileName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File name with extension of the media item. This is shown to the user in
+     * Google Photos. The file name specified during the &lt;a
+     * href="https://developers.google.com/photos/library/guides/upload-media"&gt;byte
+     * upload process&lt;/a&gt; is ignored if this field is set. The file name,
+     * including the file extension, shouldn't be more than 255 characters. This
+     * is an optional field.
+     * </pre>
+     *
+     * <code>string file_name = 2;</code>
+     */
+    public com.google.protobuf.ByteString getFileNameBytes() {
+      java.lang.Object ref = fileName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        fileName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File name with extension of the media item. This is shown to the user in
+     * Google Photos. The file name specified during the &lt;a
+     * href="https://developers.google.com/photos/library/guides/upload-media"&gt;byte
+     * upload process&lt;/a&gt; is ignored if this field is set. The file name,
+     * including the file extension, shouldn't be more than 255 characters. This
+     * is an optional field.
+     * </pre>
+     *
+     * <code>string file_name = 2;</code>
+     */
+    public Builder setFileName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      fileName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File name with extension of the media item. This is shown to the user in
+     * Google Photos. The file name specified during the &lt;a
+     * href="https://developers.google.com/photos/library/guides/upload-media"&gt;byte
+     * upload process&lt;/a&gt; is ignored if this field is set. The file name,
+     * including the file extension, shouldn't be more than 255 characters. This
+     * is an optional field.
+     * </pre>
+     *
+     * <code>string file_name = 2;</code>
+     */
+    public Builder clearFileName() {
+
+      fileName_ = getDefaultInstance().getFileName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File name with extension of the media item. This is shown to the user in
+     * Google Photos. The file name specified during the &lt;a
+     * href="https://developers.google.com/photos/library/guides/upload-media"&gt;byte
+     * upload process&lt;/a&gt; is ignored if this field is set. The file name,
+     * including the file extension, shouldn't be more than 255 characters. This
+     * is an optional field.
+     * </pre>
+     *
+     * <code>string file_name = 2;</code>
+     */
+    public Builder setFileNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      fileName_ = value;
       onChanged();
       return this;
     }

@@ -65,26 +65,28 @@ public abstract class AbstractCustomView extends JFrame {
   protected abstract void update() throws Exception;
 
   private final Thread getUpdateThread() {
-    final Runnable updateRunnable = () -> {
-      try {
-        update();
-      } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, e.getMessage());
-      }
-    };
-    return new Thread(() -> {
-      while (true) {
-        updateRunnable.run();
-        synchronized (updateLock) {
-          if (rerunUpdate) {
-            rerunUpdate = false;
-          } else {
-            loadingView.hideView();
-            break;
+    final Runnable updateRunnable =
+        () -> {
+          try {
+            update();
+          } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
           }
-        }
-      }
-    });
+        };
+    return new Thread(
+        () -> {
+          while (true) {
+            updateRunnable.run();
+            synchronized (updateLock) {
+              if (rerunUpdate) {
+                rerunUpdate = false;
+              } else {
+                loadingView.hideView();
+                break;
+              }
+            }
+          }
+        });
   }
 
   private final Thread getInitializationThread() {

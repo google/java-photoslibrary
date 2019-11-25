@@ -25,22 +25,33 @@ public final class UploadMediaItemRequest {
 
   private static final int DEFAULT_CHUNK_SIZE = 1024 * 1024 * 10; // 10 MB
 
-  private final String fileName;
+  private final Optional<String> fileName;
+  private final Optional<String> mimeType;
   private final Optional<String> uploadUrl;
   private final int chunkSize;
   private final RandomAccessFile dataFile;
 
   private UploadMediaItemRequest(
-      String fileName, Optional<String> uploadUrl, int chunkSize, RandomAccessFile dataFile) {
+      Optional<String> fileName,
+      Optional<String> uploadUrl,
+      int chunkSize,
+      Optional<String> mimeType,
+      RandomAccessFile dataFile) {
     this.fileName = fileName;
     this.uploadUrl = uploadUrl;
     this.chunkSize = chunkSize;
+    this.mimeType = mimeType;
     this.dataFile = dataFile;
   }
 
   /** Returns the file name to be uploaded. */
-  public String getFileName() {
+  public Optional<String> getFileName() {
     return fileName;
+  }
+
+  /** Returns the mime type for the file to be uploaded. */
+  public Optional<String> getMimeType() {
+    return mimeType;
   }
 
   /** Returns the url where this file will be uploaded. */
@@ -53,7 +64,7 @@ public final class UploadMediaItemRequest {
     return chunkSize;
   }
 
-  /** Retuns the total size of the file. */
+  /** Returns the total size of the file. */
   public long getFileSize() throws IOException {
     return dataFile.getChannel().size();
   }
@@ -75,18 +86,34 @@ public final class UploadMediaItemRequest {
   /** Builder for {@link UploadMediaItemRequest}. */
   public static final class Builder {
 
-    private String fileName;
+    private Optional<String> fileName;
+    private Optional<String> mimeType;
     private Optional<String> uploadUrl;
     private int chunkSize;
     private RandomAccessFile dataFile;
 
     private Builder() {
       chunkSize = DEFAULT_CHUNK_SIZE;
+      fileName = Optional.empty();
+      mimeType = Optional.empty();
       uploadUrl = Optional.empty();
     }
 
+    /**
+     * @deprecated As of 1.5.0, set the file name in {@link
+     *     com.google.photos.library.v1.proto.NewMediaItem} instead, which also supports Unicode
+     *     strings. For example, use {@link
+     *     com.google.photos.library.v1.util.NewMediaItemFactory#createNewMediaItem(String, String,
+     *     String)} to generate a NewMediaItem with a description and file name.
+     */
+    @Deprecated
     public Builder setFileName(String fileName) {
-      this.fileName = fileName;
+      this.fileName = Optional.of(fileName);
+      return this;
+    }
+
+    public Builder setMimeType(String mimeType) {
+      this.mimeType = Optional.of(mimeType);
       return this;
     }
 
@@ -107,7 +134,7 @@ public final class UploadMediaItemRequest {
 
     public UploadMediaItemRequest build() {
       UploadMediaItemRequest uploadMediaItemRequest =
-          new UploadMediaItemRequest(fileName, uploadUrl, chunkSize, dataFile);
+          new UploadMediaItemRequest(fileName, uploadUrl, chunkSize, mimeType, dataFile);
       return uploadMediaItemRequest;
     }
   }
