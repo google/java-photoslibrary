@@ -209,21 +209,22 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
     httpPost.addHeader(FILE_NAME_HEADER, request.getFileName());
     httpPost.addHeader(FILE_SIZE_HEADER, String.valueOf(request.getFileSize()));
 
-    CloseableHttpClient httpClient = HttpClientBuilder.create().useSystemProperties().build();
-    HttpResponse response = httpClient.execute(httpPost);
+    try (CloseableHttpClient httpClient = HttpClientBuilder.create().useSystemProperties().build()) {
+      HttpResponse response = httpClient.execute(httpPost);
 
-    if (response.getFirstHeader(UPLOAD_GRANULARITY_HEADER) != null) {
-      updateOptimalChunkSize(
-          Integer.parseInt(response.getFirstHeader(UPLOAD_GRANULARITY_HEADER).getValue()));
-    }
+      if (response.getFirstHeader(UPLOAD_GRANULARITY_HEADER) != null) {
+        updateOptimalChunkSize(
+                Integer.parseInt(response.getFirstHeader(UPLOAD_GRANULARITY_HEADER).getValue()));
+      }
 
-    switch (response.getFirstHeader(UPLOAD_STATUS_HEADER).getValue()) {
-      case UploadStatuses.ACTIVE:
-        return response.getFirstHeader(UPLOAD_URL_HEADER).getValue();
-      case UploadStatuses.FINAL:
-        throw new IllegalArgumentException(ExceptionStrings.UPLOAD_URL_REJECTED);
-      default:
-        throw new IllegalStateException(ExceptionStrings.INVALID_UPLOAD_STATUS);
+      switch (response.getFirstHeader(UPLOAD_STATUS_HEADER).getValue()) {
+        case UploadStatuses.ACTIVE:
+          return response.getFirstHeader(UPLOAD_URL_HEADER).getValue();
+        case UploadStatuses.FINAL:
+          throw new IllegalArgumentException(ExceptionStrings.UPLOAD_URL_REJECTED);
+        default:
+          throw new IllegalStateException(ExceptionStrings.INVALID_UPLOAD_STATUS);
+      }
     }
   }
 
@@ -233,21 +234,22 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
     httpPost.addHeader(UPLOAD_PROTOCOL_HEADER, UPLOAD_PROTOCOL_VALUE);
     httpPost.addHeader(UPLOAD_COMMAND_HEADER, UploadCommands.QUERY);
 
-    CloseableHttpClient httpClient = HttpClientBuilder.create().useSystemProperties().build();
-    HttpResponse response = httpClient.execute(httpPost);
+    try (CloseableHttpClient httpClient = HttpClientBuilder.create().useSystemProperties().build()) {
+      HttpResponse response = httpClient.execute(httpPost);
 
-    if (response.getFirstHeader(UPLOAD_GRANULARITY_HEADER) != null) {
-      updateOptimalChunkSize(
-          Integer.parseInt(response.getFirstHeader(UPLOAD_GRANULARITY_HEADER).getValue()));
-    }
+      if (response.getFirstHeader(UPLOAD_GRANULARITY_HEADER) != null) {
+        updateOptimalChunkSize(
+                Integer.parseInt(response.getFirstHeader(UPLOAD_GRANULARITY_HEADER).getValue()));
+      }
 
-    switch (response.getFirstHeader(UPLOAD_STATUS_HEADER).getValue()) {
-      case UploadStatuses.ACTIVE:
-        return Long.parseLong(response.getFirstHeader(RECEIVED_BYTE_COUNT_HEADER).getValue());
-      case UploadStatuses.FINAL:
-        return request.getFileSize();
-      default:
-        throw new IllegalStateException(ExceptionStrings.INVALID_UPLOAD_STATUS);
+      switch (response.getFirstHeader(UPLOAD_STATUS_HEADER).getValue()) {
+        case UploadStatuses.ACTIVE:
+          return Long.parseLong(response.getFirstHeader(RECEIVED_BYTE_COUNT_HEADER).getValue());
+        case UploadStatuses.FINAL:
+          return request.getFileSize();
+        default:
+          throw new IllegalStateException(ExceptionStrings.INVALID_UPLOAD_STATUS);
+      }
     }
   }
 
@@ -277,12 +279,14 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
     httpPost.addHeader(UPLOAD_SIZE_HEADER, String.valueOf(readByteCount));
     httpPost.setEntity(EntityBuilder.create().setBinary(dataChunk).build());
 
-    CloseableHttpClient httpClient =
+    try (CloseableHttpClient httpClient =
         HttpClientBuilder.create()
             .useSystemProperties()
             .setDefaultRequestConfig(getRequestConfig())
-            .build();
-    return httpClient.execute(httpPost);
+            .build()) {
+
+      return httpClient.execute(httpPost);
+    }
   }
 
   private RequestConfig getRequestConfig() {
