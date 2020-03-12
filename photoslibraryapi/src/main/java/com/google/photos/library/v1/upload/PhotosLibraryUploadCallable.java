@@ -217,7 +217,7 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
       httpPost.addHeader(FILE_NAME_HEADER, request.getFileName().get());
     }
 
-    CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+    CloseableHttpClient httpClient = HttpClientBuilder.create().useSystemProperties().build();
     HttpResponse response = httpClient.execute(httpPost);
 
     if (response.getFirstHeader(UPLOAD_GRANULARITY_HEADER) != null) {
@@ -241,7 +241,7 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
     httpPost.addHeader(UPLOAD_PROTOCOL_HEADER, UPLOAD_PROTOCOL_VALUE);
     httpPost.addHeader(UPLOAD_COMMAND_HEADER, UploadCommands.QUERY);
 
-    CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+    CloseableHttpClient httpClient = HttpClientBuilder.create().useSystemProperties().build();
     HttpResponse response = httpClient.execute(httpPost);
 
     if (response.getFirstHeader(UPLOAD_GRANULARITY_HEADER) != null) {
@@ -286,7 +286,10 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
     httpPost.setEntity(EntityBuilder.create().setBinary(dataChunk).build());
 
     CloseableHttpClient httpClient =
-        HttpClientBuilder.create().setDefaultRequestConfig(getRequestConfig()).build();
+        HttpClientBuilder.create()
+            .useSystemProperties()
+            .setDefaultRequestConfig(getRequestConfig())
+            .build();
     return httpClient.execute(httpPost);
   }
 
