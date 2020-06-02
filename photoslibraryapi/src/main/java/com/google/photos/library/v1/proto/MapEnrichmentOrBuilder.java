@@ -16,6 +16,8 @@ public interface MapEnrichmentOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.Location origin = 1;</code>
+   *
+   * @return Whether the origin field is set.
    */
   boolean hasOrigin();
   /**
@@ -26,6 +28,8 @@ public interface MapEnrichmentOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.Location origin = 1;</code>
+   *
+   * @return The origin.
    */
   com.google.photos.library.v1.proto.Location getOrigin();
   /**
@@ -47,6 +51,8 @@ public interface MapEnrichmentOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.Location destination = 2;</code>
+   *
+   * @return Whether the destination field is set.
    */
   boolean hasDestination();
   /**
@@ -57,6 +63,8 @@ public interface MapEnrichmentOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.Location destination = 2;</code>
+   *
+   * @return The destination.
    */
   com.google.photos.library.v1.proto.Location getDestination();
   /**

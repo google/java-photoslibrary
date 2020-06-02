@@ -25,6 +25,12 @@ public final class UnshareAlbumResponse extends com.google.protobuf.GeneratedMes
   private UnshareAlbumResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new UnshareAlbumResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

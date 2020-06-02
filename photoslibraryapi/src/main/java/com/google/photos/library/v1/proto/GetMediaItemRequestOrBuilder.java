@@ -16,6 +16,8 @@ public interface GetMediaItemRequestOrBuilder
    * </pre>
    *
    * <code>string media_item_id = 1;</code>
+   *
+   * @return The mediaItemId.
    */
   java.lang.String getMediaItemId();
   /**
@@ -26,6 +28,8 @@ public interface GetMediaItemRequestOrBuilder
    * </pre>
    *
    * <code>string media_item_id = 1;</code>
+   *
+   * @return The bytes for mediaItemId.
    */
   com.google.protobuf.ByteString getMediaItemIdBytes();
 }

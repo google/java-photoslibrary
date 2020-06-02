@@ -16,6 +16,8 @@ public interface GetAlbumRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The albumId.
    */
   java.lang.String getAlbumId();
   /**
@@ -26,6 +28,8 @@ public interface GetAlbumRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The bytes for albumId.
    */
   com.google.protobuf.ByteString getAlbumIdBytes();
 }

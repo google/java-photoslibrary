@@ -19,6 +19,8 @@ public interface ContentFilterOrBuilder
    *
    * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
    * </code>
+   *
+   * @return A list containing the includedContentCategories.
    */
   java.util.List<com.google.photos.library.v1.proto.ContentCategory>
       getIncludedContentCategoriesList();
@@ -33,6 +35,8 @@ public interface ContentFilterOrBuilder
    *
    * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
    * </code>
+   *
+   * @return The count of includedContentCategories.
    */
   int getIncludedContentCategoriesCount();
   /**
@@ -46,6 +50,9 @@ public interface ContentFilterOrBuilder
    *
    * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The includedContentCategories at the given index.
    */
   com.google.photos.library.v1.proto.ContentCategory getIncludedContentCategories(int index);
   /**
@@ -59,6 +66,8 @@ public interface ContentFilterOrBuilder
    *
    * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for includedContentCategories.
    */
   java.util.List<java.lang.Integer> getIncludedContentCategoriesValueList();
   /**
@@ -72,6 +81,9 @@ public interface ContentFilterOrBuilder
    *
    * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of includedContentCategories at the given index.
    */
   int getIncludedContentCategoriesValue(int index);
 
@@ -86,6 +98,8 @@ public interface ContentFilterOrBuilder
    *
    * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
    * </code>
+   *
+   * @return A list containing the excludedContentCategories.
    */
   java.util.List<com.google.photos.library.v1.proto.ContentCategory>
       getExcludedContentCategoriesList();
@@ -100,6 +114,8 @@ public interface ContentFilterOrBuilder
    *
    * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
    * </code>
+   *
+   * @return The count of excludedContentCategories.
    */
   int getExcludedContentCategoriesCount();
   /**
@@ -113,6 +129,9 @@ public interface ContentFilterOrBuilder
    *
    * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludedContentCategories at the given index.
    */
   com.google.photos.library.v1.proto.ContentCategory getExcludedContentCategories(int index);
   /**
@@ -126,6 +145,8 @@ public interface ContentFilterOrBuilder
    *
    * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for excludedContentCategories.
    */
   java.util.List<java.lang.Integer> getExcludedContentCategoriesValueList();
   /**
@@ -139,6 +160,9 @@ public interface ContentFilterOrBuilder
    *
    * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of excludedContentCategories at the given index.
    */
   int getExcludedContentCategoriesValue(int index);
 }

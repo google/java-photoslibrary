@@ -16,6 +16,8 @@ public interface SimpleMediaItemOrBuilder
    * </pre>
    *
    * <code>string upload_token = 1;</code>
+   *
+   * @return The uploadToken.
    */
   java.lang.String getUploadToken();
   /**
@@ -26,6 +28,8 @@ public interface SimpleMediaItemOrBuilder
    * </pre>
    *
    * <code>string upload_token = 1;</code>
+   *
+   * @return The bytes for uploadToken.
    */
   com.google.protobuf.ByteString getUploadTokenBytes();
 
@@ -42,6 +46,8 @@ public interface SimpleMediaItemOrBuilder
    * </pre>
    *
    * <code>string file_name = 2;</code>
+   *
+   * @return The fileName.
    */
   java.lang.String getFileName();
   /**
@@ -57,6 +63,8 @@ public interface SimpleMediaItemOrBuilder
    * </pre>
    *
    * <code>string file_name = 2;</code>
+   *
+   * @return The bytes for fileName.
    */
   com.google.protobuf.ByteString getFileNameBytes();
 }

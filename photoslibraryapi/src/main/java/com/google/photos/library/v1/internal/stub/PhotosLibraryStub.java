@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,8 @@ import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
 import com.google.photos.library.v1.proto.UnshareAlbumRequest;
 import com.google.photos.library.v1.proto.UnshareAlbumResponse;
+import com.google.photos.library.v1.proto.UpdateAlbumRequest;
+import com.google.photos.library.v1.proto.UpdateMediaItemRequest;
 import com.google.photos.types.proto.Album;
 import com.google.photos.types.proto.MediaItem;
 import javax.annotation.Generated;
@@ -162,6 +164,14 @@ public abstract class PhotosLibraryStub implements BackgroundResource {
       batchRemoveMediaItemsFromAlbumCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: batchRemoveMediaItemsFromAlbumCallable()");
+  }
+
+  public UnaryCallable<UpdateAlbumRequest, Album> updateAlbumCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAlbumCallable()");
+  }
+
+  public UnaryCallable<UpdateMediaItemRequest, MediaItem> updateMediaItemCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateMediaItemCallable()");
   }
 
   @Override

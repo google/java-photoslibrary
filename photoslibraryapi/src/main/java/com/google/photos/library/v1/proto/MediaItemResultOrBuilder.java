@@ -18,6 +18,8 @@ public interface MediaItemResultOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status status = 1;</code>
+   *
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -30,6 +32,8 @@ public interface MediaItemResultOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status status = 1;</code>
+   *
+   * @return The status.
    */
   com.google.rpc.Status getStatus();
   /**
@@ -54,6 +58,8 @@ public interface MediaItemResultOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.MediaItem media_item = 2;</code>
+   *
+   * @return Whether the mediaItem field is set.
    */
   boolean hasMediaItem();
   /**
@@ -65,6 +71,8 @@ public interface MediaItemResultOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.MediaItem media_item = 2;</code>
+   *
+   * @return The mediaItem.
    */
   com.google.photos.types.proto.MediaItem getMediaItem();
   /**

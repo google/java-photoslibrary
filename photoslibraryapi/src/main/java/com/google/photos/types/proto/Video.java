@@ -30,6 +30,12 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Video();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -42,7 +48,6 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +128,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string camera_make = 1;</code>
+   *
+   * @return The cameraMake.
    */
   public java.lang.String getCameraMake() {
     java.lang.Object ref = cameraMake_;
@@ -143,6 +150,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string camera_make = 1;</code>
+   *
+   * @return The bytes for cameraMake.
    */
   public com.google.protobuf.ByteString getCameraMakeBytes() {
     java.lang.Object ref = cameraMake_;
@@ -166,6 +175,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string camera_model = 2;</code>
+   *
+   * @return The cameraModel.
    */
   public java.lang.String getCameraModel() {
     java.lang.Object ref = cameraModel_;
@@ -186,6 +197,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string camera_model = 2;</code>
+   *
+   * @return The bytes for cameraModel.
    */
   public com.google.protobuf.ByteString getCameraModelBytes() {
     java.lang.Object ref = cameraModel_;
@@ -209,6 +222,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>double fps = 3;</code>
+   *
+   * @return The fps.
    */
   public double getFps() {
     return fps_;
@@ -224,6 +239,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.VideoProcessingStatus status = 4;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   public int getStatusValue() {
     return status_;
@@ -236,6 +253,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.VideoProcessingStatus status = 4;</code>
+   *
+   * @return The status.
    */
   public com.google.photos.types.proto.VideoProcessingStatus getStatus() {
     @SuppressWarnings("deprecation")
@@ -618,6 +637,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_make = 1;</code>
+     *
+     * @return The cameraMake.
      */
     public java.lang.String getCameraMake() {
       java.lang.Object ref = cameraMake_;
@@ -638,6 +659,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_make = 1;</code>
+     *
+     * @return The bytes for cameraMake.
      */
     public com.google.protobuf.ByteString getCameraMakeBytes() {
       java.lang.Object ref = cameraMake_;
@@ -658,6 +681,9 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_make = 1;</code>
+     *
+     * @param value The cameraMake to set.
+     * @return This builder for chaining.
      */
     public Builder setCameraMake(java.lang.String value) {
       if (value == null) {
@@ -676,6 +702,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_make = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCameraMake() {
 
@@ -691,6 +719,9 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_make = 1;</code>
+     *
+     * @param value The bytes for cameraMake to set.
+     * @return This builder for chaining.
      */
     public Builder setCameraMakeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -712,6 +743,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_model = 2;</code>
+     *
+     * @return The cameraModel.
      */
     public java.lang.String getCameraModel() {
       java.lang.Object ref = cameraModel_;
@@ -732,6 +765,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_model = 2;</code>
+     *
+     * @return The bytes for cameraModel.
      */
     public com.google.protobuf.ByteString getCameraModelBytes() {
       java.lang.Object ref = cameraModel_;
@@ -752,6 +787,9 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_model = 2;</code>
+     *
+     * @param value The cameraModel to set.
+     * @return This builder for chaining.
      */
     public Builder setCameraModel(java.lang.String value) {
       if (value == null) {
@@ -770,6 +808,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_model = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCameraModel() {
 
@@ -785,6 +825,9 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_model = 2;</code>
+     *
+     * @param value The bytes for cameraModel to set.
+     * @return This builder for chaining.
      */
     public Builder setCameraModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -806,6 +849,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double fps = 3;</code>
+     *
+     * @return The fps.
      */
     public double getFps() {
       return fps_;
@@ -818,6 +863,9 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double fps = 3;</code>
+     *
+     * @param value The fps to set.
+     * @return This builder for chaining.
      */
     public Builder setFps(double value) {
 
@@ -833,6 +881,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>double fps = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFps() {
 
@@ -850,6 +900,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.VideoProcessingStatus status = 4;</code>
+     *
+     * @return The enum numeric value on the wire for status.
      */
     public int getStatusValue() {
       return status_;
@@ -862,6 +914,9 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.VideoProcessingStatus status = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
       status_ = value;
@@ -876,6 +931,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.VideoProcessingStatus status = 4;</code>
+     *
+     * @return The status.
      */
     public com.google.photos.types.proto.VideoProcessingStatus getStatus() {
       @SuppressWarnings("deprecation")
@@ -893,6 +950,9 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.VideoProcessingStatus status = 4;</code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatus(com.google.photos.types.proto.VideoProcessingStatus value) {
       if (value == null) {
@@ -911,6 +971,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.VideoProcessingStatus status = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearStatus() {
 

@@ -16,6 +16,8 @@ public interface LocationEnrichmentOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.Location location = 1;</code>
+   *
+   * @return Whether the location field is set.
    */
   boolean hasLocation();
   /**
@@ -26,6 +28,8 @@ public interface LocationEnrichmentOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.Location location = 1;</code>
+   *
+   * @return The location.
    */
   com.google.photos.library.v1.proto.Location getLocation();
   /**

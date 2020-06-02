@@ -28,6 +28,12 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SimpleMediaItem();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -40,7 +46,6 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -109,6 +114,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string upload_token = 1;</code>
+   *
+   * @return The uploadToken.
    */
   public java.lang.String getUploadToken() {
     java.lang.Object ref = uploadToken_;
@@ -129,6 +136,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string upload_token = 1;</code>
+   *
+   * @return The bytes for uploadToken.
    */
   public com.google.protobuf.ByteString getUploadTokenBytes() {
     java.lang.Object ref = uploadToken_;
@@ -157,6 +166,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string file_name = 2;</code>
+   *
+   * @return The fileName.
    */
   public java.lang.String getFileName() {
     java.lang.Object ref = fileName_;
@@ -182,6 +193,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string file_name = 2;</code>
+   *
+   * @return The bytes for fileName.
    */
   public com.google.protobuf.ByteString getFileNameBytes() {
     java.lang.Object ref = fileName_;
@@ -538,6 +551,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string upload_token = 1;</code>
+     *
+     * @return The uploadToken.
      */
     public java.lang.String getUploadToken() {
       java.lang.Object ref = uploadToken_;
@@ -558,6 +573,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string upload_token = 1;</code>
+     *
+     * @return The bytes for uploadToken.
      */
     public com.google.protobuf.ByteString getUploadTokenBytes() {
       java.lang.Object ref = uploadToken_;
@@ -578,6 +595,9 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string upload_token = 1;</code>
+     *
+     * @param value The uploadToken to set.
+     * @return This builder for chaining.
      */
     public Builder setUploadToken(java.lang.String value) {
       if (value == null) {
@@ -596,6 +616,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string upload_token = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUploadToken() {
 
@@ -611,6 +633,9 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string upload_token = 1;</code>
+     *
+     * @param value The bytes for uploadToken to set.
+     * @return This builder for chaining.
      */
     public Builder setUploadTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -637,6 +662,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string file_name = 2;</code>
+     *
+     * @return The fileName.
      */
     public java.lang.String getFileName() {
       java.lang.Object ref = fileName_;
@@ -662,6 +689,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string file_name = 2;</code>
+     *
+     * @return The bytes for fileName.
      */
     public com.google.protobuf.ByteString getFileNameBytes() {
       java.lang.Object ref = fileName_;
@@ -687,6 +716,9 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string file_name = 2;</code>
+     *
+     * @param value The fileName to set.
+     * @return This builder for chaining.
      */
     public Builder setFileName(java.lang.String value) {
       if (value == null) {
@@ -710,6 +742,8 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string file_name = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFileName() {
 
@@ -730,6 +764,9 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string file_name = 2;</code>
+     *
+     * @param value The bytes for fileName to set.
+     * @return This builder for chaining.
      */
     public Builder setFileNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

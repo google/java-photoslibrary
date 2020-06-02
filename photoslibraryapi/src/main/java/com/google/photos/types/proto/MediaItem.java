@@ -32,6 +32,12 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MediaItem();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -44,7 +50,6 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -174,6 +179,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -195,6 +202,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -219,6 +228,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -240,6 +251,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -264,6 +277,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string product_url = 3;</code>
+   *
+   * @return The productUrl.
    */
   public java.lang.String getProductUrl() {
     java.lang.Object ref = productUrl_;
@@ -285,6 +300,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string product_url = 3;</code>
+   *
+   * @return The bytes for productUrl.
    */
   public com.google.protobuf.ByteString getProductUrlBytes() {
     java.lang.Object ref = productUrl_;
@@ -313,6 +330,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string base_url = 4;</code>
+   *
+   * @return The baseUrl.
    */
   public java.lang.String getBaseUrl() {
     java.lang.Object ref = baseUrl_;
@@ -338,6 +357,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string base_url = 4;</code>
+   *
+   * @return The bytes for baseUrl.
    */
   public com.google.protobuf.ByteString getBaseUrlBytes() {
     java.lang.Object ref = baseUrl_;
@@ -361,6 +382,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mime_type = 5;</code>
+   *
+   * @return The mimeType.
    */
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
@@ -381,6 +404,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string mime_type = 5;</code>
+   *
+   * @return The bytes for mimeType.
    */
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
@@ -405,6 +430,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.MediaMetadata media_metadata = 6;</code>
+   *
+   * @return Whether the mediaMetadata field is set.
    */
   public boolean hasMediaMetadata() {
     return mediaMetadata_ != null;
@@ -418,6 +445,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.MediaMetadata media_metadata = 6;</code>
+   *
+   * @return The mediaMetadata.
    */
   public com.google.photos.types.proto.MediaMetadata getMediaMetadata() {
     return mediaMetadata_ == null
@@ -448,6 +477,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
+   *
+   * @return Whether the contributorInfo field is set.
    */
   public boolean hasContributorInfo() {
     return contributorInfo_ != null;
@@ -460,6 +491,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
+   *
+   * @return The contributorInfo.
    */
   public com.google.photos.types.proto.ContributorInfo getContributorInfo() {
     return contributorInfo_ == null
@@ -490,6 +523,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string filename = 8;</code>
+   *
+   * @return The filename.
    */
   public java.lang.String getFilename() {
     java.lang.Object ref = filename_;
@@ -511,6 +546,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string filename = 8;</code>
+   *
+   * @return The bytes for filename.
    */
   public com.google.protobuf.ByteString getFilenameBytes() {
     java.lang.Object ref = filename_;
@@ -985,6 +1022,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1006,6 +1045,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -1027,6 +1068,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -1046,6 +1090,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -1062,6 +1108,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1084,6 +1133,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1105,6 +1156,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1126,6 +1179,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1145,6 +1201,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -1161,6 +1219,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1183,6 +1244,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_url = 3;</code>
+     *
+     * @return The productUrl.
      */
     public java.lang.String getProductUrl() {
       java.lang.Object ref = productUrl_;
@@ -1204,6 +1267,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_url = 3;</code>
+     *
+     * @return The bytes for productUrl.
      */
     public com.google.protobuf.ByteString getProductUrlBytes() {
       java.lang.Object ref = productUrl_;
@@ -1225,6 +1290,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_url = 3;</code>
+     *
+     * @param value The productUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setProductUrl(java.lang.String value) {
       if (value == null) {
@@ -1244,6 +1312,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_url = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProductUrl() {
 
@@ -1260,6 +1330,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_url = 3;</code>
+     *
+     * @param value The bytes for productUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setProductUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1286,6 +1359,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string base_url = 4;</code>
+     *
+     * @return The baseUrl.
      */
     public java.lang.String getBaseUrl() {
       java.lang.Object ref = baseUrl_;
@@ -1311,6 +1386,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string base_url = 4;</code>
+     *
+     * @return The bytes for baseUrl.
      */
     public com.google.protobuf.ByteString getBaseUrlBytes() {
       java.lang.Object ref = baseUrl_;
@@ -1336,6 +1413,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string base_url = 4;</code>
+     *
+     * @param value The baseUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseUrl(java.lang.String value) {
       if (value == null) {
@@ -1359,6 +1439,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string base_url = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBaseUrl() {
 
@@ -1379,6 +1461,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string base_url = 4;</code>
+     *
+     * @param value The bytes for baseUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1400,6 +1485,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 5;</code>
+     *
+     * @return The mimeType.
      */
     public java.lang.String getMimeType() {
       java.lang.Object ref = mimeType_;
@@ -1420,6 +1507,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 5;</code>
+     *
+     * @return The bytes for mimeType.
      */
     public com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
@@ -1440,6 +1529,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 5;</code>
+     *
+     * @param value The mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeType(java.lang.String value) {
       if (value == null) {
@@ -1458,6 +1550,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMimeType() {
 
@@ -1473,6 +1567,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string mime_type = 5;</code>
+     *
+     * @param value The bytes for mimeType to set.
+     * @return This builder for chaining.
      */
     public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1500,6 +1597,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.MediaMetadata media_metadata = 6;</code>
+     *
+     * @return Whether the mediaMetadata field is set.
      */
     public boolean hasMediaMetadata() {
       return mediaMetadataBuilder_ != null || mediaMetadata_ != null;
@@ -1513,6 +1612,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.MediaMetadata media_metadata = 6;</code>
+     *
+     * @return The mediaMetadata.
      */
     public com.google.photos.types.proto.MediaMetadata getMediaMetadata() {
       if (mediaMetadataBuilder_ == null) {
@@ -1690,6 +1791,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
+     *
+     * @return Whether the contributorInfo field is set.
      */
     public boolean hasContributorInfo() {
       return contributorInfoBuilder_ != null || contributorInfo_ != null;
@@ -1702,6 +1805,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
+     *
+     * @return The contributorInfo.
      */
     public com.google.photos.types.proto.ContributorInfo getContributorInfo() {
       if (contributorInfoBuilder_ == null) {
@@ -1868,6 +1973,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filename = 8;</code>
+     *
+     * @return The filename.
      */
     public java.lang.String getFilename() {
       java.lang.Object ref = filename_;
@@ -1889,6 +1996,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filename = 8;</code>
+     *
+     * @return The bytes for filename.
      */
     public com.google.protobuf.ByteString getFilenameBytes() {
       java.lang.Object ref = filename_;
@@ -1910,6 +2019,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filename = 8;</code>
+     *
+     * @param value The filename to set.
+     * @return This builder for chaining.
      */
     public Builder setFilename(java.lang.String value) {
       if (value == null) {
@@ -1929,6 +2041,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filename = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFilename() {
 
@@ -1945,6 +2059,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string filename = 8;</code>
+     *
+     * @param value The bytes for filename to set.
+     * @return This builder for chaining.
      */
     public Builder setFilenameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

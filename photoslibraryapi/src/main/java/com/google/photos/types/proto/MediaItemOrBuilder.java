@@ -17,6 +17,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -28,6 +30,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
 
@@ -40,6 +44,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -51,6 +57,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -63,6 +71,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string product_url = 3;</code>
+   *
+   * @return The productUrl.
    */
   java.lang.String getProductUrl();
   /**
@@ -74,6 +84,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string product_url = 3;</code>
+   *
+   * @return The bytes for productUrl.
    */
   com.google.protobuf.ByteString getProductUrlBytes();
 
@@ -90,6 +102,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string base_url = 4;</code>
+   *
+   * @return The baseUrl.
    */
   java.lang.String getBaseUrl();
   /**
@@ -105,6 +119,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string base_url = 4;</code>
+   *
+   * @return The bytes for baseUrl.
    */
   com.google.protobuf.ByteString getBaseUrlBytes();
 
@@ -116,6 +132,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string mime_type = 5;</code>
+   *
+   * @return The mimeType.
    */
   java.lang.String getMimeType();
   /**
@@ -126,6 +144,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string mime_type = 5;</code>
+   *
+   * @return The bytes for mimeType.
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
@@ -138,6 +158,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.MediaMetadata media_metadata = 6;</code>
+   *
+   * @return Whether the mediaMetadata field is set.
    */
   boolean hasMediaMetadata();
   /**
@@ -149,6 +171,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.MediaMetadata media_metadata = 6;</code>
+   *
+   * @return The mediaMetadata.
    */
   com.google.photos.types.proto.MediaMetadata getMediaMetadata();
   /**
@@ -171,6 +195,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
+   *
+   * @return Whether the contributorInfo field is set.
    */
   boolean hasContributorInfo();
   /**
@@ -181,6 +207,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
+   *
+   * @return The contributorInfo.
    */
   com.google.photos.types.proto.ContributorInfo getContributorInfo();
   /**
@@ -203,6 +231,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string filename = 8;</code>
+   *
+   * @return The filename.
    */
   java.lang.String getFilename();
   /**
@@ -214,6 +244,8 @@ public interface MediaItemOrBuilder
    * </pre>
    *
    * <code>string filename = 8;</code>
+   *
+   * @return The bytes for filename.
    */
   com.google.protobuf.ByteString getFilenameBytes();
 }

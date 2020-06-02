@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,8 @@ import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
 import com.google.photos.library.v1.proto.UnshareAlbumRequest;
 import com.google.photos.library.v1.proto.UnshareAlbumResponse;
+import com.google.photos.library.v1.proto.UpdateAlbumRequest;
+import com.google.photos.library.v1.proto.UpdateMediaItemRequest;
 import com.google.photos.types.proto.Album;
 import com.google.photos.types.proto.MediaItem;
 import java.io.IOException;
@@ -89,8 +91,12 @@ import javax.annotation.Generated;
  * <code>
  * InternalPhotosLibrarySettings.Builder internalPhotosLibrarySettingsBuilder =
  *     InternalPhotosLibrarySettings.newBuilder();
- * internalPhotosLibrarySettingsBuilder.createAlbumSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * internalPhotosLibrarySettingsBuilder
+ *     .createAlbumSettings()
+ *     .setRetrySettings(
+ *         internalPhotosLibrarySettingsBuilder.createAlbumSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * InternalPhotosLibrarySettings internalPhotosLibrarySettings = internalPhotosLibrarySettingsBuilder.build();
  * </code>
  * </pre>
@@ -196,6 +202,16 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
           BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
       batchRemoveMediaItemsFromAlbumSettings() {
     return ((PhotosLibraryStubSettings) getStubSettings()).batchRemoveMediaItemsFromAlbumSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAlbum. */
+  public UnaryCallSettings<UpdateAlbumRequest, Album> updateAlbumSettings() {
+    return ((PhotosLibraryStubSettings) getStubSettings()).updateAlbumSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMediaItem. */
+  public UnaryCallSettings<UpdateMediaItemRequest, MediaItem> updateMediaItemSettings() {
+    return ((PhotosLibraryStubSettings) getStubSettings()).updateMediaItemSettings();
   }
 
   public static final InternalPhotosLibrarySettings create(PhotosLibraryStubSettings stub)
@@ -396,6 +412,16 @@ public class InternalPhotosLibrarySettings extends ClientSettings<InternalPhotos
             BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
         batchRemoveMediaItemsFromAlbumSettings() {
       return getStubSettingsBuilder().batchRemoveMediaItemsFromAlbumSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAlbum. */
+    public UnaryCallSettings.Builder<UpdateAlbumRequest, Album> updateAlbumSettings() {
+      return getStubSettingsBuilder().updateAlbumSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMediaItem. */
+    public UnaryCallSettings.Builder<UpdateMediaItemRequest, MediaItem> updateMediaItemSettings() {
+      return getStubSettingsBuilder().updateMediaItemSettings();
     }
 
     @Override

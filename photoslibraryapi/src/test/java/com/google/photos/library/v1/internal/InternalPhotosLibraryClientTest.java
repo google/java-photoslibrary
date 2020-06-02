@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package com.google.photos.library.v1.internal;
 
 import static com.google.photos.library.v1.internal.InternalPhotosLibraryClient.ListAlbumsPagedResponse;
+import static com.google.photos.library.v1.internal.InternalPhotosLibraryClient.ListMediaItemsPagedResponse;
 import static com.google.photos.library.v1.internal.InternalPhotosLibraryClient.ListSharedAlbumsPagedResponse;
 import static com.google.photos.library.v1.internal.InternalPhotosLibraryClient.SearchMediaItemsPagedResponse;
 
@@ -39,7 +40,6 @@ import com.google.photos.library.v1.proto.BatchGetMediaItemsResponse;
 import com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest;
 import com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumResponse;
 import com.google.photos.library.v1.proto.CreateAlbumRequest;
-import com.google.photos.library.v1.proto.Filters;
 import com.google.photos.library.v1.proto.GetAlbumRequest;
 import com.google.photos.library.v1.proto.GetMediaItemRequest;
 import com.google.photos.library.v1.proto.GetSharedAlbumRequest;
@@ -49,6 +49,8 @@ import com.google.photos.library.v1.proto.LeaveSharedAlbumRequest;
 import com.google.photos.library.v1.proto.LeaveSharedAlbumResponse;
 import com.google.photos.library.v1.proto.ListAlbumsRequest;
 import com.google.photos.library.v1.proto.ListAlbumsResponse;
+import com.google.photos.library.v1.proto.ListMediaItemsRequest;
+import com.google.photos.library.v1.proto.ListMediaItemsResponse;
 import com.google.photos.library.v1.proto.ListSharedAlbumsRequest;
 import com.google.photos.library.v1.proto.ListSharedAlbumsResponse;
 import com.google.photos.library.v1.proto.NewEnrichmentItem;
@@ -59,16 +61,20 @@ import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
 import com.google.photos.library.v1.proto.UnshareAlbumRequest;
 import com.google.photos.library.v1.proto.UnshareAlbumResponse;
+import com.google.photos.library.v1.proto.UpdateAlbumRequest;
+import com.google.photos.library.v1.proto.UpdateMediaItemRequest;
 import com.google.photos.types.proto.Album;
 import com.google.photos.types.proto.MediaItem;
 import com.google.photos.types.proto.SharedAlbumOptions;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.FieldMask;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -87,7 +93,8 @@ public class InternalPhotosLibraryClientTest {
   public static void startStaticServer() {
     mockPhotosLibrary = new MockPhotosLibrary();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockPhotosLibrary));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockPhotosLibrary));
     serviceHelper.start();
   }
 
@@ -319,9 +326,9 @@ public class InternalPhotosLibraryClientTest {
             .build();
     mockPhotosLibrary.addResponse(expectedResponse);
 
-    Filters filters = Filters.newBuilder().build();
+    String albumId = "albumId1532078315";
 
-    SearchMediaItemsPagedResponse pagedListResponse = client.searchMediaItems(filters);
+    SearchMediaItemsPagedResponse pagedListResponse = client.searchMediaItems(albumId);
 
     List<MediaItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -331,7 +338,7 @@ public class InternalPhotosLibraryClientTest {
     Assert.assertEquals(1, actualRequests.size());
     SearchMediaItemsRequest actualRequest = (SearchMediaItemsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(filters, actualRequest.getFilters());
+    Assert.assertEquals(albumId, actualRequest.getAlbumId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -345,9 +352,56 @@ public class InternalPhotosLibraryClientTest {
     mockPhotosLibrary.addException(exception);
 
     try {
-      Filters filters = Filters.newBuilder().build();
+      String albumId = "albumId1532078315";
 
-      client.searchMediaItems(filters);
+      client.searchMediaItems(albumId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listMediaItemsTest() {
+    String nextPageToken = "";
+    MediaItem mediaItemsElement = MediaItem.newBuilder().build();
+    List<MediaItem> mediaItems = Arrays.asList(mediaItemsElement);
+    ListMediaItemsResponse expectedResponse =
+        ListMediaItemsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllMediaItems(mediaItems)
+            .build();
+    mockPhotosLibrary.addResponse(expectedResponse);
+
+    ListMediaItemsRequest request = ListMediaItemsRequest.newBuilder().build();
+
+    ListMediaItemsPagedResponse pagedListResponse = client.listMediaItems(request);
+
+    List<MediaItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMediaItemsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMediaItemsRequest actualRequest = (ListMediaItemsRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listMediaItemsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockPhotosLibrary.addException(exception);
+
+    try {
+      ListMediaItemsRequest request = ListMediaItemsRequest.newBuilder().build();
+
+      client.listMediaItems(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -888,6 +942,118 @@ public class InternalPhotosLibraryClientTest {
       List<String> mediaItemIds = new ArrayList<>();
 
       client.batchRemoveMediaItemsFromAlbum(albumId, mediaItemIds);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateAlbumTest() {
+    String id = "id3355";
+    String title = "title110371416";
+    String productUrl = "productUrl-1491291617";
+    boolean isWriteable = true;
+    long mediaItemsCount = 927196149L;
+    String coverPhotoBaseUrl = "coverPhotoBaseUrl145443830";
+    String coverPhotoMediaItemId = "coverPhotoMediaItemId840621207";
+    Album expectedResponse =
+        Album.newBuilder()
+            .setId(id)
+            .setTitle(title)
+            .setProductUrl(productUrl)
+            .setIsWriteable(isWriteable)
+            .setMediaItemsCount(mediaItemsCount)
+            .setCoverPhotoBaseUrl(coverPhotoBaseUrl)
+            .setCoverPhotoMediaItemId(coverPhotoMediaItemId)
+            .build();
+    mockPhotosLibrary.addResponse(expectedResponse);
+
+    Album album = Album.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Album actualResponse = client.updateAlbum(album, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAlbumRequest actualRequest = (UpdateAlbumRequest) actualRequests.get(0);
+
+    Assert.assertEquals(album, actualRequest.getAlbum());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateAlbumExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockPhotosLibrary.addException(exception);
+
+    try {
+      Album album = Album.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+
+      client.updateAlbum(album, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateMediaItemTest() {
+    String id = "id3355";
+    String description = "description-1724546052";
+    String productUrl = "productUrl-1491291617";
+    String baseUrl = "baseUrl-1721160959";
+    String mimeType = "mimeType-196041627";
+    String filename = "filename-734768633";
+    MediaItem expectedResponse =
+        MediaItem.newBuilder()
+            .setId(id)
+            .setDescription(description)
+            .setProductUrl(productUrl)
+            .setBaseUrl(baseUrl)
+            .setMimeType(mimeType)
+            .setFilename(filename)
+            .build();
+    mockPhotosLibrary.addResponse(expectedResponse);
+
+    MediaItem mediaItem = MediaItem.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    MediaItem actualResponse = client.updateMediaItem(mediaItem, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateMediaItemRequest actualRequest = (UpdateMediaItemRequest) actualRequests.get(0);
+
+    Assert.assertEquals(mediaItem, actualRequest.getMediaItem());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateMediaItemExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockPhotosLibrary.addException(exception);
+
+    try {
+      MediaItem mediaItem = MediaItem.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+
+      client.updateMediaItem(mediaItem, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

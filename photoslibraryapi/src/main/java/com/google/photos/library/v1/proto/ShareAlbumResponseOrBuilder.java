@@ -16,6 +16,8 @@ public interface ShareAlbumResponseOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.ShareInfo share_info = 1;</code>
+   *
+   * @return Whether the shareInfo field is set.
    */
   boolean hasShareInfo();
   /**
@@ -26,6 +28,8 @@ public interface ShareAlbumResponseOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.ShareInfo share_info = 1;</code>
+   *
+   * @return The shareInfo.
    */
   com.google.photos.types.proto.ShareInfo getShareInfo();
   /**

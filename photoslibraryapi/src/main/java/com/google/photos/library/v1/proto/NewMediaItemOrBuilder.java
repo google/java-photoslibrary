@@ -18,6 +18,8 @@ public interface NewMediaItemOrBuilder
    * </pre>
    *
    * <code>string description = 1;</code>
+   *
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -30,6 +32,8 @@ public interface NewMediaItemOrBuilder
    * </pre>
    *
    * <code>string description = 1;</code>
+   *
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -41,6 +45,8 @@ public interface NewMediaItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.SimpleMediaItem simple_media_item = 2;</code>
+   *
+   * @return Whether the simpleMediaItem field is set.
    */
   boolean hasSimpleMediaItem();
   /**
@@ -51,6 +57,8 @@ public interface NewMediaItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.SimpleMediaItem simple_media_item = 2;</code>
+   *
+   * @return The simpleMediaItem.
    */
   com.google.photos.library.v1.proto.SimpleMediaItem getSimpleMediaItem();
   /**

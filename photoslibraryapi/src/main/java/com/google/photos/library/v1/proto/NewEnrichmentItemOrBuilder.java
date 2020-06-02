@@ -16,6 +16,8 @@ public interface NewEnrichmentItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.TextEnrichment text_enrichment = 1;</code>
+   *
+   * @return Whether the textEnrichment field is set.
    */
   boolean hasTextEnrichment();
   /**
@@ -26,6 +28,8 @@ public interface NewEnrichmentItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.TextEnrichment text_enrichment = 1;</code>
+   *
+   * @return The textEnrichment.
    */
   com.google.photos.library.v1.proto.TextEnrichment getTextEnrichment();
   /**
@@ -47,6 +51,8 @@ public interface NewEnrichmentItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.LocationEnrichment location_enrichment = 2;</code>
+   *
+   * @return Whether the locationEnrichment field is set.
    */
   boolean hasLocationEnrichment();
   /**
@@ -57,6 +63,8 @@ public interface NewEnrichmentItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.LocationEnrichment location_enrichment = 2;</code>
+   *
+   * @return The locationEnrichment.
    */
   com.google.photos.library.v1.proto.LocationEnrichment getLocationEnrichment();
   /**
@@ -78,6 +86,8 @@ public interface NewEnrichmentItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.MapEnrichment map_enrichment = 3;</code>
+   *
+   * @return Whether the mapEnrichment field is set.
    */
   boolean hasMapEnrichment();
   /**
@@ -88,6 +98,8 @@ public interface NewEnrichmentItemOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.MapEnrichment map_enrichment = 3;</code>
+   *
+   * @return The mapEnrichment.
    */
   com.google.photos.library.v1.proto.MapEnrichment getMapEnrichment();
   /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,8 @@ import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
 import com.google.photos.library.v1.proto.UnshareAlbumRequest;
 import com.google.photos.library.v1.proto.UnshareAlbumResponse;
+import com.google.photos.library.v1.proto.UpdateAlbumRequest;
+import com.google.photos.library.v1.proto.UpdateMediaItemRequest;
 import com.google.photos.types.proto.Album;
 import com.google.photos.types.proto.MediaItem;
 import io.grpc.MethodDescriptor;
@@ -241,6 +243,22 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
                   ProtoUtils.marshaller(
                       BatchRemoveMediaItemsFromAlbumResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<UpdateAlbumRequest, Album> updateAlbumMethodDescriptor =
+      MethodDescriptor.<UpdateAlbumRequest, Album>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.photos.library.v1.PhotosLibrary/UpdateAlbum")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateAlbumRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Album.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<UpdateMediaItemRequest, MediaItem>
+      updateMediaItemMethodDescriptor =
+          MethodDescriptor.<UpdateMediaItemRequest, MediaItem>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.photos.library.v1.PhotosLibrary/UpdateMediaItem")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateMediaItemRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MediaItem.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -278,6 +296,8 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
   private final UnaryCallable<
           BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
       batchRemoveMediaItemsFromAlbumCallable;
+  private final UnaryCallable<UpdateAlbumRequest, Album> updateAlbumCallable;
+  private final UnaryCallable<UpdateMediaItemRequest, MediaItem> updateMediaItemCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -473,6 +493,32 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<UpdateAlbumRequest, Album> updateAlbumTransportSettings =
+        GrpcCallSettings.<UpdateAlbumRequest, Album>newBuilder()
+            .setMethodDescriptor(updateAlbumMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateAlbumRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateAlbumRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("album.id", String.valueOf(request.getAlbum().getId()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpdateMediaItemRequest, MediaItem> updateMediaItemTransportSettings =
+        GrpcCallSettings.<UpdateMediaItemRequest, MediaItem>newBuilder()
+            .setMethodDescriptor(updateMediaItemMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateMediaItemRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateMediaItemRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("media_item.id", String.valueOf(request.getMediaItem().getId()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.createAlbumCallable =
         callableFactory.createUnaryCallable(
@@ -547,6 +593,12 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
             batchRemoveMediaItemsFromAlbumTransportSettings,
             settings.batchRemoveMediaItemsFromAlbumSettings(),
             clientContext);
+    this.updateAlbumCallable =
+        callableFactory.createUnaryCallable(
+            updateAlbumTransportSettings, settings.updateAlbumSettings(), clientContext);
+    this.updateMediaItemCallable =
+        callableFactory.createUnaryCallable(
+            updateMediaItemTransportSettings, settings.updateMediaItemSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -645,6 +697,14 @@ public class GrpcPhotosLibraryStub extends PhotosLibraryStub {
           BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
       batchRemoveMediaItemsFromAlbumCallable() {
     return batchRemoveMediaItemsFromAlbumCallable;
+  }
+
+  public UnaryCallable<UpdateAlbumRequest, Album> updateAlbumCallable() {
+    return updateAlbumCallable;
+  }
+
+  public UnaryCallable<UpdateMediaItemRequest, MediaItem> updateMediaItemCallable() {
+    return updateMediaItemCallable;
   }
 
   @Override

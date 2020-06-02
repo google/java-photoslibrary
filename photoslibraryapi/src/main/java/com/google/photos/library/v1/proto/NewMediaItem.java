@@ -27,6 +27,12 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new NewMediaItem();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -114,7 +119,10 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
   private int newMediaItemTypeCase_ = 0;
   private java.lang.Object newMediaItemType_;
 
-  public enum NewMediaItemTypeCase implements com.google.protobuf.Internal.EnumLite {
+  public enum NewMediaItemTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SIMPLE_MEDIA_ITEM(2),
     NEWMEDIAITEMTYPE_NOT_SET(0);
     private final int value;
@@ -122,7 +130,11 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
     private NewMediaItemTypeCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static NewMediaItemTypeCase valueOf(int value) {
       return forNumber(value);
@@ -160,6 +172,8 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 1;</code>
+   *
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -182,6 +196,8 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string description = 1;</code>
+   *
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -204,6 +220,8 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.library.v1.SimpleMediaItem simple_media_item = 2;</code>
+   *
+   * @return Whether the simpleMediaItem field is set.
    */
   public boolean hasSimpleMediaItem() {
     return newMediaItemTypeCase_ == 2;
@@ -216,6 +234,8 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.library.v1.SimpleMediaItem simple_media_item = 2;</code>
+   *
+   * @return The simpleMediaItem.
    */
   public com.google.photos.library.v1.proto.SimpleMediaItem getSimpleMediaItem() {
     if (newMediaItemTypeCase_ == 2) {
@@ -627,6 +647,8 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 1;</code>
+     *
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -649,6 +671,8 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 1;</code>
+     *
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -671,6 +695,9 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 1;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -691,6 +718,8 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
 
@@ -708,6 +737,9 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string description = 1;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -733,6 +765,8 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.library.v1.SimpleMediaItem simple_media_item = 2;</code>
+     *
+     * @return Whether the simpleMediaItem field is set.
      */
     public boolean hasSimpleMediaItem() {
       return newMediaItemTypeCase_ == 2;
@@ -745,6 +779,8 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.library.v1.SimpleMediaItem simple_media_item = 2;</code>
+     *
+     * @return The simpleMediaItem.
      */
     public com.google.photos.library.v1.proto.SimpleMediaItem getSimpleMediaItem() {
       if (simpleMediaItemBuilder_ == null) {

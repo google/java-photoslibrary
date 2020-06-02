@@ -16,6 +16,8 @@ public interface AlbumPositionOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition.PositionType position = 1;</code>
+   *
+   * @return The enum numeric value on the wire for position.
    */
   int getPositionValue();
   /**
@@ -26,6 +28,8 @@ public interface AlbumPositionOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition.PositionType position = 1;</code>
+   *
+   * @return The position.
    */
   com.google.photos.library.v1.proto.AlbumPosition.PositionType getPosition();
 
@@ -38,6 +42,8 @@ public interface AlbumPositionOrBuilder
    * </pre>
    *
    * <code>string relative_media_item_id = 2;</code>
+   *
+   * @return The relativeMediaItemId.
    */
   java.lang.String getRelativeMediaItemId();
   /**
@@ -49,6 +55,8 @@ public interface AlbumPositionOrBuilder
    * </pre>
    *
    * <code>string relative_media_item_id = 2;</code>
+   *
+   * @return The bytes for relativeMediaItemId.
    */
   com.google.protobuf.ByteString getRelativeMediaItemIdBytes();
 
@@ -61,6 +69,8 @@ public interface AlbumPositionOrBuilder
    * </pre>
    *
    * <code>string relative_enrichment_item_id = 3;</code>
+   *
+   * @return The relativeEnrichmentItemId.
    */
   java.lang.String getRelativeEnrichmentItemId();
   /**
@@ -72,6 +82,8 @@ public interface AlbumPositionOrBuilder
    * </pre>
    *
    * <code>string relative_enrichment_item_id = 3;</code>
+   *
+   * @return The bytes for relativeEnrichmentItemId.
    */
   com.google.protobuf.ByteString getRelativeEnrichmentItemIdBytes();
 

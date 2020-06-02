@@ -16,6 +16,8 @@ public interface ShareInfoOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 1;</code>
+   *
+   * @return Whether the sharedAlbumOptions field is set.
    */
   boolean hasSharedAlbumOptions();
   /**
@@ -26,6 +28,8 @@ public interface ShareInfoOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 1;</code>
+   *
+   * @return The sharedAlbumOptions.
    */
   com.google.photos.types.proto.SharedAlbumOptions getSharedAlbumOptions();
   /**
@@ -49,6 +53,8 @@ public interface ShareInfoOrBuilder
    * </pre>
    *
    * <code>string shareable_url = 2;</code>
+   *
+   * @return The shareableUrl.
    */
   java.lang.String getShareableUrl();
   /**
@@ -61,6 +67,8 @@ public interface ShareInfoOrBuilder
    * </pre>
    *
    * <code>string shareable_url = 2;</code>
+   *
+   * @return The bytes for shareableUrl.
    */
   com.google.protobuf.ByteString getShareableUrlBytes();
 
@@ -73,6 +81,8 @@ public interface ShareInfoOrBuilder
    * </pre>
    *
    * <code>string share_token = 3;</code>
+   *
+   * @return The shareToken.
    */
   java.lang.String getShareToken();
   /**
@@ -84,6 +94,8 @@ public interface ShareInfoOrBuilder
    * </pre>
    *
    * <code>string share_token = 3;</code>
+   *
+   * @return The bytes for shareToken.
    */
   com.google.protobuf.ByteString getShareTokenBytes();
 
@@ -96,6 +108,8 @@ public interface ShareInfoOrBuilder
    * </pre>
    *
    * <code>bool is_joined = 4;</code>
+   *
+   * @return The isJoined.
    */
   boolean getIsJoined();
 
@@ -107,6 +121,8 @@ public interface ShareInfoOrBuilder
    * </pre>
    *
    * <code>bool is_owned = 5;</code>
+   *
+   * @return The isOwned.
    */
   boolean getIsOwned();
 }

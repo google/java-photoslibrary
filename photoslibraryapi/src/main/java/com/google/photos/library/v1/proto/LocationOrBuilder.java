@@ -16,6 +16,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>string location_name = 1;</code>
+   *
+   * @return The locationName.
    */
   java.lang.String getLocationName();
   /**
@@ -26,6 +28,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>string location_name = 1;</code>
+   *
+   * @return The bytes for locationName.
    */
   com.google.protobuf.ByteString getLocationNameBytes();
 
@@ -37,6 +41,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng latlng = 2;</code>
+   *
+   * @return Whether the latlng field is set.
    */
   boolean hasLatlng();
   /**
@@ -47,6 +53,8 @@ public interface LocationOrBuilder
    * </pre>
    *
    * <code>.google.type.LatLng latlng = 2;</code>
+   *
+   * @return The latlng.
    */
   com.google.type.LatLng getLatlng();
   /**

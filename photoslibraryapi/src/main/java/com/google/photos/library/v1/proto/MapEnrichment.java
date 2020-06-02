@@ -25,6 +25,12 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
   private MapEnrichment() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MapEnrichment();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -124,6 +129,8 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.library.v1.Location origin = 1;</code>
+   *
+   * @return Whether the origin field is set.
    */
   public boolean hasOrigin() {
     return origin_ != null;
@@ -136,6 +143,8 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.library.v1.Location origin = 1;</code>
+   *
+   * @return The origin.
    */
   public com.google.photos.library.v1.proto.Location getOrigin() {
     return origin_ == null
@@ -165,6 +174,8 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.library.v1.Location destination = 2;</code>
+   *
+   * @return Whether the destination field is set.
    */
   public boolean hasDestination() {
     return destination_ != null;
@@ -177,6 +188,8 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.library.v1.Location destination = 2;</code>
+   *
+   * @return The destination.
    */
   public com.google.photos.library.v1.proto.Location getDestination() {
     return destination_ == null
@@ -567,6 +580,8 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.library.v1.Location origin = 1;</code>
+     *
+     * @return Whether the origin field is set.
      */
     public boolean hasOrigin() {
       return originBuilder_ != null || origin_ != null;
@@ -579,6 +594,8 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.library.v1.Location origin = 1;</code>
+     *
+     * @return The origin.
      */
     public com.google.photos.library.v1.proto.Location getOrigin() {
       if (originBuilder_ == null) {
@@ -748,6 +765,8 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.library.v1.Location destination = 2;</code>
+     *
+     * @return Whether the destination field is set.
      */
     public boolean hasDestination() {
       return destinationBuilder_ != null || destination_ != null;
@@ -760,6 +779,8 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.library.v1.Location destination = 2;</code>
+     *
+     * @return The destination.
      */
     public com.google.photos.library.v1.proto.Location getDestination() {
       if (destinationBuilder_ == null) {

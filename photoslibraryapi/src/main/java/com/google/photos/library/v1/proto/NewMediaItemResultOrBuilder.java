@@ -16,6 +16,8 @@ public interface NewMediaItemResultOrBuilder
    * </pre>
    *
    * <code>string upload_token = 1;</code>
+   *
+   * @return The uploadToken.
    */
   java.lang.String getUploadToken();
   /**
@@ -26,6 +28,8 @@ public interface NewMediaItemResultOrBuilder
    * </pre>
    *
    * <code>string upload_token = 1;</code>
+   *
+   * @return The bytes for uploadToken.
    */
   com.google.protobuf.ByteString getUploadTokenBytes();
 
@@ -39,6 +43,8 @@ public interface NewMediaItemResultOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status status = 2;</code>
+   *
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -51,6 +57,8 @@ public interface NewMediaItemResultOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status status = 2;</code>
+   *
+   * @return The status.
    */
   com.google.rpc.Status getStatus();
   /**
@@ -75,6 +83,8 @@ public interface NewMediaItemResultOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.MediaItem media_item = 3;</code>
+   *
+   * @return Whether the mediaItem field is set.
    */
   boolean hasMediaItem();
   /**
@@ -86,6 +96,8 @@ public interface NewMediaItemResultOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.MediaItem media_item = 3;</code>
+   *
+   * @return The mediaItem.
    */
   com.google.photos.types.proto.MediaItem getMediaItem();
   /**

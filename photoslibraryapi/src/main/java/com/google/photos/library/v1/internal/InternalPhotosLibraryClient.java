@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,9 +62,12 @@ import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
 import com.google.photos.library.v1.proto.UnshareAlbumRequest;
 import com.google.photos.library.v1.proto.UnshareAlbumResponse;
+import com.google.photos.library.v1.proto.UpdateAlbumRequest;
+import com.google.photos.library.v1.proto.UpdateMediaItemRequest;
 import com.google.photos.types.proto.Album;
 import com.google.photos.types.proto.MediaItem;
 import com.google.photos.types.proto.SharedAlbumOptions;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -212,7 +215,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Album createAlbum(Album album) {
-
     CreateAlbumRequest request = CreateAlbumRequest.newBuilder().setAlbum(album).build();
     return createAlbum(request);
   }
@@ -304,7 +306,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    */
   public final BatchCreateMediaItemsResponse batchCreateMediaItems(
       String albumId, List<NewMediaItem> newMediaItems, AlbumPosition albumPosition) {
-
     BatchCreateMediaItemsRequest request =
         BatchCreateMediaItemsRequest.newBuilder()
             .setAlbumId(albumId)
@@ -426,7 +427,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    */
   public final BatchAddMediaItemsToAlbumResponse batchAddMediaItemsToAlbum(
       String albumId, List<String> mediaItemIds) {
-
     BatchAddMediaItemsToAlbumRequest request =
         BatchAddMediaItemsToAlbumRequest.newBuilder()
             .setAlbumId(albumId)
@@ -744,7 +744,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MediaItem getMediaItem(String mediaItemId) {
-
     GetMediaItemRequest request =
         GetMediaItemRequest.newBuilder().setMediaItemId(mediaItemId).build();
     return getMediaItem(request);
@@ -815,7 +814,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchGetMediaItemsResponse batchGetMediaItems(List<String> mediaItemIds) {
-
     BatchGetMediaItemsRequest request =
         BatchGetMediaItemsRequest.newBuilder().addAllMediaItemIds(mediaItemIds).build();
     return batchGetMediaItems(request);
@@ -986,7 +984,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Album getAlbum(String albumId) {
-
     GetAlbumRequest request = GetAlbumRequest.newBuilder().setAlbumId(albumId).build();
     return getAlbum(request);
   }
@@ -1055,7 +1052,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Album getSharedAlbum(String shareToken) {
-
     GetSharedAlbumRequest request =
         GetSharedAlbumRequest.newBuilder().setShareToken(shareToken).build();
     return getSharedAlbum(request);
@@ -1128,7 +1124,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    */
   public final AddEnrichmentToAlbumResponse addEnrichmentToAlbum(
       String albumId, NewEnrichmentItem newEnrichmentItem, AlbumPosition albumPosition) {
-
     AddEnrichmentToAlbumRequest request =
         AddEnrichmentToAlbumRequest.newBuilder()
             .setAlbumId(albumId)
@@ -1210,7 +1205,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final JoinSharedAlbumResponse joinSharedAlbum(String shareToken) {
-
     JoinSharedAlbumRequest request =
         JoinSharedAlbumRequest.newBuilder().setShareToken(shareToken).build();
     return joinSharedAlbum(request);
@@ -1280,7 +1274,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LeaveSharedAlbumResponse leaveSharedAlbum(String shareToken) {
-
     LeaveSharedAlbumRequest request =
         LeaveSharedAlbumRequest.newBuilder().setShareToken(shareToken).build();
     return leaveSharedAlbum(request);
@@ -1356,7 +1349,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    */
   public final ShareAlbumResponse shareAlbum(
       String albumId, SharedAlbumOptions sharedAlbumOptions) {
-
     ShareAlbumRequest request =
         ShareAlbumRequest.newBuilder()
             .setAlbumId(albumId)
@@ -1535,7 +1527,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UnshareAlbumResponse unshareAlbum(String albumId) {
-
     UnshareAlbumRequest request = UnshareAlbumRequest.newBuilder().setAlbumId(albumId).build();
     return unshareAlbum(request);
   }
@@ -1624,7 +1615,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    */
   public final BatchRemoveMediaItemsFromAlbumResponse batchRemoveMediaItemsFromAlbum(
       String albumId, List<String> mediaItemIds) {
-
     BatchRemoveMediaItemsFromAlbumRequest request =
         BatchRemoveMediaItemsFromAlbumRequest.newBuilder()
             .setAlbumId(albumId)
@@ -1697,6 +1687,174 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
           BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
       batchRemoveMediaItemsFromAlbumCallable() {
     return stub.batchRemoveMediaItemsFromAlbumCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Update the album with the specified `id`. Only the `id`, `title` and
+   * `cover_photo_media_item_id` fields of the album are read, and the album must be created by the
+   * developers and owned by the user.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   Album album = Album.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Album response = internalPhotosLibraryClient.updateAlbum(album, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param album Required. The [Album][google.photos.types.Album] to update.
+   *     <p>The album’s `id` field is used to identify the album to be updated. The album’s `title`
+   *     field is used to set the new album title. The album’s `cover_photo_media_item_id` field is
+   *     used to set the new album title.
+   * @param updateMask Indicate what fields in the provided album to update. The only valid values
+   *     are `title` and `cover_photo_media_item_id`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Album updateAlbum(Album album, FieldMask updateMask) {
+    UpdateAlbumRequest request =
+        UpdateAlbumRequest.newBuilder().setAlbum(album).setUpdateMask(updateMask).build();
+    return updateAlbum(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Update the album with the specified `id`. Only the `id`, `title` and
+   * `cover_photo_media_item_id` fields of the album are read, and the album must be created by the
+   * developers and owned by the user.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   Album album = Album.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateAlbumRequest request = UpdateAlbumRequest.newBuilder()
+   *     .setAlbum(album)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   Album response = internalPhotosLibraryClient.updateAlbum(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Album updateAlbum(UpdateAlbumRequest request) {
+    return updateAlbumCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Update the album with the specified `id`. Only the `id`, `title` and
+   * `cover_photo_media_item_id` fields of the album are read, and the album must be created by the
+   * developers and owned by the user.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   Album album = Album.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateAlbumRequest request = UpdateAlbumRequest.newBuilder()
+   *     .setAlbum(album)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;Album&gt; future = internalPhotosLibraryClient.updateAlbumCallable().futureCall(request);
+   *   // Do something
+   *   Album response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateAlbumRequest, Album> updateAlbumCallable() {
+    return stub.updateAlbumCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Update the media item with the specified `id`. Only the `id` and `description` fields of the
+   * media item are read, and the media item must be created by the developers and owned by the
+   * user.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   MediaItem mediaItem = MediaItem.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   MediaItem response = internalPhotosLibraryClient.updateMediaItem(mediaItem, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param mediaItem Required. The [MediaItem][google.photos.types.MediaItem] to update.
+   *     <p>The media item's `id` field is used to identify the media item to be updated. The media
+   *     item's `description` field is used to set the new media item description.
+   * @param updateMask Indicate what fields in the provided media item to update. The only valid
+   *     value is `description`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MediaItem updateMediaItem(MediaItem mediaItem, FieldMask updateMask) {
+    UpdateMediaItemRequest request =
+        UpdateMediaItemRequest.newBuilder()
+            .setMediaItem(mediaItem)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateMediaItem(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Update the media item with the specified `id`. Only the `id` and `description` fields of the
+   * media item are read, and the media item must be created by the developers and owned by the
+   * user.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   MediaItem mediaItem = MediaItem.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateMediaItemRequest request = UpdateMediaItemRequest.newBuilder()
+   *     .setMediaItem(mediaItem)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   MediaItem response = internalPhotosLibraryClient.updateMediaItem(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MediaItem updateMediaItem(UpdateMediaItemRequest request) {
+    return updateMediaItemCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Update the media item with the specified `id`. Only the `id` and `description` fields of the
+   * media item are read, and the media item must be created by the developers and owned by the
+   * user.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   MediaItem mediaItem = MediaItem.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateMediaItemRequest request = UpdateMediaItemRequest.newBuilder()
+   *     .setMediaItem(mediaItem)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;MediaItem&gt; future = internalPhotosLibraryClient.updateMediaItemCallable().futureCall(request);
+   *   // Do something
+   *   MediaItem response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateMediaItemRequest, MediaItem> updateMediaItemCallable() {
+    return stub.updateMediaItemCallable();
   }
 
   @Override

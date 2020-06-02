@@ -33,6 +33,8 @@ import com.google.photos.library.v1.upload.PhotosLibraryUploadStubImpl;
 import com.google.photos.library.v1.upload.UploadMediaItemRequest;
 import com.google.photos.library.v1.upload.UploadMediaItemResponse;
 import com.google.photos.types.proto.Album;
+import com.google.photos.types.proto.MediaItem;
+import com.google.protobuf.FieldMask;
 import io.grpc.Status.Code;
 import java.io.IOException;
 import java.util.List;
@@ -185,11 +187,87 @@ public final class PhotosLibraryClient extends InternalPhotosLibraryClient {
    * @throws IllegalArgumentException if albumTitle is null or empty.
    */
   public final Album createAlbum(String albumTitle) {
-    if (albumTitle == null || albumTitle.isEmpty()) {
+    if (Strings.isNullOrEmpty(albumTitle)) {
       throw new IllegalArgumentException("The album title cannot be null or empty.");
     }
 
     return super.createAlbum(Album.newBuilder().setTitle(albumTitle).build());
+  }
+
+  /**
+   * Updates the title of an album.
+   *
+   * <p>Only the `id` field of the album is used to identify the album. The album must be created by
+   * the developer and owned by the user.
+   *
+   * @param album Required. The [Album][google.photos.types.Album] to update.
+   *     <p>The album’s `id` field is used to identify the album to be updated.
+   * @param newTitle Required. The new title of the album.
+   * @return The updated album.
+   * @throws IllegalArgumentException if newTitle is null or empty.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Album updateAlbumTitle(Album album, String newTitle) {
+    if (Strings.isNullOrEmpty(newTitle)) {
+      throw new IllegalArgumentException("The new album title cannot be null or empty.");
+    }
+
+    Album newAlbum = Album.newBuilder(album).setTitle(newTitle).build();
+    FieldMask updateMask = FieldMask.newBuilder().addPaths("title").build();
+    return super.updateAlbum(newAlbum, updateMask);
+  }
+
+  /**
+   * Updates the media item used as the cover photo for an album.
+   *
+   * <p>The newCoverPhotoMediaItemId must be the identifier of a media item contained within the
+   * album.
+   *
+   * <p>Only the `id` field of the album is used to identify the album. The album must be created by
+   * the developer and owned by the user.
+   *
+   * @param album Required. The [Album][google.photos.types.Album] to update.
+   *     <p>The album’s `id` field is used to identify the album to be updated.
+   * @param newCoverPhotoMediaItemId Required. The identifier of the new media item cover photo.
+   * @return The updated album.
+   * @throws IllegalArgumentException if newTitle is null or empty.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Album updateAlbumCoverPhoto(Album album, String newCoverPhotoMediaItemId) {
+    if (Strings.isNullOrEmpty(newCoverPhotoMediaItemId)) {
+      throw new IllegalArgumentException(
+          "The new cover photo media item ID cannot be null or empty.");
+    }
+
+    Album newAlbum =
+        Album.newBuilder(album).setCoverPhotoMediaItemId(newCoverPhotoMediaItemId).build();
+    // FieldMask paths must be specified in snake_case.
+    FieldMask updateMask = FieldMask.newBuilder().addPaths("cover_photo_media_item_id").build();
+
+    return super.updateAlbum(newAlbum, updateMask);
+  }
+
+  /**
+   * Updates the description of a media item.
+   *
+   * <p>Only the `id` field of the media item is used to identify the item. The media item must be
+   * created by the developer and owned by the user.
+   *
+   * @param mediaItem Required. The [MediaItem][google.photos.types.MediaItem] to update.
+   *     <p>The media item's `id` field is used to identify the media item to be updated.
+   * @param newDescription Required. The new description of the media item.
+   * @return The updated media item.
+   * @throws IllegalArgumentException if newDescription is null.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails.
+   */
+  public final MediaItem updateMediaItemDescription(MediaItem mediaItem, String newDescription) {
+    if (newDescription == null) {
+      throw new IllegalArgumentException("The new edia item description cannot be null.");
+    }
+
+    MediaItem newMediaItem = MediaItem.newBuilder(mediaItem).setDescription(newDescription).build();
+    FieldMask updateMask = FieldMask.newBuilder().addPaths("description").build();
+    return super.updateMediaItem(newMediaItem, updateMask);
   }
 
   /**

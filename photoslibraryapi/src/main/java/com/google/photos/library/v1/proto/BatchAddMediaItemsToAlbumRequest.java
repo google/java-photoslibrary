@@ -29,6 +29,12 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchAddMediaItemsToAlbumRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -106,7 +112,6 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
             com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int MEDIA_ITEM_IDS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList mediaItemIds_;
   /**
@@ -119,6 +124,8 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @return A list containing the mediaItemIds.
    */
   public com.google.protobuf.ProtocolStringList getMediaItemIdsList() {
     return mediaItemIds_;
@@ -133,6 +140,8 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @return The count of mediaItemIds.
    */
   public int getMediaItemIdsCount() {
     return mediaItemIds_.size();
@@ -147,6 +156,9 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The mediaItemIds at the given index.
    */
   public java.lang.String getMediaItemIds(int index) {
     return mediaItemIds_.get(index);
@@ -161,6 +173,9 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the mediaItemIds at the given index.
    */
   public com.google.protobuf.ByteString getMediaItemIdsBytes(int index) {
     return mediaItemIds_.getByteString(index);
@@ -177,6 +192,8 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>string album_id = 2;</code>
+   *
+   * @return The albumId.
    */
   public java.lang.String getAlbumId() {
     java.lang.Object ref = albumId_;
@@ -198,6 +215,8 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
    * </pre>
    *
    * <code>string album_id = 2;</code>
+   *
+   * @return The bytes for albumId.
    */
   public com.google.protobuf.ByteString getAlbumIdBytes() {
     java.lang.Object ref = albumId_;
@@ -468,14 +487,12 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
       com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumRequest result =
           new com.google.photos.library.v1.proto.BatchAddMediaItemsToAlbumRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         mediaItemIds_ = mediaItemIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.mediaItemIds_ = mediaItemIds_;
       result.albumId_ = albumId_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -595,6 +612,8 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @return A list containing the mediaItemIds.
      */
     public com.google.protobuf.ProtocolStringList getMediaItemIdsList() {
       return mediaItemIds_.getUnmodifiableView();
@@ -609,6 +628,8 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @return The count of mediaItemIds.
      */
     public int getMediaItemIdsCount() {
       return mediaItemIds_.size();
@@ -623,6 +644,9 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The mediaItemIds at the given index.
      */
     public java.lang.String getMediaItemIds(int index) {
       return mediaItemIds_.get(index);
@@ -637,6 +661,9 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the mediaItemIds at the given index.
      */
     public com.google.protobuf.ByteString getMediaItemIdsBytes(int index) {
       return mediaItemIds_.getByteString(index);
@@ -651,6 +678,10 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The mediaItemIds to set.
+     * @return This builder for chaining.
      */
     public Builder setMediaItemIds(int index, java.lang.String value) {
       if (value == null) {
@@ -671,6 +702,9 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param value The mediaItemIds to add.
+     * @return This builder for chaining.
      */
     public Builder addMediaItemIds(java.lang.String value) {
       if (value == null) {
@@ -691,6 +725,9 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param values The mediaItemIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllMediaItemIds(java.lang.Iterable<java.lang.String> values) {
       ensureMediaItemIdsIsMutable();
@@ -708,6 +745,8 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMediaItemIds() {
       mediaItemIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -725,6 +764,9 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param value The bytes of the mediaItemIds to add.
+     * @return This builder for chaining.
      */
     public Builder addMediaItemIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -747,6 +789,8 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string album_id = 2;</code>
+     *
+     * @return The albumId.
      */
     public java.lang.String getAlbumId() {
       java.lang.Object ref = albumId_;
@@ -768,6 +812,8 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string album_id = 2;</code>
+     *
+     * @return The bytes for albumId.
      */
     public com.google.protobuf.ByteString getAlbumIdBytes() {
       java.lang.Object ref = albumId_;
@@ -789,6 +835,9 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string album_id = 2;</code>
+     *
+     * @param value The albumId to set.
+     * @return This builder for chaining.
      */
     public Builder setAlbumId(java.lang.String value) {
       if (value == null) {
@@ -808,6 +857,8 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string album_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAlbumId() {
 
@@ -824,6 +875,9 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
      * </pre>
      *
      * <code>string album_id = 2;</code>
+     *
+     * @param value The bytes for albumId to set.
+     * @return This builder for chaining.
      */
     public Builder setAlbumIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

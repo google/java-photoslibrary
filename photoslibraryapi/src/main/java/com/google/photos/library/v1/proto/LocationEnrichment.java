@@ -25,6 +25,12 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
   private LocationEnrichment() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LocationEnrichment();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,6 +113,8 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.photos.library.v1.Location location = 1;</code>
+   *
+   * @return Whether the location field is set.
    */
   public boolean hasLocation() {
     return location_ != null;
@@ -120,6 +127,8 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.photos.library.v1.Location location = 1;</code>
+   *
+   * @return The location.
    */
   public com.google.photos.library.v1.proto.Location getLocation() {
     return location_ == null
@@ -484,6 +493,8 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.photos.library.v1.Location location = 1;</code>
+     *
+     * @return Whether the location field is set.
      */
     public boolean hasLocation() {
       return locationBuilder_ != null || location_ != null;
@@ -496,6 +507,8 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.photos.library.v1.Location location = 1;</code>
+     *
+     * @return The location.
      */
     public com.google.photos.library.v1.proto.Location getLocation() {
       if (locationBuilder_ == null) {

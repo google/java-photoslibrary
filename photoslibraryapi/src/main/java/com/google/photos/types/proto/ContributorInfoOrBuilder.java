@@ -16,6 +16,8 @@ public interface ContributorInfoOrBuilder
    * </pre>
    *
    * <code>string profile_picture_base_url = 1;</code>
+   *
+   * @return The profilePictureBaseUrl.
    */
   java.lang.String getProfilePictureBaseUrl();
   /**
@@ -26,6 +28,8 @@ public interface ContributorInfoOrBuilder
    * </pre>
    *
    * <code>string profile_picture_base_url = 1;</code>
+   *
+   * @return The bytes for profilePictureBaseUrl.
    */
   com.google.protobuf.ByteString getProfilePictureBaseUrlBytes();
 
@@ -37,6 +41,8 @@ public interface ContributorInfoOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -47,6 +53,8 @@ public interface ContributorInfoOrBuilder
    * </pre>
    *
    * <code>string display_name = 2;</code>
+   *
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 }

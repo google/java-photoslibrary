@@ -27,6 +27,12 @@ public final class EnrichmentItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new EnrichmentItem();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class EnrichmentItem extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -101,6 +106,8 @@ public final class EnrichmentItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -121,6 +128,8 @@ public final class EnrichmentItem extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -461,6 +470,8 @@ public final class EnrichmentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -481,6 +492,8 @@ public final class EnrichmentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -501,6 +514,9 @@ public final class EnrichmentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -519,6 +535,8 @@ public final class EnrichmentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -534,6 +552,9 @@ public final class EnrichmentItem extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

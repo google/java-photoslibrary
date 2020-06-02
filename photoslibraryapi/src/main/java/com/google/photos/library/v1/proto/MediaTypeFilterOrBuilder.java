@@ -18,6 +18,8 @@ public interface MediaTypeFilterOrBuilder
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+   *
+   * @return A list containing the mediaTypes.
    */
   java.util.List<com.google.photos.library.v1.proto.MediaTypeFilter.MediaType> getMediaTypesList();
   /**
@@ -30,6 +32,8 @@ public interface MediaTypeFilterOrBuilder
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+   *
+   * @return The count of mediaTypes.
    */
   int getMediaTypesCount();
   /**
@@ -42,6 +46,9 @@ public interface MediaTypeFilterOrBuilder
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The mediaTypes at the given index.
    */
   com.google.photos.library.v1.proto.MediaTypeFilter.MediaType getMediaTypes(int index);
   /**
@@ -54,6 +61,8 @@ public interface MediaTypeFilterOrBuilder
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for mediaTypes.
    */
   java.util.List<java.lang.Integer> getMediaTypesValueList();
   /**
@@ -66,6 +75,9 @@ public interface MediaTypeFilterOrBuilder
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of mediaTypes at the given index.
    */
   int getMediaTypesValue(int index);
 }

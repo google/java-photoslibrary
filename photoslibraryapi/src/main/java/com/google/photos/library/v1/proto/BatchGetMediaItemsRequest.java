@@ -27,6 +27,12 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchGetMediaItemsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -109,6 +115,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @return A list containing the mediaItemIds.
    */
   public com.google.protobuf.ProtocolStringList getMediaItemIdsList() {
     return mediaItemIds_;
@@ -123,6 +131,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @return The count of mediaItemIds.
    */
   public int getMediaItemIdsCount() {
     return mediaItemIds_.size();
@@ -137,6 +147,9 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The mediaItemIds at the given index.
    */
   public java.lang.String getMediaItemIds(int index) {
     return mediaItemIds_.get(index);
@@ -151,6 +164,9 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the mediaItemIds at the given index.
    */
   public com.google.protobuf.ByteString getMediaItemIdsBytes(int index) {
     return mediaItemIds_.getByteString(index);
@@ -516,6 +532,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @return A list containing the mediaItemIds.
      */
     public com.google.protobuf.ProtocolStringList getMediaItemIdsList() {
       return mediaItemIds_.getUnmodifiableView();
@@ -530,6 +548,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @return The count of mediaItemIds.
      */
     public int getMediaItemIdsCount() {
       return mediaItemIds_.size();
@@ -544,6 +564,9 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The mediaItemIds at the given index.
      */
     public java.lang.String getMediaItemIds(int index) {
       return mediaItemIds_.get(index);
@@ -558,6 +581,9 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the mediaItemIds at the given index.
      */
     public com.google.protobuf.ByteString getMediaItemIdsBytes(int index) {
       return mediaItemIds_.getByteString(index);
@@ -572,6 +598,10 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The mediaItemIds to set.
+     * @return This builder for chaining.
      */
     public Builder setMediaItemIds(int index, java.lang.String value) {
       if (value == null) {
@@ -592,6 +622,9 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param value The mediaItemIds to add.
+     * @return This builder for chaining.
      */
     public Builder addMediaItemIds(java.lang.String value) {
       if (value == null) {
@@ -612,6 +645,9 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param values The mediaItemIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllMediaItemIds(java.lang.Iterable<java.lang.String> values) {
       ensureMediaItemIdsIsMutable();
@@ -629,6 +665,8 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMediaItemIds() {
       mediaItemIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -646,6 +684,9 @@ public final class BatchGetMediaItemsRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>repeated string media_item_ids = 1;</code>
+     *
+     * @param value The bytes of the mediaItemIds to add.
+     * @return This builder for chaining.
      */
     public Builder addMediaItemIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

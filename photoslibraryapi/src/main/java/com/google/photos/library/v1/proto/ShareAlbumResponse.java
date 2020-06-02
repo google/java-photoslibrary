@@ -25,6 +25,12 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
   private ShareAlbumResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ShareAlbumResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,6 +113,8 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.photos.types.ShareInfo share_info = 1;</code>
+   *
+   * @return Whether the shareInfo field is set.
    */
   public boolean hasShareInfo() {
     return shareInfo_ != null;
@@ -120,6 +127,8 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.photos.types.ShareInfo share_info = 1;</code>
+   *
+   * @return The shareInfo.
    */
   public com.google.photos.types.proto.ShareInfo getShareInfo() {
     return shareInfo_ == null
@@ -484,6 +493,8 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.photos.types.ShareInfo share_info = 1;</code>
+     *
+     * @return Whether the shareInfo field is set.
      */
     public boolean hasShareInfo() {
       return shareInfoBuilder_ != null || shareInfo_ != null;
@@ -496,6 +507,8 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.photos.types.ShareInfo share_info = 1;</code>
+     *
+     * @return The shareInfo.
      */
     public com.google.photos.types.proto.ShareInfo getShareInfo() {
       if (shareInfoBuilder_ == null) {

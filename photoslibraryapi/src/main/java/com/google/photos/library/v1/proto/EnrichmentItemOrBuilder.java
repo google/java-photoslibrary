@@ -16,6 +16,8 @@ public interface EnrichmentItemOrBuilder
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -26,6 +28,8 @@ public interface EnrichmentItemOrBuilder
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
 }

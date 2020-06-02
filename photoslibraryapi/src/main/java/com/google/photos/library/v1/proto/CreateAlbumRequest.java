@@ -25,6 +25,12 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
   private CreateAlbumRequest() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CreateAlbumRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -108,6 +113,8 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.photos.types.Album album = 1;</code>
+   *
+   * @return Whether the album field is set.
    */
   public boolean hasAlbum() {
     return album_ != null;
@@ -120,6 +127,8 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>.google.photos.types.Album album = 1;</code>
+   *
+   * @return The album.
    */
   public com.google.photos.types.proto.Album getAlbum() {
     return album_ == null ? com.google.photos.types.proto.Album.getDefaultInstance() : album_;
@@ -482,6 +491,8 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.photos.types.Album album = 1;</code>
+     *
+     * @return Whether the album field is set.
      */
     public boolean hasAlbum() {
       return albumBuilder_ != null || album_ != null;
@@ -494,6 +505,8 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>.google.photos.types.Album album = 1;</code>
+     *
+     * @return The album.
      */
     public com.google.photos.types.proto.Album getAlbum() {
       if (albumBuilder_ == null) {

@@ -25,6 +25,12 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
   private AddEnrichmentToAlbumResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AddEnrichmentToAlbumResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -109,6 +114,8 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>
+   *
+   * @return Whether the enrichmentItem field is set.
    */
   public boolean hasEnrichmentItem() {
     return enrichmentItem_ != null;
@@ -121,6 +128,8 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>
+   *
+   * @return The enrichmentItem.
    */
   public com.google.photos.library.v1.proto.EnrichmentItem getEnrichmentItem() {
     return enrichmentItem_ == null
@@ -489,6 +498,8 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>
+     *
+     * @return Whether the enrichmentItem field is set.
      */
     public boolean hasEnrichmentItem() {
       return enrichmentItemBuilder_ != null || enrichmentItem_ != null;
@@ -501,6 +512,8 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>
+     *
+     * @return The enrichmentItem.
      */
     public com.google.photos.library.v1.proto.EnrichmentItem getEnrichmentItem() {
       if (enrichmentItemBuilder_ == null) {

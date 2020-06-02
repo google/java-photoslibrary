@@ -27,6 +27,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AddEnrichmentToAlbumRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -134,6 +139,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The albumId.
    */
   public java.lang.String getAlbumId() {
     java.lang.Object ref = albumId_;
@@ -154,6 +161,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The bytes for albumId.
    */
   public com.google.protobuf.ByteString getAlbumIdBytes() {
     java.lang.Object ref = albumId_;
@@ -177,6 +186,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+   *
+   * @return Whether the newEnrichmentItem field is set.
    */
   public boolean hasNewEnrichmentItem() {
     return newEnrichmentItem_ != null;
@@ -189,6 +200,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+   *
+   * @return The newEnrichmentItem.
    */
   public com.google.photos.library.v1.proto.NewEnrichmentItem getNewEnrichmentItem() {
     return newEnrichmentItem_ == null
@@ -219,6 +232,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+   *
+   * @return Whether the albumPosition field is set.
    */
   public boolean hasAlbumPosition() {
     return albumPosition_ != null;
@@ -231,6 +246,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+   *
+   * @return The albumPosition.
    */
   public com.google.photos.library.v1.proto.AlbumPosition getAlbumPosition() {
     return albumPosition_ == null
@@ -637,6 +654,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @return The albumId.
      */
     public java.lang.String getAlbumId() {
       java.lang.Object ref = albumId_;
@@ -657,6 +676,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @return The bytes for albumId.
      */
     public com.google.protobuf.ByteString getAlbumIdBytes() {
       java.lang.Object ref = albumId_;
@@ -677,6 +698,9 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @param value The albumId to set.
+     * @return This builder for chaining.
      */
     public Builder setAlbumId(java.lang.String value) {
       if (value == null) {
@@ -695,6 +719,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAlbumId() {
 
@@ -710,6 +736,9 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @param value The bytes for albumId to set.
+     * @return This builder for chaining.
      */
     public Builder setAlbumIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -736,6 +765,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+     *
+     * @return Whether the newEnrichmentItem field is set.
      */
     public boolean hasNewEnrichmentItem() {
       return newEnrichmentItemBuilder_ != null || newEnrichmentItem_ != null;
@@ -748,6 +779,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+     *
+     * @return The newEnrichmentItem.
      */
     public com.google.photos.library.v1.proto.NewEnrichmentItem getNewEnrichmentItem() {
       if (newEnrichmentItemBuilder_ == null) {
@@ -922,6 +955,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+     *
+     * @return Whether the albumPosition field is set.
      */
     public boolean hasAlbumPosition() {
       return albumPositionBuilder_ != null || albumPosition_ != null;
@@ -934,6 +969,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+     *
+     * @return The albumPosition.
      */
     public com.google.photos.library.v1.proto.AlbumPosition getAlbumPosition() {
       if (albumPositionBuilder_ == null) {

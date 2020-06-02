@@ -17,6 +17,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -28,6 +30,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
 
@@ -40,6 +44,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>string title = 2;</code>
+   *
+   * @return The title.
    */
   java.lang.String getTitle();
   /**
@@ -51,6 +57,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>string title = 2;</code>
+   *
+   * @return The bytes for title.
    */
   com.google.protobuf.ByteString getTitleBytes();
 
@@ -63,6 +71,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>string product_url = 3;</code>
+   *
+   * @return The productUrl.
    */
   java.lang.String getProductUrl();
   /**
@@ -74,6 +84,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>string product_url = 3;</code>
+   *
+   * @return The bytes for productUrl.
    */
   com.google.protobuf.ByteString getProductUrlBytes();
 
@@ -88,6 +100,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>bool is_writeable = 4;</code>
+   *
+   * @return The isWriteable.
    */
   boolean getIsWriteable();
 
@@ -102,6 +116,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.ShareInfo share_info = 5;</code>
+   *
+   * @return Whether the shareInfo field is set.
    */
   boolean hasShareInfo();
   /**
@@ -115,6 +131,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.ShareInfo share_info = 5;</code>
+   *
+   * @return The shareInfo.
    */
   com.google.photos.types.proto.ShareInfo getShareInfo();
   /**
@@ -139,6 +157,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>int64 media_items_count = 6;</code>
+   *
+   * @return The mediaItemsCount.
    */
   long getMediaItemsCount();
 
@@ -156,6 +176,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>string cover_photo_base_url = 7;</code>
+   *
+   * @return The coverPhotoBaseUrl.
    */
   java.lang.String getCoverPhotoBaseUrl();
   /**
@@ -172,6 +194,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>string cover_photo_base_url = 7;</code>
+   *
+   * @return The bytes for coverPhotoBaseUrl.
    */
   com.google.protobuf.ByteString getCoverPhotoBaseUrlBytes();
 
@@ -184,6 +208,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>string cover_photo_media_item_id = 8;</code>
+   *
+   * @return The coverPhotoMediaItemId.
    */
   java.lang.String getCoverPhotoMediaItemId();
   /**
@@ -195,6 +221,8 @@ public interface AlbumOrBuilder
    * </pre>
    *
    * <code>string cover_photo_media_item_id = 8;</code>
+   *
+   * @return The bytes for coverPhotoMediaItemId.
    */
   com.google.protobuf.ByteString getCoverPhotoMediaItemIdBytes();
 }

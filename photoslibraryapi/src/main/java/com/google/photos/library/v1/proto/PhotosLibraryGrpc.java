@@ -1034,6 +1034,121 @@ public final class PhotosLibraryGrpc {
     return getBatchRemoveMediaItemsFromAlbumMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdateAlbumMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UpdateAlbumRequest,
+          com.google.photos.types.proto.Album>
+      METHOD_UPDATE_ALBUM = getUpdateAlbumMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UpdateAlbumRequest,
+          com.google.photos.types.proto.Album>
+      getUpdateAlbumMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UpdateAlbumRequest,
+          com.google.photos.types.proto.Album>
+      getUpdateAlbumMethod() {
+    return getUpdateAlbumMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UpdateAlbumRequest,
+          com.google.photos.types.proto.Album>
+      getUpdateAlbumMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.photos.library.v1.proto.UpdateAlbumRequest,
+            com.google.photos.types.proto.Album>
+        getUpdateAlbumMethod;
+    if ((getUpdateAlbumMethod = PhotosLibraryGrpc.getUpdateAlbumMethod) == null) {
+      synchronized (PhotosLibraryGrpc.class) {
+        if ((getUpdateAlbumMethod = PhotosLibraryGrpc.getUpdateAlbumMethod) == null) {
+          PhotosLibraryGrpc.getUpdateAlbumMethod =
+              getUpdateAlbumMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.photos.library.v1.proto.UpdateAlbumRequest,
+                          com.google.photos.types.proto.Album>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.photos.library.v1.PhotosLibrary", "UpdateAlbum"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.library.v1.proto.UpdateAlbumRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.types.proto.Album.getDefaultInstance()))
+                      .setSchemaDescriptor(new PhotosLibraryMethodDescriptorSupplier("UpdateAlbum"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAlbumMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdateMediaItemMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UpdateMediaItemRequest,
+          com.google.photos.types.proto.MediaItem>
+      METHOD_UPDATE_MEDIA_ITEM = getUpdateMediaItemMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UpdateMediaItemRequest,
+          com.google.photos.types.proto.MediaItem>
+      getUpdateMediaItemMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UpdateMediaItemRequest,
+          com.google.photos.types.proto.MediaItem>
+      getUpdateMediaItemMethod() {
+    return getUpdateMediaItemMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.photos.library.v1.proto.UpdateMediaItemRequest,
+          com.google.photos.types.proto.MediaItem>
+      getUpdateMediaItemMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.photos.library.v1.proto.UpdateMediaItemRequest,
+            com.google.photos.types.proto.MediaItem>
+        getUpdateMediaItemMethod;
+    if ((getUpdateMediaItemMethod = PhotosLibraryGrpc.getUpdateMediaItemMethod) == null) {
+      synchronized (PhotosLibraryGrpc.class) {
+        if ((getUpdateMediaItemMethod = PhotosLibraryGrpc.getUpdateMediaItemMethod) == null) {
+          PhotosLibraryGrpc.getUpdateMediaItemMethod =
+              getUpdateMediaItemMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.photos.library.v1.proto.UpdateMediaItemRequest,
+                          com.google.photos.types.proto.MediaItem>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.photos.library.v1.PhotosLibrary", "UpdateMediaItem"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.library.v1.proto.UpdateMediaItemRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.photos.types.proto.MediaItem.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PhotosLibraryMethodDescriptorSupplier("UpdateMediaItem"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMediaItemMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PhotosLibraryStub newStub(io.grpc.Channel channel) {
     return new PhotosLibraryStub(channel);
@@ -1355,6 +1470,37 @@ public final class PhotosLibraryGrpc {
           getBatchRemoveMediaItemsFromAlbumMethodHelper(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Update the album with the specified `id`.
+     * Only the `id`, `title` and `cover_photo_media_item_id` fields of the album
+     * are read, and the album must be created by the developers and owned by
+     * the user.
+     * </pre>
+     */
+    public void updateAlbum(
+        com.google.photos.library.v1.proto.UpdateAlbumRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.types.proto.Album> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateAlbumMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update the media item with the specified `id`.
+     * Only the `id` and `description` fields of the media item are read, and the
+     * media item must be created by the developers and owned by the user.
+     * </pre>
+     */
+    public void updateMediaItem(
+        com.google.photos.library.v1.proto.UpdateMediaItemRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.types.proto.MediaItem> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateMediaItemMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -1473,6 +1619,18 @@ public final class PhotosLibraryGrpc {
                       com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest,
                       com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumResponse>(
                       this, METHODID_BATCH_REMOVE_MEDIA_ITEMS_FROM_ALBUM)))
+          .addMethod(
+              getUpdateAlbumMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.photos.library.v1.proto.UpdateAlbumRequest,
+                      com.google.photos.types.proto.Album>(this, METHODID_UPDATE_ALBUM)))
+          .addMethod(
+              getUpdateMediaItemMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.photos.library.v1.proto.UpdateMediaItemRequest,
+                      com.google.photos.types.proto.MediaItem>(this, METHODID_UPDATE_MEDIA_ITEM)))
           .build();
     }
   }
@@ -1842,6 +2000,43 @@ public final class PhotosLibraryGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update the album with the specified `id`.
+     * Only the `id`, `title` and `cover_photo_media_item_id` fields of the album
+     * are read, and the album must be created by the developers and owned by
+     * the user.
+     * </pre>
+     */
+    public void updateAlbum(
+        com.google.photos.library.v1.proto.UpdateAlbumRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.types.proto.Album> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateAlbumMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update the media item with the specified `id`.
+     * Only the `id` and `description` fields of the media item are read, and the
+     * media item must be created by the developers and owned by the user.
+     * </pre>
+     */
+    public void updateMediaItem(
+        com.google.photos.library.v1.proto.UpdateMediaItemRequest request,
+        io.grpc.stub.StreamObserver<com.google.photos.types.proto.MediaItem> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateMediaItemMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2144,6 +2339,37 @@ public final class PhotosLibraryGrpc {
             com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest request) {
       return blockingUnaryCall(
           getChannel(), getBatchRemoveMediaItemsFromAlbumMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update the album with the specified `id`.
+     * Only the `id`, `title` and `cover_photo_media_item_id` fields of the album
+     * are read, and the album must be created by the developers and owned by
+     * the user.
+     * </pre>
+     */
+    public com.google.photos.types.proto.Album updateAlbum(
+        com.google.photos.library.v1.proto.UpdateAlbumRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateAlbumMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update the media item with the specified `id`.
+     * Only the `id` and `description` fields of the media item are read, and the
+     * media item must be created by the developers and owned by the user.
+     * </pre>
+     */
+    public com.google.photos.types.proto.MediaItem updateMediaItem(
+        com.google.photos.library.v1.proto.UpdateMediaItemRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateMediaItemMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -2467,6 +2693,38 @@ public final class PhotosLibraryGrpc {
           getChannel().newCall(getBatchRemoveMediaItemsFromAlbumMethodHelper(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update the album with the specified `id`.
+     * Only the `id`, `title` and `cover_photo_media_item_id` fields of the album
+     * are read, and the album must be created by the developers and owned by
+     * the user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.photos.types.proto.Album>
+        updateAlbum(com.google.photos.library.v1.proto.UpdateAlbumRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateAlbumMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update the media item with the specified `id`.
+     * Only the `id` and `description` fields of the media item are read, and the
+     * media item must be created by the developers and owned by the user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.photos.types.proto.MediaItem>
+        updateMediaItem(com.google.photos.library.v1.proto.UpdateMediaItemRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateMediaItemMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ALBUM = 0;
@@ -2486,6 +2744,8 @@ public final class PhotosLibraryGrpc {
   private static final int METHODID_LIST_SHARED_ALBUMS = 14;
   private static final int METHODID_UNSHARE_ALBUM = 15;
   private static final int METHODID_BATCH_REMOVE_MEDIA_ITEMS_FROM_ALBUM = 16;
+  private static final int METHODID_UPDATE_ALBUM = 17;
+  private static final int METHODID_UPDATE_MEDIA_ITEM = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2613,6 +2873,17 @@ public final class PhotosLibraryGrpc {
                       com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumResponse>)
                   responseObserver);
           break;
+        case METHODID_UPDATE_ALBUM:
+          serviceImpl.updateAlbum(
+              (com.google.photos.library.v1.proto.UpdateAlbumRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.photos.types.proto.Album>) responseObserver);
+          break;
+        case METHODID_UPDATE_MEDIA_ITEM:
+          serviceImpl.updateMediaItem(
+              (com.google.photos.library.v1.proto.UpdateMediaItemRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.photos.types.proto.MediaItem>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2694,6 +2965,8 @@ public final class PhotosLibraryGrpc {
                       .addMethod(getListSharedAlbumsMethodHelper())
                       .addMethod(getUnshareAlbumMethodHelper())
                       .addMethod(getBatchRemoveMediaItemsFromAlbumMethodHelper())
+                      .addMethod(getUpdateAlbumMethodHelper())
+                      .addMethod(getUpdateMediaItemMethodHelper())
                       .build();
         }
       }

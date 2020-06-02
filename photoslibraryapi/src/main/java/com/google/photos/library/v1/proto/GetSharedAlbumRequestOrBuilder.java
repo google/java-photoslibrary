@@ -16,6 +16,8 @@ public interface GetSharedAlbumRequestOrBuilder
    * </pre>
    *
    * <code>string share_token = 1;</code>
+   *
+   * @return The shareToken.
    */
   java.lang.String getShareToken();
   /**
@@ -26,6 +28,8 @@ public interface GetSharedAlbumRequestOrBuilder
    * </pre>
    *
    * <code>string share_token = 1;</code>
+   *
+   * @return The bytes for shareToken.
    */
   com.google.protobuf.ByteString getShareTokenBytes();
 }

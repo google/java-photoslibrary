@@ -29,6 +29,12 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MediaTypeFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -204,12 +210,20 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MediaType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static MediaType forNumber(int value) {
       switch (value) {
         case 0:
@@ -296,6 +310,8 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+   *
+   * @return A list containing the mediaTypes.
    */
   public java.util.List<com.google.photos.library.v1.proto.MediaTypeFilter.MediaType>
       getMediaTypesList() {
@@ -313,6 +329,8 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+   *
+   * @return The count of mediaTypes.
    */
   public int getMediaTypesCount() {
     return mediaTypes_.size();
@@ -327,6 +345,9 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The mediaTypes at the given index.
    */
   public com.google.photos.library.v1.proto.MediaTypeFilter.MediaType getMediaTypes(int index) {
     return mediaTypes_converter_.convert(mediaTypes_.get(index));
@@ -341,6 +362,8 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for mediaTypes.
    */
   public java.util.List<java.lang.Integer> getMediaTypesValueList() {
     return mediaTypes_;
@@ -355,6 +378,9 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of mediaTypes at the given index.
    */
   public int getMediaTypesValue(int index) {
     return mediaTypes_.get(index);
@@ -729,6 +755,8 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @return A list containing the mediaTypes.
      */
     public java.util.List<com.google.photos.library.v1.proto.MediaTypeFilter.MediaType>
         getMediaTypesList() {
@@ -746,6 +774,8 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @return The count of mediaTypes.
      */
     public int getMediaTypesCount() {
       return mediaTypes_.size();
@@ -760,6 +790,9 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The mediaTypes at the given index.
      */
     public com.google.photos.library.v1.proto.MediaTypeFilter.MediaType getMediaTypes(int index) {
       return mediaTypes_converter_.convert(mediaTypes_.get(index));
@@ -774,6 +807,10 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The mediaTypes to set.
+     * @return This builder for chaining.
      */
     public Builder setMediaTypes(
         int index, com.google.photos.library.v1.proto.MediaTypeFilter.MediaType value) {
@@ -795,6 +832,9 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @param value The mediaTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addMediaTypes(
         com.google.photos.library.v1.proto.MediaTypeFilter.MediaType value) {
@@ -816,6 +856,9 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @param values The mediaTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllMediaTypes(
         java.lang.Iterable<? extends com.google.photos.library.v1.proto.MediaTypeFilter.MediaType>
@@ -837,6 +880,8 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMediaTypes() {
       mediaTypes_ = java.util.Collections.emptyList();
@@ -854,6 +899,8 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @return A list containing the enum numeric values on the wire for mediaTypes.
      */
     public java.util.List<java.lang.Integer> getMediaTypesValueList() {
       return java.util.Collections.unmodifiableList(mediaTypes_);
@@ -868,6 +915,9 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of mediaTypes at the given index.
      */
     public int getMediaTypesValue(int index) {
       return mediaTypes_.get(index);
@@ -882,6 +932,10 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of mediaTypes at the given index.
+     * @return This builder for chaining.
      */
     public Builder setMediaTypesValue(int index, int value) {
       ensureMediaTypesIsMutable();
@@ -899,6 +953,9 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for mediaTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addMediaTypesValue(int value) {
       ensureMediaTypesIsMutable();
@@ -916,6 +973,9 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.MediaTypeFilter.MediaType media_types = 1;</code>
+     *
+     * @param values The enum numeric values on the wire for mediaTypes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllMediaTypesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureMediaTypesIsMutable();

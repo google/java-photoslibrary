@@ -17,6 +17,8 @@ public interface FeatureFilterOrBuilder
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+   *
+   * @return A list containing the includedFeatures.
    */
   java.util.List<com.google.photos.library.v1.proto.FeatureFilter.Feature>
       getIncludedFeaturesList();
@@ -29,6 +31,8 @@ public interface FeatureFilterOrBuilder
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+   *
+   * @return The count of includedFeatures.
    */
   int getIncludedFeaturesCount();
   /**
@@ -40,6 +44,9 @@ public interface FeatureFilterOrBuilder
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includedFeatures at the given index.
    */
   com.google.photos.library.v1.proto.FeatureFilter.Feature getIncludedFeatures(int index);
   /**
@@ -51,6 +58,8 @@ public interface FeatureFilterOrBuilder
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for includedFeatures.
    */
   java.util.List<java.lang.Integer> getIncludedFeaturesValueList();
   /**
@@ -62,6 +71,9 @@ public interface FeatureFilterOrBuilder
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of includedFeatures at the given index.
    */
   int getIncludedFeaturesValue(int index);
 }

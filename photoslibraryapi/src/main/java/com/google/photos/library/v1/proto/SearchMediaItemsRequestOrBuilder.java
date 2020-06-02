@@ -17,6 +17,8 @@ public interface SearchMediaItemsRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The albumId.
    */
   java.lang.String getAlbumId();
   /**
@@ -28,6 +30,8 @@ public interface SearchMediaItemsRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The bytes for albumId.
    */
   com.google.protobuf.ByteString getAlbumIdBytes();
 
@@ -41,6 +45,8 @@ public interface SearchMediaItemsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -55,6 +61,8 @@ public interface SearchMediaItemsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -68,6 +76,8 @@ public interface SearchMediaItemsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -80,6 +90,8 @@ public interface SearchMediaItemsRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.Filters filters = 4;</code>
+   *
+   * @return Whether the filters field is set.
    */
   boolean hasFilters();
   /**
@@ -91,6 +103,8 @@ public interface SearchMediaItemsRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.Filters filters = 4;</code>
+   *
+   * @return The filters.
    */
   com.google.photos.library.v1.proto.Filters getFilters();
   /**

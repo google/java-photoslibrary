@@ -27,6 +27,12 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Location();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,6 +120,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location_name = 1;</code>
+   *
+   * @return The locationName.
    */
   public java.lang.String getLocationName() {
     java.lang.Object ref = locationName_;
@@ -135,6 +142,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string location_name = 1;</code>
+   *
+   * @return The bytes for locationName.
    */
   public com.google.protobuf.ByteString getLocationNameBytes() {
     java.lang.Object ref = locationName_;
@@ -158,6 +167,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.LatLng latlng = 2;</code>
+   *
+   * @return Whether the latlng field is set.
    */
   public boolean hasLatlng() {
     return latlng_ != null;
@@ -170,6 +181,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.LatLng latlng = 2;</code>
+   *
+   * @return The latlng.
    */
   public com.google.type.LatLng getLatlng() {
     return latlng_ == null ? com.google.type.LatLng.getDefaultInstance() : latlng_;
@@ -540,6 +553,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location_name = 1;</code>
+     *
+     * @return The locationName.
      */
     public java.lang.String getLocationName() {
       java.lang.Object ref = locationName_;
@@ -560,6 +575,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location_name = 1;</code>
+     *
+     * @return The bytes for locationName.
      */
     public com.google.protobuf.ByteString getLocationNameBytes() {
       java.lang.Object ref = locationName_;
@@ -580,6 +597,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location_name = 1;</code>
+     *
+     * @param value The locationName to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationName(java.lang.String value) {
       if (value == null) {
@@ -598,6 +618,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearLocationName() {
 
@@ -613,6 +635,9 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string location_name = 1;</code>
+     *
+     * @param value The bytes for locationName to set.
+     * @return This builder for chaining.
      */
     public Builder setLocationNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -637,6 +662,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.LatLng latlng = 2;</code>
+     *
+     * @return Whether the latlng field is set.
      */
     public boolean hasLatlng() {
       return latlngBuilder_ != null || latlng_ != null;
@@ -649,6 +676,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.LatLng latlng = 2;</code>
+     *
+     * @return The latlng.
      */
     public com.google.type.LatLng getLatlng() {
       if (latlngBuilder_ == null) {

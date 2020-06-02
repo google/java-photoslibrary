@@ -16,6 +16,8 @@ public interface AddEnrichmentToAlbumResponseOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>
+   *
+   * @return Whether the enrichmentItem field is set.
    */
   boolean hasEnrichmentItem();
   /**
@@ -26,6 +28,8 @@ public interface AddEnrichmentToAlbumResponseOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>
+   *
+   * @return The enrichmentItem.
    */
   com.google.photos.library.v1.proto.EnrichmentItem getEnrichmentItem();
   /**

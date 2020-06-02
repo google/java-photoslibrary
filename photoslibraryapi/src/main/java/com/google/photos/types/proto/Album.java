@@ -33,6 +33,12 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Album();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -45,7 +51,6 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -162,6 +167,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -183,6 +190,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -207,6 +216,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string title = 2;</code>
+   *
+   * @return The title.
    */
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
@@ -228,6 +239,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string title = 2;</code>
+   *
+   * @return The bytes for title.
    */
   public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
@@ -252,6 +265,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string product_url = 3;</code>
+   *
+   * @return The productUrl.
    */
   public java.lang.String getProductUrl() {
     java.lang.Object ref = productUrl_;
@@ -273,6 +288,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string product_url = 3;</code>
+   *
+   * @return The bytes for productUrl.
    */
   public com.google.protobuf.ByteString getProductUrlBytes() {
     java.lang.Object ref = productUrl_;
@@ -299,6 +316,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool is_writeable = 4;</code>
+   *
+   * @return The isWriteable.
    */
   public boolean getIsWriteable() {
     return isWriteable_;
@@ -317,6 +336,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.ShareInfo share_info = 5;</code>
+   *
+   * @return Whether the shareInfo field is set.
    */
   public boolean hasShareInfo() {
     return shareInfo_ != null;
@@ -332,6 +353,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.ShareInfo share_info = 5;</code>
+   *
+   * @return The shareInfo.
    */
   public com.google.photos.types.proto.ShareInfo getShareInfo() {
     return shareInfo_ == null
@@ -364,6 +387,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 media_items_count = 6;</code>
+   *
+   * @return The mediaItemsCount.
    */
   public long getMediaItemsCount() {
     return mediaItemsCount_;
@@ -385,6 +410,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cover_photo_base_url = 7;</code>
+   *
+   * @return The coverPhotoBaseUrl.
    */
   public java.lang.String getCoverPhotoBaseUrl() {
     java.lang.Object ref = coverPhotoBaseUrl_;
@@ -411,6 +438,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cover_photo_base_url = 7;</code>
+   *
+   * @return The bytes for coverPhotoBaseUrl.
    */
   public com.google.protobuf.ByteString getCoverPhotoBaseUrlBytes() {
     java.lang.Object ref = coverPhotoBaseUrl_;
@@ -435,6 +464,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cover_photo_media_item_id = 8;</code>
+   *
+   * @return The coverPhotoMediaItemId.
    */
   public java.lang.String getCoverPhotoMediaItemId() {
     java.lang.Object ref = coverPhotoMediaItemId_;
@@ -456,6 +487,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string cover_photo_media_item_id = 8;</code>
+   *
+   * @return The bytes for coverPhotoMediaItemId.
    */
   public com.google.protobuf.ByteString getCoverPhotoMediaItemIdBytes() {
     java.lang.Object ref = coverPhotoMediaItemId_;
@@ -916,6 +949,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -937,6 +972,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -958,6 +995,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -977,6 +1017,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearId() {
 
@@ -993,6 +1035,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1015,6 +1060,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string title = 2;</code>
+     *
+     * @return The title.
      */
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
@@ -1036,6 +1083,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string title = 2;</code>
+     *
+     * @return The bytes for title.
      */
     public com.google.protobuf.ByteString getTitleBytes() {
       java.lang.Object ref = title_;
@@ -1057,6 +1106,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string title = 2;</code>
+     *
+     * @param value The title to set.
+     * @return This builder for chaining.
      */
     public Builder setTitle(java.lang.String value) {
       if (value == null) {
@@ -1076,6 +1128,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string title = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearTitle() {
 
@@ -1092,6 +1146,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string title = 2;</code>
+     *
+     * @param value The bytes for title to set.
+     * @return This builder for chaining.
      */
     public Builder setTitleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1114,6 +1171,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_url = 3;</code>
+     *
+     * @return The productUrl.
      */
     public java.lang.String getProductUrl() {
       java.lang.Object ref = productUrl_;
@@ -1135,6 +1194,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_url = 3;</code>
+     *
+     * @return The bytes for productUrl.
      */
     public com.google.protobuf.ByteString getProductUrlBytes() {
       java.lang.Object ref = productUrl_;
@@ -1156,6 +1217,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_url = 3;</code>
+     *
+     * @param value The productUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setProductUrl(java.lang.String value) {
       if (value == null) {
@@ -1175,6 +1239,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_url = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearProductUrl() {
 
@@ -1191,6 +1257,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string product_url = 3;</code>
+     *
+     * @param value The bytes for productUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setProductUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1215,6 +1284,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_writeable = 4;</code>
+     *
+     * @return The isWriteable.
      */
     public boolean getIsWriteable() {
       return isWriteable_;
@@ -1230,6 +1301,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_writeable = 4;</code>
+     *
+     * @param value The isWriteable to set.
+     * @return This builder for chaining.
      */
     public Builder setIsWriteable(boolean value) {
 
@@ -1248,6 +1322,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool is_writeable = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIsWriteable() {
 
@@ -1273,6 +1349,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.ShareInfo share_info = 5;</code>
+     *
+     * @return Whether the shareInfo field is set.
      */
     public boolean hasShareInfo() {
       return shareInfoBuilder_ != null || shareInfo_ != null;
@@ -1288,6 +1366,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.ShareInfo share_info = 5;</code>
+     *
+     * @return The shareInfo.
      */
     public com.google.photos.types.proto.ShareInfo getShareInfo() {
       if (shareInfoBuilder_ == null) {
@@ -1473,6 +1553,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 media_items_count = 6;</code>
+     *
+     * @return The mediaItemsCount.
      */
     public long getMediaItemsCount() {
       return mediaItemsCount_;
@@ -1485,6 +1567,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 media_items_count = 6;</code>
+     *
+     * @param value The mediaItemsCount to set.
+     * @return This builder for chaining.
      */
     public Builder setMediaItemsCount(long value) {
 
@@ -1500,6 +1585,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 media_items_count = 6;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearMediaItemsCount() {
 
@@ -1523,6 +1610,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cover_photo_base_url = 7;</code>
+     *
+     * @return The coverPhotoBaseUrl.
      */
     public java.lang.String getCoverPhotoBaseUrl() {
       java.lang.Object ref = coverPhotoBaseUrl_;
@@ -1549,6 +1638,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cover_photo_base_url = 7;</code>
+     *
+     * @return The bytes for coverPhotoBaseUrl.
      */
     public com.google.protobuf.ByteString getCoverPhotoBaseUrlBytes() {
       java.lang.Object ref = coverPhotoBaseUrl_;
@@ -1575,6 +1666,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cover_photo_base_url = 7;</code>
+     *
+     * @param value The coverPhotoBaseUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setCoverPhotoBaseUrl(java.lang.String value) {
       if (value == null) {
@@ -1599,6 +1693,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cover_photo_base_url = 7;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCoverPhotoBaseUrl() {
 
@@ -1620,6 +1716,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cover_photo_base_url = 7;</code>
+     *
+     * @param value The bytes for coverPhotoBaseUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setCoverPhotoBaseUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1642,6 +1741,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cover_photo_media_item_id = 8;</code>
+     *
+     * @return The coverPhotoMediaItemId.
      */
     public java.lang.String getCoverPhotoMediaItemId() {
       java.lang.Object ref = coverPhotoMediaItemId_;
@@ -1663,6 +1764,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cover_photo_media_item_id = 8;</code>
+     *
+     * @return The bytes for coverPhotoMediaItemId.
      */
     public com.google.protobuf.ByteString getCoverPhotoMediaItemIdBytes() {
       java.lang.Object ref = coverPhotoMediaItemId_;
@@ -1684,6 +1787,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cover_photo_media_item_id = 8;</code>
+     *
+     * @param value The coverPhotoMediaItemId to set.
+     * @return This builder for chaining.
      */
     public Builder setCoverPhotoMediaItemId(java.lang.String value) {
       if (value == null) {
@@ -1703,6 +1809,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cover_photo_media_item_id = 8;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCoverPhotoMediaItemId() {
 
@@ -1719,6 +1827,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string cover_photo_media_item_id = 8;</code>
+     *
+     * @param value The bytes for coverPhotoMediaItemId to set.
+     * @return This builder for chaining.
      */
     public Builder setCoverPhotoMediaItemIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

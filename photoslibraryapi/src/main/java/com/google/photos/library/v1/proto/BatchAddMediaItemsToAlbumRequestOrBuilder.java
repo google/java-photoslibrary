@@ -18,6 +18,8 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @return A list containing the mediaItemIds.
    */
   java.util.List<java.lang.String> getMediaItemIdsList();
   /**
@@ -30,6 +32,8 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @return The count of mediaItemIds.
    */
   int getMediaItemIdsCount();
   /**
@@ -42,6 +46,9 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The mediaItemIds at the given index.
    */
   java.lang.String getMediaItemIds(int index);
   /**
@@ -54,6 +61,9 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>repeated string media_item_ids = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the mediaItemIds at the given index.
    */
   com.google.protobuf.ByteString getMediaItemIdsBytes(int index);
 
@@ -66,6 +76,8 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 2;</code>
+   *
+   * @return The albumId.
    */
   java.lang.String getAlbumId();
   /**
@@ -77,6 +89,8 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 2;</code>
+   *
+   * @return The bytes for albumId.
    */
   com.google.protobuf.ByteString getAlbumIdBytes();
 }

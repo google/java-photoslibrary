@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,8 @@ import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
 import com.google.photos.library.v1.proto.UnshareAlbumRequest;
 import com.google.photos.library.v1.proto.UnshareAlbumResponse;
+import com.google.photos.library.v1.proto.UpdateAlbumRequest;
+import com.google.photos.library.v1.proto.UpdateMediaItemRequest;
 import com.google.photos.types.proto.Album;
 import com.google.photos.types.proto.MediaItem;
 import java.io.IOException;
@@ -104,8 +106,12 @@ import org.threeten.bp.Duration;
  * <code>
  * PhotosLibraryStubSettings.Builder internalPhotosLibrarySettingsBuilder =
  *     PhotosLibraryStubSettings.newBuilder();
- * internalPhotosLibrarySettingsBuilder.createAlbumSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * internalPhotosLibrarySettingsBuilder
+ *     .createAlbumSettings()
+ *     .setRetrySettings(
+ *         internalPhotosLibrarySettingsBuilder.createAlbumSettings().getRetrySettings().toBuilder()
+ *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .build());
  * PhotosLibraryStubSettings internalPhotosLibrarySettings = internalPhotosLibrarySettingsBuilder.build();
  * </code>
  * </pre>
@@ -156,6 +162,8 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
   private final UnaryCallSettings<
           BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
       batchRemoveMediaItemsFromAlbumSettings;
+  private final UnaryCallSettings<UpdateAlbumRequest, Album> updateAlbumSettings;
+  private final UnaryCallSettings<UpdateMediaItemRequest, MediaItem> updateMediaItemSettings;
 
   /** Returns the object with the settings used for calls to createAlbum. */
   public UnaryCallSettings<CreateAlbumRequest, Album> createAlbumSettings() {
@@ -257,6 +265,16 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
     return batchRemoveMediaItemsFromAlbumSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateAlbum. */
+  public UnaryCallSettings<UpdateAlbumRequest, Album> updateAlbumSettings() {
+    return updateAlbumSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMediaItem. */
+  public UnaryCallSettings<UpdateMediaItemRequest, MediaItem> updateMediaItemSettings() {
+    return updateMediaItemSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PhotosLibraryStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -344,6 +362,8 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
     unshareAlbumSettings = settingsBuilder.unshareAlbumSettings().build();
     batchRemoveMediaItemsFromAlbumSettings =
         settingsBuilder.batchRemoveMediaItemsFromAlbumSettings().build();
+    updateAlbumSettings = settingsBuilder.updateAlbumSettings().build();
+    updateMediaItemSettings = settingsBuilder.updateMediaItemSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -608,6 +628,9 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
     private final UnaryCallSettings.Builder<
             BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
         batchRemoveMediaItemsFromAlbumSettings;
+    private final UnaryCallSettings.Builder<UpdateAlbumRequest, Album> updateAlbumSettings;
+    private final UnaryCallSettings.Builder<UpdateMediaItemRequest, MediaItem>
+        updateMediaItemSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -686,6 +709,10 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
 
       batchRemoveMediaItemsFromAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      updateAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateMediaItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createAlbumSettings,
@@ -704,7 +731,9 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
               shareAlbumSettings,
               listSharedAlbumsSettings,
               unshareAlbumSettings,
-              batchRemoveMediaItemsFromAlbumSettings);
+              batchRemoveMediaItemsFromAlbumSettings,
+              updateAlbumSettings,
+              updateMediaItemSettings);
 
       initDefaults(this);
     }
@@ -805,6 +834,16 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .updateAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateMediaItemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -829,6 +868,8 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
       unshareAlbumSettings = settings.unshareAlbumSettings.toBuilder();
       batchRemoveMediaItemsFromAlbumSettings =
           settings.batchRemoveMediaItemsFromAlbumSettings.toBuilder();
+      updateAlbumSettings = settings.updateAlbumSettings.toBuilder();
+      updateMediaItemSettings = settings.updateMediaItemSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -848,7 +889,9 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
               shareAlbumSettings,
               listSharedAlbumsSettings,
               unshareAlbumSettings,
-              batchRemoveMediaItemsFromAlbumSettings);
+              batchRemoveMediaItemsFromAlbumSettings,
+              updateAlbumSettings,
+              updateMediaItemSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -967,6 +1010,16 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
             BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
         batchRemoveMediaItemsFromAlbumSettings() {
       return batchRemoveMediaItemsFromAlbumSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAlbum. */
+    public UnaryCallSettings.Builder<UpdateAlbumRequest, Album> updateAlbumSettings() {
+      return updateAlbumSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMediaItem. */
+    public UnaryCallSettings.Builder<UpdateMediaItemRequest, MediaItem> updateMediaItemSettings() {
+      return updateMediaItemSettings;
     }
 
     @Override

@@ -16,6 +16,8 @@ public interface VideoOrBuilder
    * </pre>
    *
    * <code>string camera_make = 1;</code>
+   *
+   * @return The cameraMake.
    */
   java.lang.String getCameraMake();
   /**
@@ -26,6 +28,8 @@ public interface VideoOrBuilder
    * </pre>
    *
    * <code>string camera_make = 1;</code>
+   *
+   * @return The bytes for cameraMake.
    */
   com.google.protobuf.ByteString getCameraMakeBytes();
 
@@ -37,6 +41,8 @@ public interface VideoOrBuilder
    * </pre>
    *
    * <code>string camera_model = 2;</code>
+   *
+   * @return The cameraModel.
    */
   java.lang.String getCameraModel();
   /**
@@ -47,6 +53,8 @@ public interface VideoOrBuilder
    * </pre>
    *
    * <code>string camera_model = 2;</code>
+   *
+   * @return The bytes for cameraModel.
    */
   com.google.protobuf.ByteString getCameraModelBytes();
 
@@ -58,6 +66,8 @@ public interface VideoOrBuilder
    * </pre>
    *
    * <code>double fps = 3;</code>
+   *
+   * @return The fps.
    */
   double getFps();
 
@@ -69,6 +79,8 @@ public interface VideoOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.VideoProcessingStatus status = 4;</code>
+   *
+   * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
@@ -79,6 +91,8 @@ public interface VideoOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.VideoProcessingStatus status = 4;</code>
+   *
+   * @return The status.
    */
   com.google.photos.types.proto.VideoProcessingStatus getStatus();
 }

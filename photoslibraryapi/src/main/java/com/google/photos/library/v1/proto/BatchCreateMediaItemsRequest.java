@@ -30,6 +30,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchCreateMediaItemsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -62,10 +68,10 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 newMediaItems_ =
                     new java.util.ArrayList<com.google.photos.library.v1.proto.NewMediaItem>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               newMediaItems_.add(
                   input.readMessage(
@@ -102,7 +108,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         newMediaItems_ = java.util.Collections.unmodifiableList(newMediaItems_);
       }
       this.unknownFields = unknownFields.build();
@@ -125,7 +131,6 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
             com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ALBUM_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object albumId_;
   /**
@@ -137,6 +142,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The albumId.
    */
   public java.lang.String getAlbumId() {
     java.lang.Object ref = albumId_;
@@ -158,6 +165,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The bytes for albumId.
    */
   public com.google.protobuf.ByteString getAlbumIdBytes() {
     java.lang.Object ref = albumId_;
@@ -250,6 +259,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition album_position = 4;</code>
+   *
+   * @return Whether the albumPosition field is set.
    */
   public boolean hasAlbumPosition() {
     return albumPosition_ != null;
@@ -266,6 +277,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition album_position = 4;</code>
+   *
+   * @return The albumPosition.
    */
   public com.google.photos.library.v1.proto.AlbumPosition getAlbumPosition() {
     return albumPosition_ == null
@@ -527,7 +540,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
 
       if (newMediaItemsBuilder_ == null) {
         newMediaItems_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         newMediaItemsBuilder_.clear();
       }
@@ -566,12 +579,11 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
       com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest result =
           new com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.albumId_ = albumId_;
       if (newMediaItemsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           newMediaItems_ = java.util.Collections.unmodifiableList(newMediaItems_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.newMediaItems_ = newMediaItems_;
       } else {
@@ -582,7 +594,6 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
       } else {
         result.albumPosition_ = albumPositionBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -643,7 +654,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
         if (!other.newMediaItems_.isEmpty()) {
           if (newMediaItems_.isEmpty()) {
             newMediaItems_ = other.newMediaItems_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureNewMediaItemsIsMutable();
             newMediaItems_.addAll(other.newMediaItems_);
@@ -656,7 +667,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
             newMediaItemsBuilder_.dispose();
             newMediaItemsBuilder_ = null;
             newMediaItems_ = other.newMediaItems_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             newMediaItemsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNewMediaItemsFieldBuilder()
@@ -712,6 +723,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @return The albumId.
      */
     public java.lang.String getAlbumId() {
       java.lang.Object ref = albumId_;
@@ -733,6 +746,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @return The bytes for albumId.
      */
     public com.google.protobuf.ByteString getAlbumIdBytes() {
       java.lang.Object ref = albumId_;
@@ -754,6 +769,9 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @param value The albumId to set.
+     * @return This builder for chaining.
      */
     public Builder setAlbumId(java.lang.String value) {
       if (value == null) {
@@ -773,6 +791,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAlbumId() {
 
@@ -789,6 +809,9 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @param value The bytes for albumId to set.
+     * @return This builder for chaining.
      */
     public Builder setAlbumIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -805,11 +828,11 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
         java.util.Collections.emptyList();
 
     private void ensureNewMediaItemsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         newMediaItems_ =
             new java.util.ArrayList<com.google.photos.library.v1.proto.NewMediaItem>(
                 newMediaItems_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -1027,7 +1050,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
     public Builder clearNewMediaItems() {
       if (newMediaItemsBuilder_ == null) {
         newMediaItems_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         newMediaItemsBuilder_.clear();
@@ -1153,7 +1176,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
                 com.google.photos.library.v1.proto.NewMediaItem.Builder,
                 com.google.photos.library.v1.proto.NewMediaItemOrBuilder>(
                 newMediaItems_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         newMediaItems_ = null;
@@ -1179,6 +1202,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>.google.photos.library.v1.AlbumPosition album_position = 4;</code>
+     *
+     * @return Whether the albumPosition field is set.
      */
     public boolean hasAlbumPosition() {
       return albumPositionBuilder_ != null || albumPosition_ != null;
@@ -1195,6 +1220,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>.google.photos.library.v1.AlbumPosition album_position = 4;</code>
+     *
+     * @return The albumPosition.
      */
     public com.google.photos.library.v1.proto.AlbumPosition getAlbumPosition() {
       if (albumPositionBuilder_ == null) {

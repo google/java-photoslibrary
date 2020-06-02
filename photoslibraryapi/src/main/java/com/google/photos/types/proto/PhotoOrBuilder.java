@@ -16,6 +16,8 @@ public interface PhotoOrBuilder
    * </pre>
    *
    * <code>string camera_make = 1;</code>
+   *
+   * @return The cameraMake.
    */
   java.lang.String getCameraMake();
   /**
@@ -26,6 +28,8 @@ public interface PhotoOrBuilder
    * </pre>
    *
    * <code>string camera_make = 1;</code>
+   *
+   * @return The bytes for cameraMake.
    */
   com.google.protobuf.ByteString getCameraMakeBytes();
 
@@ -37,6 +41,8 @@ public interface PhotoOrBuilder
    * </pre>
    *
    * <code>string camera_model = 2;</code>
+   *
+   * @return The cameraModel.
    */
   java.lang.String getCameraModel();
   /**
@@ -47,6 +53,8 @@ public interface PhotoOrBuilder
    * </pre>
    *
    * <code>string camera_model = 2;</code>
+   *
+   * @return The bytes for cameraModel.
    */
   com.google.protobuf.ByteString getCameraModelBytes();
 
@@ -58,6 +66,8 @@ public interface PhotoOrBuilder
    * </pre>
    *
    * <code>float focal_length = 3;</code>
+   *
+   * @return The focalLength.
    */
   float getFocalLength();
 
@@ -69,6 +79,8 @@ public interface PhotoOrBuilder
    * </pre>
    *
    * <code>float aperture_f_number = 4;</code>
+   *
+   * @return The apertureFNumber.
    */
   float getApertureFNumber();
 
@@ -80,6 +92,8 @@ public interface PhotoOrBuilder
    * </pre>
    *
    * <code>int32 iso_equivalent = 5;</code>
+   *
+   * @return The isoEquivalent.
    */
   int getIsoEquivalent();
 
@@ -91,6 +105,8 @@ public interface PhotoOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration exposure_time = 6;</code>
+   *
+   * @return Whether the exposureTime field is set.
    */
   boolean hasExposureTime();
   /**
@@ -101,6 +117,8 @@ public interface PhotoOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Duration exposure_time = 6;</code>
+   *
+   * @return The exposureTime.
    */
   com.google.protobuf.Duration getExposureTime();
   /**

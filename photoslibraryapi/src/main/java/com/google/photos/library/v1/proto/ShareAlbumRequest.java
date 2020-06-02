@@ -27,6 +27,12 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ShareAlbumRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -118,6 +123,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The albumId.
    */
   public java.lang.String getAlbumId() {
     java.lang.Object ref = albumId_;
@@ -139,6 +146,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The bytes for albumId.
    */
   public com.google.protobuf.ByteString getAlbumIdBytes() {
     java.lang.Object ref = albumId_;
@@ -162,6 +171,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
+   *
+   * @return Whether the sharedAlbumOptions field is set.
    */
   public boolean hasSharedAlbumOptions() {
     return sharedAlbumOptions_ != null;
@@ -174,6 +185,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
+   *
+   * @return The sharedAlbumOptions.
    */
   public com.google.photos.types.proto.SharedAlbumOptions getSharedAlbumOptions() {
     return sharedAlbumOptions_ == null
@@ -550,6 +563,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @return The albumId.
      */
     public java.lang.String getAlbumId() {
       java.lang.Object ref = albumId_;
@@ -571,6 +586,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @return The bytes for albumId.
      */
     public com.google.protobuf.ByteString getAlbumIdBytes() {
       java.lang.Object ref = albumId_;
@@ -592,6 +609,9 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @param value The albumId to set.
+     * @return This builder for chaining.
      */
     public Builder setAlbumId(java.lang.String value) {
       if (value == null) {
@@ -611,6 +631,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAlbumId() {
 
@@ -627,6 +649,9 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>string album_id = 1;</code>
+     *
+     * @param value The bytes for albumId to set.
+     * @return This builder for chaining.
      */
     public Builder setAlbumIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -653,6 +678,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
+     *
+     * @return Whether the sharedAlbumOptions field is set.
      */
     public boolean hasSharedAlbumOptions() {
       return sharedAlbumOptionsBuilder_ != null || sharedAlbumOptions_ != null;
@@ -665,6 +692,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
+     *
+     * @return The sharedAlbumOptions.
      */
     public com.google.photos.types.proto.SharedAlbumOptions getSharedAlbumOptions() {
       if (sharedAlbumOptionsBuilder_ == null) {

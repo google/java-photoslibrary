@@ -41,6 +41,12 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new ContentFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -184,6 +190,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
    * </code>
+   *
+   * @return A list containing the includedContentCategories.
    */
   public java.util.List<com.google.photos.library.v1.proto.ContentCategory>
       getIncludedContentCategoriesList() {
@@ -202,6 +210,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
    * </code>
+   *
+   * @return The count of includedContentCategories.
    */
   public int getIncludedContentCategoriesCount() {
     return includedContentCategories_.size();
@@ -217,6 +227,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The includedContentCategories at the given index.
    */
   public com.google.photos.library.v1.proto.ContentCategory getIncludedContentCategories(
       int index) {
@@ -233,6 +246,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for includedContentCategories.
    */
   public java.util.List<java.lang.Integer> getIncludedContentCategoriesValueList() {
     return includedContentCategories_;
@@ -248,6 +263,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of includedContentCategories at the given index.
    */
   public int getIncludedContentCategoriesValue(int index) {
     return includedContentCategories_.get(index);
@@ -283,6 +301,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
    * </code>
+   *
+   * @return A list containing the excludedContentCategories.
    */
   public java.util.List<com.google.photos.library.v1.proto.ContentCategory>
       getExcludedContentCategoriesList() {
@@ -301,6 +321,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
    * </code>
+   *
+   * @return The count of excludedContentCategories.
    */
   public int getExcludedContentCategoriesCount() {
     return excludedContentCategories_.size();
@@ -316,6 +338,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
    * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludedContentCategories at the given index.
    */
   public com.google.photos.library.v1.proto.ContentCategory getExcludedContentCategories(
       int index) {
@@ -332,6 +357,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
    * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for excludedContentCategories.
    */
   public java.util.List<java.lang.Integer> getExcludedContentCategoriesValueList() {
     return excludedContentCategories_;
@@ -347,6 +374,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
    * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of excludedContentCategories at the given index.
    */
   public int getExcludedContentCategoriesValue(int index) {
     return excludedContentCategories_.get(index);
@@ -781,6 +811,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @return A list containing the includedContentCategories.
      */
     public java.util.List<com.google.photos.library.v1.proto.ContentCategory>
         getIncludedContentCategoriesList() {
@@ -799,6 +831,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @return The count of includedContentCategories.
      */
     public int getIncludedContentCategoriesCount() {
       return includedContentCategories_.size();
@@ -814,6 +848,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The includedContentCategories at the given index.
      */
     public com.google.photos.library.v1.proto.ContentCategory getIncludedContentCategories(
         int index) {
@@ -830,6 +867,10 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The includedContentCategories to set.
+     * @return This builder for chaining.
      */
     public Builder setIncludedContentCategories(
         int index, com.google.photos.library.v1.proto.ContentCategory value) {
@@ -852,6 +893,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @param value The includedContentCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addIncludedContentCategories(
         com.google.photos.library.v1.proto.ContentCategory value) {
@@ -874,6 +918,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @param values The includedContentCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addAllIncludedContentCategories(
         java.lang.Iterable<? extends com.google.photos.library.v1.proto.ContentCategory> values) {
@@ -895,6 +942,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIncludedContentCategories() {
       includedContentCategories_ = java.util.Collections.emptyList();
@@ -913,6 +962,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for includedContentCategories.
      */
     public java.util.List<java.lang.Integer> getIncludedContentCategoriesValueList() {
       return java.util.Collections.unmodifiableList(includedContentCategories_);
@@ -928,6 +979,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of includedContentCategories at the given index.
      */
     public int getIncludedContentCategoriesValue(int index) {
       return includedContentCategories_.get(index);
@@ -943,6 +997,10 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of includedContentCategories at the given index.
+     * @return This builder for chaining.
      */
     public Builder setIncludedContentCategoriesValue(int index, int value) {
       ensureIncludedContentCategoriesIsMutable();
@@ -961,6 +1019,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for includedContentCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addIncludedContentCategoriesValue(int value) {
       ensureIncludedContentCategoriesIsMutable();
@@ -979,6 +1040,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
+     *
+     * @param values The enum numeric values on the wire for includedContentCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addAllIncludedContentCategoriesValue(
         java.lang.Iterable<java.lang.Integer> values) {
@@ -1011,6 +1075,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @return A list containing the excludedContentCategories.
      */
     public java.util.List<com.google.photos.library.v1.proto.ContentCategory>
         getExcludedContentCategoriesList() {
@@ -1029,6 +1095,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @return The count of excludedContentCategories.
      */
     public int getExcludedContentCategoriesCount() {
       return excludedContentCategories_.size();
@@ -1044,6 +1112,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedContentCategories at the given index.
      */
     public com.google.photos.library.v1.proto.ContentCategory getExcludedContentCategories(
         int index) {
@@ -1060,6 +1131,10 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The excludedContentCategories to set.
+     * @return This builder for chaining.
      */
     public Builder setExcludedContentCategories(
         int index, com.google.photos.library.v1.proto.ContentCategory value) {
@@ -1082,6 +1157,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @param value The excludedContentCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addExcludedContentCategories(
         com.google.photos.library.v1.proto.ContentCategory value) {
@@ -1104,6 +1182,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @param values The excludedContentCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addAllExcludedContentCategories(
         java.lang.Iterable<? extends com.google.photos.library.v1.proto.ContentCategory> values) {
@@ -1125,6 +1206,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearExcludedContentCategories() {
       excludedContentCategories_ = java.util.Collections.emptyList();
@@ -1143,6 +1226,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for excludedContentCategories.
      */
     public java.util.List<java.lang.Integer> getExcludedContentCategoriesValueList() {
       return java.util.Collections.unmodifiableList(excludedContentCategories_);
@@ -1158,6 +1243,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of excludedContentCategories at the given index.
      */
     public int getExcludedContentCategoriesValue(int index) {
       return excludedContentCategories_.get(index);
@@ -1173,6 +1261,10 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of excludedContentCategories at the given index.
+     * @return This builder for chaining.
      */
     public Builder setExcludedContentCategoriesValue(int index, int value) {
       ensureExcludedContentCategoriesIsMutable();
@@ -1191,6 +1283,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @param value The enum numeric value on the wire for excludedContentCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addExcludedContentCategoriesValue(int value) {
       ensureExcludedContentCategoriesIsMutable();
@@ -1209,6 +1304,9 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
+     *
+     * @param values The enum numeric values on the wire for excludedContentCategories to add.
+     * @return This builder for chaining.
      */
     public Builder addAllExcludedContentCategoriesValue(
         java.lang.Iterable<java.lang.Integer> values) {

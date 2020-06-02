@@ -27,6 +27,12 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new AlbumPosition();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -39,7 +45,6 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -227,12 +232,20 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PositionType valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static PositionType forNumber(int value) {
       switch (value) {
         case 0:
@@ -297,7 +310,10 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
   private int relativeItemCase_ = 0;
   private java.lang.Object relativeItem_;
 
-  public enum RelativeItemCase implements com.google.protobuf.Internal.EnumLite {
+  public enum RelativeItemCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     RELATIVE_MEDIA_ITEM_ID(2),
     RELATIVE_ENRICHMENT_ITEM_ID(3),
     RELATIVEITEM_NOT_SET(0);
@@ -306,7 +322,11 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
     private RelativeItemCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static RelativeItemCase valueOf(int value) {
       return forNumber(value);
@@ -344,6 +364,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition.PositionType position = 1;</code>
+   *
+   * @return The enum numeric value on the wire for position.
    */
   public int getPositionValue() {
     return position_;
@@ -356,6 +378,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition.PositionType position = 1;</code>
+   *
+   * @return The position.
    */
   public com.google.photos.library.v1.proto.AlbumPosition.PositionType getPosition() {
     @SuppressWarnings("deprecation")
@@ -376,6 +400,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string relative_media_item_id = 2;</code>
+   *
+   * @return The relativeMediaItemId.
    */
   public java.lang.String getRelativeMediaItemId() {
     java.lang.Object ref = "";
@@ -402,6 +428,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string relative_media_item_id = 2;</code>
+   *
+   * @return The bytes for relativeMediaItemId.
    */
   public com.google.protobuf.ByteString getRelativeMediaItemIdBytes() {
     java.lang.Object ref = "";
@@ -430,6 +458,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string relative_enrichment_item_id = 3;</code>
+   *
+   * @return The relativeEnrichmentItemId.
    */
   public java.lang.String getRelativeEnrichmentItemId() {
     java.lang.Object ref = "";
@@ -456,6 +486,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string relative_enrichment_item_id = 3;</code>
+   *
+   * @return The bytes for relativeEnrichmentItemId.
    */
   public com.google.protobuf.ByteString getRelativeEnrichmentItemIdBytes() {
     java.lang.Object ref = "";
@@ -882,6 +914,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.library.v1.AlbumPosition.PositionType position = 1;</code>
+     *
+     * @return The enum numeric value on the wire for position.
      */
     public int getPositionValue() {
       return position_;
@@ -894,6 +928,9 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.library.v1.AlbumPosition.PositionType position = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for position to set.
+     * @return This builder for chaining.
      */
     public Builder setPositionValue(int value) {
       position_ = value;
@@ -908,6 +945,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.library.v1.AlbumPosition.PositionType position = 1;</code>
+     *
+     * @return The position.
      */
     public com.google.photos.library.v1.proto.AlbumPosition.PositionType getPosition() {
       @SuppressWarnings("deprecation")
@@ -925,6 +964,9 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.library.v1.AlbumPosition.PositionType position = 1;</code>
+     *
+     * @param value The position to set.
+     * @return This builder for chaining.
      */
     public Builder setPosition(
         com.google.photos.library.v1.proto.AlbumPosition.PositionType value) {
@@ -944,6 +986,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.library.v1.AlbumPosition.PositionType position = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearPosition() {
 
@@ -961,6 +1005,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string relative_media_item_id = 2;</code>
+     *
+     * @return The relativeMediaItemId.
      */
     public java.lang.String getRelativeMediaItemId() {
       java.lang.Object ref = "";
@@ -987,6 +1033,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string relative_media_item_id = 2;</code>
+     *
+     * @return The bytes for relativeMediaItemId.
      */
     public com.google.protobuf.ByteString getRelativeMediaItemIdBytes() {
       java.lang.Object ref = "";
@@ -1013,6 +1061,9 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string relative_media_item_id = 2;</code>
+     *
+     * @param value The relativeMediaItemId to set.
+     * @return This builder for chaining.
      */
     public Builder setRelativeMediaItemId(java.lang.String value) {
       if (value == null) {
@@ -1032,6 +1083,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string relative_media_item_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRelativeMediaItemId() {
       if (relativeItemCase_ == 2) {
@@ -1050,6 +1103,9 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string relative_media_item_id = 2;</code>
+     *
+     * @param value The bytes for relativeMediaItemId to set.
+     * @return This builder for chaining.
      */
     public Builder setRelativeMediaItemIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1071,6 +1127,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string relative_enrichment_item_id = 3;</code>
+     *
+     * @return The relativeEnrichmentItemId.
      */
     public java.lang.String getRelativeEnrichmentItemId() {
       java.lang.Object ref = "";
@@ -1097,6 +1155,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string relative_enrichment_item_id = 3;</code>
+     *
+     * @return The bytes for relativeEnrichmentItemId.
      */
     public com.google.protobuf.ByteString getRelativeEnrichmentItemIdBytes() {
       java.lang.Object ref = "";
@@ -1123,6 +1183,9 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string relative_enrichment_item_id = 3;</code>
+     *
+     * @param value The relativeEnrichmentItemId to set.
+     * @return This builder for chaining.
      */
     public Builder setRelativeEnrichmentItemId(java.lang.String value) {
       if (value == null) {
@@ -1142,6 +1205,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string relative_enrichment_item_id = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRelativeEnrichmentItemId() {
       if (relativeItemCase_ == 3) {
@@ -1160,6 +1225,9 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string relative_enrichment_item_id = 3;</code>
+     *
+     * @param value The bytes for relativeEnrichmentItemId to set.
+     * @return This builder for chaining.
      */
     public Builder setRelativeEnrichmentItemIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

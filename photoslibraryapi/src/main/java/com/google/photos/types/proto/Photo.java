@@ -29,6 +29,12 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Photo();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -41,7 +47,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -140,6 +145,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string camera_make = 1;</code>
+   *
+   * @return The cameraMake.
    */
   public java.lang.String getCameraMake() {
     java.lang.Object ref = cameraMake_;
@@ -160,6 +167,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string camera_make = 1;</code>
+   *
+   * @return The bytes for cameraMake.
    */
   public com.google.protobuf.ByteString getCameraMakeBytes() {
     java.lang.Object ref = cameraMake_;
@@ -183,6 +192,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string camera_model = 2;</code>
+   *
+   * @return The cameraModel.
    */
   public java.lang.String getCameraModel() {
     java.lang.Object ref = cameraModel_;
@@ -203,6 +214,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string camera_model = 2;</code>
+   *
+   * @return The bytes for cameraModel.
    */
   public com.google.protobuf.ByteString getCameraModelBytes() {
     java.lang.Object ref = cameraModel_;
@@ -226,6 +239,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float focal_length = 3;</code>
+   *
+   * @return The focalLength.
    */
   public float getFocalLength() {
     return focalLength_;
@@ -241,6 +256,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float aperture_f_number = 4;</code>
+   *
+   * @return The apertureFNumber.
    */
   public float getApertureFNumber() {
     return apertureFNumber_;
@@ -256,6 +273,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int32 iso_equivalent = 5;</code>
+   *
+   * @return The isoEquivalent.
    */
   public int getIsoEquivalent() {
     return isoEquivalent_;
@@ -271,6 +290,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration exposure_time = 6;</code>
+   *
+   * @return Whether the exposureTime field is set.
    */
   public boolean hasExposureTime() {
     return exposureTime_ != null;
@@ -283,6 +304,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Duration exposure_time = 6;</code>
+   *
+   * @return The exposureTime.
    */
   public com.google.protobuf.Duration getExposureTime() {
     return exposureTime_ == null
@@ -716,6 +739,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_make = 1;</code>
+     *
+     * @return The cameraMake.
      */
     public java.lang.String getCameraMake() {
       java.lang.Object ref = cameraMake_;
@@ -736,6 +761,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_make = 1;</code>
+     *
+     * @return The bytes for cameraMake.
      */
     public com.google.protobuf.ByteString getCameraMakeBytes() {
       java.lang.Object ref = cameraMake_;
@@ -756,6 +783,9 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_make = 1;</code>
+     *
+     * @param value The cameraMake to set.
+     * @return This builder for chaining.
      */
     public Builder setCameraMake(java.lang.String value) {
       if (value == null) {
@@ -774,6 +804,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_make = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCameraMake() {
 
@@ -789,6 +821,9 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_make = 1;</code>
+     *
+     * @param value The bytes for cameraMake to set.
+     * @return This builder for chaining.
      */
     public Builder setCameraMakeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -810,6 +845,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_model = 2;</code>
+     *
+     * @return The cameraModel.
      */
     public java.lang.String getCameraModel() {
       java.lang.Object ref = cameraModel_;
@@ -830,6 +867,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_model = 2;</code>
+     *
+     * @return The bytes for cameraModel.
      */
     public com.google.protobuf.ByteString getCameraModelBytes() {
       java.lang.Object ref = cameraModel_;
@@ -850,6 +889,9 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_model = 2;</code>
+     *
+     * @param value The cameraModel to set.
+     * @return This builder for chaining.
      */
     public Builder setCameraModel(java.lang.String value) {
       if (value == null) {
@@ -868,6 +910,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_model = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearCameraModel() {
 
@@ -883,6 +927,9 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string camera_model = 2;</code>
+     *
+     * @param value The bytes for cameraModel to set.
+     * @return This builder for chaining.
      */
     public Builder setCameraModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -904,6 +951,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float focal_length = 3;</code>
+     *
+     * @return The focalLength.
      */
     public float getFocalLength() {
       return focalLength_;
@@ -916,6 +965,9 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float focal_length = 3;</code>
+     *
+     * @param value The focalLength to set.
+     * @return This builder for chaining.
      */
     public Builder setFocalLength(float value) {
 
@@ -931,6 +983,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float focal_length = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearFocalLength() {
 
@@ -948,6 +1002,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float aperture_f_number = 4;</code>
+     *
+     * @return The apertureFNumber.
      */
     public float getApertureFNumber() {
       return apertureFNumber_;
@@ -960,6 +1016,9 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float aperture_f_number = 4;</code>
+     *
+     * @param value The apertureFNumber to set.
+     * @return This builder for chaining.
      */
     public Builder setApertureFNumber(float value) {
 
@@ -975,6 +1034,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float aperture_f_number = 4;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearApertureFNumber() {
 
@@ -992,6 +1053,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 iso_equivalent = 5;</code>
+     *
+     * @return The isoEquivalent.
      */
     public int getIsoEquivalent() {
       return isoEquivalent_;
@@ -1004,6 +1067,9 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 iso_equivalent = 5;</code>
+     *
+     * @param value The isoEquivalent to set.
+     * @return This builder for chaining.
      */
     public Builder setIsoEquivalent(int value) {
 
@@ -1019,6 +1085,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int32 iso_equivalent = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIsoEquivalent() {
 
@@ -1041,6 +1109,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration exposure_time = 6;</code>
+     *
+     * @return Whether the exposureTime field is set.
      */
     public boolean hasExposureTime() {
       return exposureTimeBuilder_ != null || exposureTime_ != null;
@@ -1053,6 +1123,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Duration exposure_time = 6;</code>
+     *
+     * @return The exposureTime.
      */
     public com.google.protobuf.Duration getExposureTime() {
       if (exposureTimeBuilder_ == null) {

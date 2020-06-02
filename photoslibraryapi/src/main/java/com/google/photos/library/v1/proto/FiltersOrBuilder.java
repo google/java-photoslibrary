@@ -16,6 +16,8 @@ public interface FiltersOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.DateFilter date_filter = 1;</code>
+   *
+   * @return Whether the dateFilter field is set.
    */
   boolean hasDateFilter();
   /**
@@ -26,6 +28,8 @@ public interface FiltersOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.DateFilter date_filter = 1;</code>
+   *
+   * @return The dateFilter.
    */
   com.google.photos.library.v1.proto.DateFilter getDateFilter();
   /**
@@ -47,6 +51,8 @@ public interface FiltersOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.ContentFilter content_filter = 2;</code>
+   *
+   * @return Whether the contentFilter field is set.
    */
   boolean hasContentFilter();
   /**
@@ -57,6 +63,8 @@ public interface FiltersOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.ContentFilter content_filter = 2;</code>
+   *
+   * @return The contentFilter.
    */
   com.google.photos.library.v1.proto.ContentFilter getContentFilter();
   /**
@@ -78,6 +86,8 @@ public interface FiltersOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.MediaTypeFilter media_type_filter = 3;</code>
+   *
+   * @return Whether the mediaTypeFilter field is set.
    */
   boolean hasMediaTypeFilter();
   /**
@@ -88,6 +98,8 @@ public interface FiltersOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.MediaTypeFilter media_type_filter = 3;</code>
+   *
+   * @return The mediaTypeFilter.
    */
   com.google.photos.library.v1.proto.MediaTypeFilter getMediaTypeFilter();
   /**
@@ -109,6 +121,8 @@ public interface FiltersOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+   *
+   * @return Whether the featureFilter field is set.
    */
   boolean hasFeatureFilter();
   /**
@@ -119,6 +133,8 @@ public interface FiltersOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
+   *
+   * @return The featureFilter.
    */
   com.google.photos.library.v1.proto.FeatureFilter getFeatureFilter();
   /**
@@ -141,6 +157,8 @@ public interface FiltersOrBuilder
    * </pre>
    *
    * <code>bool include_archived_media = 4;</code>
+   *
+   * @return The includeArchivedMedia.
    */
   boolean getIncludeArchivedMedia();
 
@@ -154,6 +172,8 @@ public interface FiltersOrBuilder
    * </pre>
    *
    * <code>bool exclude_non_app_created_data = 5;</code>
+   *
+   * @return The excludeNonAppCreatedData.
    */
   boolean getExcludeNonAppCreatedData();
 }

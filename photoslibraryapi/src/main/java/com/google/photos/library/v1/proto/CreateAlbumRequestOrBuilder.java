@@ -16,6 +16,8 @@ public interface CreateAlbumRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.Album album = 1;</code>
+   *
+   * @return Whether the album field is set.
    */
   boolean hasAlbum();
   /**
@@ -26,6 +28,8 @@ public interface CreateAlbumRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.Album album = 1;</code>
+   *
+   * @return The album.
    */
   com.google.photos.types.proto.Album getAlbum();
   /**

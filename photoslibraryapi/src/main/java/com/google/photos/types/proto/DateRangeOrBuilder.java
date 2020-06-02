@@ -17,6 +17,8 @@ public interface DateRangeOrBuilder
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   *
+   * @return Whether the startDate field is set.
    */
   boolean hasStartDate();
   /**
@@ -28,6 +30,8 @@ public interface DateRangeOrBuilder
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   *
+   * @return The startDate.
    */
   com.google.type.Date getStartDate();
   /**
@@ -51,6 +55,8 @@ public interface DateRangeOrBuilder
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   *
+   * @return Whether the endDate field is set.
    */
   boolean hasEndDate();
   /**
@@ -62,6 +68,8 @@ public interface DateRangeOrBuilder
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   *
+   * @return The endDate.
    */
   com.google.type.Date getEndDate();
   /**

@@ -25,6 +25,12 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
   private MediaMetadata() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new MediaMetadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -142,7 +147,10 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
   private int metadataCase_ = 0;
   private java.lang.Object metadata_;
 
-  public enum MetadataCase implements com.google.protobuf.Internal.EnumLite {
+  public enum MetadataCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PHOTO(6),
     VIDEO(7),
     METADATA_NOT_SET(0);
@@ -151,7 +159,11 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
     private MetadataCase(int value) {
       this.value = value;
     }
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static MetadataCase valueOf(int value) {
       return forNumber(value);
@@ -190,6 +202,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp creation_time = 1;</code>
+   *
+   * @return Whether the creationTime field is set.
    */
   public boolean hasCreationTime() {
     return creationTime_ != null;
@@ -203,6 +217,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.protobuf.Timestamp creation_time = 1;</code>
+   *
+   * @return The creationTime.
    */
   public com.google.protobuf.Timestamp getCreationTime() {
     return creationTime_ == null
@@ -233,6 +249,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 width = 2;</code>
+   *
+   * @return The width.
    */
   public long getWidth() {
     return width_;
@@ -248,6 +266,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>int64 height = 3;</code>
+   *
+   * @return The height.
    */
   public long getHeight() {
     return height_;
@@ -262,6 +282,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.Photo photo = 6;</code>
+   *
+   * @return Whether the photo field is set.
    */
   public boolean hasPhoto() {
     return metadataCase_ == 6;
@@ -274,6 +296,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.Photo photo = 6;</code>
+   *
+   * @return The photo.
    */
   public com.google.photos.types.proto.Photo getPhoto() {
     if (metadataCase_ == 6) {
@@ -306,6 +330,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.Video video = 7;</code>
+   *
+   * @return Whether the video field is set.
    */
   public boolean hasVideo() {
     return metadataCase_ == 7;
@@ -318,6 +344,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.photos.types.Video video = 7;</code>
+   *
+   * @return The video.
    */
   public com.google.photos.types.proto.Video getVideo() {
     if (metadataCase_ == 7) {
@@ -800,6 +828,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp creation_time = 1;</code>
+     *
+     * @return Whether the creationTime field is set.
      */
     public boolean hasCreationTime() {
       return creationTimeBuilder_ != null || creationTime_ != null;
@@ -813,6 +843,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.protobuf.Timestamp creation_time = 1;</code>
+     *
+     * @return The creationTime.
      */
     public com.google.protobuf.Timestamp getCreationTime() {
       if (creationTimeBuilder_ == null) {
@@ -984,6 +1016,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 width = 2;</code>
+     *
+     * @return The width.
      */
     public long getWidth() {
       return width_;
@@ -996,6 +1030,9 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 width = 2;</code>
+     *
+     * @param value The width to set.
+     * @return This builder for chaining.
      */
     public Builder setWidth(long value) {
 
@@ -1011,6 +1048,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 width = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearWidth() {
 
@@ -1028,6 +1067,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 height = 3;</code>
+     *
+     * @return The height.
      */
     public long getHeight() {
       return height_;
@@ -1040,6 +1081,9 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 height = 3;</code>
+     *
+     * @param value The height to set.
+     * @return This builder for chaining.
      */
     public Builder setHeight(long value) {
 
@@ -1055,6 +1099,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>int64 height = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearHeight() {
 
@@ -1076,6 +1122,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.Photo photo = 6;</code>
+     *
+     * @return Whether the photo field is set.
      */
     public boolean hasPhoto() {
       return metadataCase_ == 6;
@@ -1088,6 +1136,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.Photo photo = 6;</code>
+     *
+     * @return The photo.
      */
     public com.google.photos.types.proto.Photo getPhoto() {
       if (photoBuilder_ == null) {
@@ -1275,6 +1325,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.Video video = 7;</code>
+     *
+     * @return Whether the video field is set.
      */
     public boolean hasVideo() {
       return metadataCase_ == 7;
@@ -1287,6 +1339,8 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.photos.types.Video video = 7;</code>
+     *
+     * @return The video.
      */
     public com.google.photos.types.proto.Video getVideo() {
       if (videoBuilder_ == null) {

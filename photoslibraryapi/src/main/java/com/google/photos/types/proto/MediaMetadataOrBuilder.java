@@ -17,6 +17,8 @@ public interface MediaMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp creation_time = 1;</code>
+   *
+   * @return Whether the creationTime field is set.
    */
   boolean hasCreationTime();
   /**
@@ -28,6 +30,8 @@ public interface MediaMetadataOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp creation_time = 1;</code>
+   *
+   * @return The creationTime.
    */
   com.google.protobuf.Timestamp getCreationTime();
   /**
@@ -50,6 +54,8 @@ public interface MediaMetadataOrBuilder
    * </pre>
    *
    * <code>int64 width = 2;</code>
+   *
+   * @return The width.
    */
   long getWidth();
 
@@ -61,6 +67,8 @@ public interface MediaMetadataOrBuilder
    * </pre>
    *
    * <code>int64 height = 3;</code>
+   *
+   * @return The height.
    */
   long getHeight();
 
@@ -72,6 +80,8 @@ public interface MediaMetadataOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.Photo photo = 6;</code>
+   *
+   * @return Whether the photo field is set.
    */
   boolean hasPhoto();
   /**
@@ -82,6 +92,8 @@ public interface MediaMetadataOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.Photo photo = 6;</code>
+   *
+   * @return The photo.
    */
   com.google.photos.types.proto.Photo getPhoto();
   /**
@@ -103,6 +115,8 @@ public interface MediaMetadataOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.Video video = 7;</code>
+   *
+   * @return Whether the video field is set.
    */
   boolean hasVideo();
   /**
@@ -113,6 +127,8 @@ public interface MediaMetadataOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.Video video = 7;</code>
+   *
+   * @return The video.
    */
   com.google.photos.types.proto.Video getVideo();
   /**

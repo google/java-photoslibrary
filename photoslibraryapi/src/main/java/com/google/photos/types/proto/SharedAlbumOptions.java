@@ -25,6 +25,12 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
   private SharedAlbumOptions() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new SharedAlbumOptions();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -37,7 +43,6 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -103,6 +108,8 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>bool is_collaborative = 1;</code>
+   *
+   * @return The isCollaborative.
    */
   public boolean getIsCollaborative() {
     return isCollaborative_;
@@ -119,6 +126,8 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>bool is_commentable = 2;</code>
+   *
+   * @return The isCommentable.
    */
   public boolean getIsCommentable() {
     return isCommentable_;
@@ -465,6 +474,8 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool is_collaborative = 1;</code>
+     *
+     * @return The isCollaborative.
      */
     public boolean getIsCollaborative() {
       return isCollaborative_;
@@ -478,6 +489,9 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool is_collaborative = 1;</code>
+     *
+     * @param value The isCollaborative to set.
+     * @return This builder for chaining.
      */
     public Builder setIsCollaborative(boolean value) {
 
@@ -494,6 +508,8 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool is_collaborative = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIsCollaborative() {
 
@@ -512,6 +528,8 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool is_commentable = 2;</code>
+     *
+     * @return The isCommentable.
      */
     public boolean getIsCommentable() {
       return isCommentable_;
@@ -525,6 +543,9 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool is_commentable = 2;</code>
+     *
+     * @param value The isCommentable to set.
+     * @return This builder for chaining.
      */
     public Builder setIsCommentable(boolean value) {
 
@@ -541,6 +562,8 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>bool is_commentable = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIsCommentable() {
 

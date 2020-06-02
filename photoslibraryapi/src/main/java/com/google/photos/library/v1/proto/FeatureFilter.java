@@ -27,6 +27,12 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new FeatureFilter();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -176,12 +182,20 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Feature valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Feature forNumber(int value) {
       switch (value) {
         case 0:
@@ -263,6 +277,8 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+   *
+   * @return A list containing the includedFeatures.
    */
   public java.util.List<com.google.photos.library.v1.proto.FeatureFilter.Feature>
       getIncludedFeaturesList() {
@@ -279,6 +295,8 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+   *
+   * @return The count of includedFeatures.
    */
   public int getIncludedFeaturesCount() {
     return includedFeatures_.size();
@@ -292,6 +310,9 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includedFeatures at the given index.
    */
   public com.google.photos.library.v1.proto.FeatureFilter.Feature getIncludedFeatures(int index) {
     return includedFeatures_converter_.convert(includedFeatures_.get(index));
@@ -305,6 +326,8 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+   *
+   * @return A list containing the enum numeric values on the wire for includedFeatures.
    */
   public java.util.List<java.lang.Integer> getIncludedFeaturesValueList() {
     return includedFeatures_;
@@ -318,6 +341,9 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of includedFeatures at the given index.
    */
   public int getIncludedFeaturesValue(int index) {
     return includedFeatures_.get(index);
@@ -689,6 +715,8 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @return A list containing the includedFeatures.
      */
     public java.util.List<com.google.photos.library.v1.proto.FeatureFilter.Feature>
         getIncludedFeaturesList() {
@@ -705,6 +733,8 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @return The count of includedFeatures.
      */
     public int getIncludedFeaturesCount() {
       return includedFeatures_.size();
@@ -718,6 +748,9 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includedFeatures at the given index.
      */
     public com.google.photos.library.v1.proto.FeatureFilter.Feature getIncludedFeatures(int index) {
       return includedFeatures_converter_.convert(includedFeatures_.get(index));
@@ -731,6 +764,10 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The includedFeatures to set.
+     * @return This builder for chaining.
      */
     public Builder setIncludedFeatures(
         int index, com.google.photos.library.v1.proto.FeatureFilter.Feature value) {
@@ -751,6 +788,9 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @param value The includedFeatures to add.
+     * @return This builder for chaining.
      */
     public Builder addIncludedFeatures(
         com.google.photos.library.v1.proto.FeatureFilter.Feature value) {
@@ -771,6 +811,9 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @param values The includedFeatures to add.
+     * @return This builder for chaining.
      */
     public Builder addAllIncludedFeatures(
         java.lang.Iterable<? extends com.google.photos.library.v1.proto.FeatureFilter.Feature>
@@ -791,6 +834,8 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearIncludedFeatures() {
       includedFeatures_ = java.util.Collections.emptyList();
@@ -807,6 +852,8 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @return A list containing the enum numeric values on the wire for includedFeatures.
      */
     public java.util.List<java.lang.Integer> getIncludedFeaturesValueList() {
       return java.util.Collections.unmodifiableList(includedFeatures_);
@@ -820,6 +867,9 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of includedFeatures at the given index.
      */
     public int getIncludedFeaturesValue(int index) {
       return includedFeatures_.get(index);
@@ -833,6 +883,10 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of includedFeatures at the given index.
+     * @return This builder for chaining.
      */
     public Builder setIncludedFeaturesValue(int index, int value) {
       ensureIncludedFeaturesIsMutable();
@@ -849,6 +903,9 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for includedFeatures to add.
+     * @return This builder for chaining.
      */
     public Builder addIncludedFeaturesValue(int value) {
       ensureIncludedFeaturesIsMutable();
@@ -865,6 +922,9 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
+     *
+     * @param values The enum numeric values on the wire for includedFeatures to add.
+     * @return This builder for chaining.
      */
     public Builder addAllIncludedFeaturesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureIncludedFeaturesIsMutable();

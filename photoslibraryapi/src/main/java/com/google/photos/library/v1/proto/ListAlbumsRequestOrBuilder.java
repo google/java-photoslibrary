@@ -18,6 +18,8 @@ public interface ListAlbumsRequestOrBuilder
    * </pre>
    *
    * <code>int32 page_size = 1;</code>
+   *
+   * @return The pageSize.
    */
   int getPageSize();
 
@@ -32,6 +34,8 @@ public interface ListAlbumsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   *
+   * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
@@ -45,6 +49,8 @@ public interface ListAlbumsRequestOrBuilder
    * </pre>
    *
    * <code>string page_token = 2;</code>
+   *
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -58,6 +64,8 @@ public interface ListAlbumsRequestOrBuilder
    * </pre>
    *
    * <code>bool exclude_non_app_created_data = 3;</code>
+   *
+   * @return The excludeNonAppCreatedData.
    */
   boolean getExcludeNonAppCreatedData();
 }

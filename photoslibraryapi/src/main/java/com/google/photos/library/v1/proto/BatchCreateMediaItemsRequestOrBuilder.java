@@ -17,6 +17,8 @@ public interface BatchCreateMediaItemsRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The albumId.
    */
   java.lang.String getAlbumId();
   /**
@@ -28,6 +30,8 @@ public interface BatchCreateMediaItemsRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The bytes for albumId.
    */
   com.google.protobuf.ByteString getAlbumIdBytes();
 
@@ -95,6 +99,8 @@ public interface BatchCreateMediaItemsRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition album_position = 4;</code>
+   *
+   * @return Whether the albumPosition field is set.
    */
   boolean hasAlbumPosition();
   /**
@@ -109,6 +115,8 @@ public interface BatchCreateMediaItemsRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition album_position = 4;</code>
+   *
+   * @return The albumPosition.
    */
   com.google.photos.library.v1.proto.AlbumPosition getAlbumPosition();
   /**

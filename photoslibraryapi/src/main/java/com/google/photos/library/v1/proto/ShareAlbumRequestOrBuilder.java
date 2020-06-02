@@ -17,6 +17,8 @@ public interface ShareAlbumRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The albumId.
    */
   java.lang.String getAlbumId();
   /**
@@ -28,6 +30,8 @@ public interface ShareAlbumRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The bytes for albumId.
    */
   com.google.protobuf.ByteString getAlbumIdBytes();
 
@@ -39,6 +43,8 @@ public interface ShareAlbumRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
+   *
+   * @return Whether the sharedAlbumOptions field is set.
    */
   boolean hasSharedAlbumOptions();
   /**
@@ -49,6 +55,8 @@ public interface ShareAlbumRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
+   *
+   * @return The sharedAlbumOptions.
    */
   com.google.photos.types.proto.SharedAlbumOptions getSharedAlbumOptions();
   /**

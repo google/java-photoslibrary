@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@ import com.google.photos.library.v1.proto.ShareAlbumRequest;
 import com.google.photos.library.v1.proto.ShareAlbumResponse;
 import com.google.photos.library.v1.proto.UnshareAlbumRequest;
 import com.google.photos.library.v1.proto.UnshareAlbumResponse;
+import com.google.photos.library.v1.proto.UpdateAlbumRequest;
+import com.google.photos.library.v1.proto.UpdateMediaItemRequest;
 import com.google.photos.types.proto.Album;
 import com.google.photos.types.proto.MediaItem;
 import com.google.protobuf.AbstractMessage;
@@ -338,6 +340,35 @@ public class MockPhotosLibraryImpl extends PhotosLibraryImplBase {
     if (response instanceof BatchRemoveMediaItemsFromAlbumResponse) {
       requests.add(request);
       responseObserver.onNext((BatchRemoveMediaItemsFromAlbumResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateAlbum(UpdateAlbumRequest request, StreamObserver<Album> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Album) {
+      requests.add(request);
+      responseObserver.onNext((Album) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateMediaItem(
+      UpdateMediaItemRequest request, StreamObserver<MediaItem> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof MediaItem) {
+      requests.add(request);
+      responseObserver.onNext((MediaItem) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

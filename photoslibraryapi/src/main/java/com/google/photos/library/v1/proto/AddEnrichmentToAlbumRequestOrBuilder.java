@@ -16,6 +16,8 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The albumId.
    */
   java.lang.String getAlbumId();
   /**
@@ -26,6 +28,8 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>string album_id = 1;</code>
+   *
+   * @return The bytes for albumId.
    */
   com.google.protobuf.ByteString getAlbumIdBytes();
 
@@ -37,6 +41,8 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+   *
+   * @return Whether the newEnrichmentItem field is set.
    */
   boolean hasNewEnrichmentItem();
   /**
@@ -47,6 +53,8 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+   *
+   * @return The newEnrichmentItem.
    */
   com.google.photos.library.v1.proto.NewEnrichmentItem getNewEnrichmentItem();
   /**
@@ -68,6 +76,8 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+   *
+   * @return Whether the albumPosition field is set.
    */
   boolean hasAlbumPosition();
   /**
@@ -78,6 +88,8 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    * </pre>
    *
    * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+   *
+   * @return The albumPosition.
    */
   com.google.photos.library.v1.proto.AlbumPosition getAlbumPosition();
   /**

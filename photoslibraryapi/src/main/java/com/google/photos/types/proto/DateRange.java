@@ -8,7 +8,7 @@ package com.google.photos.types.proto;
  *
  * <pre>
  * Defines a range of dates. Both dates must be of the same format. For more
- * information, see [Date][google.type.Date].
+ * information, see &lt;a href="#Date"&gt;Date&lt;/a&gt;
  * </pre>
  *
  * Protobuf type {@code google.photos.types.DateRange}
@@ -26,6 +26,12 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
   private DateRange() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new DateRange();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -38,7 +44,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -122,6 +127,8 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   *
+   * @return Whether the startDate field is set.
    */
   public boolean hasStartDate() {
     return startDate_ != null;
@@ -135,6 +142,8 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date start_date = 1;</code>
+   *
+   * @return The startDate.
    */
   public com.google.type.Date getStartDate() {
     return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
@@ -164,6 +173,8 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   *
+   * @return Whether the endDate field is set.
    */
   public boolean hasEndDate() {
     return endDate_ != null;
@@ -177,6 +188,8 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.google.type.Date end_date = 2;</code>
+   *
+   * @return The endDate.
    */
   public com.google.type.Date getEndDate() {
     return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
@@ -377,7 +390,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines a range of dates. Both dates must be of the same format. For more
-   * information, see [Date][google.type.Date].
+   * information, see &lt;a href="#Date"&gt;Date&lt;/a&gt;
    * </pre>
    *
    * Protobuf type {@code google.photos.types.DateRange}
@@ -564,6 +577,8 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
+     *
+     * @return Whether the startDate field is set.
      */
     public boolean hasStartDate() {
       return startDateBuilder_ != null || startDate_ != null;
@@ -577,6 +592,8 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date start_date = 1;</code>
+     *
+     * @return The startDate.
      */
     public com.google.type.Date getStartDate() {
       if (startDateBuilder_ == null) {
@@ -741,6 +758,8 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
+     *
+     * @return Whether the endDate field is set.
      */
     public boolean hasEndDate() {
       return endDateBuilder_ != null || endDate_ != null;
@@ -754,6 +773,8 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.google.type.Date end_date = 2;</code>
+     *
+     * @return The endDate.
      */
     public com.google.type.Date getEndDate() {
       if (endDateBuilder_ == null) {

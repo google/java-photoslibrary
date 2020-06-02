@@ -17,6 +17,8 @@ public interface SharedAlbumOptionsOrBuilder
    * </pre>
    *
    * <code>bool is_collaborative = 1;</code>
+   *
+   * @return The isCollaborative.
    */
   boolean getIsCollaborative();
 
@@ -29,6 +31,8 @@ public interface SharedAlbumOptionsOrBuilder
    * </pre>
    *
    * <code>bool is_commentable = 2;</code>
+   *
+   * @return The isCommentable.
    */
   boolean getIsCommentable();
 }

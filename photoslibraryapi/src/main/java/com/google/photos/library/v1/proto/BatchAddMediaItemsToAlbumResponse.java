@@ -26,6 +26,12 @@ public final class BatchAddMediaItemsToAlbumResponse extends com.google.protobuf
   private BatchAddMediaItemsToAlbumResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchAddMediaItemsToAlbumResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }

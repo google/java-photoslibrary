@@ -25,6 +25,12 @@ public final class LeaveSharedAlbumResponse extends com.google.protobuf.Generate
   private LeaveSharedAlbumResponse() {}
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new LeaveSharedAlbumResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
