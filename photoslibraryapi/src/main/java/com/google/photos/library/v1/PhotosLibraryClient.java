@@ -220,23 +220,45 @@ public final class PhotosLibraryClient extends InternalPhotosLibraryClient {
   /**
    * Updates the media item used as the cover photo for an album.
    *
-   * <p>The newCoverPhotoMediaItemId must be the identifier of a media item contained within the
-   * album.
+   * <p>The newCoverPhotoMediaItem must be a media item contained within the album.
    *
    * <p>Only the `id` field of the album is used to identify the album. The album must be created by
    * the developer and owned by the user.
    *
    * @param album Required. The [Album][google.photos.types.Album] to update.
    *     <p>The album’s `id` field is used to identify the album to be updated.
-   * @param newCoverPhotoMediaItemId Required. The identifier of the new media item cover photo.
+   * @param newCoverPhotoMediaItem Required. The new cover photo for the album.
    * @return The updated album.
-   * @throws IllegalArgumentException if newTitle is null or empty.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @throws IllegalArgumentException if newCoverPhotoMediaItem is null.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails.
+   */
+  public final Album updateAlbumCoverPhoto(Album album, MediaItem newCoverPhotoMediaItem) {
+    if (newCoverPhotoMediaItem == null) {
+      throw new IllegalArgumentException("The new cover photo media item cannot be null.");
+    }
+
+    return updateAlbumCoverPhoto(album, newCoverPhotoMediaItem.getId());
+  }
+
+  /**
+   * Updates the media item used as the cover photo for an album.
+   *
+   * <p>The newCoverPhotoMediaItemId must refer to a media item contained within the album.
+   *
+   * <p>Only the `id` field of the album is used to identify the album. The album must be created by
+   * the developer and owned by the user.
+   *
+   * @param album Required. The [Album][google.photos.types.Album] to update.
+   *     <p>The album’s `id` field is used to identify the album to be updated.
+   * @param newCoverPhotoMediaItemId Required. The identifier of the new cover photo for the album.
+   * @return The updated album.
+   * @throws IllegalArgumentException if newCoverPhotoMediaItem is null.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails.
    */
   public final Album updateAlbumCoverPhoto(Album album, String newCoverPhotoMediaItemId) {
     if (Strings.isNullOrEmpty(newCoverPhotoMediaItemId)) {
       throw new IllegalArgumentException(
-          "The new cover photo media item ID cannot be null or empty.");
+          "The new cover photo media item identifier cannot be null.");
     }
 
     Album newAlbum =
