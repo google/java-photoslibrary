@@ -16,7 +16,7 @@ public interface UpdateAlbumRequestOrBuilder
    * The album’s `id` field is used to identify the album to be updated.
    * The album’s `title` field is used to set the new album title.
    * The album’s `cover_photo_media_item_id` field is used to set the new album
-   * title.
+   * cover photo.
    * </pre>
    *
    * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -32,7 +32,7 @@ public interface UpdateAlbumRequestOrBuilder
    * The album’s `id` field is used to identify the album to be updated.
    * The album’s `title` field is used to set the new album title.
    * The album’s `cover_photo_media_item_id` field is used to set the new album
-   * title.
+   * cover photo.
    * </pre>
    *
    * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -48,7 +48,7 @@ public interface UpdateAlbumRequestOrBuilder
    * The album’s `id` field is used to identify the album to be updated.
    * The album’s `title` field is used to set the new album title.
    * The album’s `cover_photo_media_item_id` field is used to set the new album
-   * title.
+   * cover photo.
    * </pre>
    *
    * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>

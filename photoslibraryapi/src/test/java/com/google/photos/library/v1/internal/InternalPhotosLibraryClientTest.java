@@ -971,9 +971,8 @@ public class InternalPhotosLibraryClientTest {
     mockPhotosLibrary.addResponse(expectedResponse);
 
     Album album = Album.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Album actualResponse = client.updateAlbum(album, updateMask);
+    Album actualResponse = client.updateAlbum(album);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
@@ -981,7 +980,6 @@ public class InternalPhotosLibraryClientTest {
     UpdateAlbumRequest actualRequest = (UpdateAlbumRequest) actualRequests.get(0);
 
     Assert.assertEquals(album, actualRequest.getAlbum());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -996,9 +994,62 @@ public class InternalPhotosLibraryClientTest {
 
     try {
       Album album = Album.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
 
-      client.updateAlbum(album, updateMask);
+      client.updateAlbum(album);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateAlbumTest2() {
+    String id = "id3355";
+    String title = "title110371416";
+    String productUrl = "productUrl-1491291617";
+    boolean isWriteable = true;
+    long mediaItemsCount = 927196149L;
+    String coverPhotoBaseUrl = "coverPhotoBaseUrl145443830";
+    String coverPhotoMediaItemId = "coverPhotoMediaItemId840621207";
+    Album expectedResponse =
+        Album.newBuilder()
+            .setId(id)
+            .setTitle(title)
+            .setProductUrl(productUrl)
+            .setIsWriteable(isWriteable)
+            .setMediaItemsCount(mediaItemsCount)
+            .setCoverPhotoBaseUrl(coverPhotoBaseUrl)
+            .setCoverPhotoMediaItemId(coverPhotoMediaItemId)
+            .build();
+    mockPhotosLibrary.addResponse(expectedResponse);
+
+    Album album = Album.newBuilder().build();
+
+    Album actualResponse = client.updateAlbum(album);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAlbumRequest actualRequest = (UpdateAlbumRequest) actualRequests.get(0);
+
+    Assert.assertEquals(album, actualRequest.getAlbum());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateAlbumExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockPhotosLibrary.addException(exception);
+
+    try {
+      Album album = Album.newBuilder().build();
+
+      client.updateAlbum(album);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

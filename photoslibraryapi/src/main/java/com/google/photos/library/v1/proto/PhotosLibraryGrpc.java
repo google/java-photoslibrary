@@ -1476,8 +1476,8 @@ public final class PhotosLibraryGrpc {
      * <pre>
      * Update the album with the specified `id`.
      * Only the `id`, `title` and `cover_photo_media_item_id` fields of the album
-     * are read, and the album must be created by the developers and owned by
-     * the user.
+     * are read. The album must have been created by the developer via the API and
+     * must be owned by the user.
      * </pre>
      */
     public void updateAlbum(
@@ -1491,8 +1491,9 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Update the media item with the specified `id`.
-     * Only the `id` and `description` fields of the media item are read, and the
-     * media item must be created by the developers and owned by the user.
+     * Only the `id` and `description` fields of the media item are read. The
+     * media item must have been created by the developer via the API and must be
+     * owned by the user.
      * </pre>
      */
     public void updateMediaItem(
@@ -2007,8 +2008,8 @@ public final class PhotosLibraryGrpc {
      * <pre>
      * Update the album with the specified `id`.
      * Only the `id`, `title` and `cover_photo_media_item_id` fields of the album
-     * are read, and the album must be created by the developers and owned by
-     * the user.
+     * are read. The album must have been created by the developer via the API and
+     * must be owned by the user.
      * </pre>
      */
     public void updateAlbum(
@@ -2025,8 +2026,9 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Update the media item with the specified `id`.
-     * Only the `id` and `description` fields of the media item are read, and the
-     * media item must be created by the developers and owned by the user.
+     * Only the `id` and `description` fields of the media item are read. The
+     * media item must have been created by the developer via the API and must be
+     * owned by the user.
      * </pre>
      */
     public void updateMediaItem(
@@ -2347,8 +2349,8 @@ public final class PhotosLibraryGrpc {
      * <pre>
      * Update the album with the specified `id`.
      * Only the `id`, `title` and `cover_photo_media_item_id` fields of the album
-     * are read, and the album must be created by the developers and owned by
-     * the user.
+     * are read. The album must have been created by the developer via the API and
+     * must be owned by the user.
      * </pre>
      */
     public com.google.photos.types.proto.Album updateAlbum(
@@ -2362,8 +2364,9 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Update the media item with the specified `id`.
-     * Only the `id` and `description` fields of the media item are read, and the
-     * media item must be created by the developers and owned by the user.
+     * Only the `id` and `description` fields of the media item are read. The
+     * media item must have been created by the developer via the API and must be
+     * owned by the user.
      * </pre>
      */
     public com.google.photos.types.proto.MediaItem updateMediaItem(
@@ -2700,8 +2703,8 @@ public final class PhotosLibraryGrpc {
      * <pre>
      * Update the album with the specified `id`.
      * Only the `id`, `title` and `cover_photo_media_item_id` fields of the album
-     * are read, and the album must be created by the developers and owned by
-     * the user.
+     * are read. The album must have been created by the developer via the API and
+     * must be owned by the user.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.photos.types.proto.Album>
@@ -2715,8 +2718,9 @@ public final class PhotosLibraryGrpc {
      *
      * <pre>
      * Update the media item with the specified `id`.
-     * Only the `id` and `description` fields of the media item are read, and the
-     * media item must be created by the developers and owned by the user.
+     * Only the `id` and `description` fields of the media item are read. The
+     * media item must have been created by the developer via the API and must be
+     * owned by the user.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

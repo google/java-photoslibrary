@@ -1692,8 +1692,34 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Update the album with the specified `id`. Only the `id`, `title` and
-   * `cover_photo_media_item_id` fields of the album are read, and the album must be created by the
-   * developers and owned by the user.
+   * `cover_photo_media_item_id` fields of the album are read. The album must have been created by
+   * the developer via the API and must be owned by the user.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   *   Album album = Album.newBuilder().build();
+   *   Album response = internalPhotosLibraryClient.updateAlbum(album);
+   * }
+   * </code></pre>
+   *
+   * @param album Required. The [Album][google.photos.types.Album] to update.
+   *     <p>The album’s `id` field is used to identify the album to be updated. The album’s `title`
+   *     field is used to set the new album title. The album’s `cover_photo_media_item_id` field is
+   *     used to set the new album cover photo.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Album updateAlbum(Album album) {
+    UpdateAlbumRequest request = UpdateAlbumRequest.newBuilder().setAlbum(album).build();
+    return updateAlbum(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Update the album with the specified `id`. Only the `id`, `title` and
+   * `cover_photo_media_item_id` fields of the album are read. The album must have been created by
+   * the developer via the API and must be owned by the user.
    *
    * <p>Sample code:
    *
@@ -1708,7 +1734,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * @param album Required. The [Album][google.photos.types.Album] to update.
    *     <p>The album’s `id` field is used to identify the album to be updated. The album’s `title`
    *     field is used to set the new album title. The album’s `cover_photo_media_item_id` field is
-   *     used to set the new album title.
+   *     used to set the new album cover photo.
    * @param updateMask Indicate what fields in the provided album to update. The only valid values
    *     are `title` and `cover_photo_media_item_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1722,8 +1748,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Update the album with the specified `id`. Only the `id`, `title` and
-   * `cover_photo_media_item_id` fields of the album are read, and the album must be created by the
-   * developers and owned by the user.
+   * `cover_photo_media_item_id` fields of the album are read. The album must have been created by
+   * the developer via the API and must be owned by the user.
    *
    * <p>Sample code:
    *
@@ -1749,8 +1775,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Update the album with the specified `id`. Only the `id`, `title` and
-   * `cover_photo_media_item_id` fields of the album are read, and the album must be created by the
-   * developers and owned by the user.
+   * `cover_photo_media_item_id` fields of the album are read. The album must have been created by
+   * the developer via the API and must be owned by the user.
    *
    * <p>Sample code:
    *
@@ -1775,8 +1801,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Update the media item with the specified `id`. Only the `id` and `description` fields of the
-   * media item are read, and the media item must be created by the developers and owned by the
-   * user.
+   * media item are read. The media item must have been created by the developer via the API and
+   * must be owned by the user.
    *
    * <p>Sample code:
    *
@@ -1807,8 +1833,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Update the media item with the specified `id`. Only the `id` and `description` fields of the
-   * media item are read, and the media item must be created by the developers and owned by the
-   * user.
+   * media item are read. The media item must have been created by the developer via the API and
+   * must be owned by the user.
    *
    * <p>Sample code:
    *
@@ -1834,8 +1860,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Update the media item with the specified `id`. Only the `id` and `description` fields of the
-   * media item are read, and the media item must be created by the developers and owned by the
-   * user.
+   * media item are read. The media item must have been created by the developer via the API and
+   * must be owned by the user.
    *
    * <p>Sample code:
    *
