@@ -162,7 +162,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Ouput only] Identifier for the album. This is a persistent identifier that
+   * Identifier for the album. This is a persistent identifier that
    * can be used between sessions to identify this album.
    * </pre>
    *
@@ -185,7 +185,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Ouput only] Identifier for the album. This is a persistent identifier that
+   * Identifier for the album. This is a persistent identifier that
    * can be used between sessions to identify this album.
    * </pre>
    *
@@ -459,8 +459,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Identifier for the media item associated with the cover
-   * photo.
+   * Identifier for the media item associated with the cover photo.
    * </pre>
    *
    * <code>string cover_photo_media_item_id = 8;</code>
@@ -482,8 +481,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Identifier for the media item associated with the cover
-   * photo.
+   * Identifier for the media item associated with the cover photo.
    * </pre>
    *
    * <code>string cover_photo_media_item_id = 8;</code>
@@ -944,7 +942,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Ouput only] Identifier for the album. This is a persistent identifier that
+     * Identifier for the album. This is a persistent identifier that
      * can be used between sessions to identify this album.
      * </pre>
      *
@@ -967,7 +965,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Ouput only] Identifier for the album. This is a persistent identifier that
+     * Identifier for the album. This is a persistent identifier that
      * can be used between sessions to identify this album.
      * </pre>
      *
@@ -990,7 +988,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Ouput only] Identifier for the album. This is a persistent identifier that
+     * Identifier for the album. This is a persistent identifier that
      * can be used between sessions to identify this album.
      * </pre>
      *
@@ -1012,7 +1010,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Ouput only] Identifier for the album. This is a persistent identifier that
+     * Identifier for the album. This is a persistent identifier that
      * can be used between sessions to identify this album.
      * </pre>
      *
@@ -1030,7 +1028,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Ouput only] Identifier for the album. This is a persistent identifier that
+     * Identifier for the album. This is a persistent identifier that
      * can be used between sessions to identify this album.
      * </pre>
      *
@@ -1736,8 +1734,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Identifier for the media item associated with the cover
-     * photo.
+     * Identifier for the media item associated with the cover photo.
      * </pre>
      *
      * <code>string cover_photo_media_item_id = 8;</code>
@@ -1759,8 +1756,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Identifier for the media item associated with the cover
-     * photo.
+     * Identifier for the media item associated with the cover photo.
      * </pre>
      *
      * <code>string cover_photo_media_item_id = 8;</code>
@@ -1782,8 +1778,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Identifier for the media item associated with the cover
-     * photo.
+     * Identifier for the media item associated with the cover photo.
      * </pre>
      *
      * <code>string cover_photo_media_item_id = 8;</code>
@@ -1804,8 +1799,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Identifier for the media item associated with the cover
-     * photo.
+     * Identifier for the media item associated with the cover photo.
      * </pre>
      *
      * <code>string cover_photo_media_item_id = 8;</code>
@@ -1822,8 +1816,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Identifier for the media item associated with the cover
-     * photo.
+     * Identifier for the media item associated with the cover photo.
      * </pre>
      *
      * <code>string cover_photo_media_item_id = 8;</code>

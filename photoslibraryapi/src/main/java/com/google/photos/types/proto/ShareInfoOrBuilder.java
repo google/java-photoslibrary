@@ -12,7 +12,8 @@ public interface ShareInfoOrBuilder
    *
    *
    * <pre>
-   * Options that control the sharing of an album.
+   * Options that control whether someone can add media items to, or comment on
+   * a shared album.
    * </pre>
    *
    * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 1;</code>
@@ -24,7 +25,8 @@ public interface ShareInfoOrBuilder
    *
    *
    * <pre>
-   * Options that control the sharing of an album.
+   * Options that control whether someone can add media items to, or comment on
+   * a shared album.
    * </pre>
    *
    * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 1;</code>
@@ -36,7 +38,8 @@ public interface ShareInfoOrBuilder
    *
    *
    * <pre>
-   * Options that control the sharing of an album.
+   * Options that control whether someone can add media items to, or comment on
+   * a shared album.
    * </pre>
    *
    * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 1;</code>
@@ -47,9 +50,15 @@ public interface ShareInfoOrBuilder
    *
    *
    * <pre>
-   * A link to the album that's now shared on the Google Photos website and app.
-   * Anyone with the link can access this shared album and see all of the items
-   * present in the album.
+   * A link to the shared Google Photos album. Anyone with the link can view the
+   * contents of the album, so it should be treated with care.
+   * The `shareableUrl` parameter is only returned if the album has link sharing
+   * turned on. If a user is already joined to an album that isn't link-shared,
+   * they can use the album's
+   * [`productUrl`](https://developers.google.com/photos/library/reference/rest/v1/albums#Album)
+   * to access it instead.
+   * A `shareableUrl` is invalidated if the owner turns off link sharing in the
+   * Google Photos app, or if the album is unshared.
    * </pre>
    *
    * <code>string shareable_url = 2;</code>
@@ -61,9 +70,15 @@ public interface ShareInfoOrBuilder
    *
    *
    * <pre>
-   * A link to the album that's now shared on the Google Photos website and app.
-   * Anyone with the link can access this shared album and see all of the items
-   * present in the album.
+   * A link to the shared Google Photos album. Anyone with the link can view the
+   * contents of the album, so it should be treated with care.
+   * The `shareableUrl` parameter is only returned if the album has link sharing
+   * turned on. If a user is already joined to an album that isn't link-shared,
+   * they can use the album's
+   * [`productUrl`](https://developers.google.com/photos/library/reference/rest/v1/albums#Album)
+   * to access it instead.
+   * A `shareableUrl` is invalidated if the owner turns off link sharing in the
+   * Google Photos app, or if the album is unshared.
    * </pre>
    *
    * <code>string shareable_url = 2;</code>
@@ -76,8 +91,10 @@ public interface ShareInfoOrBuilder
    *
    *
    * <pre>
-   * A token that can be used by other users to join this shared album via the
-   * API.
+   * A token that is used to join, leave, or retrieve the details of a shared
+   * album on behalf of a user who isn't the owner.
+   * A `shareToken` is invalidated if the owner turns off link sharing in the
+   * Google Photos app, or if the album is unshared.
    * </pre>
    *
    * <code>string share_token = 3;</code>
@@ -89,8 +106,10 @@ public interface ShareInfoOrBuilder
    *
    *
    * <pre>
-   * A token that can be used by other users to join this shared album via the
-   * API.
+   * A token that is used to join, leave, or retrieve the details of a shared
+   * album on behalf of a user who isn't the owner.
+   * A `shareToken` is invalidated if the owner turns off link sharing in the
+   * Google Photos app, or if the album is unshared.
    * </pre>
    *
    * <code>string share_token = 3;</code>
@@ -103,8 +122,8 @@ public interface ShareInfoOrBuilder
    *
    *
    * <pre>
-   * True if the user has joined the album. This is always true for the owner
-   * of the shared album.
+   * True if the user is joined to the album. This is always true for
+   * the owner of the album.
    * </pre>
    *
    * <code>bool is_joined = 4;</code>
@@ -125,4 +144,17 @@ public interface ShareInfoOrBuilder
    * @return The isOwned.
    */
   boolean getIsOwned();
+
+  /**
+   *
+   *
+   * <pre>
+   * True if the album can be joined by users.
+   * </pre>
+   *
+   * <code>bool is_joinable = 6;</code>
+   *
+   * @return The isJoinable.
+   */
+  boolean getIsJoinable();
 }

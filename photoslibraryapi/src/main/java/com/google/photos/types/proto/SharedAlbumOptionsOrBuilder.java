@@ -26,8 +26,8 @@ public interface SharedAlbumOptionsOrBuilder
    *
    *
    * <pre>
-   * True if the shared album allows the owner and the collaborators (users
-   * who have joined the album) to add comments to the album. Defaults to false.
+   * True if the shared album allows collaborators (users who have joined the
+   * album) to add comments to the album. Defaults to false.
    * </pre>
    *
    * <code>bool is_commentable = 2;</code>

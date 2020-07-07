@@ -8,7 +8,7 @@ package com.google.photos.types.proto;
  *
  * <pre>
  * Defines a range of dates. Both dates must be of the same format. For more
- * information, see &lt;a href="#Date"&gt;Date&lt;/a&gt;
+ * information, see [Date][google.type.Date].
  * </pre>
  *
  * Protobuf type {@code google.photos.types.DateRange}
@@ -390,7 +390,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines a range of dates. Both dates must be of the same format. For more
-   * information, see &lt;a href="#Date"&gt;Date&lt;/a&gt;
+   * information, see [Date][google.type.Date].
    * </pre>
    *
    * Protobuf type {@code google.photos.types.DateRange}
