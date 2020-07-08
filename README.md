@@ -7,7 +7,7 @@ This repository contains the Java client library for the [Google Photos Library 
 ## Requirements and preparation
 
 * Java 1.8+
-* Gradle build system or Maven 3.0+ recommended.
+* Gradle build system >= 6.5.1 or Maven recommended.
 * OAuth 2.0 credentials configured for your project as [described below](#set-up-your-oauth2-credentials-for-java). (Note that to run the samples, use the "*other*" client type.)
 
 ## Download the client library
@@ -17,23 +17,25 @@ Firstly, download the library or include it in your build configuration. Then, s
 Next, you can follow the [samples](sample/) to see the client library in action.
 
 ### Option 1: Gradle dependency
-To use this library with Gradle, add the following dependency to your `build.gradle` file:
+To use this library with Gradle, add the following dependency to your `build.gradle` file and replace `VERSION_NUMBER` 
+with the [latest available release](releases/)):
 ```
 repositories {
     mavenCentral()
 }
 dependencies {
-    compile 'com.google.photos.library:google-photos-library-client:1.2.0'
+    implementation 'com.google.photos.library:google-photos-library-client:VERSION_NUMBER'
 }
 ```
 
 ### Option 2: Maven dependency
-To use this library with Maven, add the following to your Maven `pom.xml` file:
+To use this library with Maven, add the following to your Maven `pom.xml` file and replace `VERSION_NUMBER` with the
+[latest available release](releases/)):
 ```
 <dependency>
   <groupId>com.google.photos.library</groupId>
   <artifactId>google-photos-library-client</artifactId>
-  <version>1.2.0</version>
+  <version>VERSION_NUMBER</version>
 </dependency>
 ```
 
