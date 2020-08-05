@@ -53,6 +53,8 @@ Use this method if you want to alter or contribute to this library (e.g., submit
 3. Open the `build.gradle` file in your IDE or run `./gradlew assemble` at the
    command prompt to build the project. See `./gradlew tasks` to see available tasks
 
+## Additional dependencies
+
 You will need additional dependencies like grpc :
 ```
 implementation 'io.grpc:grpc-okhttp:1.31.0'
