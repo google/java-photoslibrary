@@ -319,4 +319,15 @@ public final class PhotosLibraryClient extends InternalPhotosLibraryClient {
   public final ListSharedAlbumsPagedResponse listSharedAlbums() {
     return super.listSharedAlbums(false);
   }
+
+  @Override
+  public void close() {
+    super.close();
+    try {
+      uploadStub.close();
+    } catch (Exception e) {
+      // Currently no exceptions are thrown and BackgroundResource.close() is going to be
+      // redefined not to thrown Exception anyway
+    }
+  }
 }
