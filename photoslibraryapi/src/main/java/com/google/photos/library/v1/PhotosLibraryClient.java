@@ -326,8 +326,8 @@ public final class PhotosLibraryClient extends InternalPhotosLibraryClient {
     try {
       uploadStub.close();
     } catch (Exception e) {
-      // Currently no exceptions are thrown and BackgroundResource.close() is going to be
-      // redefined not to thrown Exception anyway
+      // workaround to avoid to modify parent's signature. Should not be needed starting from gax 2.0.0
+      throw new RuntimeException(e);
     }
   }
 }
