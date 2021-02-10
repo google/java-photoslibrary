@@ -326,7 +326,7 @@ public final class PhotosLibraryClient extends InternalPhotosLibraryClient {
     try {
       uploadStub.close();
     } catch (Exception e) {
-      // workaround to avoid to modify parent's signature. Should not be needed starting from gax 2.0.0
+      // workaround to avoid to modify parent's signature. Should not be needed starting from gax v2
       throw new RuntimeException(e);
     }
   }
