@@ -33,7 +33,7 @@ apply plugin: 'signing'
 
 description = 'Google Photos Library API Client Library for Java'
 group = 'com.google.photos.library'
-version = '1.6.0'
+version = '1.6.1'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
