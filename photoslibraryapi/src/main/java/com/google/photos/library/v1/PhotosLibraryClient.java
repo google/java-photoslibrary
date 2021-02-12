@@ -319,4 +319,15 @@ public final class PhotosLibraryClient extends InternalPhotosLibraryClient {
   public final ListSharedAlbumsPagedResponse listSharedAlbums() {
     return super.listSharedAlbums(false);
   }
+
+  @Override
+  public void close() {
+    super.close();
+    try {
+      uploadStub.close();
+    } catch (Exception e) {
+      // workaround to avoid to modify parent's signature. Should not be needed starting from gax v2
+      throw new RuntimeException(e);
+    }
+  }
 }
