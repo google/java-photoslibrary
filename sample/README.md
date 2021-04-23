@@ -17,6 +17,7 @@ client library for the [Google Photos Library API](https://developers.google.com
    * `sample:runAlbum`
    * `sample:runFilter`
    * `sample:runShare`
+   * `sample:runUpload`
 
 Note: You may need to clean your build project and build directories (`./gradlew clean`) before you
 run a different sample app. The user authentication credentials are cached for all samples together
@@ -43,3 +44,10 @@ Class: `com.google.photos.library.sample.demos.ShareDemo`.
 [File: `AlbumDemo.java`](src/main/java/com/google/photos/library/sample/demos/ShareDemo.java)
 
 Shows how to share an album created by this application using `share tokens`.
+
+### Upload
+Class: `com.google.photos.library.sample.demos.UploadDemo`.
+[File: `AlbumDemo.java`](src/main/java/com/google/photos/library/sample/demos/UploadDemo.java)
+
+Shows how to efficiently upload media, including parallelization and other best
+practices.

@@ -62,3 +62,8 @@ task runShare(type: JavaExec) {
     classpath sourceSets.main.runtimeClasspath
     main = "com.google.photos.library.sample.demos.ShareDemo"
 }
+
+task runUpload(type: JavaExec) {
+    classpath sourceSets.main.runtimeClasspath
+    main = "com.google.photos.library.sample.demos.UploadDemo"
+}
