@@ -106,6 +106,11 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
   /** Executes upload process for the request. */
   @Override
   public UploadMediaItemResponse call() throws Exception {
+    // Fails if the file has an invalid size
+    if (request.getFileSize() < 1) {
+      throw new IllegalArgumentException("The file is empty.");
+    }
+
     long initialMillis = clientContext.getClock().millisTime();
     // Gets upload url (resume url)
     String uploadUrl = getUploadUrl();

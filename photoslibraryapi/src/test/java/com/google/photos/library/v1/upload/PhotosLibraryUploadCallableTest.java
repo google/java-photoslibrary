@@ -116,6 +116,20 @@ public class PhotosLibraryUploadCallableTest {
   }
 
   @Test
+  public void emptyFileThrowsException() throws IOException {
+    // Create an empty temporary file and open it for reading.
+    RandomAccessFile emptyFile = new RandomAccessFile(tempFolder.newFile(), "r");
+    UploadMediaItemRequest request =
+        UploadMediaItemRequest.newBuilder().setDataFile(emptyFile).build();
+
+    PhotosLibraryUploadCallable callable =
+        new PhotosLibraryUploadCallable(request, clientContext, settings);
+
+    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, callable::call);
+    assertEquals("The file is empty.", e.getMessage());
+  }
+
+  @Test
   public void invalidStatusHeaderThrowsException() throws IOException {
     CloseableHttpResponse response = createMockHttpResponse(200);
     when(httpClient.execute(any(HttpUriRequest.class))).thenReturn(response);
