@@ -31,6 +31,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
+import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpResponseException;
@@ -225,7 +226,12 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
           Integer.parseInt(response.getFirstHeader(UPLOAD_GRANULARITY_HEADER).getValue()));
     }
 
-    switch (response.getFirstHeader(UPLOAD_STATUS_HEADER).getValue()) {
+    Header headerStatus = response.getFirstHeader(UPLOAD_STATUS_HEADER);
+    if (headerStatus == null) {
+      throw new IllegalStateException(ExceptionStrings.INVALID_UPLOAD_STATUS);
+    }
+
+    switch (headerStatus.getValue()) {
       case UploadStatuses.ACTIVE:
         return response.getFirstHeader(UPLOAD_URL_HEADER).getValue();
       case UploadStatuses.FINAL:
