@@ -180,7 +180,10 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
     if (!successful) {
       if (response.isPresent()) {
         throw new HttpResponseException(
-            response.get().getStatusLine().getStatusCode(), ExceptionStrings.INVALID_UPLOAD_RESULT);
+            response.get().getStatusLine().getStatusCode(),
+            ExceptionStrings.INVALID_UPLOAD_RESULT
+                + " "
+                + response.get().getStatusLine().getReasonPhrase());
       } else {
         throw new IllegalStateException(ExceptionStrings.UNKNOWN_ERROR);
       }
@@ -226,6 +229,13 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
     CloseableHttpClient httpClient = HttpClientBuilder.create().useSystemProperties().build();
     HttpResponse response = httpClient.execute(httpPost);
 
+    // Throw an exception if the server did not respond with a success status
+    if (!isStatusOk(response.getStatusLine().getStatusCode())) {
+      throw new HttpResponseException(
+          response.getStatusLine().getStatusCode(),
+          ExceptionStrings.NOT_INITIALIZED + " " + response.getStatusLine().getReasonPhrase());
+    }
+
     if (response.getFirstHeader(UPLOAD_GRANULARITY_HEADER) != null) {
       updateOptimalChunkSize(
           Integer.parseInt(response.getFirstHeader(UPLOAD_GRANULARITY_HEADER).getValue()));
@@ -254,6 +264,12 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
 
     CloseableHttpClient httpClient = HttpClientBuilder.create().useSystemProperties().build();
     HttpResponse response = httpClient.execute(httpPost);
+
+    if (!isStatusOk(response.getStatusLine().getStatusCode())) {
+      throw new HttpResponseException(
+          response.getStatusLine().getStatusCode(),
+          ExceptionStrings.INVALID_PROGRESS + " " + response.getStatusLine().getReasonPhrase());
+    }
 
     if (response.getFirstHeader(UPLOAD_GRANULARITY_HEADER) != null) {
       updateOptimalChunkSize(
@@ -321,8 +337,12 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
 
   private UploadMediaItemResponse buildUploadMediaItemResponse(Optional<HttpResponse> response)
       throws IOException {
-    if (!response.isPresent() || !isStatusOk(response.get().getStatusLine().getStatusCode())) {
+    if (!response.isPresent()) {
       throw new IllegalArgumentException(ExceptionStrings.INVALID_UPLOAD_RESULT);
+    } else if (!isStatusOk(response.get().getStatusLine().getStatusCode())) {
+      throw new HttpResponseException(
+          response.get().getStatusLine().getStatusCode(),
+          response.get().getStatusLine().getReasonPhrase());
     }
     return UploadMediaItemResponse.newBuilder()
         .setUploadToken(EntityUtils.toString(response.get().getEntity()))

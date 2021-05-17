@@ -25,4 +25,6 @@ final class ExceptionStrings {
       "The upload url is either finalized or rejected by the server.";
   static final String UPLOAD_TIMED_OUT = "The upload has timed out.";
   static final String UNKNOWN_ERROR = "The upload encountered an unknown error.";
+  static final String NOT_INITIALIZED = "The upload could not be initialized.";
+  static final String INVALID_PROGRESS = "The upload progress could not be verified.";
 }

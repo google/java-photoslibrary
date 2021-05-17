@@ -38,6 +38,7 @@ import java.util.Map;
 import java.util.concurrent.Executors;
 import org.apache.http.Header;
 import org.apache.http.StatusLine;
+import org.apache.http.client.HttpResponseException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -127,6 +128,127 @@ public class PhotosLibraryUploadCallableTest {
 
     IllegalArgumentException e = assertThrows(IllegalArgumentException.class, callable::call);
     assertEquals("The file is empty.", e.getMessage());
+  }
+
+  @Test
+  public void invalidStatusCodeAtGetUploadUrlThrowsException() throws IOException {
+    int statusCode = 500;
+    CloseableHttpResponse errorResponse = createMockHttpResponse(statusCode);
+
+    // Failure at request 1.
+    when(httpClient.execute(any(HttpUriRequest.class)))
+        .thenReturn(errorResponse /* get upload url */);
+    HttpResponseException exception =
+        assertThrows(
+            "HttpResponseException thrown when getting URL",
+            HttpResponseException.class,
+            callable::call);
+    assertEquals(statusCode, exception.getStatusCode());
+  }
+
+  @Test
+  public void invalidStatusCodeAtGetUploadedBytesThrowsException() throws IOException {
+    int statusCode = 500;
+    CloseableHttpResponse[] successResponses = createMockUploadFlow();
+    CloseableHttpResponse errorResponse = createMockHttpResponse(statusCode);
+
+    // Failure at request 2.
+    when(httpClient.execute(any(HttpUriRequest.class)))
+        .thenReturn(
+            successResponses[0] /* get upload url */, errorResponse /* get uploaded bytes */);
+    HttpResponseException exception =
+        assertThrows(
+            "HttpResponseException thrown when getting uploaded bytes",
+            HttpResponseException.class,
+            callable::call);
+    assertEquals(statusCode, exception.getStatusCode());
+  }
+
+  @Test
+  public void invalidStatusCodeAtByteUploadThrowsException() throws IOException {
+    int statusCode = 500;
+    CloseableHttpResponse[] successResponses = createMockUploadFlow();
+    CloseableHttpResponse errorResponse = createMockHttpResponse(statusCode);
+
+    // Failure at request 3.
+    when(httpClient.execute(any(HttpUriRequest.class)))
+        .thenReturn(
+            successResponses[0] /* get upload url */,
+            successResponses[1] /* get uploaded bytes */,
+            errorResponse /* first byte upload */);
+    HttpResponseException exception =
+        assertThrows(
+            "HttpResponseException thrown at first byte upload",
+            HttpResponseException.class,
+            callable::call);
+    assertEquals(statusCode, exception.getStatusCode());
+  }
+
+  @Test
+  public void invalidStatusCodeAtGetUploadedBytesAfterUploadThrowsException() throws IOException {
+    int statusCode = 500;
+    CloseableHttpResponse[] successResponses = createMockUploadFlow();
+    CloseableHttpResponse errorResponse = createMockHttpResponse(statusCode);
+
+    // Failure at request 4.
+    when(httpClient.execute(any(HttpUriRequest.class)))
+        .thenReturn(
+            successResponses[0] /* get upload url */,
+            successResponses[1] /* get uploaded bytes */,
+            successResponses[2] /* first byte upload */,
+            errorResponse /* get uploaded bytes*/);
+    HttpResponseException exception =
+        assertThrows(
+            "HttpResponseException thrown when getting uploaded bytes after first upload",
+            HttpResponseException.class,
+            callable::call);
+    assertEquals(statusCode, exception.getStatusCode());
+  }
+
+  @Test
+  public void invalidStatusCodeAtFinalByteUploadThrowsException() throws IOException {
+    int statusCode = 500;
+    CloseableHttpResponse[] successResponses = createMockUploadFlow();
+    CloseableHttpResponse errorResponse = createMockHttpResponse(statusCode);
+
+    // Failure at request 5.
+    when(httpClient.execute(any(HttpUriRequest.class)))
+        .thenReturn(
+            successResponses[0] /* get upload url */,
+            successResponses[1] /* get uploaded bytes */,
+            successResponses[2] /* first byte upload */,
+            successResponses[3] /* get uploaded bytes*/,
+            errorResponse /* final byte upload */);
+    HttpResponseException exception =
+        assertThrows(
+            "HttpResponseException thrown at final byte upload",
+            HttpResponseException.class,
+            callable::call);
+    assertEquals(statusCode, exception.getStatusCode());
+  }
+
+  @Test
+  public void invalidStatusCodeAtGetUploadedBytesAfterFinalByteUploadThrowsException()
+      throws IOException {
+    int statusCode = 500;
+    CloseableHttpResponse[] successResponses = createMockUploadFlow();
+    CloseableHttpResponse errorResponse = createMockHttpResponse(statusCode);
+
+    // Failure at request 6.
+    when(httpClient.execute(any(HttpUriRequest.class)))
+        .thenReturn(
+            successResponses[0] /* get upload url */,
+            successResponses[1] /* get uploaded bytes */,
+            successResponses[2] /* first byte upload */,
+            successResponses[3] /* get uploaded bytes*/,
+            successResponses[4] /* final byte upload */,
+            errorResponse /* get uploaded bytes*/);
+    HttpResponseException exception =
+        assertThrows(
+            "HttpResponseException thrown when getting uploaded bytes after final upload",
+            HttpResponseException.class,
+            callable::call);
+    assertEquals(statusCode, exception.getStatusCode());
   }
 
   @Test
