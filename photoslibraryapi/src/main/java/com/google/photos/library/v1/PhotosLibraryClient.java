@@ -124,7 +124,7 @@ public final class PhotosLibraryClient extends InternalPhotosLibraryClient {
 
   /** Uploads a file to Google Photos. */
   public final UploadMediaItemResponse uploadMediaItem(UploadMediaItemRequest request) {
-    return uploadStub.uploadMediaItemCallable().call(request);
+    return uploadMediaItemCallable().call(request);
   }
 
   /* batchCreateMediaItems convenience methods */

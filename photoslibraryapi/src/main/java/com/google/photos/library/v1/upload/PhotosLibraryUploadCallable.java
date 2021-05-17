@@ -16,19 +16,15 @@
 
 package com.google.photos.library.v1.upload;
 
-import static org.threeten.bp.temporal.ChronoUnit.MILLIS;
-
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.photos.library.v1.PhotosLibrarySettings;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
-import java.util.OptionalLong;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
 import org.apache.http.Header;
@@ -76,12 +72,13 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
 
   private static final String UPLOAD_PROTOCOL_VALUE = "resumable";
 
-  private static final Duration UNLIMITED_TIMEOUT = Duration.ZERO;
-  private static final int UNLIMITED_RETRIES = 0;
+  private static final long UNLIMITED_TIMEOUT = 0L;
 
   private final UploadMediaItemRequest request;
   private final ClientContext clientContext;
-  private final PhotosLibrarySettings photosLibrarySettings;
+  private final UnaryCallSettings<UploadMediaItemRequest, UploadMediaItemResponse>
+      photosLibrarySettings;
+
   // The resume url that can be extracted when there is an error.
   private final AtomicReference<String> atomicResumeUrl;
   // This is the chunkSize closest to the request chunkSize which can be handled by the server.
@@ -92,7 +89,7 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
   PhotosLibraryUploadCallable(
       UploadMediaItemRequest request,
       ClientContext clientContext,
-      PhotosLibrarySettings photosLibrarySettings) {
+      UnaryCallSettings<UploadMediaItemRequest, UploadMediaItemResponse> photosLibrarySettings) {
     this.request = request;
     this.clientContext = clientContext;
     this.photosLibrarySettings = photosLibrarySettings;
@@ -111,100 +108,57 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
       throw new IllegalArgumentException("The file is empty.");
     }
 
-    long initialMillis = clientContext.getClock().millisTime();
-    // Gets upload url (resume url)
+    // The time when this call was started.
+    Duration startTime = Duration.ofNanos(clientContext.getClock().nanoTime());
+
+    // Throws an exception when it fails to get the upload URL
     String uploadUrl = getUploadUrl();
     this.atomicResumeUrl.set(uploadUrl);
-    checkForTimeout(initialMillis);
+
+    checkForTimeoutAndInterrupt(startTime);
 
     Optional<HttpResponse> response = Optional.empty();
-    RetrySettings retrySettings =
-        photosLibrarySettings.uploadMediaItemSettings().getRetrySettings();
 
-    // There is no error by default
-    boolean successful = false;
-    int retries = 0;
-    OptionalLong previousDelayMillis = OptionalLong.empty();
+    // Keeps uploading bytes from the request media item by chunk
+    long receivedByteCount = getReceivedByteCount(uploadUrl);
 
-    while (!successful
-        && (retrySettings.getMaxAttempts() == UNLIMITED_RETRIES
-            || retries < retrySettings.getMaxAttempts())) {
-      retries++;
-      // Keeps uploading bytes from the request media item by chunk
-      long receivedByteCount = getReceivedByteCount(uploadUrl);
-      // Moves the cursor to the correct position and reset failure indicator
-      // before starting/resuming an upload
-      request.seekCursor(receivedByteCount);
-      successful = true;
+    // Moves the cursor to the correct position and reset failure indicator
+    // before starting/resuming an upload
+    request.seekCursor(receivedByteCount);
+    boolean successful = true;
 
-      while (receivedByteCount < request.getFileSize()) {
-        // Uploads the next chunk
-        response = Optional.of(uploadNextChunk(uploadUrl, receivedByteCount));
-        checkForTimeout(initialMillis);
+    // Upload in chunks as long as there's no error and there is data to upload
+    while (successful && receivedByteCount < request.getFileSize()) {
+      // Upload the next chunk
+      response = Optional.ofNullable(uploadNextChunk(uploadUrl, receivedByteCount));
+      checkForTimeoutAndInterrupt(startTime);
 
-        if (!isStatusOk(response.get().getStatusLine().getStatusCode())) {
-          successful = false;
-          break;
-        }
+      // Upload is successful if a response with an OK HTTP status was returned
+      successful =
+          response.isPresent() && isStatusOk(response.get().getStatusLine().getStatusCode());
 
-        // Verifies the amount of data that has been received
-        receivedByteCount = getReceivedByteCount(uploadUrl);
-        checkForTimeout(initialMillis);
-      }
-
-      // There are some failures while uploading the media item and maxAttempts
-      // has not been exceeded
-      if (!successful && retries < retrySettings.getMaxAttempts()) {
-        // Calculates delay millis for the current retry
-        long delayMillis = retrySettings.getInitialRetryDelay().get(MILLIS);
-        if (previousDelayMillis.isPresent()) {
-          delayMillis =
-              (long) (previousDelayMillis.getAsLong() * retrySettings.getRetryDelayMultiplier());
-        }
-        // Calculates actual delay millis and randomizes the duration if necessary
-        long actualDelayMillis =
-            Math.min(delayMillis, retrySettings.getMaxRetryDelay().get(MILLIS));
-        if (retrySettings.isJittered()) {
-          actualDelayMillis = ThreadLocalRandom.current().nextLong(actualDelayMillis);
-        }
-
-        // Sleeps
-        Thread.sleep(actualDelayMillis);
-        checkForTimeout(initialMillis);
-
-        // Update previousDelayMillis
-        previousDelayMillis = OptionalLong.of(actualDelayMillis);
-      }
+      receivedByteCount = getReceivedByteCount(uploadUrl);
+      checkForTimeoutAndInterrupt(startTime);
     }
 
-    if (!successful) {
-      if (response.isPresent()) {
-        throw new HttpResponseException(
-            response.get().getStatusLine().getStatusCode(),
-            ExceptionStrings.INVALID_UPLOAD_RESULT
-                + " "
-                + response.get().getStatusLine().getReasonPhrase());
-      } else {
-        throw new IllegalStateException(ExceptionStrings.UNKNOWN_ERROR);
-      }
-    }
-
-    // Builds an upload response from the final httpResponse
+    // Builds an upload response from the final httpResponse or throw an exception if it failed
     return buildUploadMediaItemResponse(response);
   }
 
-  private void checkForTimeout(long initialMillis) throws TimeoutException {
-    if (photosLibrarySettings.uploadMediaItemSettings().getRetrySettings().getTotalTimeout()
-        != UNLIMITED_TIMEOUT) {
-      long duration = clientContext.getClock().millisTime() - initialMillis;
-      if (duration
-          > photosLibrarySettings
-              .uploadMediaItemSettings()
-              .getRetrySettings()
-              .getTotalTimeout()
-              .get(MILLIS)) {
-        throw new TimeoutException(ExceptionStrings.UPLOAD_TIMED_OUT);
-      }
+  private void checkForTimeoutAndInterrupt(Duration initialTime)
+      throws TimeoutException, InterruptedException {
+    if (Thread.currentThread().isInterrupted()) {
+      throw new InterruptedException(ExceptionStrings.UPLOAD_THREAD_INTERRUPTED);
+    }
+
+    final Duration totalTimeout = photosLibrarySettings.getRetrySettings().getTotalTimeout();
+    if (totalTimeout.isZero()) {
+      // No timeout.
+      return;
+    }
+    Duration timeElapsed = Duration.ofNanos(clientContext.getClock().nanoTime()).minus(initialTime);
+    if (timeElapsed.toNanos() > totalTimeout.toNanos()) {
+      throw new TimeoutException(ExceptionStrings.UPLOAD_TIMED_OUT);
     }
   }
 
@@ -256,7 +210,11 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
     }
   }
 
-  /** Gets the number of bytes the server has received. */
+  /**
+   * Gets the number of bytes the server has received. Throws an {@link IOException} if the server
+   * did not respond with an expected status. Throws a {@link HttpResponseException} if the server
+   * responded with a non-OK status.
+   */
   private long getReceivedByteCount(String uploadUrl) throws IOException {
     HttpPost httpPost = createAuthenticatedPostRequest(uploadUrl);
     httpPost.addHeader(UPLOAD_PROTOCOL_HEADER, UPLOAD_PROTOCOL_VALUE);
@@ -322,15 +280,10 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
 
   private RequestConfig getRequestConfig() {
     RequestConfig.Builder configBuilder = RequestConfig.custom();
-    if (photosLibrarySettings.uploadMediaItemSettings().getRetrySettings().getTotalTimeout()
-        != UNLIMITED_TIMEOUT) {
+    if (photosLibrarySettings.getRetrySettings().getTotalTimeout().toNanos() != UNLIMITED_TIMEOUT) {
+      // The timeout is set in ms
       configBuilder.setConnectionRequestTimeout(
-          Math.toIntExact(
-              photosLibrarySettings
-                  .uploadMediaItemSettings()
-                  .getRetrySettings()
-                  .getTotalTimeout()
-                  .get(MILLIS)));
+          Math.toIntExact(photosLibrarySettings.getRetrySettings().getTotalTimeout().toMillis()));
     }
     return configBuilder.build();
   }
@@ -342,7 +295,9 @@ final class PhotosLibraryUploadCallable implements Callable<UploadMediaItemRespo
     } else if (!isStatusOk(response.get().getStatusLine().getStatusCode())) {
       throw new HttpResponseException(
           response.get().getStatusLine().getStatusCode(),
-          response.get().getStatusLine().getReasonPhrase());
+          ExceptionStrings.INVALID_UPLOAD_RESULT
+              + " "
+              + response.get().getStatusLine().getReasonPhrase());
     }
     return UploadMediaItemResponse.newBuilder()
         .setUploadToken(EntityUtils.toString(response.get().getEntity()))

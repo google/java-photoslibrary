@@ -19,6 +19,7 @@ package com.google.photos.library.v1.upload;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.photos.library.v1.PhotosLibrarySettings;
 import java.io.IOException;
@@ -27,16 +28,21 @@ import java.util.concurrent.TimeUnit;
 /** Implementation for {@link PhotosLibraryUploadStub}. */
 public final class PhotosLibraryUploadStubImpl extends PhotosLibraryUploadStub {
 
-  private final ClientContext clientContext;
   private final BackgroundResource backgroundResources;
-  private final PhotosLibraryUploadUnaryCallable photosLibraryUploadUnaryCallable;
+  private final UnaryCallable<UploadMediaItemRequest, UploadMediaItemResponse> callable;
 
-  private PhotosLibraryUploadStubImpl(PhotosLibrarySettings settings) throws IOException {
-    this.clientContext = ClientContext.create(settings);
+  private PhotosLibraryUploadStubImpl(PhotosLibrarySettings librarySettings) throws IOException {
+    ClientContext clientContext = ClientContext.create(librarySettings);
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-    this.photosLibraryUploadUnaryCallable =
-        new PhotosLibraryUploadUnaryCallable(clientContext, settings);
+
+    UnaryCallSettings<UploadMediaItemRequest, UploadMediaItemResponse> settings =
+        librarySettings.uploadMediaItemSettings();
+
+    UnaryCallable<UploadMediaItemRequest, UploadMediaItemResponse> uploadCallable =
+        new PhotosLibraryUploadUnaryCallable(clientContext, settings, settings.getRetryableCodes());
+
+    callable = new NestedUploadRetryCallable(uploadCallable, settings, clientContext);
   }
 
   public static PhotosLibraryUploadStub createStub(PhotosLibrarySettings settings)
@@ -46,7 +52,7 @@ public final class PhotosLibraryUploadStubImpl extends PhotosLibraryUploadStub {
 
   @Override
   public UnaryCallable<UploadMediaItemRequest, UploadMediaItemResponse> uploadMediaItemCallable() {
-    return photosLibraryUploadUnaryCallable;
+    return callable;
   }
 
   @Override

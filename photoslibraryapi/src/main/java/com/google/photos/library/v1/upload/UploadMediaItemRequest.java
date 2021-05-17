@@ -18,6 +18,7 @@ package com.google.photos.library.v1.upload;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.Objects;
 import java.util.Optional;
 
 /** Represents an upload request. */
@@ -79,6 +80,23 @@ public final class UploadMediaItemRequest {
     dataFile.seek(offset);
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    UploadMediaItemRequest that = (UploadMediaItemRequest) o;
+    return getChunkSize() == that.getChunkSize()
+        && getFileName().equals(that.getFileName())
+        && getMimeType().equals(that.getMimeType())
+        && getUploadUrl().equals(that.getUploadUrl())
+        && dataFile.equals(that.dataFile);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getFileName(), getMimeType(), getUploadUrl(), getChunkSize(), dataFile);
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -97,6 +115,23 @@ public final class UploadMediaItemRequest {
       fileName = Optional.empty();
       mimeType = Optional.empty();
       uploadUrl = Optional.empty();
+    }
+
+    public Builder mergeFrom(UploadMediaItemRequest other) {
+
+      if (!other.getFileName().isEmpty()) {
+        fileName = other.fileName;
+      }
+      if (!other.getMimeType().isEmpty()) {
+        mimeType = other.mimeType;
+      }
+      if (!other.getUploadUrl().isEmpty()) {
+        uploadUrl = other.uploadUrl;
+      }
+      chunkSize = other.getChunkSize();
+      dataFile = other.dataFile;
+
+      return this;
     }
 
     /**

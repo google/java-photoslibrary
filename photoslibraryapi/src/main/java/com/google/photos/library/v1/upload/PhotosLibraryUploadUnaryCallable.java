@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.ListenableFutureTask;
-import com.google.photos.library.v1.PhotosLibrarySettings;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
@@ -32,25 +34,33 @@ final class PhotosLibraryUploadUnaryCallable
     extends UnaryCallable<UploadMediaItemRequest, UploadMediaItemResponse> {
 
   private final ClientContext clientContext;
-  private final PhotosLibrarySettings photosLibrarySettings;
+  private final UnaryCallSettings<UploadMediaItemRequest, UploadMediaItemResponse> uploadSettings;
+  private final Set<StatusCode.Code> retryableCodes;
 
   PhotosLibraryUploadUnaryCallable(
-      ClientContext clientContext, PhotosLibrarySettings photosLibrarySettings) {
+      ClientContext clientContext,
+      UnaryCallSettings<UploadMediaItemRequest, UploadMediaItemResponse> uploadSettings,
+      Set<StatusCode.Code> retryableCodes) {
     this.clientContext = clientContext;
-    this.photosLibrarySettings = photosLibrarySettings;
+    this.uploadSettings = uploadSettings;
+    this.retryableCodes = retryableCodes;
   }
 
   @Override
   public ApiFuture<UploadMediaItemResponse> futureCall(
       UploadMediaItemRequest request, ApiCallContext unusedContext) {
     PhotosLibraryUploadCallable uploadCallable =
-        new PhotosLibraryUploadCallable(request, clientContext, photosLibrarySettings);
-    // Catches exception thrown while uploading, transforms it into a response
-    // and adds a resumeUrl if exists.
+        new PhotosLibraryUploadCallable(request, clientContext, uploadSettings);
+
+    // Map exceptions from the PhotosLibraryUploadCallable to an APIException with a retry URL if
+    // possible.
+    // This also determines if this request can be retried based on the list of retryableCodes.
     return ApiFutures.catching(
         PhotosLibraryUploadApiFuture.create(uploadCallable, clientContext),
         Throwable.class,
-        new PhotosLibraryUploadExceptionMappingFn(uploadCallable.getAtomicResumeUrl()));
+        new PhotosLibraryUploadExceptionMappingFn(
+            retryableCodes, uploadCallable.getAtomicResumeUrl()),
+        clientContext.getExecutor());
   }
 
   private static final class PhotosLibraryUploadApiFuture

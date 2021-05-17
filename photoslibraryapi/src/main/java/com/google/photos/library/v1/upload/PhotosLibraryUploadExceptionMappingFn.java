@@ -20,37 +20,44 @@ import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.common.collect.ImmutableSet;
 import io.grpc.Status.Code;
+import io.grpc.internal.GrpcUtil;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.Nullable;
 import org.apache.http.client.HttpResponseException;
 
+/** Maps a {@link Throwable} to an {@link UploadApiException} or an {@link ApiException}. */
 final class PhotosLibraryUploadExceptionMappingFn
     implements ApiFunction<Throwable, UploadMediaItemResponse> {
 
   private final AtomicReference<String> atomicResumeUrl;
+  private final ImmutableSet<StatusCode.Code> retryableCodes;
 
-  PhotosLibraryUploadExceptionMappingFn(AtomicReference<String> atomicResumeUrl) {
+  PhotosLibraryUploadExceptionMappingFn(
+      Set<StatusCode.Code> retryCodes, AtomicReference<String> atomicResumeUrl) {
     this.atomicResumeUrl = atomicResumeUrl;
+    this.retryableCodes = ImmutableSet.copyOf(retryCodes);
   }
 
   @Nullable
   @Override
   public UploadMediaItemResponse apply(@Nullable Throwable input) {
     Optional<String> resumeUrl = Optional.ofNullable(atomicResumeUrl.get());
-    return UploadMediaItemResponse.newBuilder()
-        .setError(
-            UploadMediaItemResponse.Error.newBuilder()
-                .setResumeUrl(resumeUrl)
-                .setCause(
-                    new ApiException(
-                        input, getStatusCode(input), resumeUrl.isPresent() /* retryable */))
-                .build())
-        .build();
+    StatusCode statusCode = getStatusCode(input);
+
+    boolean canRetry = retryableCodes.contains(statusCode.getCode());
+
+    if (resumeUrl.isPresent()) {
+      throw new UploadApiException(input, statusCode, canRetry, resumeUrl.get());
+    } else {
+      throw new ApiException(input, statusCode, canRetry);
+    }
   }
 
-  private static StatusCode getStatusCode(@Nullable Throwable input) {
+  public static StatusCode getStatusCode(@Nullable Throwable input) {
     if (input == null) {
       return GrpcStatusCode.of(Code.UNKNOWN);
     } else if (input instanceof HttpResponseException) {
@@ -63,6 +70,8 @@ final class PhotosLibraryUploadExceptionMappingFn
 
   private static StatusCode httpCodeToStatusCode(int httpCode) {
     switch (httpCode) {
+        // Include a specific mapping for some codes that have special meaning for the upload
+        // endpoint, otherwise fall back to the default HTTP/GRPC code mapping.
       case 200:
         return GrpcStatusCode.of(Code.OK);
       case 409:
@@ -77,8 +86,10 @@ final class PhotosLibraryUploadExceptionMappingFn
         return GrpcStatusCode.of(Code.OUT_OF_RANGE);
       case 500:
         return GrpcStatusCode.of(Code.INTERNAL);
+      case 429:
+        return GrpcStatusCode.of(Code.RESOURCE_EXHAUSTED);
       default:
-        return GrpcStatusCode.of(Code.UNKNOWN);
+        return GrpcStatusCode.of(GrpcUtil.httpStatusToGrpcStatus(httpCode).getCode());
     }
   }
 }

@@ -22,6 +22,7 @@ import static org.mockito.Mockito.*;
 import static org.powermock.api.mockito.PowerMockito.mock;
 
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import com.google.auth.Credentials;
 import com.google.photos.library.v1.PhotosLibrarySettings;
@@ -70,7 +71,7 @@ public class PhotosLibraryUploadCallableTest {
   public final String successfulUploadToken = "Upload Token";
 
   private ClientContext clientContext;
-  private PhotosLibrarySettings settings;
+  private UnaryCallSettings<UploadMediaItemRequest, UploadMediaItemResponse> settings;
   private UploadMediaItemRequest uploadRequest;
   private PhotosLibraryUploadCallable callable;
   private CloseableHttpClient httpClient;
@@ -98,7 +99,10 @@ public class PhotosLibraryUploadCallableTest {
             .setCredentials(credentials)
             .build();
 
-    settings = PhotosLibrarySettings.Builder.createDefault().build();
+    UnaryCallSettings.Builder<UploadMediaItemRequest, UploadMediaItemResponse>
+        uploadSettingsBuilder =
+            PhotosLibrarySettings.Builder.createDefault().uploadMediaItemSettingsBuilder();
+    settings = uploadSettingsBuilder.build();
 
     // Create a temporary file and write content to it.
     File file = tempFolder.newFile();
