@@ -19,11 +19,13 @@ package com.google.photos.library.v1;
 import com.google.api.core.ApiClock;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
-import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.WatchdogProvider;
+import com.google.common.collect.ImmutableSet;
 import com.google.photos.library.v1.internal.InternalPhotosLibrarySettings;
 import com.google.photos.library.v1.internal.stub.PhotosLibraryStubSettings;
 import com.google.photos.library.v1.upload.UploadMediaItemRequest;
@@ -67,26 +69,15 @@ public final class PhotosLibrarySettings extends InternalPhotosLibrarySettings {
   /** Builder class for {@link PhotosLibrarySettings}. */
   public static final class Builder extends InternalPhotosLibrarySettings.Builder {
 
-    private UnaryCallSettings.Builder<UploadMediaItemRequest, UploadMediaItemResponse>
-        uploadMediaItemSettingsBuilder;
+    /** RPC statuses for which upload requests should be retried. */
+    private static final ImmutableSet<StatusCode.Code> UPLOAD_RETRYABLE_CODE_DEFINITIONS =
+        ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE);
 
-    private Builder() throws IOException {
-      uploadMediaItemSettingsBuilder = UnaryCallSettings.newUnaryCallSettingsBuilder();
-    }
-
-    private Builder(ClientContext clientContext) {
-      super(clientContext);
-      uploadMediaItemSettingsBuilder = UnaryCallSettings.newUnaryCallSettingsBuilder();
-    }
-
-    private Builder(InternalPhotosLibrarySettings settings) {
-      super(settings);
-      uploadMediaItemSettingsBuilder = UnaryCallSettings.newUnaryCallSettingsBuilder();
-    }
+    private final UnaryCallSettings.Builder<UploadMediaItemRequest, UploadMediaItemResponse>
+        uploadMediaItemSettingsBuilder = getUploadSettingsDefaults();
 
     private Builder(PhotosLibraryStubSettings.Builder stubSettings) {
       super(stubSettings);
-      uploadMediaItemSettingsBuilder = UnaryCallSettings.newUnaryCallSettingsBuilder();
     }
 
     @Override
@@ -156,6 +147,24 @@ public final class PhotosLibrarySettings extends InternalPhotosLibrarySettings {
 
     public static Builder createDefault() {
       return new Builder(PhotosLibraryStubSettings.newBuilder());
+    }
+
+    private static UnaryCallSettings.Builder<UploadMediaItemRequest, UploadMediaItemResponse>
+        getUploadSettingsDefaults() {
+      return UnaryCallSettings
+          .<UploadMediaItemRequest, UploadMediaItemResponse>newUnaryCallSettingsBuilder()
+          .setRetryableCodes(UPLOAD_RETRYABLE_CODE_DEFINITIONS)
+          .setRetrySettings(getUploadRetryDefaults());
+    }
+
+    private static RetrySettings getUploadRetryDefaults() {
+      return RetrySettings.newBuilder()
+          .setInitialRetryDelay(Duration.ofSeconds(1))
+          .setRetryDelayMultiplier(1.3)
+          .setMaxAttempts(5)
+          .setMaxRetryDelay(Duration.ofSeconds(10))
+          .setTotalTimeout(Duration.ofMinutes(15))
+          .build();
     }
   }
 }
