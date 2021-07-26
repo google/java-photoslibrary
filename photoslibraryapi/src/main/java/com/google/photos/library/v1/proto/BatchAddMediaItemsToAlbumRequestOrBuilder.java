@@ -12,12 +12,12 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * added.
    * The maximum number of media items that can be added in one call is 50.
    * </pre>
    *
-   * <code>repeated string media_item_ids = 1;</code>
+   * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return A list containing the mediaItemIds.
    */
@@ -26,12 +26,12 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * added.
    * The maximum number of media items that can be added in one call is 50.
    * </pre>
    *
-   * <code>repeated string media_item_ids = 1;</code>
+   * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The count of mediaItemIds.
    */
@@ -40,12 +40,12 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * added.
    * The maximum number of media items that can be added in one call is 50.
    * </pre>
    *
-   * <code>repeated string media_item_ids = 1;</code>
+   * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the element to return.
    * @return The mediaItemIds at the given index.
@@ -55,12 +55,12 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
    * added.
    * The maximum number of media items that can be added in one call is 50.
    * </pre>
    *
-   * <code>repeated string media_item_ids = 1;</code>
+   * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the mediaItemIds at the given index.
@@ -71,11 +71,11 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the [Album][google.photos.types.Album] that the
+   * Required. Identifier of the [Album][google.photos.types.Album] that the
    * media items are added to.
    * </pre>
    *
-   * <code>string album_id = 2;</code>
+   * <code>string album_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The albumId.
    */
@@ -84,11 +84,11 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the [Album][google.photos.types.Album] that the
+   * Required. Identifier of the [Album][google.photos.types.Album] that the
    * media items are added to.
    * </pre>
    *
-   * <code>string album_id = 2;</code>
+   * <code>string album_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for albumId.
    */

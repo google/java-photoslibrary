@@ -119,6 +119,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.photos.library.v1.proto.NewMediaItemResult>
       getNewMediaItemResultsList() {
     return newMediaItemResults_;
@@ -132,6 +133,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.photos.library.v1.proto.NewMediaItemResultOrBuilder>
       getNewMediaItemResultsOrBuilderList() {
     return newMediaItemResults_;
@@ -145,6 +147,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
    */
+  @java.lang.Override
   public int getNewMediaItemResultsCount() {
     return newMediaItemResults_.size();
   }
@@ -157,6 +160,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.NewMediaItemResult getNewMediaItemResults(int index) {
     return newMediaItemResults_.get(index);
   }
@@ -169,6 +173,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.photos.library.v1.NewMediaItemResult new_media_item_results = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.NewMediaItemResultOrBuilder
       getNewMediaItemResultsOrBuilder(int index) {
     return newMediaItemResults_.get(index);

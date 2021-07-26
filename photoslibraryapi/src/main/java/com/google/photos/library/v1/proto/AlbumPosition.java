@@ -275,6 +275,10 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -367,6 +371,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for position.
    */
+  @java.lang.Override
   public int getPositionValue() {
     return position_;
   }
@@ -381,6 +386,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The position.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.AlbumPosition.PositionType getPosition() {
     @SuppressWarnings("deprecation")
     com.google.photos.library.v1.proto.AlbumPosition.PositionType result =
@@ -391,6 +397,21 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RELATIVE_MEDIA_ITEM_ID_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The media item to which the position is relative to.
+   * Only used when position type is AFTER_MEDIA_ITEM.
+   * </pre>
+   *
+   * <code>string relative_media_item_id = 2;</code>
+   *
+   * @return Whether the relativeMediaItemId field is set.
+   */
+  public boolean hasRelativeMediaItemId() {
+    return relativeItemCase_ == 2;
+  }
   /**
    *
    *
@@ -449,6 +470,21 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RELATIVE_ENRICHMENT_ITEM_ID_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * The enrichment item to which the position is relative to.
+   * Only used when position type is AFTER_ENRICHMENT_ITEM.
+   * </pre>
+   *
+   * <code>string relative_enrichment_item_id = 3;</code>
+   *
+   * @return Whether the relativeEnrichmentItemId field is set.
+   */
+  public boolean hasRelativeEnrichmentItemId() {
+    return relativeItemCase_ == 3;
+  }
   /**
    *
    *
@@ -917,6 +953,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for position.
      */
+    @java.lang.Override
     public int getPositionValue() {
       return position_;
     }
@@ -933,6 +970,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPositionValue(int value) {
+
       position_ = value;
       onChanged();
       return this;
@@ -948,6 +986,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The position.
      */
+    @java.lang.Override
     public com.google.photos.library.v1.proto.AlbumPosition.PositionType getPosition() {
       @SuppressWarnings("deprecation")
       com.google.photos.library.v1.proto.AlbumPosition.PositionType result =
@@ -1006,8 +1045,25 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string relative_media_item_id = 2;</code>
      *
+     * @return Whether the relativeMediaItemId field is set.
+     */
+    @java.lang.Override
+    public boolean hasRelativeMediaItemId() {
+      return relativeItemCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The media item to which the position is relative to.
+     * Only used when position type is AFTER_MEDIA_ITEM.
+     * </pre>
+     *
+     * <code>string relative_media_item_id = 2;</code>
+     *
      * @return The relativeMediaItemId.
      */
+    @java.lang.Override
     public java.lang.String getRelativeMediaItemId() {
       java.lang.Object ref = "";
       if (relativeItemCase_ == 2) {
@@ -1036,6 +1092,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for relativeMediaItemId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRelativeMediaItemIdBytes() {
       java.lang.Object ref = "";
       if (relativeItemCase_ == 2) {
@@ -1128,8 +1185,25 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string relative_enrichment_item_id = 3;</code>
      *
+     * @return Whether the relativeEnrichmentItemId field is set.
+     */
+    @java.lang.Override
+    public boolean hasRelativeEnrichmentItemId() {
+      return relativeItemCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The enrichment item to which the position is relative to.
+     * Only used when position type is AFTER_ENRICHMENT_ITEM.
+     * </pre>
+     *
+     * <code>string relative_enrichment_item_id = 3;</code>
+     *
      * @return The relativeEnrichmentItemId.
      */
+    @java.lang.Override
     public java.lang.String getRelativeEnrichmentItemId() {
       java.lang.Object ref = "";
       if (relativeItemCase_ == 3) {
@@ -1158,6 +1232,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for relativeEnrichmentItemId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRelativeEnrichmentItemIdBytes() {
       java.lang.Object ref = "";
       if (relativeItemCase_ == 3) {

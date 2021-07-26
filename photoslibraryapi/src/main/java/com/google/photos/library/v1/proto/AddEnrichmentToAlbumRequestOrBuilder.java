@@ -12,10 +12,10 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the album where the enrichment is to be added.
+   * Required. Identifier of the album where the enrichment is to be added.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The albumId.
    */
@@ -24,10 +24,10 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the album where the enrichment is to be added.
+   * Required. Identifier of the album where the enrichment is to be added.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for albumId.
    */
@@ -37,10 +37,12 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * The enrichment to be added.
+   * Required. The enrichment to be added.
    * </pre>
    *
-   * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+   * <code>
+   * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the newEnrichmentItem field is set.
    */
@@ -49,10 +51,12 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * The enrichment to be added.
+   * Required. The enrichment to be added.
    * </pre>
    *
-   * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+   * <code>
+   * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The newEnrichmentItem.
    */
@@ -61,10 +65,12 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * The enrichment to be added.
+   * Required. The enrichment to be added.
    * </pre>
    *
-   * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+   * <code>
+   * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.photos.library.v1.proto.NewEnrichmentItemOrBuilder getNewEnrichmentItemOrBuilder();
 
@@ -72,10 +78,12 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * The position in the album where the enrichment is to be inserted.
+   * Required. The position in the album where the enrichment is to be inserted.
    * </pre>
    *
-   * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+   * <code>
+   * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the albumPosition field is set.
    */
@@ -84,10 +92,12 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * The position in the album where the enrichment is to be inserted.
+   * Required. The position in the album where the enrichment is to be inserted.
    * </pre>
    *
-   * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+   * <code>
+   * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The albumPosition.
    */
@@ -96,10 +106,12 @@ public interface AddEnrichmentToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * The position in the album where the enrichment is to be inserted.
+   * Required. The position in the album where the enrichment is to be inserted.
    * </pre>
    *
-   * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+   * <code>
+   * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.photos.library.v1.proto.AlbumPositionOrBuilder getAlbumPositionOrBuilder();
 }

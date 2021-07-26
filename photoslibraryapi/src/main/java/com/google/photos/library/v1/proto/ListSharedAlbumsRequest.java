@@ -123,6 +123,7 @@ public final class ListSharedAlbumsRequest extends com.google.protobuf.Generated
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -143,6 +144,7 @@ public final class ListSharedAlbumsRequest extends com.google.protobuf.Generated
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +170,7 @@ public final class ListSharedAlbumsRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +198,7 @@ public final class ListSharedAlbumsRequest extends com.google.protobuf.Generated
    *
    * @return The excludeNonAppCreatedData.
    */
+  @java.lang.Override
   public boolean getExcludeNonAppCreatedData() {
     return excludeNonAppCreatedData_;
   }
@@ -564,6 +568,7 @@ public final class ListSharedAlbumsRequest extends com.google.protobuf.Generated
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -742,6 +747,7 @@ public final class ListSharedAlbumsRequest extends com.google.protobuf.Generated
      *
      * @return The excludeNonAppCreatedData.
      */
+    @java.lang.Override
     public boolean getExcludeNonAppCreatedData() {
       return excludeNonAppCreatedData_;
     }

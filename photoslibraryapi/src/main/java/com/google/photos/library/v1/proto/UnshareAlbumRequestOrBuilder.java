@@ -12,11 +12,11 @@ public interface UnshareAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the album to be unshared. This album id must belong to an
+   * Required. Identifier of the album to be unshared. This album id must belong to an
    * album created by the developer.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The albumId.
    */
@@ -25,11 +25,11 @@ public interface UnshareAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the album to be unshared. This album id must belong to an
+   * Required. Identifier of the album to be unshared. This album id must belong to an
    * album created by the developer.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for albumId.
    */

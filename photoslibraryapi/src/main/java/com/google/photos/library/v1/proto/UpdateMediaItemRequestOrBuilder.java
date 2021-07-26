@@ -62,11 +62,12 @@ public interface UpdateMediaItemRequestOrBuilder
    *
    *
    * <pre>
-   * Indicate what fields in the provided media item to update.
+   * Required. Indicate what fields in the provided media item to update.
    * The only valid value is `description`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -75,11 +76,12 @@ public interface UpdateMediaItemRequestOrBuilder
    *
    *
    * <pre>
-   * Indicate what fields in the provided media item to update.
+   * Required. Indicate what fields in the provided media item to update.
    * The only valid value is `description`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -88,11 +90,12 @@ public interface UpdateMediaItemRequestOrBuilder
    *
    *
    * <pre>
-   * Indicate what fields in the provided media item to update.
+   * Required. Indicate what fields in the provided media item to update.
    * The only valid value is `description`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

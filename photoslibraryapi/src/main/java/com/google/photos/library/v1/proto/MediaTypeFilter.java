@@ -8,8 +8,7 @@ package com.google.photos.library.v1.proto;
  *
  * <pre>
  * This filter defines the type of media items to be returned, for example,
- * videos or photos. All the specified media types are treated as an OR when
- * used together.
+ * videos or photos. Only one media type is supported.
  * </pre>
  *
  * Protobuf type {@code google.photos.library.v1.MediaTypeFilter}
@@ -249,6 +248,10 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -313,6 +316,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return A list containing the mediaTypes.
    */
+  @java.lang.Override
   public java.util.List<com.google.photos.library.v1.proto.MediaTypeFilter.MediaType>
       getMediaTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -332,6 +336,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return The count of mediaTypes.
    */
+  @java.lang.Override
   public int getMediaTypesCount() {
     return mediaTypes_.size();
   }
@@ -349,6 +354,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
    * @param index The index of the element to return.
    * @return The mediaTypes at the given index.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.MediaTypeFilter.MediaType getMediaTypes(int index) {
     return mediaTypes_converter_.convert(mediaTypes_.get(index));
   }
@@ -365,6 +371,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return A list containing the enum numeric values on the wire for mediaTypes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getMediaTypesValueList() {
     return mediaTypes_;
   }
@@ -382,6 +389,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of mediaTypes at the given index.
    */
+  @java.lang.Override
   public int getMediaTypesValue(int index) {
     return mediaTypes_.get(index);
   }
@@ -568,8 +576,7 @@ public final class MediaTypeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * This filter defines the type of media items to be returned, for example,
-   * videos or photos. All the specified media types are treated as an OR when
-   * used together.
+   * videos or photos. Only one media type is supported.
    * </pre>
    *
    * Protobuf type {@code google.photos.library.v1.MediaTypeFilter}

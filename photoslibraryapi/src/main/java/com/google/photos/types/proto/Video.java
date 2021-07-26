@@ -131,6 +131,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cameraMake.
    */
+  @java.lang.Override
   public java.lang.String getCameraMake() {
     java.lang.Object ref = cameraMake_;
     if (ref instanceof java.lang.String) {
@@ -153,6 +154,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for cameraMake.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCameraMakeBytes() {
     java.lang.Object ref = cameraMake_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +180,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cameraModel.
    */
+  @java.lang.Override
   public java.lang.String getCameraModel() {
     java.lang.Object ref = cameraModel_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +203,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for cameraModel.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCameraModelBytes() {
     java.lang.Object ref = cameraModel_;
     if (ref instanceof java.lang.String) {
@@ -225,6 +229,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The fps.
    */
+  @java.lang.Override
   public double getFps() {
     return fps_;
   }
@@ -242,6 +247,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for status.
    */
+  @java.lang.Override
   public int getStatusValue() {
     return status_;
   }
@@ -256,6 +262,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.VideoProcessingStatus getStatus() {
     @SuppressWarnings("deprecation")
     com.google.photos.types.proto.VideoProcessingStatus result =
@@ -852,6 +859,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The fps.
      */
+    @java.lang.Override
     public double getFps() {
       return fps_;
     }
@@ -903,6 +911,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for status.
      */
+    @java.lang.Override
     public int getStatusValue() {
       return status_;
     }
@@ -919,6 +928,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
+
       status_ = value;
       onChanged();
       return this;
@@ -934,6 +944,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.photos.types.proto.VideoProcessingStatus getStatus() {
       @SuppressWarnings("deprecation")
       com.google.photos.types.proto.VideoProcessingStatus result =

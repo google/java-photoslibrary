@@ -130,6 +130,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.type.Date dates = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.type.Date> getDatesList() {
     return dates_;
   }
@@ -143,6 +144,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.type.Date dates = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.type.DateOrBuilder> getDatesOrBuilderList() {
     return dates_;
   }
@@ -156,6 +158,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.type.Date dates = 1;</code>
    */
+  @java.lang.Override
   public int getDatesCount() {
     return dates_.size();
   }
@@ -169,6 +172,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.type.Date dates = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.Date getDates(int index) {
     return dates_.get(index);
   }
@@ -182,6 +186,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.type.Date dates = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getDatesOrBuilder(int index) {
     return dates_.get(index);
   }
@@ -198,6 +203,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.photos.types.proto.DateRange> getRangesList() {
     return ranges_;
   }
@@ -211,6 +217,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.photos.types.proto.DateRangeOrBuilder>
       getRangesOrBuilderList() {
     return ranges_;
@@ -225,6 +232,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
+  @java.lang.Override
   public int getRangesCount() {
     return ranges_.size();
   }
@@ -238,6 +246,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.DateRange getRanges(int index) {
     return ranges_.get(index);
   }
@@ -251,6 +260,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.photos.types.DateRange ranges = 2;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.DateRangeOrBuilder getRangesOrBuilder(int index) {
     return ranges_.get(index);
   }

@@ -136,6 +136,7 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the mediaItem field is set.
    */
+  @java.lang.Override
   public boolean hasMediaItem() {
     return mediaItem_ != null;
   }
@@ -155,6 +156,7 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
    *
    * @return The mediaItem.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.MediaItem getMediaItem() {
     return mediaItem_ == null
         ? com.google.photos.types.proto.MediaItem.getDefaultInstance()
@@ -174,6 +176,7 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
    * <code>.google.photos.types.MediaItem media_item = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.MediaItemOrBuilder getMediaItemOrBuilder() {
     return getMediaItem();
   }
@@ -184,14 +187,16 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Indicate what fields in the provided media item to update.
+   * Required. Indicate what fields in the provided media item to update.
    * The only valid value is `description`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -199,14 +204,16 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Indicate what fields in the provided media item to update.
+   * Required. Indicate what fields in the provided media item to update.
    * The only valid value is `description`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -214,12 +221,14 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Indicate what fields in the provided media item to update.
+   * Required. Indicate what fields in the provided media item to update.
    * The only valid value is `description`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -832,11 +841,12 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicate what fields in the provided media item to update.
+     * Required. Indicate what fields in the provided media item to update.
      * The only valid value is `description`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -847,11 +857,12 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicate what fields in the provided media item to update.
+     * Required. Indicate what fields in the provided media item to update.
      * The only valid value is `description`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -868,11 +879,12 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicate what fields in the provided media item to update.
+     * Required. Indicate what fields in the provided media item to update.
      * The only valid value is `description`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -891,11 +903,12 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicate what fields in the provided media item to update.
+     * Required. Indicate what fields in the provided media item to update.
      * The only valid value is `description`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -911,11 +924,12 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicate what fields in the provided media item to update.
+     * Required. Indicate what fields in the provided media item to update.
      * The only valid value is `description`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -936,11 +950,12 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicate what fields in the provided media item to update.
+     * Required. Indicate what fields in the provided media item to update.
      * The only valid value is `description`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -957,11 +972,12 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicate what fields in the provided media item to update.
+     * Required. Indicate what fields in the provided media item to update.
      * The only valid value is `description`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -972,11 +988,12 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicate what fields in the provided media item to update.
+     * Required. Indicate what fields in the provided media item to update.
      * The only valid value is `description`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -991,11 +1008,12 @@ public final class UpdateMediaItemRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicate what fields in the provided media item to update.
+     * Required. Indicate what fields in the provided media item to update.
      * The only valid value is `description`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

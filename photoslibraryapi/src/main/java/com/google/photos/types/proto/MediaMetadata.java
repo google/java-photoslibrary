@@ -205,6 +205,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the creationTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreationTime() {
     return creationTime_ != null;
   }
@@ -220,6 +221,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The creationTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreationTime() {
     return creationTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -235,6 +237,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp creation_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreationTimeOrBuilder() {
     return getCreationTime();
   }
@@ -252,6 +255,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The width.
    */
+  @java.lang.Override
   public long getWidth() {
     return width_;
   }
@@ -269,6 +273,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The height.
    */
+  @java.lang.Override
   public long getHeight() {
     return height_;
   }
@@ -285,6 +290,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the photo field is set.
    */
+  @java.lang.Override
   public boolean hasPhoto() {
     return metadataCase_ == 6;
   }
@@ -299,6 +305,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The photo.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.Photo getPhoto() {
     if (metadataCase_ == 6) {
       return (com.google.photos.types.proto.Photo) metadata_;
@@ -314,6 +321,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.types.Photo photo = 6;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.PhotoOrBuilder getPhotoOrBuilder() {
     if (metadataCase_ == 6) {
       return (com.google.photos.types.proto.Photo) metadata_;
@@ -333,6 +341,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the video field is set.
    */
+  @java.lang.Override
   public boolean hasVideo() {
     return metadataCase_ == 7;
   }
@@ -347,6 +356,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The video.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.Video getVideo() {
     if (metadataCase_ == 7) {
       return (com.google.photos.types.proto.Video) metadata_;
@@ -362,6 +372,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.types.Video video = 7;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.VideoOrBuilder getVideoOrBuilder() {
     if (metadataCase_ == 7) {
       return (com.google.photos.types.proto.Video) metadata_;
@@ -1019,6 +1030,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The width.
      */
+    @java.lang.Override
     public long getWidth() {
       return width_;
     }
@@ -1070,6 +1082,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The height.
      */
+    @java.lang.Override
     public long getHeight() {
       return height_;
     }
@@ -1125,6 +1138,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the photo field is set.
      */
+    @java.lang.Override
     public boolean hasPhoto() {
       return metadataCase_ == 6;
     }
@@ -1139,6 +1153,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The photo.
      */
+    @java.lang.Override
     public com.google.photos.types.proto.Photo getPhoto() {
       if (photoBuilder_ == null) {
         if (metadataCase_ == 6) {
@@ -1270,6 +1285,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.photos.types.Photo photo = 6;</code>
      */
+    @java.lang.Override
     public com.google.photos.types.proto.PhotoOrBuilder getPhotoOrBuilder() {
       if ((metadataCase_ == 6) && (photoBuilder_ != null)) {
         return photoBuilder_.getMessageOrBuilder();
@@ -1328,6 +1344,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the video field is set.
      */
+    @java.lang.Override
     public boolean hasVideo() {
       return metadataCase_ == 7;
     }
@@ -1342,6 +1359,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The video.
      */
+    @java.lang.Override
     public com.google.photos.types.proto.Video getVideo() {
       if (videoBuilder_ == null) {
         if (metadataCase_ == 7) {
@@ -1473,6 +1491,7 @@ public final class MediaMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.photos.types.Video video = 7;</code>
      */
+    @java.lang.Override
     public com.google.photos.types.proto.VideoOrBuilder getVideoOrBuilder() {
       if ((metadataCase_ == 7) && (videoBuilder_ != null)) {
         return videoBuilder_.getMessageOrBuilder();

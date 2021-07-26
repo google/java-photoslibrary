@@ -43,6 +43,19 @@ public interface AlbumPositionOrBuilder
    *
    * <code>string relative_media_item_id = 2;</code>
    *
+   * @return Whether the relativeMediaItemId field is set.
+   */
+  boolean hasRelativeMediaItemId();
+  /**
+   *
+   *
+   * <pre>
+   * The media item to which the position is relative to.
+   * Only used when position type is AFTER_MEDIA_ITEM.
+   * </pre>
+   *
+   * <code>string relative_media_item_id = 2;</code>
+   *
    * @return The relativeMediaItemId.
    */
   java.lang.String getRelativeMediaItemId();
@@ -60,6 +73,19 @@ public interface AlbumPositionOrBuilder
    */
   com.google.protobuf.ByteString getRelativeMediaItemIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The enrichment item to which the position is relative to.
+   * Only used when position type is AFTER_ENRICHMENT_ITEM.
+   * </pre>
+   *
+   * <code>string relative_enrichment_item_id = 3;</code>
+   *
+   * @return Whether the relativeEnrichmentItemId field is set.
+   */
+  boolean hasRelativeEnrichmentItemId();
   /**
    *
    *

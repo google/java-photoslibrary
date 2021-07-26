@@ -219,6 +219,10 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -280,6 +284,7 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the includedFeatures.
    */
+  @java.lang.Override
   public java.util.List<com.google.photos.library.v1.proto.FeatureFilter.Feature>
       getIncludedFeaturesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -298,6 +303,7 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of includedFeatures.
    */
+  @java.lang.Override
   public int getIncludedFeaturesCount() {
     return includedFeatures_.size();
   }
@@ -314,6 +320,7 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The includedFeatures at the given index.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.FeatureFilter.Feature getIncludedFeatures(int index) {
     return includedFeatures_converter_.convert(includedFeatures_.get(index));
   }
@@ -329,6 +336,7 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for includedFeatures.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getIncludedFeaturesValueList() {
     return includedFeatures_;
   }
@@ -345,6 +353,7 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of includedFeatures at the given index.
    */
+  @java.lang.Override
   public int getIncludedFeaturesValue(int index) {
     return includedFeatures_.get(index);
   }

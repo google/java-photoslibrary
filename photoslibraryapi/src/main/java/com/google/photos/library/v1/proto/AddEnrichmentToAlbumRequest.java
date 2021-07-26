@@ -135,13 +135,14 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Identifier of the album where the enrichment is to be added.
+   * Required. Identifier of the album where the enrichment is to be added.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The albumId.
    */
+  @java.lang.Override
   public java.lang.String getAlbumId() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -157,13 +158,14 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Identifier of the album where the enrichment is to be added.
+   * Required. Identifier of the album where the enrichment is to be added.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for albumId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAlbumIdBytes() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -182,13 +184,16 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The enrichment to be added.
+   * Required. The enrichment to be added.
    * </pre>
    *
-   * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+   * <code>
+   * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the newEnrichmentItem field is set.
    */
+  @java.lang.Override
   public boolean hasNewEnrichmentItem() {
     return newEnrichmentItem_ != null;
   }
@@ -196,13 +201,16 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The enrichment to be added.
+   * Required. The enrichment to be added.
    * </pre>
    *
-   * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+   * <code>
+   * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The newEnrichmentItem.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.NewEnrichmentItem getNewEnrichmentItem() {
     return newEnrichmentItem_ == null
         ? com.google.photos.library.v1.proto.NewEnrichmentItem.getDefaultInstance()
@@ -212,11 +220,14 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The enrichment to be added.
+   * Required. The enrichment to be added.
    * </pre>
    *
-   * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+   * <code>
+   * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.NewEnrichmentItemOrBuilder
       getNewEnrichmentItemOrBuilder() {
     return getNewEnrichmentItem();
@@ -228,13 +239,16 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The position in the album where the enrichment is to be inserted.
+   * Required. The position in the album where the enrichment is to be inserted.
    * </pre>
    *
-   * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+   * <code>
+   * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the albumPosition field is set.
    */
+  @java.lang.Override
   public boolean hasAlbumPosition() {
     return albumPosition_ != null;
   }
@@ -242,13 +256,16 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The position in the album where the enrichment is to be inserted.
+   * Required. The position in the album where the enrichment is to be inserted.
    * </pre>
    *
-   * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+   * <code>
+   * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The albumPosition.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.AlbumPosition getAlbumPosition() {
     return albumPosition_ == null
         ? com.google.photos.library.v1.proto.AlbumPosition.getDefaultInstance()
@@ -258,11 +275,14 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The position in the album where the enrichment is to be inserted.
+   * Required. The position in the album where the enrichment is to be inserted.
    * </pre>
    *
-   * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+   * <code>
+   * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.AlbumPositionOrBuilder getAlbumPositionOrBuilder() {
     return getAlbumPosition();
   }
@@ -650,10 +670,10 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier of the album where the enrichment is to be added.
+     * Required. Identifier of the album where the enrichment is to be added.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The albumId.
      */
@@ -672,10 +692,10 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier of the album where the enrichment is to be added.
+     * Required. Identifier of the album where the enrichment is to be added.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for albumId.
      */
@@ -694,10 +714,10 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier of the album where the enrichment is to be added.
+     * Required. Identifier of the album where the enrichment is to be added.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The albumId to set.
      * @return This builder for chaining.
@@ -715,10 +735,10 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier of the album where the enrichment is to be added.
+     * Required. Identifier of the album where the enrichment is to be added.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -732,10 +752,10 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier of the album where the enrichment is to be added.
+     * Required. Identifier of the album where the enrichment is to be added.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for albumId to set.
      * @return This builder for chaining.
@@ -761,10 +781,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The enrichment to be added.
+     * Required. The enrichment to be added.
      * </pre>
      *
-     * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+     * <code>
+     * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the newEnrichmentItem field is set.
      */
@@ -775,10 +797,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The enrichment to be added.
+     * Required. The enrichment to be added.
      * </pre>
      *
-     * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+     * <code>
+     * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The newEnrichmentItem.
      */
@@ -795,10 +819,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The enrichment to be added.
+     * Required. The enrichment to be added.
      * </pre>
      *
-     * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+     * <code>
+     * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setNewEnrichmentItem(
         com.google.photos.library.v1.proto.NewEnrichmentItem value) {
@@ -818,10 +844,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The enrichment to be added.
+     * Required. The enrichment to be added.
      * </pre>
      *
-     * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+     * <code>
+     * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setNewEnrichmentItem(
         com.google.photos.library.v1.proto.NewEnrichmentItem.Builder builderForValue) {
@@ -838,10 +866,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The enrichment to be added.
+     * Required. The enrichment to be added.
      * </pre>
      *
-     * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+     * <code>
+     * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeNewEnrichmentItem(
         com.google.photos.library.v1.proto.NewEnrichmentItem value) {
@@ -865,10 +895,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The enrichment to be added.
+     * Required. The enrichment to be added.
      * </pre>
      *
-     * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+     * <code>
+     * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearNewEnrichmentItem() {
       if (newEnrichmentItemBuilder_ == null) {
@@ -885,10 +917,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The enrichment to be added.
+     * Required. The enrichment to be added.
      * </pre>
      *
-     * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+     * <code>
+     * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.photos.library.v1.proto.NewEnrichmentItem.Builder
         getNewEnrichmentItemBuilder() {
@@ -900,10 +934,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The enrichment to be added.
+     * Required. The enrichment to be added.
      * </pre>
      *
-     * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+     * <code>
+     * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.photos.library.v1.proto.NewEnrichmentItemOrBuilder
         getNewEnrichmentItemOrBuilder() {
@@ -919,10 +955,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The enrichment to be added.
+     * Required. The enrichment to be added.
      * </pre>
      *
-     * <code>.google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2;</code>
+     * <code>
+     * .google.photos.library.v1.NewEnrichmentItem new_enrichment_item = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.photos.library.v1.proto.NewEnrichmentItem,
@@ -951,10 +989,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The position in the album where the enrichment is to be inserted.
+     * Required. The position in the album where the enrichment is to be inserted.
      * </pre>
      *
-     * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+     * <code>
+     * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the albumPosition field is set.
      */
@@ -965,10 +1005,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The position in the album where the enrichment is to be inserted.
+     * Required. The position in the album where the enrichment is to be inserted.
      * </pre>
      *
-     * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+     * <code>
+     * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The albumPosition.
      */
@@ -985,10 +1027,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The position in the album where the enrichment is to be inserted.
+     * Required. The position in the album where the enrichment is to be inserted.
      * </pre>
      *
-     * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+     * <code>
+     * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAlbumPosition(com.google.photos.library.v1.proto.AlbumPosition value) {
       if (albumPositionBuilder_ == null) {
@@ -1007,10 +1051,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The position in the album where the enrichment is to be inserted.
+     * Required. The position in the album where the enrichment is to be inserted.
      * </pre>
      *
-     * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+     * <code>
+     * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAlbumPosition(
         com.google.photos.library.v1.proto.AlbumPosition.Builder builderForValue) {
@@ -1027,10 +1073,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The position in the album where the enrichment is to be inserted.
+     * Required. The position in the album where the enrichment is to be inserted.
      * </pre>
      *
-     * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+     * <code>
+     * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeAlbumPosition(com.google.photos.library.v1.proto.AlbumPosition value) {
       if (albumPositionBuilder_ == null) {
@@ -1053,10 +1101,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The position in the album where the enrichment is to be inserted.
+     * Required. The position in the album where the enrichment is to be inserted.
      * </pre>
      *
-     * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+     * <code>
+     * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearAlbumPosition() {
       if (albumPositionBuilder_ == null) {
@@ -1073,10 +1123,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The position in the album where the enrichment is to be inserted.
+     * Required. The position in the album where the enrichment is to be inserted.
      * </pre>
      *
-     * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+     * <code>
+     * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.photos.library.v1.proto.AlbumPosition.Builder getAlbumPositionBuilder() {
 
@@ -1087,10 +1139,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The position in the album where the enrichment is to be inserted.
+     * Required. The position in the album where the enrichment is to be inserted.
      * </pre>
      *
-     * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+     * <code>
+     * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.photos.library.v1.proto.AlbumPositionOrBuilder getAlbumPositionOrBuilder() {
       if (albumPositionBuilder_ != null) {
@@ -1105,10 +1159,12 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The position in the album where the enrichment is to be inserted.
+     * Required. The position in the album where the enrichment is to be inserted.
      * </pre>
      *
-     * <code>.google.photos.library.v1.AlbumPosition album_position = 3;</code>
+     * <code>
+     * .google.photos.library.v1.AlbumPosition album_position = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.photos.library.v1.proto.AlbumPosition,

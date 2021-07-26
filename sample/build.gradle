@@ -24,8 +24,8 @@ dependencies {
         exclude group: 'com.google.guava', module: 'guava-jdk5'
     }
 
-    implementation 'com.google.api:gax-grpc:1.60.1'
-    implementation 'com.google.api:gax:1.60.1'
+    implementation 'com.google.api:gax-grpc:1.67.0'
+    implementation 'com.google.api:gax:1.67.0'
     implementation 'com.google.http-client:google-http-client-gson:1.39.2'
     implementation 'commons-cli:commons-cli:1.4'
     implementation 'commons-httpclient:commons-httpclient:3.1'

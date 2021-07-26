@@ -177,6 +177,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the dateFilter field is set.
    */
+  @java.lang.Override
   public boolean hasDateFilter() {
     return dateFilter_ != null;
   }
@@ -191,6 +192,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dateFilter.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.DateFilter getDateFilter() {
     return dateFilter_ == null
         ? com.google.photos.library.v1.proto.DateFilter.getDefaultInstance()
@@ -205,6 +207,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.library.v1.DateFilter date_filter = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.DateFilterOrBuilder getDateFilterOrBuilder() {
     return getDateFilter();
   }
@@ -222,6 +225,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the contentFilter field is set.
    */
+  @java.lang.Override
   public boolean hasContentFilter() {
     return contentFilter_ != null;
   }
@@ -236,6 +240,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The contentFilter.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.ContentFilter getContentFilter() {
     return contentFilter_ == null
         ? com.google.photos.library.v1.proto.ContentFilter.getDefaultInstance()
@@ -250,6 +255,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.library.v1.ContentFilter content_filter = 2;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.ContentFilterOrBuilder getContentFilterOrBuilder() {
     return getContentFilter();
   }
@@ -267,6 +273,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the mediaTypeFilter field is set.
    */
+  @java.lang.Override
   public boolean hasMediaTypeFilter() {
     return mediaTypeFilter_ != null;
   }
@@ -281,6 +288,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mediaTypeFilter.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.MediaTypeFilter getMediaTypeFilter() {
     return mediaTypeFilter_ == null
         ? com.google.photos.library.v1.proto.MediaTypeFilter.getDefaultInstance()
@@ -295,6 +303,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.library.v1.MediaTypeFilter media_type_filter = 3;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.MediaTypeFilterOrBuilder getMediaTypeFilterOrBuilder() {
     return getMediaTypeFilter();
   }
@@ -312,6 +321,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the featureFilter field is set.
    */
+  @java.lang.Override
   public boolean hasFeatureFilter() {
     return featureFilter_ != null;
   }
@@ -326,6 +336,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The featureFilter.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.FeatureFilter getFeatureFilter() {
     return featureFilter_ == null
         ? com.google.photos.library.v1.proto.FeatureFilter.getDefaultInstance()
@@ -340,6 +351,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.FeatureFilterOrBuilder getFeatureFilterOrBuilder() {
     return getFeatureFilter();
   }
@@ -358,6 +370,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The includeArchivedMedia.
    */
+  @java.lang.Override
   public boolean getIncludeArchivedMedia() {
     return includeArchivedMedia_;
   }
@@ -377,6 +390,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The excludeNonAppCreatedData.
    */
+  @java.lang.Override
   public boolean getExcludeNonAppCreatedData() {
     return excludeNonAppCreatedData_;
   }
@@ -1583,6 +1597,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The includeArchivedMedia.
      */
+    @java.lang.Override
     public boolean getIncludeArchivedMedia() {
       return includeArchivedMedia_;
     }
@@ -1638,6 +1653,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The excludeNonAppCreatedData.
      */
+    @java.lang.Override
     public boolean getExcludeNonAppCreatedData() {
       return excludeNonAppCreatedData_;
     }

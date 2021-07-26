@@ -207,6 +207,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the textEnrichment field is set.
    */
+  @java.lang.Override
   public boolean hasTextEnrichment() {
     return enrichmentCase_ == 1;
   }
@@ -221,6 +222,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
    *
    * @return The textEnrichment.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.TextEnrichment getTextEnrichment() {
     if (enrichmentCase_ == 1) {
       return (com.google.photos.library.v1.proto.TextEnrichment) enrichment_;
@@ -236,6 +238,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.photos.library.v1.TextEnrichment text_enrichment = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.TextEnrichmentOrBuilder getTextEnrichmentOrBuilder() {
     if (enrichmentCase_ == 1) {
       return (com.google.photos.library.v1.proto.TextEnrichment) enrichment_;
@@ -255,6 +258,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the locationEnrichment field is set.
    */
+  @java.lang.Override
   public boolean hasLocationEnrichment() {
     return enrichmentCase_ == 2;
   }
@@ -269,6 +273,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
    *
    * @return The locationEnrichment.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.LocationEnrichment getLocationEnrichment() {
     if (enrichmentCase_ == 2) {
       return (com.google.photos.library.v1.proto.LocationEnrichment) enrichment_;
@@ -284,6 +289,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.photos.library.v1.LocationEnrichment location_enrichment = 2;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.LocationEnrichmentOrBuilder
       getLocationEnrichmentOrBuilder() {
     if (enrichmentCase_ == 2) {
@@ -304,6 +310,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the mapEnrichment field is set.
    */
+  @java.lang.Override
   public boolean hasMapEnrichment() {
     return enrichmentCase_ == 3;
   }
@@ -318,6 +325,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
    *
    * @return The mapEnrichment.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.MapEnrichment getMapEnrichment() {
     if (enrichmentCase_ == 3) {
       return (com.google.photos.library.v1.proto.MapEnrichment) enrichment_;
@@ -333,6 +341,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.photos.library.v1.MapEnrichment map_enrichment = 3;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.MapEnrichmentOrBuilder getMapEnrichmentOrBuilder() {
     if (enrichmentCase_ == 3) {
       return (com.google.photos.library.v1.proto.MapEnrichment) enrichment_;
@@ -772,6 +781,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the textEnrichment field is set.
      */
+    @java.lang.Override
     public boolean hasTextEnrichment() {
       return enrichmentCase_ == 1;
     }
@@ -786,6 +796,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
      *
      * @return The textEnrichment.
      */
+    @java.lang.Override
     public com.google.photos.library.v1.proto.TextEnrichment getTextEnrichment() {
       if (textEnrichmentBuilder_ == null) {
         if (enrichmentCase_ == 1) {
@@ -919,6 +930,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.photos.library.v1.TextEnrichment text_enrichment = 1;</code>
      */
+    @java.lang.Override
     public com.google.photos.library.v1.proto.TextEnrichmentOrBuilder getTextEnrichmentOrBuilder() {
       if ((enrichmentCase_ == 1) && (textEnrichmentBuilder_ != null)) {
         return textEnrichmentBuilder_.getMessageOrBuilder();
@@ -979,6 +991,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the locationEnrichment field is set.
      */
+    @java.lang.Override
     public boolean hasLocationEnrichment() {
       return enrichmentCase_ == 2;
     }
@@ -993,6 +1006,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
      *
      * @return The locationEnrichment.
      */
+    @java.lang.Override
     public com.google.photos.library.v1.proto.LocationEnrichment getLocationEnrichment() {
       if (locationEnrichmentBuilder_ == null) {
         if (enrichmentCase_ == 2) {
@@ -1129,6 +1143,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.photos.library.v1.LocationEnrichment location_enrichment = 2;</code>
      */
+    @java.lang.Override
     public com.google.photos.library.v1.proto.LocationEnrichmentOrBuilder
         getLocationEnrichmentOrBuilder() {
       if ((enrichmentCase_ == 2) && (locationEnrichmentBuilder_ != null)) {
@@ -1190,6 +1205,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the mapEnrichment field is set.
      */
+    @java.lang.Override
     public boolean hasMapEnrichment() {
       return enrichmentCase_ == 3;
     }
@@ -1204,6 +1220,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
      *
      * @return The mapEnrichment.
      */
+    @java.lang.Override
     public com.google.photos.library.v1.proto.MapEnrichment getMapEnrichment() {
       if (mapEnrichmentBuilder_ == null) {
         if (enrichmentCase_ == 3) {
@@ -1337,6 +1354,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.photos.library.v1.MapEnrichment map_enrichment = 3;</code>
      */
+    @java.lang.Override
     public com.google.photos.library.v1.proto.MapEnrichmentOrBuilder getMapEnrichmentOrBuilder() {
       if ((enrichmentCase_ == 3) && (mapEnrichmentBuilder_ != null)) {
         return mapEnrichmentBuilder_.getMessageOrBuilder();

@@ -12,10 +12,10 @@ public interface CreateAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * The album to be created.
+   * Required. The album to be created.
    * </pre>
    *
-   * <code>.google.photos.types.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the album field is set.
    */
@@ -24,10 +24,10 @@ public interface CreateAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * The album to be created.
+   * Required. The album to be created.
    * </pre>
    *
-   * <code>.google.photos.types.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The album.
    */
@@ -36,10 +36,10 @@ public interface CreateAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * The album to be created.
+   * Required. The album to be created.
    * </pre>
    *
-   * <code>.google.photos.types.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.photos.types.proto.AlbumOrBuilder getAlbumOrBuilder();
 }

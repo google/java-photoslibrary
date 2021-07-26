@@ -116,6 +116,7 @@ public final class JoinSharedAlbumResponse extends com.google.protobuf.Generated
    *
    * @return Whether the album field is set.
    */
+  @java.lang.Override
   public boolean hasAlbum() {
     return album_ != null;
   }
@@ -130,6 +131,7 @@ public final class JoinSharedAlbumResponse extends com.google.protobuf.Generated
    *
    * @return The album.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.Album getAlbum() {
     return album_ == null ? com.google.photos.types.proto.Album.getDefaultInstance() : album_;
   }
@@ -142,6 +144,7 @@ public final class JoinSharedAlbumResponse extends com.google.protobuf.Generated
    *
    * <code>.google.photos.types.Album album = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.AlbumOrBuilder getAlbumOrBuilder() {
     return getAlbum();
   }

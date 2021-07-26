@@ -145,6 +145,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    * @return The albumId.
    */
+  @java.lang.Override
   public java.lang.String getAlbumId() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    * @return The bytes for albumId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAlbumIdBytes() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -186,11 +188,14 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * List of media items to be created.
+   * Required. List of media items to be created.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+   * <code>
+   * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.photos.library.v1.proto.NewMediaItem> getNewMediaItemsList() {
     return newMediaItems_;
   }
@@ -198,11 +203,14 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * List of media items to be created.
+   * Required. List of media items to be created.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+   * <code>
+   * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.photos.library.v1.proto.NewMediaItemOrBuilder>
       getNewMediaItemsOrBuilderList() {
     return newMediaItems_;
@@ -211,11 +219,14 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * List of media items to be created.
+   * Required. List of media items to be created.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+   * <code>
+   * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public int getNewMediaItemsCount() {
     return newMediaItems_.size();
   }
@@ -223,11 +234,14 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * List of media items to be created.
+   * Required. List of media items to be created.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+   * <code>
+   * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.NewMediaItem getNewMediaItems(int index) {
     return newMediaItems_.get(index);
   }
@@ -235,11 +249,14 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * List of media items to be created.
+   * Required. List of media items to be created.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+   * <code>
+   * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.NewMediaItemOrBuilder getNewMediaItemsOrBuilder(
       int index) {
     return newMediaItems_.get(index);
@@ -262,6 +279,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    * @return Whether the albumPosition field is set.
    */
+  @java.lang.Override
   public boolean hasAlbumPosition() {
     return albumPosition_ != null;
   }
@@ -280,6 +298,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    * @return The albumPosition.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.AlbumPosition getAlbumPosition() {
     return albumPosition_ == null
         ? com.google.photos.library.v1.proto.AlbumPosition.getDefaultInstance()
@@ -298,6 +317,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    * <code>.google.photos.library.v1.AlbumPosition album_position = 4;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.AlbumPositionOrBuilder getAlbumPositionOrBuilder() {
     return getAlbumPosition();
   }
@@ -846,10 +866,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.photos.library.v1.proto.NewMediaItem> getNewMediaItemsList() {
       if (newMediaItemsBuilder_ == null) {
@@ -862,10 +884,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getNewMediaItemsCount() {
       if (newMediaItemsBuilder_ == null) {
@@ -878,10 +902,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.photos.library.v1.proto.NewMediaItem getNewMediaItems(int index) {
       if (newMediaItemsBuilder_ == null) {
@@ -894,10 +920,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setNewMediaItems(
         int index, com.google.photos.library.v1.proto.NewMediaItem value) {
@@ -917,10 +945,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setNewMediaItems(
         int index, com.google.photos.library.v1.proto.NewMediaItem.Builder builderForValue) {
@@ -937,10 +967,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addNewMediaItems(com.google.photos.library.v1.proto.NewMediaItem value) {
       if (newMediaItemsBuilder_ == null) {
@@ -959,10 +991,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addNewMediaItems(
         int index, com.google.photos.library.v1.proto.NewMediaItem value) {
@@ -982,10 +1016,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addNewMediaItems(
         com.google.photos.library.v1.proto.NewMediaItem.Builder builderForValue) {
@@ -1002,10 +1038,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addNewMediaItems(
         int index, com.google.photos.library.v1.proto.NewMediaItem.Builder builderForValue) {
@@ -1022,10 +1060,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllNewMediaItems(
         java.lang.Iterable<? extends com.google.photos.library.v1.proto.NewMediaItem> values) {
@@ -1042,10 +1082,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearNewMediaItems() {
       if (newMediaItemsBuilder_ == null) {
@@ -1061,10 +1103,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeNewMediaItems(int index) {
       if (newMediaItemsBuilder_ == null) {
@@ -1080,10 +1124,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.photos.library.v1.proto.NewMediaItem.Builder getNewMediaItemsBuilder(
         int index) {
@@ -1093,10 +1139,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.photos.library.v1.proto.NewMediaItemOrBuilder getNewMediaItemsOrBuilder(
         int index) {
@@ -1110,10 +1158,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.photos.library.v1.proto.NewMediaItemOrBuilder>
         getNewMediaItemsOrBuilderList() {
@@ -1127,10 +1177,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.photos.library.v1.proto.NewMediaItem.Builder addNewMediaItemsBuilder() {
       return getNewMediaItemsFieldBuilder()
@@ -1140,10 +1192,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.photos.library.v1.proto.NewMediaItem.Builder addNewMediaItemsBuilder(
         int index) {
@@ -1154,10 +1208,12 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * List of media items to be created.
+     * Required. List of media items to be created.
      * </pre>
      *
-     * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+     * <code>
+     * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.photos.library.v1.proto.NewMediaItem.Builder>
         getNewMediaItemsBuilderList() {

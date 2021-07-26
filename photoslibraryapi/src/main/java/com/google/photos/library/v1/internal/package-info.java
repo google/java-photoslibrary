@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,11 +15,9 @@
  */
 
 /**
- * A client to Photos Library API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>=========================== InternalPhotosLibraryClient ===========================
+ * <p>======================= InternalPhotosLibraryClient =======================
  *
  * <p>Service Description: Service which allows developers to perform the following actions on
  * behalf of the user: - upload media items directly to their Google Photos library - create albums
@@ -29,16 +27,15 @@
  *
  * <p>Sample for InternalPhotosLibraryClient:
  *
- * <pre>
- * <code>
- * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+ * <pre>{@code
+ * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+ *     InternalPhotosLibraryClient.create()) {
  *   Album album = Album.newBuilder().build();
  *   Album response = internalPhotosLibraryClient.createAlbum(album);
  * }
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.photos.library.v1.internal;
 
 import javax.annotation.Generated;

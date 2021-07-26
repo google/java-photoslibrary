@@ -130,6 +130,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startDate field is set.
    */
+  @java.lang.Override
   public boolean hasStartDate() {
     return startDate_ != null;
   }
@@ -145,6 +146,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startDate.
    */
+  @java.lang.Override
   public com.google.type.Date getStartDate() {
     return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
   }
@@ -158,6 +160,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date start_date = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getStartDateOrBuilder() {
     return getStartDate();
   }
@@ -176,6 +179,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endDate field is set.
    */
+  @java.lang.Override
   public boolean hasEndDate() {
     return endDate_ != null;
   }
@@ -191,6 +195,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endDate.
    */
+  @java.lang.Override
   public com.google.type.Date getEndDate() {
     return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
   }
@@ -204,6 +209,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date end_date = 2;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getEndDateOrBuilder() {
     return getEndDate();
   }

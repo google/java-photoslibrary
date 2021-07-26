@@ -123,6 +123,7 @@ public final class ListMediaItemsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.photos.types.proto.MediaItem> getMediaItemsList() {
     return mediaItems_;
   }
@@ -135,6 +136,7 @@ public final class ListMediaItemsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.photos.types.proto.MediaItemOrBuilder>
       getMediaItemsOrBuilderList() {
     return mediaItems_;
@@ -148,6 +150,7 @@ public final class ListMediaItemsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
+  @java.lang.Override
   public int getMediaItemsCount() {
     return mediaItems_.size();
   }
@@ -160,6 +163,7 @@ public final class ListMediaItemsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.MediaItem getMediaItems(int index) {
     return mediaItems_.get(index);
   }
@@ -172,6 +176,7 @@ public final class ListMediaItemsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.photos.types.MediaItem media_items = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.MediaItemOrBuilder getMediaItemsOrBuilder(int index) {
     return mediaItems_.get(index);
   }
@@ -191,6 +196,7 @@ public final class ListMediaItemsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +221,7 @@ public final class ListMediaItemsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

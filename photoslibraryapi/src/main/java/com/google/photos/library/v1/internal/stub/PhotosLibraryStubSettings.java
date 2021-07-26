@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.photos.library.v1.internal.stub;
 
 import static com.google.photos.library.v1.internal.InternalPhotosLibraryClient.ListAlbumsPagedResponse;
@@ -85,7 +86,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link PhotosLibraryStub}.
  *
@@ -102,28 +103,30 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createAlbum to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * PhotosLibraryStubSettings.Builder internalPhotosLibrarySettingsBuilder =
  *     PhotosLibraryStubSettings.newBuilder();
  * internalPhotosLibrarySettingsBuilder
  *     .createAlbumSettings()
  *     .setRetrySettings(
- *         internalPhotosLibrarySettingsBuilder.createAlbumSettings().getRetrySettings().toBuilder()
+ *         internalPhotosLibrarySettingsBuilder
+ *             .createAlbumSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * PhotosLibraryStubSettings internalPhotosLibrarySettings = internalPhotosLibrarySettingsBuilder.build();
- * </code>
- * </pre>
+ * PhotosLibraryStubSettings internalPhotosLibrarySettings =
+ *     internalPhotosLibrarySettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/photoslibrary")
           .add("https://www.googleapis.com/auth/photoslibrary.appendonly")
+          .add("https://www.googleapis.com/auth/photoslibrary.edit.appcreateddata")
           .add("https://www.googleapis.com/auth/photoslibrary.readonly")
           .add("https://www.googleapis.com/auth/photoslibrary.readonly.appcreateddata")
           .add("https://www.googleapis.com/auth/photoslibrary.sharing")
@@ -164,6 +167,226 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
       batchRemoveMediaItemsFromAlbumSettings;
   private final UnaryCallSettings<UpdateAlbumRequest, Album> updateAlbumSettings;
   private final UnaryCallSettings<UpdateMediaItemRequest, MediaItem> updateMediaItemSettings;
+
+  private static final PagedListDescriptor<
+          SearchMediaItemsRequest, SearchMediaItemsResponse, MediaItem>
+      SEARCH_MEDIA_ITEMS_PAGE_STR_DESC =
+          new PagedListDescriptor<SearchMediaItemsRequest, SearchMediaItemsResponse, MediaItem>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchMediaItemsRequest injectToken(
+                SearchMediaItemsRequest payload, String token) {
+              return SearchMediaItemsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchMediaItemsRequest injectPageSize(
+                SearchMediaItemsRequest payload, int pageSize) {
+              return SearchMediaItemsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchMediaItemsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchMediaItemsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MediaItem> extractResources(SearchMediaItemsResponse payload) {
+              return payload.getMediaItemsList() == null
+                  ? ImmutableList.<MediaItem>of()
+                  : payload.getMediaItemsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListMediaItemsRequest, ListMediaItemsResponse, MediaItem>
+      LIST_MEDIA_ITEMS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListMediaItemsRequest, ListMediaItemsResponse, MediaItem>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMediaItemsRequest injectToken(ListMediaItemsRequest payload, String token) {
+              return ListMediaItemsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMediaItemsRequest injectPageSize(
+                ListMediaItemsRequest payload, int pageSize) {
+              return ListMediaItemsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMediaItemsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMediaItemsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MediaItem> extractResources(ListMediaItemsResponse payload) {
+              return payload.getMediaItemsList() == null
+                  ? ImmutableList.<MediaItem>of()
+                  : payload.getMediaItemsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListAlbumsRequest, ListAlbumsResponse, Album>
+      LIST_ALBUMS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAlbumsRequest, ListAlbumsResponse, Album>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAlbumsRequest injectToken(ListAlbumsRequest payload, String token) {
+              return ListAlbumsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAlbumsRequest injectPageSize(ListAlbumsRequest payload, int pageSize) {
+              return ListAlbumsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAlbumsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAlbumsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Album> extractResources(ListAlbumsResponse payload) {
+              return payload.getAlbumsList() == null
+                  ? ImmutableList.<Album>of()
+                  : payload.getAlbumsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListSharedAlbumsRequest, ListSharedAlbumsResponse, Album>
+      LIST_SHARED_ALBUMS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSharedAlbumsRequest, ListSharedAlbumsResponse, Album>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSharedAlbumsRequest injectToken(
+                ListSharedAlbumsRequest payload, String token) {
+              return ListSharedAlbumsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSharedAlbumsRequest injectPageSize(
+                ListSharedAlbumsRequest payload, int pageSize) {
+              return ListSharedAlbumsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSharedAlbumsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSharedAlbumsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Album> extractResources(ListSharedAlbumsResponse payload) {
+              return payload.getSharedAlbumsList() == null
+                  ? ImmutableList.<Album>of()
+                  : payload.getSharedAlbumsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchMediaItemsRequest, SearchMediaItemsResponse, SearchMediaItemsPagedResponse>
+      SEARCH_MEDIA_ITEMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchMediaItemsRequest, SearchMediaItemsResponse, SearchMediaItemsPagedResponse>() {
+            @Override
+            public ApiFuture<SearchMediaItemsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchMediaItemsRequest, SearchMediaItemsResponse> callable,
+                SearchMediaItemsRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchMediaItemsResponse> futureResponse) {
+              PageContext<SearchMediaItemsRequest, SearchMediaItemsResponse, MediaItem>
+                  pageContext =
+                      PageContext.create(
+                          callable, SEARCH_MEDIA_ITEMS_PAGE_STR_DESC, request, context);
+              return SearchMediaItemsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListMediaItemsRequest, ListMediaItemsResponse, ListMediaItemsPagedResponse>
+      LIST_MEDIA_ITEMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMediaItemsRequest, ListMediaItemsResponse, ListMediaItemsPagedResponse>() {
+            @Override
+            public ApiFuture<ListMediaItemsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMediaItemsRequest, ListMediaItemsResponse> callable,
+                ListMediaItemsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMediaItemsResponse> futureResponse) {
+              PageContext<ListMediaItemsRequest, ListMediaItemsResponse, MediaItem> pageContext =
+                  PageContext.create(callable, LIST_MEDIA_ITEMS_PAGE_STR_DESC, request, context);
+              return ListMediaItemsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAlbumsRequest, ListAlbumsResponse, ListAlbumsPagedResponse>
+      LIST_ALBUMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAlbumsRequest, ListAlbumsResponse, ListAlbumsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAlbumsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAlbumsRequest, ListAlbumsResponse> callable,
+                ListAlbumsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAlbumsResponse> futureResponse) {
+              PageContext<ListAlbumsRequest, ListAlbumsResponse, Album> pageContext =
+                  PageContext.create(callable, LIST_ALBUMS_PAGE_STR_DESC, request, context);
+              return ListAlbumsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSharedAlbumsRequest, ListSharedAlbumsResponse, ListSharedAlbumsPagedResponse>
+      LIST_SHARED_ALBUMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSharedAlbumsRequest, ListSharedAlbumsResponse, ListSharedAlbumsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSharedAlbumsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSharedAlbumsRequest, ListSharedAlbumsResponse> callable,
+                ListSharedAlbumsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSharedAlbumsResponse> futureResponse) {
+              PageContext<ListSharedAlbumsRequest, ListSharedAlbumsResponse, Album> pageContext =
+                  PageContext.create(callable, LIST_SHARED_ALBUMS_PAGE_STR_DESC, request, context);
+              return ListSharedAlbumsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createAlbum. */
   public UnaryCallSettings<CreateAlbumRequest, Album> createAlbumSettings() {
@@ -281,10 +504,10 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcPhotosLibraryStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -295,6 +518,11 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
     return "photoslibrary.googleapis.com:443";
+  }
+
+  /** Returns the default mTLS service endpoint. */
+  public static String getDefaultMtlsEndpoint() {
+    return "photoslibrary.mtls.googleapis.com:443";
   }
 
   /** Returns the default service scopes. */
@@ -366,230 +594,9 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
     updateMediaItemSettings = settingsBuilder.updateMediaItemSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          SearchMediaItemsRequest, SearchMediaItemsResponse, MediaItem>
-      SEARCH_MEDIA_ITEMS_PAGE_STR_DESC =
-          new PagedListDescriptor<SearchMediaItemsRequest, SearchMediaItemsResponse, MediaItem>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public SearchMediaItemsRequest injectToken(
-                SearchMediaItemsRequest payload, String token) {
-              return SearchMediaItemsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public SearchMediaItemsRequest injectPageSize(
-                SearchMediaItemsRequest payload, int pageSize) {
-              return SearchMediaItemsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(SearchMediaItemsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(SearchMediaItemsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<MediaItem> extractResources(SearchMediaItemsResponse payload) {
-              return payload.getMediaItemsList() != null
-                  ? payload.getMediaItemsList()
-                  : ImmutableList.<MediaItem>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListMediaItemsRequest, ListMediaItemsResponse, MediaItem>
-      LIST_MEDIA_ITEMS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListMediaItemsRequest, ListMediaItemsResponse, MediaItem>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListMediaItemsRequest injectToken(ListMediaItemsRequest payload, String token) {
-              return ListMediaItemsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListMediaItemsRequest injectPageSize(
-                ListMediaItemsRequest payload, int pageSize) {
-              return ListMediaItemsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListMediaItemsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListMediaItemsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<MediaItem> extractResources(ListMediaItemsResponse payload) {
-              return payload.getMediaItemsList() != null
-                  ? payload.getMediaItemsList()
-                  : ImmutableList.<MediaItem>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListAlbumsRequest, ListAlbumsResponse, Album>
-      LIST_ALBUMS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListAlbumsRequest, ListAlbumsResponse, Album>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListAlbumsRequest injectToken(ListAlbumsRequest payload, String token) {
-              return ListAlbumsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListAlbumsRequest injectPageSize(ListAlbumsRequest payload, int pageSize) {
-              return ListAlbumsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListAlbumsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListAlbumsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Album> extractResources(ListAlbumsResponse payload) {
-              return payload.getAlbumsList() != null
-                  ? payload.getAlbumsList()
-                  : ImmutableList.<Album>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListSharedAlbumsRequest, ListSharedAlbumsResponse, Album>
-      LIST_SHARED_ALBUMS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListSharedAlbumsRequest, ListSharedAlbumsResponse, Album>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSharedAlbumsRequest injectToken(
-                ListSharedAlbumsRequest payload, String token) {
-              return ListSharedAlbumsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSharedAlbumsRequest injectPageSize(
-                ListSharedAlbumsRequest payload, int pageSize) {
-              return ListSharedAlbumsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSharedAlbumsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSharedAlbumsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Album> extractResources(ListSharedAlbumsResponse payload) {
-              return payload.getSharedAlbumsList() != null
-                  ? payload.getSharedAlbumsList()
-                  : ImmutableList.<Album>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          SearchMediaItemsRequest, SearchMediaItemsResponse, SearchMediaItemsPagedResponse>
-      SEARCH_MEDIA_ITEMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              SearchMediaItemsRequest, SearchMediaItemsResponse, SearchMediaItemsPagedResponse>() {
-            @Override
-            public ApiFuture<SearchMediaItemsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<SearchMediaItemsRequest, SearchMediaItemsResponse> callable,
-                SearchMediaItemsRequest request,
-                ApiCallContext context,
-                ApiFuture<SearchMediaItemsResponse> futureResponse) {
-              PageContext<SearchMediaItemsRequest, SearchMediaItemsResponse, MediaItem>
-                  pageContext =
-                      PageContext.create(
-                          callable, SEARCH_MEDIA_ITEMS_PAGE_STR_DESC, request, context);
-              return SearchMediaItemsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListMediaItemsRequest, ListMediaItemsResponse, ListMediaItemsPagedResponse>
-      LIST_MEDIA_ITEMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListMediaItemsRequest, ListMediaItemsResponse, ListMediaItemsPagedResponse>() {
-            @Override
-            public ApiFuture<ListMediaItemsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListMediaItemsRequest, ListMediaItemsResponse> callable,
-                ListMediaItemsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListMediaItemsResponse> futureResponse) {
-              PageContext<ListMediaItemsRequest, ListMediaItemsResponse, MediaItem> pageContext =
-                  PageContext.create(callable, LIST_MEDIA_ITEMS_PAGE_STR_DESC, request, context);
-              return ListMediaItemsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListAlbumsRequest, ListAlbumsResponse, ListAlbumsPagedResponse>
-      LIST_ALBUMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListAlbumsRequest, ListAlbumsResponse, ListAlbumsPagedResponse>() {
-            @Override
-            public ApiFuture<ListAlbumsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListAlbumsRequest, ListAlbumsResponse> callable,
-                ListAlbumsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListAlbumsResponse> futureResponse) {
-              PageContext<ListAlbumsRequest, ListAlbumsResponse, Album> pageContext =
-                  PageContext.create(callable, LIST_ALBUMS_PAGE_STR_DESC, request, context);
-              return ListAlbumsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListSharedAlbumsRequest, ListSharedAlbumsResponse, ListSharedAlbumsPagedResponse>
-      LIST_SHARED_ALBUMS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSharedAlbumsRequest, ListSharedAlbumsResponse, ListSharedAlbumsPagedResponse>() {
-            @Override
-            public ApiFuture<ListSharedAlbumsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSharedAlbumsRequest, ListSharedAlbumsResponse> callable,
-                ListSharedAlbumsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSharedAlbumsResponse> futureResponse) {
-              PageContext<ListSharedAlbumsRequest, ListSharedAlbumsResponse, Album> pageContext =
-                  PageContext.create(callable, LIST_SHARED_ALBUMS_PAGE_STR_DESC, request, context);
-              return ListSharedAlbumsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for PhotosLibraryStubSettings. */
   public static class Builder extends StubSettings.Builder<PhotosLibraryStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateAlbumRequest, Album> createAlbumSettings;
     private final UnaryCallSettings.Builder<
             BatchCreateMediaItemsRequest, BatchCreateMediaItemsResponse>
@@ -631,7 +638,6 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
     private final UnaryCallSettings.Builder<UpdateAlbumRequest, Album> updateAlbumSettings;
     private final UnaryCallSettings.Builder<UpdateMediaItemRequest, MediaItem>
         updateMediaItemSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -639,13 +645,12 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED,
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -656,61 +661,51 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("no_retry_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(10000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("retry_policy_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchCreateMediaItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchAddMediaItemsToAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       searchMediaItemsSettings = PagedCallSettings.newBuilder(SEARCH_MEDIA_ITEMS_PAGE_STR_FACT);
-
       listMediaItemsSettings = PagedCallSettings.newBuilder(LIST_MEDIA_ITEMS_PAGE_STR_FACT);
-
       getMediaItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchGetMediaItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listAlbumsSettings = PagedCallSettings.newBuilder(LIST_ALBUMS_PAGE_STR_FACT);
-
       getAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getSharedAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       addEnrichmentToAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       joinSharedAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       leaveSharedAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       shareAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSharedAlbumsSettings = PagedCallSettings.newBuilder(LIST_SHARED_ALBUMS_PAGE_STR_FACT);
-
       unshareAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchRemoveMediaItemsFromAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateAlbumSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateMediaItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -734,117 +729,7 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
               batchRemoveMediaItemsFromAlbumSettings,
               updateAlbumSettings,
               updateMediaItemSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createAlbumSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .batchCreateMediaItemsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .batchAddMediaItemsToAlbumSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .searchMediaItemsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listMediaItemsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getMediaItemSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .batchGetMediaItemsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listAlbumsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getAlbumSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getSharedAlbumSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .addEnrichmentToAlbumSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .joinSharedAlbumSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .leaveSharedAlbumSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .shareAlbumSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listSharedAlbumsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .unshareAlbumSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .batchRemoveMediaItemsFromAlbumSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateAlbumSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateMediaItemSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      return builder;
     }
 
     protected Builder(PhotosLibraryStubSettings settings) {
@@ -894,14 +779,125 @@ public class PhotosLibraryStubSettings extends StubSettings<PhotosLibraryStubSet
               updateMediaItemSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .batchCreateMediaItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .batchAddMediaItemsToAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .searchMediaItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listMediaItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getMediaItemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .batchGetMediaItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listAlbumsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getSharedAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .addEnrichmentToAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .joinSharedAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .leaveSharedAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .shareAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listSharedAlbumsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .unshareAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .batchRemoveMediaItemsFromAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateAlbumSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateMediaItemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      return builder;
+    }
+
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
     public Builder applyToAllUnaryMethods(
-        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) throws Exception {
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> settingsUpdater) {
       super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, settingsUpdater);
       return this;
     }

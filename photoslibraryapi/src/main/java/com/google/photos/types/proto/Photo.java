@@ -148,6 +148,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cameraMake.
    */
+  @java.lang.Override
   public java.lang.String getCameraMake() {
     java.lang.Object ref = cameraMake_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +171,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for cameraMake.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCameraMakeBytes() {
     java.lang.Object ref = cameraMake_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cameraModel.
    */
+  @java.lang.Override
   public java.lang.String getCameraModel() {
     java.lang.Object ref = cameraModel_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +220,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for cameraModel.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCameraModelBytes() {
     java.lang.Object ref = cameraModel_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +246,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The focalLength.
    */
+  @java.lang.Override
   public float getFocalLength() {
     return focalLength_;
   }
@@ -259,6 +264,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The apertureFNumber.
    */
+  @java.lang.Override
   public float getApertureFNumber() {
     return apertureFNumber_;
   }
@@ -276,6 +282,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The isoEquivalent.
    */
+  @java.lang.Override
   public int getIsoEquivalent() {
     return isoEquivalent_;
   }
@@ -293,6 +300,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the exposureTime field is set.
    */
+  @java.lang.Override
   public boolean hasExposureTime() {
     return exposureTime_ != null;
   }
@@ -307,6 +315,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The exposureTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getExposureTime() {
     return exposureTime_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -321,6 +330,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration exposure_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getExposureTimeOrBuilder() {
     return getExposureTime();
   }
@@ -954,6 +964,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The focalLength.
      */
+    @java.lang.Override
     public float getFocalLength() {
       return focalLength_;
     }
@@ -1005,6 +1016,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The apertureFNumber.
      */
+    @java.lang.Override
     public float getApertureFNumber() {
       return apertureFNumber_;
     }
@@ -1056,6 +1068,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The isoEquivalent.
      */
+    @java.lang.Override
     public int getIsoEquivalent() {
       return isoEquivalent_;
     }

@@ -147,6 +147,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
    *
    * @return The albumId.
    */
+  @java.lang.Override
   public java.lang.String getAlbumId() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +171,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for albumId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAlbumIdBytes() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +199,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -217,6 +220,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +246,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +273,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
    *
    * @return Whether the filters field is set.
    */
+  @java.lang.Override
   public boolean hasFilters() {
     return filters_ != null;
   }
@@ -283,6 +289,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
    *
    * @return The filters.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.Filters getFilters() {
     return filters_ == null
         ? com.google.photos.library.v1.proto.Filters.getDefaultInstance()
@@ -298,6 +305,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
    *
    * <code>.google.photos.library.v1.Filters filters = 4;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.FiltersOrBuilder getFiltersOrBuilder() {
     return getFilters();
   }
@@ -813,6 +821,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

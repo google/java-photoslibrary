@@ -1,0 +1,75 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.photos.library.v1",
+  "libraryPackage": "com.google.photos.library.v1.internal",
+  "services": {
+    "PhotosLibrary": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InternalPhotosLibraryClient",
+          "rpcs": {
+            "AddEnrichmentToAlbum": {
+              "methods": ["addEnrichmentToAlbum", "addEnrichmentToAlbum", "addEnrichmentToAlbumCallable"]
+            },
+            "BatchAddMediaItemsToAlbum": {
+              "methods": ["batchAddMediaItemsToAlbum", "batchAddMediaItemsToAlbum", "batchAddMediaItemsToAlbumCallable"]
+            },
+            "BatchCreateMediaItems": {
+              "methods": ["batchCreateMediaItems", "batchCreateMediaItems", "batchCreateMediaItemsCallable"]
+            },
+            "BatchGetMediaItems": {
+              "methods": ["batchGetMediaItems", "batchGetMediaItems", "batchGetMediaItemsCallable"]
+            },
+            "BatchRemoveMediaItemsFromAlbum": {
+              "methods": ["batchRemoveMediaItemsFromAlbum", "batchRemoveMediaItemsFromAlbum", "batchRemoveMediaItemsFromAlbumCallable"]
+            },
+            "CreateAlbum": {
+              "methods": ["createAlbum", "createAlbum", "createAlbumCallable"]
+            },
+            "GetAlbum": {
+              "methods": ["getAlbum", "getAlbum", "getAlbumCallable"]
+            },
+            "GetMediaItem": {
+              "methods": ["getMediaItem", "getMediaItem", "getMediaItemCallable"]
+            },
+            "GetSharedAlbum": {
+              "methods": ["getSharedAlbum", "getSharedAlbum", "getSharedAlbumCallable"]
+            },
+            "JoinSharedAlbum": {
+              "methods": ["joinSharedAlbum", "joinSharedAlbum", "joinSharedAlbumCallable"]
+            },
+            "LeaveSharedAlbum": {
+              "methods": ["leaveSharedAlbum", "leaveSharedAlbum", "leaveSharedAlbumCallable"]
+            },
+            "ListAlbums": {
+              "methods": ["listAlbums", "listAlbums", "listAlbumsPagedCallable", "listAlbumsCallable"]
+            },
+            "ListMediaItems": {
+              "methods": ["listMediaItems", "listMediaItemsPagedCallable", "listMediaItemsCallable"]
+            },
+            "ListSharedAlbums": {
+              "methods": ["listSharedAlbums", "listSharedAlbums", "listSharedAlbumsPagedCallable", "listSharedAlbumsCallable"]
+            },
+            "SearchMediaItems": {
+              "methods": ["searchMediaItems", "searchMediaItems", "searchMediaItems", "searchMediaItemsPagedCallable", "searchMediaItemsCallable"]
+            },
+            "ShareAlbum": {
+              "methods": ["shareAlbum", "shareAlbum", "shareAlbumCallable"]
+            },
+            "UnshareAlbum": {
+              "methods": ["unshareAlbum", "unshareAlbum", "unshareAlbumCallable"]
+            },
+            "UpdateAlbum": {
+              "methods": ["updateAlbum", "updateAlbum", "updateAlbum", "updateAlbumCallable"]
+            },
+            "UpdateMediaItem": {
+              "methods": ["updateMediaItem", "updateMediaItem", "updateMediaItemCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -12,10 +12,10 @@ public interface GetMediaItemRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the media item to be requested.
+   * Required. Identifier of the media item to be requested.
    * </pre>
    *
-   * <code>string media_item_id = 1;</code>
+   * <code>string media_item_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The mediaItemId.
    */
@@ -24,10 +24,10 @@ public interface GetMediaItemRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the media item to be requested.
+   * Required. Identifier of the media item to be requested.
    * </pre>
    *
-   * <code>string media_item_id = 1;</code>
+   * <code>string media_item_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for mediaItemId.
    */

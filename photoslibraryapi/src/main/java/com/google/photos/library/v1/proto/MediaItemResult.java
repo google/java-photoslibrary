@@ -132,6 +132,7 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -148,6 +149,7 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
@@ -162,6 +164,7 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.rpc.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -180,6 +183,7 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the mediaItem field is set.
    */
+  @java.lang.Override
   public boolean hasMediaItem() {
     return mediaItem_ != null;
   }
@@ -195,6 +199,7 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
    *
    * @return The mediaItem.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.MediaItem getMediaItem() {
     return mediaItem_ == null
         ? com.google.photos.types.proto.MediaItem.getDefaultInstance()
@@ -210,6 +215,7 @@ public final class MediaItemResult extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.photos.types.MediaItem media_item = 2;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.MediaItemOrBuilder getMediaItemOrBuilder() {
     return getMediaItem();
   }

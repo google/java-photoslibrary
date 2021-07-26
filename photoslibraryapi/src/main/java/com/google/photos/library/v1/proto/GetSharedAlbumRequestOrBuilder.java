@@ -12,10 +12,10 @@ public interface GetSharedAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Share token of the album to be requested.
+   * Required. Share token of the album to be requested.
    * </pre>
    *
-   * <code>string share_token = 1;</code>
+   * <code>string share_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The shareToken.
    */
@@ -24,10 +24,10 @@ public interface GetSharedAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Share token of the album to be requested.
+   * Required. Share token of the album to be requested.
    * </pre>
    *
-   * <code>string share_token = 1;</code>
+   * <code>string share_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for shareToken.
    */

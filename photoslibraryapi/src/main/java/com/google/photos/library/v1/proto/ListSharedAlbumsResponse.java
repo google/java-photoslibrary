@@ -123,6 +123,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.photos.types.proto.Album> getSharedAlbumsList() {
     return sharedAlbums_;
   }
@@ -135,6 +136,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.photos.types.proto.AlbumOrBuilder>
       getSharedAlbumsOrBuilderList() {
     return sharedAlbums_;
@@ -148,6 +150,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
+  @java.lang.Override
   public int getSharedAlbumsCount() {
     return sharedAlbums_.size();
   }
@@ -160,6 +163,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.Album getSharedAlbums(int index) {
     return sharedAlbums_.get(index);
   }
@@ -172,6 +176,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.photos.types.Album shared_albums = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.AlbumOrBuilder getSharedAlbumsOrBuilder(int index) {
     return sharedAlbums_.get(index);
   }
@@ -190,6 +195,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -213,6 +219,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

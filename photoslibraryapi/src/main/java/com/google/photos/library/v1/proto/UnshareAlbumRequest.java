@@ -102,14 +102,15 @@ public final class UnshareAlbumRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Identifier of the album to be unshared. This album id must belong to an
+   * Required. Identifier of the album to be unshared. This album id must belong to an
    * album created by the developer.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The albumId.
    */
+  @java.lang.Override
   public java.lang.String getAlbumId() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -125,14 +126,15 @@ public final class UnshareAlbumRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Identifier of the album to be unshared. This album id must belong to an
+   * Required. Identifier of the album to be unshared. This album id must belong to an
    * album created by the developer.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for albumId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAlbumIdBytes() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -469,11 +471,11 @@ public final class UnshareAlbumRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier of the album to be unshared. This album id must belong to an
+     * Required. Identifier of the album to be unshared. This album id must belong to an
      * album created by the developer.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The albumId.
      */
@@ -492,11 +494,11 @@ public final class UnshareAlbumRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier of the album to be unshared. This album id must belong to an
+     * Required. Identifier of the album to be unshared. This album id must belong to an
      * album created by the developer.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for albumId.
      */
@@ -515,11 +517,11 @@ public final class UnshareAlbumRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier of the album to be unshared. This album id must belong to an
+     * Required. Identifier of the album to be unshared. This album id must belong to an
      * album created by the developer.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The albumId to set.
      * @return This builder for chaining.
@@ -537,11 +539,11 @@ public final class UnshareAlbumRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier of the album to be unshared. This album id must belong to an
+     * Required. Identifier of the album to be unshared. This album id must belong to an
      * album created by the developer.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -555,11 +557,11 @@ public final class UnshareAlbumRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier of the album to be unshared. This album id must belong to an
+     * Required. Identifier of the album to be unshared. This album id must belong to an
      * album created by the developer.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for albumId to set.
      * @return This builder for chaining.

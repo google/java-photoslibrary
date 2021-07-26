@@ -193,6 +193,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the includedContentCategories.
    */
+  @java.lang.Override
   public java.util.List<com.google.photos.library.v1.proto.ContentCategory>
       getIncludedContentCategoriesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -213,6 +214,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of includedContentCategories.
    */
+  @java.lang.Override
   public int getIncludedContentCategoriesCount() {
     return includedContentCategories_.size();
   }
@@ -231,6 +233,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The includedContentCategories at the given index.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.ContentCategory getIncludedContentCategories(
       int index) {
     return includedContentCategories_converter_.convert(includedContentCategories_.get(index));
@@ -249,6 +252,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for includedContentCategories.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getIncludedContentCategoriesValueList() {
     return includedContentCategories_;
   }
@@ -267,6 +271,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of includedContentCategories at the given index.
    */
+  @java.lang.Override
   public int getIncludedContentCategoriesValue(int index) {
     return includedContentCategories_.get(index);
   }
@@ -304,6 +309,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the excludedContentCategories.
    */
+  @java.lang.Override
   public java.util.List<com.google.photos.library.v1.proto.ContentCategory>
       getExcludedContentCategoriesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -324,6 +330,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of excludedContentCategories.
    */
+  @java.lang.Override
   public int getExcludedContentCategoriesCount() {
     return excludedContentCategories_.size();
   }
@@ -342,6 +349,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The excludedContentCategories at the given index.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.ContentCategory getExcludedContentCategories(
       int index) {
     return excludedContentCategories_converter_.convert(excludedContentCategories_.get(index));
@@ -360,6 +368,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for excludedContentCategories.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getExcludedContentCategoriesValueList() {
     return excludedContentCategories_;
   }
@@ -378,6 +387,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of excludedContentCategories at the given index.
    */
+  @java.lang.Override
   public int getExcludedContentCategoriesValue(int index) {
     return excludedContentCategories_.get(index);
   }

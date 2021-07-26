@@ -123,6 +123,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The locationName.
    */
+  @java.lang.Override
   public java.lang.String getLocationName() {
     java.lang.Object ref = locationName_;
     if (ref instanceof java.lang.String) {
@@ -145,6 +146,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for locationName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationNameBytes() {
     java.lang.Object ref = locationName_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +172,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the latlng field is set.
    */
+  @java.lang.Override
   public boolean hasLatlng() {
     return latlng_ != null;
   }
@@ -184,6 +187,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The latlng.
    */
+  @java.lang.Override
   public com.google.type.LatLng getLatlng() {
     return latlng_ == null ? com.google.type.LatLng.getDefaultInstance() : latlng_;
   }
@@ -196,6 +200,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.LatLng latlng = 2;</code>
    */
+  @java.lang.Override
   public com.google.type.LatLngOrBuilder getLatlngOrBuilder() {
     return getLatlng();
   }

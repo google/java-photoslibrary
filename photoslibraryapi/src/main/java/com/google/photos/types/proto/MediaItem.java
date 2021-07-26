@@ -182,6 +182,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +206,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +233,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -254,6 +257,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -280,6 +284,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The productUrl.
    */
+  @java.lang.Override
   public java.lang.String getProductUrl() {
     java.lang.Object ref = productUrl_;
     if (ref instanceof java.lang.String) {
@@ -303,6 +308,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for productUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProductUrlBytes() {
     java.lang.Object ref = productUrl_;
     if (ref instanceof java.lang.String) {
@@ -333,6 +339,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The baseUrl.
    */
+  @java.lang.Override
   public java.lang.String getBaseUrl() {
     java.lang.Object ref = baseUrl_;
     if (ref instanceof java.lang.String) {
@@ -360,6 +367,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for baseUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBaseUrlBytes() {
     java.lang.Object ref = baseUrl_;
     if (ref instanceof java.lang.String) {
@@ -385,6 +393,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -407,6 +416,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -433,6 +443,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the mediaMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasMediaMetadata() {
     return mediaMetadata_ != null;
   }
@@ -448,6 +459,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mediaMetadata.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.MediaMetadata getMediaMetadata() {
     return mediaMetadata_ == null
         ? com.google.photos.types.proto.MediaMetadata.getDefaultInstance()
@@ -463,6 +475,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.types.MediaMetadata media_metadata = 6;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.MediaMetadataOrBuilder getMediaMetadataOrBuilder() {
     return getMediaMetadata();
   }
@@ -480,6 +493,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the contributorInfo field is set.
    */
+  @java.lang.Override
   public boolean hasContributorInfo() {
     return contributorInfo_ != null;
   }
@@ -494,6 +508,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The contributorInfo.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.ContributorInfo getContributorInfo() {
     return contributorInfo_ == null
         ? com.google.photos.types.proto.ContributorInfo.getDefaultInstance()
@@ -508,6 +523,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.ContributorInfoOrBuilder getContributorInfoOrBuilder() {
     return getContributorInfo();
   }
@@ -526,6 +542,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The filename.
    */
+  @java.lang.Override
   public java.lang.String getFilename() {
     java.lang.Object ref = filename_;
     if (ref instanceof java.lang.String) {
@@ -549,6 +566,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for filename.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilenameBytes() {
     java.lang.Object ref = filename_;
     if (ref instanceof java.lang.String) {

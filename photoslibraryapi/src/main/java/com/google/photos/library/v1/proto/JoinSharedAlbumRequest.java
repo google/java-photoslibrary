@@ -103,13 +103,14 @@ public final class JoinSharedAlbumRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Token to join the shared album on behalf of the user.
+   * Required. Token to join the shared album on behalf of the user.
    * </pre>
    *
-   * <code>string share_token = 1;</code>
+   * <code>string share_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The shareToken.
    */
+  @java.lang.Override
   public java.lang.String getShareToken() {
     java.lang.Object ref = shareToken_;
     if (ref instanceof java.lang.String) {
@@ -125,13 +126,14 @@ public final class JoinSharedAlbumRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Token to join the shared album on behalf of the user.
+   * Required. Token to join the shared album on behalf of the user.
    * </pre>
    *
-   * <code>string share_token = 1;</code>
+   * <code>string share_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for shareToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getShareTokenBytes() {
     java.lang.Object ref = shareToken_;
     if (ref instanceof java.lang.String) {
@@ -469,10 +471,10 @@ public final class JoinSharedAlbumRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Token to join the shared album on behalf of the user.
+     * Required. Token to join the shared album on behalf of the user.
      * </pre>
      *
-     * <code>string share_token = 1;</code>
+     * <code>string share_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The shareToken.
      */
@@ -491,10 +493,10 @@ public final class JoinSharedAlbumRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Token to join the shared album on behalf of the user.
+     * Required. Token to join the shared album on behalf of the user.
      * </pre>
      *
-     * <code>string share_token = 1;</code>
+     * <code>string share_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for shareToken.
      */
@@ -513,10 +515,10 @@ public final class JoinSharedAlbumRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Token to join the shared album on behalf of the user.
+     * Required. Token to join the shared album on behalf of the user.
      * </pre>
      *
-     * <code>string share_token = 1;</code>
+     * <code>string share_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The shareToken to set.
      * @return This builder for chaining.
@@ -534,10 +536,10 @@ public final class JoinSharedAlbumRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Token to join the shared album on behalf of the user.
+     * Required. Token to join the shared album on behalf of the user.
      * </pre>
      *
-     * <code>string share_token = 1;</code>
+     * <code>string share_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -551,10 +553,10 @@ public final class JoinSharedAlbumRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Token to join the shared album on behalf of the user.
+     * Required. Token to join the shared album on behalf of the user.
      * </pre>
      *
-     * <code>string share_token = 1;</code>
+     * <code>string share_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for shareToken to set.
      * @return This builder for chaining.

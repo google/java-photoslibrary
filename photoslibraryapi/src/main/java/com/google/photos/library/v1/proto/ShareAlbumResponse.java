@@ -116,6 +116,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the shareInfo field is set.
    */
+  @java.lang.Override
   public boolean hasShareInfo() {
     return shareInfo_ != null;
   }
@@ -130,6 +131,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The shareInfo.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.ShareInfo getShareInfo() {
     return shareInfo_ == null
         ? com.google.photos.types.proto.ShareInfo.getDefaultInstance()
@@ -144,6 +146,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.photos.types.ShareInfo share_info = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.ShareInfoOrBuilder getShareInfoOrBuilder() {
     return getShareInfo();
   }

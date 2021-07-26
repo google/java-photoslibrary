@@ -109,13 +109,14 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The album to be created.
+   * Required. The album to be created.
    * </pre>
    *
-   * <code>.google.photos.types.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the album field is set.
    */
+  @java.lang.Override
   public boolean hasAlbum() {
     return album_ != null;
   }
@@ -123,13 +124,14 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The album to be created.
+   * Required. The album to be created.
    * </pre>
    *
-   * <code>.google.photos.types.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The album.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.Album getAlbum() {
     return album_ == null ? com.google.photos.types.proto.Album.getDefaultInstance() : album_;
   }
@@ -137,11 +139,12 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The album to be created.
+   * Required. The album to be created.
    * </pre>
    *
-   * <code>.google.photos.types.Album album = 1;</code>
+   * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.AlbumOrBuilder getAlbumOrBuilder() {
     return getAlbum();
   }
@@ -487,10 +490,10 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The album to be created.
+     * Required. The album to be created.
      * </pre>
      *
-     * <code>.google.photos.types.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return Whether the album field is set.
      */
@@ -501,10 +504,10 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The album to be created.
+     * Required. The album to be created.
      * </pre>
      *
-     * <code>.google.photos.types.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The album.
      */
@@ -519,10 +522,10 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The album to be created.
+     * Required. The album to be created.
      * </pre>
      *
-     * <code>.google.photos.types.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setAlbum(com.google.photos.types.proto.Album value) {
       if (albumBuilder_ == null) {
@@ -541,10 +544,10 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The album to be created.
+     * Required. The album to be created.
      * </pre>
      *
-     * <code>.google.photos.types.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setAlbum(com.google.photos.types.proto.Album.Builder builderForValue) {
       if (albumBuilder_ == null) {
@@ -560,10 +563,10 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The album to be created.
+     * Required. The album to be created.
      * </pre>
      *
-     * <code>.google.photos.types.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeAlbum(com.google.photos.types.proto.Album value) {
       if (albumBuilder_ == null) {
@@ -586,10 +589,10 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The album to be created.
+     * Required. The album to be created.
      * </pre>
      *
-     * <code>.google.photos.types.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearAlbum() {
       if (albumBuilder_ == null) {
@@ -606,10 +609,10 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The album to be created.
+     * Required. The album to be created.
      * </pre>
      *
-     * <code>.google.photos.types.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.photos.types.proto.Album.Builder getAlbumBuilder() {
 
@@ -620,10 +623,10 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The album to be created.
+     * Required. The album to be created.
      * </pre>
      *
-     * <code>.google.photos.types.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.photos.types.proto.AlbumOrBuilder getAlbumOrBuilder() {
       if (albumBuilder_ != null) {
@@ -636,10 +639,10 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The album to be created.
+     * Required. The album to be created.
      * </pre>
      *
-     * <code>.google.photos.types.Album album = 1;</code>
+     * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.photos.types.proto.Album,

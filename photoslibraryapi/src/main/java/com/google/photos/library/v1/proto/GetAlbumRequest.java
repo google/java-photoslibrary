@@ -102,13 +102,14 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Identifier of the album to be requested.
+   * Required. Identifier of the album to be requested.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The albumId.
    */
+  @java.lang.Override
   public java.lang.String getAlbumId() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -124,13 +125,14 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Identifier of the album to be requested.
+   * Required. Identifier of the album to be requested.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for albumId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAlbumIdBytes() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -466,10 +468,10 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Required. Identifier of the album to be requested.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The albumId.
      */
@@ -488,10 +490,10 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Required. Identifier of the album to be requested.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for albumId.
      */
@@ -510,10 +512,10 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Required. Identifier of the album to be requested.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The albumId to set.
      * @return This builder for chaining.
@@ -531,10 +533,10 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Required. Identifier of the album to be requested.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -548,10 +550,10 @@ public final class GetAlbumRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Identifier of the album to be requested.
+     * Required. Identifier of the album to be requested.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for albumId to set.
      * @return This builder for chaining.

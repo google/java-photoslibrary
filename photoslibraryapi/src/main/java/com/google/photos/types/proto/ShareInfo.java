@@ -150,6 +150,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sharedAlbumOptions field is set.
    */
+  @java.lang.Override
   public boolean hasSharedAlbumOptions() {
     return sharedAlbumOptions_ != null;
   }
@@ -165,6 +166,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sharedAlbumOptions.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.SharedAlbumOptions getSharedAlbumOptions() {
     return sharedAlbumOptions_ == null
         ? com.google.photos.types.proto.SharedAlbumOptions.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.SharedAlbumOptionsOrBuilder
       getSharedAlbumOptionsOrBuilder() {
     return getSharedAlbumOptions();
@@ -206,6 +209,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The shareableUrl.
    */
+  @java.lang.Override
   public java.lang.String getShareableUrl() {
     java.lang.Object ref = shareableUrl_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +240,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for shareableUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getShareableUrlBytes() {
     java.lang.Object ref = shareableUrl_;
     if (ref instanceof java.lang.String) {
@@ -264,6 +269,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The shareToken.
    */
+  @java.lang.Override
   public java.lang.String getShareToken() {
     java.lang.Object ref = shareToken_;
     if (ref instanceof java.lang.String) {
@@ -289,6 +295,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for shareToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getShareTokenBytes() {
     java.lang.Object ref = shareToken_;
     if (ref instanceof java.lang.String) {
@@ -315,6 +322,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The isJoined.
    */
+  @java.lang.Override
   public boolean getIsJoined() {
     return isJoined_;
   }
@@ -332,6 +340,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The isOwned.
    */
+  @java.lang.Override
   public boolean getIsOwned() {
     return isOwned_;
   }
@@ -349,6 +358,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The isJoinable.
    */
+  @java.lang.Override
   public boolean getIsJoinable() {
     return isJoinable_;
   }
@@ -1234,6 +1244,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The isJoined.
      */
+    @java.lang.Override
     public boolean getIsJoined() {
       return isJoined_;
     }
@@ -1287,6 +1298,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The isOwned.
      */
+    @java.lang.Override
     public boolean getIsOwned() {
       return isOwned_;
     }
@@ -1338,6 +1350,7 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The isJoinable.
      */
+    @java.lang.Override
     public boolean getIsJoinable() {
       return isJoinable_;
     }

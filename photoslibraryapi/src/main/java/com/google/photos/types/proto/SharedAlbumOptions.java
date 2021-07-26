@@ -111,6 +111,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
    *
    * @return The isCollaborative.
    */
+  @java.lang.Override
   public boolean getIsCollaborative() {
     return isCollaborative_;
   }
@@ -129,6 +130,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
    *
    * @return The isCommentable.
    */
+  @java.lang.Override
   public boolean getIsCommentable() {
     return isCommentable_;
   }
@@ -477,6 +479,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
      *
      * @return The isCollaborative.
      */
+    @java.lang.Override
     public boolean getIsCollaborative() {
       return isCollaborative_;
     }
@@ -531,6 +534,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
      *
      * @return The isCommentable.
      */
+    @java.lang.Override
     public boolean getIsCommentable() {
       return isCommentable_;
     }

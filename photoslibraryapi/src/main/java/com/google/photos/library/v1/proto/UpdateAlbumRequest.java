@@ -135,6 +135,7 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the album field is set.
    */
+  @java.lang.Override
   public boolean hasAlbum() {
     return album_ != null;
   }
@@ -153,6 +154,7 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The album.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.Album getAlbum() {
     return album_ == null ? com.google.photos.types.proto.Album.getDefaultInstance() : album_;
   }
@@ -169,6 +171,7 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.AlbumOrBuilder getAlbumOrBuilder() {
     return getAlbum();
   }
@@ -179,14 +182,16 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Indicate what fields in the provided album to update.
+   * Required. Indicate what fields in the provided album to update.
    * The only valid values are `title` and `cover_photo_media_item_id`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -194,14 +199,16 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Indicate what fields in the provided album to update.
+   * Required. Indicate what fields in the provided album to update.
    * The only valid values are `title` and `cover_photo_media_item_id`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -209,12 +216,14 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Indicate what fields in the provided album to update.
+   * Required. Indicate what fields in the provided album to update.
    * The only valid values are `title` and `cover_photo_media_item_id`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -805,11 +814,12 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicate what fields in the provided album to update.
+     * Required. Indicate what fields in the provided album to update.
      * The only valid values are `title` and `cover_photo_media_item_id`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -820,11 +830,12 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicate what fields in the provided album to update.
+     * Required. Indicate what fields in the provided album to update.
      * The only valid values are `title` and `cover_photo_media_item_id`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -841,11 +852,12 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicate what fields in the provided album to update.
+     * Required. Indicate what fields in the provided album to update.
      * The only valid values are `title` and `cover_photo_media_item_id`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -864,11 +876,12 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicate what fields in the provided album to update.
+     * Required. Indicate what fields in the provided album to update.
      * The only valid values are `title` and `cover_photo_media_item_id`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -884,11 +897,12 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicate what fields in the provided album to update.
+     * Required. Indicate what fields in the provided album to update.
      * The only valid values are `title` and `cover_photo_media_item_id`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -909,11 +923,12 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicate what fields in the provided album to update.
+     * Required. Indicate what fields in the provided album to update.
      * The only valid values are `title` and `cover_photo_media_item_id`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -930,11 +945,12 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicate what fields in the provided album to update.
+     * Required. Indicate what fields in the provided album to update.
      * The only valid values are `title` and `cover_photo_media_item_id`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -945,11 +961,12 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicate what fields in the provided album to update.
+     * Required. Indicate what fields in the provided album to update.
      * The only valid values are `title` and `cover_photo_media_item_id`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -964,11 +981,12 @@ public final class UpdateAlbumRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Indicate what fields in the provided album to update.
+     * Required. Indicate what fields in the provided album to update.
      * The only valid values are `title` and `cover_photo_media_item_id`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

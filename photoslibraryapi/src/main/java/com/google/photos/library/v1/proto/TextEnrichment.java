@@ -109,6 +109,7 @@ public final class TextEnrichment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The text.
    */
+  @java.lang.Override
   public java.lang.String getText() {
     java.lang.Object ref = text_;
     if (ref instanceof java.lang.String) {
@@ -131,6 +132,7 @@ public final class TextEnrichment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for text.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTextBytes() {
     java.lang.Object ref = text_;
     if (ref instanceof java.lang.String) {

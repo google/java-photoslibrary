@@ -39,40 +39,48 @@ public interface BatchCreateMediaItemsRequestOrBuilder
    *
    *
    * <pre>
-   * List of media items to be created.
+   * Required. List of media items to be created.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+   * <code>
+   * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.photos.library.v1.proto.NewMediaItem> getNewMediaItemsList();
   /**
    *
    *
    * <pre>
-   * List of media items to be created.
+   * Required. List of media items to be created.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+   * <code>
+   * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.photos.library.v1.proto.NewMediaItem getNewMediaItems(int index);
   /**
    *
    *
    * <pre>
-   * List of media items to be created.
+   * Required. List of media items to be created.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+   * <code>
+   * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getNewMediaItemsCount();
   /**
    *
    *
    * <pre>
-   * List of media items to be created.
+   * Required. List of media items to be created.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+   * <code>
+   * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.photos.library.v1.proto.NewMediaItemOrBuilder>
       getNewMediaItemsOrBuilderList();
@@ -80,10 +88,12 @@ public interface BatchCreateMediaItemsRequestOrBuilder
    *
    *
    * <pre>
-   * List of media items to be created.
+   * Required. List of media items to be created.
    * </pre>
    *
-   * <code>repeated .google.photos.library.v1.NewMediaItem new_media_items = 2;</code>
+   * <code>
+   * repeated .google.photos.library.v1.NewMediaItem new_media_items = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.photos.library.v1.proto.NewMediaItemOrBuilder getNewMediaItemsOrBuilder(int index);
 

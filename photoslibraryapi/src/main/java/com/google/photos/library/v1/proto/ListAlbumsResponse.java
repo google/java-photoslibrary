@@ -124,6 +124,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.photos.types.proto.Album> getAlbumsList() {
     return albums_;
   }
@@ -137,6 +138,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.photos.types.proto.AlbumOrBuilder>
       getAlbumsOrBuilderList() {
     return albums_;
@@ -151,6 +153,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
+  @java.lang.Override
   public int getAlbumsCount() {
     return albums_.size();
   }
@@ -164,6 +167,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.Album getAlbums(int index) {
     return albums_.get(index);
   }
@@ -177,6 +181,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.photos.types.Album albums = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.AlbumOrBuilder getAlbumsOrBuilder(int index) {
     return albums_.get(index);
   }
@@ -195,6 +200,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -218,6 +224,7 @@ public final class ListAlbumsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

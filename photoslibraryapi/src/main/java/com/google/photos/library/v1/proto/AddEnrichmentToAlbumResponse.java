@@ -117,6 +117,7 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
    *
    * @return Whether the enrichmentItem field is set.
    */
+  @java.lang.Override
   public boolean hasEnrichmentItem() {
     return enrichmentItem_ != null;
   }
@@ -131,6 +132,7 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
    *
    * @return The enrichmentItem.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.EnrichmentItem getEnrichmentItem() {
     return enrichmentItem_ == null
         ? com.google.photos.library.v1.proto.EnrichmentItem.getDefaultInstance()
@@ -145,6 +147,7 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
    *
    * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.EnrichmentItemOrBuilder getEnrichmentItemOrBuilder() {
     return getEnrichmentItem();
   }

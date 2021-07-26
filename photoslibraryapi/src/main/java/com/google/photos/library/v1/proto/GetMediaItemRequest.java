@@ -103,13 +103,14 @@ public final class GetMediaItemRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Identifier of the media item to be requested.
+   * Required. Identifier of the media item to be requested.
    * </pre>
    *
-   * <code>string media_item_id = 1;</code>
+   * <code>string media_item_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The mediaItemId.
    */
+  @java.lang.Override
   public java.lang.String getMediaItemId() {
     java.lang.Object ref = mediaItemId_;
     if (ref instanceof java.lang.String) {
@@ -125,13 +126,14 @@ public final class GetMediaItemRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Identifier of the media item to be requested.
+   * Required. Identifier of the media item to be requested.
    * </pre>
    *
-   * <code>string media_item_id = 1;</code>
+   * <code>string media_item_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for mediaItemId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMediaItemIdBytes() {
     java.lang.Object ref = mediaItemId_;
     if (ref instanceof java.lang.String) {
@@ -469,10 +471,10 @@ public final class GetMediaItemRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier of the media item to be requested.
+     * Required. Identifier of the media item to be requested.
      * </pre>
      *
-     * <code>string media_item_id = 1;</code>
+     * <code>string media_item_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The mediaItemId.
      */
@@ -491,10 +493,10 @@ public final class GetMediaItemRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier of the media item to be requested.
+     * Required. Identifier of the media item to be requested.
      * </pre>
      *
-     * <code>string media_item_id = 1;</code>
+     * <code>string media_item_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for mediaItemId.
      */
@@ -513,10 +515,10 @@ public final class GetMediaItemRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier of the media item to be requested.
+     * Required. Identifier of the media item to be requested.
      * </pre>
      *
-     * <code>string media_item_id = 1;</code>
+     * <code>string media_item_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The mediaItemId to set.
      * @return This builder for chaining.
@@ -534,10 +536,10 @@ public final class GetMediaItemRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier of the media item to be requested.
+     * Required. Identifier of the media item to be requested.
      * </pre>
      *
-     * <code>string media_item_id = 1;</code>
+     * <code>string media_item_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -551,10 +553,10 @@ public final class GetMediaItemRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier of the media item to be requested.
+     * Required. Identifier of the media item to be requested.
      * </pre>
      *
-     * <code>string media_item_id = 1;</code>
+     * <code>string media_item_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for mediaItemId to set.
      * @return This builder for chaining.

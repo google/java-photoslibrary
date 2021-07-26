@@ -119,6 +119,7 @@ public final class ContributorInfo extends com.google.protobuf.GeneratedMessageV
    *
    * @return The profilePictureBaseUrl.
    */
+  @java.lang.Override
   public java.lang.String getProfilePictureBaseUrl() {
     java.lang.Object ref = profilePictureBaseUrl_;
     if (ref instanceof java.lang.String) {
@@ -141,6 +142,7 @@ public final class ContributorInfo extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for profilePictureBaseUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProfilePictureBaseUrlBytes() {
     java.lang.Object ref = profilePictureBaseUrl_;
     if (ref instanceof java.lang.String) {
@@ -166,6 +168,7 @@ public final class ContributorInfo extends com.google.protobuf.GeneratedMessageV
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +191,7 @@ public final class ContributorInfo extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {

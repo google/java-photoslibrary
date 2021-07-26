@@ -175,6 +175,7 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -199,6 +200,7 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -223,6 +225,7 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the simpleMediaItem field is set.
    */
+  @java.lang.Override
   public boolean hasSimpleMediaItem() {
     return newMediaItemTypeCase_ == 2;
   }
@@ -237,6 +240,7 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The simpleMediaItem.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.SimpleMediaItem getSimpleMediaItem() {
     if (newMediaItemTypeCase_ == 2) {
       return (com.google.photos.library.v1.proto.SimpleMediaItem) newMediaItemType_;
@@ -252,6 +256,7 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.library.v1.SimpleMediaItem simple_media_item = 2;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.SimpleMediaItemOrBuilder getSimpleMediaItemOrBuilder() {
     if (newMediaItemTypeCase_ == 2) {
       return (com.google.photos.library.v1.proto.SimpleMediaItem) newMediaItemType_;
@@ -768,6 +773,7 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the simpleMediaItem field is set.
      */
+    @java.lang.Override
     public boolean hasSimpleMediaItem() {
       return newMediaItemTypeCase_ == 2;
     }
@@ -782,6 +788,7 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The simpleMediaItem.
      */
+    @java.lang.Override
     public com.google.photos.library.v1.proto.SimpleMediaItem getSimpleMediaItem() {
       if (simpleMediaItemBuilder_ == null) {
         if (newMediaItemTypeCase_ == 2) {
@@ -915,6 +922,7 @@ public final class NewMediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.photos.library.v1.SimpleMediaItem simple_media_item = 2;</code>
      */
+    @java.lang.Override
     public com.google.photos.library.v1.proto.SimpleMediaItemOrBuilder
         getSimpleMediaItemOrBuilder() {
       if ((newMediaItemTypeCase_ == 2) && (simpleMediaItemBuilder_ != null)) {

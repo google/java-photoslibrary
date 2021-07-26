@@ -118,14 +118,15 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Identifier of the album to be shared. This `albumId` must belong to an
+   * Required. Identifier of the album to be shared. This `albumId` must belong to an
    * album created by the developer.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The albumId.
    */
+  @java.lang.Override
   public java.lang.String getAlbumId() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -141,14 +142,15 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Identifier of the album to be shared. This `albumId` must belong to an
+   * Required. Identifier of the album to be shared. This `albumId` must belong to an
    * album created by the developer.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for albumId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAlbumIdBytes() {
     java.lang.Object ref = albumId_;
     if (ref instanceof java.lang.String) {
@@ -174,6 +176,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the sharedAlbumOptions field is set.
    */
+  @java.lang.Override
   public boolean hasSharedAlbumOptions() {
     return sharedAlbumOptions_ != null;
   }
@@ -188,6 +191,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The sharedAlbumOptions.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.SharedAlbumOptions getSharedAlbumOptions() {
     return sharedAlbumOptions_ == null
         ? com.google.photos.types.proto.SharedAlbumOptions.getDefaultInstance()
@@ -202,6 +206,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.SharedAlbumOptionsOrBuilder
       getSharedAlbumOptionsOrBuilder() {
     return getSharedAlbumOptions();
@@ -558,11 +563,11 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Identifier of the album to be shared. This `albumId` must belong to an
+     * Required. Identifier of the album to be shared. This `albumId` must belong to an
      * album created by the developer.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The albumId.
      */
@@ -581,11 +586,11 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Identifier of the album to be shared. This `albumId` must belong to an
+     * Required. Identifier of the album to be shared. This `albumId` must belong to an
      * album created by the developer.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for albumId.
      */
@@ -604,11 +609,11 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Identifier of the album to be shared. This `albumId` must belong to an
+     * Required. Identifier of the album to be shared. This `albumId` must belong to an
      * album created by the developer.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The albumId to set.
      * @return This builder for chaining.
@@ -626,11 +631,11 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Identifier of the album to be shared. This `albumId` must belong to an
+     * Required. Identifier of the album to be shared. This `albumId` must belong to an
      * album created by the developer.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -644,11 +649,11 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Identifier of the album to be shared. This `albumId` must belong to an
+     * Required. Identifier of the album to be shared. This `albumId` must belong to an
      * album created by the developer.
      * </pre>
      *
-     * <code>string album_id = 1;</code>
+     * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for albumId to set.
      * @return This builder for chaining.

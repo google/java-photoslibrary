@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.photos.library.v1.internal;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -73,7 +73,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service which allows developers to perform the following actions on behalf
  * of the user: - upload media items directly to their Google Photos library - create albums - add
@@ -84,16 +84,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+ * <pre>{@code
+ * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+ *     InternalPhotosLibraryClient.create()) {
  *   Album album = Album.newBuilder().build();
  *   Album response = internalPhotosLibraryClient.createAlbum(album);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the internalPhotosLibraryClient object to clean up
+ * <p>Note: close() needs to be called on the InternalPhotosLibraryClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -122,30 +121,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InternalPhotosLibrarySettings internalPhotosLibrarySettings =
  *     InternalPhotosLibrarySettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * InternalPhotosLibraryClient internalPhotosLibraryClient =
  *     InternalPhotosLibraryClient.create(internalPhotosLibrarySettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * InternalPhotosLibrarySettings internalPhotosLibrarySettings =
  *     InternalPhotosLibrarySettings.newBuilder().setEndpoint(myEndpoint).build();
  * InternalPhotosLibraryClient internalPhotosLibraryClient =
  *     InternalPhotosLibraryClient.create(internalPhotosLibrarySettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class InternalPhotosLibraryClient implements BackgroundResource {
   private final InternalPhotosLibrarySettings settings;
   private final PhotosLibraryStub stub;
@@ -166,7 +162,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
 
   /**
    * Constructs an instance of InternalPhotosLibraryClient, using the given stub for making calls.
-   * This is for advanced usage - prefer to use InternalPhotosLibrarySettings}.
+   * This is for advanced usage - prefer using create(InternalPhotosLibrarySettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InternalPhotosLibraryClient create(PhotosLibraryStub stub) {
@@ -198,20 +194,21 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an album in a user's Google Photos library.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
    *   Album album = Album.newBuilder().build();
    *   Album response = internalPhotosLibraryClient.createAlbum(album);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param album The album to be created.
+   * @param album Required. The album to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Album createAlbum(Album album) {
@@ -219,21 +216,20 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return createAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an album in a user's Google Photos library.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   Album album = Album.newBuilder().build();
-   *   CreateAlbumRequest request = CreateAlbumRequest.newBuilder()
-   *     .setAlbum(album)
-   *     .build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   CreateAlbumRequest request =
+   *       CreateAlbumRequest.newBuilder().setAlbum(Album.newBuilder().build()).build();
    *   Album response = internalPhotosLibraryClient.createAlbum(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -242,29 +238,29 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return createAlbumCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an album in a user's Google Photos library.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   Album album = Album.newBuilder().build();
-   *   CreateAlbumRequest request = CreateAlbumRequest.newBuilder()
-   *     .setAlbum(album)
-   *     .build();
-   *   ApiFuture&lt;Album&gt; future = internalPhotosLibraryClient.createAlbumCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   CreateAlbumRequest request =
+   *       CreateAlbumRequest.newBuilder().setAlbum(Album.newBuilder().build()).build();
+   *   ApiFuture<Album> future =
+   *       internalPhotosLibraryClient.createAlbumCallable().futureCall(request);
+   *   // Do something.
    *   Album response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<CreateAlbumRequest, Album> createAlbumCallable() {
     return stub.createAlbumCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates one or more media items in a user's Google Photos library.
    *
@@ -285,18 +281,20 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   List&lt;NewMediaItem&gt; newMediaItems = new ArrayList&lt;&gt;();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String albumId = "albumId-920410134";
+   *   List<NewMediaItem> newMediaItems = new ArrayList<>();
    *   AlbumPosition albumPosition = AlbumPosition.newBuilder().build();
-   *   BatchCreateMediaItemsResponse response = internalPhotosLibraryClient.batchCreateMediaItems(albumId, newMediaItems, albumPosition);
+   *   BatchCreateMediaItemsResponse response =
+   *       internalPhotosLibraryClient.batchCreateMediaItems(albumId, newMediaItems, albumPosition);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param albumId Identifier of the album where the media items are added. The media items are
    *     also added to the user's library. This is an optional field.
-   * @param newMediaItems List of media items to be created.
+   * @param newMediaItems Required. List of media items to be created.
    * @param albumPosition Position in the album where the media items are added. If not specified,
    *     the media items are added to the end of the album (as per the default value, that is,
    *     `LAST_IN_ALBUM`). The request fails if this field is set and the `albumId` is not
@@ -315,7 +313,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return batchCreateMediaItems(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates one or more media items in a user's Google Photos library.
    *
@@ -336,15 +334,19 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   List&lt;NewMediaItem&gt; newMediaItems = new ArrayList&lt;&gt;();
-   *   BatchCreateMediaItemsRequest request = BatchCreateMediaItemsRequest.newBuilder()
-   *     .addAllNewMediaItems(newMediaItems)
-   *     .build();
-   *   BatchCreateMediaItemsResponse response = internalPhotosLibraryClient.batchCreateMediaItems(request);
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   BatchCreateMediaItemsRequest request =
+   *       BatchCreateMediaItemsRequest.newBuilder()
+   *           .setAlbumId("albumId-920410134")
+   *           .addAllNewMediaItems(new ArrayList<NewMediaItem>())
+   *           .setAlbumPosition(AlbumPosition.newBuilder().build())
+   *           .build();
+   *   BatchCreateMediaItemsResponse response =
+   *       internalPhotosLibraryClient.batchCreateMediaItems(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -354,7 +356,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return batchCreateMediaItemsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates one or more media items in a user's Google Photos library.
    *
@@ -375,24 +377,28 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   List&lt;NewMediaItem&gt; newMediaItems = new ArrayList&lt;&gt;();
-   *   BatchCreateMediaItemsRequest request = BatchCreateMediaItemsRequest.newBuilder()
-   *     .addAllNewMediaItems(newMediaItems)
-   *     .build();
-   *   ApiFuture&lt;BatchCreateMediaItemsResponse&gt; future = internalPhotosLibraryClient.batchCreateMediaItemsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   BatchCreateMediaItemsRequest request =
+   *       BatchCreateMediaItemsRequest.newBuilder()
+   *           .setAlbumId("albumId-920410134")
+   *           .addAllNewMediaItems(new ArrayList<NewMediaItem>())
+   *           .setAlbumPosition(AlbumPosition.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BatchCreateMediaItemsResponse> future =
+   *       internalPhotosLibraryClient.batchCreateMediaItemsCallable().futureCall(request);
+   *   // Do something.
    *   BatchCreateMediaItemsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<BatchCreateMediaItemsRequest, BatchCreateMediaItemsResponse>
       batchCreateMediaItemsCallable() {
     return stub.batchCreateMediaItemsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds one or more media items in a user's Google Photos library to an album. The media items and
    * albums must have been created by the developer via the API.
@@ -411,18 +417,20 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
-   *   BatchAddMediaItemsToAlbumResponse response = internalPhotosLibraryClient.batchAddMediaItemsToAlbum(albumId, mediaItemIds);
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String albumId = "albumId-920410134";
+   *   List<String> mediaItemIds = new ArrayList<>();
+   *   BatchAddMediaItemsToAlbumResponse response =
+   *       internalPhotosLibraryClient.batchAddMediaItemsToAlbum(albumId, mediaItemIds);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param albumId Identifier of the [Album][google.photos.types.Album] that the media items are
-   *     added to.
-   * @param mediaItemIds Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be added.
-   *     The maximum number of media items that can be added in one call is 50.
+   * @param albumId Required. Identifier of the [Album][google.photos.types.Album] that the media
+   *     items are added to.
+   * @param mediaItemIds Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   *     be added. The maximum number of media items that can be added in one call is 50.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchAddMediaItemsToAlbumResponse batchAddMediaItemsToAlbum(
@@ -435,7 +443,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return batchAddMediaItemsToAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds one or more media items in a user's Google Photos library to an album. The media items and
    * albums must have been created by the developer via the API.
@@ -454,17 +462,18 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
-   *   BatchAddMediaItemsToAlbumRequest request = BatchAddMediaItemsToAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .addAllMediaItemIds(mediaItemIds)
-   *     .build();
-   *   BatchAddMediaItemsToAlbumResponse response = internalPhotosLibraryClient.batchAddMediaItemsToAlbum(request);
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   BatchAddMediaItemsToAlbumRequest request =
+   *       BatchAddMediaItemsToAlbumRequest.newBuilder()
+   *           .addAllMediaItemIds(new ArrayList<String>())
+   *           .setAlbumId("albumId-920410134")
+   *           .build();
+   *   BatchAddMediaItemsToAlbumResponse response =
+   *       internalPhotosLibraryClient.batchAddMediaItemsToAlbum(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -474,7 +483,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return batchAddMediaItemsToAlbumCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds one or more media items in a user's Google Photos library to an album. The media items and
    * albums must have been created by the developer via the API.
@@ -493,26 +502,27 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
-   *   BatchAddMediaItemsToAlbumRequest request = BatchAddMediaItemsToAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .addAllMediaItemIds(mediaItemIds)
-   *     .build();
-   *   ApiFuture&lt;BatchAddMediaItemsToAlbumResponse&gt; future = internalPhotosLibraryClient.batchAddMediaItemsToAlbumCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   BatchAddMediaItemsToAlbumRequest request =
+   *       BatchAddMediaItemsToAlbumRequest.newBuilder()
+   *           .addAllMediaItemIds(new ArrayList<String>())
+   *           .setAlbumId("albumId-920410134")
+   *           .build();
+   *   ApiFuture<BatchAddMediaItemsToAlbumResponse> future =
+   *       internalPhotosLibraryClient.batchAddMediaItemsToAlbumCallable().futureCall(request);
+   *   // Do something.
    *   BatchAddMediaItemsToAlbumResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<BatchAddMediaItemsToAlbumRequest, BatchAddMediaItemsToAlbumResponse>
       batchAddMediaItemsToAlbumCallable() {
     return stub.batchAddMediaItemsToAlbumCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches for media items in a user's Google Photos library. If no filters are set, then all
    * media items in the user's library are returned. If an album is set, all media items in the
@@ -522,14 +532,44 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   Filters filters = Filters.newBuilder().build();
+   *   for (MediaItem element : internalPhotosLibraryClient.searchMediaItems(filters).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param filters Filters to apply to the request. Can't be set in conjunction with an `albumId`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchMediaItemsPagedResponse searchMediaItems(Filters filters) {
+    SearchMediaItemsRequest request =
+        SearchMediaItemsRequest.newBuilder().setFilters(filters).build();
+    return searchMediaItems(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for media items in a user's Google Photos library. If no filters are set, then all
+   * media items in the user's library are returned. If an album is set, all media items in the
+   * specified album are returned. If filters are specified, media items that match the filters from
+   * the user's library are listed. If you set both the album and the filters, the request results
+   * in an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String albumId = "albumId-920410134";
    *   for (MediaItem element : internalPhotosLibraryClient.searchMediaItems(albumId).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param albumId Identifier of an album. If populated, lists all media items in specified album.
    *     Can't set in conjunction with any filters.
@@ -541,7 +581,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return searchMediaItems(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches for media items in a user's Google Photos library. If no filters are set, then all
    * media items in the user's library are returned. If an album is set, all media items in the
@@ -551,42 +591,21 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   Filters filters = Filters.newBuilder().build();
-   *   for (MediaItem element : internalPhotosLibraryClient.searchMediaItems(filters).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param filters Filters to apply to the request. Can't be set in conjunction with an `albumId`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SearchMediaItemsPagedResponse searchMediaItems(Filters filters) {
-    SearchMediaItemsRequest request =
-        SearchMediaItemsRequest.newBuilder().setFilters(filters).build();
-    return searchMediaItems(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Searches for media items in a user's Google Photos library. If no filters are set, then all
-   * media items in the user's library are returned. If an album is set, all media items in the
-   * specified album are returned. If filters are specified, media items that match the filters from
-   * the user's library are listed. If you set both the album and the filters, the request results
-   * in an error.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   SearchMediaItemsRequest request = SearchMediaItemsRequest.newBuilder().build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   SearchMediaItemsRequest request =
+   *       SearchMediaItemsRequest.newBuilder()
+   *           .setAlbumId("albumId-920410134")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilters(Filters.newBuilder().build())
+   *           .build();
    *   for (MediaItem element : internalPhotosLibraryClient.searchMediaItems(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -595,7 +614,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return searchMediaItemsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches for media items in a user's Google Photos library. If no filters are set, then all
    * media items in the user's library are returned. If an album is set, all media items in the
@@ -605,23 +624,31 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   SearchMediaItemsRequest request = SearchMediaItemsRequest.newBuilder().build();
-   *   ApiFuture&lt;SearchMediaItemsPagedResponse&gt; future = internalPhotosLibraryClient.searchMediaItemsPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   SearchMediaItemsRequest request =
+   *       SearchMediaItemsRequest.newBuilder()
+   *           .setAlbumId("albumId-920410134")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilters(Filters.newBuilder().build())
+   *           .build();
+   *   ApiFuture<MediaItem> future =
+   *       internalPhotosLibraryClient.searchMediaItemsPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (MediaItem element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SearchMediaItemsRequest, SearchMediaItemsPagedResponse>
       searchMediaItemsPagedCallable() {
     return stub.searchMediaItemsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches for media items in a user's Google Photos library. If no filters are set, then all
    * media items in the user's library are returned. If an album is set, all media items in the
@@ -631,12 +658,20 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   SearchMediaItemsRequest request = SearchMediaItemsRequest.newBuilder().build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   SearchMediaItemsRequest request =
+   *       SearchMediaItemsRequest.newBuilder()
+   *           .setAlbumId("albumId-920410134")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilters(Filters.newBuilder().build())
+   *           .build();
    *   while (true) {
-   *     SearchMediaItemsResponse response = internalPhotosLibraryClient.searchMediaItemsCallable().call(request);
-   *     for (MediaItem element : response.getMediaItemsList()) {
+   *     SearchMediaItemsResponse response =
+   *         internalPhotosLibraryClient.searchMediaItemsCallable().call(request);
+   *     for (MediaItem element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -647,27 +682,32 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SearchMediaItemsRequest, SearchMediaItemsResponse>
       searchMediaItemsCallable() {
     return stub.searchMediaItemsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all media items from a user's Google Photos library.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   ListMediaItemsRequest request = ListMediaItemsRequest.newBuilder().build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   ListMediaItemsRequest request =
+   *       ListMediaItemsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   for (MediaItem element : internalPhotosLibraryClient.listMediaItems(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -676,40 +716,52 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return listMediaItemsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all media items from a user's Google Photos library.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   ListMediaItemsRequest request = ListMediaItemsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListMediaItemsPagedResponse&gt; future = internalPhotosLibraryClient.listMediaItemsPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   ListMediaItemsRequest request =
+   *       ListMediaItemsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<MediaItem> future =
+   *       internalPhotosLibraryClient.listMediaItemsPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (MediaItem element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListMediaItemsRequest, ListMediaItemsPagedResponse>
       listMediaItemsPagedCallable() {
     return stub.listMediaItemsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List all media items from a user's Google Photos library.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   ListMediaItemsRequest request = ListMediaItemsRequest.newBuilder().build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   ListMediaItemsRequest request =
+   *       ListMediaItemsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
-   *     ListMediaItemsResponse response = internalPhotosLibraryClient.listMediaItemsCallable().call(request);
-   *     for (MediaItem element : response.getMediaItemsList()) {
+   *     ListMediaItemsResponse response =
+   *         internalPhotosLibraryClient.listMediaItemsCallable().call(request);
+   *     for (MediaItem element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -720,27 +772,28 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListMediaItemsRequest, ListMediaItemsResponse>
       listMediaItemsCallable() {
     return stub.listMediaItemsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the media item for the specified media item identifier.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String mediaItemId = "";
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String mediaItemId = "mediaItemId-623842158";
    *   MediaItem response = internalPhotosLibraryClient.getMediaItem(mediaItemId);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param mediaItemId Identifier of the media item to be requested.
+   * @param mediaItemId Required. Identifier of the media item to be requested.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MediaItem getMediaItem(String mediaItemId) {
@@ -749,21 +802,20 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return getMediaItem(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the media item for the specified media item identifier.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String mediaItemId = "";
-   *   GetMediaItemRequest request = GetMediaItemRequest.newBuilder()
-   *     .setMediaItemId(mediaItemId)
-   *     .build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   GetMediaItemRequest request =
+   *       GetMediaItemRequest.newBuilder().setMediaItemId("mediaItemId-623842158").build();
    *   MediaItem response = internalPhotosLibraryClient.getMediaItem(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -772,45 +824,47 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return getMediaItemCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the media item for the specified media item identifier.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String mediaItemId = "";
-   *   GetMediaItemRequest request = GetMediaItemRequest.newBuilder()
-   *     .setMediaItemId(mediaItemId)
-   *     .build();
-   *   ApiFuture&lt;MediaItem&gt; future = internalPhotosLibraryClient.getMediaItemCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   GetMediaItemRequest request =
+   *       GetMediaItemRequest.newBuilder().setMediaItemId("mediaItemId-623842158").build();
+   *   ApiFuture<MediaItem> future =
+   *       internalPhotosLibraryClient.getMediaItemCallable().futureCall(request);
+   *   // Do something.
    *   MediaItem response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetMediaItemRequest, MediaItem> getMediaItemCallable() {
     return stub.getMediaItemCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of media items for the specified media item identifiers. Items are returned in
    * the same order as the supplied identifiers.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
-   *   BatchGetMediaItemsResponse response = internalPhotosLibraryClient.batchGetMediaItems(mediaItemIds);
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   List<String> mediaItemIds = new ArrayList<>();
+   *   BatchGetMediaItemsResponse response =
+   *       internalPhotosLibraryClient.batchGetMediaItems(mediaItemIds);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param mediaItemIds Identifiers of the media items to be requested. Must not contain repeated
-   *     identifiers and cannot be empty. The maximum number of media items that can be retrieved in
-   *     one call is 50.
+   * @param mediaItemIds Required. Identifiers of the media items to be requested. Must not contain
+   *     repeated identifiers and cannot be empty. The maximum number of media items that can be
+   *     retrieved in one call is 50.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchGetMediaItemsResponse batchGetMediaItems(List<String> mediaItemIds) {
@@ -819,22 +873,23 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return batchGetMediaItems(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of media items for the specified media item identifiers. Items are returned in
    * the same order as the supplied identifiers.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
-   *   BatchGetMediaItemsRequest request = BatchGetMediaItemsRequest.newBuilder()
-   *     .addAllMediaItemIds(mediaItemIds)
-   *     .build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   BatchGetMediaItemsRequest request =
+   *       BatchGetMediaItemsRequest.newBuilder()
+   *           .addAllMediaItemIds(new ArrayList<String>())
+   *           .build();
    *   BatchGetMediaItemsResponse response = internalPhotosLibraryClient.batchGetMediaItems(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -843,44 +898,48 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return batchGetMediaItemsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of media items for the specified media item identifiers. Items are returned in
    * the same order as the supplied identifiers.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
-   *   BatchGetMediaItemsRequest request = BatchGetMediaItemsRequest.newBuilder()
-   *     .addAllMediaItemIds(mediaItemIds)
-   *     .build();
-   *   ApiFuture&lt;BatchGetMediaItemsResponse&gt; future = internalPhotosLibraryClient.batchGetMediaItemsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   BatchGetMediaItemsRequest request =
+   *       BatchGetMediaItemsRequest.newBuilder()
+   *           .addAllMediaItemIds(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchGetMediaItemsResponse> future =
+   *       internalPhotosLibraryClient.batchGetMediaItemsCallable().futureCall(request);
+   *   // Do something.
    *   BatchGetMediaItemsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<BatchGetMediaItemsRequest, BatchGetMediaItemsResponse>
       batchGetMediaItemsCallable() {
     return stub.batchGetMediaItemsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all albums shown to a user in the Albums tab of the Google Photos app.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   boolean excludeNonAppCreatedData = false;
-   *   for (Album element : internalPhotosLibraryClient.listAlbums(excludeNonAppCreatedData).iterateAll()) {
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   boolean excludeNonAppCreatedData = true;
+   *   for (Album element :
+   *       internalPhotosLibraryClient.listAlbums(excludeNonAppCreatedData).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param excludeNonAppCreatedData If set, the results exclude media items that were not created
    *     by this app. Defaults to false (all albums are returned). This field is ignored if the
@@ -895,20 +954,26 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return listAlbums(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all albums shown to a user in the Albums tab of the Google Photos app.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   ListAlbumsRequest request = ListAlbumsRequest.newBuilder().build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   ListAlbumsRequest request =
+   *       ListAlbumsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setExcludeNonAppCreatedData(true)
+   *           .build();
    *   for (Album element : internalPhotosLibraryClient.listAlbums(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -917,39 +982,53 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return listAlbumsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all albums shown to a user in the Albums tab of the Google Photos app.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   ListAlbumsRequest request = ListAlbumsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListAlbumsPagedResponse&gt; future = internalPhotosLibraryClient.listAlbumsPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   ListAlbumsRequest request =
+   *       ListAlbumsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setExcludeNonAppCreatedData(true)
+   *           .build();
+   *   ApiFuture<Album> future =
+   *       internalPhotosLibraryClient.listAlbumsPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Album element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListAlbumsRequest, ListAlbumsPagedResponse> listAlbumsPagedCallable() {
     return stub.listAlbumsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all albums shown to a user in the Albums tab of the Google Photos app.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   ListAlbumsRequest request = ListAlbumsRequest.newBuilder().build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   ListAlbumsRequest request =
+   *       ListAlbumsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setExcludeNonAppCreatedData(true)
+   *           .build();
    *   while (true) {
-   *     ListAlbumsResponse response = internalPhotosLibraryClient.listAlbumsCallable().call(request);
-   *     for (Album element : response.getAlbumsList()) {
+   *     ListAlbumsResponse response =
+   *         internalPhotosLibraryClient.listAlbumsCallable().call(request);
+   *     for (Album element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -960,27 +1039,28 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListAlbumsRequest, ListAlbumsResponse> listAlbumsCallable() {
     return stub.listAlbumsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the album based on the specified `albumId`. The `albumId` must be the ID of an album
    * owned by the user or a shared album that the user has joined.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String albumId = "albumId-920410134";
    *   Album response = internalPhotosLibraryClient.getAlbum(albumId);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param albumId Identifier of the album to be requested.
+   * @param albumId Required. Identifier of the album to be requested.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Album getAlbum(String albumId) {
@@ -988,22 +1068,21 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return getAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the album based on the specified `albumId`. The `albumId` must be the ID of an album
    * owned by the user or a shared album that the user has joined.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   GetAlbumRequest request = GetAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   GetAlbumRequest request =
+   *       GetAlbumRequest.newBuilder().setAlbumId("albumId-920410134").build();
    *   Album response = internalPhotosLibraryClient.getAlbum(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1012,43 +1091,43 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return getAlbumCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the album based on the specified `albumId`. The `albumId` must be the ID of an album
    * owned by the user or a shared album that the user has joined.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   GetAlbumRequest request = GetAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .build();
-   *   ApiFuture&lt;Album&gt; future = internalPhotosLibraryClient.getAlbumCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   GetAlbumRequest request =
+   *       GetAlbumRequest.newBuilder().setAlbumId("albumId-920410134").build();
+   *   ApiFuture<Album> future = internalPhotosLibraryClient.getAlbumCallable().futureCall(request);
+   *   // Do something.
    *   Album response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetAlbumRequest, Album> getAlbumCallable() {
     return stub.getAlbumCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the album based on the specified `shareToken`.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String shareToken = "";
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String shareToken = "shareToken-1798271654";
    *   Album response = internalPhotosLibraryClient.getSharedAlbum(shareToken);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param shareToken Share token of the album to be requested.
+   * @param shareToken Required. Share token of the album to be requested.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Album getSharedAlbum(String shareToken) {
@@ -1057,21 +1136,20 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return getSharedAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the album based on the specified `shareToken`.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String shareToken = "";
-   *   GetSharedAlbumRequest request = GetSharedAlbumRequest.newBuilder()
-   *     .setShareToken(shareToken)
-   *     .build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   GetSharedAlbumRequest request =
+   *       GetSharedAlbumRequest.newBuilder().setShareToken("shareToken-1798271654").build();
    *   Album response = internalPhotosLibraryClient.getSharedAlbum(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1080,46 +1158,50 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return getSharedAlbumCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the album based on the specified `shareToken`.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String shareToken = "";
-   *   GetSharedAlbumRequest request = GetSharedAlbumRequest.newBuilder()
-   *     .setShareToken(shareToken)
-   *     .build();
-   *   ApiFuture&lt;Album&gt; future = internalPhotosLibraryClient.getSharedAlbumCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   GetSharedAlbumRequest request =
+   *       GetSharedAlbumRequest.newBuilder().setShareToken("shareToken-1798271654").build();
+   *   ApiFuture<Album> future =
+   *       internalPhotosLibraryClient.getSharedAlbumCallable().futureCall(request);
+   *   // Do something.
    *   Album response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetSharedAlbumRequest, Album> getSharedAlbumCallable() {
     return stub.getSharedAlbumCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds an enrichment at a specified position in a defined album.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String albumId = "albumId-920410134";
    *   NewEnrichmentItem newEnrichmentItem = NewEnrichmentItem.newBuilder().build();
    *   AlbumPosition albumPosition = AlbumPosition.newBuilder().build();
-   *   AddEnrichmentToAlbumResponse response = internalPhotosLibraryClient.addEnrichmentToAlbum(albumId, newEnrichmentItem, albumPosition);
+   *   AddEnrichmentToAlbumResponse response =
+   *       internalPhotosLibraryClient.addEnrichmentToAlbum(
+   *           albumId, newEnrichmentItem, albumPosition);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param albumId Identifier of the album where the enrichment is to be added.
-   * @param newEnrichmentItem The enrichment to be added.
-   * @param albumPosition The position in the album where the enrichment is to be inserted.
+   * @param albumId Required. Identifier of the album where the enrichment is to be added.
+   * @param newEnrichmentItem Required. The enrichment to be added.
+   * @param albumPosition Required. The position in the album where the enrichment is to be
+   *     inserted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AddEnrichmentToAlbumResponse addEnrichmentToAlbum(
@@ -1133,25 +1215,25 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return addEnrichmentToAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds an enrichment at a specified position in a defined album.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   NewEnrichmentItem newEnrichmentItem = NewEnrichmentItem.newBuilder().build();
-   *   AlbumPosition albumPosition = AlbumPosition.newBuilder().build();
-   *   AddEnrichmentToAlbumRequest request = AddEnrichmentToAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .setNewEnrichmentItem(newEnrichmentItem)
-   *     .setAlbumPosition(albumPosition)
-   *     .build();
-   *   AddEnrichmentToAlbumResponse response = internalPhotosLibraryClient.addEnrichmentToAlbum(request);
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   AddEnrichmentToAlbumRequest request =
+   *       AddEnrichmentToAlbumRequest.newBuilder()
+   *           .setAlbumId("albumId-920410134")
+   *           .setNewEnrichmentItem(NewEnrichmentItem.newBuilder().build())
+   *           .setAlbumPosition(AlbumPosition.newBuilder().build())
+   *           .build();
+   *   AddEnrichmentToAlbumResponse response =
+   *       internalPhotosLibraryClient.addEnrichmentToAlbum(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1161,47 +1243,48 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return addEnrichmentToAlbumCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Adds an enrichment at a specified position in a defined album.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   NewEnrichmentItem newEnrichmentItem = NewEnrichmentItem.newBuilder().build();
-   *   AlbumPosition albumPosition = AlbumPosition.newBuilder().build();
-   *   AddEnrichmentToAlbumRequest request = AddEnrichmentToAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .setNewEnrichmentItem(newEnrichmentItem)
-   *     .setAlbumPosition(albumPosition)
-   *     .build();
-   *   ApiFuture&lt;AddEnrichmentToAlbumResponse&gt; future = internalPhotosLibraryClient.addEnrichmentToAlbumCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   AddEnrichmentToAlbumRequest request =
+   *       AddEnrichmentToAlbumRequest.newBuilder()
+   *           .setAlbumId("albumId-920410134")
+   *           .setNewEnrichmentItem(NewEnrichmentItem.newBuilder().build())
+   *           .setAlbumPosition(AlbumPosition.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AddEnrichmentToAlbumResponse> future =
+   *       internalPhotosLibraryClient.addEnrichmentToAlbumCallable().futureCall(request);
+   *   // Do something.
    *   AddEnrichmentToAlbumResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<AddEnrichmentToAlbumRequest, AddEnrichmentToAlbumResponse>
       addEnrichmentToAlbumCallable() {
     return stub.addEnrichmentToAlbumCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Joins a shared album on behalf of the Google Photos user.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String shareToken = "";
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String shareToken = "shareToken-1798271654";
    *   JoinSharedAlbumResponse response = internalPhotosLibraryClient.joinSharedAlbum(shareToken);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param shareToken Token to join the shared album on behalf of the user.
+   * @param shareToken Required. Token to join the shared album on behalf of the user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final JoinSharedAlbumResponse joinSharedAlbum(String shareToken) {
@@ -1210,21 +1293,20 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return joinSharedAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Joins a shared album on behalf of the Google Photos user.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String shareToken = "";
-   *   JoinSharedAlbumRequest request = JoinSharedAlbumRequest.newBuilder()
-   *     .setShareToken(shareToken)
-   *     .build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   JoinSharedAlbumRequest request =
+   *       JoinSharedAlbumRequest.newBuilder().setShareToken("shareToken-1798271654").build();
    *   JoinSharedAlbumResponse response = internalPhotosLibraryClient.joinSharedAlbum(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1233,44 +1315,45 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return joinSharedAlbumCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Joins a shared album on behalf of the Google Photos user.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String shareToken = "";
-   *   JoinSharedAlbumRequest request = JoinSharedAlbumRequest.newBuilder()
-   *     .setShareToken(shareToken)
-   *     .build();
-   *   ApiFuture&lt;JoinSharedAlbumResponse&gt; future = internalPhotosLibraryClient.joinSharedAlbumCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   JoinSharedAlbumRequest request =
+   *       JoinSharedAlbumRequest.newBuilder().setShareToken("shareToken-1798271654").build();
+   *   ApiFuture<JoinSharedAlbumResponse> future =
+   *       internalPhotosLibraryClient.joinSharedAlbumCallable().futureCall(request);
+   *   // Do something.
    *   JoinSharedAlbumResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<JoinSharedAlbumRequest, JoinSharedAlbumResponse>
       joinSharedAlbumCallable() {
     return stub.joinSharedAlbumCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Leaves a previously-joined shared album on behalf of the Google Photos user. The user must not
    * own this album.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String shareToken = "";
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String shareToken = "shareToken-1798271654";
    *   LeaveSharedAlbumResponse response = internalPhotosLibraryClient.leaveSharedAlbum(shareToken);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param shareToken Token to leave the shared album on behalf of the user.
+   * @param shareToken Required. Token to leave the shared album on behalf of the user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LeaveSharedAlbumResponse leaveSharedAlbum(String shareToken) {
@@ -1279,22 +1362,21 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return leaveSharedAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Leaves a previously-joined shared album on behalf of the Google Photos user. The user must not
    * own this album.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String shareToken = "";
-   *   LeaveSharedAlbumRequest request = LeaveSharedAlbumRequest.newBuilder()
-   *     .setShareToken(shareToken)
-   *     .build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   LeaveSharedAlbumRequest request =
+   *       LeaveSharedAlbumRequest.newBuilder().setShareToken("shareToken-1798271654").build();
    *   LeaveSharedAlbumResponse response = internalPhotosLibraryClient.leaveSharedAlbum(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1303,47 +1385,49 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return leaveSharedAlbumCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Leaves a previously-joined shared album on behalf of the Google Photos user. The user must not
    * own this album.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String shareToken = "";
-   *   LeaveSharedAlbumRequest request = LeaveSharedAlbumRequest.newBuilder()
-   *     .setShareToken(shareToken)
-   *     .build();
-   *   ApiFuture&lt;LeaveSharedAlbumResponse&gt; future = internalPhotosLibraryClient.leaveSharedAlbumCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   LeaveSharedAlbumRequest request =
+   *       LeaveSharedAlbumRequest.newBuilder().setShareToken("shareToken-1798271654").build();
+   *   ApiFuture<LeaveSharedAlbumResponse> future =
+   *       internalPhotosLibraryClient.leaveSharedAlbumCallable().futureCall(request);
+   *   // Do something.
    *   LeaveSharedAlbumResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<LeaveSharedAlbumRequest, LeaveSharedAlbumResponse>
       leaveSharedAlbumCallable() {
     return stub.leaveSharedAlbumCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks an album as shared and accessible to other users. This action can only be performed on
    * albums which were created by the developer via the API.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String albumId = "albumId-920410134";
    *   SharedAlbumOptions sharedAlbumOptions = SharedAlbumOptions.newBuilder().build();
-   *   ShareAlbumResponse response = internalPhotosLibraryClient.shareAlbum(albumId, sharedAlbumOptions);
+   *   ShareAlbumResponse response =
+   *       internalPhotosLibraryClient.shareAlbum(albumId, sharedAlbumOptions);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param albumId Identifier of the album to be shared. This `albumId` must belong to an album
-   *     created by the developer.
+   * @param albumId Required. Identifier of the album to be shared. This `albumId` must belong to an
+   *     album created by the developer.
    * @param sharedAlbumOptions Options to be set when converting the album to a shared album.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1357,22 +1441,24 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return shareAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks an album as shared and accessible to other users. This action can only be performed on
    * albums which were created by the developer via the API.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   ShareAlbumRequest request = ShareAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   ShareAlbumRequest request =
+   *       ShareAlbumRequest.newBuilder()
+   *           .setAlbumId("albumId-920410134")
+   *           .setSharedAlbumOptions(SharedAlbumOptions.newBuilder().build())
+   *           .build();
    *   ShareAlbumResponse response = internalPhotosLibraryClient.shareAlbum(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1381,43 +1467,48 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return shareAlbumCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks an album as shared and accessible to other users. This action can only be performed on
    * albums which were created by the developer via the API.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   ShareAlbumRequest request = ShareAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .build();
-   *   ApiFuture&lt;ShareAlbumResponse&gt; future = internalPhotosLibraryClient.shareAlbumCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   ShareAlbumRequest request =
+   *       ShareAlbumRequest.newBuilder()
+   *           .setAlbumId("albumId-920410134")
+   *           .setSharedAlbumOptions(SharedAlbumOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ShareAlbumResponse> future =
+   *       internalPhotosLibraryClient.shareAlbumCallable().futureCall(request);
+   *   // Do something.
    *   ShareAlbumResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ShareAlbumRequest, ShareAlbumResponse> shareAlbumCallable() {
     return stub.shareAlbumCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all shared albums available in the Sharing tab of the user's Google Photos app.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   boolean excludeNonAppCreatedData = false;
-   *   for (Album element : internalPhotosLibraryClient.listSharedAlbums(excludeNonAppCreatedData).iterateAll()) {
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   boolean excludeNonAppCreatedData = true;
+   *   for (Album element :
+   *       internalPhotosLibraryClient.listSharedAlbums(excludeNonAppCreatedData).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param excludeNonAppCreatedData If set, the results exclude media items that were not created
    *     by this app. Defaults to false (all albums are returned). This field is ignored if the
@@ -1432,20 +1523,26 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return listSharedAlbums(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all shared albums available in the Sharing tab of the user's Google Photos app.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   ListSharedAlbumsRequest request = ListSharedAlbumsRequest.newBuilder().build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   ListSharedAlbumsRequest request =
+   *       ListSharedAlbumsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setExcludeNonAppCreatedData(true)
+   *           .build();
    *   for (Album element : internalPhotosLibraryClient.listSharedAlbums(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1454,40 +1551,54 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return listSharedAlbumsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all shared albums available in the Sharing tab of the user's Google Photos app.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   ListSharedAlbumsRequest request = ListSharedAlbumsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListSharedAlbumsPagedResponse&gt; future = internalPhotosLibraryClient.listSharedAlbumsPagedCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   ListSharedAlbumsRequest request =
+   *       ListSharedAlbumsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setExcludeNonAppCreatedData(true)
+   *           .build();
+   *   ApiFuture<Album> future =
+   *       internalPhotosLibraryClient.listSharedAlbumsPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Album element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListSharedAlbumsRequest, ListSharedAlbumsPagedResponse>
       listSharedAlbumsPagedCallable() {
     return stub.listSharedAlbumsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all shared albums available in the Sharing tab of the user's Google Photos app.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   ListSharedAlbumsRequest request = ListSharedAlbumsRequest.newBuilder().build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   ListSharedAlbumsRequest request =
+   *       ListSharedAlbumsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setExcludeNonAppCreatedData(true)
+   *           .build();
    *   while (true) {
-   *     ListSharedAlbumsResponse response = internalPhotosLibraryClient.listSharedAlbumsCallable().call(request);
-   *     for (Album element : response.getSharedAlbumsList()) {
+   *     ListSharedAlbumsResponse response =
+   *         internalPhotosLibraryClient.listSharedAlbumsCallable().call(request);
+   *     for (Album element : response.getResponsesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1498,14 +1609,14 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListSharedAlbumsRequest, ListSharedAlbumsResponse>
       listSharedAlbumsCallable() {
     return stub.listSharedAlbumsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks a previously shared album as private. This means that the album is no longer shared and
    * all the non-owners will lose access to the album. All non-owner content will be removed from
@@ -1515,15 +1626,16 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String albumId = "albumId-920410134";
    *   UnshareAlbumResponse response = internalPhotosLibraryClient.unshareAlbum(albumId);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param albumId Identifier of the album to be unshared. This album id must belong to an album
-   *     created by the developer.
+   * @param albumId Required. Identifier of the album to be unshared. This album id must belong to
+   *     an album created by the developer.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UnshareAlbumResponse unshareAlbum(String albumId) {
@@ -1531,7 +1643,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return unshareAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks a previously shared album as private. This means that the album is no longer shared and
    * all the non-owners will lose access to the album. All non-owner content will be removed from
@@ -1541,15 +1653,14 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   UnshareAlbumRequest request = UnshareAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   UnshareAlbumRequest request =
+   *       UnshareAlbumRequest.newBuilder().setAlbumId("albumId-920410134").build();
    *   UnshareAlbumResponse response = internalPhotosLibraryClient.unshareAlbum(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1558,7 +1669,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return unshareAlbumCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Marks a previously shared album as private. This means that the album is no longer shared and
    * all the non-owners will lose access to the album. All non-owner content will be removed from
@@ -1568,23 +1679,23 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   UnshareAlbumRequest request = UnshareAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .build();
-   *   ApiFuture&lt;UnshareAlbumResponse&gt; future = internalPhotosLibraryClient.unshareAlbumCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   UnshareAlbumRequest request =
+   *       UnshareAlbumRequest.newBuilder().setAlbumId("albumId-920410134").build();
+   *   ApiFuture<UnshareAlbumResponse> future =
+   *       internalPhotosLibraryClient.unshareAlbumCallable().futureCall(request);
+   *   // Do something.
    *   UnshareAlbumResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UnshareAlbumRequest, UnshareAlbumResponse> unshareAlbumCallable() {
     return stub.unshareAlbumCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more media items from a specified album. The media items and the album must have
    * been created by the developer via the API.
@@ -1597,18 +1708,20 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
-   *   BatchRemoveMediaItemsFromAlbumResponse response = internalPhotosLibraryClient.batchRemoveMediaItemsFromAlbum(albumId, mediaItemIds);
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   String albumId = "albumId-920410134";
+   *   List<String> mediaItemIds = new ArrayList<>();
+   *   BatchRemoveMediaItemsFromAlbumResponse response =
+   *       internalPhotosLibraryClient.batchRemoveMediaItemsFromAlbum(albumId, mediaItemIds);
    * }
-   * </code></pre>
+   * }</pre>
    *
-   * @param albumId Identifier of the [Album][google.photos.types.Album] that the media items are to
-   *     be removed from.
-   * @param mediaItemIds Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   *     removed.
+   * @param albumId Required. Identifier of the [Album][google.photos.types.Album] that the media
+   *     items are to be removed from.
+   * @param mediaItemIds Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   *     be removed.
    *     <p>Must not contain repeated identifiers and cannot be empty. The maximum number of media
    *     items that can be removed in one call is 50.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1623,7 +1736,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return batchRemoveMediaItemsFromAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more media items from a specified album. The media items and the album must have
    * been created by the developer via the API.
@@ -1636,17 +1749,18 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
-   *   BatchRemoveMediaItemsFromAlbumRequest request = BatchRemoveMediaItemsFromAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .addAllMediaItemIds(mediaItemIds)
-   *     .build();
-   *   BatchRemoveMediaItemsFromAlbumResponse response = internalPhotosLibraryClient.batchRemoveMediaItemsFromAlbum(request);
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   BatchRemoveMediaItemsFromAlbumRequest request =
+   *       BatchRemoveMediaItemsFromAlbumRequest.newBuilder()
+   *           .addAllMediaItemIds(new ArrayList<String>())
+   *           .setAlbumId("albumId-920410134")
+   *           .build();
+   *   BatchRemoveMediaItemsFromAlbumResponse response =
+   *       internalPhotosLibraryClient.batchRemoveMediaItemsFromAlbum(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1656,7 +1770,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return batchRemoveMediaItemsFromAlbumCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more media items from a specified album. The media items and the album must have
    * been created by the developer via the API.
@@ -1669,19 +1783,20 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   String albumId = "";
-   *   List&lt;String&gt; mediaItemIds = new ArrayList&lt;&gt;();
-   *   BatchRemoveMediaItemsFromAlbumRequest request = BatchRemoveMediaItemsFromAlbumRequest.newBuilder()
-   *     .setAlbumId(albumId)
-   *     .addAllMediaItemIds(mediaItemIds)
-   *     .build();
-   *   ApiFuture&lt;BatchRemoveMediaItemsFromAlbumResponse&gt; future = internalPhotosLibraryClient.batchRemoveMediaItemsFromAlbumCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   BatchRemoveMediaItemsFromAlbumRequest request =
+   *       BatchRemoveMediaItemsFromAlbumRequest.newBuilder()
+   *           .addAllMediaItemIds(new ArrayList<String>())
+   *           .setAlbumId("albumId-920410134")
+   *           .build();
+   *   ApiFuture<BatchRemoveMediaItemsFromAlbumResponse> future =
+   *       internalPhotosLibraryClient.batchRemoveMediaItemsFromAlbumCallable().futureCall(request);
+   *   // Do something.
    *   BatchRemoveMediaItemsFromAlbumResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           BatchRemoveMediaItemsFromAlbumRequest, BatchRemoveMediaItemsFromAlbumResponse>
@@ -1689,7 +1804,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return stub.batchRemoveMediaItemsFromAlbumCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the album with the specified `id`. Only the `id`, `title` and
    * `cover_photo_media_item_id` fields of the album are read. The album must have been created by
@@ -1697,16 +1812,17 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
    *   Album album = Album.newBuilder().build();
    *   Album response = internalPhotosLibraryClient.updateAlbum(album);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param album Required. The [Album][google.photos.types.Album] to update.
-   *     <p>The album’s `id` field is used to identify the album to be updated. The album’s `title`
-   *     field is used to set the new album title. The album’s `cover_photo_media_item_id` field is
+   *     <p>The album?s `id` field is used to identify the album to be updated. The album?s `title`
+   *     field is used to set the new album title. The album?s `cover_photo_media_item_id` field is
    *     used to set the new album cover photo.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1715,7 +1831,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return updateAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the album with the specified `id`. Only the `id`, `title` and
    * `cover_photo_media_item_id` fields of the album are read. The album must have been created by
@@ -1723,20 +1839,21 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
    *   Album album = Album.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   Album response = internalPhotosLibraryClient.updateAlbum(album, updateMask);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param album Required. The [Album][google.photos.types.Album] to update.
-   *     <p>The album’s `id` field is used to identify the album to be updated. The album’s `title`
-   *     field is used to set the new album title. The album’s `cover_photo_media_item_id` field is
+   *     <p>The album?s `id` field is used to identify the album to be updated. The album?s `title`
+   *     field is used to set the new album title. The album?s `cover_photo_media_item_id` field is
    *     used to set the new album cover photo.
-   * @param updateMask Indicate what fields in the provided album to update. The only valid values
-   *     are `title` and `cover_photo_media_item_id`.
+   * @param updateMask Required. Indicate what fields in the provided album to update. The only
+   *     valid values are `title` and `cover_photo_media_item_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Album updateAlbum(Album album, FieldMask updateMask) {
@@ -1745,7 +1862,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return updateAlbum(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the album with the specified `id`. Only the `id`, `title` and
    * `cover_photo_media_item_id` fields of the album are read. The album must have been created by
@@ -1753,17 +1870,17 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   Album album = Album.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateAlbumRequest request = UpdateAlbumRequest.newBuilder()
-   *     .setAlbum(album)
-   *     .setUpdateMask(updateMask)
-   *     .build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   UpdateAlbumRequest request =
+   *       UpdateAlbumRequest.newBuilder()
+   *           .setAlbum(Album.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
    *   Album response = internalPhotosLibraryClient.updateAlbum(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1772,7 +1889,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return updateAlbumCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the album with the specified `id`. Only the `id`, `title` and
    * `cover_photo_media_item_id` fields of the album are read. The album must have been created by
@@ -1780,25 +1897,26 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   Album album = Album.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateAlbumRequest request = UpdateAlbumRequest.newBuilder()
-   *     .setAlbum(album)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;Album&gt; future = internalPhotosLibraryClient.updateAlbumCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   UpdateAlbumRequest request =
+   *       UpdateAlbumRequest.newBuilder()
+   *           .setAlbum(Album.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Album> future =
+   *       internalPhotosLibraryClient.updateAlbumCallable().futureCall(request);
+   *   // Do something.
    *   Album response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateAlbumRequest, Album> updateAlbumCallable() {
     return stub.updateAlbumCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the media item with the specified `id`. Only the `id` and `description` fields of the
    * media item are read. The media item must have been created by the developer via the API and
@@ -1806,19 +1924,20 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
    *   MediaItem mediaItem = MediaItem.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   MediaItem response = internalPhotosLibraryClient.updateMediaItem(mediaItem, updateMask);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param mediaItem Required. The [MediaItem][google.photos.types.MediaItem] to update.
    *     <p>The media item's `id` field is used to identify the media item to be updated. The media
    *     item's `description` field is used to set the new media item description.
-   * @param updateMask Indicate what fields in the provided media item to update. The only valid
-   *     value is `description`.
+   * @param updateMask Required. Indicate what fields in the provided media item to update. The only
+   *     valid value is `description`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MediaItem updateMediaItem(MediaItem mediaItem, FieldMask updateMask) {
@@ -1830,7 +1949,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return updateMediaItem(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the media item with the specified `id`. Only the `id` and `description` fields of the
    * media item are read. The media item must have been created by the developer via the API and
@@ -1838,17 +1957,17 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   MediaItem mediaItem = MediaItem.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateMediaItemRequest request = UpdateMediaItemRequest.newBuilder()
-   *     .setMediaItem(mediaItem)
-   *     .setUpdateMask(updateMask)
-   *     .build();
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   UpdateMediaItemRequest request =
+   *       UpdateMediaItemRequest.newBuilder()
+   *           .setMediaItem(MediaItem.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
    *   MediaItem response = internalPhotosLibraryClient.updateMediaItem(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1857,7 +1976,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return updateMediaItemCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the media item with the specified `id`. Only the `id` and `description` fields of the
    * media item are read. The media item must have been created by the developer via the API and
@@ -1865,19 +1984,20 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (InternalPhotosLibraryClient internalPhotosLibraryClient = InternalPhotosLibraryClient.create()) {
-   *   MediaItem mediaItem = MediaItem.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateMediaItemRequest request = UpdateMediaItemRequest.newBuilder()
-   *     .setMediaItem(mediaItem)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;MediaItem&gt; future = internalPhotosLibraryClient.updateMediaItemCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   UpdateMediaItemRequest request =
+   *       UpdateMediaItemRequest.newBuilder()
+   *           .setMediaItem(MediaItem.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<MediaItem> future =
+   *       internalPhotosLibraryClient.updateMediaItemCallable().futureCall(request);
+   *   // Do something.
    *   MediaItem response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateMediaItemRequest, MediaItem> updateMediaItemCallable() {
     return stub.updateMediaItemCallable();
@@ -1928,12 +2048,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
           SearchMediaItemsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchMediaItemsPage, SearchMediaItemsPagedResponse>() {
-            @Override
-            public SearchMediaItemsPagedResponse apply(SearchMediaItemsPage input) {
-              return new SearchMediaItemsPagedResponse(input);
-            }
-          },
+          input -> new SearchMediaItemsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2010,12 +2125,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
           ListMediaItemsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMediaItemsPage, ListMediaItemsPagedResponse>() {
-            @Override
-            public ListMediaItemsPagedResponse apply(ListMediaItemsPage input) {
-              return new ListMediaItemsPagedResponse(input);
-            }
-          },
+          input -> new ListMediaItemsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2090,14 +2200,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
       ApiFuture<ListAlbumsPage> futurePage =
           ListAlbumsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListAlbumsPage, ListAlbumsPagedResponse>() {
-            @Override
-            public ListAlbumsPagedResponse apply(ListAlbumsPage input) {
-              return new ListAlbumsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListAlbumsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListAlbumsPagedResponse(ListAlbumsPage page) {
@@ -2171,12 +2274,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
           ListSharedAlbumsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListSharedAlbumsPage, ListSharedAlbumsPagedResponse>() {
-            @Override
-            public ListSharedAlbumsPagedResponse apply(ListSharedAlbumsPage input) {
-              return new ListSharedAlbumsPagedResponse(input);
-            }
-          },
+          input -> new ListSharedAlbumsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

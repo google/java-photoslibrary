@@ -12,10 +12,10 @@ public interface GetAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the album to be requested.
+   * Required. Identifier of the album to be requested.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The albumId.
    */
@@ -24,10 +24,10 @@ public interface GetAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Identifier of the album to be requested.
+   * Required. Identifier of the album to be requested.
    * </pre>
    *
-   * <code>string album_id = 1;</code>
+   * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for albumId.
    */

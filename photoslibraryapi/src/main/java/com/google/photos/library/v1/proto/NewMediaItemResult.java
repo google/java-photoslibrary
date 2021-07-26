@@ -139,6 +139,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
    *
    * @return The uploadToken.
    */
+  @java.lang.Override
   public java.lang.String getUploadToken() {
     java.lang.Object ref = uploadToken_;
     if (ref instanceof java.lang.String) {
@@ -161,6 +162,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for uploadToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUploadTokenBytes() {
     java.lang.Object ref = uploadToken_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +190,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -204,6 +207,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
@@ -218,6 +222,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.rpc.Status status = 2;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -236,6 +241,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the mediaItem field is set.
    */
+  @java.lang.Override
   public boolean hasMediaItem() {
     return mediaItem_ != null;
   }
@@ -251,6 +257,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
    *
    * @return The mediaItem.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.MediaItem getMediaItem() {
     return mediaItem_ == null
         ? com.google.photos.types.proto.MediaItem.getDefaultInstance()
@@ -266,6 +273,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.photos.types.MediaItem media_item = 3;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.MediaItemOrBuilder getMediaItemOrBuilder() {
     return getMediaItem();
   }

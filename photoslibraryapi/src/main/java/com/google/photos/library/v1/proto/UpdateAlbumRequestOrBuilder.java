@@ -59,11 +59,12 @@ public interface UpdateAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Indicate what fields in the provided album to update.
+   * Required. Indicate what fields in the provided album to update.
    * The only valid values are `title` and `cover_photo_media_item_id`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -72,11 +73,12 @@ public interface UpdateAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Indicate what fields in the provided album to update.
+   * Required. Indicate what fields in the provided album to update.
    * The only valid values are `title` and `cover_photo_media_item_id`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -85,11 +87,12 @@ public interface UpdateAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Indicate what fields in the provided album to update.
+   * Required. Indicate what fields in the provided album to update.
    * The only valid values are `title` and `cover_photo_media_item_id`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

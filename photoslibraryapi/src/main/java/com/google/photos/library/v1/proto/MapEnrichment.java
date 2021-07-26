@@ -132,6 +132,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the origin field is set.
    */
+  @java.lang.Override
   public boolean hasOrigin() {
     return origin_ != null;
   }
@@ -146,6 +147,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The origin.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.Location getOrigin() {
     return origin_ == null
         ? com.google.photos.library.v1.proto.Location.getDefaultInstance()
@@ -160,6 +162,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.library.v1.Location origin = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.LocationOrBuilder getOriginOrBuilder() {
     return getOrigin();
   }
@@ -177,6 +180,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the destination field is set.
    */
+  @java.lang.Override
   public boolean hasDestination() {
     return destination_ != null;
   }
@@ -191,6 +195,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The destination.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.Location getDestination() {
     return destination_ == null
         ? com.google.photos.library.v1.proto.Location.getDefaultInstance()
@@ -205,6 +210,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.library.v1.Location destination = 2;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.LocationOrBuilder getDestinationOrBuilder() {
     return getDestination();
   }

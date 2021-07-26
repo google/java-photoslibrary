@@ -12,12 +12,12 @@ public interface BatchGetMediaItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the media items to be requested.
+   * Required. Identifiers of the media items to be requested.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be retrieved in one call is 50.
    * </pre>
    *
-   * <code>repeated string media_item_ids = 1;</code>
+   * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return A list containing the mediaItemIds.
    */
@@ -26,12 +26,12 @@ public interface BatchGetMediaItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the media items to be requested.
+   * Required. Identifiers of the media items to be requested.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be retrieved in one call is 50.
    * </pre>
    *
-   * <code>repeated string media_item_ids = 1;</code>
+   * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The count of mediaItemIds.
    */
@@ -40,12 +40,12 @@ public interface BatchGetMediaItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the media items to be requested.
+   * Required. Identifiers of the media items to be requested.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be retrieved in one call is 50.
    * </pre>
    *
-   * <code>repeated string media_item_ids = 1;</code>
+   * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the element to return.
    * @return The mediaItemIds at the given index.
@@ -55,12 +55,12 @@ public interface BatchGetMediaItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Identifiers of the media items to be requested.
+   * Required. Identifiers of the media items to be requested.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be retrieved in one call is 50.
    * </pre>
    *
-   * <code>repeated string media_item_ids = 1;</code>
+   * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the mediaItemIds at the given index.

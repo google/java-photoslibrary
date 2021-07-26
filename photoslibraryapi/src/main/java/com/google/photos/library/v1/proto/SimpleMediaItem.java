@@ -117,6 +117,7 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
    *
    * @return The uploadToken.
    */
+  @java.lang.Override
   public java.lang.String getUploadToken() {
     java.lang.Object ref = uploadToken_;
     if (ref instanceof java.lang.String) {
@@ -139,6 +140,7 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for uploadToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUploadTokenBytes() {
     java.lang.Object ref = uploadToken_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +171,7 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
    *
    * @return The fileName.
    */
+  @java.lang.Override
   public java.lang.String getFileName() {
     java.lang.Object ref = fileName_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +199,7 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for fileName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFileNameBytes() {
     java.lang.Object ref = fileName_;
     if (ref instanceof java.lang.String) {

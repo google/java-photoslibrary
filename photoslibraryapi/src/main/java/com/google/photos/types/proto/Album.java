@@ -170,6 +170,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +194,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -219,6 +221,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The title.
    */
+  @java.lang.Override
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +245,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for title.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +272,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The productUrl.
    */
+  @java.lang.Override
   public java.lang.String getProductUrl() {
     java.lang.Object ref = productUrl_;
     if (ref instanceof java.lang.String) {
@@ -291,6 +296,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for productUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProductUrlBytes() {
     java.lang.Object ref = productUrl_;
     if (ref instanceof java.lang.String) {
@@ -319,6 +325,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The isWriteable.
    */
+  @java.lang.Override
   public boolean getIsWriteable() {
     return isWriteable_;
   }
@@ -339,6 +346,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the shareInfo field is set.
    */
+  @java.lang.Override
   public boolean hasShareInfo() {
     return shareInfo_ != null;
   }
@@ -356,6 +364,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The shareInfo.
    */
+  @java.lang.Override
   public com.google.photos.types.proto.ShareInfo getShareInfo() {
     return shareInfo_ == null
         ? com.google.photos.types.proto.ShareInfo.getDefaultInstance()
@@ -373,6 +382,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.photos.types.ShareInfo share_info = 5;</code>
    */
+  @java.lang.Override
   public com.google.photos.types.proto.ShareInfoOrBuilder getShareInfoOrBuilder() {
     return getShareInfo();
   }
@@ -390,6 +400,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mediaItemsCount.
    */
+  @java.lang.Override
   public long getMediaItemsCount() {
     return mediaItemsCount_;
   }
@@ -413,6 +424,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The coverPhotoBaseUrl.
    */
+  @java.lang.Override
   public java.lang.String getCoverPhotoBaseUrl() {
     java.lang.Object ref = coverPhotoBaseUrl_;
     if (ref instanceof java.lang.String) {
@@ -441,6 +453,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for coverPhotoBaseUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCoverPhotoBaseUrlBytes() {
     java.lang.Object ref = coverPhotoBaseUrl_;
     if (ref instanceof java.lang.String) {
@@ -466,6 +479,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The coverPhotoMediaItemId.
    */
+  @java.lang.Override
   public java.lang.String getCoverPhotoMediaItemId() {
     java.lang.Object ref = coverPhotoMediaItemId_;
     if (ref instanceof java.lang.String) {
@@ -488,6 +502,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for coverPhotoMediaItemId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCoverPhotoMediaItemIdBytes() {
     java.lang.Object ref = coverPhotoMediaItemId_;
     if (ref instanceof java.lang.String) {
@@ -1285,6 +1300,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The isWriteable.
      */
+    @java.lang.Override
     public boolean getIsWriteable() {
       return isWriteable_;
     }
@@ -1554,6 +1570,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mediaItemsCount.
      */
+    @java.lang.Override
     public long getMediaItemsCount() {
       return mediaItemsCount_;
     }

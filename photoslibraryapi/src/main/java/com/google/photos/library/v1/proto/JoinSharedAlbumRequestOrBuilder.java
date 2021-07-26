@@ -12,10 +12,10 @@ public interface JoinSharedAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Token to join the shared album on behalf of the user.
+   * Required. Token to join the shared album on behalf of the user.
    * </pre>
    *
-   * <code>string share_token = 1;</code>
+   * <code>string share_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The shareToken.
    */
@@ -24,10 +24,10 @@ public interface JoinSharedAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Token to join the shared album on behalf of the user.
+   * Required. Token to join the shared album on behalf of the user.
    * </pre>
    *
-   * <code>string share_token = 1;</code>
+   * <code>string share_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for shareToken.
    */

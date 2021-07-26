@@ -116,6 +116,7 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the location field is set.
    */
+  @java.lang.Override
   public boolean hasLocation() {
     return location_ != null;
   }
@@ -130,6 +131,7 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
    *
    * @return The location.
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.Location getLocation() {
     return location_ == null
         ? com.google.photos.library.v1.proto.Location.getDefaultInstance()
@@ -144,6 +146,7 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.photos.library.v1.Location location = 1;</code>
    */
+  @java.lang.Override
   public com.google.photos.library.v1.proto.LocationOrBuilder getLocationOrBuilder() {
     return getLocation();
   }
