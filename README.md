@@ -102,6 +102,50 @@ try (PhotosLibraryClient photosLibraryClient =
 // [END sample_usage]
 ```
 
+## Retry configuration
+
+The default retry configuration follows the [AIP guidance](https://google.aip.dev/194) for
+retrying API requests, which is configured in
+[`com.google.photos.library.v1.internal.stub.PhotosLibraryStubSettings`](photoslibraryapi/src/main/java/com/google/photos/library/v1/internal/stub/PhotosLibraryStubSettings.java)
+and [`com.google.photos.library.v1.PhotosLibrarySettings`](photoslibraryapi/src/main/java/com/google/photos/library/v1/PhotosLibrarySettings.java).
+
+Here's an example that shows how to customize the retry configuration for the `getAlbum(..)` call 
+and for uploading media bytes:
+
+```java
+// Create a new retry configuration.
+RetrySettings retrySettings=RetrySettings.newBuilder()
+        .setInitialRetryDelay(Duration.ofSeconds(4))
+        .setRetryDelayMultiplier(1.5)
+        .setMaxAttempts(7)
+        .setMaxRetryDelay(Duration.ofSeconds(60))
+        .setTotalTimeout(Duration.ofMinutes(15))
+        .build();
+
+// Set the status codes returned from the API that should be retried.
+ Set<StatusCode.Code>retryableCodes=
+        Set.of(StatusCode.Code.DEADLINE_EXCEEDED,StatusCode.Code.UNAVAILABLE);
+
+ PhotosLibrarySettings.Builder librarySettingsBuilder=
+        PhotosLibrarySettings.newBuilder();
+
+// Configure these retry settings for the "getAlbums" call.
+librarySettingsBuilder.getAlbumSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(retryableCodes);
+
+// Configure these retry settings for the upload media call.
+librarySettingsBuilder.updateMediaItemSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(retryableCodes);
+
+// Configure other client options, for example authentication credentials.
+
+// Create the client.
+PhotosLibraryClient client = PhotosLibraryClient.initialize(librarySettingsBuilder.build());
+
+```
+
 ## Samples
 
  A few examples are included in the [sample](sample/) directory. They show how
