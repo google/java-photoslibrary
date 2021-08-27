@@ -33,6 +33,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
   private SearchMediaItemsRequest() {
     albumId_ = "";
     pageToken_ = "";
+    orderBy_ = "";
   }
 
   @java.lang.Override
@@ -97,6 +98,13 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
                 filters_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderBy_ = s;
               break;
             }
           default:
@@ -310,6 +318,81 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
     return getFilters();
   }
 
+  public static final int ORDER_BY_FIELD_NUMBER = 5;
+  private volatile java.lang.Object orderBy_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional field to specify the sort order of the search results. The
+   * `orderBy` field only works when a
+   * [dateFilter][google.photos.library.v1.DateFilter] is used. When this
+   * field is not specified, results are displayed newest first, oldest last by
+   * their [creationTime][google.photos.types.MediaMetadata.creation_time].
+   * Providing `MediaMetadata.creation_time` displays search results in
+   * the opposite order, oldest first then newest last.
+   * To display results newest first then oldest last, include the `desc`
+   * argument as follows: `MediaMetadata.creation_time desc`.
+   * The only additional filters that can be used with this parameter are
+   * [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media]
+   * and
+   * [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].
+   * No other filters are supported.
+   * </pre>
+   *
+   * <code>string order_by = 5;</code>
+   *
+   * @return The orderBy.
+   */
+  @java.lang.Override
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional field to specify the sort order of the search results. The
+   * `orderBy` field only works when a
+   * [dateFilter][google.photos.library.v1.DateFilter] is used. When this
+   * field is not specified, results are displayed newest first, oldest last by
+   * their [creationTime][google.photos.types.MediaMetadata.creation_time].
+   * Providing `MediaMetadata.creation_time` displays search results in
+   * the opposite order, oldest first then newest last.
+   * To display results newest first then oldest last, include the `desc`
+   * argument as follows: `MediaMetadata.creation_time desc`.
+   * The only additional filters that can be used with this parameter are
+   * [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media]
+   * and
+   * [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].
+   * No other filters are supported.
+   * </pre>
+   *
+   * <code>string order_by = 5;</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -336,6 +419,9 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
     if (filters_ != null) {
       output.writeMessage(4, getFilters());
     }
+    if (!getOrderByBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orderBy_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -356,6 +442,9 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
     }
     if (filters_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getFilters());
+    }
+    if (!getOrderByBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orderBy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -380,6 +469,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
     if (hasFilters()) {
       if (!getFilters().equals(other.getFilters())) return false;
     }
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -401,6 +491,8 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
       hash = (37 * hash) + FILTERS_FIELD_NUMBER;
       hash = (53 * hash) + getFilters().hashCode();
     }
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -567,6 +659,8 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
         filters_ = null;
         filtersBuilder_ = null;
       }
+      orderBy_ = "";
+
       return this;
     }
 
@@ -602,6 +696,7 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
       } else {
         result.filters_ = filtersBuilder_.build();
       }
+      result.orderBy_ = orderBy_;
       onBuilt();
       return result;
     }
@@ -665,6 +760,10 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
       }
       if (other.hasFilters()) {
         mergeFilters(other.getFilters());
+      }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1178,6 +1277,177 @@ public final class SearchMediaItemsRequest extends com.google.protobuf.Generated
         filters_ = null;
       }
       return filtersBuilder_;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * An optional field to specify the sort order of the search results. The
+     * `orderBy` field only works when a
+     * [dateFilter][google.photos.library.v1.DateFilter] is used. When this
+     * field is not specified, results are displayed newest first, oldest last by
+     * their [creationTime][google.photos.types.MediaMetadata.creation_time].
+     * Providing `MediaMetadata.creation_time` displays search results in
+     * the opposite order, oldest first then newest last.
+     * To display results newest first then oldest last, include the `desc`
+     * argument as follows: `MediaMetadata.creation_time desc`.
+     * The only additional filters that can be used with this parameter are
+     * [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media]
+     * and
+     * [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].
+     * No other filters are supported.
+     * </pre>
+     *
+     * <code>string order_by = 5;</code>
+     *
+     * @return The orderBy.
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional field to specify the sort order of the search results. The
+     * `orderBy` field only works when a
+     * [dateFilter][google.photos.library.v1.DateFilter] is used. When this
+     * field is not specified, results are displayed newest first, oldest last by
+     * their [creationTime][google.photos.types.MediaMetadata.creation_time].
+     * Providing `MediaMetadata.creation_time` displays search results in
+     * the opposite order, oldest first then newest last.
+     * To display results newest first then oldest last, include the `desc`
+     * argument as follows: `MediaMetadata.creation_time desc`.
+     * The only additional filters that can be used with this parameter are
+     * [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media]
+     * and
+     * [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].
+     * No other filters are supported.
+     * </pre>
+     *
+     * <code>string order_by = 5;</code>
+     *
+     * @return The bytes for orderBy.
+     */
+    public com.google.protobuf.ByteString getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional field to specify the sort order of the search results. The
+     * `orderBy` field only works when a
+     * [dateFilter][google.photos.library.v1.DateFilter] is used. When this
+     * field is not specified, results are displayed newest first, oldest last by
+     * their [creationTime][google.photos.types.MediaMetadata.creation_time].
+     * Providing `MediaMetadata.creation_time` displays search results in
+     * the opposite order, oldest first then newest last.
+     * To display results newest first then oldest last, include the `desc`
+     * argument as follows: `MediaMetadata.creation_time desc`.
+     * The only additional filters that can be used with this parameter are
+     * [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media]
+     * and
+     * [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].
+     * No other filters are supported.
+     * </pre>
+     *
+     * <code>string order_by = 5;</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderBy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      orderBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional field to specify the sort order of the search results. The
+     * `orderBy` field only works when a
+     * [dateFilter][google.photos.library.v1.DateFilter] is used. When this
+     * field is not specified, results are displayed newest first, oldest last by
+     * their [creationTime][google.photos.types.MediaMetadata.creation_time].
+     * Providing `MediaMetadata.creation_time` displays search results in
+     * the opposite order, oldest first then newest last.
+     * To display results newest first then oldest last, include the `desc`
+     * argument as follows: `MediaMetadata.creation_time desc`.
+     * The only additional filters that can be used with this parameter are
+     * [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media]
+     * and
+     * [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].
+     * No other filters are supported.
+     * </pre>
+     *
+     * <code>string order_by = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderBy() {
+
+      orderBy_ = getDefaultInstance().getOrderBy();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional field to specify the sort order of the search results. The
+     * `orderBy` field only works when a
+     * [dateFilter][google.photos.library.v1.DateFilter] is used. When this
+     * field is not specified, results are displayed newest first, oldest last by
+     * their [creationTime][google.photos.types.MediaMetadata.creation_time].
+     * Providing `MediaMetadata.creation_time` displays search results in
+     * the opposite order, oldest first then newest last.
+     * To display results newest first then oldest last, include the `desc`
+     * argument as follows: `MediaMetadata.creation_time desc`.
+     * The only additional filters that can be used with this parameter are
+     * [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media]
+     * and
+     * [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].
+     * No other filters are supported.
+     * </pre>
+     *
+     * <code>string order_by = 5;</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      orderBy_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

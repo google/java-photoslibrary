@@ -349,6 +349,53 @@ public class InternalPhotosLibraryClientTest {
   }
 
   @Test
+  public void searchMediaItemsTest3() throws Exception {
+    MediaItem responsesElement = MediaItem.newBuilder().build();
+    SearchMediaItemsResponse expectedResponse =
+        SearchMediaItemsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMediaItems(Arrays.asList(responsesElement))
+            .build();
+    mockPhotosLibrary.addResponse(expectedResponse);
+
+    Filters filters = Filters.newBuilder().build();
+    String orderBy = "orderBy-1207110587";
+
+    SearchMediaItemsPagedResponse pagedListResponse = client.searchMediaItems(filters, orderBy);
+
+    List<MediaItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMediaItemsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockPhotosLibrary.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchMediaItemsRequest actualRequest = ((SearchMediaItemsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(filters, actualRequest.getFilters());
+    Assert.assertEquals(orderBy, actualRequest.getOrderBy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchMediaItemsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPhotosLibrary.addException(exception);
+
+    try {
+      Filters filters = Filters.newBuilder().build();
+      String orderBy = "orderBy-1207110587";
+      client.searchMediaItems(filters, orderBy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listMediaItemsTest() throws Exception {
     MediaItem responsesElement = MediaItem.newBuilder().build();
     ListMediaItemsResponse expectedResponse =

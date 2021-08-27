@@ -39,6 +39,7 @@ public enum VideoProcessingStatus implements com.google.protobuf.ProtocolMessage
    *
    * <pre>
    * Video processing is complete and it is now ready for viewing.
+   * Important: attempting to download a video not in the READY state may fail.
    * </pre>
    *
    * <code>READY = 2;</code>
@@ -83,6 +84,7 @@ public enum VideoProcessingStatus implements com.google.protobuf.ProtocolMessage
    *
    * <pre>
    * Video processing is complete and it is now ready for viewing.
+   * Important: attempting to download a video not in the READY state may fail.
    * </pre>
    *
    * <code>READY = 2;</code>

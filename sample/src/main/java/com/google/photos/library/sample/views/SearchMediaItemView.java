@@ -21,9 +21,12 @@ import com.google.photos.library.sample.Resources;
 import com.google.photos.library.sample.components.AppPanel;
 import com.google.photos.library.sample.components.CustomButton;
 import com.google.photos.library.sample.components.DatePickerPanel;
+import com.google.photos.library.sample.components.OrderByPanel;
 import com.google.photos.library.sample.helpers.UIHelper;
 import com.google.photos.library.v1.proto.ContentCategory;
+import com.google.photos.library.v1.proto.DateFilter;
 import com.google.photos.library.v1.proto.SearchMediaItemsRequest;
+import com.google.photos.library.v1.util.OrderBy;
 import com.google.photos.types.proto.DateRange;
 import com.google.type.Date;
 import java.awt.BorderLayout;
@@ -39,11 +42,7 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
-import javax.swing.JCheckBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
@@ -62,16 +61,19 @@ public class SearchMediaItemView extends AbstractCustomView {
   private static final String SEARCH_INTRO_DESC =
       "Load photos from your Google Photos Library. Choose from the search options below.<br/>"
           + "Try combining different categories and dates.";
-  private static final int SEARCH_INTRO_DESC_SIZE = 13;
+  private static final int DESCRIPTION_SIZE = 13;
 
   private static final String INCLUDE_CATEGORIES_TEXT = "Include these categories";
   private static final String EXCLUDE_CATEGORIES_TEXT = "Exclude these categories";
   private static final String DATE_FILTERS_TEXT = "Apply range filters";
-  private static final int FILTER_TYPE_SIZE = 16;
+  private static final int TITLE_SIZE = 16;
 
   private static final String START_DATE_TEXT = "Start date";
   private static final String END_DATE_TEXT = "End date";
-  private static final int SUB_FILTER_TYPE_SIZE = 13;
+
+  private static final String SORT_TEXT_TITLE = "Sort results";
+  private static final String SORT_TEXT_DESC =
+      "Sort results for searches that only include a date filter.";
 
   private static final String APPLY_FILTERS_TEXT = "APPLY FILTERS";
   private static final Dimension APPLY_FILTERS_DIMENSION =
@@ -114,6 +116,7 @@ public class SearchMediaItemView extends AbstractCustomView {
     filterPanel.add(initializeCheckBoxGroup(INCLUDE_CATEGORIES_TEXT, includeCategoryCheckBoxes));
     filterPanel.add(initializeCheckBoxGroup(EXCLUDE_CATEGORIES_TEXT, excludeCategoryCheckBoxes));
     filterPanel.add(initializeDateFilters());
+    filterPanel.add(initializeSort());
 
     contentPanel.add(initializeApplyPanel(onApplyFiltersClicked), BorderLayout.PAGE_END);
   }
@@ -168,7 +171,7 @@ public class SearchMediaItemView extends AbstractCustomView {
 
   private JPanel initializeFilterPanel() {
     JPanel panel = new JPanel();
-    panel.setLayout(new GridLayout(3 /* rows */, 1 /* cols */, 0 /* hgap */, 16 /* vgap */));
+    panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
     return panel;
   }
 
@@ -199,11 +202,25 @@ public class SearchMediaItemView extends AbstractCustomView {
             .collect(Collectors.toList());
   }
 
+  private JPanel initializeSort() {
+    // Add the radio buttons to the panel to display them.
+    JPanel groupPanel = new JPanel();
+    groupPanel.setLayout(new BorderLayout());
+    groupPanel.add(
+        UIHelper.getFormattedLabel(SORT_TEXT_TITLE, TITLE_SIZE), BorderLayout.PAGE_START);
+    groupPanel.add(
+        UIHelper.getFormattedLabel(SORT_TEXT_DESC, DESCRIPTION_SIZE), BorderLayout.LINE_START);
+    OrderByPanel orderBySelection = new OrderByPanel();
+    orderBySelection.addOrderByConsumer(getOrderByConsumer(orderBySelection));
+    groupPanel.add(orderBySelection, BorderLayout.PAGE_END);
+    return groupPanel;
+  }
+
   private JPanel initializeDateFilters() {
     JPanel groupPanel = new JPanel();
     groupPanel.setLayout(new BorderLayout());
     groupPanel.add(
-        UIHelper.getFormattedLabel(DATE_FILTERS_TEXT, FILTER_TYPE_SIZE), BorderLayout.PAGE_START);
+        UIHelper.getFormattedLabel(DATE_FILTERS_TEXT, TITLE_SIZE), BorderLayout.PAGE_START);
 
     JPanel dateRangePanel = new JPanel();
     dateRangePanel.setLayout(new GridLayout(4 /* rows */, 1 /* cols */));
@@ -216,9 +233,9 @@ public class SearchMediaItemView extends AbstractCustomView {
     startDatePicker.addDateConsumer(getDateRangeDateConsumer(startDatePicker, endDatePicker));
     endDatePicker.addDateConsumer(getDateRangeDateConsumer(startDatePicker, endDatePicker));
 
-    dateRangePanel.add(UIHelper.getFormattedLabel(START_DATE_TEXT, SUB_FILTER_TYPE_SIZE));
+    dateRangePanel.add(UIHelper.getFormattedLabel(START_DATE_TEXT, DESCRIPTION_SIZE));
     dateRangePanel.add(startDatePicker);
-    dateRangePanel.add(UIHelper.getFormattedLabel(END_DATE_TEXT, SUB_FILTER_TYPE_SIZE));
+    dateRangePanel.add(UIHelper.getFormattedLabel(END_DATE_TEXT, DESCRIPTION_SIZE));
     dateRangePanel.add(endDatePicker);
 
     groupPanel.add(dateRangePanel, BorderLayout.CENTER);
@@ -245,7 +262,7 @@ public class SearchMediaItemView extends AbstractCustomView {
     JPanel groupPanel = new JPanel();
     groupPanel.setLayout(new BorderLayout(0 /* hgap */, 12 /* vgap */));
 
-    groupPanel.add(UIHelper.getFormattedLabel(title, FILTER_TYPE_SIZE), BorderLayout.PAGE_START);
+    groupPanel.add(UIHelper.getFormattedLabel(title, TITLE_SIZE), BorderLayout.PAGE_START);
 
     JPanel checkBoxPanel = new JPanel();
     checkBoxPanel.setLayout(new GridLayout(0 /* rows */, 3 /* cols */));
@@ -257,32 +274,48 @@ public class SearchMediaItemView extends AbstractCustomView {
     return groupPanel;
   }
 
+  private Consumer<OrderBy> getOrderByConsumer(OrderByPanel panel) {
+    return orderBy -> {
+      requestBuilder.clearOrderBy();
+      if (orderBy != null) {
+        // Use the string representation as input for the API call.
+        requestBuilder.setOrderBy(orderBy.getRequestValue());
+      }
+    };
+  }
+
   private Consumer<Date> getDateRangeDateConsumer(
       DatePickerPanel startDatePicker, DatePickerPanel endDatePicker) {
     return date -> {
-      requestBuilder.getFilters().getDateFilterOrBuilder().getDatesList().clear();
-      requestBuilder.getFilters().getDateFilterOrBuilder().getRangesList().clear();
+      DateRange selectedRange =
+          DateRange.newBuilder()
+              .setStartDate(startDatePicker.getSelectedDate())
+              .setEndDate(endDatePicker.getSelectedDate())
+              .build();
+      // Overwrite the previously set date filter with the new range.
       requestBuilder
-          .getFilters()
-          .getDateFilter()
-          .getRangesList()
-          .add(
-              DateRange.newBuilder()
-                  .setStartDate(startDatePicker.getSelectedDate())
-                  .setEndDate(endDatePicker.getSelectedDate())
-                  .build());
+          .getFiltersBuilder()
+          .setDateFilter(DateFilter.newBuilder().addRanges(selectedRange));
     };
   }
 
   private ActionListener getOnApplyButtonClicked(
       BiConsumer<SearchMediaItemView, SearchMediaItemsRequest> onApplyFiltersClicked) {
     return actionEvent -> {
-      requestBuilder.getFiltersBuilder().getContentFilterBuilder().clear();
-      requestBuilder
-          .getFiltersBuilder()
-          .getContentFilterBuilder()
-          .addAllIncludedContentCategories(getIncludedContentCategories())
-          .addAllExcludedContentCategories(getExcludedContentCategories());
+      List<ContentCategory> includedCategories = getIncludedContentCategories();
+      List<ContentCategory> excludedCategories = getExcludedContentCategories();
+
+      // Add a content filter only if include or exclude categories are selected.
+      if (includedCategories.isEmpty() && excludedCategories.isEmpty()) {
+        requestBuilder.getFiltersBuilder().clearContentFilter();
+      } else {
+        requestBuilder.getFiltersBuilder().getContentFilterBuilder().clear();
+        requestBuilder
+            .getFiltersBuilder()
+            .getContentFilterBuilder()
+            .addAllIncludedContentCategories(includedCategories)
+            .addAllExcludedContentCategories(excludedCategories);
+      }
       onApplyFiltersClicked.accept(this, requestBuilder.build());
     };
   }
@@ -314,8 +347,7 @@ public class SearchMediaItemView extends AbstractCustomView {
     JLabel label =
         new JLabel(
             String.format(
-                "<html>%s</html>",
-                UIHelper.getFormattedText(SEARCH_INTRO_DESC, SEARCH_INTRO_DESC_SIZE)));
+                "<html>%s</html>", UIHelper.getFormattedText(SEARCH_INTRO_DESC, DESCRIPTION_SIZE)));
     label.setVerticalAlignment(SwingConstants.CENTER);
     label.setHorizontalAlignment(SwingConstants.LEFT);
     return label;

@@ -594,12 +594,55 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <pre>{@code
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
+   *   Filters filters = Filters.newBuilder().build();
+   *   String orderBy = "orderBy-1207110587";
+   *   for (MediaItem element :
+   *       internalPhotosLibraryClient.searchMediaItems(filters, orderBy).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param filters Filters to apply to the request. Can't be set in conjunction with an `albumId`.
+   * @param orderBy An optional field to specify the sort order of the search results. The `orderBy`
+   *     field only works when a [dateFilter][google.photos.library.v1.DateFilter] is used. When
+   *     this field is not specified, results are displayed newest first, oldest last by their
+   *     [creationTime][google.photos.types.MediaMetadata.creation_time]. Providing
+   *     `MediaMetadata.creation_time` displays search results in the opposite order, oldest first
+   *     then newest last. To display results newest first then oldest last, include the `desc`
+   *     argument as follows: `MediaMetadata.creation_time desc`.
+   *     <p>The only additional filters that can be used with this parameter are
+   *     [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media] and
+   *     [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].
+   *     No other filters are supported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchMediaItemsPagedResponse searchMediaItems(Filters filters, String orderBy) {
+    SearchMediaItemsRequest request =
+        SearchMediaItemsRequest.newBuilder().setFilters(filters).setOrderBy(orderBy).build();
+    return searchMediaItems(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for media items in a user's Google Photos library. If no filters are set, then all
+   * media items in the user's library are returned. If an album is set, all media items in the
+   * specified album are returned. If filters are specified, media items that match the filters from
+   * the user's library are listed. If you set both the album and the filters, the request results
+   * in an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
    *   SearchMediaItemsRequest request =
    *       SearchMediaItemsRequest.newBuilder()
    *           .setAlbumId("albumId-920410134")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilters(Filters.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (MediaItem element : internalPhotosLibraryClient.searchMediaItems(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -633,6 +676,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilters(Filters.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<MediaItem> future =
    *       internalPhotosLibraryClient.searchMediaItemsPagedCallable().futureCall(request);
@@ -667,6 +711,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilters(Filters.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     SearchMediaItemsResponse response =

@@ -118,4 +118,55 @@ public interface SearchMediaItemsRequestOrBuilder
    * <code>.google.photos.library.v1.Filters filters = 4;</code>
    */
   com.google.photos.library.v1.proto.FiltersOrBuilder getFiltersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * An optional field to specify the sort order of the search results. The
+   * `orderBy` field only works when a
+   * [dateFilter][google.photos.library.v1.DateFilter] is used. When this
+   * field is not specified, results are displayed newest first, oldest last by
+   * their [creationTime][google.photos.types.MediaMetadata.creation_time].
+   * Providing `MediaMetadata.creation_time` displays search results in
+   * the opposite order, oldest first then newest last.
+   * To display results newest first then oldest last, include the `desc`
+   * argument as follows: `MediaMetadata.creation_time desc`.
+   * The only additional filters that can be used with this parameter are
+   * [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media]
+   * and
+   * [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].
+   * No other filters are supported.
+   * </pre>
+   *
+   * <code>string order_by = 5;</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * An optional field to specify the sort order of the search results. The
+   * `orderBy` field only works when a
+   * [dateFilter][google.photos.library.v1.DateFilter] is used. When this
+   * field is not specified, results are displayed newest first, oldest last by
+   * their [creationTime][google.photos.types.MediaMetadata.creation_time].
+   * Providing `MediaMetadata.creation_time` displays search results in
+   * the opposite order, oldest first then newest last.
+   * To display results newest first then oldest last, include the `desc`
+   * argument as follows: `MediaMetadata.creation_time desc`.
+   * The only additional filters that can be used with this parameter are
+   * [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media]
+   * and
+   * [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].
+   * No other filters are supported.
+   * </pre>
+   *
+   * <code>string order_by = 5;</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

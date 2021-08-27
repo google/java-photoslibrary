@@ -26,12 +26,14 @@ import com.google.photos.library.v1.internal.stub.PhotosLibraryStub;
 import com.google.photos.library.v1.proto.AlbumPosition;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest;
 import com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse;
+import com.google.photos.library.v1.proto.Filters;
 import com.google.photos.library.v1.proto.ListMediaItemsRequest;
 import com.google.photos.library.v1.proto.NewMediaItem;
 import com.google.photos.library.v1.upload.PhotosLibraryUploadStub;
 import com.google.photos.library.v1.upload.PhotosLibraryUploadStubImpl;
 import com.google.photos.library.v1.upload.UploadMediaItemRequest;
 import com.google.photos.library.v1.upload.UploadMediaItemResponse;
+import com.google.photos.library.v1.util.OrderBy;
 import com.google.photos.types.proto.Album;
 import com.google.photos.types.proto.MediaItem;
 import com.google.protobuf.FieldMask;
@@ -318,6 +320,55 @@ public final class PhotosLibraryClient extends InternalPhotosLibraryClient {
    */
   public final ListSharedAlbumsPagedResponse listSharedAlbums() {
     return super.listSharedAlbums(false);
+  }
+
+  /**
+   * Searches for media items in a user's Google Photos library. If no filters are set, then all
+   * media items in the user's library are returned. If an album is set, all media items in the
+   * specified album are returned. If filters are specified, media items that match the filters from
+   * the user's library are listed. If you set both the album and the filters, the request results
+   * in an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
+   *     InternalPhotosLibraryClient.create()) {
+   *   Filters filters = Filters.newBuilder().build();
+   *   OrderBy newestFirstOrder = OrderBy.MEDIAMETADATA_CREATION_TIME_DESC;
+   *   for (MediaItem element :
+   *       internalPhotosLibraryClient.searchMediaItems(filters, newestFirstOrder).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param filters Filters to apply to the request. Can't be set in conjunction with an `albumId`.
+   * @param orderBy An optional field to specify the sort order of the search results. The `orderBy`
+   *     field only works when a [dateFilter][google.photos.library.v1.DateFilter] is used. When
+   *     this field is not specified, results are displayed newest first, oldest last by their
+   *     [creationTime][google.photos.types.MediaMetadata.creation_time]. Providing
+   *     {@link OrderBy#MEDIAMETADATA_CREATION_TIME} displays search results in the opposite order, oldest first
+   *     then newest last. To display results newest first then oldest last, include the `desc`
+   *     argument using {@link OrderBy#MEDIAMETADATA_CREATION_TIME_DESC}.
+   *     <p>The only additional filters that can be used with this parameter are
+   *     [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media] and
+   *     [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].
+   *     No other filters are supported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchMediaItemsPagedResponse searchMediaItems(Filters filters, OrderBy... orderBy) {
+    // Construct the orderBy string.
+    StringBuilder builder = new StringBuilder();
+    for (int i = 0; i < orderBy.length; i++) {
+      builder.append(orderBy[i].getRequestValue());
+      // Add the separator string if there are additional values.
+      if (i < orderBy.length - 1) {
+        builder.append(OrderBy.SEPARATOR);
+      }
+    }
+
+    return super.searchMediaItems(filters, builder.toString());
   }
 
   @Override

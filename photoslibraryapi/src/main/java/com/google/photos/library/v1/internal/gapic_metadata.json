@@ -53,7 +53,7 @@
               "methods": ["listSharedAlbums", "listSharedAlbums", "listSharedAlbumsPagedCallable", "listSharedAlbumsCallable"]
             },
             "SearchMediaItems": {
-              "methods": ["searchMediaItems", "searchMediaItems", "searchMediaItems", "searchMediaItemsPagedCallable", "searchMediaItemsCallable"]
+              "methods": ["searchMediaItems", "searchMediaItems", "searchMediaItems", "searchMediaItems", "searchMediaItemsPagedCallable", "searchMediaItemsCallable"]
             },
             "ShareAlbum": {
               "methods": ["shareAlbum", "shareAlbum", "shareAlbumCallable"]
