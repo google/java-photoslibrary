@@ -35,8 +35,14 @@ import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
 /**
- * Wrapper of {@link InternalPhotosLibrarySettings}. This includes {@link UnaryCallSettings} as an
- * extension.
+ * Settings for a {@link PhotosLibraryClient} for interacting with the Google Photos Library API.
+ *
+ * Use the {@link Builder} to create an instance of this class. You can configure the retry
+ * configuration for media upload requests using {@link UnaryCallSettings} through the
+ * {@link Builder#uploadMediaItemSettingsBuilder}.
+ *
+ * Note that this class is a wrapper of {@link InternalPhotosLibrarySettings} which should not be
+ * used directly. Instead, use this class and the {@link PhotosLibraryClient}.
  */
 public final class PhotosLibrarySettings extends InternalPhotosLibrarySettings {
   /** The default endpoint of the upload service. */
