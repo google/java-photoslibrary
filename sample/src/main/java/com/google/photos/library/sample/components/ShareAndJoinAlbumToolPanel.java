@@ -2,16 +2,11 @@ package com.google.photos.library.sample.components;
 
 import com.google.photos.library.sample.helpers.UIHelper;
 import com.google.photos.library.sample.views.AbstractCustomView;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-import javax.swing.Box;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * Represents a {@link ToolPanel} that lets user open a list of shareable albums and join a shared
@@ -25,8 +20,10 @@ public final class ShareAndJoinAlbumToolPanel extends ToolPanel {
   private static final int TITLE_SIZE = 20;
 
   private static final String DESCRIPTION =
-      "You're viewing all albums in the user library. "
-          + "Use the create action to add a new album.";
+      "Viewing all shared albums. Use the ‘Share An Album’ action to list all the available "
+          + "albums to share. Use the ‘Join Album’ action to join a shared album using a "
+          + "share token.";
+
   private static final int DESCRIPTION_SIZE = 13;
 
   private static final String SHARE_TEXT = "SHARE ALBUM";
@@ -38,7 +35,8 @@ public final class ShareAndJoinAlbumToolPanel extends ToolPanel {
   private static final String JOIN_ALBUM_INPUT_DESCRIPTION =
       "To join a shared album, enter the share token of the "
           + "album here and click on 'ok'.\n"
-          + "Note that you can only join albums that haven't been added to your Google Photos library yet.";
+          + "Note that you can only join albums that haven't been added to your Google Photos "
+          + "library yet and that have been shared by this application.";
 
   public ShareAndJoinAlbumToolPanel(
       Consumer<AbstractCustomView> onShareClicked,

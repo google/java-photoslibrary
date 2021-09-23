@@ -28,6 +28,7 @@ import com.google.photos.library.sample.components.ShareAlbumToolPanel;
 import com.google.photos.library.sample.components.ShareAndJoinAlbumToolPanel;
 import com.google.photos.library.sample.components.ShareableAlbumToolPanel;
 import com.google.photos.library.sample.factories.PhotosLibraryClientFactory;
+import com.google.photos.library.sample.helpers.ErrorHelper;
 import com.google.photos.library.sample.helpers.UIHelper;
 import com.google.photos.library.sample.suppliers.ListAlbumsSupplier;
 import com.google.photos.library.sample.suppliers.ListSharedAlbumsSupplier;
@@ -71,7 +72,7 @@ public final class ShareDemo {
       "<html>"
           + getFormattedText(
               "Google Photos Library API Sample", 14 /* fontSize */, 2 /* lineMargin */)
-          + getFormattedText("Share and join", 22 /* fontSize */, 10 /* lineMargin */)
+          + getFormattedText("Share and join an album", 22 /* fontSize */, 10 /* lineMargin */)
           + getFormattedText("This sample will cover", 12 /* fontSize */, 2 /* lineMargin */)
           + getFormattedText(
               " - Connecting to a Google Photos library", 12 /* fontSize */, 2 /* lineMargin */)
@@ -126,7 +127,7 @@ public final class ShareDemo {
             PhotosLibraryClientFactory.createClient(credentialsPath, REQUIRED_SCOPES);
         showSharedAlbums(client);
       } catch (Exception e) {
-        JOptionPane.showMessageDialog(connectToPhotosView, e.getMessage());
+        ErrorHelper.showFatalErrorMessage(connectToPhotosView, e, "Could not create client.");
       }
     };
   }
@@ -152,11 +153,11 @@ public final class ShareDemo {
   private static BiConsumer<AbstractCustomView, String> getOnJoinClickedFn(
       PhotosLibraryClient client) {
     return (abstractCustomView, shareToken) -> {
-      client.joinSharedAlbum(shareToken);
       try {
+        client.joinSharedAlbum(shareToken);
         abstractCustomView.updateView();
       } catch (Exception e) {
-        JOptionPane.showMessageDialog(abstractCustomView, e.getMessage());
+        ErrorHelper.showErrorMessage(abstractCustomView, e, "Could not join album.");
       }
     };
   }
@@ -172,7 +173,8 @@ public final class ShareDemo {
         AppPanel appPanel =
             new AppPanel(
                 SHARE_TITLE, getOnBackClickedFn(sharedAlbumListView), getOnApplicationClosedFn());
-        ShareableAlbumToolPanel shareableAlbumToolPanel = new ShareableAlbumToolPanel();
+        ShareableAlbumToolPanel shareableAlbumToolPanel =
+            new ShareableAlbumToolPanel(getOnCreateClickedFn(client));
 
         AlbumListView shareableAlbumListView =
             new AlbumListView(
@@ -183,8 +185,22 @@ public final class ShareDemo {
                 getOnBackClickedFn(sharedAlbumListView));
         shareableAlbumListView.showView();
       } catch (Exception e) {
-        JOptionPane.showMessageDialog(sharedAlbumListView, e.getMessage());
+        ErrorHelper.showErrorMessage(
+            sharedAlbumListView, e, "Could not display the list of shared albums.");
         sharedAlbumListView.showView();
+      }
+    };
+  }
+
+  private static BiConsumer<AbstractCustomView, String> getOnCreateClickedFn(
+      PhotosLibraryClient client) {
+    return (abstractCustomView, newAlbumTitle) -> {
+      try {
+        client.createAlbum(Album.newBuilder().setTitle(newAlbumTitle).build());
+        abstractCustomView.updateView();
+      } catch (Exception e) {
+        JOptionPane.showMessageDialog(abstractCustomView, e.getMessage());
+        abstractCustomView.showView();
       }
     };
   }
@@ -195,7 +211,7 @@ public final class ShareDemo {
       try {
         showPhotosInAlbum(albumListView, client, album);
       } catch (Exception e) {
-        JOptionPane.showMessageDialog(albumListView, e.getMessage());
+        ErrorHelper.showErrorMessage(albumListView, e, "Could not show the album.");
         albumListView.showView();
       }
     };
@@ -232,7 +248,7 @@ public final class ShareDemo {
         albumListView.updateView();
         albumListView.showView();
       } catch (Exception e) {
-        JOptionPane.showMessageDialog(photoListView, e.getMessage());
+        ErrorHelper.showFatalErrorMessage(photoListView, e, "Could not load the list of albums.");
       }
     };
   }
@@ -244,14 +260,22 @@ public final class ShareDemo {
       abstractCustomView.hideView();
       abstractCustomView.dispose();
 
-      ShareAlbumResponse response = client.shareAlbum(album.getId(), DEFAULT_SHARE_OPTIONS);
-      Album sharedAlbum = album.toBuilder().setShareInfo(response.getShareInfo()).build();
+      Album.Builder albumBuilder = album.toBuilder();
+      try {
+        // Share the album and include the returned share info details in the displayed album
+        ShareAlbumResponse response = client.shareAlbum(album.getId(), DEFAULT_SHARE_OPTIONS);
+        albumBuilder.setShareInfo(response.getShareInfo());
+      } catch (Exception e) {
+        // Album could not be shared
+        ErrorHelper.showErrorMessage(abstractCustomView, e, "Could not share the album");
+      }
 
       // Show a new view for the album
       try {
-        showPhotosInAlbum(albumListView, client, sharedAlbum);
+        showPhotosInAlbum(albumListView, client, albumBuilder.build());
       } catch (Exception e) {
-        JOptionPane.showMessageDialog(abstractCustomView, e.getMessage());
+        ErrorHelper.showErrorMessage(abstractCustomView, e, "Could not load the album.");
+        albumListView.showView();
       }
     };
   }

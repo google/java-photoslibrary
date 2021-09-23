@@ -49,7 +49,7 @@ public final class ShareAlbumToolPanel extends ToolPanel {
         new GridLayout(2 /* rows */, 1 /* cols */, 0 /* unset hgap */, 10 /* vgap */));
     metadataTextArea.setEditable(false);
     metadataTextArea.setLineWrap(true);
-    metadataTextArea.append(String.format("URL: %s", album.getProductUrl()));
+    metadataTextArea.append(String.format("Product URL: %s", album.getProductUrl()));
     if (album.hasShareInfo()) {
       metadataTextArea.append(
           String.format("\nShare URL: %s", album.getShareInfo().getShareableUrl()));
