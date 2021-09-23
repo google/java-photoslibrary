@@ -75,6 +75,7 @@ a new `PhotosLibraryClient` object with credentials from the Google Auth Library
 
 ## Sample usage
 
+### API calls
 Here's a short example that shows how to create a new album:
 
 ```java
@@ -100,6 +101,47 @@ try (PhotosLibraryClient photosLibraryClient =
     // Error during album creation
 }
 // [END sample_usage]
+```
+
+The Google Photos Library API should be accessed via the `PhotosLibraryClient` class, which contains
+some additional abstractions and utility methods. You should not use the underlying
+`InternalPhotosLibraryClient` and associated classes directly.
+
+### Google API Extensions
+
+This library uses the [*Google API Extensions for Java (GAX Java)
+library](https://github.com/googleapis/gax-java) for API access.
+
+In particular, there are three ways of making calls to each of the API's methods:
+
+* A "flattened" method (recommended). With this type of method, the fields of the request type have
+  been converted into function parameters. Use the class `PhotosLibraryClient` to make these
+  requests.
+* A "request object" method. This type of method only takes one parameter, a request object, which
+  must be constructed before the call. Not every API method will have a request object method.
+* A "callable" method. This type of method takes no parameters and returns an immutable API callable
+  object, which can be used to initiate calls to the service.
+
+### Paged responses and Callables
+
+Using the [Google API Extensions library](#google-api-extensions), pagination as described in the
+[Google Photos Library API developer documentation](https://developers.google.com/photos/library/guides/list#pagination)
+is supported via `PagedListResponse`, for example `ListAlbumsPagedResponse`.
+
+```java
+try {
+    // Make a request to list all albums in the user's library
+    // Iterate over all the albums in this list
+    // Pagination is handled automatically
+    ListAlbumsPagedResponse response = photosLibraryClient.listAlbums();
+
+    for (Album album : response.iterateAll()) {
+        // Get some properties of an album and do something with them.
+        String id = album.getId();
+    }
+} catch (ApiException e) {
+    // Handle error
+}
 ```
 
 ## Retry configuration
