@@ -19,6 +19,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/photos/library/v1/photos_library.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class PhotosLibraryGrpc {
 
   private PhotosLibraryGrpc() {}

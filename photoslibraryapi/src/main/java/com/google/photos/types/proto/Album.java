@@ -529,13 +529,13 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
     }
-    if (!getProductUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, productUrl_);
     }
     if (isWriteable_ != false) {
@@ -547,10 +547,10 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     if (mediaItemsCount_ != 0L) {
       output.writeInt64(6, mediaItemsCount_);
     }
-    if (!getCoverPhotoBaseUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(coverPhotoBaseUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, coverPhotoBaseUrl_);
     }
-    if (!getCoverPhotoMediaItemIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(coverPhotoMediaItemId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, coverPhotoMediaItemId_);
     }
     unknownFields.writeTo(output);
@@ -562,13 +562,13 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
     }
-    if (!getProductUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, productUrl_);
     }
     if (isWriteable_ != false) {
@@ -580,10 +580,10 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     if (mediaItemsCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, mediaItemsCount_);
     }
-    if (!getCoverPhotoBaseUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(coverPhotoBaseUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, coverPhotoBaseUrl_);
     }
-    if (!getCoverPhotoMediaItemIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(coverPhotoMediaItemId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, coverPhotoMediaItemId_);
     }
     size += unknownFields.getSerializedSize();

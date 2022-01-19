@@ -249,7 +249,7 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
     for (int i = 0; i < mediaItemIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mediaItemIds_.getRaw(i));
     }
-    if (!getAlbumIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(albumId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, albumId_);
     }
     unknownFields.writeTo(output);
@@ -269,7 +269,7 @@ public final class BatchAddMediaItemsToAlbumRequest extends com.google.protobuf.
       size += dataSize;
       size += 1 * getMediaItemIdsList().size();
     }
-    if (!getAlbumIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(albumId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, albumId_);
     }
     size += unknownFields.getSerializedSize();

@@ -251,7 +251,7 @@ public final class ListMediaItemsResponse extends com.google.protobuf.GeneratedM
     for (int i = 0; i < mediaItems_.size(); i++) {
       output.writeMessage(1, mediaItems_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
@@ -266,7 +266,7 @@ public final class ListMediaItemsResponse extends com.google.protobuf.GeneratedM
     for (int i = 0; i < mediaItems_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, mediaItems_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();

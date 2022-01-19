@@ -160,7 +160,7 @@ public final class LeaveSharedAlbumRequest extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getShareTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, shareToken_);
     }
     unknownFields.writeTo(output);
@@ -172,7 +172,7 @@ public final class LeaveSharedAlbumRequest extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!getShareTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, shareToken_);
     }
     size += unknownFields.getSerializedSize();

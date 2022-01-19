@@ -226,10 +226,10 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getUploadTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uploadToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uploadToken_);
     }
-    if (!getFileNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fileName_);
     }
     unknownFields.writeTo(output);
@@ -241,10 +241,10 @@ public final class SimpleMediaItem extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getUploadTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uploadToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uploadToken_);
     }
-    if (!getFileNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fileName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fileName_);
     }
     size += unknownFields.getSerializedSize();

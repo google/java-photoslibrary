@@ -292,7 +292,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getUploadTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uploadToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uploadToken_);
     }
     if (status_ != null) {
@@ -310,7 +310,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (!getUploadTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uploadToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uploadToken_);
     }
     if (status_ != null) {

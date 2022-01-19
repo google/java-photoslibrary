@@ -347,10 +347,10 @@ public final class PhotosLibraryClient extends InternalPhotosLibraryClient {
    * @param orderBy An optional field to specify the sort order of the search results. The `orderBy`
    *     field only works when a [dateFilter][google.photos.library.v1.DateFilter] is used. When
    *     this field is not specified, results are displayed newest first, oldest last by their
-   *     [creationTime][google.photos.types.MediaMetadata.creation_time]. Providing
-   *     {@link OrderBy#MEDIAMETADATA_CREATION_TIME} displays search results in the opposite order, oldest first
-   *     then newest last. To display results newest first then oldest last, include the `desc`
-   *     argument using {@link OrderBy#MEDIAMETADATA_CREATION_TIME_DESC}.
+   *     [creationTime][google.photos.types.MediaMetadata.creation_time]. Providing {@link
+   *     OrderBy#MEDIAMETADATA_CREATION_TIME} displays search results in the opposite order, oldest
+   *     first then newest last. To display results newest first then oldest last, include the
+   *     `desc` argument using {@link OrderBy#MEDIAMETADATA_CREATION_TIME_DESC}.
    *     <p>The only additional filters that can be used with this parameter are
    *     [includeArchivedMedia][google.photos.library.v1.Filters.include_archived_media] and
    *     [excludeNonAppCreatedData][google.photos.library.v1.Filters.exclude_non_app_created_data].

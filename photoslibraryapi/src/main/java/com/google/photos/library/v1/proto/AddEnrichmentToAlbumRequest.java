@@ -301,7 +301,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getAlbumIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(albumId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, albumId_);
     }
     if (newEnrichmentItem_ != null) {
@@ -319,7 +319,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
     if (size != -1) return size;
 
     size = 0;
-    if (!getAlbumIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(albumId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, albumId_);
     }
     if (newEnrichmentItem_ != null) {

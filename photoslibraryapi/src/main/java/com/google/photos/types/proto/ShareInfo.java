@@ -380,10 +380,10 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
     if (sharedAlbumOptions_ != null) {
       output.writeMessage(1, getSharedAlbumOptions());
     }
-    if (!getShareableUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareableUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, shareableUrl_);
     }
-    if (!getShareTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, shareToken_);
     }
     if (isJoined_ != false) {
@@ -407,10 +407,10 @@ public final class ShareInfo extends com.google.protobuf.GeneratedMessageV3
     if (sharedAlbumOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSharedAlbumOptions());
     }
-    if (!getShareableUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareableUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, shareableUrl_);
     }
-    if (!getShareTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, shareToken_);
     }
     if (isJoined_ != false) {

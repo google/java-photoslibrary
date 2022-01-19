@@ -349,10 +349,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getCameraMakeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cameraMake_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cameraMake_);
     }
-    if (!getCameraModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cameraModel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cameraModel_);
     }
     if (focalLength_ != 0F) {
@@ -376,10 +376,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getCameraMakeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cameraMake_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cameraMake_);
     }
-    if (!getCameraModelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cameraModel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cameraModel_);
     }
     if (focalLength_ != 0F) {

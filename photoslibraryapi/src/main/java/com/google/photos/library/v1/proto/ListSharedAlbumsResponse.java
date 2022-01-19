@@ -249,7 +249,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
     for (int i = 0; i < sharedAlbums_.size(); i++) {
       output.writeMessage(1, sharedAlbums_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     unknownFields.writeTo(output);
@@ -264,7 +264,7 @@ public final class ListSharedAlbumsResponse extends com.google.protobuf.Generate
     for (int i = 0; i < sharedAlbums_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, sharedAlbums_.get(i));
     }
-    if (!getNextPageTokenBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();

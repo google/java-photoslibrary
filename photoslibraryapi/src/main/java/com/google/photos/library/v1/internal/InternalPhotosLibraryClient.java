@@ -1866,8 +1866,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * }</pre>
    *
    * @param album Required. The [Album][google.photos.types.Album] to update.
-   *     <p>The album?s `id` field is used to identify the album to be updated. The album?s `title`
-   *     field is used to set the new album title. The album?s `cover_photo_media_item_id` field is
+   *     <p>The album’s `id` field is used to identify the album to be updated. The album’s `title`
+   *     field is used to set the new album title. The album’s `cover_photo_media_item_id` field is
    *     used to set the new album cover photo.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1894,8 +1894,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * }</pre>
    *
    * @param album Required. The [Album][google.photos.types.Album] to update.
-   *     <p>The album?s `id` field is used to identify the album to be updated. The album?s `title`
-   *     field is used to set the new album title. The album?s `cover_photo_media_item_id` field is
+   *     <p>The album’s `id` field is used to identify the album to be updated. The album’s `title`
+   *     field is used to set the new album title. The album’s `cover_photo_media_item_id` field is
    *     used to set the new album cover photo.
    * @param updateMask Required. Indicate what fields in the provided album to update. The only
    *     valid values are `title` and `cover_photo_media_item_id`.

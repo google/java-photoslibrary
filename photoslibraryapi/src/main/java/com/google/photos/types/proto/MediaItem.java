@@ -593,19 +593,19 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
-    if (!getProductUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, productUrl_);
     }
-    if (!getBaseUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, baseUrl_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, mimeType_);
     }
     if (mediaMetadata_ != null) {
@@ -614,7 +614,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
     if (contributorInfo_ != null) {
       output.writeMessage(7, getContributorInfo());
     }
-    if (!getFilenameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filename_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, filename_);
     }
     unknownFields.writeTo(output);
@@ -626,19 +626,19 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
-    if (!getProductUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, productUrl_);
     }
-    if (!getBaseUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, baseUrl_);
     }
-    if (!getMimeTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, mimeType_);
     }
     if (mediaMetadata_ != null) {
@@ -647,7 +647,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
     if (contributorInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getContributorInfo());
     }
-    if (!getFilenameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filename_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, filename_);
     }
     size += unknownFields.getSerializedSize();

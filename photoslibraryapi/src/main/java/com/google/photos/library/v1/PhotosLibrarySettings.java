@@ -37,11 +37,11 @@ import org.threeten.bp.Duration;
 /**
  * Settings for a {@link PhotosLibraryClient} for interacting with the Google Photos Library API.
  *
- * Use the {@link Builder} to create an instance of this class. You can configure the retry
- * configuration for media upload requests using {@link UnaryCallSettings} through the
- * {@link Builder#uploadMediaItemSettingsBuilder}.
+ * <p>Use the {@link Builder} to create an instance of this class. You can configure the retry
+ * configuration for media upload requests using {@link UnaryCallSettings} through the {@link
+ * Builder#uploadMediaItemSettingsBuilder}.
  *
- * Note that this class is a wrapper of {@link InternalPhotosLibrarySettings} which should not be
+ * <p>Note that this class is a wrapper of {@link InternalPhotosLibrarySettings} which should not be
  * used directly. Instead, use this class and the {@link PhotosLibraryClient}.
  */
 public final class PhotosLibrarySettings extends InternalPhotosLibrarySettings {
