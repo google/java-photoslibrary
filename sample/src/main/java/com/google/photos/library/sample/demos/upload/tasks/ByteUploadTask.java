@@ -103,7 +103,7 @@ public class ByteUploadTask implements Callable<ByteUploadTask.ByteUploadResult>
       // Upload the bytes and capture the response from the API.
       UploadMediaItemResponse uploadResponse = photosLibraryClient.uploadMediaItem(uploadRequest);
 
-      if (uploadResponse.getUploadToken().isPresent() && uploadResponse.getError().isEmpty()) {
+      if (uploadResponse.getUploadToken().isPresent() && uploadResponse.getError().isPresent()) {
         // The upload was successful, because an upload token is present and there was no error.
         final String uploadToken = uploadResponse.getUploadToken().get();
         return ByteUploadResult.createSuccessResult(fileToUpload, uploadToken);

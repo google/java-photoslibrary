@@ -119,13 +119,13 @@ public final class UploadMediaItemRequest {
 
     public Builder mergeFrom(UploadMediaItemRequest other) {
 
-      if (!other.getFileName().isEmpty()) {
+      if (!other.getFileName().isPresent()) {
         fileName = other.fileName;
       }
-      if (!other.getMimeType().isEmpty()) {
+      if (!other.getMimeType().isPresent()) {
         mimeType = other.mimeType;
       }
-      if (!other.getUploadUrl().isEmpty()) {
+      if (!other.getUploadUrl().isPresent()) {
         uploadUrl = other.uploadUrl;
       }
       chunkSize = other.getChunkSize();
