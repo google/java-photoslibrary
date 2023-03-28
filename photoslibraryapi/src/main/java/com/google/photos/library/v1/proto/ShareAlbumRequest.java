@@ -37,66 +37,6 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private ShareAlbumRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              albumId_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.photos.types.proto.SharedAlbumOptions.Builder subBuilder = null;
-              if (sharedAlbumOptions_ != null) {
-                subBuilder = sharedAlbumOptions_.toBuilder();
-              }
-              sharedAlbumOptions_ =
-                  input.readMessage(
-                      com.google.photos.types.proto.SharedAlbumOptions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sharedAlbumOptions_);
-                sharedAlbumOptions_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_ShareAlbumRequest_descriptor;
@@ -113,13 +53,15 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ALBUM_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object albumId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object albumId_ = "";
   /**
    *
    *
    * <pre>
-   * Required. Identifier of the album to be shared. This `albumId` must belong to an
-   * album created by the developer.
+   * Required. Identifier of the album to be shared. This `albumId` must belong
+   * to an album created by the developer.
    * </pre>
    *
    * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -142,8 +84,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Identifier of the album to be shared. This `albumId` must belong to an
-   * album created by the developer.
+   * Required. Identifier of the album to be shared. This `albumId` must belong
+   * to an album created by the developer.
    * </pre>
    *
    * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -209,7 +151,9 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.photos.types.proto.SharedAlbumOptionsOrBuilder
       getSharedAlbumOptionsOrBuilder() {
-    return getSharedAlbumOptions();
+    return sharedAlbumOptions_ == null
+        ? com.google.photos.types.proto.SharedAlbumOptions.getDefaultInstance()
+        : sharedAlbumOptions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -232,7 +176,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
     if (sharedAlbumOptions_ != null) {
       output.writeMessage(2, getSharedAlbumOptions());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -247,7 +191,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
     if (sharedAlbumOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSharedAlbumOptions());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -268,7 +212,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
     if (hasSharedAlbumOptions()) {
       if (!getSharedAlbumOptions().equals(other.getSharedAlbumOptions())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -285,7 +229,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + SHARED_ALBUM_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getSharedAlbumOptions().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -414,28 +358,20 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.photos.library.v1.proto.ShareAlbumRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       albumId_ = "";
-
-      if (sharedAlbumOptionsBuilder_ == null) {
-        sharedAlbumOptions_ = null;
-      } else {
-        sharedAlbumOptions_ = null;
+      sharedAlbumOptions_ = null;
+      if (sharedAlbumOptionsBuilder_ != null) {
+        sharedAlbumOptionsBuilder_.dispose();
         sharedAlbumOptionsBuilder_ = null;
       }
       return this;
@@ -465,14 +401,24 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
     public com.google.photos.library.v1.proto.ShareAlbumRequest buildPartial() {
       com.google.photos.library.v1.proto.ShareAlbumRequest result =
           new com.google.photos.library.v1.proto.ShareAlbumRequest(this);
-      result.albumId_ = albumId_;
-      if (sharedAlbumOptionsBuilder_ == null) {
-        result.sharedAlbumOptions_ = sharedAlbumOptions_;
-      } else {
-        result.sharedAlbumOptions_ = sharedAlbumOptionsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.ShareAlbumRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.albumId_ = albumId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sharedAlbumOptions_ =
+            sharedAlbumOptionsBuilder_ == null
+                ? sharedAlbumOptions_
+                : sharedAlbumOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -523,12 +469,13 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getAlbumId().isEmpty()) {
         albumId_ = other.albumId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSharedAlbumOptions()) {
         mergeSharedAlbumOptions(other.getSharedAlbumOptions());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -543,28 +490,56 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.ShareAlbumRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                albumId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getSharedAlbumOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.photos.library.v1.proto.ShareAlbumRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object albumId_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Identifier of the album to be shared. This `albumId` must belong to an
-     * album created by the developer.
+     * Required. Identifier of the album to be shared. This `albumId` must belong
+     * to an album created by the developer.
      * </pre>
      *
      * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -586,8 +561,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Identifier of the album to be shared. This `albumId` must belong to an
-     * album created by the developer.
+     * Required. Identifier of the album to be shared. This `albumId` must belong
+     * to an album created by the developer.
      * </pre>
      *
      * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -609,8 +584,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Identifier of the album to be shared. This `albumId` must belong to an
-     * album created by the developer.
+     * Required. Identifier of the album to be shared. This `albumId` must belong
+     * to an album created by the developer.
      * </pre>
      *
      * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -622,8 +597,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       albumId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +606,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Identifier of the album to be shared. This `albumId` must belong to an
-     * album created by the developer.
+     * Required. Identifier of the album to be shared. This `albumId` must belong
+     * to an album created by the developer.
      * </pre>
      *
      * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -640,8 +615,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAlbumId() {
-
       albumId_ = getDefaultInstance().getAlbumId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -649,8 +624,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Identifier of the album to be shared. This `albumId` must belong to an
-     * album created by the developer.
+     * Required. Identifier of the album to be shared. This `albumId` must belong
+     * to an album created by the developer.
      * </pre>
      *
      * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -663,8 +638,8 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       albumId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -687,7 +662,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the sharedAlbumOptions field is set.
      */
     public boolean hasSharedAlbumOptions() {
-      return sharedAlbumOptionsBuilder_ != null || sharedAlbumOptions_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -724,11 +699,11 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         sharedAlbumOptions_ = value;
-        onChanged();
       } else {
         sharedAlbumOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -744,11 +719,11 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
         com.google.photos.types.proto.SharedAlbumOptions.Builder builderForValue) {
       if (sharedAlbumOptionsBuilder_ == null) {
         sharedAlbumOptions_ = builderForValue.build();
-        onChanged();
       } else {
         sharedAlbumOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -762,19 +737,19 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeSharedAlbumOptions(com.google.photos.types.proto.SharedAlbumOptions value) {
       if (sharedAlbumOptionsBuilder_ == null) {
-        if (sharedAlbumOptions_ != null) {
-          sharedAlbumOptions_ =
-              com.google.photos.types.proto.SharedAlbumOptions.newBuilder(sharedAlbumOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && sharedAlbumOptions_ != null
+            && sharedAlbumOptions_
+                != com.google.photos.types.proto.SharedAlbumOptions.getDefaultInstance()) {
+          getSharedAlbumOptionsBuilder().mergeFrom(value);
         } else {
           sharedAlbumOptions_ = value;
         }
-        onChanged();
       } else {
         sharedAlbumOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -787,14 +762,13 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
      */
     public Builder clearSharedAlbumOptions() {
-      if (sharedAlbumOptionsBuilder_ == null) {
-        sharedAlbumOptions_ = null;
-        onChanged();
-      } else {
-        sharedAlbumOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sharedAlbumOptions_ = null;
+      if (sharedAlbumOptionsBuilder_ != null) {
+        sharedAlbumOptionsBuilder_.dispose();
         sharedAlbumOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -807,7 +781,7 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.photos.types.SharedAlbumOptions shared_album_options = 2;</code>
      */
     public com.google.photos.types.proto.SharedAlbumOptions.Builder getSharedAlbumOptionsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSharedAlbumOptionsFieldBuilder().getBuilder();
     }
@@ -888,7 +862,18 @@ public final class ShareAlbumRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ShareAlbumRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

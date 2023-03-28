@@ -36,100 +36,6 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private NewEnrichmentItem(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.photos.library.v1.proto.TextEnrichment.Builder subBuilder = null;
-              if (enrichmentCase_ == 1) {
-                subBuilder =
-                    ((com.google.photos.library.v1.proto.TextEnrichment) enrichment_).toBuilder();
-              }
-              enrichment_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.TextEnrichment.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.photos.library.v1.proto.TextEnrichment) enrichment_);
-                enrichment_ = subBuilder.buildPartial();
-              }
-              enrichmentCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.photos.library.v1.proto.LocationEnrichment.Builder subBuilder = null;
-              if (enrichmentCase_ == 2) {
-                subBuilder =
-                    ((com.google.photos.library.v1.proto.LocationEnrichment) enrichment_)
-                        .toBuilder();
-              }
-              enrichment_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.LocationEnrichment.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.photos.library.v1.proto.LocationEnrichment) enrichment_);
-                enrichment_ = subBuilder.buildPartial();
-              }
-              enrichmentCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.photos.library.v1.proto.MapEnrichment.Builder subBuilder = null;
-              if (enrichmentCase_ == 3) {
-                subBuilder =
-                    ((com.google.photos.library.v1.proto.MapEnrichment) enrichment_).toBuilder();
-              }
-              enrichment_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.MapEnrichment.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.photos.library.v1.proto.MapEnrichment) enrichment_);
-                enrichment_ = subBuilder.buildPartial();
-              }
-              enrichmentCase_ = 3;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_NewEnrichmentItem_descriptor;
@@ -372,7 +278,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
     if (enrichmentCase_ == 3) {
       output.writeMessage(3, (com.google.photos.library.v1.proto.MapEnrichment) enrichment_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -396,7 +302,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.photos.library.v1.proto.MapEnrichment) enrichment_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -426,7 +332,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -453,7 +359,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -583,22 +489,25 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.photos.library.v1.proto.NewEnrichmentItem.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      if (textEnrichmentBuilder_ != null) {
+        textEnrichmentBuilder_.clear();
+      }
+      if (locationEnrichmentBuilder_ != null) {
+        locationEnrichmentBuilder_.clear();
+      }
+      if (mapEnrichmentBuilder_ != null) {
+        mapEnrichmentBuilder_.clear();
+      }
       enrichmentCase_ = 0;
       enrichment_ = null;
       return this;
@@ -628,30 +537,30 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
     public com.google.photos.library.v1.proto.NewEnrichmentItem buildPartial() {
       com.google.photos.library.v1.proto.NewEnrichmentItem result =
           new com.google.photos.library.v1.proto.NewEnrichmentItem(this);
-      if (enrichmentCase_ == 1) {
-        if (textEnrichmentBuilder_ == null) {
-          result.enrichment_ = enrichment_;
-        } else {
-          result.enrichment_ = textEnrichmentBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (enrichmentCase_ == 2) {
-        if (locationEnrichmentBuilder_ == null) {
-          result.enrichment_ = enrichment_;
-        } else {
-          result.enrichment_ = locationEnrichmentBuilder_.build();
-        }
-      }
-      if (enrichmentCase_ == 3) {
-        if (mapEnrichmentBuilder_ == null) {
-          result.enrichment_ = enrichment_;
-        } else {
-          result.enrichment_ = mapEnrichmentBuilder_.build();
-        }
-      }
-      result.enrichmentCase_ = enrichmentCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.NewEnrichmentItem result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.photos.library.v1.proto.NewEnrichmentItem result) {
+      result.enrichmentCase_ = enrichmentCase_;
+      result.enrichment_ = this.enrichment_;
+      if (enrichmentCase_ == 1 && textEnrichmentBuilder_ != null) {
+        result.enrichment_ = textEnrichmentBuilder_.build();
+      }
+      if (enrichmentCase_ == 2 && locationEnrichmentBuilder_ != null) {
+        result.enrichment_ = locationEnrichmentBuilder_.build();
+      }
+      if (enrichmentCase_ == 3 && mapEnrichmentBuilder_ != null) {
+        result.enrichment_ = mapEnrichmentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -721,7 +630,7 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -736,18 +645,50 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.NewEnrichmentItem parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getTextEnrichmentFieldBuilder().getBuilder(), extensionRegistry);
+                enrichmentCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getLocationEnrichmentFieldBuilder().getBuilder(), extensionRegistry);
+                enrichmentCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getMapEnrichmentFieldBuilder().getBuilder(), extensionRegistry);
+                enrichmentCase_ = 3;
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.photos.library.v1.proto.NewEnrichmentItem) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -764,6 +705,8 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.photos.library.v1.proto.TextEnrichment,
@@ -878,8 +821,9 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
       } else {
         if (enrichmentCase_ == 1) {
           textEnrichmentBuilder_.mergeFrom(value);
+        } else {
+          textEnrichmentBuilder_.setMessage(value);
         }
-        textEnrichmentBuilder_.setMessage(value);
       }
       enrichmentCase_ = 1;
       return this;
@@ -971,7 +915,6 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
       }
       enrichmentCase_ = 1;
       onChanged();
-      ;
       return textEnrichmentBuilder_;
     }
 
@@ -1090,8 +1033,9 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
       } else {
         if (enrichmentCase_ == 2) {
           locationEnrichmentBuilder_.mergeFrom(value);
+        } else {
+          locationEnrichmentBuilder_.setMessage(value);
         }
-        locationEnrichmentBuilder_.setMessage(value);
       }
       enrichmentCase_ = 2;
       return this;
@@ -1185,7 +1129,6 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
       }
       enrichmentCase_ = 2;
       onChanged();
-      ;
       return locationEnrichmentBuilder_;
     }
 
@@ -1302,8 +1245,9 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
       } else {
         if (enrichmentCase_ == 3) {
           mapEnrichmentBuilder_.mergeFrom(value);
+        } else {
+          mapEnrichmentBuilder_.setMessage(value);
         }
-        mapEnrichmentBuilder_.setMessage(value);
       }
       enrichmentCase_ = 3;
       return this;
@@ -1395,7 +1339,6 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
       }
       enrichmentCase_ = 3;
       onChanged();
-      ;
       return mapEnrichmentBuilder_;
     }
 
@@ -1431,7 +1374,18 @@ public final class NewEnrichmentItem extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NewEnrichmentItem(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

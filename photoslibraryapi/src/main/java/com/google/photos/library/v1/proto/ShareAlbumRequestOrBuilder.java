@@ -12,8 +12,8 @@ public interface ShareAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier of the album to be shared. This `albumId` must belong to an
-   * album created by the developer.
+   * Required. Identifier of the album to be shared. This `albumId` must belong
+   * to an album created by the developer.
    * </pre>
    *
    * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -25,8 +25,8 @@ public interface ShareAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier of the album to be shared. This `albumId` must belong to an
-   * album created by the developer.
+   * Required. Identifier of the album to be shared. This `albumId` must belong
+   * to an album created by the developer.
    * </pre>
    *
    * <code>string album_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>

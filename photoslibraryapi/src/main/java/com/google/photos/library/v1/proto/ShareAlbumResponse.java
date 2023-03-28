@@ -35,59 +35,6 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private ShareAlbumResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.photos.types.proto.ShareInfo.Builder subBuilder = null;
-              if (shareInfo_ != null) {
-                subBuilder = shareInfo_.toBuilder();
-              }
-              shareInfo_ =
-                  input.readMessage(
-                      com.google.photos.types.proto.ShareInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shareInfo_);
-                shareInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_ShareAlbumResponse_descriptor;
@@ -148,7 +95,9 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.photos.types.proto.ShareInfoOrBuilder getShareInfoOrBuilder() {
-    return getShareInfo();
+    return shareInfo_ == null
+        ? com.google.photos.types.proto.ShareInfo.getDefaultInstance()
+        : shareInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -168,7 +117,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
     if (shareInfo_ != null) {
       output.writeMessage(1, getShareInfo());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -180,7 +129,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
     if (shareInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getShareInfo());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -200,7 +149,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
     if (hasShareInfo()) {
       if (!getShareInfo().equals(other.getShareInfo())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -215,7 +164,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + SHARE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getShareInfo().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -345,26 +294,19 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.photos.library.v1.proto.ShareAlbumResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (shareInfoBuilder_ == null) {
-        shareInfo_ = null;
-      } else {
-        shareInfo_ = null;
+      bitField0_ = 0;
+      shareInfo_ = null;
+      if (shareInfoBuilder_ != null) {
+        shareInfoBuilder_.dispose();
         shareInfoBuilder_ = null;
       }
       return this;
@@ -394,13 +336,18 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
     public com.google.photos.library.v1.proto.ShareAlbumResponse buildPartial() {
       com.google.photos.library.v1.proto.ShareAlbumResponse result =
           new com.google.photos.library.v1.proto.ShareAlbumResponse(this);
-      if (shareInfoBuilder_ == null) {
-        result.shareInfo_ = shareInfo_;
-      } else {
-        result.shareInfo_ = shareInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.ShareAlbumResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.shareInfo_ = shareInfoBuilder_ == null ? shareInfo_ : shareInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -452,7 +399,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
       if (other.hasShareInfo()) {
         mergeShareInfo(other.getShareInfo());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -467,20 +414,41 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.ShareAlbumResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getShareInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.photos.library.v1.proto.ShareAlbumResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.photos.types.proto.ShareInfo shareInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -500,7 +468,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the shareInfo field is set.
      */
     public boolean hasShareInfo() {
-      return shareInfoBuilder_ != null || shareInfo_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -537,11 +505,11 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         shareInfo_ = value;
-        onChanged();
       } else {
         shareInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -556,11 +524,11 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
     public Builder setShareInfo(com.google.photos.types.proto.ShareInfo.Builder builderForValue) {
       if (shareInfoBuilder_ == null) {
         shareInfo_ = builderForValue.build();
-        onChanged();
       } else {
         shareInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -574,19 +542,18 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeShareInfo(com.google.photos.types.proto.ShareInfo value) {
       if (shareInfoBuilder_ == null) {
-        if (shareInfo_ != null) {
-          shareInfo_ =
-              com.google.photos.types.proto.ShareInfo.newBuilder(shareInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && shareInfo_ != null
+            && shareInfo_ != com.google.photos.types.proto.ShareInfo.getDefaultInstance()) {
+          getShareInfoBuilder().mergeFrom(value);
         } else {
           shareInfo_ = value;
         }
-        onChanged();
       } else {
         shareInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -599,14 +566,13 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.photos.types.ShareInfo share_info = 1;</code>
      */
     public Builder clearShareInfo() {
-      if (shareInfoBuilder_ == null) {
-        shareInfo_ = null;
-        onChanged();
-      } else {
-        shareInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      shareInfo_ = null;
+      if (shareInfoBuilder_ != null) {
+        shareInfoBuilder_.dispose();
         shareInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -619,7 +585,7 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.photos.types.ShareInfo share_info = 1;</code>
      */
     public com.google.photos.types.proto.ShareInfo.Builder getShareInfoBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getShareInfoFieldBuilder().getBuilder();
     }
@@ -699,7 +665,18 @@ public final class ShareAlbumResponse extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ShareAlbumResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

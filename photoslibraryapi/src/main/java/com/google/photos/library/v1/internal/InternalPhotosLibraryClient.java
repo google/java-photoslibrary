@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.photos.library.v1.internal;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -85,6 +84,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
  *     InternalPhotosLibraryClient.create()) {
  *   Album album = Album.newBuilder().build();
@@ -122,6 +126,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * InternalPhotosLibrarySettings internalPhotosLibrarySettings =
  *     InternalPhotosLibrarySettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -133,6 +142,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * InternalPhotosLibrarySettings internalPhotosLibrarySettings =
  *     InternalPhotosLibrarySettings.newBuilder().setEndpoint(myEndpoint).build();
  * InternalPhotosLibraryClient internalPhotosLibraryClient =
@@ -164,7 +178,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * Constructs an instance of InternalPhotosLibraryClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(InternalPhotosLibrarySettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InternalPhotosLibraryClient create(PhotosLibraryStub stub) {
     return new InternalPhotosLibraryClient(stub);
   }
@@ -179,7 +192,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     this.stub = ((PhotosLibraryStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected InternalPhotosLibraryClient(PhotosLibraryStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -189,7 +201,6 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PhotosLibraryStub getStub() {
     return stub;
   }
@@ -201,6 +212,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   Album album = Album.newBuilder().build();
@@ -223,6 +239,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   CreateAlbumRequest request =
@@ -245,6 +266,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   CreateAlbumRequest request =
@@ -282,6 +308,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String albumId = "albumId-920410134";
@@ -294,7 +325,8 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *
    * @param albumId Identifier of the album where the media items are added. The media items are
    *     also added to the user's library. This is an optional field.
-   * @param newMediaItems Required. List of media items to be created.
+   * @param newMediaItems Required. List of media items to be created. Maximum 50 media items per
+   *     call.
    * @param albumPosition Position in the album where the media items are added. If not specified,
    *     the media items are added to the end of the album (as per the default value, that is,
    *     `LAST_IN_ALBUM`). The request fails if this field is set and the `albumId` is not
@@ -335,6 +367,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   BatchCreateMediaItemsRequest request =
@@ -378,6 +415,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   BatchCreateMediaItemsRequest request =
@@ -418,6 +460,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String albumId = "albumId-920410134";
@@ -463,6 +510,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   BatchAddMediaItemsToAlbumRequest request =
@@ -503,6 +555,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   BatchAddMediaItemsToAlbumRequest request =
@@ -533,6 +590,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   Filters filters = Filters.newBuilder().build();
@@ -562,6 +624,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String albumId = "albumId-920410134";
@@ -592,6 +659,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   Filters filters = Filters.newBuilder().build();
@@ -634,6 +706,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   SearchMediaItemsRequest request =
@@ -668,6 +745,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   SearchMediaItemsRequest request =
@@ -703,6 +785,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   SearchMediaItemsRequest request =
@@ -716,7 +803,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *   while (true) {
    *     SearchMediaItemsResponse response =
    *         internalPhotosLibraryClient.searchMediaItemsCallable().call(request);
-   *     for (MediaItem element : response.getResponsesList()) {
+   *     for (MediaItem element : response.getMediaItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -741,6 +828,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   ListMediaItemsRequest request =
@@ -768,6 +860,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   ListMediaItemsRequest request =
@@ -796,6 +893,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   ListMediaItemsRequest request =
@@ -806,7 +908,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *   while (true) {
    *     ListMediaItemsResponse response =
    *         internalPhotosLibraryClient.listMediaItemsCallable().call(request);
-   *     for (MediaItem element : response.getResponsesList()) {
+   *     for (MediaItem element : response.getMediaItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -831,6 +933,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String mediaItemId = "mediaItemId-623842158";
@@ -854,6 +961,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   GetMediaItemRequest request =
@@ -876,6 +988,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   GetMediaItemRequest request =
@@ -899,6 +1016,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   List<String> mediaItemIds = new ArrayList<>();
@@ -926,6 +1048,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   BatchGetMediaItemsRequest request =
@@ -951,6 +1078,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   BatchGetMediaItemsRequest request =
@@ -976,6 +1108,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   boolean excludeNonAppCreatedData = true;
@@ -1006,6 +1143,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   ListAlbumsRequest request =
@@ -1034,6 +1176,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   ListAlbumsRequest request =
@@ -1062,6 +1209,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   ListAlbumsRequest request =
@@ -1073,7 +1225,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *   while (true) {
    *     ListAlbumsResponse response =
    *         internalPhotosLibraryClient.listAlbumsCallable().call(request);
-   *     for (Album element : response.getResponsesList()) {
+   *     for (Album element : response.getAlbumsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1098,6 +1250,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String albumId = "albumId-920410134";
@@ -1121,6 +1278,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   GetAlbumRequest request =
@@ -1144,6 +1306,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   GetAlbumRequest request =
@@ -1165,6 +1332,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String shareToken = "shareToken-1798271654";
@@ -1188,6 +1360,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   GetSharedAlbumRequest request =
@@ -1210,6 +1387,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   GetSharedAlbumRequest request =
@@ -1232,6 +1414,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String albumId = "albumId-920410134";
@@ -1267,6 +1454,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   AddEnrichmentToAlbumRequest request =
@@ -1295,6 +1487,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   AddEnrichmentToAlbumRequest request =
@@ -1322,6 +1519,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String shareToken = "shareToken-1798271654";
@@ -1345,6 +1547,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   JoinSharedAlbumRequest request =
@@ -1367,6 +1574,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   JoinSharedAlbumRequest request =
@@ -1391,6 +1603,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String shareToken = "shareToken-1798271654";
@@ -1415,6 +1632,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   LeaveSharedAlbumRequest request =
@@ -1438,6 +1660,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   LeaveSharedAlbumRequest request =
@@ -1462,6 +1689,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String albumId = "albumId-920410134";
@@ -1494,6 +1726,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   ShareAlbumRequest request =
@@ -1520,6 +1757,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   ShareAlbumRequest request =
@@ -1545,6 +1787,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   boolean excludeNonAppCreatedData = true;
@@ -1575,6 +1822,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   ListSharedAlbumsRequest request =
@@ -1603,6 +1855,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   ListSharedAlbumsRequest request =
@@ -1632,6 +1889,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   ListSharedAlbumsRequest request =
@@ -1643,7 +1905,7 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    *   while (true) {
    *     ListSharedAlbumsResponse response =
    *         internalPhotosLibraryClient.listSharedAlbumsCallable().call(request);
-   *     for (Album element : response.getResponsesList()) {
+   *     for (Album element : response.getSharedAlbumsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1672,6 +1934,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String albumId = "albumId-920410134";
@@ -1699,6 +1966,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   UnshareAlbumRequest request =
@@ -1725,6 +1997,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   UnshareAlbumRequest request =
@@ -1754,6 +2031,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   String albumId = "albumId-920410134";
@@ -1795,6 +2077,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   BatchRemoveMediaItemsFromAlbumRequest request =
@@ -1829,6 +2116,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   BatchRemoveMediaItemsFromAlbumRequest request =
@@ -1858,6 +2150,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   Album album = Album.newBuilder().build();
@@ -1885,6 +2182,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   Album album = Album.newBuilder().build();
@@ -1916,6 +2218,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   UpdateAlbumRequest request =
@@ -1943,6 +2250,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   UpdateAlbumRequest request =
@@ -1970,6 +2282,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   MediaItem mediaItem = MediaItem.newBuilder().build();
@@ -2003,6 +2320,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   UpdateMediaItemRequest request =
@@ -2030,6 +2352,11 @@ public class InternalPhotosLibraryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InternalPhotosLibraryClient internalPhotosLibraryClient =
    *     InternalPhotosLibraryClient.create()) {
    *   UpdateMediaItemRequest request =

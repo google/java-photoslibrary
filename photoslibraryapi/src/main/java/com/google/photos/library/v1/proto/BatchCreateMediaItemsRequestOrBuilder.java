@@ -39,7 +39,8 @@ public interface BatchCreateMediaItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. List of media items to be created.
+   * Required. List of media items to be created. Maximum 50 media items per
+   * call.
    * </pre>
    *
    * <code>
@@ -51,7 +52,8 @@ public interface BatchCreateMediaItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. List of media items to be created.
+   * Required. List of media items to be created. Maximum 50 media items per
+   * call.
    * </pre>
    *
    * <code>
@@ -63,7 +65,8 @@ public interface BatchCreateMediaItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. List of media items to be created.
+   * Required. List of media items to be created. Maximum 50 media items per
+   * call.
    * </pre>
    *
    * <code>
@@ -75,7 +78,8 @@ public interface BatchCreateMediaItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. List of media items to be created.
+   * Required. List of media items to be created. Maximum 50 media items per
+   * call.
    * </pre>
    *
    * <code>
@@ -88,7 +92,8 @@ public interface BatchCreateMediaItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. List of media items to be created.
+   * Required. List of media items to be created. Maximum 50 media items per
+   * call.
    * </pre>
    *
    * <code>

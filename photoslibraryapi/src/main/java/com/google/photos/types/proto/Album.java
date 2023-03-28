@@ -43,104 +43,6 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Album(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              title_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              productUrl_ = s;
-              break;
-            }
-          case 32:
-            {
-              isWriteable_ = input.readBool();
-              break;
-            }
-          case 42:
-            {
-              com.google.photos.types.proto.ShareInfo.Builder subBuilder = null;
-              if (shareInfo_ != null) {
-                subBuilder = shareInfo_.toBuilder();
-              }
-              shareInfo_ =
-                  input.readMessage(
-                      com.google.photos.types.proto.ShareInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shareInfo_);
-                shareInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 48:
-            {
-              mediaItemsCount_ = input.readInt64();
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              coverPhotoBaseUrl_ = s;
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              coverPhotoMediaItemId_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.types.proto.AlbumProto
         .internal_static_google_photos_types_Album_descriptor;
@@ -157,7 +59,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -208,7 +112,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TITLE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -259,7 +165,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRODUCT_URL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object productUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object productUrl_ = "";
   /**
    *
    *
@@ -310,7 +218,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IS_WRITEABLE_FIELD_NUMBER = 4;
-  private boolean isWriteable_;
+  private boolean isWriteable_ = false;
   /**
    *
    *
@@ -384,11 +292,13 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.photos.types.proto.ShareInfoOrBuilder getShareInfoOrBuilder() {
-    return getShareInfo();
+    return shareInfo_ == null
+        ? com.google.photos.types.proto.ShareInfo.getDefaultInstance()
+        : shareInfo_;
   }
 
   public static final int MEDIA_ITEMS_COUNT_FIELD_NUMBER = 6;
-  private long mediaItemsCount_;
+  private long mediaItemsCount_ = 0L;
   /**
    *
    *
@@ -406,7 +316,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COVER_PHOTO_BASE_URL_FIELD_NUMBER = 7;
-  private volatile java.lang.Object coverPhotoBaseUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object coverPhotoBaseUrl_ = "";
   /**
    *
    *
@@ -467,7 +379,9 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COVER_PHOTO_MEDIA_ITEM_ID_FIELD_NUMBER = 8;
-  private volatile java.lang.Object coverPhotoMediaItemId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object coverPhotoMediaItemId_ = "";
   /**
    *
    *
@@ -553,7 +467,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(coverPhotoMediaItemId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, coverPhotoMediaItemId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -586,7 +500,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(coverPhotoMediaItemId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, coverPhotoMediaItemId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -612,7 +526,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     if (getMediaItemsCount() != other.getMediaItemsCount()) return false;
     if (!getCoverPhotoBaseUrl().equals(other.getCoverPhotoBaseUrl())) return false;
     if (!getCoverPhotoMediaItemId().equals(other.getCoverPhotoMediaItemId())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -641,7 +555,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getCoverPhotoBaseUrl().hashCode();
     hash = (37 * hash) + COVER_PHOTO_MEDIA_ITEM_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCoverPhotoMediaItemId().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -771,42 +685,28 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.photos.types.proto.Album.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       title_ = "";
-
       productUrl_ = "";
-
       isWriteable_ = false;
-
-      if (shareInfoBuilder_ == null) {
-        shareInfo_ = null;
-      } else {
-        shareInfo_ = null;
+      shareInfo_ = null;
+      if (shareInfoBuilder_ != null) {
+        shareInfoBuilder_.dispose();
         shareInfoBuilder_ = null;
       }
       mediaItemsCount_ = 0L;
-
       coverPhotoBaseUrl_ = "";
-
       coverPhotoMediaItemId_ = "";
-
       return this;
     }
 
@@ -833,20 +733,39 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.photos.types.proto.Album buildPartial() {
       com.google.photos.types.proto.Album result = new com.google.photos.types.proto.Album(this);
-      result.id_ = id_;
-      result.title_ = title_;
-      result.productUrl_ = productUrl_;
-      result.isWriteable_ = isWriteable_;
-      if (shareInfoBuilder_ == null) {
-        result.shareInfo_ = shareInfo_;
-      } else {
-        result.shareInfo_ = shareInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.mediaItemsCount_ = mediaItemsCount_;
-      result.coverPhotoBaseUrl_ = coverPhotoBaseUrl_;
-      result.coverPhotoMediaItemId_ = coverPhotoMediaItemId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.types.proto.Album result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.title_ = title_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.productUrl_ = productUrl_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.isWriteable_ = isWriteable_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.shareInfo_ = shareInfoBuilder_ == null ? shareInfo_ : shareInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.mediaItemsCount_ = mediaItemsCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.coverPhotoBaseUrl_ = coverPhotoBaseUrl_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.coverPhotoMediaItemId_ = coverPhotoMediaItemId_;
+      }
     }
 
     @java.lang.Override
@@ -896,14 +815,17 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.photos.types.proto.Album.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getProductUrl().isEmpty()) {
         productUrl_ = other.productUrl_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getIsWriteable() != false) {
@@ -917,13 +839,15 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCoverPhotoBaseUrl().isEmpty()) {
         coverPhotoBaseUrl_ = other.coverPhotoBaseUrl_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getCoverPhotoMediaItemId().isEmpty()) {
         coverPhotoMediaItemId_ = other.coverPhotoMediaItemId_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -938,19 +862,83 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.types.proto.Album parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            case 18:
+              {
+                title_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                productUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 32:
+              {
+                isWriteable_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(getShareInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 48:
+              {
+                mediaItemsCount_ = input.readInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 58:
+              {
+                coverPhotoBaseUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                coverPhotoMediaItemId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.types.proto.Album) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -1016,8 +1004,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1034,8 +1022,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1057,8 +1045,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1127,8 +1115,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1145,8 +1133,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1168,8 +1156,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1238,8 +1226,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       productUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1256,8 +1244,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProductUrl() {
-
       productUrl_ = getDefaultInstance().getProductUrl();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1279,8 +1267,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       productUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1322,6 +1310,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     public Builder setIsWriteable(boolean value) {
 
       isWriteable_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1340,7 +1329,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsWriteable() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       isWriteable_ = false;
       onChanged();
       return this;
@@ -1367,7 +1356,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shareInfo field is set.
      */
     public boolean hasShareInfo() {
-      return shareInfoBuilder_ != null || shareInfo_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1410,11 +1399,11 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         shareInfo_ = value;
-        onChanged();
       } else {
         shareInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1432,11 +1421,11 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     public Builder setShareInfo(com.google.photos.types.proto.ShareInfo.Builder builderForValue) {
       if (shareInfoBuilder_ == null) {
         shareInfo_ = builderForValue.build();
-        onChanged();
       } else {
         shareInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1453,19 +1442,18 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeShareInfo(com.google.photos.types.proto.ShareInfo value) {
       if (shareInfoBuilder_ == null) {
-        if (shareInfo_ != null) {
-          shareInfo_ =
-              com.google.photos.types.proto.ShareInfo.newBuilder(shareInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && shareInfo_ != null
+            && shareInfo_ != com.google.photos.types.proto.ShareInfo.getDefaultInstance()) {
+          getShareInfoBuilder().mergeFrom(value);
         } else {
           shareInfo_ = value;
         }
-        onChanged();
       } else {
         shareInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1481,14 +1469,13 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.types.ShareInfo share_info = 5;</code>
      */
     public Builder clearShareInfo() {
-      if (shareInfoBuilder_ == null) {
-        shareInfo_ = null;
-        onChanged();
-      } else {
-        shareInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      shareInfo_ = null;
+      if (shareInfoBuilder_ != null) {
+        shareInfoBuilder_.dispose();
         shareInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1504,7 +1491,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.types.ShareInfo share_info = 5;</code>
      */
     public com.google.photos.types.proto.ShareInfo.Builder getShareInfoBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getShareInfoFieldBuilder().getBuilder();
     }
@@ -1589,6 +1576,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
     public Builder setMediaItemsCount(long value) {
 
       mediaItemsCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1604,7 +1592,7 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMediaItemsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       mediaItemsCount_ = 0L;
       onChanged();
       return this;
@@ -1689,8 +1677,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       coverPhotoBaseUrl_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1712,8 +1700,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCoverPhotoBaseUrl() {
-
       coverPhotoBaseUrl_ = getDefaultInstance().getCoverPhotoBaseUrl();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1740,8 +1728,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       coverPhotoBaseUrl_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1807,8 +1795,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       coverPhotoMediaItemId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1824,8 +1812,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCoverPhotoMediaItemId() {
-
       coverPhotoMediaItemId_ = getDefaultInstance().getCoverPhotoMediaItemId();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1846,8 +1834,8 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       coverPhotoMediaItemId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1884,7 +1872,18 @@ public final class Album extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Album(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

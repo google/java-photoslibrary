@@ -39,87 +39,6 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Photo(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cameraMake_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cameraModel_ = s;
-              break;
-            }
-          case 29:
-            {
-              focalLength_ = input.readFloat();
-              break;
-            }
-          case 37:
-            {
-              apertureFNumber_ = input.readFloat();
-              break;
-            }
-          case 40:
-            {
-              isoEquivalent_ = input.readInt32();
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (exposureTime_ != null) {
-                subBuilder = exposureTime_.toBuilder();
-              }
-              exposureTime_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(exposureTime_);
-                exposureTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.types.proto.MediaItemProto
         .internal_static_google_photos_types_Photo_descriptor;
@@ -136,7 +55,9 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CAMERA_MAKE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cameraMake_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cameraMake_ = "";
   /**
    *
    *
@@ -185,7 +106,9 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CAMERA_MODEL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cameraModel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cameraModel_ = "";
   /**
    *
    *
@@ -234,7 +157,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FOCAL_LENGTH_FIELD_NUMBER = 3;
-  private float focalLength_;
+  private float focalLength_ = 0F;
   /**
    *
    *
@@ -252,7 +175,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int APERTURE_F_NUMBER_FIELD_NUMBER = 4;
-  private float apertureFNumber_;
+  private float apertureFNumber_ = 0F;
   /**
    *
    *
@@ -270,7 +193,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ISO_EQUIVALENT_FIELD_NUMBER = 5;
-  private int isoEquivalent_;
+  private int isoEquivalent_ = 0;
   /**
    *
    *
@@ -332,7 +255,9 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getExposureTimeOrBuilder() {
-    return getExposureTime();
+    return exposureTime_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : exposureTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -355,10 +280,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cameraModel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cameraModel_);
     }
-    if (focalLength_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(focalLength_) != 0) {
       output.writeFloat(3, focalLength_);
     }
-    if (apertureFNumber_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(apertureFNumber_) != 0) {
       output.writeFloat(4, apertureFNumber_);
     }
     if (isoEquivalent_ != 0) {
@@ -367,7 +292,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     if (exposureTime_ != null) {
       output.writeMessage(6, getExposureTime());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -382,10 +307,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cameraModel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cameraModel_);
     }
-    if (focalLength_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(focalLength_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, focalLength_);
     }
-    if (apertureFNumber_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(apertureFNumber_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, apertureFNumber_);
     }
     if (isoEquivalent_ != 0) {
@@ -394,7 +319,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     if (exposureTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getExposureTime());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -420,7 +345,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     if (hasExposureTime()) {
       if (!getExposureTime().equals(other.getExposureTime())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -445,7 +370,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EXPOSURE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getExposureTime().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -574,36 +499,24 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.photos.types.proto.Photo.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cameraMake_ = "";
-
       cameraModel_ = "";
-
       focalLength_ = 0F;
-
       apertureFNumber_ = 0F;
-
       isoEquivalent_ = 0;
-
-      if (exposureTimeBuilder_ == null) {
-        exposureTime_ = null;
-      } else {
-        exposureTime_ = null;
+      exposureTime_ = null;
+      if (exposureTimeBuilder_ != null) {
+        exposureTimeBuilder_.dispose();
         exposureTimeBuilder_ = null;
       }
       return this;
@@ -632,18 +545,34 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.photos.types.proto.Photo buildPartial() {
       com.google.photos.types.proto.Photo result = new com.google.photos.types.proto.Photo(this);
-      result.cameraMake_ = cameraMake_;
-      result.cameraModel_ = cameraModel_;
-      result.focalLength_ = focalLength_;
-      result.apertureFNumber_ = apertureFNumber_;
-      result.isoEquivalent_ = isoEquivalent_;
-      if (exposureTimeBuilder_ == null) {
-        result.exposureTime_ = exposureTime_;
-      } else {
-        result.exposureTime_ = exposureTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.types.proto.Photo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cameraMake_ = cameraMake_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cameraModel_ = cameraModel_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.focalLength_ = focalLength_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.apertureFNumber_ = apertureFNumber_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.isoEquivalent_ = isoEquivalent_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.exposureTime_ =
+            exposureTimeBuilder_ == null ? exposureTime_ : exposureTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -693,10 +622,12 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.photos.types.proto.Photo.getDefaultInstance()) return this;
       if (!other.getCameraMake().isEmpty()) {
         cameraMake_ = other.cameraMake_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCameraModel().isEmpty()) {
         cameraModel_ = other.cameraModel_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getFocalLength() != 0F) {
@@ -711,7 +642,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       if (other.hasExposureTime()) {
         mergeExposureTime(other.getExposureTime());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -726,19 +657,71 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.types.proto.Photo parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                cameraMake_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            case 18:
+              {
+                cameraModel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 29:
+              {
+                focalLength_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 29
+            case 37:
+              {
+                apertureFNumber_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 37
+            case 40:
+              {
+                isoEquivalent_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 50:
+              {
+                input.readMessage(getExposureTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.types.proto.Photo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object cameraMake_ = "";
     /**
@@ -801,8 +784,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cameraMake_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -818,8 +801,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCameraMake() {
-
       cameraMake_ = getDefaultInstance().getCameraMake();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -840,8 +823,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cameraMake_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -907,8 +890,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cameraModel_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -924,8 +907,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCameraModel() {
-
       cameraModel_ = getDefaultInstance().getCameraModel();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -946,8 +929,8 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cameraModel_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -983,6 +966,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     public Builder setFocalLength(float value) {
 
       focalLength_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -998,7 +982,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFocalLength() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       focalLength_ = 0F;
       onChanged();
       return this;
@@ -1035,6 +1019,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     public Builder setApertureFNumber(float value) {
 
       apertureFNumber_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1050,7 +1035,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearApertureFNumber() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       apertureFNumber_ = 0F;
       onChanged();
       return this;
@@ -1087,6 +1072,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     public Builder setIsoEquivalent(int value) {
 
       isoEquivalent_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1102,7 +1088,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsoEquivalent() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       isoEquivalent_ = 0;
       onChanged();
       return this;
@@ -1126,7 +1112,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the exposureTime field is set.
      */
     public boolean hasExposureTime() {
-      return exposureTimeBuilder_ != null || exposureTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1163,11 +1149,11 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         exposureTime_ = value;
-        onChanged();
       } else {
         exposureTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1182,11 +1168,11 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
     public Builder setExposureTime(com.google.protobuf.Duration.Builder builderForValue) {
       if (exposureTimeBuilder_ == null) {
         exposureTime_ = builderForValue.build();
-        onChanged();
       } else {
         exposureTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1200,19 +1186,18 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExposureTime(com.google.protobuf.Duration value) {
       if (exposureTimeBuilder_ == null) {
-        if (exposureTime_ != null) {
-          exposureTime_ =
-              com.google.protobuf.Duration.newBuilder(exposureTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && exposureTime_ != null
+            && exposureTime_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getExposureTimeBuilder().mergeFrom(value);
         } else {
           exposureTime_ = value;
         }
-        onChanged();
       } else {
         exposureTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1225,14 +1210,13 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration exposure_time = 6;</code>
      */
     public Builder clearExposureTime() {
-      if (exposureTimeBuilder_ == null) {
-        exposureTime_ = null;
-        onChanged();
-      } else {
-        exposureTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      exposureTime_ = null;
+      if (exposureTimeBuilder_ != null) {
+        exposureTimeBuilder_.dispose();
         exposureTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1245,7 +1229,7 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration exposure_time = 6;</code>
      */
     public com.google.protobuf.Duration.Builder getExposureTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getExposureTimeFieldBuilder().getBuilder();
     }
@@ -1325,7 +1309,18 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Photo(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

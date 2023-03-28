@@ -35,59 +35,6 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private CreateAlbumRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.photos.types.proto.Album.Builder subBuilder = null;
-              if (album_ != null) {
-                subBuilder = album_.toBuilder();
-              }
-              album_ =
-                  input.readMessage(
-                      com.google.photos.types.proto.Album.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(album_);
-                album_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_CreateAlbumRequest_descriptor;
@@ -146,7 +93,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.photos.types.proto.AlbumOrBuilder getAlbumOrBuilder() {
-    return getAlbum();
+    return album_ == null ? com.google.photos.types.proto.Album.getDefaultInstance() : album_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -166,7 +113,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
     if (album_ != null) {
       output.writeMessage(1, getAlbum());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -178,7 +125,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
     if (album_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAlbum());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -198,7 +145,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
     if (hasAlbum()) {
       if (!getAlbum().equals(other.getAlbum())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -213,7 +160,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + ALBUM_FIELD_NUMBER;
       hash = (53 * hash) + getAlbum().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -343,26 +290,19 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.photos.library.v1.proto.CreateAlbumRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (albumBuilder_ == null) {
-        album_ = null;
-      } else {
-        album_ = null;
+      bitField0_ = 0;
+      album_ = null;
+      if (albumBuilder_ != null) {
+        albumBuilder_.dispose();
         albumBuilder_ = null;
       }
       return this;
@@ -392,13 +332,18 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
     public com.google.photos.library.v1.proto.CreateAlbumRequest buildPartial() {
       com.google.photos.library.v1.proto.CreateAlbumRequest result =
           new com.google.photos.library.v1.proto.CreateAlbumRequest(this);
-      if (albumBuilder_ == null) {
-        result.album_ = album_;
-      } else {
-        result.album_ = albumBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.CreateAlbumRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.album_ = albumBuilder_ == null ? album_ : albumBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -450,7 +395,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
       if (other.hasAlbum()) {
         mergeAlbum(other.getAlbum());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -465,20 +410,41 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.CreateAlbumRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getAlbumFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.photos.library.v1.proto.CreateAlbumRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.photos.types.proto.Album album_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -498,7 +464,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the album field is set.
      */
     public boolean hasAlbum() {
-      return albumBuilder_ != null || album_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -533,11 +499,11 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         album_ = value;
-        onChanged();
       } else {
         albumBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -552,11 +518,11 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
     public Builder setAlbum(com.google.photos.types.proto.Album.Builder builderForValue) {
       if (albumBuilder_ == null) {
         album_ = builderForValue.build();
-        onChanged();
       } else {
         albumBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -570,19 +536,18 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeAlbum(com.google.photos.types.proto.Album value) {
       if (albumBuilder_ == null) {
-        if (album_ != null) {
-          album_ =
-              com.google.photos.types.proto.Album.newBuilder(album_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && album_ != null
+            && album_ != com.google.photos.types.proto.Album.getDefaultInstance()) {
+          getAlbumBuilder().mergeFrom(value);
         } else {
           album_ = value;
         }
-        onChanged();
       } else {
         albumBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -595,14 +560,13 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearAlbum() {
-      if (albumBuilder_ == null) {
-        album_ = null;
-        onChanged();
-      } else {
-        album_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      album_ = null;
+      if (albumBuilder_ != null) {
+        albumBuilder_.dispose();
         albumBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -615,7 +579,7 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.photos.types.Album album = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.photos.types.proto.Album.Builder getAlbumBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAlbumFieldBuilder().getBuilder();
     }
@@ -693,7 +657,18 @@ public final class CreateAlbumRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CreateAlbumRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -40,69 +40,6 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Video(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cameraMake_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cameraModel_ = s;
-              break;
-            }
-          case 25:
-            {
-              fps_ = input.readDouble();
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.types.proto.MediaItemProto
         .internal_static_google_photos_types_Video_descriptor;
@@ -119,7 +56,9 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CAMERA_MAKE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cameraMake_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cameraMake_ = "";
   /**
    *
    *
@@ -168,7 +107,9 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CAMERA_MODEL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cameraModel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cameraModel_ = "";
   /**
    *
    *
@@ -217,7 +158,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FPS_FIELD_NUMBER = 3;
-  private double fps_;
+  private double fps_ = 0D;
   /**
    *
    *
@@ -235,7 +176,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 4;
-  private int status_;
+  private int status_ = 0;
   /**
    *
    *
@@ -264,9 +205,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.photos.types.proto.VideoProcessingStatus getStatus() {
-    @SuppressWarnings("deprecation")
     com.google.photos.types.proto.VideoProcessingStatus result =
-        com.google.photos.types.proto.VideoProcessingStatus.valueOf(status_);
+        com.google.photos.types.proto.VideoProcessingStatus.forNumber(status_);
     return result == null
         ? com.google.photos.types.proto.VideoProcessingStatus.UNRECOGNIZED
         : result;
@@ -292,13 +232,13 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cameraModel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cameraModel_);
     }
-    if (fps_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(fps_) != 0) {
       output.writeDouble(3, fps_);
     }
     if (status_ != com.google.photos.types.proto.VideoProcessingStatus.UNSPECIFIED.getNumber()) {
       output.writeEnum(4, status_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -313,13 +253,13 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cameraModel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cameraModel_);
     }
-    if (fps_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(fps_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, fps_);
     }
     if (status_ != com.google.photos.types.proto.VideoProcessingStatus.UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, status_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -339,7 +279,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Double.doubleToLongBits(getFps())
         != java.lang.Double.doubleToLongBits(other.getFps())) return false;
     if (status_ != other.status_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -360,7 +300,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
             + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getFps()));
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -489,30 +429,20 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.photos.types.proto.Video.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cameraMake_ = "";
-
       cameraModel_ = "";
-
       fps_ = 0D;
-
       status_ = 0;
-
       return this;
     }
 
@@ -539,12 +469,27 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.photos.types.proto.Video buildPartial() {
       com.google.photos.types.proto.Video result = new com.google.photos.types.proto.Video(this);
-      result.cameraMake_ = cameraMake_;
-      result.cameraModel_ = cameraModel_;
-      result.fps_ = fps_;
-      result.status_ = status_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.types.proto.Video result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cameraMake_ = cameraMake_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cameraModel_ = cameraModel_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fps_ = fps_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.status_ = status_;
+      }
     }
 
     @java.lang.Override
@@ -594,10 +539,12 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.photos.types.proto.Video.getDefaultInstance()) return this;
       if (!other.getCameraMake().isEmpty()) {
         cameraMake_ = other.cameraMake_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCameraModel().isEmpty()) {
         cameraModel_ = other.cameraModel_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getFps() != 0D) {
@@ -606,7 +553,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -621,19 +568,59 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.types.proto.Video parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                cameraMake_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            case 18:
+              {
+                cameraModel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 25:
+              {
+                fps_ = input.readDouble();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 25
+            case 32:
+              {
+                status_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.types.proto.Video) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object cameraMake_ = "";
     /**
@@ -696,8 +683,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cameraMake_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -713,8 +700,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCameraMake() {
-
       cameraMake_ = getDefaultInstance().getCameraMake();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -735,8 +722,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cameraMake_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -802,8 +789,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cameraModel_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -819,8 +806,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCameraModel() {
-
       cameraModel_ = getDefaultInstance().getCameraModel();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -841,8 +828,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cameraModel_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -878,6 +865,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
     public Builder setFps(double value) {
 
       fps_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -893,7 +881,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFps() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       fps_ = 0D;
       onChanged();
       return this;
@@ -928,8 +916,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
       status_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -946,9 +934,8 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.photos.types.proto.VideoProcessingStatus getStatus() {
-      @SuppressWarnings("deprecation")
       com.google.photos.types.proto.VideoProcessingStatus result =
-          com.google.photos.types.proto.VideoProcessingStatus.valueOf(status_);
+          com.google.photos.types.proto.VideoProcessingStatus.forNumber(status_);
       return result == null
           ? com.google.photos.types.proto.VideoProcessingStatus.UNRECOGNIZED
           : result;
@@ -969,7 +956,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -986,7 +973,7 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       status_ = 0;
       onChanged();
       return this;
@@ -1024,7 +1011,18 @@ public final class Video extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Video(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

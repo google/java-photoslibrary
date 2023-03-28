@@ -35,75 +35,6 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private MapEnrichment(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.photos.library.v1.proto.Location.Builder subBuilder = null;
-              if (origin_ != null) {
-                subBuilder = origin_.toBuilder();
-              }
-              origin_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.Location.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(origin_);
-                origin_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.photos.library.v1.proto.Location.Builder subBuilder = null;
-              if (destination_ != null) {
-                subBuilder = destination_.toBuilder();
-              }
-              destination_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.Location.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(destination_);
-                destination_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_MapEnrichment_descriptor;
@@ -164,7 +95,9 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.photos.library.v1.proto.LocationOrBuilder getOriginOrBuilder() {
-    return getOrigin();
+    return origin_ == null
+        ? com.google.photos.library.v1.proto.Location.getDefaultInstance()
+        : origin_;
   }
 
   public static final int DESTINATION_FIELD_NUMBER = 2;
@@ -212,7 +145,9 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.photos.library.v1.proto.LocationOrBuilder getDestinationOrBuilder() {
-    return getDestination();
+    return destination_ == null
+        ? com.google.photos.library.v1.proto.Location.getDefaultInstance()
+        : destination_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -235,7 +170,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
     if (destination_ != null) {
       output.writeMessage(2, getDestination());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -250,7 +185,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
     if (destination_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDestination());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -274,7 +209,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
     if (hasDestination()) {
       if (!getDestination().equals(other.getDestination())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -293,7 +228,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
       hash = (53 * hash) + getDestination().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -422,32 +357,24 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.photos.library.v1.proto.MapEnrichment.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (originBuilder_ == null) {
-        origin_ = null;
-      } else {
-        origin_ = null;
+      bitField0_ = 0;
+      origin_ = null;
+      if (originBuilder_ != null) {
+        originBuilder_.dispose();
         originBuilder_ = null;
       }
-      if (destinationBuilder_ == null) {
-        destination_ = null;
-      } else {
-        destination_ = null;
+      destination_ = null;
+      if (destinationBuilder_ != null) {
+        destinationBuilder_.dispose();
         destinationBuilder_ = null;
       }
       return this;
@@ -477,18 +404,22 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
     public com.google.photos.library.v1.proto.MapEnrichment buildPartial() {
       com.google.photos.library.v1.proto.MapEnrichment result =
           new com.google.photos.library.v1.proto.MapEnrichment(this);
-      if (originBuilder_ == null) {
-        result.origin_ = origin_;
-      } else {
-        result.origin_ = originBuilder_.build();
-      }
-      if (destinationBuilder_ == null) {
-        result.destination_ = destination_;
-      } else {
-        result.destination_ = destinationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.MapEnrichment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.origin_ = originBuilder_ == null ? origin_ : originBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.destination_ =
+            destinationBuilder_ == null ? destination_ : destinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -543,7 +474,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDestination()) {
         mergeDestination(other.getDestination());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -558,19 +489,47 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.MapEnrichment parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getOriginFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getDestinationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.library.v1.proto.MapEnrichment) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.photos.library.v1.proto.Location origin_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -590,7 +549,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the origin field is set.
      */
     public boolean hasOrigin() {
-      return originBuilder_ != null || origin_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -627,11 +586,11 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         origin_ = value;
-        onChanged();
       } else {
         originBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -646,11 +605,11 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
     public Builder setOrigin(com.google.photos.library.v1.proto.Location.Builder builderForValue) {
       if (originBuilder_ == null) {
         origin_ = builderForValue.build();
-        onChanged();
       } else {
         originBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -664,19 +623,18 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOrigin(com.google.photos.library.v1.proto.Location value) {
       if (originBuilder_ == null) {
-        if (origin_ != null) {
-          origin_ =
-              com.google.photos.library.v1.proto.Location.newBuilder(origin_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && origin_ != null
+            && origin_ != com.google.photos.library.v1.proto.Location.getDefaultInstance()) {
+          getOriginBuilder().mergeFrom(value);
         } else {
           origin_ = value;
         }
-        onChanged();
       } else {
         originBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -689,14 +647,13 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.Location origin = 1;</code>
      */
     public Builder clearOrigin() {
-      if (originBuilder_ == null) {
-        origin_ = null;
-        onChanged();
-      } else {
-        origin_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      origin_ = null;
+      if (originBuilder_ != null) {
+        originBuilder_.dispose();
         originBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -709,7 +666,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.Location origin = 1;</code>
      */
     public com.google.photos.library.v1.proto.Location.Builder getOriginBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getOriginFieldBuilder().getBuilder();
     }
@@ -775,7 +732,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the destination field is set.
      */
     public boolean hasDestination() {
-      return destinationBuilder_ != null || destination_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -812,11 +769,11 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         destination_ = value;
-        onChanged();
       } else {
         destinationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -832,11 +789,11 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
         com.google.photos.library.v1.proto.Location.Builder builderForValue) {
       if (destinationBuilder_ == null) {
         destination_ = builderForValue.build();
-        onChanged();
       } else {
         destinationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -850,19 +807,18 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDestination(com.google.photos.library.v1.proto.Location value) {
       if (destinationBuilder_ == null) {
-        if (destination_ != null) {
-          destination_ =
-              com.google.photos.library.v1.proto.Location.newBuilder(destination_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && destination_ != null
+            && destination_ != com.google.photos.library.v1.proto.Location.getDefaultInstance()) {
+          getDestinationBuilder().mergeFrom(value);
         } else {
           destination_ = value;
         }
-        onChanged();
       } else {
         destinationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -875,14 +831,13 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.Location destination = 2;</code>
      */
     public Builder clearDestination() {
-      if (destinationBuilder_ == null) {
-        destination_ = null;
-        onChanged();
-      } else {
-        destination_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      destination_ = null;
+      if (destinationBuilder_ != null) {
+        destinationBuilder_.dispose();
         destinationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -895,7 +850,7 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.Location destination = 2;</code>
      */
     public com.google.photos.library.v1.proto.Location.Builder getDestinationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDestinationFieldBuilder().getBuilder();
     }
@@ -975,7 +930,18 @@ public final class MapEnrichment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MapEnrichment(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

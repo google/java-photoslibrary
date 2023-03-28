@@ -37,64 +37,6 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private AlbumPosition(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              position_ = rawValue;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              relativeItemCase_ = 2;
-              relativeItem_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              relativeItemCase_ = 3;
-              relativeItem_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_AlbumPosition_descriptor;
@@ -359,7 +301,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POSITION_FIELD_NUMBER = 1;
-  private int position_;
+  private int position_ = 0;
   /**
    *
    *
@@ -388,9 +330,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.photos.library.v1.proto.AlbumPosition.PositionType getPosition() {
-    @SuppressWarnings("deprecation")
     com.google.photos.library.v1.proto.AlbumPosition.PositionType result =
-        com.google.photos.library.v1.proto.AlbumPosition.PositionType.valueOf(position_);
+        com.google.photos.library.v1.proto.AlbumPosition.PositionType.forNumber(position_);
     return result == null
         ? com.google.photos.library.v1.proto.AlbumPosition.PositionType.UNRECOGNIZED
         : result;
@@ -567,7 +508,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
     if (relativeItemCase_ == 3) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, relativeItem_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -587,7 +528,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
     if (relativeItemCase_ == 3) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, relativeItem_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -616,7 +557,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -641,7 +582,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -770,24 +711,17 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.photos.library.v1.proto.AlbumPosition.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       position_ = 0;
-
       relativeItemCase_ = 0;
       relativeItem_ = null;
       return this;
@@ -817,16 +751,24 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
     public com.google.photos.library.v1.proto.AlbumPosition buildPartial() {
       com.google.photos.library.v1.proto.AlbumPosition result =
           new com.google.photos.library.v1.proto.AlbumPosition(this);
-      result.position_ = position_;
-      if (relativeItemCase_ == 2) {
-        result.relativeItem_ = relativeItem_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (relativeItemCase_ == 3) {
-        result.relativeItem_ = relativeItem_;
-      }
-      result.relativeItemCase_ = relativeItemCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.AlbumPosition result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.position_ = position_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.photos.library.v1.proto.AlbumPosition result) {
+      result.relativeItemCase_ = relativeItemCase_;
+      result.relativeItem_ = this.relativeItem_;
     }
 
     @java.lang.Override
@@ -898,7 +840,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -913,17 +855,51 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.AlbumPosition parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                position_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                relativeItemCase_ = 2;
+                relativeItem_ = s;
+                break;
+              } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                relativeItemCase_ = 3;
+                relativeItem_ = s;
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.library.v1.proto.AlbumPosition) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -940,6 +916,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private int position_ = 0;
     /**
@@ -970,8 +948,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPositionValue(int value) {
-
       position_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -988,9 +966,8 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.photos.library.v1.proto.AlbumPosition.PositionType getPosition() {
-      @SuppressWarnings("deprecation")
       com.google.photos.library.v1.proto.AlbumPosition.PositionType result =
-          com.google.photos.library.v1.proto.AlbumPosition.PositionType.valueOf(position_);
+          com.google.photos.library.v1.proto.AlbumPosition.PositionType.forNumber(position_);
       return result == null
           ? com.google.photos.library.v1.proto.AlbumPosition.PositionType.UNRECOGNIZED
           : result;
@@ -1012,7 +989,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       position_ = value.getNumber();
       onChanged();
       return this;
@@ -1029,7 +1006,7 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPosition() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       position_ = 0;
       onChanged();
       return this;
@@ -1347,7 +1324,18 @@ public final class AlbumPosition extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AlbumPosition(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
