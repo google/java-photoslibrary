@@ -37,118 +37,6 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Filters(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.photos.library.v1.proto.DateFilter.Builder subBuilder = null;
-              if (dateFilter_ != null) {
-                subBuilder = dateFilter_.toBuilder();
-              }
-              dateFilter_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.DateFilter.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dateFilter_);
-                dateFilter_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.photos.library.v1.proto.ContentFilter.Builder subBuilder = null;
-              if (contentFilter_ != null) {
-                subBuilder = contentFilter_.toBuilder();
-              }
-              contentFilter_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.ContentFilter.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(contentFilter_);
-                contentFilter_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.photos.library.v1.proto.MediaTypeFilter.Builder subBuilder = null;
-              if (mediaTypeFilter_ != null) {
-                subBuilder = mediaTypeFilter_.toBuilder();
-              }
-              mediaTypeFilter_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.MediaTypeFilter.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(mediaTypeFilter_);
-                mediaTypeFilter_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 32:
-            {
-              includeArchivedMedia_ = input.readBool();
-              break;
-            }
-          case 40:
-            {
-              excludeNonAppCreatedData_ = input.readBool();
-              break;
-            }
-          case 58:
-            {
-              com.google.photos.library.v1.proto.FeatureFilter.Builder subBuilder = null;
-              if (featureFilter_ != null) {
-                subBuilder = featureFilter_.toBuilder();
-              }
-              featureFilter_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.FeatureFilter.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(featureFilter_);
-                featureFilter_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_Filters_descriptor;
@@ -209,7 +97,9 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.photos.library.v1.proto.DateFilterOrBuilder getDateFilterOrBuilder() {
-    return getDateFilter();
+    return dateFilter_ == null
+        ? com.google.photos.library.v1.proto.DateFilter.getDefaultInstance()
+        : dateFilter_;
   }
 
   public static final int CONTENT_FILTER_FIELD_NUMBER = 2;
@@ -257,7 +147,9 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.photos.library.v1.proto.ContentFilterOrBuilder getContentFilterOrBuilder() {
-    return getContentFilter();
+    return contentFilter_ == null
+        ? com.google.photos.library.v1.proto.ContentFilter.getDefaultInstance()
+        : contentFilter_;
   }
 
   public static final int MEDIA_TYPE_FILTER_FIELD_NUMBER = 3;
@@ -305,7 +197,9 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.photos.library.v1.proto.MediaTypeFilterOrBuilder getMediaTypeFilterOrBuilder() {
-    return getMediaTypeFilter();
+    return mediaTypeFilter_ == null
+        ? com.google.photos.library.v1.proto.MediaTypeFilter.getDefaultInstance()
+        : mediaTypeFilter_;
   }
 
   public static final int FEATURE_FILTER_FIELD_NUMBER = 7;
@@ -353,11 +247,13 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.photos.library.v1.proto.FeatureFilterOrBuilder getFeatureFilterOrBuilder() {
-    return getFeatureFilter();
+    return featureFilter_ == null
+        ? com.google.photos.library.v1.proto.FeatureFilter.getDefaultInstance()
+        : featureFilter_;
   }
 
   public static final int INCLUDE_ARCHIVED_MEDIA_FIELD_NUMBER = 4;
-  private boolean includeArchivedMedia_;
+  private boolean includeArchivedMedia_ = false;
   /**
    *
    *
@@ -376,7 +272,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXCLUDE_NON_APP_CREATED_DATA_FIELD_NUMBER = 5;
-  private boolean excludeNonAppCreatedData_;
+  private boolean excludeNonAppCreatedData_ = false;
   /**
    *
    *
@@ -427,7 +323,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     if (featureFilter_ != null) {
       output.writeMessage(7, getFeatureFilter());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -454,7 +350,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     if (featureFilter_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getFeatureFilter());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -488,7 +384,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     }
     if (getIncludeArchivedMedia() != other.getIncludeArchivedMedia()) return false;
     if (getExcludeNonAppCreatedData() != other.getExcludeNonAppCreatedData()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -519,7 +415,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeArchivedMedia());
     hash = (37 * hash) + EXCLUDE_NON_APP_CREATED_DATA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExcludeNonAppCreatedData());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -650,50 +546,38 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.photos.library.v1.proto.Filters.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dateFilterBuilder_ == null) {
-        dateFilter_ = null;
-      } else {
-        dateFilter_ = null;
+      bitField0_ = 0;
+      dateFilter_ = null;
+      if (dateFilterBuilder_ != null) {
+        dateFilterBuilder_.dispose();
         dateFilterBuilder_ = null;
       }
-      if (contentFilterBuilder_ == null) {
-        contentFilter_ = null;
-      } else {
-        contentFilter_ = null;
+      contentFilter_ = null;
+      if (contentFilterBuilder_ != null) {
+        contentFilterBuilder_.dispose();
         contentFilterBuilder_ = null;
       }
-      if (mediaTypeFilterBuilder_ == null) {
-        mediaTypeFilter_ = null;
-      } else {
-        mediaTypeFilter_ = null;
+      mediaTypeFilter_ = null;
+      if (mediaTypeFilterBuilder_ != null) {
+        mediaTypeFilterBuilder_.dispose();
         mediaTypeFilterBuilder_ = null;
       }
-      if (featureFilterBuilder_ == null) {
-        featureFilter_ = null;
-      } else {
-        featureFilter_ = null;
+      featureFilter_ = null;
+      if (featureFilterBuilder_ != null) {
+        featureFilterBuilder_.dispose();
         featureFilterBuilder_ = null;
       }
       includeArchivedMedia_ = false;
-
       excludeNonAppCreatedData_ = false;
-
       return this;
     }
 
@@ -721,30 +605,36 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     public com.google.photos.library.v1.proto.Filters buildPartial() {
       com.google.photos.library.v1.proto.Filters result =
           new com.google.photos.library.v1.proto.Filters(this);
-      if (dateFilterBuilder_ == null) {
-        result.dateFilter_ = dateFilter_;
-      } else {
-        result.dateFilter_ = dateFilterBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (contentFilterBuilder_ == null) {
-        result.contentFilter_ = contentFilter_;
-      } else {
-        result.contentFilter_ = contentFilterBuilder_.build();
-      }
-      if (mediaTypeFilterBuilder_ == null) {
-        result.mediaTypeFilter_ = mediaTypeFilter_;
-      } else {
-        result.mediaTypeFilter_ = mediaTypeFilterBuilder_.build();
-      }
-      if (featureFilterBuilder_ == null) {
-        result.featureFilter_ = featureFilter_;
-      } else {
-        result.featureFilter_ = featureFilterBuilder_.build();
-      }
-      result.includeArchivedMedia_ = includeArchivedMedia_;
-      result.excludeNonAppCreatedData_ = excludeNonAppCreatedData_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.Filters result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dateFilter_ = dateFilterBuilder_ == null ? dateFilter_ : dateFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.contentFilter_ =
+            contentFilterBuilder_ == null ? contentFilter_ : contentFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mediaTypeFilter_ =
+            mediaTypeFilterBuilder_ == null ? mediaTypeFilter_ : mediaTypeFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.featureFilter_ =
+            featureFilterBuilder_ == null ? featureFilter_ : featureFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.includeArchivedMedia_ = includeArchivedMedia_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.excludeNonAppCreatedData_ = excludeNonAppCreatedData_;
+      }
     }
 
     @java.lang.Override
@@ -810,7 +700,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
       if (other.getExcludeNonAppCreatedData() != false) {
         setExcludeNonAppCreatedData(other.getExcludeNonAppCreatedData());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -825,19 +715,71 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.Filters parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getDateFilterFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getContentFilterFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getMediaTypeFilterFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 32:
+              {
+                includeArchivedMedia_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 32
+            case 40:
+              {
+                excludeNonAppCreatedData_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 40
+            case 58:
+              {
+                input.readMessage(getFeatureFilterFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.library.v1.proto.Filters) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.photos.library.v1.proto.DateFilter dateFilter_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -857,7 +799,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dateFilter field is set.
      */
     public boolean hasDateFilter() {
-      return dateFilterBuilder_ != null || dateFilter_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -894,11 +836,11 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dateFilter_ = value;
-        onChanged();
       } else {
         dateFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -914,11 +856,11 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
         com.google.photos.library.v1.proto.DateFilter.Builder builderForValue) {
       if (dateFilterBuilder_ == null) {
         dateFilter_ = builderForValue.build();
-        onChanged();
       } else {
         dateFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -932,19 +874,18 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDateFilter(com.google.photos.library.v1.proto.DateFilter value) {
       if (dateFilterBuilder_ == null) {
-        if (dateFilter_ != null) {
-          dateFilter_ =
-              com.google.photos.library.v1.proto.DateFilter.newBuilder(dateFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && dateFilter_ != null
+            && dateFilter_ != com.google.photos.library.v1.proto.DateFilter.getDefaultInstance()) {
+          getDateFilterBuilder().mergeFrom(value);
         } else {
           dateFilter_ = value;
         }
-        onChanged();
       } else {
         dateFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -957,14 +898,13 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.DateFilter date_filter = 1;</code>
      */
     public Builder clearDateFilter() {
-      if (dateFilterBuilder_ == null) {
-        dateFilter_ = null;
-        onChanged();
-      } else {
-        dateFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dateFilter_ = null;
+      if (dateFilterBuilder_ != null) {
+        dateFilterBuilder_.dispose();
         dateFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -977,7 +917,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.DateFilter date_filter = 1;</code>
      */
     public com.google.photos.library.v1.proto.DateFilter.Builder getDateFilterBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDateFilterFieldBuilder().getBuilder();
     }
@@ -1043,7 +983,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the contentFilter field is set.
      */
     public boolean hasContentFilter() {
-      return contentFilterBuilder_ != null || contentFilter_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1080,11 +1020,11 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         contentFilter_ = value;
-        onChanged();
       } else {
         contentFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1100,11 +1040,11 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
         com.google.photos.library.v1.proto.ContentFilter.Builder builderForValue) {
       if (contentFilterBuilder_ == null) {
         contentFilter_ = builderForValue.build();
-        onChanged();
       } else {
         contentFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1118,19 +1058,19 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeContentFilter(com.google.photos.library.v1.proto.ContentFilter value) {
       if (contentFilterBuilder_ == null) {
-        if (contentFilter_ != null) {
-          contentFilter_ =
-              com.google.photos.library.v1.proto.ContentFilter.newBuilder(contentFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && contentFilter_ != null
+            && contentFilter_
+                != com.google.photos.library.v1.proto.ContentFilter.getDefaultInstance()) {
+          getContentFilterBuilder().mergeFrom(value);
         } else {
           contentFilter_ = value;
         }
-        onChanged();
       } else {
         contentFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1143,14 +1083,13 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.ContentFilter content_filter = 2;</code>
      */
     public Builder clearContentFilter() {
-      if (contentFilterBuilder_ == null) {
-        contentFilter_ = null;
-        onChanged();
-      } else {
-        contentFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      contentFilter_ = null;
+      if (contentFilterBuilder_ != null) {
+        contentFilterBuilder_.dispose();
         contentFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1163,7 +1102,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.ContentFilter content_filter = 2;</code>
      */
     public com.google.photos.library.v1.proto.ContentFilter.Builder getContentFilterBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getContentFilterFieldBuilder().getBuilder();
     }
@@ -1229,7 +1168,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the mediaTypeFilter field is set.
      */
     public boolean hasMediaTypeFilter() {
-      return mediaTypeFilterBuilder_ != null || mediaTypeFilter_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1266,11 +1205,11 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         mediaTypeFilter_ = value;
-        onChanged();
       } else {
         mediaTypeFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1286,11 +1225,11 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
         com.google.photos.library.v1.proto.MediaTypeFilter.Builder builderForValue) {
       if (mediaTypeFilterBuilder_ == null) {
         mediaTypeFilter_ = builderForValue.build();
-        onChanged();
       } else {
         mediaTypeFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1304,19 +1243,19 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMediaTypeFilter(com.google.photos.library.v1.proto.MediaTypeFilter value) {
       if (mediaTypeFilterBuilder_ == null) {
-        if (mediaTypeFilter_ != null) {
-          mediaTypeFilter_ =
-              com.google.photos.library.v1.proto.MediaTypeFilter.newBuilder(mediaTypeFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && mediaTypeFilter_ != null
+            && mediaTypeFilter_
+                != com.google.photos.library.v1.proto.MediaTypeFilter.getDefaultInstance()) {
+          getMediaTypeFilterBuilder().mergeFrom(value);
         } else {
           mediaTypeFilter_ = value;
         }
-        onChanged();
       } else {
         mediaTypeFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1329,14 +1268,13 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.MediaTypeFilter media_type_filter = 3;</code>
      */
     public Builder clearMediaTypeFilter() {
-      if (mediaTypeFilterBuilder_ == null) {
-        mediaTypeFilter_ = null;
-        onChanged();
-      } else {
-        mediaTypeFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      mediaTypeFilter_ = null;
+      if (mediaTypeFilterBuilder_ != null) {
+        mediaTypeFilterBuilder_.dispose();
         mediaTypeFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1349,7 +1287,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.MediaTypeFilter media_type_filter = 3;</code>
      */
     public com.google.photos.library.v1.proto.MediaTypeFilter.Builder getMediaTypeFilterBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMediaTypeFilterFieldBuilder().getBuilder();
     }
@@ -1416,7 +1354,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the featureFilter field is set.
      */
     public boolean hasFeatureFilter() {
-      return featureFilterBuilder_ != null || featureFilter_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1453,11 +1391,11 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         featureFilter_ = value;
-        onChanged();
       } else {
         featureFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1473,11 +1411,11 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
         com.google.photos.library.v1.proto.FeatureFilter.Builder builderForValue) {
       if (featureFilterBuilder_ == null) {
         featureFilter_ = builderForValue.build();
-        onChanged();
       } else {
         featureFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1491,19 +1429,19 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFeatureFilter(com.google.photos.library.v1.proto.FeatureFilter value) {
       if (featureFilterBuilder_ == null) {
-        if (featureFilter_ != null) {
-          featureFilter_ =
-              com.google.photos.library.v1.proto.FeatureFilter.newBuilder(featureFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && featureFilter_ != null
+            && featureFilter_
+                != com.google.photos.library.v1.proto.FeatureFilter.getDefaultInstance()) {
+          getFeatureFilterBuilder().mergeFrom(value);
         } else {
           featureFilter_ = value;
         }
-        onChanged();
       } else {
         featureFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1516,14 +1454,13 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
      */
     public Builder clearFeatureFilter() {
-      if (featureFilterBuilder_ == null) {
-        featureFilter_ = null;
-        onChanged();
-      } else {
-        featureFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      featureFilter_ = null;
+      if (featureFilterBuilder_ != null) {
+        featureFilterBuilder_.dispose();
         featureFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1536,7 +1473,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.library.v1.FeatureFilter feature_filter = 7;</code>
      */
     public com.google.photos.library.v1.proto.FeatureFilter.Builder getFeatureFilterBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getFeatureFilterFieldBuilder().getBuilder();
     }
@@ -1617,6 +1554,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     public Builder setIncludeArchivedMedia(boolean value) {
 
       includeArchivedMedia_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1633,7 +1571,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIncludeArchivedMedia() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       includeArchivedMedia_ = false;
       onChanged();
       return this;
@@ -1674,6 +1612,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
     public Builder setExcludeNonAppCreatedData(boolean value) {
 
       excludeNonAppCreatedData_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1691,7 +1630,7 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExcludeNonAppCreatedData() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       excludeNonAppCreatedData_ = false;
       onChanged();
       return this;
@@ -1729,7 +1668,18 @@ public final class Filters extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Filters(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

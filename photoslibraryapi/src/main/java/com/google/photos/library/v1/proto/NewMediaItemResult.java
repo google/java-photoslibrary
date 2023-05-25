@@ -37,80 +37,6 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private NewMediaItemResult(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uploadToken_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.rpc.Status.Builder subBuilder = null;
-              if (status_ != null) {
-                subBuilder = status_.toBuilder();
-              }
-              status_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(status_);
-                status_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.photos.types.proto.MediaItem.Builder subBuilder = null;
-              if (mediaItem_ != null) {
-                subBuilder = mediaItem_.toBuilder();
-              }
-              mediaItem_ =
-                  input.readMessage(
-                      com.google.photos.types.proto.MediaItem.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(mediaItem_);
-                mediaItem_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_NewMediaItemResult_descriptor;
@@ -127,12 +53,15 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int UPLOAD_TOKEN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object uploadToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uploadToken_ = "";
   /**
    *
    *
    * <pre>
-   * The upload token used to create this new media item.
+   * The upload token used to create this new (simple) media item. Only
+   * populated if the media item is simple and required a single upload token.
    * </pre>
    *
    * <code>string upload_token = 1;</code>
@@ -155,7 +84,8 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The upload token used to create this new media item.
+   * The upload token used to create this new (simple) media item. Only
+   * populated if the media item is simple and required a single upload token.
    * </pre>
    *
    * <code>string upload_token = 1;</code>
@@ -224,7 +154,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
 
   public static final int MEDIA_ITEM_FIELD_NUMBER = 3;
@@ -275,7 +205,9 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.photos.types.proto.MediaItemOrBuilder getMediaItemOrBuilder() {
-    return getMediaItem();
+    return mediaItem_ == null
+        ? com.google.photos.types.proto.MediaItem.getDefaultInstance()
+        : mediaItem_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -301,7 +233,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
     if (mediaItem_ != null) {
       output.writeMessage(3, getMediaItem());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -319,7 +251,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
     if (mediaItem_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMediaItem());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -344,7 +276,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
     if (hasMediaItem()) {
       if (!getMediaItem().equals(other.getMediaItem())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -365,7 +297,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + MEDIA_ITEM_FIELD_NUMBER;
       hash = (53 * hash) + getMediaItem().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -495,34 +427,25 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.photos.library.v1.proto.NewMediaItemResult.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uploadToken_ = "";
-
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-      if (mediaItemBuilder_ == null) {
-        mediaItem_ = null;
-      } else {
-        mediaItem_ = null;
+      mediaItem_ = null;
+      if (mediaItemBuilder_ != null) {
+        mediaItemBuilder_.dispose();
         mediaItemBuilder_ = null;
       }
       return this;
@@ -552,19 +475,24 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
     public com.google.photos.library.v1.proto.NewMediaItemResult buildPartial() {
       com.google.photos.library.v1.proto.NewMediaItemResult result =
           new com.google.photos.library.v1.proto.NewMediaItemResult(this);
-      result.uploadToken_ = uploadToken_;
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
-      }
-      if (mediaItemBuilder_ == null) {
-        result.mediaItem_ = mediaItem_;
-      } else {
-        result.mediaItem_ = mediaItemBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.NewMediaItemResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.uploadToken_ = uploadToken_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mediaItem_ = mediaItemBuilder_ == null ? mediaItem_ : mediaItemBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -615,6 +543,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getUploadToken().isEmpty()) {
         uploadToken_ = other.uploadToken_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -623,7 +552,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
       if (other.hasMediaItem()) {
         mergeMediaItem(other.getMediaItem());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -638,27 +567,61 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.NewMediaItemResult parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                uploadToken_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getMediaItemFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.photos.library.v1.proto.NewMediaItemResult) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object uploadToken_ = "";
     /**
      *
      *
      * <pre>
-     * The upload token used to create this new media item.
+     * The upload token used to create this new (simple) media item. Only
+     * populated if the media item is simple and required a single upload token.
      * </pre>
      *
      * <code>string upload_token = 1;</code>
@@ -680,7 +643,8 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The upload token used to create this new media item.
+     * The upload token used to create this new (simple) media item. Only
+     * populated if the media item is simple and required a single upload token.
      * </pre>
      *
      * <code>string upload_token = 1;</code>
@@ -702,7 +666,8 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The upload token used to create this new media item.
+     * The upload token used to create this new (simple) media item. Only
+     * populated if the media item is simple and required a single upload token.
      * </pre>
      *
      * <code>string upload_token = 1;</code>
@@ -714,8 +679,8 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       uploadToken_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,7 +688,8 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The upload token used to create this new media item.
+     * The upload token used to create this new (simple) media item. Only
+     * populated if the media item is simple and required a single upload token.
      * </pre>
      *
      * <code>string upload_token = 1;</code>
@@ -731,8 +697,8 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUploadToken() {
-
       uploadToken_ = getDefaultInstance().getUploadToken();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -740,7 +706,8 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The upload token used to create this new media item.
+     * The upload token used to create this new (simple) media item. Only
+     * populated if the media item is simple and required a single upload token.
      * </pre>
      *
      * <code>string upload_token = 1;</code>
@@ -753,8 +720,8 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uploadToken_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,7 +744,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -816,11 +783,11 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -837,11 +804,11 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
     public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -857,16 +824,18 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && status_ != null
+            && status_ != com.google.rpc.Status.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -881,14 +850,13 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      * <code>.google.rpc.Status status = 2;</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -903,7 +871,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      * <code>.google.rpc.Status status = 2;</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -969,7 +937,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      * @return Whether the mediaItem field is set.
      */
     public boolean hasMediaItem() {
-      return mediaItemBuilder_ != null || mediaItem_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1008,11 +976,11 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         mediaItem_ = value;
-        onChanged();
       } else {
         mediaItemBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1028,11 +996,11 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
     public Builder setMediaItem(com.google.photos.types.proto.MediaItem.Builder builderForValue) {
       if (mediaItemBuilder_ == null) {
         mediaItem_ = builderForValue.build();
-        onChanged();
       } else {
         mediaItemBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1047,19 +1015,18 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeMediaItem(com.google.photos.types.proto.MediaItem value) {
       if (mediaItemBuilder_ == null) {
-        if (mediaItem_ != null) {
-          mediaItem_ =
-              com.google.photos.types.proto.MediaItem.newBuilder(mediaItem_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && mediaItem_ != null
+            && mediaItem_ != com.google.photos.types.proto.MediaItem.getDefaultInstance()) {
+          getMediaItemBuilder().mergeFrom(value);
         } else {
           mediaItem_ = value;
         }
-        onChanged();
       } else {
         mediaItemBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1073,14 +1040,13 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      * <code>.google.photos.types.MediaItem media_item = 3;</code>
      */
     public Builder clearMediaItem() {
-      if (mediaItemBuilder_ == null) {
-        mediaItem_ = null;
-        onChanged();
-      } else {
-        mediaItem_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      mediaItem_ = null;
+      if (mediaItemBuilder_ != null) {
+        mediaItemBuilder_.dispose();
         mediaItemBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1094,7 +1060,7 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
      * <code>.google.photos.types.MediaItem media_item = 3;</code>
      */
     public com.google.photos.types.proto.MediaItem.Builder getMediaItemBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMediaItemFieldBuilder().getBuilder();
     }
@@ -1176,7 +1142,18 @@ public final class NewMediaItemResult extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NewMediaItemResult(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

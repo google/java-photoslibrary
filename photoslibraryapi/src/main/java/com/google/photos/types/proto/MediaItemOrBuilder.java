@@ -39,8 +39,11 @@ public interface MediaItemOrBuilder
    *
    *
    * <pre>
-   * Description of the media item. This is shown to the user in the item's
-   * info section in the Google Photos app.
+   * Description of the media item. This is shown to the user in the item's info
+   * section in the Google Photos app. Must be shorter than 1000 characters.
+   * Only include text written by users. Descriptions should add context and
+   * help users understand media. Do not include any auto-generated
+   * strings such as filenames, tags, and other metadata.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -52,8 +55,11 @@ public interface MediaItemOrBuilder
    *
    *
    * <pre>
-   * Description of the media item. This is shown to the user in the item's
-   * info section in the Google Photos app.
+   * Description of the media item. This is shown to the user in the item's info
+   * section in the Google Photos app. Must be shorter than 1000 characters.
+   * Only include text written by users. Descriptions should add context and
+   * help users understand media. Do not include any auto-generated
+   * strings such as filenames, tags, and other metadata.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -67,7 +73,8 @@ public interface MediaItemOrBuilder
    *
    * <pre>
    * Google Photos URL for the media item. This link is available to
-   * the user only if they're signed in.
+   * the user only if they're signed in. When retrieved from an album search,
+   * the URL points to the item inside the album.
    * </pre>
    *
    * <code>string product_url = 3;</code>
@@ -80,7 +87,8 @@ public interface MediaItemOrBuilder
    *
    * <pre>
    * Google Photos URL for the media item. This link is available to
-   * the user only if they're signed in.
+   * the user only if they're signed in. When retrieved from an album search,
+   * the URL points to the item inside the album.
    * </pre>
    *
    * <code>string product_url = 3;</code>
@@ -191,7 +199,11 @@ public interface MediaItemOrBuilder
    *
    *
    * <pre>
-   * Information about the user who created this media item.
+   * Information about the user who added this media item. Note that this
+   * is only included when using [mediaItems.search]
+   * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+   * ID of a shared album. The album must be created by your app and
+   * you must have the sharing scope.
    * </pre>
    *
    * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
@@ -203,7 +215,11 @@ public interface MediaItemOrBuilder
    *
    *
    * <pre>
-   * Information about the user who created this media item.
+   * Information about the user who added this media item. Note that this
+   * is only included when using [mediaItems.search]
+   * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+   * ID of a shared album. The album must be created by your app and
+   * you must have the sharing scope.
    * </pre>
    *
    * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
@@ -215,7 +231,11 @@ public interface MediaItemOrBuilder
    *
    *
    * <pre>
-   * Information about the user who created this media item.
+   * Information about the user who added this media item. Note that this
+   * is only included when using [mediaItems.search]
+   * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+   * ID of a shared album. The album must be created by your app and
+   * you must have the sharing scope.
    * </pre>
    *
    * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>

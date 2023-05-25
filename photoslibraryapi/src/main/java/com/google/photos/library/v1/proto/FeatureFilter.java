@@ -37,72 +37,6 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private FeatureFilter(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                includedFeatures_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              includedFeatures_.add(rawValue);
-              break;
-            }
-          case 10:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  includedFeatures_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                includedFeatures_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        includedFeatures_ = java.util.Collections.unmodifiableList(includedFeatures_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_FeatureFilter_descriptor;
@@ -256,7 +190,10 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCLUDED_FEATURES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> includedFeatures_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.photos.library.v1.proto.FeatureFilter.Feature>
       includedFeatures_converter_ =
@@ -264,9 +201,8 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.photos.library.v1.proto.FeatureFilter.Feature>() {
             public com.google.photos.library.v1.proto.FeatureFilter.Feature convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.photos.library.v1.proto.FeatureFilter.Feature result =
-                  com.google.photos.library.v1.proto.FeatureFilter.Feature.valueOf(from);
+                  com.google.photos.library.v1.proto.FeatureFilter.Feature.forNumber(from);
               return result == null
                   ? com.google.photos.library.v1.proto.FeatureFilter.Feature.UNRECOGNIZED
                   : result;
@@ -382,7 +318,7 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < includedFeatures_.size(); i++) {
       output.writeEnumNoTag(includedFeatures_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -404,7 +340,7 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
       }
       includedFeaturesMemoizedSerializedSize = dataSize;
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -421,7 +357,7 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
         (com.google.photos.library.v1.proto.FeatureFilter) obj;
 
     if (!includedFeatures_.equals(other.includedFeatures_)) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -436,7 +372,7 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + INCLUDED_FEATURES_FIELD_NUMBER;
       hash = (53 * hash) + includedFeatures_.hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -565,22 +501,16 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.photos.library.v1.proto.FeatureFilter.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       includedFeatures_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -610,14 +540,25 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.photos.library.v1.proto.FeatureFilter buildPartial() {
       com.google.photos.library.v1.proto.FeatureFilter result =
           new com.google.photos.library.v1.proto.FeatureFilter(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.photos.library.v1.proto.FeatureFilter result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         includedFeatures_ = java.util.Collections.unmodifiableList(includedFeatures_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.includedFeatures_ = includedFeatures_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.FeatureFilter result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -676,7 +617,7 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -691,17 +632,50 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.FeatureFilter parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int tmpRaw = input.readEnum();
+                ensureIncludedFeaturesIsMutable();
+                includedFeatures_.add(tmpRaw);
+                break;
+              } // case 8
+            case 10:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureIncludedFeaturesIsMutable();
+                  includedFeatures_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.library.v1.proto.FeatureFilter) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -893,8 +867,8 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.photos.library.v1.FeatureFilter.Feature included_features = 1;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of includedFeatures at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for includedFeatures to set.
      * @return This builder for chaining.
      */
     public Builder setIncludedFeaturesValue(int index, int value) {
@@ -976,7 +950,18 @@ public final class FeatureFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FeatureFilter(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

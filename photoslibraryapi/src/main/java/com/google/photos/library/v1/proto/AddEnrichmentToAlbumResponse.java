@@ -35,60 +35,6 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
     return this.unknownFields;
   }
 
-  private AddEnrichmentToAlbumResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.photos.library.v1.proto.EnrichmentItem.Builder subBuilder = null;
-              if (enrichmentItem_ != null) {
-                subBuilder = enrichmentItem_.toBuilder();
-              }
-              enrichmentItem_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.EnrichmentItem.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(enrichmentItem_);
-                enrichmentItem_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_AddEnrichmentToAlbumResponse_descriptor;
@@ -149,7 +95,9 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.photos.library.v1.proto.EnrichmentItemOrBuilder getEnrichmentItemOrBuilder() {
-    return getEnrichmentItem();
+    return enrichmentItem_ == null
+        ? com.google.photos.library.v1.proto.EnrichmentItem.getDefaultInstance()
+        : enrichmentItem_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -169,7 +117,7 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
     if (enrichmentItem_ != null) {
       output.writeMessage(1, getEnrichmentItem());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -181,7 +129,7 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
     if (enrichmentItem_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEnrichmentItem());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -201,7 +149,7 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
     if (hasEnrichmentItem()) {
       if (!getEnrichmentItem().equals(other.getEnrichmentItem())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -216,7 +164,7 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
       hash = (37 * hash) + ENRICHMENT_ITEM_FIELD_NUMBER;
       hash = (53 * hash) + getEnrichmentItem().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -346,26 +294,19 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
     }
 
     // Construct using com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (enrichmentItemBuilder_ == null) {
-        enrichmentItem_ = null;
-      } else {
-        enrichmentItem_ = null;
+      bitField0_ = 0;
+      enrichmentItem_ = null;
+      if (enrichmentItemBuilder_ != null) {
+        enrichmentItemBuilder_.dispose();
         enrichmentItemBuilder_ = null;
       }
       return this;
@@ -396,13 +337,20 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
     public com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse buildPartial() {
       com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse result =
           new com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse(this);
-      if (enrichmentItemBuilder_ == null) {
-        result.enrichmentItem_ = enrichmentItem_;
-      } else {
-        result.enrichmentItem_ = enrichmentItemBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enrichmentItem_ =
+            enrichmentItemBuilder_ == null ? enrichmentItem_ : enrichmentItemBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -456,7 +404,7 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
       if (other.hasEnrichmentItem()) {
         mergeEnrichmentItem(other.getEnrichmentItem());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -471,21 +419,41 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getEnrichmentItemFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.photos.library.v1.proto.AddEnrichmentToAlbumResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.photos.library.v1.proto.EnrichmentItem enrichmentItem_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -505,7 +473,7 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
      * @return Whether the enrichmentItem field is set.
      */
     public boolean hasEnrichmentItem() {
-      return enrichmentItemBuilder_ != null || enrichmentItem_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -542,11 +510,11 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         enrichmentItem_ = value;
-        onChanged();
       } else {
         enrichmentItemBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -562,11 +530,11 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
         com.google.photos.library.v1.proto.EnrichmentItem.Builder builderForValue) {
       if (enrichmentItemBuilder_ == null) {
         enrichmentItem_ = builderForValue.build();
-        onChanged();
       } else {
         enrichmentItemBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -580,19 +548,19 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
      */
     public Builder mergeEnrichmentItem(com.google.photos.library.v1.proto.EnrichmentItem value) {
       if (enrichmentItemBuilder_ == null) {
-        if (enrichmentItem_ != null) {
-          enrichmentItem_ =
-              com.google.photos.library.v1.proto.EnrichmentItem.newBuilder(enrichmentItem_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && enrichmentItem_ != null
+            && enrichmentItem_
+                != com.google.photos.library.v1.proto.EnrichmentItem.getDefaultInstance()) {
+          getEnrichmentItemBuilder().mergeFrom(value);
         } else {
           enrichmentItem_ = value;
         }
-        onChanged();
       } else {
         enrichmentItemBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -605,14 +573,13 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
      * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>
      */
     public Builder clearEnrichmentItem() {
-      if (enrichmentItemBuilder_ == null) {
-        enrichmentItem_ = null;
-        onChanged();
-      } else {
-        enrichmentItem_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      enrichmentItem_ = null;
+      if (enrichmentItemBuilder_ != null) {
+        enrichmentItemBuilder_.dispose();
         enrichmentItemBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -625,7 +592,7 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
      * <code>.google.photos.library.v1.EnrichmentItem enrichment_item = 1;</code>
      */
     public com.google.photos.library.v1.proto.EnrichmentItem.Builder getEnrichmentItemBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEnrichmentItemFieldBuilder().getBuilder();
     }
@@ -707,7 +674,18 @@ public final class AddEnrichmentToAlbumResponse extends com.google.protobuf.Gene
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AddEnrichmentToAlbumResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

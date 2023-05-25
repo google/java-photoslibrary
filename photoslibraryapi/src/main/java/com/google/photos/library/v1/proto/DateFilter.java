@@ -8,7 +8,10 @@ package com.google.photos.library.v1.proto;
  *
  * <pre>
  * This filter defines the allowed dates or date ranges for the media returned.
- * It's possible to pick a set of specific dates and a set of date ranges.
+ * It's possible to pick a set of specific dates and a set of date ranges. Media
+ * items uploaded without metadata specifying the date the media item was
+ * captured will not be returned in queries using date filters. Google Photos
+ * server upload time is not used as a fallback in this case.
  * </pre>
  *
  * Protobuf type {@code google.photos.library.v1.DateFilter}
@@ -39,70 +42,6 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private DateFilter(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dates_ = new java.util.ArrayList<com.google.type.Date>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dates_.add(input.readMessage(com.google.type.Date.parser(), extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                ranges_ = new java.util.ArrayList<com.google.photos.types.proto.DateRange>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              ranges_.add(
-                  input.readMessage(
-                      com.google.photos.types.proto.DateRange.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dates_ = java.util.Collections.unmodifiableList(dates_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        ranges_ = java.util.Collections.unmodifiableList(ranges_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_DateFilter_descriptor;
@@ -119,6 +58,8 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.type.Date> dates_;
   /**
    *
@@ -192,6 +133,8 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RANGES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.photos.types.proto.DateRange> ranges_;
   /**
    *
@@ -285,7 +228,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < ranges_.size(); i++) {
       output.writeMessage(2, ranges_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -300,7 +243,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < ranges_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, ranges_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -318,7 +261,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
 
     if (!getDatesList().equals(other.getDatesList())) return false;
     if (!getRangesList().equals(other.getRangesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -337,7 +280,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getRangesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -442,7 +385,10 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter defines the allowed dates or date ranges for the media returned.
-   * It's possible to pick a set of specific dates and a set of date ranges.
+   * It's possible to pick a set of specific dates and a set of date ranges. Media
+   * items uploaded without metadata specifying the date the media item was
+   * captured will not be returned in queries using date filters. Google Photos
+   * server upload time is not used as a fallback in this case.
    * </pre>
    *
    * Protobuf type {@code google.photos.library.v1.DateFilter}
@@ -467,37 +413,30 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.photos.library.v1.proto.DateFilter.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getDatesFieldBuilder();
-        getRangesFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (datesBuilder_ == null) {
         dates_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        dates_ = null;
         datesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (rangesBuilder_ == null) {
         ranges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        ranges_ = null;
         rangesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -525,7 +464,15 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.photos.library.v1.proto.DateFilter buildPartial() {
       com.google.photos.library.v1.proto.DateFilter result =
           new com.google.photos.library.v1.proto.DateFilter(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.photos.library.v1.proto.DateFilter result) {
       if (datesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dates_ = java.util.Collections.unmodifiableList(dates_);
@@ -544,8 +491,10 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.ranges_ = rangesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.DateFilter result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -647,7 +596,7 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -662,17 +611,56 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.DateFilter parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.type.Date m =
+                    input.readMessage(com.google.type.Date.parser(), extensionRegistry);
+                if (datesBuilder_ == null) {
+                  ensureDatesIsMutable();
+                  dates_.add(m);
+                } else {
+                  datesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.photos.types.proto.DateRange m =
+                    input.readMessage(
+                        com.google.photos.types.proto.DateRange.parser(), extensionRegistry);
+                if (rangesBuilder_ == null) {
+                  ensureRangesIsMutable();
+                  ranges_.add(m);
+                } else {
+                  rangesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.library.v1.proto.DateFilter) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1429,7 +1417,18 @@ public final class DateFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DateFilter(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

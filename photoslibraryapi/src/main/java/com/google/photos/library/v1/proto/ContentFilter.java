@@ -51,102 +51,6 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ContentFilter(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                includedContentCategories_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              includedContentCategories_.add(rawValue);
-              break;
-            }
-          case 10:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  includedContentCategories_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                includedContentCategories_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                excludedContentCategories_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              excludedContentCategories_.add(rawValue);
-              break;
-            }
-          case 18:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  excludedContentCategories_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                excludedContentCategories_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        includedContentCategories_ =
-            java.util.Collections.unmodifiableList(includedContentCategories_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        excludedContentCategories_ =
-            java.util.Collections.unmodifiableList(excludedContentCategories_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_ContentFilter_descriptor;
@@ -163,7 +67,10 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCLUDED_CONTENT_CATEGORIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> includedContentCategories_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.photos.library.v1.proto.ContentCategory>
       includedContentCategories_converter_ =
@@ -171,9 +78,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.photos.library.v1.proto.ContentCategory>() {
             public com.google.photos.library.v1.proto.ContentCategory convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.photos.library.v1.proto.ContentCategory result =
-                  com.google.photos.library.v1.proto.ContentCategory.valueOf(from);
+                  com.google.photos.library.v1.proto.ContentCategory.forNumber(from);
               return result == null
                   ? com.google.photos.library.v1.proto.ContentCategory.UNRECOGNIZED
                   : result;
@@ -279,7 +185,10 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
   private int includedContentCategoriesMemoizedSerializedSize;
 
   public static final int EXCLUDED_CONTENT_CATEGORIES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> excludedContentCategories_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.photos.library.v1.proto.ContentCategory>
       excludedContentCategories_converter_ =
@@ -287,9 +196,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.photos.library.v1.proto.ContentCategory>() {
             public com.google.photos.library.v1.proto.ContentCategory convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.photos.library.v1.proto.ContentCategory result =
-                  com.google.photos.library.v1.proto.ContentCategory.valueOf(from);
+                  com.google.photos.library.v1.proto.ContentCategory.forNumber(from);
               return result == null
                   ? com.google.photos.library.v1.proto.ContentCategory.UNRECOGNIZED
                   : result;
@@ -423,7 +331,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < excludedContentCategories_.size(); i++) {
       output.writeEnumNoTag(excludedContentCategories_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -460,7 +368,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
       }
       excludedContentCategoriesMemoizedSerializedSize = dataSize;
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -478,7 +386,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
 
     if (!includedContentCategories_.equals(other.includedContentCategories_)) return false;
     if (!excludedContentCategories_.equals(other.excludedContentCategories_)) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -497,7 +405,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EXCLUDED_CONTENT_CATEGORIES_FIELD_NUMBER;
       hash = (53 * hash) + excludedContentCategories_.hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -639,22 +547,16 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.photos.library.v1.proto.ContentFilter.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       includedContentCategories_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       excludedContentCategories_ = java.util.Collections.emptyList();
@@ -686,7 +588,16 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.photos.library.v1.proto.ContentFilter buildPartial() {
       com.google.photos.library.v1.proto.ContentFilter result =
           new com.google.photos.library.v1.proto.ContentFilter(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.photos.library.v1.proto.ContentFilter result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         includedContentCategories_ =
             java.util.Collections.unmodifiableList(includedContentCategories_);
@@ -699,8 +610,10 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.excludedContentCategories_ = excludedContentCategories_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.ContentFilter result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -769,7 +682,7 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -784,17 +697,69 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.ContentFilter parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int tmpRaw = input.readEnum();
+                ensureIncludedContentCategoriesIsMutable();
+                includedContentCategories_.add(tmpRaw);
+                break;
+              } // case 8
+            case 10:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureIncludedContentCategoriesIsMutable();
+                  includedContentCategories_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 10
+            case 16:
+              {
+                int tmpRaw = input.readEnum();
+                ensureExcludedContentCategoriesIsMutable();
+                excludedContentCategories_.add(tmpRaw);
+                break;
+              } // case 16
+            case 18:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureExcludedContentCategoriesIsMutable();
+                  excludedContentCategories_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.library.v1.proto.ContentFilter) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1008,8 +973,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.photos.library.v1.ContentCategory included_content_categories = 1;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of includedContentCategories at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for includedContentCategories to set.
      * @return This builder for chaining.
      */
     public Builder setIncludedContentCategoriesValue(int index, int value) {
@@ -1272,8 +1237,8 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.photos.library.v1.ContentCategory excluded_content_categories = 2;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of excludedContentCategories at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for excludedContentCategories to set.
      * @return This builder for chaining.
      */
     public Builder setExcludedContentCategoriesValue(int index, int value) {
@@ -1360,7 +1325,18 @@ public final class ContentFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ContentFilter(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

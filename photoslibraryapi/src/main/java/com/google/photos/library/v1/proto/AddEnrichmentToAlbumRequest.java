@@ -37,83 +37,6 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
     return this.unknownFields;
   }
 
-  private AddEnrichmentToAlbumRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              albumId_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.photos.library.v1.proto.NewEnrichmentItem.Builder subBuilder = null;
-              if (newEnrichmentItem_ != null) {
-                subBuilder = newEnrichmentItem_.toBuilder();
-              }
-              newEnrichmentItem_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.NewEnrichmentItem.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(newEnrichmentItem_);
-                newEnrichmentItem_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.photos.library.v1.proto.AlbumPosition.Builder subBuilder = null;
-              if (albumPosition_ != null) {
-                subBuilder = albumPosition_.toBuilder();
-              }
-              albumPosition_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.AlbumPosition.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(albumPosition_);
-                albumPosition_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_AddEnrichmentToAlbumRequest_descriptor;
@@ -130,7 +53,9 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
   }
 
   public static final int ALBUM_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object albumId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object albumId_ = "";
   /**
    *
    *
@@ -230,7 +155,9 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
   @java.lang.Override
   public com.google.photos.library.v1.proto.NewEnrichmentItemOrBuilder
       getNewEnrichmentItemOrBuilder() {
-    return getNewEnrichmentItem();
+    return newEnrichmentItem_ == null
+        ? com.google.photos.library.v1.proto.NewEnrichmentItem.getDefaultInstance()
+        : newEnrichmentItem_;
   }
 
   public static final int ALBUM_POSITION_FIELD_NUMBER = 3;
@@ -284,7 +211,9 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.photos.library.v1.proto.AlbumPositionOrBuilder getAlbumPositionOrBuilder() {
-    return getAlbumPosition();
+    return albumPosition_ == null
+        ? com.google.photos.library.v1.proto.AlbumPosition.getDefaultInstance()
+        : albumPosition_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -310,7 +239,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
     if (albumPosition_ != null) {
       output.writeMessage(3, getAlbumPosition());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -328,7 +257,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
     if (albumPosition_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAlbumPosition());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -353,7 +282,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
     if (hasAlbumPosition()) {
       if (!getAlbumPosition().equals(other.getAlbumPosition())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -374,7 +303,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
       hash = (37 * hash) + ALBUM_POSITION_FIELD_NUMBER;
       hash = (53 * hash) + getAlbumPosition().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -504,34 +433,25 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
     }
 
     // Construct using com.google.photos.library.v1.proto.AddEnrichmentToAlbumRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       albumId_ = "";
-
-      if (newEnrichmentItemBuilder_ == null) {
-        newEnrichmentItem_ = null;
-      } else {
-        newEnrichmentItem_ = null;
+      newEnrichmentItem_ = null;
+      if (newEnrichmentItemBuilder_ != null) {
+        newEnrichmentItemBuilder_.dispose();
         newEnrichmentItemBuilder_ = null;
       }
-      if (albumPositionBuilder_ == null) {
-        albumPosition_ = null;
-      } else {
-        albumPosition_ = null;
+      albumPosition_ = null;
+      if (albumPositionBuilder_ != null) {
+        albumPositionBuilder_.dispose();
         albumPositionBuilder_ = null;
       }
       return this;
@@ -562,19 +482,29 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
     public com.google.photos.library.v1.proto.AddEnrichmentToAlbumRequest buildPartial() {
       com.google.photos.library.v1.proto.AddEnrichmentToAlbumRequest result =
           new com.google.photos.library.v1.proto.AddEnrichmentToAlbumRequest(this);
-      result.albumId_ = albumId_;
-      if (newEnrichmentItemBuilder_ == null) {
-        result.newEnrichmentItem_ = newEnrichmentItem_;
-      } else {
-        result.newEnrichmentItem_ = newEnrichmentItemBuilder_.build();
-      }
-      if (albumPositionBuilder_ == null) {
-        result.albumPosition_ = albumPosition_;
-      } else {
-        result.albumPosition_ = albumPositionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.photos.library.v1.proto.AddEnrichmentToAlbumRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.albumId_ = albumId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.newEnrichmentItem_ =
+            newEnrichmentItemBuilder_ == null
+                ? newEnrichmentItem_
+                : newEnrichmentItemBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.albumPosition_ =
+            albumPositionBuilder_ == null ? albumPosition_ : albumPositionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -626,6 +556,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getAlbumId().isEmpty()) {
         albumId_ = other.albumId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasNewEnrichmentItem()) {
@@ -634,7 +565,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
       if (other.hasAlbumPosition()) {
         mergeAlbumPosition(other.getAlbumPosition());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -649,21 +580,54 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.AddEnrichmentToAlbumRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                albumId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getNewEnrichmentItemFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getAlbumPositionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.photos.library.v1.proto.AddEnrichmentToAlbumRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object albumId_ = "";
     /**
@@ -726,8 +690,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       albumId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -743,8 +707,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearAlbumId() {
-
       albumId_ = getDefaultInstance().getAlbumId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -765,8 +729,8 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       albumId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -791,7 +755,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * @return Whether the newEnrichmentItem field is set.
      */
     public boolean hasNewEnrichmentItem() {
-      return newEnrichmentItemBuilder_ != null || newEnrichmentItem_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -833,11 +797,11 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         newEnrichmentItem_ = value;
-        onChanged();
       } else {
         newEnrichmentItemBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -855,11 +819,11 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
         com.google.photos.library.v1.proto.NewEnrichmentItem.Builder builderForValue) {
       if (newEnrichmentItemBuilder_ == null) {
         newEnrichmentItem_ = builderForValue.build();
-        onChanged();
       } else {
         newEnrichmentItemBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -876,19 +840,19 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
     public Builder mergeNewEnrichmentItem(
         com.google.photos.library.v1.proto.NewEnrichmentItem value) {
       if (newEnrichmentItemBuilder_ == null) {
-        if (newEnrichmentItem_ != null) {
-          newEnrichmentItem_ =
-              com.google.photos.library.v1.proto.NewEnrichmentItem.newBuilder(newEnrichmentItem_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && newEnrichmentItem_ != null
+            && newEnrichmentItem_
+                != com.google.photos.library.v1.proto.NewEnrichmentItem.getDefaultInstance()) {
+          getNewEnrichmentItemBuilder().mergeFrom(value);
         } else {
           newEnrichmentItem_ = value;
         }
-        onChanged();
       } else {
         newEnrichmentItemBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -903,14 +867,13 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearNewEnrichmentItem() {
-      if (newEnrichmentItemBuilder_ == null) {
-        newEnrichmentItem_ = null;
-        onChanged();
-      } else {
-        newEnrichmentItem_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      newEnrichmentItem_ = null;
+      if (newEnrichmentItemBuilder_ != null) {
+        newEnrichmentItemBuilder_.dispose();
         newEnrichmentItemBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -926,7 +889,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      */
     public com.google.photos.library.v1.proto.NewEnrichmentItem.Builder
         getNewEnrichmentItemBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNewEnrichmentItemFieldBuilder().getBuilder();
     }
@@ -999,7 +962,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * @return Whether the albumPosition field is set.
      */
     public boolean hasAlbumPosition() {
-      return albumPositionBuilder_ != null || albumPosition_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1040,11 +1003,11 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         albumPosition_ = value;
-        onChanged();
       } else {
         albumPositionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1062,11 +1025,11 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
         com.google.photos.library.v1.proto.AlbumPosition.Builder builderForValue) {
       if (albumPositionBuilder_ == null) {
         albumPosition_ = builderForValue.build();
-        onChanged();
       } else {
         albumPositionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1082,19 +1045,19 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      */
     public Builder mergeAlbumPosition(com.google.photos.library.v1.proto.AlbumPosition value) {
       if (albumPositionBuilder_ == null) {
-        if (albumPosition_ != null) {
-          albumPosition_ =
-              com.google.photos.library.v1.proto.AlbumPosition.newBuilder(albumPosition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && albumPosition_ != null
+            && albumPosition_
+                != com.google.photos.library.v1.proto.AlbumPosition.getDefaultInstance()) {
+          getAlbumPositionBuilder().mergeFrom(value);
         } else {
           albumPosition_ = value;
         }
-        onChanged();
       } else {
         albumPositionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1109,14 +1072,13 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearAlbumPosition() {
-      if (albumPositionBuilder_ == null) {
-        albumPosition_ = null;
-        onChanged();
-      } else {
-        albumPosition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      albumPosition_ = null;
+      if (albumPositionBuilder_ != null) {
+        albumPositionBuilder_.dispose();
         albumPositionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1131,7 +1093,7 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.photos.library.v1.proto.AlbumPosition.Builder getAlbumPositionBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAlbumPositionFieldBuilder().getBuilder();
     }
@@ -1217,7 +1179,18 @@ public final class AddEnrichmentToAlbumRequest extends com.google.protobuf.Gener
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AddEnrichmentToAlbumRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

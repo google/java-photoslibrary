@@ -35,53 +35,6 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private SharedAlbumOptions(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              isCollaborative_ = input.readBool();
-              break;
-            }
-          case 16:
-            {
-              isCommentable_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.types.proto.AlbumProto
         .internal_static_google_photos_types_SharedAlbumOptions_descriptor;
@@ -98,7 +51,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IS_COLLABORATIVE_FIELD_NUMBER = 1;
-  private boolean isCollaborative_;
+  private boolean isCollaborative_ = false;
   /**
    *
    *
@@ -117,7 +70,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IS_COMMENTABLE_FIELD_NUMBER = 2;
-  private boolean isCommentable_;
+  private boolean isCommentable_ = false;
   /**
    *
    *
@@ -155,7 +108,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
     if (isCommentable_ != false) {
       output.writeBool(2, isCommentable_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -170,7 +123,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
     if (isCommentable_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, isCommentable_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -188,7 +141,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
 
     if (getIsCollaborative() != other.getIsCollaborative()) return false;
     if (getIsCommentable() != other.getIsCommentable()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -203,7 +156,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsCollaborative());
     hash = (37 * hash) + IS_COMMENTABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsCommentable());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -332,26 +285,18 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.photos.types.proto.SharedAlbumOptions.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       isCollaborative_ = false;
-
       isCommentable_ = false;
-
       return this;
     }
 
@@ -379,10 +324,21 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
     public com.google.photos.types.proto.SharedAlbumOptions buildPartial() {
       com.google.photos.types.proto.SharedAlbumOptions result =
           new com.google.photos.types.proto.SharedAlbumOptions(this);
-      result.isCollaborative_ = isCollaborative_;
-      result.isCommentable_ = isCommentable_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.types.proto.SharedAlbumOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.isCollaborative_ = isCollaborative_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.isCommentable_ = isCommentable_;
+      }
     }
 
     @java.lang.Override
@@ -437,7 +393,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
       if (other.getIsCommentable() != false) {
         setIsCommentable(other.getIsCommentable());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -452,19 +408,47 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.types.proto.SharedAlbumOptions parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                isCollaborative_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+            case 16:
+              {
+                isCommentable_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.types.proto.SharedAlbumOptions) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean isCollaborative_;
     /**
@@ -499,6 +483,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
     public Builder setIsCollaborative(boolean value) {
 
       isCollaborative_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -515,7 +500,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIsCollaborative() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       isCollaborative_ = false;
       onChanged();
       return this;
@@ -554,6 +539,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
     public Builder setIsCommentable(boolean value) {
 
       isCommentable_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -570,7 +556,7 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIsCommentable() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       isCommentable_ = false;
       onChanged();
       return this;
@@ -608,7 +594,18 @@ public final class SharedAlbumOptions extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SharedAlbumOptions(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

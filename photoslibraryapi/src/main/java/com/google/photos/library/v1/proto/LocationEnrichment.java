@@ -35,59 +35,6 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private LocationEnrichment(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.photos.library.v1.proto.Location.Builder subBuilder = null;
-              if (location_ != null) {
-                subBuilder = location_.toBuilder();
-              }
-              location_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.Location.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(location_);
-                location_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_LocationEnrichment_descriptor;
@@ -148,7 +95,9 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.photos.library.v1.proto.LocationOrBuilder getLocationOrBuilder() {
-    return getLocation();
+    return location_ == null
+        ? com.google.photos.library.v1.proto.Location.getDefaultInstance()
+        : location_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -168,7 +117,7 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
     if (location_ != null) {
       output.writeMessage(1, getLocation());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -180,7 +129,7 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
     if (location_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getLocation());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -200,7 +149,7 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
     if (hasLocation()) {
       if (!getLocation().equals(other.getLocation())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -215,7 +164,7 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getLocation().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -345,26 +294,19 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.photos.library.v1.proto.LocationEnrichment.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (locationBuilder_ == null) {
-        location_ = null;
-      } else {
-        location_ = null;
+      bitField0_ = 0;
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
       return this;
@@ -394,13 +336,18 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
     public com.google.photos.library.v1.proto.LocationEnrichment buildPartial() {
       com.google.photos.library.v1.proto.LocationEnrichment result =
           new com.google.photos.library.v1.proto.LocationEnrichment(this);
-      if (locationBuilder_ == null) {
-        result.location_ = location_;
-      } else {
-        result.location_ = locationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.library.v1.proto.LocationEnrichment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.location_ = locationBuilder_ == null ? location_ : locationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -452,7 +399,7 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
       if (other.hasLocation()) {
         mergeLocation(other.getLocation());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -467,20 +414,41 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.LocationEnrichment parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.photos.library.v1.proto.LocationEnrichment) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.photos.library.v1.proto.Location location_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -500,7 +468,7 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
-      return locationBuilder_ != null || location_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -537,11 +505,11 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         location_ = value;
-        onChanged();
       } else {
         locationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -557,11 +525,11 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
         com.google.photos.library.v1.proto.Location.Builder builderForValue) {
       if (locationBuilder_ == null) {
         location_ = builderForValue.build();
-        onChanged();
       } else {
         locationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -575,19 +543,18 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeLocation(com.google.photos.library.v1.proto.Location value) {
       if (locationBuilder_ == null) {
-        if (location_ != null) {
-          location_ =
-              com.google.photos.library.v1.proto.Location.newBuilder(location_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && location_ != null
+            && location_ != com.google.photos.library.v1.proto.Location.getDefaultInstance()) {
+          getLocationBuilder().mergeFrom(value);
         } else {
           location_ = value;
         }
-        onChanged();
       } else {
         locationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -600,14 +567,13 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
      * <code>.google.photos.library.v1.Location location = 1;</code>
      */
     public Builder clearLocation() {
-      if (locationBuilder_ == null) {
-        location_ = null;
-        onChanged();
-      } else {
-        location_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -620,7 +586,7 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
      * <code>.google.photos.library.v1.Location location = 1;</code>
      */
     public com.google.photos.library.v1.proto.Location.Builder getLocationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
@@ -700,7 +666,18 @@ public final class LocationEnrichment extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LocationEnrichment(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

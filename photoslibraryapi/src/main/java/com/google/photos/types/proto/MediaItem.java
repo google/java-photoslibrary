@@ -42,117 +42,6 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private MediaItem(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              productUrl_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              baseUrl_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              mimeType_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.photos.types.proto.MediaMetadata.Builder subBuilder = null;
-              if (mediaMetadata_ != null) {
-                subBuilder = mediaMetadata_.toBuilder();
-              }
-              mediaMetadata_ =
-                  input.readMessage(
-                      com.google.photos.types.proto.MediaMetadata.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(mediaMetadata_);
-                mediaMetadata_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.photos.types.proto.ContributorInfo.Builder subBuilder = null;
-              if (contributorInfo_ != null) {
-                subBuilder = contributorInfo_.toBuilder();
-              }
-              contributorInfo_ =
-                  input.readMessage(
-                      com.google.photos.types.proto.ContributorInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(contributorInfo_);
-                contributorInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              filename_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.types.proto.MediaItemProto
         .internal_static_google_photos_types_MediaItem_descriptor;
@@ -169,7 +58,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -220,13 +111,18 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
    * <pre>
-   * Description of the media item. This is shown to the user in the item's
-   * info section in the Google Photos app.
+   * Description of the media item. This is shown to the user in the item's info
+   * section in the Google Photos app. Must be shorter than 1000 characters.
+   * Only include text written by users. Descriptions should add context and
+   * help users understand media. Do not include any auto-generated
+   * strings such as filenames, tags, and other metadata.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -249,8 +145,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the media item. This is shown to the user in the item's
-   * info section in the Google Photos app.
+   * Description of the media item. This is shown to the user in the item's info
+   * section in the Google Photos app. Must be shorter than 1000 characters.
+   * Only include text written by users. Descriptions should add context and
+   * help users understand media. Do not include any auto-generated
+   * strings such as filenames, tags, and other metadata.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -271,13 +170,16 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRODUCT_URL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object productUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object productUrl_ = "";
   /**
    *
    *
    * <pre>
    * Google Photos URL for the media item. This link is available to
-   * the user only if they're signed in.
+   * the user only if they're signed in. When retrieved from an album search,
+   * the URL points to the item inside the album.
    * </pre>
    *
    * <code>string product_url = 3;</code>
@@ -301,7 +203,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Google Photos URL for the media item. This link is available to
-   * the user only if they're signed in.
+   * the user only if they're signed in. When retrieved from an album search,
+   * the URL points to the item inside the album.
    * </pre>
    *
    * <code>string product_url = 3;</code>
@@ -322,7 +225,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BASE_URL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object baseUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseUrl_ = "";
   /**
    *
    *
@@ -381,7 +286,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -477,7 +384,9 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.photos.types.proto.MediaMetadataOrBuilder getMediaMetadataOrBuilder() {
-    return getMediaMetadata();
+    return mediaMetadata_ == null
+        ? com.google.photos.types.proto.MediaMetadata.getDefaultInstance()
+        : mediaMetadata_;
   }
 
   public static final int CONTRIBUTOR_INFO_FIELD_NUMBER = 7;
@@ -486,7 +395,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information about the user who created this media item.
+   * Information about the user who added this media item. Note that this
+   * is only included when using [mediaItems.search]
+   * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+   * ID of a shared album. The album must be created by your app and
+   * you must have the sharing scope.
    * </pre>
    *
    * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
@@ -501,7 +414,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information about the user who created this media item.
+   * Information about the user who added this media item. Note that this
+   * is only included when using [mediaItems.search]
+   * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+   * ID of a shared album. The album must be created by your app and
+   * you must have the sharing scope.
    * </pre>
    *
    * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
@@ -518,18 +435,26 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information about the user who created this media item.
+   * Information about the user who added this media item. Note that this
+   * is only included when using [mediaItems.search]
+   * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+   * ID of a shared album. The album must be created by your app and
+   * you must have the sharing scope.
    * </pre>
    *
    * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
    */
   @java.lang.Override
   public com.google.photos.types.proto.ContributorInfoOrBuilder getContributorInfoOrBuilder() {
-    return getContributorInfo();
+    return contributorInfo_ == null
+        ? com.google.photos.types.proto.ContributorInfo.getDefaultInstance()
+        : contributorInfo_;
   }
 
   public static final int FILENAME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object filename_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filename_ = "";
   /**
    *
    *
@@ -617,7 +542,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filename_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, filename_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -650,7 +575,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filename_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, filename_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -679,7 +604,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
       if (!getContributorInfo().equals(other.getContributorInfo())) return false;
     }
     if (!getFilename().equals(other.getFilename())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -710,7 +635,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + FILENAME_FIELD_NUMBER;
     hash = (53 * hash) + getFilename().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -839,46 +764,32 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.photos.types.proto.MediaItem.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       description_ = "";
-
       productUrl_ = "";
-
       baseUrl_ = "";
-
       mimeType_ = "";
-
-      if (mediaMetadataBuilder_ == null) {
-        mediaMetadata_ = null;
-      } else {
-        mediaMetadata_ = null;
+      mediaMetadata_ = null;
+      if (mediaMetadataBuilder_ != null) {
+        mediaMetadataBuilder_.dispose();
         mediaMetadataBuilder_ = null;
       }
-      if (contributorInfoBuilder_ == null) {
-        contributorInfo_ = null;
-      } else {
-        contributorInfo_ = null;
+      contributorInfo_ = null;
+      if (contributorInfoBuilder_ != null) {
+        contributorInfoBuilder_.dispose();
         contributorInfoBuilder_ = null;
       }
       filename_ = "";
-
       return this;
     }
 
@@ -906,24 +817,41 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.photos.types.proto.MediaItem buildPartial() {
       com.google.photos.types.proto.MediaItem result =
           new com.google.photos.types.proto.MediaItem(this);
-      result.id_ = id_;
-      result.description_ = description_;
-      result.productUrl_ = productUrl_;
-      result.baseUrl_ = baseUrl_;
-      result.mimeType_ = mimeType_;
-      if (mediaMetadataBuilder_ == null) {
-        result.mediaMetadata_ = mediaMetadata_;
-      } else {
-        result.mediaMetadata_ = mediaMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (contributorInfoBuilder_ == null) {
-        result.contributorInfo_ = contributorInfo_;
-      } else {
-        result.contributorInfo_ = contributorInfoBuilder_.build();
-      }
-      result.filename_ = filename_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.types.proto.MediaItem result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.productUrl_ = productUrl_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.baseUrl_ = baseUrl_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.mediaMetadata_ =
+            mediaMetadataBuilder_ == null ? mediaMetadata_ : mediaMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.contributorInfo_ =
+            contributorInfoBuilder_ == null ? contributorInfo_ : contributorInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.filename_ = filename_;
+      }
     }
 
     @java.lang.Override
@@ -973,22 +901,27 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.photos.types.proto.MediaItem.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getProductUrl().isEmpty()) {
         productUrl_ = other.productUrl_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getBaseUrl().isEmpty()) {
         baseUrl_ = other.baseUrl_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasMediaMetadata()) {
@@ -999,9 +932,10 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFilename().isEmpty()) {
         filename_ = other.filename_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1016,19 +950,83 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.types.proto.MediaItem parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            case 18:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                productUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 34:
+              {
+                baseUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                mimeType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getMediaMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getContributorInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                filename_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.types.proto.MediaItem) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -1094,8 +1092,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1112,8 +1110,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1135,8 +1133,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1146,8 +1144,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the media item. This is shown to the user in the item's
-     * info section in the Google Photos app.
+     * Description of the media item. This is shown to the user in the item's info
+     * section in the Google Photos app. Must be shorter than 1000 characters.
+     * Only include text written by users. Descriptions should add context and
+     * help users understand media. Do not include any auto-generated
+     * strings such as filenames, tags, and other metadata.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1169,8 +1170,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the media item. This is shown to the user in the item's
-     * info section in the Google Photos app.
+     * Description of the media item. This is shown to the user in the item's info
+     * section in the Google Photos app. Must be shorter than 1000 characters.
+     * Only include text written by users. Descriptions should add context and
+     * help users understand media. Do not include any auto-generated
+     * strings such as filenames, tags, and other metadata.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1192,8 +1196,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the media item. This is shown to the user in the item's
-     * info section in the Google Photos app.
+     * Description of the media item. This is shown to the user in the item's info
+     * section in the Google Photos app. Must be shorter than 1000 characters.
+     * Only include text written by users. Descriptions should add context and
+     * help users understand media. Do not include any auto-generated
+     * strings such as filenames, tags, and other metadata.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1205,8 +1212,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1214,8 +1221,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the media item. This is shown to the user in the item's
-     * info section in the Google Photos app.
+     * Description of the media item. This is shown to the user in the item's info
+     * section in the Google Photos app. Must be shorter than 1000 characters.
+     * Only include text written by users. Descriptions should add context and
+     * help users understand media. Do not include any auto-generated
+     * strings such as filenames, tags, and other metadata.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1223,8 +1233,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1232,8 +1242,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the media item. This is shown to the user in the item's
-     * info section in the Google Photos app.
+     * Description of the media item. This is shown to the user in the item's info
+     * section in the Google Photos app. Must be shorter than 1000 characters.
+     * Only include text written by users. Descriptions should add context and
+     * help users understand media. Do not include any auto-generated
+     * strings such as filenames, tags, and other metadata.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1246,8 +1259,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1258,7 +1271,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Google Photos URL for the media item. This link is available to
-     * the user only if they're signed in.
+     * the user only if they're signed in. When retrieved from an album search,
+     * the URL points to the item inside the album.
      * </pre>
      *
      * <code>string product_url = 3;</code>
@@ -1281,7 +1295,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Google Photos URL for the media item. This link is available to
-     * the user only if they're signed in.
+     * the user only if they're signed in. When retrieved from an album search,
+     * the URL points to the item inside the album.
      * </pre>
      *
      * <code>string product_url = 3;</code>
@@ -1304,7 +1319,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Google Photos URL for the media item. This link is available to
-     * the user only if they're signed in.
+     * the user only if they're signed in. When retrieved from an album search,
+     * the URL points to the item inside the album.
      * </pre>
      *
      * <code>string product_url = 3;</code>
@@ -1316,8 +1332,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       productUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1326,7 +1342,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Google Photos URL for the media item. This link is available to
-     * the user only if they're signed in.
+     * the user only if they're signed in. When retrieved from an album search,
+     * the URL points to the item inside the album.
      * </pre>
      *
      * <code>string product_url = 3;</code>
@@ -1334,8 +1351,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProductUrl() {
-
       productUrl_ = getDefaultInstance().getProductUrl();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1344,7 +1361,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Google Photos URL for the media item. This link is available to
-     * the user only if they're signed in.
+     * the user only if they're signed in. When retrieved from an album search,
+     * the URL points to the item inside the album.
      * </pre>
      *
      * <code>string product_url = 3;</code>
@@ -1357,8 +1375,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       productUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1439,8 +1457,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       baseUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1461,8 +1479,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBaseUrl() {
-
       baseUrl_ = getDefaultInstance().getBaseUrl();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1488,8 +1506,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       baseUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1555,8 +1573,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1572,8 +1590,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1594,8 +1612,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1619,7 +1637,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the mediaMetadata field is set.
      */
     public boolean hasMediaMetadata() {
-      return mediaMetadataBuilder_ != null || mediaMetadata_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1658,11 +1676,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         mediaMetadata_ = value;
-        onChanged();
       } else {
         mediaMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1679,11 +1697,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
         com.google.photos.types.proto.MediaMetadata.Builder builderForValue) {
       if (mediaMetadataBuilder_ == null) {
         mediaMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         mediaMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1698,19 +1716,18 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMediaMetadata(com.google.photos.types.proto.MediaMetadata value) {
       if (mediaMetadataBuilder_ == null) {
-        if (mediaMetadata_ != null) {
-          mediaMetadata_ =
-              com.google.photos.types.proto.MediaMetadata.newBuilder(mediaMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && mediaMetadata_ != null
+            && mediaMetadata_ != com.google.photos.types.proto.MediaMetadata.getDefaultInstance()) {
+          getMediaMetadataBuilder().mergeFrom(value);
         } else {
           mediaMetadata_ = value;
         }
-        onChanged();
       } else {
         mediaMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1724,14 +1741,13 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.types.MediaMetadata media_metadata = 6;</code>
      */
     public Builder clearMediaMetadata() {
-      if (mediaMetadataBuilder_ == null) {
-        mediaMetadata_ = null;
-        onChanged();
-      } else {
-        mediaMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      mediaMetadata_ = null;
+      if (mediaMetadataBuilder_ != null) {
+        mediaMetadataBuilder_.dispose();
         mediaMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1745,7 +1761,7 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.photos.types.MediaMetadata media_metadata = 6;</code>
      */
     public com.google.photos.types.proto.MediaMetadata.Builder getMediaMetadataBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getMediaMetadataFieldBuilder().getBuilder();
     }
@@ -1805,7 +1821,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information about the user who created this media item.
+     * Information about the user who added this media item. Note that this
+     * is only included when using [mediaItems.search]
+     * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+     * ID of a shared album. The album must be created by your app and
+     * you must have the sharing scope.
      * </pre>
      *
      * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
@@ -1813,13 +1833,17 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the contributorInfo field is set.
      */
     public boolean hasContributorInfo() {
-      return contributorInfoBuilder_ != null || contributorInfo_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Information about the user who created this media item.
+     * Information about the user who added this media item. Note that this
+     * is only included when using [mediaItems.search]
+     * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+     * ID of a shared album. The album must be created by your app and
+     * you must have the sharing scope.
      * </pre>
      *
      * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
@@ -1839,7 +1863,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information about the user who created this media item.
+     * Information about the user who added this media item. Note that this
+     * is only included when using [mediaItems.search]
+     * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+     * ID of a shared album. The album must be created by your app and
+     * you must have the sharing scope.
      * </pre>
      *
      * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
@@ -1850,18 +1878,22 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         contributorInfo_ = value;
-        onChanged();
       } else {
         contributorInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Information about the user who created this media item.
+     * Information about the user who added this media item. Note that this
+     * is only included when using [mediaItems.search]
+     * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+     * ID of a shared album. The album must be created by your app and
+     * you must have the sharing scope.
      * </pre>
      *
      * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
@@ -1870,70 +1902,81 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
         com.google.photos.types.proto.ContributorInfo.Builder builderForValue) {
       if (contributorInfoBuilder_ == null) {
         contributorInfo_ = builderForValue.build();
-        onChanged();
       } else {
         contributorInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Information about the user who created this media item.
+     * Information about the user who added this media item. Note that this
+     * is only included when using [mediaItems.search]
+     * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+     * ID of a shared album. The album must be created by your app and
+     * you must have the sharing scope.
      * </pre>
      *
      * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
      */
     public Builder mergeContributorInfo(com.google.photos.types.proto.ContributorInfo value) {
       if (contributorInfoBuilder_ == null) {
-        if (contributorInfo_ != null) {
-          contributorInfo_ =
-              com.google.photos.types.proto.ContributorInfo.newBuilder(contributorInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && contributorInfo_ != null
+            && contributorInfo_
+                != com.google.photos.types.proto.ContributorInfo.getDefaultInstance()) {
+          getContributorInfoBuilder().mergeFrom(value);
         } else {
           contributorInfo_ = value;
         }
-        onChanged();
       } else {
         contributorInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Information about the user who created this media item.
+     * Information about the user who added this media item. Note that this
+     * is only included when using [mediaItems.search]
+     * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+     * ID of a shared album. The album must be created by your app and
+     * you must have the sharing scope.
      * </pre>
      *
      * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
      */
     public Builder clearContributorInfo() {
-      if (contributorInfoBuilder_ == null) {
-        contributorInfo_ = null;
-        onChanged();
-      } else {
-        contributorInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      contributorInfo_ = null;
+      if (contributorInfoBuilder_ != null) {
+        contributorInfoBuilder_.dispose();
         contributorInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Information about the user who created this media item.
+     * Information about the user who added this media item. Note that this
+     * is only included when using [mediaItems.search]
+     * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+     * ID of a shared album. The album must be created by your app and
+     * you must have the sharing scope.
      * </pre>
      *
      * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
      */
     public com.google.photos.types.proto.ContributorInfo.Builder getContributorInfoBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getContributorInfoFieldBuilder().getBuilder();
     }
@@ -1941,7 +1984,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information about the user who created this media item.
+     * Information about the user who added this media item. Note that this
+     * is only included when using [mediaItems.search]
+     * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+     * ID of a shared album. The album must be created by your app and
+     * you must have the sharing scope.
      * </pre>
      *
      * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
@@ -1959,7 +2006,11 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information about the user who created this media item.
+     * Information about the user who added this media item. Note that this
+     * is only included when using [mediaItems.search]
+     * [google.photos.library.v1.PhotosLibrary.SearchMediaItems] with the
+     * ID of a shared album. The album must be created by your app and
+     * you must have the sharing scope.
      * </pre>
      *
      * <code>.google.photos.types.ContributorInfo contributor_info = 7;</code>
@@ -2045,8 +2096,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       filename_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2063,8 +2114,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFilename() {
-
       filename_ = getDefaultInstance().getFilename();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2086,8 +2137,8 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filename_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2124,7 +2175,18 @@ public final class MediaItem extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MediaItem(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

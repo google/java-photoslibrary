@@ -12,9 +12,9 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * added.
-   * The maximum number of media items that can be added in one call is 50.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be added. The maximum number of media items that can be added in one call
+   * is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -26,9 +26,9 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * added.
-   * The maximum number of media items that can be added in one call is 50.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be added. The maximum number of media items that can be added in one call
+   * is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,9 +40,9 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * added.
-   * The maximum number of media items that can be added in one call is 50.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be added. The maximum number of media items that can be added in one call
+   * is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -55,9 +55,9 @@ public interface BatchAddMediaItemsToAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * added.
-   * The maximum number of media items that can be added in one call is 50.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be added. The maximum number of media items that can be added in one call
+   * is 50.
    * </pre>
    *
    * <code>repeated string media_item_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>

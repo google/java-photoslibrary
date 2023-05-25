@@ -12,8 +12,8 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * removed.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be removed.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be removed in one call is 50.
    * </pre>
@@ -27,8 +27,8 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * removed.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be removed.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be removed in one call is 50.
    * </pre>
@@ -42,8 +42,8 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * removed.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be removed.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be removed in one call is 50.
    * </pre>
@@ -58,8 +58,8 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * removed.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be removed.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be removed in one call is 50.
    * </pre>
@@ -75,8 +75,8 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier of the [Album][google.photos.types.Album] that the media
-   * items are to be removed from.
+   * Required. Identifier of the [Album][google.photos.types.Album] that the
+   * media items are to be removed from.
    * </pre>
    *
    * <code>string album_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -88,8 +88,8 @@ public interface BatchRemoveMediaItemsFromAlbumRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier of the [Album][google.photos.types.Album] that the media
-   * items are to be removed from.
+   * Required. Identifier of the [Album][google.photos.types.Album] that the
+   * media items are to be removed from.
    * </pre>
    *
    * <code>string album_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

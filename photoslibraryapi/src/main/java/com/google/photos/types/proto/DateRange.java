@@ -36,71 +36,6 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private DateRange(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.type.Date.Builder subBuilder = null;
-              if (startDate_ != null) {
-                subBuilder = startDate_.toBuilder();
-              }
-              startDate_ = input.readMessage(com.google.type.Date.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startDate_);
-                startDate_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.type.Date.Builder subBuilder = null;
-              if (endDate_ != null) {
-                subBuilder = endDate_.toBuilder();
-              }
-              endDate_ = input.readMessage(com.google.type.Date.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endDate_);
-                endDate_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.types.proto.DateRangeProto
         .internal_static_google_photos_types_DateRange_descriptor;
@@ -162,7 +97,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.DateOrBuilder getStartDateOrBuilder() {
-    return getStartDate();
+    return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
   }
 
   public static final int END_DATE_FIELD_NUMBER = 2;
@@ -211,7 +146,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.DateOrBuilder getEndDateOrBuilder() {
-    return getEndDate();
+    return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -234,7 +169,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     if (endDate_ != null) {
       output.writeMessage(2, getEndDate());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -249,7 +184,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     if (endDate_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndDate());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -272,7 +207,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     if (hasEndDate()) {
       if (!getEndDate().equals(other.getEndDate())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -291,7 +226,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + END_DATE_FIELD_NUMBER;
       hash = (53 * hash) + getEndDate().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -421,32 +356,24 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.photos.types.proto.DateRange.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (startDateBuilder_ == null) {
-        startDate_ = null;
-      } else {
-        startDate_ = null;
+      bitField0_ = 0;
+      startDate_ = null;
+      if (startDateBuilder_ != null) {
+        startDateBuilder_.dispose();
         startDateBuilder_ = null;
       }
-      if (endDateBuilder_ == null) {
-        endDate_ = null;
-      } else {
-        endDate_ = null;
+      endDate_ = null;
+      if (endDateBuilder_ != null) {
+        endDateBuilder_.dispose();
         endDateBuilder_ = null;
       }
       return this;
@@ -476,18 +403,21 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public com.google.photos.types.proto.DateRange buildPartial() {
       com.google.photos.types.proto.DateRange result =
           new com.google.photos.types.proto.DateRange(this);
-      if (startDateBuilder_ == null) {
-        result.startDate_ = startDate_;
-      } else {
-        result.startDate_ = startDateBuilder_.build();
-      }
-      if (endDateBuilder_ == null) {
-        result.endDate_ = endDate_;
-      } else {
-        result.endDate_ = endDateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.photos.types.proto.DateRange result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startDate_ = startDateBuilder_ == null ? startDate_ : startDateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endDate_ = endDateBuilder_ == null ? endDate_ : endDateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -541,7 +471,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEndDate()) {
         mergeEndDate(other.getEndDate());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -556,19 +486,47 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.types.proto.DateRange parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getStartDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getEndDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.photos.types.proto.DateRange) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.type.Date startDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -587,7 +545,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startDate field is set.
      */
     public boolean hasStartDate() {
-      return startDateBuilder_ != null || startDate_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -624,11 +582,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startDate_ = value;
-        onChanged();
       } else {
         startDateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -644,11 +602,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartDate(com.google.type.Date.Builder builderForValue) {
       if (startDateBuilder_ == null) {
         startDate_ = builderForValue.build();
-        onChanged();
       } else {
         startDateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -663,16 +621,18 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartDate(com.google.type.Date value) {
       if (startDateBuilder_ == null) {
-        if (startDate_ != null) {
-          startDate_ = com.google.type.Date.newBuilder(startDate_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && startDate_ != null
+            && startDate_ != com.google.type.Date.getDefaultInstance()) {
+          getStartDateBuilder().mergeFrom(value);
         } else {
           startDate_ = value;
         }
-        onChanged();
       } else {
         startDateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -686,14 +646,13 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date start_date = 1;</code>
      */
     public Builder clearStartDate() {
-      if (startDateBuilder_ == null) {
-        startDate_ = null;
-        onChanged();
-      } else {
-        startDate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      startDate_ = null;
+      if (startDateBuilder_ != null) {
+        startDateBuilder_.dispose();
         startDateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -707,7 +666,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date start_date = 1;</code>
      */
     public com.google.type.Date.Builder getStartDateBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStartDateFieldBuilder().getBuilder();
     }
@@ -768,7 +727,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endDate field is set.
      */
     public boolean hasEndDate() {
-      return endDateBuilder_ != null || endDate_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -805,11 +764,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endDate_ = value;
-        onChanged();
       } else {
         endDateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -825,11 +784,11 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndDate(com.google.type.Date.Builder builderForValue) {
       if (endDateBuilder_ == null) {
         endDate_ = builderForValue.build();
-        onChanged();
       } else {
         endDateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -844,16 +803,18 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndDate(com.google.type.Date value) {
       if (endDateBuilder_ == null) {
-        if (endDate_ != null) {
-          endDate_ = com.google.type.Date.newBuilder(endDate_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endDate_ != null
+            && endDate_ != com.google.type.Date.getDefaultInstance()) {
+          getEndDateBuilder().mergeFrom(value);
         } else {
           endDate_ = value;
         }
-        onChanged();
       } else {
         endDateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -867,14 +828,13 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date end_date = 2;</code>
      */
     public Builder clearEndDate() {
-      if (endDateBuilder_ == null) {
-        endDate_ = null;
-        onChanged();
-      } else {
-        endDate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endDate_ = null;
+      if (endDateBuilder_ != null) {
+        endDateBuilder_.dispose();
         endDateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -888,7 +848,7 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date end_date = 2;</code>
      */
     public com.google.type.Date.Builder getEndDateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndDateFieldBuilder().getBuilder();
     }
@@ -964,7 +924,18 @@ public final class DateRange extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DateRange(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

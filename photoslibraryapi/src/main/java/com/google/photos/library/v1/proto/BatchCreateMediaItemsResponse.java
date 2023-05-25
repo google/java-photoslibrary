@@ -37,61 +37,6 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
     return this.unknownFields;
   }
 
-  private BatchCreateMediaItemsResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                newMediaItemResults_ =
-                    new java.util.ArrayList<
-                        com.google.photos.library.v1.proto.NewMediaItemResult>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              newMediaItemResults_.add(
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.NewMediaItemResult.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        newMediaItemResults_ = java.util.Collections.unmodifiableList(newMediaItemResults_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_BatchCreateMediaItemsResponse_descriptor;
@@ -108,6 +53,8 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
   }
 
   public static final int NEW_MEDIA_ITEM_RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.photos.library.v1.proto.NewMediaItemResult>
       newMediaItemResults_;
   /**
@@ -196,7 +143,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
     for (int i = 0; i < newMediaItemResults_.size(); i++) {
       output.writeMessage(1, newMediaItemResults_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -209,7 +156,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, newMediaItemResults_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -226,7 +173,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
         (com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse) obj;
 
     if (!getNewMediaItemResultsList().equals(other.getNewMediaItemResultsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -241,7 +188,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
       hash = (37 * hash) + NEW_MEDIA_ITEM_RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + getNewMediaItemResultsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -371,30 +318,23 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
     }
 
     // Construct using com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getNewMediaItemResultsFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (newMediaItemResultsBuilder_ == null) {
         newMediaItemResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        newMediaItemResults_ = null;
         newMediaItemResultsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -423,7 +363,16 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
     public com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse buildPartial() {
       com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse result =
           new com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse result) {
       if (newMediaItemResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           newMediaItemResults_ = java.util.Collections.unmodifiableList(newMediaItemResults_);
@@ -433,8 +382,11 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
       } else {
         result.newMediaItemResults_ = newMediaItemResultsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -512,7 +464,7 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -527,19 +479,45 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.photos.library.v1.proto.NewMediaItemResult m =
+                    input.readMessage(
+                        com.google.photos.library.v1.proto.NewMediaItemResult.parser(),
+                        extensionRegistry);
+                if (newMediaItemResultsBuilder_ == null) {
+                  ensureNewMediaItemResultsIsMutable();
+                  newMediaItemResults_.add(m);
+                } else {
+                  newMediaItemResultsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.photos.library.v1.proto.BatchCreateMediaItemsResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -962,7 +940,18 @@ public final class BatchCreateMediaItemsResponse extends com.google.protobuf.Gen
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchCreateMediaItemsResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -40,82 +40,6 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
     return this.unknownFields;
   }
 
-  private BatchCreateMediaItemsRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              albumId_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                newMediaItems_ =
-                    new java.util.ArrayList<com.google.photos.library.v1.proto.NewMediaItem>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              newMediaItems_.add(
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.NewMediaItem.parser(), extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              com.google.photos.library.v1.proto.AlbumPosition.Builder subBuilder = null;
-              if (albumPosition_ != null) {
-                subBuilder = albumPosition_.toBuilder();
-              }
-              albumPosition_ =
-                  input.readMessage(
-                      com.google.photos.library.v1.proto.AlbumPosition.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(albumPosition_);
-                albumPosition_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        newMediaItems_ = java.util.Collections.unmodifiableList(newMediaItems_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_BatchCreateMediaItemsRequest_descriptor;
@@ -132,7 +56,9 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
   }
 
   public static final int ALBUM_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object albumId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object albumId_ = "";
   /**
    *
    *
@@ -183,12 +109,15 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
   }
 
   public static final int NEW_MEDIA_ITEMS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.photos.library.v1.proto.NewMediaItem> newMediaItems_;
   /**
    *
    *
    * <pre>
-   * Required. List of media items to be created.
+   * Required. List of media items to be created. Maximum 50 media items per
+   * call.
    * </pre>
    *
    * <code>
@@ -203,7 +132,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. List of media items to be created.
+   * Required. List of media items to be created. Maximum 50 media items per
+   * call.
    * </pre>
    *
    * <code>
@@ -219,7 +149,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. List of media items to be created.
+   * Required. List of media items to be created. Maximum 50 media items per
+   * call.
    * </pre>
    *
    * <code>
@@ -234,7 +165,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. List of media items to be created.
+   * Required. List of media items to be created. Maximum 50 media items per
+   * call.
    * </pre>
    *
    * <code>
@@ -249,7 +181,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. List of media items to be created.
+   * Required. List of media items to be created. Maximum 50 media items per
+   * call.
    * </pre>
    *
    * <code>
@@ -319,7 +252,9 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.photos.library.v1.proto.AlbumPositionOrBuilder getAlbumPositionOrBuilder() {
-    return getAlbumPosition();
+    return albumPosition_ == null
+        ? com.google.photos.library.v1.proto.AlbumPosition.getDefaultInstance()
+        : albumPosition_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -345,7 +280,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
     if (albumPosition_ != null) {
       output.writeMessage(4, getAlbumPosition());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -363,7 +298,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
     if (albumPosition_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAlbumPosition());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -385,7 +320,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
     if (hasAlbumPosition()) {
       if (!getAlbumPosition().equals(other.getAlbumPosition())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -406,7 +341,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
       hash = (37 * hash) + ALBUM_POSITION_FIELD_NUMBER;
       hash = (53 * hash) + getAlbumPosition().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -538,36 +473,27 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
     }
 
     // Construct using com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getNewMediaItemsFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       albumId_ = "";
-
       if (newMediaItemsBuilder_ == null) {
         newMediaItems_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        newMediaItems_ = null;
         newMediaItemsBuilder_.clear();
       }
-      if (albumPositionBuilder_ == null) {
-        albumPosition_ = null;
-      } else {
-        albumPosition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      albumPosition_ = null;
+      if (albumPositionBuilder_ != null) {
+        albumPositionBuilder_.dispose();
         albumPositionBuilder_ = null;
       }
       return this;
@@ -598,24 +524,37 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
     public com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest buildPartial() {
       com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest result =
           new com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.albumId_ = albumId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest result) {
       if (newMediaItemsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           newMediaItems_ = java.util.Collections.unmodifiableList(newMediaItems_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.newMediaItems_ = newMediaItems_;
       } else {
         result.newMediaItems_ = newMediaItemsBuilder_.build();
       }
-      if (albumPositionBuilder_ == null) {
-        result.albumPosition_ = albumPosition_;
-      } else {
-        result.albumPosition_ = albumPositionBuilder_.build();
+    }
+
+    private void buildPartial0(
+        com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.albumId_ = albumId_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.albumPosition_ =
+            albumPositionBuilder_ == null ? albumPosition_ : albumPositionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -668,13 +607,14 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getAlbumId().isEmpty()) {
         albumId_ = other.albumId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (newMediaItemsBuilder_ == null) {
         if (!other.newMediaItems_.isEmpty()) {
           if (newMediaItems_.isEmpty()) {
             newMediaItems_ = other.newMediaItems_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureNewMediaItemsIsMutable();
             newMediaItems_.addAll(other.newMediaItems_);
@@ -687,7 +627,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
             newMediaItemsBuilder_.dispose();
             newMediaItemsBuilder_ = null;
             newMediaItems_ = other.newMediaItems_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             newMediaItemsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNewMediaItemsFieldBuilder()
@@ -700,7 +640,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
       if (other.hasAlbumPosition()) {
         mergeAlbumPosition(other.getAlbumPosition());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -715,19 +655,57 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                albumId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.photos.library.v1.proto.NewMediaItem m =
+                    input.readMessage(
+                        com.google.photos.library.v1.proto.NewMediaItem.parser(),
+                        extensionRegistry);
+                if (newMediaItemsBuilder_ == null) {
+                  ensureNewMediaItemsIsMutable();
+                  newMediaItems_.add(m);
+                } else {
+                  newMediaItemsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 34:
+              {
+                input.readMessage(getAlbumPositionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.photos.library.v1.proto.BatchCreateMediaItemsRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -797,8 +775,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       albumId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -815,8 +793,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearAlbumId() {
-
       albumId_ = getDefaultInstance().getAlbumId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -838,8 +816,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       albumId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -848,11 +826,11 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
         java.util.Collections.emptyList();
 
     private void ensureNewMediaItemsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         newMediaItems_ =
             new java.util.ArrayList<com.google.photos.library.v1.proto.NewMediaItem>(
                 newMediaItems_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -866,7 +844,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -884,7 +863,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -902,7 +882,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -920,7 +901,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -945,7 +927,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -967,7 +950,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -991,7 +975,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1016,7 +1001,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1038,7 +1024,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1060,7 +1047,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1082,7 +1070,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1092,7 +1081,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
     public Builder clearNewMediaItems() {
       if (newMediaItemsBuilder_ == null) {
         newMediaItems_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         newMediaItemsBuilder_.clear();
@@ -1103,7 +1092,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1124,7 +1114,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1139,7 +1130,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1158,7 +1150,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1177,7 +1170,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1192,7 +1186,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1208,7 +1203,8 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. List of media items to be created.
+     * Required. List of media items to be created. Maximum 50 media items per
+     * call.
      * </pre>
      *
      * <code>
@@ -1232,7 +1228,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
                 com.google.photos.library.v1.proto.NewMediaItem.Builder,
                 com.google.photos.library.v1.proto.NewMediaItemOrBuilder>(
                 newMediaItems_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         newMediaItems_ = null;
@@ -1262,7 +1258,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      * @return Whether the albumPosition field is set.
      */
     public boolean hasAlbumPosition() {
-      return albumPositionBuilder_ != null || albumPosition_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1307,11 +1303,11 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         albumPosition_ = value;
-        onChanged();
       } else {
         albumPositionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1331,11 +1327,11 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
         com.google.photos.library.v1.proto.AlbumPosition.Builder builderForValue) {
       if (albumPositionBuilder_ == null) {
         albumPosition_ = builderForValue.build();
-        onChanged();
       } else {
         albumPositionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1353,19 +1349,19 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      */
     public Builder mergeAlbumPosition(com.google.photos.library.v1.proto.AlbumPosition value) {
       if (albumPositionBuilder_ == null) {
-        if (albumPosition_ != null) {
-          albumPosition_ =
-              com.google.photos.library.v1.proto.AlbumPosition.newBuilder(albumPosition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && albumPosition_ != null
+            && albumPosition_
+                != com.google.photos.library.v1.proto.AlbumPosition.getDefaultInstance()) {
+          getAlbumPositionBuilder().mergeFrom(value);
         } else {
           albumPosition_ = value;
         }
-        onChanged();
       } else {
         albumPositionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1382,14 +1378,13 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      * <code>.google.photos.library.v1.AlbumPosition album_position = 4;</code>
      */
     public Builder clearAlbumPosition() {
-      if (albumPositionBuilder_ == null) {
-        albumPosition_ = null;
-        onChanged();
-      } else {
-        albumPosition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      albumPosition_ = null;
+      if (albumPositionBuilder_ != null) {
+        albumPositionBuilder_.dispose();
         albumPositionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1406,7 +1401,7 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
      * <code>.google.photos.library.v1.AlbumPosition album_position = 4;</code>
      */
     public com.google.photos.library.v1.proto.AlbumPosition.Builder getAlbumPositionBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAlbumPositionFieldBuilder().getBuilder();
     }
@@ -1496,7 +1491,18 @@ public final class BatchCreateMediaItemsRequest extends com.google.protobuf.Gene
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchCreateMediaItemsRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

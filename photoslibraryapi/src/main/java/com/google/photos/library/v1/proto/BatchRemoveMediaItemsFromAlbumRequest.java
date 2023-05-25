@@ -40,64 +40,6 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
     return this.unknownFields;
   }
 
-  private BatchRemoveMediaItemsFromAlbumRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                mediaItemIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              mediaItemIds_.add(s);
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              albumId_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        mediaItemIds_ = mediaItemIds_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.photos.library.v1.proto.LibraryServiceProto
         .internal_static_google_photos_library_v1_BatchRemoveMediaItemsFromAlbumRequest_descriptor;
@@ -114,13 +56,15 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
   }
 
   public static final int MEDIA_ITEM_IDS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList mediaItemIds_;
   /**
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * removed.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be removed.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be removed in one call is 50.
    * </pre>
@@ -136,8 +80,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * removed.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be removed.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be removed in one call is 50.
    * </pre>
@@ -153,8 +97,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * removed.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be removed.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be removed in one call is 50.
    * </pre>
@@ -171,8 +115,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
    *
    *
    * <pre>
-   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-   * removed.
+   * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+   * be removed.
    * Must not contain repeated identifiers and cannot be empty. The maximum
    * number of media items that can be removed in one call is 50.
    * </pre>
@@ -187,13 +131,15 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
   }
 
   public static final int ALBUM_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object albumId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object albumId_ = "";
   /**
    *
    *
    * <pre>
-   * Required. Identifier of the [Album][google.photos.types.Album] that the media
-   * items are to be removed from.
+   * Required. Identifier of the [Album][google.photos.types.Album] that the
+   * media items are to be removed from.
    * </pre>
    *
    * <code>string album_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -216,8 +162,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
    *
    *
    * <pre>
-   * Required. Identifier of the [Album][google.photos.types.Album] that the media
-   * items are to be removed from.
+   * Required. Identifier of the [Album][google.photos.types.Album] that the
+   * media items are to be removed from.
    * </pre>
    *
    * <code>string album_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -257,7 +203,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(albumId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, albumId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -277,7 +223,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(albumId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, albumId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -296,7 +242,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
 
     if (!getMediaItemIdsList().equals(other.getMediaItemIdsList())) return false;
     if (!getAlbumId().equals(other.getAlbumId())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -313,7 +259,7 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
     }
     hash = (37 * hash) + ALBUM_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAlbumId().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -446,26 +392,19 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
 
     // Construct using
     // com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       mediaItemIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       albumId_ = "";
-
       return this;
     }
 
@@ -496,15 +435,29 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
     public com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest buildPartial() {
       com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest result =
           new com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         mediaItemIds_ = mediaItemIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.mediaItemIds_ = mediaItemIds_;
-      result.albumId_ = albumId_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.albumId_ = albumId_;
+      }
     }
 
     @java.lang.Override
@@ -569,9 +522,10 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
       }
       if (!other.getAlbumId().isEmpty()) {
         albumId_ = other.albumId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -586,19 +540,44 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureMediaItemIdsIsMutable();
+                mediaItemIds_.add(s);
+                break;
+              } // case 10
+            case 18:
+              {
+                albumId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.photos.library.v1.proto.BatchRemoveMediaItemsFromAlbumRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -617,8 +596,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-     * removed.
+     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+     * be removed.
      * Must not contain repeated identifiers and cannot be empty. The maximum
      * number of media items that can be removed in one call is 50.
      * </pre>
@@ -634,8 +613,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-     * removed.
+     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+     * be removed.
      * Must not contain repeated identifiers and cannot be empty. The maximum
      * number of media items that can be removed in one call is 50.
      * </pre>
@@ -651,8 +630,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-     * removed.
+     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+     * be removed.
      * Must not contain repeated identifiers and cannot be empty. The maximum
      * number of media items that can be removed in one call is 50.
      * </pre>
@@ -669,8 +648,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-     * removed.
+     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+     * be removed.
      * Must not contain repeated identifiers and cannot be empty. The maximum
      * number of media items that can be removed in one call is 50.
      * </pre>
@@ -687,8 +666,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-     * removed.
+     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+     * be removed.
      * Must not contain repeated identifiers and cannot be empty. The maximum
      * number of media items that can be removed in one call is 50.
      * </pre>
@@ -712,8 +691,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-     * removed.
+     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+     * be removed.
      * Must not contain repeated identifiers and cannot be empty. The maximum
      * number of media items that can be removed in one call is 50.
      * </pre>
@@ -736,8 +715,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-     * removed.
+     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+     * be removed.
      * Must not contain repeated identifiers and cannot be empty. The maximum
      * number of media items that can be removed in one call is 50.
      * </pre>
@@ -757,8 +736,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-     * removed.
+     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+     * be removed.
      * Must not contain repeated identifiers and cannot be empty. The maximum
      * number of media items that can be removed in one call is 50.
      * </pre>
@@ -777,8 +756,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to be
-     * removed.
+     * Required. Identifiers of the [MediaItem][google.photos.types.MediaItem]s to
+     * be removed.
      * Must not contain repeated identifiers and cannot be empty. The maximum
      * number of media items that can be removed in one call is 50.
      * </pre>
@@ -804,8 +783,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifier of the [Album][google.photos.types.Album] that the media
-     * items are to be removed from.
+     * Required. Identifier of the [Album][google.photos.types.Album] that the
+     * media items are to be removed from.
      * </pre>
      *
      * <code>string album_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -827,8 +806,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifier of the [Album][google.photos.types.Album] that the media
-     * items are to be removed from.
+     * Required. Identifier of the [Album][google.photos.types.Album] that the
+     * media items are to be removed from.
      * </pre>
      *
      * <code>string album_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -850,8 +829,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifier of the [Album][google.photos.types.Album] that the media
-     * items are to be removed from.
+     * Required. Identifier of the [Album][google.photos.types.Album] that the
+     * media items are to be removed from.
      * </pre>
      *
      * <code>string album_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -863,8 +842,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       albumId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -872,8 +851,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifier of the [Album][google.photos.types.Album] that the media
-     * items are to be removed from.
+     * Required. Identifier of the [Album][google.photos.types.Album] that the
+     * media items are to be removed from.
      * </pre>
      *
      * <code>string album_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -881,8 +860,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      * @return This builder for chaining.
      */
     public Builder clearAlbumId() {
-
       albumId_ = getDefaultInstance().getAlbumId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -890,8 +869,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
      *
      *
      * <pre>
-     * Required. Identifier of the [Album][google.photos.types.Album] that the media
-     * items are to be removed from.
+     * Required. Identifier of the [Album][google.photos.types.Album] that the
+     * media items are to be removed from.
      * </pre>
      *
      * <code>string album_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -904,8 +883,8 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       albumId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -945,7 +924,18 @@ public final class BatchRemoveMediaItemsFromAlbumRequest
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchRemoveMediaItemsFromAlbumRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

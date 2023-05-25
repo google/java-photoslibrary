@@ -12,7 +12,8 @@ public interface NewMediaItemResultOrBuilder
    *
    *
    * <pre>
-   * The upload token used to create this new media item.
+   * The upload token used to create this new (simple) media item. Only
+   * populated if the media item is simple and required a single upload token.
    * </pre>
    *
    * <code>string upload_token = 1;</code>
@@ -24,7 +25,8 @@ public interface NewMediaItemResultOrBuilder
    *
    *
    * <pre>
-   * The upload token used to create this new media item.
+   * The upload token used to create this new (simple) media item. Only
+   * populated if the media item is simple and required a single upload token.
    * </pre>
    *
    * <code>string upload_token = 1;</code>
