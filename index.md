@@ -2,7 +2,7 @@
 
 Javadoc reference documentation for the [Google Photos Library API Java client library](https://github.com/google/java-photoslibrary).
 
-* [1.7.2](1.7.2/)
+* [1.7.3](1.7.3/)
 * [1.7.1](1.7.1/)
 * [1.7.0](1.7.0/)
 * [1.6.0](1.6.0/)
