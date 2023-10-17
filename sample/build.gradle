@@ -16,6 +16,11 @@
 
 apply plugin: 'application'
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
 dependencies {
     implementation project(':photoslibraryapi')
     implementation 'com.google.auth:google-auth-library-oauth2-http:1.3.0'
@@ -29,11 +34,19 @@ dependencies {
     implementation 'com.google.api:gax:2.7.1'
     implementation 'com.google.http-client:google-http-client-gson:1.41.0'
     implementation 'commons-cli:commons-cli:1.5.0'
-    implementation 'commons-lang:commons-lang:2.6'
-    implementation 'io.grpc:grpc-netty:1.42.1'
-    implementation 'io.grpc:grpc-protobuf:1.42.1'
+    implementation 'org.apache.commons:commons-lang3:3.13.0'
+    var grpcVersion = "1.42.3"
+    implementation "io.grpc:grpc-netty:$grpcVersion"
+    implementation "io.grpc:grpc-protobuf:$grpcVersion"
     implementation 'io.netty:netty-tcnative-boringssl-static:2.0.47.Final'
     implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+}
+
+spotless {
+    enforceCheck = false
+    java {
+        googleJavaFormat()
+    }
 }
 
 sourceSets {
@@ -50,22 +63,26 @@ sourceSets {
 // By default, run the album demo.
 mainClassName = "com.google.photos.library.sample.demo.AlbumDemo"
 
+tasks.withType(ProcessResources) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 task runAlbum(type: JavaExec) {
     classpath sourceSets.main.runtimeClasspath
-    main = "com.google.photos.library.sample.demos.AlbumDemo"
+    mainClass = "com.google.photos.library.sample.demos.AlbumDemo"
 }
 
 task runFilter(type: JavaExec) {
     classpath sourceSets.main.runtimeClasspath
-    main = "com.google.photos.library.sample.demos.FilterDemo"
+    mainClass = "com.google.photos.library.sample.demos.FilterDemo"
 }
 
 task runShare(type: JavaExec) {
     classpath sourceSets.main.runtimeClasspath
-    main = "com.google.photos.library.sample.demos.ShareDemo"
+    mainClass = "com.google.photos.library.sample.demos.ShareDemo"
 }
 
 task runUpload(type: JavaExec) {
     classpath sourceSets.main.runtimeClasspath
-    main = "com.google.photos.library.sample.demos.UploadDemo"
+    mainClass = "com.google.photos.library.sample.demos.UploadDemo"
 }
