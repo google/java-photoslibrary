@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        jdk: ['8', '11', '17', '20'] # todo: change 20 to 21 when updating to Gradle 9
+        jdk: ['11', '17'] # todo: Add support for building with JDK 21 (will require Gradle 9)
 
     steps:
       - uses: actions/checkout@v4
@@ -26,3 +26,6 @@ jobs:
 
       - name: Gradle Check
         run: ./gradlew check --no-daemon
+
+      - name: Gradle allJars
+        run: ./gradlew allJars --no-daemon
